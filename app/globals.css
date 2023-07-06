@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ALS-Zheldor";
+  src: url("../public/fonts/ALS-Zheldor-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  @apply min-h-screen bg-black text-white font-montserrat;
+}
+
+/* FLEX */
+.flex_center {
+  @apply flex justify-center items-center;
+}
+
+.flex_start {
+  @apply flex justify-start items-start;
+}
+
+.flex_end {
+  @apply flex justify-end items-center;
+}
+
+.flex_between {
+  @apply flex justify-between items-center flex-wrap;
+}
