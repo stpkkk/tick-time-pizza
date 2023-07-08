@@ -10,12 +10,14 @@ module.exports = {
       colors: {
         primary: "#49535c",
         secondary: "#de3f3b",
+        secondaryLight: "#f15f5b",
         black: "#1e1e1e",
         button: "#ffd600",
+        light: "#f3f6f9",
       },
       screens: {
         sm: { max: "768px" },
-        md: { max: "1250px" },
+        md: { max: "1280px" },
       },
       fontFamily: {
         zheldor: ["ALS-Zheldor", "sans-serif"],

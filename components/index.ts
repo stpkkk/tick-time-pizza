@@ -1,5 +1,6 @@
-// export * from "./about";
+export * from "./common";
 import Footer from "./Footer";
 import Header from "./Header";
+import Nav from "./Nav";
 
-export { Footer, Header };
+export { Footer, Header, Nav };
