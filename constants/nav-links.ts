@@ -1,4 +1,4 @@
-export const NavLinks = [
+export const navLinks = [
   { href: "/pizza", key: "Pizza", text: "Пицца" },
   { href: "/snacks", key: "Snacks", text: "Закуски" },
   { href: "/drinks", key: "Drinks", text: "Напитки" },

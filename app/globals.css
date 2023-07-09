@@ -33,6 +33,22 @@ body {
   @apply min-h-screen mx-auto max-w-[1230px] px-4 bg-black text-white font-montserrat;
 }
 
+.header {
+  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  shadow-lg shadow-black;
+}
+
+.header_dropdown {
+  @apply max-w-[190px] w-full hover:bg-light hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
+}
+
+.header_tooltip {
+  @apply bg-white w-[400px] absolute top-[90px] rounded-b-2xl text-[12px] text-center p-6;
+}
+
+.nav_links {
+  @apply flex gap-2 text-sm font-semibold w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl;
+}
+
 /* FLEX */
 .flex_center {
   @apply flex justify-center items-center;

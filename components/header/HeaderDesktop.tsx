@@ -1,14 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { NavLinks } from "@/constants";
-import Logo from "../public/assets/icons/logo.svg";
+import Nav from "./Nav";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { BsBasket2 } from "react-icons/bs";
-import { Button } from "@/components";
+import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
+import Phone from "./Phone";
+import { Button, Logo } from "../common";
 
-const Header = () => {
+type Props = {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const HeaderDesktop: React.FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
   const [isHoveringPhone, setIsHoveringPhone] = useState(false);
   const [isHoveringCart, setIsHoveringCart] = useState(false);
 
@@ -29,13 +34,13 @@ const Header = () => {
   };
 
   const PhoneTooltip = () => (
-    <div className="bg-light w-[400px] absolute top-[90px] left-0 rounded-b-2xl text-[12px] text-center p-6">
+    <div className="left-0 header_tooltip">
       *минимальная сумма заказа на доставку равна стоимости средней пиццы.
     </div>
   );
 
   const CartTooltip = () => (
-    <div className="bg-light w-[400px] absolute top-[90px] right-0 rounded-b-2xl text-[12px] text-center p-6">
+    <div className="right-0 header_tooltip">
       <p className="block text-start mb-4">Корзина пока пуста</p>
       <a href="/cart">
         <Button name="Перейти в корзину" />
@@ -44,52 +49,41 @@ const Header = () => {
   );
 
   return (
-    <header className="h-[90px] px-[60px] bg-white text-primary rounded-b-2xl flex_between shadow">
-      <Link href="/" className="mr-auto">
-        <Image src={Logo} width={45} height={45} alt="logo" priority />
-      </Link>
-      <ul className="flex gap-2 text-sm font-semibold">
-        {NavLinks.map((link, index) => (
-          <li className="p-2" key={index}>
-            <Link draggable="false" href={link.href}>
-              {link.text}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <header className="flex_between sm:hidden header">
+      <Logo />
+      <div className="md:flex-grow md:ml-[20px]">
+        <div
+          className={`${isMenuOpen && "bg-light"} header_dropdown`}
+          onClick={() => {
+            setIsMenuOpen(prev => !prev);
+          }}
+        >
+          <span className="block text-sm font-semibold">Меню</span>
+          <IoIosArrowDown />
+        </div>
+        <Nav isMenuOpen={isMenuOpen} />
+      </div>
       <div
-        className="hover:bg-light px-6 ml-6 flex_center flex-col h-full cursor-pointer relative"
+        className="hover:bg-light ml-4 relative h-full"
         onMouseOver={handleMouseOverPhone}
         onMouseOut={handleMouseOutPhone}
       >
-        <span>
-          <a href="tel:330204" className="font-zheldor text-[2rem] leading-10">
-            33-02-04
-          </a>
-        </span>
-        <p className="text-[10px] font-semibold">
-          круглосуточная
-          <br /> бесплатная доставка*
-        </p>
+        <Phone />
         {isHoveringPhone && <PhoneTooltip />}
       </div>
-      <a
+      <Link
         href="/login"
-        className="flex_center flex-col gap-2 w-[6.25rem] h-full hover:bg-light ml-auto"
-        type="button"
+        className="flex_center flex-col gap-2 w-[6rem] h-full hover:bg-light ml-auto"
       >
         <RiLoginCircleLine size={25} />
         <span className="text-sm font-semibold">Войти</span>
-      </a>
+      </Link>
       <div
         className="h-full hover:bg-light relative"
         onMouseOver={handleMouseOverCart}
         onMouseOut={handleMouseOutCart}
       >
-        <a
-          href="cart"
-          className="flex_center flex-col gap-2 w-[6.25rem] h-full "
-        >
+        <a href="cart" className="flex_center flex-col gap-2 w-[6rem] h-full ">
           <BsBasket2 size={25} />
           <span className="text-sm font-semibold">Корзина</span>
         </a>
@@ -99,4 +93,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderDesktop;
