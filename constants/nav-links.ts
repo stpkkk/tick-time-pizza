@@ -7,3 +7,5 @@ export const navLinks = [
   { href: "/delivery", key: "Delivery", text: "Доставка" },
   { href: "/contact", key: "Contact", text: "Контакты" },
 ];
+
+
