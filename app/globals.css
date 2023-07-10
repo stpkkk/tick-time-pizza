@@ -30,11 +30,11 @@
 }
 
 body {
-  @apply min-h-screen mx-auto max-w-[1230px] px-4 bg-black text-white font-montserrat;
+  @apply max-h-screen mx-auto max-w-[1230px] w-full px-4 bg-black text-white font-montserrat;
 }
 
 .header {
-  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  shadow-lg shadow-black;
+  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  shadow-lg shadow-black sticky z-10 top-0;
 }
 
 .header_dropdown {

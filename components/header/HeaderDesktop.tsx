@@ -42,9 +42,9 @@ const HeaderDesktop: React.FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
   const CartTooltip = () => (
     <div className="right-0 header_tooltip">
       <p className="block text-start mb-4">Корзина пока пуста</p>
-      <a href="/cart">
+      <Link href="/cart">
         <Button name="Перейти в корзину" />
-      </a>
+      </Link>
     </div>
   );
 
@@ -83,10 +83,13 @@ const HeaderDesktop: React.FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
         onMouseOver={handleMouseOverCart}
         onMouseOut={handleMouseOutCart}
       >
-        <a href="cart" className="flex_center flex-col gap-2 w-[6rem] h-full ">
+        <Link
+          href="/cart"
+          className="flex_center flex-col gap-2 w-[6rem] h-full "
+        >
           <BsBasket2 size={25} />
           <span className="text-sm font-semibold">Корзина</span>
-        </a>
+        </Link>
         {isHoveringCart && <CartTooltip />}
       </div>
     </header>

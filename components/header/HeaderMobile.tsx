@@ -13,7 +13,7 @@ type Props = {
 
 const HeaderMobile: React.FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
   return (
-    <header className="relative header hidden sm:flex sm:items-center sm:px-6 uppercase">
+    <header className="hidden relative header sm:flex sm:items-center sm:px-6 uppercase">
       <Logo />
       <div className="flex gap-2">
         <Link href="cart" className="px-4">

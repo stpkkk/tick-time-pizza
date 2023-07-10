@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const Phone = () => {
   return (
-    <div className="px-10 flex_center flex-col sm:flex-row sm:gap-4 h-full cursor-pointer">
+    <div className="px-10 sm:px-4 flex_center flex-col sm:flex-row sm:gap-2 h-full cursor-pointer">
       <div>
         <Link href="tel:330204" className="font-zheldor text-[2rem] leading-10">
           33-02-04
         </Link>
       </div>
-      <p className="text-[10px] font-semibold">
+      <p className="text-[10px] font-semibold sm:leading-3">
         круглосуточная
         <br /> бесплатная доставка*
       </p>

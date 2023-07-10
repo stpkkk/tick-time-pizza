@@ -34,7 +34,7 @@ const Nav: React.FC<Props> = ({ isMenuOpen }) => {
             <RiLoginCircleLine size={25} />
           </Link>
         </li>
-        <li className="text-[10px] hidden sm:flex">
+        <li className="hidden sm:flex">
           <Phone />
         </li>
         <li className="text-[10px] hidden sm:flex">
