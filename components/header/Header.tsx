@@ -1,16 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 import HeaderMobile from "./HeaderMobile";
 import HeaderDesktop from "./HeaderDesktop";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const Header: React.FC = () => {
   return (
     <>
-      <HeaderMobile isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <HeaderDesktop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <HeaderMobile />
+      <HeaderDesktop />
     </>
   );
 };

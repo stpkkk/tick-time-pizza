@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { footerLinks } from "@/constants";
 import google from "../public/assets/images/Google.webp";
 import apple from "../public/assets/images/App-Store.webp";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="shadow-lg shadow-black">
       <div className="flex_between flex-wrap py-8 px-[60px] md:px-4 bg-white text-primary rounded-t-2xl md:flex-col-reverse md:justify-center">

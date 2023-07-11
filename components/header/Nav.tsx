@@ -1,14 +1,14 @@
 import React from "react";
+import { useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
-import { navLinks } from "@/constants";
+
 import { RiLoginCircleLine } from "react-icons/ri";
+import { navLinks } from "@/constants";
 import Phone from "./Phone";
 
-type Props = {
-  isMenuOpen?: boolean;
-};
+const Nav: React.FC = () => {
+  const isMenuOpen = useAppSelector(state => state.headerReducer.isMenuOpen);
 
-const Nav: React.FC<Props> = ({ isMenuOpen }) => {
   return (
     <nav className="sm:flex sm:flex-col">
       <ul

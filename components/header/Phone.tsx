@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Phone = () => {
+const Phone: React.FC = () => {
   return (
     <div className="px-10 sm:px-4 flex_center flex-col sm:flex-row sm:gap-2 h-full cursor-pointer">
       <div>
