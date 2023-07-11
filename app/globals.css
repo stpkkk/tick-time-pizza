@@ -29,8 +29,18 @@
 	box-sizing: border-box;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 body {
-  @apply max-h-screen mx-auto max-w-[1230px] w-full px-4 bg-black text-white font-montserrat;
+  @apply max-h-screen mx-auto max-w-[1230px] w-full px-4 bg-black text-primary font-montserrat;
 }
 
 .header {

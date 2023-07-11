@@ -12,8 +12,10 @@ module.exports = {
         secondary: "#de3f3b",
         secondaryLight: "#f15f5b",
         black: "#1e1e1e",
-        button: "#ffd600",
+        yellowButton: "#ffd600",
+        yellowButtonHover: "#ffe24b",
         light: "#f3f6f9",
+        hoverGray: "#dadfe3",
       },
       screens: {
         sm: { max: "768px" },

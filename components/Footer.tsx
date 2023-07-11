@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="flex_between gap-5 bg-secondary text-[12px] py-7 px-16 md:px-4 md:flex-col sm:rounded-b-2xl">
+      <div className="flex_between gap-5 bg-secondary text-white text-[12px] py-7 px-16 md:px-4 md:flex-col sm:rounded-b-2xl">
         <div className="max-w-[700px] leading-4">
           <p>
             Добро пожаловать на сайт пиццерии Тик Тайм! Мы готовим и доставляем
