@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
         <li className="hidden sm:flex">
           <Phone />
         </li>
-        <li className="text-[10px] hidden sm:flex">
+        <li className="text-[10px] hidden sm:flex leading-[0.75rem]">
           *минимальная сумма заказа на доставку равна стоимости средней пиццы.
         </li>
       </ul>

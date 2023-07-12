@@ -9,22 +9,27 @@ import apple from "../public/assets/images/App-Store.webp";
 const Footer: React.FC = () => {
   return (
     <footer className="shadow-lg shadow-black">
-      <div className="flex_between flex-wrap py-8 px-[60px] md:px-4 bg-white text-primary rounded-t-2xl md:flex-col-reverse md:justify-center">
-        <div className="flex gap-2">
-          <Image src={google} width={153} height={50} alt="Google Play" />
-          <Image src={apple} width={153} height={50} alt="Apple Store" />
+      <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary rounded-t-2xl sm:flex-col-reverse">
+        <div className="flex_center sm:gap-0 gap-2">
+          <Image src={google} width={140} height={50} alt="Google Play" />
+          <Image src={apple} width={140} height={50} alt="Apple Store" />
         </div>
         <ul className="flex_center gap-4 font-semibold">
           {footerLinks.map(link => (
-            <li className="py-3" key={link.key}>
-              <Link href={link.href}>{link.text}</Link>
+            <li
+              className="py-3 whitespace-nowrap sm:text-[14px]"
+              key={link.key}
+            >
+              <Link href={link.href} className="">
+                {link.text}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex_between gap-5 bg-secondary text-white text-[12px] py-7 px-16 md:px-4 md:flex-col sm:rounded-b-2xl">
+      <div className="flex justify-between gap-5 bg-secondary text-white text-[12px] py-7 px-16 md:px-4 sm:flex-col sm:rounded-b-2xl sm:text-center">
         <div className="max-w-[700px] leading-4">
-          <p>
+          <p className="md:text-[10px]">
             Добро пожаловать на сайт пиццерии Тик Тайм! Мы готовим и доставляем
             Пиццу с 2012 года! Мы готовим, быстро доставляем, дарим и едим
             любимую пиццу! Пиццерия Тик Тайм работает как небольшое заведение с
@@ -32,7 +37,7 @@ const Footer: React.FC = () => {
             занимает всего 10 минут!
           </p>
         </div>
-        <div className="flex items-end flex-col gap-3 underline md:items-center">
+        <div className="w-full flex flex-col gap-3 text-right underline sm:items-center whitespace-nowrap">
           <Link href="/legal">Правовая информация</Link>
           <Link href="https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/">
             Поддержка сайта Степанов Игорь
