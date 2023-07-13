@@ -17,6 +17,9 @@ module.exports = {
         light: "#f3f6f9",
         hoverGray: "#dadfe3",
       },
+      dropShadow: {
+        "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",
+      },
       screens: {
         sm: { max: "768px" },
         md: { max: "1280px" },

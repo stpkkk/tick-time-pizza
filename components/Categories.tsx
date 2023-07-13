@@ -24,7 +24,7 @@ const Categories: React.FC = () => {
                 checked
                   ? "bg-yellowButton hover:bg-yellowButtonHover"
                   : "bg-light hover:bg-hoverGray"
-              } relative flex cursor-pointer rounded-xl px-[30px] py-[20px] shadow-md `
+              } relative flex cursor-pointer rounded-xl px-[30px] py-[20px]`
             }
           >
             <div className="flex justify-between gap-2 text-sm font-bold leading-[20px]">

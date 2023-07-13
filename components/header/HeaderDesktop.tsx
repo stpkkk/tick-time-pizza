@@ -10,7 +10,7 @@ import Link from "next/link";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { BsBasket2 } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
-import { Button, Logo } from "../common";
+import { Logo } from "../common";
 import Nav from "./Nav";
 import Phone from "./Phone";
 
@@ -50,7 +50,9 @@ const HeaderDesktop: React.FC = () => {
     <div className="right-0 header_tooltip">
       <p className="block text-start mb-4">Корзина пока пуста</p>
       <Link href="/cart">
-        <Button name="Перейти в корзину" />
+        <button className="bg-secondary hover:bg-primary-light text-white font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[50px] w-full hover:bg-secondaryLight">
+          Перейти в корзину
+        </button>
       </Link>
     </div>
   );

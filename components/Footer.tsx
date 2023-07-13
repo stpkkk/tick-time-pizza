@@ -8,8 +8,8 @@ import apple from "../public/assets/images/App-Store.webp";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="shadow-lg shadow-black">
-      <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary rounded-t-2xl sm:flex-col-reverse">
+    <footer className="drop-shadow-3xl mt-8">
+      <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
           <Image src={google} width={140} height={50} alt="Google Play" />
           <Image src={apple} width={140} height={50} alt="Apple Store" />
