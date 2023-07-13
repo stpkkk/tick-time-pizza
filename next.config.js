@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["https://tick-time.ru"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tick-time.ru",
+      },
+    ],
   },
 };
 
