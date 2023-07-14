@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface HeaderState {
-  isMenuOpen: boolean;
+  isNavOpen: boolean;
   isHoveringPhone: boolean;
   isHoveringCart: boolean;
 }
 
 const initialState: HeaderState = {
-  isMenuOpen: false,
+  isNavOpen: false,
   isHoveringPhone: false,
   isHoveringCart: false,
 };
@@ -16,9 +16,8 @@ const headerSlice = createSlice({
   name: "header",
   initialState,
   reducers: {
-    resetMenu: () => initialState,
-    toggleMenu: state => {
-      state.isMenuOpen = !state.isMenuOpen;
+    toggleNav: state => {
+      state.isNavOpen = !state.isNavOpen;
     },
     setIsHoveringPhone: (state, action: PayloadAction<boolean>) => {
       state.isHoveringPhone = action.payload;
@@ -29,7 +28,7 @@ const headerSlice = createSlice({
   },
 });
 
-export const { toggleMenu, resetMenu, setIsHoveringPhone, setIsHoveringCart } =
+export const { toggleNav, setIsHoveringPhone, setIsHoveringCart } =
   headerSlice.actions;
 
 export default headerSlice.reducer;

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   setIsHoveringCart,
   setIsHoveringPhone,
-  toggleMenu,
+  toggleNav,
 } from "@/redux/features/headerSlice";
 import Link from "next/link";
 
@@ -16,12 +16,12 @@ import Phone from "./Phone";
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isMenuOpen, isHoveringPhone, isHoveringCart } = useAppSelector(
+  const { isNavOpen, isHoveringPhone, isHoveringCart } = useAppSelector(
     state => state.headerReducer
   );
 
   const handleClick = () => {
-    dispatch(toggleMenu());
+    dispatch(toggleNav());
   };
 
   const handleMouseOverPhone = () => {
@@ -62,7 +62,7 @@ const HeaderDesktop: React.FC = () => {
       <Logo />
       <div className="md:flex-grow md:ml-[20px]">
         <div
-          className={`${isMenuOpen && "bg-light"} header_dropdown`}
+          className={`${isNavOpen && "bg-light"} header_dropdown`}
           onClick={handleClick}
         >
           <span className="block text-sm font-semibold">Меню</span>

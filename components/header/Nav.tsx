@@ -7,13 +7,13 @@ import { navLinks } from "@/constants";
 import Phone from "./Phone";
 
 const Nav: React.FC = () => {
-  const isMenuOpen = useAppSelector(state => state.headerReducer.isMenuOpen);
+  const isNavOpen = useAppSelector(state => state.headerReducer.isNavOpen);
 
   return (
     <nav className="sm:flex sm:flex-col">
       <ul
         className={`${
-          isMenuOpen
+          isNavOpen
             ? "absolute sm:left-0 sm:top-[70px] p-4 flex_start flex-col"
             : "md:hidden"
         } nav_links`}

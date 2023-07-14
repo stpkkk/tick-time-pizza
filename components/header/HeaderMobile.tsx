@@ -1,5 +1,5 @@
 import React from "react";
-import { toggleMenu } from "@/redux/features/headerSlice";
+import { toggleNav } from "@/redux/features/headerSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
 
@@ -11,10 +11,10 @@ import Logo from "../common/Logo";
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const isMenuOpen = useAppSelector(state => state.headerReducer.isMenuOpen);
+  const isNavOpen = useAppSelector(state => state.headerReducer.isNavOpen);
 
   const handleClick = () => {
-    dispatch(toggleMenu());
+    dispatch(toggleNav());
   };
   return (
     <header className="hidden relative header sm:flex sm:items-center sm:px-6 uppercase ">
@@ -24,10 +24,10 @@ const HeaderMobile: React.FC = () => {
           <BsBasket2 size={30} />
         </Link>
         <button className="px-4 cursor-pointer" onClick={handleClick}>
-          {isMenuOpen ? <GrClose size={30} /> : <RxHamburgerMenu size={30} />}
+          {isNavOpen ? <GrClose size={30} /> : <RxHamburgerMenu size={30} />}
         </button>
       </div>
-      {isMenuOpen && <Nav />}
+      {isNavOpen && <Nav />}
     </header>
   );
 };
