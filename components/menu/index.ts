@@ -1,4 +1,5 @@
 import Menu from "./Menu";
-import MenuItemTypes from "./MenuItem";
+import MenuItem from "./MenuItem";
+import Modal from "./Modal";
 
-export { Menu, MenuItemTypes as MenuItem };
+export { Menu, MenuItem, Modal };

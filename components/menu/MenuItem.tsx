@@ -1,9 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import { HeartIcon } from "@/public/assets/icons";
 import { MenuItemTypes } from "@/types";
-import { Favorite } from "@/public/assets/icons";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setHoveredItemId, toggleModal } from "@/redux/features/menuSlice";
+import {
+  setClickedMenuItem,
+  setHoveredItemId,
+  toggleModal,
+} from "@/redux/features/menuSlice";
+import { menu } from "@/constants";
 
 interface MenuItemProps {
   item: MenuItemTypes;
@@ -21,7 +26,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
     dispatch(setHoveredItemId(null));
   };
 
-  const handleClick = () => {
+  const handleClick = (clickedItem: MenuItemTypes) => {
+    const selectedItem = menu.find(item => item.id === clickedItem.id);
+    if (selectedItem) {
+      dispatch(setClickedMenuItem(selectedItem));
+    }
     dispatch(toggleModal());
   };
 
@@ -32,17 +41,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
       className="relative h-full max-w-[290px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-3xl rounded-lg sm:p-4 bg-white"
       onMouseOver={handleMouseOverItem}
       onMouseOut={handleMouseOutItem}
-      onClick={handleClick}
+      onClick={() => handleClick(item)}
     >
       <div className="flex-1 mb-5">
         <div className="flex flex-col gap-4">
           <Image
             src={item.image}
-            width={255}
-            height={255}
             alt={item.title}
             loading="lazy"
-            className={`${isItemHovered && "opacity-50"} self-center `}
+            className={`${
+              isItemHovered && "opacity-50"
+            } self-center max-w-[255px] w-full h-auto`}
           />
           <span className="block font-semibold leading-5 mb-4">
             {item.title}
@@ -66,7 +75,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
         type="button"
         title="Добавить в избранное"
       >
-        <Favorite />
+        <HeartIcon />
       </button>
     </li>
   );

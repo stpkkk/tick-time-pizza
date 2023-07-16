@@ -11,8 +11,20 @@ const Footer: React.FC = () => {
     <footer className="drop-shadow-3xl mt-8">
       <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
-          <Image src={google} width={140} height={50} alt="Google Play" />
-          <Image src={apple} width={140} height={50} alt="Apple Store" />
+          <Image
+            src={google}
+            width={140}
+            height={50}
+            alt="Google Play"
+            className="w-full h-auto"
+          />
+          <Image
+            src={apple}
+            width={140}
+            height={50}
+            alt="Apple Store"
+            className="w-full h-auto"
+          />
         </div>
         <ul className="flex_center gap-4 font-semibold">
           {footerLinks.map(link => (

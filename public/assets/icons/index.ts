@@ -1,3 +1,3 @@
-import Favorite from "./Favorite";
+import HeartIcon from "./HeartIcon";
 
-export { Favorite };
+export { HeartIcon };
