@@ -44,7 +44,7 @@ body {
 }
 
 .header {
-  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  drop-shadow-3xl sticky z-10 top-0;
+  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  drop-shadow-3xl fixed z-10 top-0 mx-auto left-1/2 -translate-x-1/2 w-full max-w-[1230px] ;
 }
 
 .header_dropdown {

@@ -12,7 +12,7 @@ const Categories: React.FC = () => {
     <RadioGroup
       value={selectedCategory}
       onChange={setSelectedCategory}
-      className="w-full max-w-[700px] my-8"
+      className="w-full max-w-[700px] my-[30px] mt-[120px]"
     >
       <div className="flex flex-row overflow-x-scroll scroll whitespace-nowrap scroll-smooth no-scrollbar gap-2">
         {categories.map((category, index) => (

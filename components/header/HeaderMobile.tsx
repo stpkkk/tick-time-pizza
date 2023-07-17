@@ -17,7 +17,7 @@ const HeaderMobile: React.FC = () => {
     dispatch(toggleNav());
   };
   return (
-    <header className="hidden relative header sm:flex sm:items-center sm:px-6 uppercase ">
+    <header className="hidden header sm:flex sm:items-center sm:px-6 uppercase">
       <Logo />
       <div className="flex gap-2">
         <Link href="cart" className="px-4">

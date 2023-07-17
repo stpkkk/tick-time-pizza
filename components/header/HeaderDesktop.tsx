@@ -36,8 +36,14 @@ const HeaderDesktop: React.FC = () => {
     dispatch(setIsHoveringCart(true));
   };
 
-  const handleMouseOutCart = () => {
-    dispatch(setIsHoveringCart(false));
+	const handleMouseOutCart = (e: React.MouseEvent<HTMLDivElement>) => {
+    const isHoveringTooltip =
+      e.relatedTarget instanceof HTMLElement &&
+      e.currentTarget.contains(e.relatedTarget);
+
+    if (!isHoveringTooltip) {
+      dispatch(setIsHoveringCart(false));
+    }
   };
 
   const PhoneTooltip = () => (
@@ -58,7 +64,7 @@ const HeaderDesktop: React.FC = () => {
   );
 
   return (
-    <header className="flex_between sm:hidden header">
+    <header className="relative flex_between sm:hidden header">
       <Logo />
       <div className="md:flex-grow md:ml-[20px]">
         <div
