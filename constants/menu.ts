@@ -1313,8 +1313,7 @@ export const menu: MenuItemTypes[] = [
       "Сыр Пармезан",
       "Листья Салата",
     ],
-    categories: ["Подходит для Детей"],
-    categoryImages: [bear],
+    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -1441,8 +1440,7 @@ export const menu: MenuItemTypes[] = [
       "Листья Салата",
       "Соус Кетчуп",
     ],
-    categories: ["Подходит для Детей"],
-    categoryImages: [bear],
+    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -1552,8 +1550,7 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Бекон", "Ананасы"],
-    categories: ["Подходит для Детей"],
-    categoryImages: [bear],
+    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -1878,8 +1875,7 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Пепперони"],
-    categories: ["Острая"],
-    categoryImages: [fire],
+    categories: [{ key: 0, title: "Острая", image: fire }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -2203,8 +2199,7 @@ export const menu: MenuItemTypes[] = [
       " Болгарский Перец",
       "Барбекю соус",
     ],
-    categories: ["Острая"],
-    categoryImages: [fire],
+    categories: [{ key: 0, title: "Острая", image: fire }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -2329,8 +2324,7 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Томаты", "Бекон", "Сыр Пармезан", "Укроп"],
-    categories: ["Подходит для детей"],
-    categoryImages: [bear],
+    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -2441,8 +2435,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Сыр Пармезан", "Сыр Фета", "Сыр Блю Чиз"],
-    categories: ["Без Мяса", "Подходит для Детей"],
-    categoryImages: [leaf, bear],
+    categories: [
+      { key: 0, title: "Без Мяса", image: leaf },
+      { key: 1, title: "Подходит для Детей", image: bear },
+    ],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -2567,8 +2563,7 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Сыр Фета", "Сыр Чеддер"],
-    categories: ["Подходит для Детей"],
-    categoryImages: [bear],
+    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {
@@ -2816,8 +2811,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: ["Томаты"],
-    categories: ["Без Мяса", "Подходит для детей"],
-    categoryImages: [leaf, bear],
+    categories: [
+      { key: 0, title: "Без Мяса", image: leaf },
+      { key: 1, title: "Подходит для Детей", image: bear },
+    ],
     sizes: [23, 28, 33],
     options: ["Тонкое", "Традиционное"],
     nutritionalValue: {

@@ -77,6 +77,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
       >
         <HeartIcon />
       </button>
+      <div className="absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1">
+        {item.categories?.map(cat => (
+          <Image
+            src={cat.image}
+            alt={cat.title}
+            width={16}
+            height={16}
+            key={cat.key}
+          />
+        ))}
+      </div>
     </li>
   );
 };

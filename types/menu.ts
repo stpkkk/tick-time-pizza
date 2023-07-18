@@ -15,6 +15,12 @@ export interface nutritionalValueTypes {
   calories: number;
 }
 
+export interface menuCategoriesTypes {
+  key: number;
+  title: string;
+  image: StaticImageData;
+}
+
 export interface MenuItemTypes {
   id: number;
   title: string;
@@ -23,8 +29,7 @@ export interface MenuItemTypes {
   price: number;
   additionalIngredients: additionalIngredientsTypes[];
   removeIngredients: string[];
-  categories?: string[];
-  categoryImages?: StaticImageData[];
+  categories?: menuCategoriesTypes[];
   sizes: number[];
   options: string[];
   nutritionalValue: nutritionalValueTypes;
