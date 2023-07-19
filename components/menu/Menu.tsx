@@ -3,8 +3,8 @@ import React from "react";
 import { menu } from "@/constants";
 import MenuItem from "./MenuItem";
 import { MenuItemTypes } from "@/types";
-import Modal from "./Modal";
 import { useAppSelector } from "@/redux/hooks";
+import { Modal } from "./modal";
 
 const Menu: React.FC = () => {
   const { isModalOpen } = useAppSelector(state => state.menuReducer);

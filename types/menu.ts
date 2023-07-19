@@ -18,7 +18,17 @@ export interface nutritionalValueTypes {
 export interface menuCategoriesTypes {
   key: number;
   title: string;
-  image: StaticImageData;
+  image?: StaticImageData;
+}
+
+export interface menuSizesTypes {
+  id: number;
+  name: number;
+}
+
+export interface menuOptionsTypes {
+  id: number;
+  name: string;
 }
 
 export interface MenuItemTypes {
@@ -30,7 +40,7 @@ export interface MenuItemTypes {
   additionalIngredients: additionalIngredientsTypes[];
   removeIngredients: string[];
   categories?: menuCategoriesTypes[];
-  sizes: number[];
-  options: string[];
+  sizes: menuSizesTypes[];
+  options: menuOptionsTypes[];
   nutritionalValue: nutritionalValueTypes;
 }

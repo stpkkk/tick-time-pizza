@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
-import Image from "next/image";
 
 import { categories } from "@/constants";
+import { RadioGroupOption } from "./common";
 
 const Categories: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
@@ -14,46 +14,14 @@ const Categories: React.FC = () => {
       onChange={setSelectedCategory}
       className="w-full max-w-[700px] my-[30px] mt-[120px]"
     >
-      <div className="flex flex-row overflow-x-scroll scroll whitespace-nowrap scroll-smooth no-scrollbar gap-2">
-        {categories.map((category, index) => (
-          <RadioGroup.Option
-            key={category.name}
-            value={category}
-            className={({ checked }) =>
-              `${
-                checked
-                  ? "bg-yellowButton hover:bg-yellowButtonHover"
-                  : "bg-light hover:bg-hoverGray"
-              } relative flex cursor-pointer rounded-xl px-[30px] py-[20px]`
-            }
-          >
-            <div className="flex justify-between gap-2 text-sm font-bold leading-[20px]">
-              {index === 0 ? (
-                <RadioGroup.Label as="p">
-                  <span>{category.name}</span>
-                </RadioGroup.Label>
-              ) : (
-                <>
-                  <RadioGroup.Label as="div">
-                    {category.img && (
-                      <div className="w-5 h-5">
-                        <Image
-                          src={category.img}
-                          alt={category.name}
-                          width={20}
-                          height={20}
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                  </RadioGroup.Label>
-                  <RadioGroup.Description as="span">
-                    <span>{category.name}</span>
-                  </RadioGroup.Description>
-                </>
-              )}
-            </div>
-          </RadioGroup.Option>
+      <div className="flex flex-row gap-2 overflow-x-scroll scroll whitespace-nowrap scroll-smooth no-scrollbar">
+        {categories.map(category => (
+          <RadioGroupOption
+            key={category.id}
+            option={category}
+            isChecked={selectedCategory === category}
+            className="leading-[20px]"
+          />
         ))}
       </div>
     </RadioGroup>

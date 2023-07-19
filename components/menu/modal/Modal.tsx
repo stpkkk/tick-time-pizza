@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { RiCloseFill } from "react-icons/ri";
+import ItemSizeSelection from "./ItemSizeSelection";
 
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +35,7 @@ const Modal: React.FC = () => {
     <div className="relative z-10">
       <div className="fixed inset-0 bg-black bg-opacity-25 opacity-100"></div>
       <div className="fixed inset-0 overflow-y-auto">
-        <div className="flex_center min-h-full sm:text-center sm:items-stretch p-4">
+        <div className="flex_center min-h-full sm:text-center sm:items-stretch ">
           <div
             ref={modalRef}
             className="relative w-full overflow-hidden bg-white align-middle drop-shadow-3xl transition-all rounded-2xl max-w-[950px] opacity-100 scale-100"
@@ -46,8 +47,8 @@ const Modal: React.FC = () => {
             >
               <RiCloseFill size={36} />
             </button>
-            <form className="grid grid-cols-2 gap-[60px] p-[60px] bg-white drop-shadow-3xl text-left h-full overflow-auto overflow-x-hidden ">
-              <div className="fill flex_center flex-col gap-[30px]">
+            <form className="grid grid-cols-2 gap-[60px] p-[60px] bg-white drop-shadow-3xl text-left h-full overflow-auto overflow-x-hidden sm:grid-cols-1">
+              <div className="fill flex_center flex-col gap-[30px] ">
                 <Image
                   src={clickedMenuItem?.image ? clickedMenuItem?.image : ""}
                   alt={clickedMenuItem?.title ? clickedMenuItem?.title : ""}
@@ -67,8 +68,32 @@ const Modal: React.FC = () => {
                 </div>
                 <button>Добавить в корзину</button>
               </div>
-              <div className="uppercase font-zheldor text-[40px]">
-                {clickedMenuItem?.title}
+              <div className="flex flex-col gap-[30px]">
+                {clickedMenuItem?.categories ? (
+                  <div className="flex gap-5">
+                    {clickedMenuItem?.categories?.map(cat => (
+                      <div key={cat.key} className="flex_center gap-2">
+                        <Image
+                          src={cat.image ? cat.image : ""}
+                          alt={cat.title}
+                          width={20}
+                          height={20}
+                        />
+                        <div>
+                          <span className="text-[12px] leading-[15px] font-bold">
+                            {cat.title}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  ""
+                )}
+                <h4 className="uppercase font-zheldor text-[2.5rem] leading-[3rem]">
+                  {clickedMenuItem?.title}
+                </h4>
+                <ItemSizeSelection />
               </div>
             </form>
           </div>

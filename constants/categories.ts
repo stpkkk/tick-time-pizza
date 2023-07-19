@@ -4,18 +4,22 @@ import leaf from "../public/assets/images/cat-leaf.webp";
 
 export const categories = [
   {
+    id: 0,
     name: "Все",
   },
   {
+    id: 1,
     name: "Без Мяса",
-    img: bear,
+    image: bear,
   },
   {
+    id: 2,
     name: "Подходит для Детей",
-    img: fire,
+    image: fire,
   },
   {
+    id: 3,
     name: "Острая",
-    img: leaf,
+    image: leaf,
   },
 ];

@@ -11,20 +11,26 @@ const Footer: React.FC = () => {
     <footer className="drop-shadow-3xl mt-8">
       <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
-          <Image
-            src={google}
-            width={140}
-            height={50}
-            alt="Google Play"
-            className="w-full h-auto"
-          />
-          <Image
-            src={apple}
-            width={140}
-            height={50}
-            alt="Apple Store"
-            className="w-full h-auto"
-          />
+          <Link href="https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim">
+            <Image
+              src={google}
+              width={150}
+              height={50}
+              loading="lazy"
+              alt="Google Play"
+              className="max-w-[150px] h-[50px]"
+            />
+          </Link>
+          <Link href="https://apps.apple.com/ru/app/id1482770584">
+            <Image
+              src={apple}
+              width={150}
+              height={50}
+              loading="lazy"
+              alt="Apple Store"
+              className="max-w-[150px] h-[50px]"
+            />
+          </Link>
         </div>
         <ul className="flex_center gap-4 font-semibold">
           {footerLinks.map(link => (
