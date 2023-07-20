@@ -41,6 +41,6 @@ export interface MenuItemTypes {
   removeIngredients: string[];
   categories?: menuCategoriesTypes[];
   sizes: menuSizesTypes[];
-  options: menuOptionsTypes[];
+  dough: menuOptionsTypes[];
   nutritionalValue: nutritionalValueTypes;
 }

@@ -185,7 +185,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -331,7 +331,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -453,7 +453,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -591,7 +591,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -701,7 +701,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -802,7 +802,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -926,7 +926,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1050,7 +1050,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1181,7 +1181,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1289,7 +1289,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1389,7 +1389,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1523,7 +1523,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1640,7 +1640,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1757,7 +1757,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1874,7 +1874,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: 28 },
       { id: 1, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -1985,7 +1985,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2109,7 +2109,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2219,7 +2219,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2330,7 +2330,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2462,7 +2462,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2583,7 +2583,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2715,7 +2715,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2824,7 +2824,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
@@ -2980,7 +2980,7 @@ export const menu: MenuItemTypes[] = [
       { id: 1, name: 28 },
       { id: 2, name: 33 },
     ],
-    options: [
+    dough: [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
