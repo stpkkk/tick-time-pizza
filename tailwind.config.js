@@ -16,6 +16,7 @@ module.exports = {
         yellowLight: "#ffe24b",
         grayLight: "#f3f6f9",
         gray: "#EAEFF3",
+        grayDark: "#a0adba",
       },
       dropShadow: {
         custom: "0 10px 40px rgba(0, 0, 0, 0.1)",

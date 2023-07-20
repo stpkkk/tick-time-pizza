@@ -1,7 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setSelectedDough, setSelectedSize } from "@/redux/features/menuSlice";
+import {
+  setSelectedDough,
+  setSelectedSize,
+  initializeDefaultValues,
+} from "@/redux/features/menuSlice";
 import { RadioGroup } from "@headlessui/react";
 
 import { RadioGroupOption } from "@/components/common";
@@ -14,14 +18,8 @@ const ItemSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // Set the default selected values
-    if (clickedMenuItem?.sizes.length && !selectedSize) {
-      dispatch(setSelectedSize(clickedMenuItem.sizes[0]));
-    }
-    if (clickedMenuItem?.dough.length && !selectedDough) {
-      dispatch(setSelectedDough(clickedMenuItem.dough[1]));
-    }
-  }, [clickedMenuItem, selectedSize, selectedDough, dispatch]);
+    dispatch(initializeDefaultValues());
+  }, []);
 
   return (
     <>
@@ -48,7 +46,7 @@ const ItemSizeSelection: React.FC = () => {
         </RadioGroup>
         <RadioGroup
           value={selectedDough}
-          onChange={dough => dispatch(setSelectedDough(dough))}
+          onChange={option => dispatch(setSelectedDough(option))}
         >
           <div className="flex flex-row gap-2">
             {clickedMenuItem?.dough.map(dough => (

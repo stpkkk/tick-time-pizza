@@ -1,14 +1,18 @@
 "use client";
+import React, { useEffect, useRef } from "react";
 import { toggleModal } from "@/redux/features/menuSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
 import { RiCloseFill } from "react-icons/ri";
+
 import ItemSizeSelection from "./ItemSizeSelection";
+import Counter from "./Counter";
+import { HeartIcon } from "@/public/assets/icons";
+import ImageNotice from "./ImageNotice";
 
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { clickedMenuItem } = useAppSelector(state => state.menuReducer);
+  const { clickedMenuItem, value } = useAppSelector(state => state.menuReducer);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
@@ -31,9 +35,13 @@ const Modal: React.FC = () => {
     dispatch(toggleModal());
   };
 
+  const totalPrice = clickedMenuItem?.price
+    ? clickedMenuItem?.price * value
+    : "";
+
   return (
     <div className="relative z-10">
-      <div className="fixed inset-0 bg-black bg-opacity-25 opacity-100"></div>
+      <div className="fixed inset-0 bg-black bg-opacity-25 opacity-100" />
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex_center min-h-full sm:text-center sm:items-stretch ">
           <div
@@ -47,28 +55,32 @@ const Modal: React.FC = () => {
             >
               <RiCloseFill size={36} />
             </button>
-            <form className="grid grid-cols-2 gap-[60px] p-[60px] bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:grid-cols-1">
-              <div className="fill flex_center flex-col gap-[30px]">
+            <form className="grid grid-cols-2 gap-[60px] p-[60px] sm:p-8 bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:grid-cols-1">
+              <div className="relative fill flex_center flex-col gap-[30px]">
                 <Image
                   src={clickedMenuItem?.image ? clickedMenuItem?.image : ""}
                   alt={clickedMenuItem?.title ? clickedMenuItem?.title : ""}
                   width={325}
                   height={325}
                 />
-                <div className="text-center">
+                <p className="block text-center text-sm sm:text-[0.75rem]leading-[1.25rem]">
                   {clickedMenuItem?.ingredients}
-                </div>
+                </p>
                 <div className="flex_center gap-7 w-full">
-                  <div className="flex_between">
-                    <button>+</button>
-                    <span className="block">? шт.</span>
-                    <button>-</button>
+                  <Counter />
+                  <div>
+                    <span className="text-xl font-semibold md:text-base">
+                      {totalPrice} ₽
+                    </span>
                   </div>
-                  <div className="">{clickedMenuItem?.price} ₽</div>
                 </div>
                 <button className="btn_red max-w-[236px]">
                   Добавить в корзину
                 </button>
+                <div className="absolute top-0 right-0 cursor-pointer">
+                  <HeartIcon />
+                </div>
+                <ImageNotice />
               </div>
               <div className="flex flex-col gap-[30px]">
                 {clickedMenuItem?.categories ? (
