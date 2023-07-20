@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Phone: React.FC = () => {
   return (
-    <div className="px-10  sm:px-2 flex_center flex-col sm:flex-row sm:gap-2 h-full cursor-pointer whitespace-nowrap">
+    <div className="px-[28px]  sm:px-2 flex_center flex-col sm:flex-row sm:gap-2 h-full cursor-pointer whitespace-nowrap">
       <div>
         <Link
           href="tel:330204"

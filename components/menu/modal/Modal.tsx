@@ -38,17 +38,17 @@ const Modal: React.FC = () => {
         <div className="flex_center min-h-full sm:text-center sm:items-stretch ">
           <div
             ref={modalRef}
-            className="relative w-full overflow-hidden bg-white align-middle drop-shadow-3xl transition-all rounded-2xl max-w-[950px] opacity-100 scale-100"
+            className="relative w-full overflow-hidden bg-white align-middle drop-shadow-custom transition-all rounded-2xl max-w-[950px] opacity-100 scale-100"
           >
             <button
-              className="flex items-center z-10 gap-3 font-semibold text-sm text-hoverGray hover:text-primary disabled:text-dark-light no-outline absolute sm:top-0 sm:right-0 sm:p-3 top-[18px] right-[18px]"
+              className="flex items-center z-10 gap-3 font-semibold text-sm text-gray hover:text-primary no-outline absolute sm:top-0 sm:right-0 sm:p-3 top-[18px] right-[18px]"
               type="button"
               onClick={handleClick}
             >
               <RiCloseFill size={36} />
             </button>
-            <form className="grid grid-cols-2 gap-[60px] p-[60px] bg-white drop-shadow-3xl text-left h-full overflow-auto overflow-x-hidden sm:grid-cols-1">
-              <div className="fill flex_center flex-col gap-[30px] ">
+            <form className="grid grid-cols-2 gap-[60px] p-[60px] bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:grid-cols-1">
+              <div className="fill flex_center flex-col gap-[30px]">
                 <Image
                   src={clickedMenuItem?.image ? clickedMenuItem?.image : ""}
                   alt={clickedMenuItem?.title ? clickedMenuItem?.title : ""}
@@ -66,7 +66,9 @@ const Modal: React.FC = () => {
                   </div>
                   <div className="">{clickedMenuItem?.price} ₽</div>
                 </div>
-                <button>Добавить в корзину</button>
+                <button className="btn_red max-w-[236px]">
+                  Добавить в корзину
+                </button>
               </div>
               <div className="flex flex-col gap-[30px]">
                 {clickedMenuItem?.categories ? (
@@ -80,9 +82,7 @@ const Modal: React.FC = () => {
                           height={20}
                         />
                         <div>
-                          <span className="text-[12px] leading-[15px] font-bold">
-                            {cat.title}
-                          </span>
+                          <span className="text-xs font-bold">{cat.title}</span>
                         </div>
                       </div>
                     ))}

@@ -17,19 +17,19 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
   isChecked,
 }) => {
   const backgroundClass = isChecked
-    ? "bg-yellowButton hover:bg-yellowButtonHover"
-    : "bg-light hover:bg-hoverGray";
+    ? "bg-yellow hover:bg-yellowLight"
+    : "bg-grayLight hover:bg-gray";
 
   return (
     <RadioGroup.Option
       key={option.id}
       value={option}
-      className={`${backgroundClass} ${className} cursor-pointer rounded-2xl px-[30px] py-[20px] text-sm font-bold`}
+      className={`${backgroundClass} ${className} cursor-pointer rounded-2xl px-[30px] py-[20px] text-sm font-bold sm:text-[12px]`}
     >
       {!option.name ? (
         <p>{option.name}</p>
       ) : (
-        <div className="flex_between gap-2">
+        <div className="flex justify-between items-center gap-2">
           {option.image && (
             <div className="w-5 h-5">
               <Image
@@ -38,6 +38,7 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
                 width={20}
                 height={20}
                 loading="lazy"
+                className="sm:w-4 sm:h-4"
               />
             </div>
           )}

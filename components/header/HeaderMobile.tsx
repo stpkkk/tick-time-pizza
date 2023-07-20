@@ -3,11 +3,11 @@ import { toggleNav } from "@/redux/features/headerSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
 
-import { GrClose } from "react-icons/gr";
 import { BsBasket2 } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Nav from "./Nav";
 import Logo from "../common/Logo";
+import { RiCloseFill } from "react-icons/ri";
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -19,12 +19,20 @@ const HeaderMobile: React.FC = () => {
   return (
     <header className="hidden header sm:flex sm:items-center sm:px-6 uppercase">
       <Logo />
-      <div className="flex gap-2">
-        <Link href="cart" className="px-4">
+      <div className="flex_center">
+        <Link href="cart" className="px-2">
           <BsBasket2 size={30} />
         </Link>
-        <button className="px-4 cursor-pointer" onClick={handleClick}>
-          {isNavOpen ? <GrClose size={30} /> : <RxHamburgerMenu size={30} />}
+        <button
+          className="px-2 cursor-pointer"
+          type="button"
+          onClick={handleClick}
+        >
+          {isNavOpen ? (
+            <RiCloseFill size={40} />
+          ) : (
+            <RxHamburgerMenu size={30} />
+          )}
         </button>
       </div>
       {isNavOpen && <Nav />}

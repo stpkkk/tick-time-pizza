@@ -1,14 +1,15 @@
 import React from "react";
-import Image from "next/image";
-import { HeartIcon } from "@/public/assets/icons";
-import { MenuItemTypes } from "@/types";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   setClickedMenuItem,
   setHoveredItemId,
   toggleModal,
 } from "@/redux/features/menuSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import Image from "next/image";
+
+import { HeartIcon } from "@/public/assets/icons";
 import { menu } from "@/constants";
+import { MenuItemTypes } from "@/types";
 
 interface MenuItemProps {
   item: MenuItemTypes;
@@ -38,7 +39,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
 
   return (
     <li
-      className="relative h-full max-w-[290px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-3xl rounded-lg sm:p-4 bg-white"
+      className="relative h-full max-w-[290px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-custom rounded-lg sm:p-4 bg-white"
       onMouseOver={handleMouseOverItem}
       onMouseOut={handleMouseOutItem}
       onClick={() => handleClick(item)}
@@ -57,16 +58,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
             {item.title}
           </span>
         </div>
-        <div className="text-[14px] leading-[15px] sm:text-[12px]">
-          {item.ingredients}
+        <div>
+          <p className="text-[14px] leading-[15px] sm:text-[12px]">
+            {item.ingredients}
+          </p>
         </div>
       </div>
       <div className="flex flex_between">
         <span className="font-semibold">{`от ${item.price} ₽`}</span>
-        <button
-          className="bg-yellowButton text-primary font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[45px] w-auto hover:bg-yellowButtonHover"
-          type="button"
-        >
+        <button className="btn_yellow max-w-[112px]" type="button">
           Выбрать
         </button>
       </div>

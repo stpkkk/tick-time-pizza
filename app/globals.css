@@ -44,19 +44,28 @@ body {
 }
 
 .header {
-  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  drop-shadow-3xl fixed z-10 top-0 mx-auto left-1/2 -translate-x-1/2 w-full max-w-[1230px] ;
+  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  drop-shadow-custom fixed z-10 top-0 mx-auto left-1/2 -translate-x-1/2 w-full max-w-[1230px] ;
 }
 
 .header_dropdown {
-  @apply max-w-[190px] w-full hover:bg-light hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
+  @apply max-w-[190px] w-full hover:bg-grayLight hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
 }
 
 .header_tooltip {
-  @apply bg-white w-[400px] absolute top-[90px] rounded-b-2xl text-[12px] text-center p-6;
+  @apply bg-white w-[400px] absolute top-[90px] rounded-b-2xl text-[12px] p-6;
 }
 
 .nav_links {
   @apply flex gap-2 text-sm font-semibold w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl;
+}
+
+/*Buttons*/
+.btn_red {
+  @apply bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[60px] w-full;
+}
+
+.btn_yellow {
+  @apply bg-yellow hover:bg-yellowLight text-primary font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[45px] w-full;
 }
 
 /* FLEX */

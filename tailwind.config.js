@@ -12,13 +12,13 @@ module.exports = {
         secondary: "#de3f3b",
         secondaryLight: "#f15f5b",
         black: "#1e1e1e",
-        yellowButton: "#ffd600",
-        yellowButtonHover: "#ffe24b",
-        light: "#f3f6f9",
-        hoverGray: "#dadfe3",
+        yellow: "#ffd600",
+        yellowLight: "#ffe24b",
+        grayLight: "#f3f6f9",
+        gray: "#EAEFF3",
       },
       dropShadow: {
-        "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",
+        custom: "0 10px 40px rgba(0, 0, 0, 0.1)",
       },
       screens: {
         sm: { max: "768px" },

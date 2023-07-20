@@ -8,7 +8,7 @@ import apple from "../public/assets/images/App-Store.webp";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="drop-shadow-3xl mt-8">
+    <footer className="drop-shadow-custom mt-8">
       <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
           <Link href="https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim">
@@ -46,8 +46,8 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="flex justify-between gap-5 bg-secondary text-white text-[12px] py-7 px-16 md:px-4 sm:flex-col sm:rounded-b-2xl sm:text-center">
-        <div className="max-w-[700px] leading-4">
-          <p className="md:text-[10px]">
+        <div className="max-w-[700px]">
+          <p className="md:text-[10px] leading-4">
             Добро пожаловать на сайт пиццерии Тик Тайм! Мы готовим и доставляем
             Пиццу с 2012 года! Мы готовим, быстро доставляем, дарим и едим
             любимую пиццу! Пиццерия Тик Тайм работает как небольшое заведение с
