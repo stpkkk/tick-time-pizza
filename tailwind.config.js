@@ -32,5 +32,21 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".modal_scrollbar::-webkit-scrollbar": {
+          width: "16px",
+        },
+        ".modal_scrollbar::-webkit-scrollbar-thumb": {
+          backgroundColor: "#ced4da",
+          borderRadius: "20px",
+        },
+        ".modal_scrollbar::-webkit-scrollbar-track": {
+          backgroundColor: "#f3f6f9",
+          borderRadius: "20px",
+        },
+      });
+    },
+  ],
 };
