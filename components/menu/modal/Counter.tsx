@@ -9,7 +9,7 @@ const Counter: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="flex_between w-24 sm:w-32 ">
+    <>
       <button
         className={`${
           value <= 1 ? "text-gray" : "text-grayDark hover:text-primary"
@@ -19,7 +19,7 @@ const Counter: React.FC = () => {
       >
         <AiOutlineMinusCircle size={18} />
       </button>
-      <span className="block">{value}</span>
+      <span className="whitespace-nowrap">{value} шт.</span>
       <button
         className="text-grayDark hover:text-primary p-2"
         type="button"
@@ -27,7 +27,7 @@ const Counter: React.FC = () => {
       >
         <AiOutlinePlusCircle size={18} />
       </button>
-    </div>
+    </>
   );
 };
 

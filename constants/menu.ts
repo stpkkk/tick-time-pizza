@@ -174,11 +174,11 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Копченая Курица",
-      "Огурцы Маринованные",
-      "Лук Репчатый",
-      "Болгарский Перец",
-      "Соус Бургер",
+      { id: 0, name: "Копченая Курица" },
+      { id: 1, name: "Огурцы Маринованные" },
+      { id: 2, name: "Лук Репчатый" },
+      { id: 3, name: "Болгарский Перец" },
+      { id: 4, name: "Соус Бургер" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -189,7 +189,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 10.7,
       fats: 7.64,
       carbohydrates: 31.37,
@@ -325,7 +325,10 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Шампиньоны", "Пепперони"],
+    removeIngredients: [
+      { id: 0, name: "Шампиньоны" },
+      { id: 1, name: "Пепперони" },
+    ],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -335,7 +338,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 13.02,
       fats: 11.36,
       carbohydrates: 34.41,
@@ -443,10 +446,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Огурцы Маринованные",
-      "Лук Репчатый",
-      "Буженина",
-      "Лук Фри",
+      { id: 0, name: "Огурцы Маринованные" },
+      { id: 1, name: "Лук Репчатый" },
+      { id: 2, name: "Буженина" },
+      { id: 3, name: "Лук Фри" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -457,7 +460,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 9.98,
       fats: 13.21,
       carbohydrates: 34.18,
@@ -585,7 +588,11 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Ветчина", "Охотничьи Колбаски", "Буженина"],
+    removeIngredients: [
+      { id: 0, name: "Ветчина" },
+      { id: 1, name: "Охотничьи Колбаски" },
+      { id: 2, name: "Буженина" },
+    ],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -595,7 +602,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.3,
       fats: 12.6,
       carbohydrates: 35.85,
@@ -688,13 +695,13 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Томаты",
-      "Копченая Курица",
-      "Охотничьи Колбаски",
-      "Огурцы Маринованные",
-      "Лук Репчатый",
-      "Укроп",
-      "Майонезный соус",
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Охотничьи Колбаски" },
+      { id: 3, name: "Огурцы Маринованные" },
+      { id: 4, name: "Лук Репчатый" },
+      { id: 5, name: "Укроп" },
+      { id: 6, name: "Майонезный соус" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -705,7 +712,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 9.88,
       fats: 11.58,
       carbohydrates: 29.88,
@@ -792,10 +799,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Сыр Моцарелла",
-      "Копченая Курица",
-      "Соус Ранч",
-      "Сыр Блю Чиз",
+      { id: 0, name: "Сыр Моцарелла" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Соус Ранч" },
+      { id: 3, name: "Сыр Блю Чиз" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -806,7 +813,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 13.06,
       fats: 13.84,
       carbohydrates: 34.92,
@@ -915,11 +922,11 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Сыр Моцарелла",
-      "Шампионьоны",
-      "Ветчина",
-      "Пепперони",
-      "Сыр Пармезан",
+      { id: 0, name: "Сыр Моцарелла" },
+      { id: 1, name: "Шампионьоны" },
+      { id: 2, name: "Ветчина" },
+      { id: 3, name: "Пепперони" },
+      { id: 4, name: "Сыр Пармезан" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -930,7 +937,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 13.47,
       fats: 12.34,
       carbohydrates: 32.93,
@@ -1038,12 +1045,12 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Шампиньоны",
-      "Копченая Курица",
-      "Бекон",
-      "Сыр Чеддер",
-      "Укроп",
-      "Майонезеный соус",
+      { id: 0, name: "Шампиньоны" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Бекон" },
+      { id: 3, name: "Сыр Чеддер" },
+      { id: 4, name: "Укроп" },
+      { id: 5, name: "Майонезеный соус" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -1054,7 +1061,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.86,
       fats: 15.43,
       carbohydrates: 32.77,
@@ -1175,7 +1182,12 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Ветчина", "Бекон", "Лук Репчатый", "Сыр Чеддер"],
+    removeIngredients: [
+      { id: 0, name: "Ветчина" },
+      { id: 1, name: "Бекон" },
+      { id: 2, name: "Лук Репчатый" },
+      { id: 3, name: "Сыр Чеддер" },
+    ],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -1185,7 +1197,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 13.04,
       fats: 14.2,
       carbohydrates: 35.86,
@@ -1279,10 +1291,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Бекон",
-      "Огурцы Маринованные",
-      "Сыр Чеддер",
-      "Горчичный соус",
+      { id: 0, name: "Бекон" },
+      { id: 1, name: "Огурцы Маринованные" },
+      { id: 2, name: "Сыр Чеддер" },
+      { id: 3, name: "Горчичный соус" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -1293,7 +1305,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.37,
       fats: 11.46,
       carbohydrates: 35.39,
@@ -1378,10 +1390,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Томаты",
-      "Копченая Курица",
-      "Сыр Пармезан",
-      "Листья Салата",
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Сыр Пармезан" },
+      { id: 3, name: "Листья Салата" },
     ],
     categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
@@ -1393,7 +1405,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.84,
       fats: 10.36,
       carbohydrates: 32.09,
@@ -1509,13 +1521,13 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Томаты",
-      "Копченая Курица",
-      "Огурцы Свежие",
-      "Лук Репчатый",
-      "Укроп",
-      "Листья Салата",
-      "Соус Кетчуп",
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Огурцы Свежие" },
+      { id: 3, name: "Лук Репчатый" },
+      { id: 4, name: "Укроп" },
+      { id: 5, name: "Листья Салата" },
+      { id: 6, name: "Соус Кетчуп" },
     ],
     categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
@@ -1527,7 +1539,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 9.38,
       fats: 9.57,
       carbohydrates: 29.77,
@@ -1633,7 +1645,10 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Бекон", "Ананасы"],
+    removeIngredients: [
+      { id: 0, name: "Бекон" },
+      { id: 1, name: "Ананасы" },
+    ],
     categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
@@ -1644,7 +1659,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.08,
       fats: 9.62,
       carbohydrates: 36.52,
@@ -1746,11 +1761,11 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Шампиньоны",
-      "Пепперони",
-      "Охотничьи Колбаски",
-      "Укроп",
-      "Соус Ранч",
+      { id: 0, name: "Шампиньоны" },
+      { id: 1, name: "Пепперони" },
+      { id: 2, name: "Охотничьи Колбаски" },
+      { id: 3, name: "Укроп" },
+      { id: 4, name: "Соус Ранч" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -1761,7 +1776,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.78,
       fats: 11.94,
       carbohydrates: 32.97,
@@ -1861,14 +1876,14 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Томаты",
-      "Копченая Курица",
-      "Ветчина",
-      "Пепперони",
-      "Охотничьи Колбаски",
-      "Сыр Фета",
-      "Буженина",
-      "Сыр Блю Чиз",
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Ветчина" },
+      { id: 3, name: "Пепперони" },
+      { id: 4, name: "Охотничьи Колбаски" },
+      { id: 5, name: "Сыр Фета" },
+      { id: 6, name: "Буженина" },
+      { id: 7, name: "Сыр Блю Чиз" },
     ],
     sizes: [
       { id: 0, name: 28 },
@@ -1878,7 +1893,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.54,
       fats: 10.07,
       carbohydrates: 34.15,
@@ -1978,7 +1993,7 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Пепперони"],
+    removeIngredients: [{ id: 0, name: "Пепперони" }],
     categories: [{ key: 0, title: "Острая", image: fire }],
     sizes: [
       { id: 0, name: 23 },
@@ -1989,7 +2004,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 14.33,
       fats: 13.38,
       carbohydrates: 33.12,
@@ -2098,11 +2113,11 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Копченая Курица",
-      "Ветчина",
-      "Огурцы Маринованные",
-      "Зеленый Лук",
-      "Майонезный соус",
+      { id: 0, name: "Копченая Курица" },
+      { id: 1, name: "Ветчина" },
+      { id: 2, name: "Огурцы Маринованные" },
+      { id: 3, name: "Зеленый Лук" },
+      { id: 4, name: "Майонезный соус" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -2113,7 +2128,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.56,
       fats: 12.67,
       carbohydrates: 31.21,
@@ -2213,7 +2228,13 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Томаты", "Копченая Курица", "Ветчина", "Чеснок"],
+    removeIngredients: [
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Копченая Курица" },
+      { id: 2, name: "Ветчина" },
+      { id: 3, name: "Чеснок" },
+      { id: 4, name: "Майонезный соус" },
+    ],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -2223,7 +2244,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.42,
       fats: 16.11,
       carbohydrates: 32.63,
@@ -2318,11 +2339,11 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Перец Халапеньо",
-      "Пепперони",
-      "Лук Репчатый",
-      " Болгарский Перец",
-      "Барбекю соус",
+      { id: 0, name: "Перец Халапеньо" },
+      { id: 1, name: "Пепперони" },
+      { id: 2, name: "Лук Репчатый" },
+      { id: 3, name: " Болгарский Перец" },
+      { id: 4, name: "Барбекю соус" },
     ],
     categories: [{ key: 0, title: "Острая", image: fire }],
     sizes: [
@@ -2334,7 +2355,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 11.32,
       fats: 9.25,
       carbohydrates: 35.25,
@@ -2455,7 +2476,12 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Томаты", "Бекон", "Сыр Пармезан", "Укроп"],
+    removeIngredients: [
+      { id: 0, name: "Томаты" },
+      { id: 1, name: "Бекон" },
+      { id: 2, name: "Сыр Пармезан" },
+      { id: 3, name: "Укроп" },
+    ],
     categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
@@ -2466,7 +2492,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.24,
       fats: 14.15,
       carbohydrates: 33.54,
@@ -2573,7 +2599,11 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Сыр Пармезан", "Сыр Фета", "Сыр Блю Чиз"],
+    removeIngredients: [
+      { id: 0, name: "Сыр Пармезан" },
+      { id: 1, name: "Сыр Фета" },
+      { id: 2, name: "Сыр Блю Чиз" },
+    ],
     categories: [
       { key: 0, title: "Без Мяса", image: leaf },
       { key: 1, title: "Подходит для Детей", image: bear },
@@ -2587,7 +2617,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 15.03,
       fats: 16.43,
       carbohydrates: 33.66,
@@ -2708,7 +2738,10 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Сыр Фета", "Сыр Чеддер"],
+    removeIngredients: [
+      { id: 0, name: "Сыр Фета" },
+      { id: 1, name: "Сыр Чеддер" },
+    ],
     categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
@@ -2719,7 +2752,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 14.3,
       fats: 13.9,
       carbohydrates: 35.49,
@@ -2814,10 +2847,10 @@ export const menu: MenuItemTypes[] = [
       },
     ],
     removeIngredients: [
-      "Копченая Курица",
-      "Ветчина",
-      "Пепперони",
-      "Майонезный соус",
+      { id: 0, name: "Копченая Курица" },
+      { id: 1, name: "Ветчина" },
+      { id: 2, name: "Пепперони" },
+      { id: 3, name: "Майонезный соус" },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -2828,7 +2861,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 12.44,
       fats: 13.8,
       carbohydrates: 30.54,
@@ -2970,7 +3003,7 @@ export const menu: MenuItemTypes[] = [
         price: 35,
       },
     ],
-    removeIngredients: ["Томаты"],
+    removeIngredients: [{ id: 0, name: "Томаты" }],
     categories: [
       { key: 0, title: "Без Мяса", image: leaf },
       { key: 1, title: "Подходит для Детей", image: bear },
@@ -2984,7 +3017,7 @@ export const menu: MenuItemTypes[] = [
       { id: 0, name: "Тонкое" },
       { id: 1, name: "Традиционное" },
     ],
-    nutritionalValue: {
+    nutritionalValues: {
       proteins: 13.16,
       fats: 10.27,
       carbohydrates: 29.18,

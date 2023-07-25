@@ -32,7 +32,7 @@ const Categories: React.FC = () => {
             key={category.id}
             option={category}
             isChecked={selectedCategory === category}
-            className="leading-[20px]"
+            className="leading-[20px] px-[30px] py-[20px]"
           />
         ))}
       </div>

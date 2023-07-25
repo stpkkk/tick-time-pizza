@@ -24,16 +24,17 @@ const ItemSizeSelection: React.FC = () => {
   return (
     <>
       <div>
-        <p className="text-sm sm:text-xs md:text-base">
-          <span className="font-bold">Вес: </span>355 г
-        </p>
+				<span className="font-bold md:text-sm md:leading-[15px] text-base leading-5 md:mb-4 mb-5">
+					Вес:
+				</span>
+				<span>&nbsp;355 г</span>
       </div>
       <div className="flex flex-col gap-2">
         <RadioGroup
           value={selectedSize}
           onChange={size => dispatch(setSelectedSize(size))}
         >
-          <div className="flex flex-row gap-2">
+					<div className="flex flex-row gap-2.5">
             {clickedMenuItem?.sizes.map(size => (
               <RadioGroupOption
                 key={size.id}
@@ -48,7 +49,7 @@ const ItemSizeSelection: React.FC = () => {
           value={selectedDough}
           onChange={option => dispatch(setSelectedDough(option))}
         >
-          <div className="flex flex-row gap-2">
+					<div className="flex flex-row gap-2.5">
             {clickedMenuItem?.dough.map(dough => (
               <RadioGroupOption
                 key={dough.id}

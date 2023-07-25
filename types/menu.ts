@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { Option } from "./radio-option";
 
 export interface additionalIngredientsTypes {
   id: number;
@@ -31,6 +32,12 @@ export interface menuOptionsTypes {
   name: string;
 }
 
+export interface removedIngredientsTypes {
+	id: number
+	name: string
+	ingredient?: string
+}
+
 export interface MenuItemTypes {
   id: number;
   title: string;
@@ -38,9 +45,9 @@ export interface MenuItemTypes {
   ingredients: string;
   price: number;
   additionalIngredients: additionalIngredientsTypes[];
-  removeIngredients: string[];
+	removeIngredients: removedIngredientsTypes[];
   categories?: menuCategoriesTypes[];
   sizes: menuSizesTypes[];
   dough: menuOptionsTypes[];
-  nutritionalValue: nutritionalValueTypes;
+	nutritionalValues: nutritionalValueTypes
 }

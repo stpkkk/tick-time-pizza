@@ -6,47 +6,45 @@ import Image from "next/image";
 import { Option } from "@/types";
 
 export interface RadioGroupOptionProps {
-  option: Option;
+	option: any;
   className: string;
-  isChecked: boolean;
+	isChecked?: boolean
+	crossed?: string
 }
 
 const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
   option,
   className,
   isChecked,
+	crossed,
 }) => {
   const backgroundClass = isChecked
-    ? "bg-yellow hover:bg-yellowLight"
-    : "bg-grayLight hover:bg-gray";
+		? "bg-yellow no-underline hover:bg-yellowLight"
+		: "bg-grayLight no-underline hover:bg-gray";
 
   return (
     <RadioGroup.Option
       key={option.id}
       value={option}
-      className={`${backgroundClass} ${className} cursor-pointer rounded-2xl px-[30px] py-[20px] text-sm font-bold sm:text-[12px]`}
-    >
-      {!option.name ? (
-        <p>{option.name}</p>
-      ) : (
-        <div className="flex justify-between items-center gap-2">
-          {option.image && (
-            <div className="w-5 h-5">
-              <Image
-                src={option.image}
-                alt={option.name.toString()}
-                width={20}
-                height={20}
-                loading="lazy"
-                className="sm:w-4 sm:h-4"
-              />
-            </div>
-          )}
-          <div>
-            <p>{option.name}</p>
-          </div>
-        </div>
-      )}
+			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px]`}
+		>
+			<div className="flex justify-between items-center gap-2">
+				{option.image && (
+					<div className="w-5 h-5">
+						<Image
+							src={option.image}
+							alt={option.name.toString()}
+							width={20}
+							height={20}
+							loading="lazy"
+							className="sm:w-4 sm:h-4"
+						/>
+					</div>
+				)}
+				<div>
+					<span className={`${crossed}`}>{option.name}</span>
+				</div>
+			</div>
     </RadioGroup.Option>
   );
 };

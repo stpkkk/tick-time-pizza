@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { MenuItemTypes, Option } from "@/types";
+import { MenuItemTypes, Option, removedIngredientsTypes } from "@/types";
 
 export interface HeaderState {
   isModalOpen: boolean;
@@ -8,8 +8,10 @@ export interface HeaderState {
   clickedMenuItem: MenuItemTypes | null;
   selectedSize: Option | null;
   selectedDough: Option | null;
+	removedIngredients: removedIngredientsTypes[];
   selectedCategory: Option | null;
   value: number;
+	isAllIngredients: boolean
 }
 
 const initialState: HeaderState = {
@@ -20,7 +22,9 @@ const initialState: HeaderState = {
   selectedCategory: null,
   selectedSize: null,
   selectedDough: null,
+	removedIngredients: [],
   value: 1,
+	isAllIngredients: false,
 };
 
 const menuSlice = createSlice({
@@ -43,6 +47,8 @@ const menuSlice = createSlice({
     // Modal
     toggleModal: state => {
       state.isModalOpen = !state.isModalOpen;
+			state.isAllIngredients = false;
+
     },
     toggleTooltip: state => {
       state.isTooltipOpen = !state.isTooltipOpen;
@@ -53,6 +59,9 @@ const menuSlice = createSlice({
     setSelectedDough: (state, action: PayloadAction<Option | null>) => {
       state.selectedDough = action.payload;
     },
+		setRemovedIngredients: (state, action: PayloadAction<removedIngredientsTypes[]>) => {
+			state.removedIngredients = action.payload
+		},
     initializeDefaultValues: state => {
       if (state.clickedMenuItem) {
         state.selectedSize = state.clickedMenuItem.sizes[0];
@@ -65,6 +74,9 @@ const menuSlice = createSlice({
     decrement: state => {
       if (state.value > 1) state.value -= 1;
     },
+		setAllIngredients: state => {
+			state.isAllIngredients = true
+		},
   },
 });
 
@@ -74,11 +86,13 @@ export const {
   setClickedMenuItem,
   setSelectedSize,
   setSelectedDough,
+	setRemovedIngredients,
   setSelectedCategory,
   initializeDefaultValues,
   increment,
   decrement,
   toggleTooltip,
+	setAllIngredients,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

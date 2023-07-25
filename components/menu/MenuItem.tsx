@@ -32,7 +32,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
     if (selectedItem) {
       dispatch(setClickedMenuItem(selectedItem));
     }
-    dispatch(toggleModal());
+      dispatch(toggleModal());
   };
 
   const isItemHovered = hoveredItemId === item.id;
