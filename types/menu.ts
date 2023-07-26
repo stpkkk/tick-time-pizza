@@ -22,22 +22,6 @@ export interface menuCategoriesTypes {
   image?: StaticImageData;
 }
 
-export interface menuSizesTypes {
-  id: number;
-  name: number;
-}
-
-export interface menuOptionsTypes {
-  id: number;
-  name: string;
-}
-
-export interface removedIngredientsTypes {
-	id: number
-	name: string
-	ingredient?: string
-}
-
 export interface MenuItemTypes {
   id: number;
   title: string;
@@ -45,9 +29,9 @@ export interface MenuItemTypes {
   ingredients: string;
   price: number;
   additionalIngredients: additionalIngredientsTypes[];
-	removeIngredients: removedIngredientsTypes[];
+	removeIngredients: Option[];
   categories?: menuCategoriesTypes[];
-  sizes: menuSizesTypes[];
-  dough: menuOptionsTypes[];
+	sizes: Option[]
+	dough: Option[];
 	nutritionalValues: nutritionalValueTypes
 }

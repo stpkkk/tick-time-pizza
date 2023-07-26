@@ -8,11 +8,7 @@ import { RiCloseFill } from "react-icons/ri";
 
 const ImageNotice: React.FC = () => {
   const dispatch = useAppDispatch();
-
-  const isTooltipOpen = useAppSelector(
-    state => state.menuReducer.isTooltipOpen
-  );
-
+	const isTooltipOpen = useAppSelector((state) => state.menuReducer.isTooltipOpen);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClickExclamation = () => {
@@ -35,31 +31,28 @@ const ImageNotice: React.FC = () => {
     };
   }, []);
 
-  return isTooltipOpen ? (
-    <div ref={modalRef} className="absolute top-0 left-0 w-full">
-      <div
-        className="absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary"
-        onClick={handleClickExclamation}
-      >
+	const TooltipContent = (
+		<>
+			<div className="absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary" onClick={handleClickExclamation}>
         <AiOutlineExclamationCircle size={18} />
       </div>
       <div className="absolute -top-2 -left-2 z-10 bg-white drop-shadow-custom rounded-2xl py-6 px-9 max-w-[296px]">
-        <div
-          className="absolute top-0 right-0 p-2 cursor-pointer    text-grayDark hover:text-primary"
-          onClick={handleClickExclamation}
-        >
+				<div className="absolute top-0 right-0 p-2 cursor-pointer text-grayDark hover:text-primary" onClick={handleClickExclamation}>
           <RiCloseFill size={24} />
         </div>
         <p className="text-[12px] leading-[15px]">
           Изображение в рекламе и внешний вид продукта могут отличаться
         </p>
       </div>
+		</>
+	)
+
+	return isTooltipOpen ? (
+		<div ref={modalRef} className="absolute top-0 left-0 w-full">
+			{TooltipContent}
     </div>
   ) : (
-    <div
-      className="absolute top-0 left-0 z-20 cursor-pointer   text-grayDark hover:text-primary"
-      onClick={handleClickExclamation}
-    >
+			<div className="absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary" onClick={handleClickExclamation}>
       <AiOutlineExclamationCircle size={18} />
     </div>
   );

@@ -34,12 +34,14 @@ const menuSlice = createSlice({
     setHoveredItemId: (state, action: PayloadAction<number | null>) => {
       state.hoveredItemId = action.payload;
     },
+
     setClickedMenuItem: (
       state,
       action: PayloadAction<MenuItemTypes | null>
     ) => {
       state.clickedMenuItem = action.payload;
     },
+
     setSelectedCategory: (state, action: PayloadAction<Option | null>) => {
       state.selectedCategory = action.payload;
     },
@@ -48,32 +50,39 @@ const menuSlice = createSlice({
     toggleModal: state => {
       state.isModalOpen = !state.isModalOpen;
 			state.isAllIngredients = false;
-
     },
+
     toggleTooltip: state => {
       state.isTooltipOpen = !state.isTooltipOpen;
     },
+
     setSelectedSize: (state, action: PayloadAction<Option | null>) => {
       state.selectedSize = action.payload;
     },
+
     setSelectedDough: (state, action: PayloadAction<Option | null>) => {
       state.selectedDough = action.payload;
     },
+
 		setRemovedIngredients: (state, action: PayloadAction<removedIngredientsTypes[]>) => {
 			state.removedIngredients = action.payload
 		},
+
     initializeDefaultValues: state => {
       if (state.clickedMenuItem) {
         state.selectedSize = state.clickedMenuItem.sizes[0];
         state.selectedDough = state.clickedMenuItem.dough[1];
       }
     },
+
     increment: state => {
       state.value += 1;
     },
+
     decrement: state => {
       if (state.value > 1) state.value -= 1;
     },
+
 		setAllIngredients: state => {
 			state.isAllIngredients = true
 		},

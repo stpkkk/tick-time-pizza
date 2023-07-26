@@ -6,7 +6,7 @@ import { RadioGroupOption } from "@/components/common"
 import { RadioGroup } from "@headlessui/react"
 
 import ModalSubTitle from "./ModalSubTitle"
-import { removedIngredientsTypes } from "@/types"
+import { Option } from "@/types"
 
 const IngredientsRemove: React.FC = () => {
 	const dispatch = useAppDispatch()
@@ -15,7 +15,7 @@ const IngredientsRemove: React.FC = () => {
 		(state) => state.menuReducer
 	)
 
-	const handleIngredientChange = (ingredient: removedIngredientsTypes) => {
+	const handleIngredientChange = (ingredient: Option) => {
 		const updatedIngredients = removedIngredients.includes(ingredient)
 			? removedIngredients.filter((item) => item !== ingredient)
 			: [...removedIngredients, ingredient]
