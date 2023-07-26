@@ -15,7 +15,7 @@ import NutritionalValue from "./NutritionalValue";
 
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { clickedMenuItem, value } = useAppSelector(state => state.menuReducer);
+	const { clickedMenuItem, counterValue } = useAppSelector(state => state.menuReducer);
   const modalRef = useRef<HTMLDivElement>(null);
   const modalLeft = useRef<HTMLDivElement>(null);
   const [modalHeight, setModalHeight] = useState<number>(0);
@@ -54,7 +54,7 @@ const Modal: React.FC = () => {
   };
 
   const totalPrice = clickedMenuItem?.price
-    ? clickedMenuItem?.price * value
+		? clickedMenuItem?.price * counterValue
     : "";
 
   return (

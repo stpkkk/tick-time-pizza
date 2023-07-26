@@ -48,6 +48,7 @@ import pineapple from "../public/assets/images/adds-pineapple.png";
 import cheeseBlue from "../public/assets/images/adds-cheese-blue.png";
 import cheeseFeta from "../public/assets/images/adds-cheese-feta.png";
 import sauce from "../public/assets/images/adds-sauce.png";
+import pepperoniAdds from "../public/assets/images/adds-pepperoni.png";
 
 import bear from "../public/assets/images/cat-bear.webp";
 import fire from "../public/assets/images/cat-fire.webp";
@@ -236,7 +237,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -411,7 +412,7 @@ export const menu: MenuItemTypes[] = [
       },
       {
         id: 14,
-        image: porkRoast,
+				image: roastPork,
         name: "Буженина",
         weight: 30,
         price: 45,
@@ -860,7 +861,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -1452,7 +1453,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -1706,7 +1707,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -1821,7 +1822,7 @@ export const menu: MenuItemTypes[] = [
         weight: 50,
         price: 65,
       },
-      { id: 6, image: pepperoni, name: "Пепперони", weight: 37, price: 65 },
+			{ id: 6, image: pepperoniAdds, name: "Пепперони", weight: 37, price: 65 },
       { id: 7, image: bacon, name: "Бекон", weight: 32, price: 55 },
       {
         id: 8,
@@ -1939,7 +1940,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 6, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 7, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 7, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 8, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 9,
@@ -2051,7 +2052,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -2291,7 +2292,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -2663,7 +2664,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -2799,7 +2800,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       { id: 9, image: bacon, name: "Бекон", weight: 23, price: 45 },
       {
         id: 10,
@@ -2908,7 +2909,7 @@ export const menu: MenuItemTypes[] = [
         price: 55,
       },
       { id: 7, image: ham, name: "Ветчина", weight: 21, price: 45 },
-      { id: 8, image: pepperoni, name: "Пепперони", weight: 26, price: 45 },
+			{ id: 8, image: pepperoniAdds, name: "Пепперони", weight: 26, price: 45 },
       {
         id: 9,
         image: huntingSausages,

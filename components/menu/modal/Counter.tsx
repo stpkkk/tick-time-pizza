@@ -4,7 +4,7 @@ import { decrement, increment } from "@/redux/features/menuSlice";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 const Counter: React.FC = () => {
-  const value = useAppSelector(state => state.menuReducer.value);
+	const counterValue = useAppSelector(state => state.menuReducer.counterValue);
 
   const dispatch = useAppDispatch();
 
@@ -12,14 +12,14 @@ const Counter: React.FC = () => {
     <>
       <button
         className={`${
-          value <= 1 ? "text-gray" : "text-grayDark hover:text-primary"
+					counterValue <= 1 ? "text-gray" : "text-grayDark hover:text-primary"
         } p-2`}
         type="button"
         onClick={() => dispatch(decrement())}
       >
         <AiOutlineMinusCircle size={18} />
       </button>
-      <span className="whitespace-nowrap">{value} шт.</span>
+			<span className="whitespace-nowrap">{counterValue} шт.</span>
       <button
         className="text-grayDark hover:text-primary p-2"
         type="button"

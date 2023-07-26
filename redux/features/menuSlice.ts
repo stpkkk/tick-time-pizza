@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { MenuItemTypes, Option, removedIngredientsTypes } from "@/types";
+import { MenuItemTypes, Option } from "@/types";
 
 export interface HeaderState {
   isModalOpen: boolean;
@@ -8,9 +8,9 @@ export interface HeaderState {
   clickedMenuItem: MenuItemTypes | null;
   selectedSize: Option | null;
   selectedDough: Option | null;
-	removedIngredients: removedIngredientsTypes[];
+	removedIngredients: Option[];
   selectedCategory: Option | null;
-  value: number;
+	counterValue: number;
 	isAllIngredients: boolean
 }
 
@@ -23,7 +23,7 @@ const initialState: HeaderState = {
   selectedSize: null,
   selectedDough: null,
 	removedIngredients: [],
-  value: 1,
+	counterValue: 1,
 	isAllIngredients: false,
 };
 
@@ -64,7 +64,7 @@ const menuSlice = createSlice({
       state.selectedDough = action.payload;
     },
 
-		setRemovedIngredients: (state, action: PayloadAction<removedIngredientsTypes[]>) => {
+		setRemovedIngredients: (state, action: PayloadAction<Option[]>) => {
 			state.removedIngredients = action.payload
 		},
 
@@ -76,11 +76,11 @@ const menuSlice = createSlice({
     },
 
     increment: state => {
-      state.value += 1;
+			state.counterValue += 1;
     },
 
     decrement: state => {
-      if (state.value > 1) state.value -= 1;
+			if (state.counterValue > 1) state.counterValue -= 1;
     },
 
 		setAllIngredients: state => {
