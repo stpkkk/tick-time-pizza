@@ -15,7 +15,7 @@ module.exports = {
         yellow: "#ffd600",
         yellowLight: "#ffe24b",
         grayLight: "#f3f6f9",
-        gray: "#EAEFF3",
+				gray: "#eaeff3",
         grayDark: "#a0adba",
       },
       dropShadow: {

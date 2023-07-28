@@ -8,6 +8,7 @@ export interface additionalIngredientsTypes {
   weight: number;
   price: number;
 	amount?: number
+	maxAmount: number
 }
 
 export interface nutritionalValueTypes {

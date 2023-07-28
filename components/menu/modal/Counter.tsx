@@ -2,13 +2,14 @@ import React from "react"
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 interface CounterProps {
+	value: number
 	initialValue: number
+	maxValue?: number
 	handleDecrement: () => void
 	handleIncrement: () => void
-	value: number
 }
 
-const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handleIncrement, value }) => {
+const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handleIncrement, value, maxValue }) => {
 
 	const counterValue = value || initialValue
 
@@ -16,8 +17,8 @@ const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handle
     <>
       <button
         className={`${
-					counterValue <= initialValue ? "text-gray" : "text-grayDark hover:text-primary"
-        } p-2`}
+					counterValue <= initialValue ? "text-grayDark" : "opacity-100 hover:text-primary"
+					} text-grayDark  p-2`}
         type="button"
 				onClick={() => handleDecrement()}
       >
@@ -25,7 +26,7 @@ const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handle
       </button>
 			<span className="whitespace-nowrap">{counterValue} шт.</span>
       <button
-        className="text-grayDark hover:text-primary p-2"
+				className={`${counterValue >= (maxValue || 100) ? "text-grayDark" : "text-grayDark hover:text-primary"} text-grayDark p-2"`}
         type="button"
 				onClick={() => handleIncrement()}
       >

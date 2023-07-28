@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
-
-import Counter from "./Counter";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { decrementIngredientAmount, incrementIngredientAmount } from "@/redux/features/menuSlice"
+import Image from "next/image";
+
+import Counter from "./Counter"
 import { additionalIngredientsTypes } from '@/types'
 
 type IngredientsSelectItemProps = {
@@ -24,7 +24,9 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 	};
 
 	const handleIncrement = () => {
+		if (ingredientAmount < ingredient.maxAmount) {
 		dispatch(incrementIngredientAmount({ ingredient }))
+		}
 	};
 
   return (
@@ -49,6 +51,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 						handleIncrement={handleIncrement}
 						handleDecrement={handleDecrement}
 						initialValue={0}
+						maxValue={ingredient.maxAmount}
 						value={ingredientAmount}
 					/>
         </div>
