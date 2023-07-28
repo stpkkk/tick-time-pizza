@@ -29,7 +29,7 @@ const ImageNotice: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.classList.remove("overflow-hidden");
     };
-  }, []);
+	}, [handleClickOutside]);
 
 	const TooltipContent = (
 		<>

@@ -2,10 +2,10 @@ import React from "react"
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 interface CounterProps {
-	id: number
+	id?: number  
 	initialValue: number
-	handleDecrement: (id: number) => void
-	handleIncrement: (id: number) => void
+	handleDecrement: (id?: number) => void
+	handleIncrement: (id?: number) => void
 	value: number
 }
 

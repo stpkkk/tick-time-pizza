@@ -19,7 +19,7 @@ const ItemSizeSelection: React.FC = () => {
 
   useEffect(() => {
     dispatch(initializeDefaultValues());
-  }, []);
+	}, [dispatch]);
 
   return (
     <>

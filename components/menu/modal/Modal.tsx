@@ -26,7 +26,7 @@ const Modal: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.classList.remove("overflow-hidden");
     };
-  }, []);
+	}, [handleClickOutside]);
 
   const handleClick = () => {
     dispatch(toggleModal());
