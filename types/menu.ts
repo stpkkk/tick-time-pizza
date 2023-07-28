@@ -7,6 +7,7 @@ export interface additionalIngredientsTypes {
   name: string;
   weight: number;
   price: number;
+	amount: number
 }
 
 export interface nutritionalValueTypes {

@@ -3,26 +3,28 @@ import Image from "next/image";
 
 import Counter from "./Counter";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { decrementIngredientAmount, incrementIngredientAmount } from '@/redux/features/menuSlice'
+import { decrementIngredientAmount, incrementIngredientAmount } from "@/redux/features/menuSlice"
 import { additionalIngredientsTypes } from '@/types'
 
 type IngredientsSelectItemProps = {
 	ingredient: additionalIngredientsTypes
-}
-
+};
 
 const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredient }) => {
 	const dispatch = useAppDispatch()
-	const ingredientAmount = useAppSelector((state) => state.menuReducer.additionalIngredients[ingredient.id])
+	const ingredientItem = useAppSelector((state) =>
+		state.menuReducer.additionalIngredients.find((item) => item.id === ingredient.id)
+	)
+	const ingredientAmount = ingredientItem?.amount || 0;
 
-	const handleDecrement = (id: number) => {
+	const handleDecrement = () => {
 		if (ingredientAmount > 0) {
-			dispatch(decrementIngredientAmount({ itemId: id }))
+			dispatch(decrementIngredientAmount({ ingredient }))
 		}
-	}
+	};
 
-	const handleIncrement = (id: number) => {
-		dispatch(incrementIngredientAmount({ itemId: id }))
+	const handleIncrement = () => {
+		dispatch(incrementIngredientAmount({ ingredient }))
 	};
 
   return (
@@ -44,11 +46,10 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
         </div>
         <div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
 					<Counter
-						handleIncrement={() => handleIncrement(ingredient.id)}
-						handleDecrement={() => handleDecrement(ingredient.id)}
+						handleIncrement={handleIncrement}
+						handleDecrement={handleDecrement}
 						initialValue={0}
 						value={ingredientAmount}
-						id={ingredient.id}
 					/>
         </div>
       </div>
@@ -56,4 +57,4 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
   );
 };
 
-export default IngredientsSelectItem;
+export default IngredientsSelectItem
