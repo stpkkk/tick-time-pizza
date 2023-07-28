@@ -98,10 +98,10 @@ const menuSlice = createSlice({
 			const { ingredient } = action.payload
 			const existingIngredient = state.additionalIngredients.find(
 				(item) => item.id === ingredient.id
-			)
+			);
 
 			if (existingIngredient) {
-				existingIngredient.amount += 1
+				existingIngredient.amount = (existingIngredient.amount || 0) + 1
 			} else {
 				state.additionalIngredients.push({ ...ingredient, amount: 1 })
 			}
@@ -114,9 +114,9 @@ const menuSlice = createSlice({
 			const { ingredient } = action.payload
 			const existingIngredient = state.additionalIngredients.find(
 				(item) => item.id === ingredient.id
-			)
+			);
 
-			if (existingIngredient && existingIngredient.amount > 0) {
+			if (existingIngredient && existingIngredient.amount && existingIngredient.amount > 0) {
 				existingIngredient.amount -= 1
 				if (existingIngredient.amount === 0) {
 					state.additionalIngredients = state.additionalIngredients.filter(

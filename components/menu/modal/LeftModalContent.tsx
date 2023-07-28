@@ -14,7 +14,7 @@ interface LeftModalContentProps {
 
 const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) => {
 	const dispatch = useAppDispatch()
-	const { clickedMenuItem, itemAmount } = useAppSelector(state => state.menuReducer)
+	const { clickedMenuItem, itemAmount, additionalIngredients } = useAppSelector(state => state.menuReducer)
 
 	const modalLeft = useRef<HTMLDivElement>(null)
 
@@ -41,8 +41,10 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 		}
 	}
 
+	const additionalIngredientsPrice = additionalIngredients.reduce((acc, ing) => acc + (ing.price * (ing.amount || 1)) * itemAmount, 0)
+
 	const totalPrice = clickedMenuItem?.price
-		? clickedMenuItem?.price * itemAmount
+		? clickedMenuItem?.price * itemAmount + additionalIngredientsPrice
 		: ""
 
 	return (
