@@ -9,9 +9,12 @@ export interface HeaderState {
   selectedSize: Option | null;
   selectedDough: Option | null;
 	removedIngredients: Option[];
-  selectedCategory: Option | null;
-	counterValue: number;
+	selectedCategory: Option | null;
 	isAllIngredients: boolean
+	[itemId: number]: number
+	itemAmount: number
+	ingredientAmount: number
+	additionalIngredients: { [itemId: number]: number }
 }
 
 const initialState: HeaderState = {
@@ -23,8 +26,10 @@ const initialState: HeaderState = {
   selectedSize: null,
   selectedDough: null,
 	removedIngredients: [],
-	counterValue: 1,
 	isAllIngredients: false,
+	itemAmount: 1,
+	ingredientAmount: 0,
+	additionalIngredients: {},
 };
 
 const menuSlice = createSlice({
@@ -68,6 +73,10 @@ const menuSlice = createSlice({
 			state.removedIngredients = action.payload
 		},
 
+		setAllIngredients: state => {
+			state.isAllIngredients = true
+		},
+
     initializeDefaultValues: state => {
       if (state.clickedMenuItem) {
         state.selectedSize = state.clickedMenuItem.sizes[0];
@@ -75,16 +84,29 @@ const menuSlice = createSlice({
       }
     },
 
-    increment: state => {
-			state.counterValue += 1;
+		// Counters Actions
+		incrementItemAmount: (state, action: PayloadAction<number>) => {
+			state.itemAmount += 1
     },
 
-    decrement: state => {
-			if (state.counterValue > 1) state.counterValue -= 1;
-    },
+		decrementItemAmount: (state, action: PayloadAction<number>) => {
+			if (state.itemAmount > 1) state.itemAmount -= 1
+		},
 
-		setAllIngredients: state => {
-			state.isAllIngredients = true
+		incrementIngredientAmount: (state, action: PayloadAction<{ itemId: number }>) => {
+			const { itemId } = action.payload
+			if (state.additionalIngredients[itemId]) {
+				state.additionalIngredients[itemId] += 1
+			} else {
+				state.additionalIngredients[itemId] = 1
+			}
+		},
+
+		decrementIngredientAmount: (state, action: PayloadAction<{ itemId: number }>) => {
+			const { itemId } = action.payload
+			if (state.additionalIngredients[itemId] && state.additionalIngredients[itemId] > 0) {
+				state.additionalIngredients[itemId] -= 1
+			}
 		},
   },
 });
@@ -98,10 +120,14 @@ export const {
 	setRemovedIngredients,
   setSelectedCategory,
   initializeDefaultValues,
-  increment,
-  decrement,
+	incrementItemAmount,
+	decrementItemAmount,
+	incrementIngredientAmount,
+	decrementIngredientAmount,
   toggleTooltip,
 	setAllIngredients,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;
+
+

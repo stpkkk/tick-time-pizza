@@ -23,7 +23,7 @@ export interface menuCategoriesTypes {
 }
 
 export interface MenuItemTypes {
-  id: number;
+	id: number;
   title: string;
   image: string | StaticImageData;
   ingredients: string;

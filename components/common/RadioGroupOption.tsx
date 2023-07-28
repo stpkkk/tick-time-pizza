@@ -3,8 +3,6 @@ import React from "react";
 import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
 
-import { Option } from "@/types";
-
 export interface RadioGroupOptionProps {
 	option: any;
   className: string;

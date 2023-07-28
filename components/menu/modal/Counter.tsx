@@ -1,21 +1,26 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { decrement, increment } from "@/redux/features/menuSlice";
+import React from "react"
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
-const Counter: React.FC = () => {
-	const counterValue = useAppSelector(state => state.menuReducer.counterValue);
+interface CounterProps {
+	id: number
+	initialValue: number
+	handleDecrement: (id: number) => void
+	handleIncrement: (id: number) => void
+	value: number
+}
 
-  const dispatch = useAppDispatch();
+const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handleIncrement, value, id }) => {
+
+	const counterValue = value || initialValue
 
   return (
     <>
       <button
         className={`${
-					counterValue <= 1 ? "text-gray" : "text-grayDark hover:text-primary"
+					counterValue <= initialValue ? "text-gray" : "text-grayDark hover:text-primary"
         } p-2`}
         type="button"
-        onClick={() => dispatch(decrement())}
+				onClick={() => handleDecrement(id)}
       >
         <AiOutlineMinusCircle size={18} />
       </button>
@@ -23,7 +28,7 @@ const Counter: React.FC = () => {
       <button
         className="text-grayDark hover:text-primary p-2"
         type="button"
-        onClick={() => dispatch(increment())}
+				onClick={() => handleIncrement(id)}
       >
         <AiOutlinePlusCircle size={18} />
       </button>
@@ -31,4 +36,4 @@ const Counter: React.FC = () => {
   );
 };
 
-export default Counter;
+export default Counter

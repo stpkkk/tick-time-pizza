@@ -7,6 +7,8 @@ import IngredientsSelectItem from "./IngredientsSelectItem";
 import IngredientsRemove from "./IngredientsRemove";
 import NutritionalValue from "./NutritionalValue";
 import ModalSubTitle from "./ModalSubTitle";
+import LeftModalContent from "./LeftModalContent"
+import RightModalContent from "./RightModalContent";
 
 export {
   Modal,
@@ -18,4 +20,6 @@ export {
   IngredientsRemove,
   NutritionalValue,
   ModalSubTitle,
+	LeftModalContent,
+	RightModalContent
 };

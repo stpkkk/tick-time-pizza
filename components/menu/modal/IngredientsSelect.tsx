@@ -26,7 +26,7 @@ const IngredientsSelect: React.FC = () => {
         {clickedMenuItem?.additionalIngredients
           .slice(0, sliceTo)
           .map(ingredient => (
-            <IngredientsSelectItem {...ingredient} key={ingredient.id} />
+						<IngredientsSelectItem ingredient={ingredient} key={ingredient.id} />
           ))}
       </ul>
       {showMore ? (
