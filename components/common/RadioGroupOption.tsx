@@ -4,10 +4,11 @@ import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
 
 export interface RadioGroupOptionProps {
-	option: any;
-  className: string;
+	option: any
+	className: string
 	isChecked?: boolean
 	crossed?: string
+	isDisable?: boolean
 }
 
 const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
@@ -15,17 +16,19 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
   className,
   isChecked,
 	crossed,
+	isDisable
 }) => {
-  const backgroundClass = isChecked
+	const backgroundClass = isChecked 
 		? "bg-yellow no-underline hover:bg-yellowLight"
 		: "bg-grayLight no-underline hover:bg-gray";
 
   return (
     <RadioGroup.Option
-      key={option.id}
+			disabled={isDisable}
       value={option}
-			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px]`}
-		>
+			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${isDisable && "pointer-events-none text-grayDark"}`}
+		> 
+
 			<div className="flex justify-between items-center gap-2">
 				{option.image && (
 					<div className="w-5 h-5">

@@ -21,6 +21,9 @@ const ItemSizeSelection: React.FC = () => {
     dispatch(initializeDefaultValues());
 	}, [dispatch]);
 
+	const sizeToDisable = clickedMenuItem?.sizes.find(item => item.name === 23)
+	const doughToDisable = clickedMenuItem?.dough.find(item => item.name === "Тонкое")
+
   return (
     <>
       <div>
@@ -40,6 +43,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={size.id}
                 option={size}
                 isChecked={selectedSize === size}
+								isDisable={selectedDough === doughToDisable && size === sizeToDisable}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}
@@ -55,6 +59,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={dough.id}
                 option={dough}
                 isChecked={selectedDough === dough}
+								isDisable={sizeToDisable === selectedSize && selectedDough !== dough}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}
