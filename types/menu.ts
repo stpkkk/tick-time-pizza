@@ -4,7 +4,7 @@ import { Option } from "./radio-option";
 export interface additionalIngredientsTypes {
   id: number;
   image: string | StaticImageData;
-  name: string;
+	name: string;
   weight: number;
   price: number;
 	amount?: number
@@ -29,6 +29,11 @@ export interface PricesType {
 	price: number
 }
 
+export interface WeightType {
+	id?: number
+	weight?: number | null
+}
+
 export interface MenuItemTypes {
 	id: number;
   title: string;
@@ -41,4 +46,5 @@ export interface MenuItemTypes {
 	sizes: Option[]
 	dough: Option[];
 	nutritionalValues: nutritionalValueTypes
+	weightItem: WeightType[]
 }

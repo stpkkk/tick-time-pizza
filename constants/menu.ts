@@ -226,6 +226,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 31.37,
       calories: 237.06,
     },
+		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 855 }, { id: 3, weight: 530 }, { id: 4, weight: 765 }]
   },
   {
     id: 1,
@@ -415,6 +416,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.41,
       calories: 291.98,
     },
+		weightItem: [{ id: 0, weight: 360 }, { id: 1, weight: 540 }, { id: 2, weight: 730 }, { id: 3, weight: 450 }, { id: 4, weight: 640 }]
   },
   {
     id: 2,
@@ -570,6 +572,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.18,
       calories: 295.5,
     },
+		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 570 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
   },
   {
     id: 3,
@@ -748,6 +751,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.85,
       calories: 301.8,
     },
+		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 500 }, { id: 4, weight: 700 }]
   },
   {
     id: 4,
@@ -886,6 +890,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.88,
       calories: 263.26,
     },
+		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 630 }, { id: 2, weight: 860 }, { id: 3, weight: 480 }, { id: 4, weight: 780 }]
   },
   {
     id: 5,
@@ -1017,6 +1022,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.92,
       calories: 316.47,
     },
+		weightItem: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 610 }]
   },
   {
     id: 6,
@@ -1177,6 +1183,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.93,
       calories: 296.61,
     },
+		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 550 }, { id: 2, weight: 750 }, { id: 3, weight: 460 }, { id: 4, weight: 660 }]
   },
   {
     id: 7,
@@ -1334,6 +1341,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.77,
       calories: 321.35,
     },
+		weightItem: [{ id: 0, weight: 382 }, { id: 1, weight: 570 }, { id: 2, weight: 770 }, { id: 3, weight: 480 }, { id: 4, weight: 680 }]
   },
   {
     id: 8,
@@ -1505,6 +1513,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.86,
       calories: 323.37,
     },
+		weightItem: [{ id: 0, weight: 375 }, { id: 1, weight: 530 }, { id: 2, weight: 710 }, { id: 3, weight: 450 }, { id: 4, weight: 620 }]
   },
   {
     id: 9,
@@ -1644,6 +1653,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.39,
       calories: 294.17,
     },
+		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 760 }, { id: 3, weight: 480 }, { id: 4, weight: 670 }]
   },
   {
     id: 10,
@@ -1768,6 +1778,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.09,
       calories: 268.95,
     },
+		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 550 }, { id: 2, weight: 770 }, { id: 3, weight: 460 }, { id: 4, weight: 680 }]
   },
   {
     id: 11,
@@ -1939,6 +1950,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.77,
       calories: 242.68,
     },
+		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 850 }, { id: 3, weight: 530 }, { id: 4, weight: 770 }]
   },
   {
     id: 12,
@@ -2089,6 +2101,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 36.52,
       calories: 280.95,
     },
+		weightItem: [{ id: 0, weight: 350 }, { id: 1, weight: 510 }, { id: 2, weight: 690 }, { id: 3, weight: 410 }, { id: 4, weight: 600 }]
   },
   {
     id: 13,
@@ -2241,6 +2254,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.97,
       calories: 313.43,
     },
+		weightItem: [{ id: 0, weight: 375 }, { id: 1, weight: 560 }, { id: 2, weight: 760 }, { id: 3, weight: 470 }, { id: 4, weight: 670 }]
   },
   {
     id: 14,
@@ -2248,7 +2262,7 @@ export const menu: MenuItemTypes[] = [
     image: fourSeasons,
     ingredients:
       "Фирменный томатный соус, моцарелла, пепперони, ветчина, охотничьи колбаски, буженина из свинины, сыр блю чиз, сыр фета, томаты",
-		prices: [{ id: 0, price: 579 }, { id: 1, price: 739 }],
+		prices: [{ id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2374,8 +2388,9 @@ export const menu: MenuItemTypes[] = [
       { id: 7, name: "Сыр Блю Чиз" },
     ],
     sizes: [
-      { id: 0, name: 28 },
-      { id: 1, name: 33 },
+			{ id: 0, name: null },
+			{ id: 1, name: 28 },
+			{ id: 2, name: 33 },
     ],
     dough: [
       { id: 0, name: "Тонкое" },
@@ -2387,6 +2402,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.15,
       calories: 277.39,
     },
+		weightItem: [{ id: 1, weight: 530 }, { id: 2, weight: 700 }, { id: 3, weight: 450 }, { id: 4, weight: 610 }]
   },
   {
     id: 15,
@@ -2530,6 +2546,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.12,
       calories: 310.17,
     },
+		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
   },
   {
     id: 16,
@@ -2690,6 +2707,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 31.21,
       calories: 285.12,
     },
+		weightItem: [{ id: 0, weight: 390 }, { id: 1, weight: 600 }, { id: 2, weight: 810 }, { id: 3, weight: 510 }, { id: 4, weight: 730 }]
   },
   {
     id: 17,
@@ -2838,6 +2856,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.63,
       calories: 321.23,
     },
+		weightItem: [{ id: 0, weight: 395 }, { id: 1, weight: 590 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
   },
   {
     id: 18,
@@ -2983,6 +3002,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.25,
       calories: 269.56,
     },
+		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 780 }, { id: 3, weight: 480 }, { id: 4, weight: 690 }]
   },
   {
     id: 19,
@@ -3155,6 +3175,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.54,
       calories: 310.48,
     },
+		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
   },
   {
     id: 20,
@@ -3313,6 +3334,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.66,
       calories: 342.65,
     },
+		weightItem: [{ id: 0, weight: 360 }, { id: 1, weight: 530 }, { id: 2, weight: 730 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
   },
   {
     id: 21,
@@ -3486,6 +3508,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.49,
       calories: 324.23,
     },
+		weightItem: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 620 }]
   },
   {
     id: 22,
@@ -3629,6 +3652,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 30.54,
       calories: 269.08,
     },
+		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 490 }, { id: 4, weight: 690 }]
   },
   {
     id: 23,
@@ -3823,5 +3847,6 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.18,
       calories: 261.75,
     },
+		weightItem: [{ id: 0, weight: 350 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
   },
 ];

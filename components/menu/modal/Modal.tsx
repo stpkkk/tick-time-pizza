@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react"
-import { toggleModal } from "@/redux/features/menuSlice";
+import { initializeDefaultValues, toggleModal } from "@/redux/features/menuSlice"
 import { useAppDispatch } from "@/redux/hooks"
 import { RiCloseFill } from "react-icons/ri";
 
@@ -28,10 +28,13 @@ const Modal: React.FC = () => {
     };
 	}, [handleClickOutside]);
 
+	useEffect(() => {
+		dispatch(initializeDefaultValues())
+	}, [dispatch]);
+
   const handleClick = () => {
     dispatch(toggleModal());
   };
-
 
   return (
     <div className="relative z-10">

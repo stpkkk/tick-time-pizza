@@ -22,7 +22,7 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
 		? "bg-yellow no-underline hover:bg-yellowLight"
 		: "bg-grayLight no-underline hover:bg-gray";
 
-  return (
+	return option.name !== null && (
     <RadioGroup.Option
 			disabled={isDisable}
       value={option}

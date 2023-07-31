@@ -52,10 +52,7 @@ const menuSlice = createSlice({
     // Modal
     toggleModal: state => {
       state.isModalOpen = !state.isModalOpen;
-			state.isAllIngredients = false;
-			state.removedIngredients = []
-			state.additionalIngredients = []
-			state.itemAmount = 1
+
     },
 
     toggleTooltip: state => {
@@ -78,12 +75,21 @@ const menuSlice = createSlice({
 			state.isAllIngredients = true
 		},
 
-    initializeDefaultValues: state => {
-      if (state.clickedMenuItem) {
-        state.selectedSize = state.clickedMenuItem.sizes[0];
-        state.selectedDough = state.clickedMenuItem.dough[1];
-      }
-    },
+		initializeDefaultValues: state => {
+			if (state.clickedMenuItem) {
+				state.selectedSize = state.clickedMenuItem.sizes[0]
+				state.selectedDough = state.clickedMenuItem.dough[1]
+				state.isAllIngredients = false
+				state.removedIngredients = []
+				state.additionalIngredients = []
+				state.itemAmount = 1
+			}
+
+			if (state.selectedSize?.name === null) {
+				state.selectedSize = state.clickedMenuItem?.sizes[1] || null
+				state.selectedDough = state.clickedMenuItem?.dough[0] || null
+			}
+		},
 
 		// Counters Actions
 		incrementItemAmount: (state, action: PayloadAction<number>) => {
