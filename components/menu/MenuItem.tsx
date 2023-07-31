@@ -36,6 +36,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
   };
 
   const isItemHovered = hoveredItemId === item.id;
+	const starterPrice = item.prices.find(item => item.id === 0)?.price
 
   return (
     <li
@@ -65,7 +66,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
         </div>
       </div>
       <div className="flex flex_between">
-        <span className="font-semibold">{`от ${item.price} ₽`}</span>
+				<span className="font-semibold">{`от ${starterPrice} ₽`}</span>
         <button className="btn_yellow max-w-[112px]" type="button">
           Выбрать
         </button>
@@ -80,7 +81,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
       <div className="absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1">
         {item.categories?.map(cat => (
           <Image
-            src={cat.image ? cat.image : ""}
+						src={cat.image ? cat.image : "Картинка не загрузилась"}
             alt={cat.title}
             width={16}
             height={16}

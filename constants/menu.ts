@@ -61,7 +61,7 @@ export const menu: MenuItemTypes[] = [
     image: chickenBurger,
     ingredients:
       "Копченая курица, моцарелла, маринованные огурцы, болгарский перец, красный лук, соус бургер Heinz, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -233,7 +233,7 @@ export const menu: MenuItemTypes[] = [
     image: italian,
     ingredients:
       "Пепперони, два вида сыра моцареллы, шампиньоны, фирменный томатный соус, базилик, орегано, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -422,7 +422,7 @@ export const menu: MenuItemTypes[] = [
     image: porkRoast,
     ingredients:
       "Буженина из свинины, моцарелла, маринованные огурцы, лук фри, лук красный, майонезный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -577,7 +577,7 @@ export const menu: MenuItemTypes[] = [
     image: meatHit,
     ingredients:
       "Ветчина, буженина из свинины, охотничьи колбаски, моцарелла, фирменный томатный соус, майонезный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -755,7 +755,7 @@ export const menu: MenuItemTypes[] = [
     image: chickenSausages,
     ingredients:
       "Копченая курица, охотничьи колбаски, моцарелла, маринованные огурцы, томаты, красный лук, свежий укроп, майонезный соус, кетчуп, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -893,7 +893,7 @@ export const menu: MenuItemTypes[] = [
     image: chickenBlueCheese,
     ingredients:
       "Много курицы, моцарелла, сыр блю чиз с голубой плесенью, соус ранч, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1024,7 +1024,7 @@ export const menu: MenuItemTypes[] = [
     image: classic,
     ingredients:
       "Ветчина, пепперони, моцарелла, пармезан, шампиньоны, фирменный соус томатный, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1184,7 +1184,7 @@ export const menu: MenuItemTypes[] = [
     image: julien,
     ingredients:
       "Бекон, копчёная курица, моцарелла, чеддер, свежие шампиньоны, сливки, укроп, майонезный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1341,7 +1341,7 @@ export const menu: MenuItemTypes[] = [
     image: hamBacon,
     ingredients:
       "Ветчина, бекон, моцарелла, чеддер, красный лук, соус цезарь, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1512,7 +1512,7 @@ export const menu: MenuItemTypes[] = [
     image: americana,
     ingredients:
       "Бекон, моцарелла, чеддер, маринованные огурцы, фирменный томатный соус, медово - горчичный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1651,7 +1651,7 @@ export const menu: MenuItemTypes[] = [
     image: caesar,
     ingredients:
       "Копчёная курица, салат айсберг, моцарелла, пармезан, томаты, соус цезарь, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1775,7 +1775,7 @@ export const menu: MenuItemTypes[] = [
     image: donKebab,
     ingredients:
       "Копченая курица, моцарелла, свежие огурцы, томаты, красный лук, салат айсберг, свежий укроп, кетчуп, майонезный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -1946,7 +1946,7 @@ export const menu: MenuItemTypes[] = [
     image: hawaii,
     ingredients:
       "Много бекона, моцарелла, ананасы, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2096,7 +2096,7 @@ export const menu: MenuItemTypes[] = [
     image: hunter,
     ingredients:
       "Пепперони, охотничьи колбаски, моцарелла, свежие шампиньоны, свежий укроп, соус ранч, фирменный томатный соус, тест",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2248,7 +2248,7 @@ export const menu: MenuItemTypes[] = [
     image: fourSeasons,
     ingredients:
       "Фирменный томатный соус, моцарелла, пепперони, ветчина, охотничьи колбаски, буженина из свинины, сыр блю чиз, сыр фета, томаты",
-    price: 579,
+		prices: [{ id: 0, price: 579 }, { id: 1, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2394,7 +2394,7 @@ export const menu: MenuItemTypes[] = [
     image: pepperoni,
     ingredients:
       "Много пепперони, много моцареллы, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2537,7 +2537,7 @@ export const menu: MenuItemTypes[] = [
     image: country,
     ingredients:
       "Ветчина, копчёная курица, моцарелла, зеленый лук, маринованные огурцы, майонезный соус, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2697,7 +2697,7 @@ export const menu: MenuItemTypes[] = [
     image: ranch,
     ingredients:
       "Копчёная курица, ветчина, моцарелла, томаты, чеснок, соус ранч, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2845,7 +2845,7 @@ export const menu: MenuItemTypes[] = [
     image: sizzlingBarbecue,
     ingredients:
       "Пепперони, моцарелла, красный лук, халапеньо, болгарский перец, фирменный томатный соус, барбекю соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -2990,7 +2990,7 @@ export const menu: MenuItemTypes[] = [
     image: carbonara,
     ingredients:
       "Много бекона, моцарелла, пармезан, томаты, сливки, свежий укроп, соус ранч, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -3162,7 +3162,7 @@ export const menu: MenuItemTypes[] = [
     image: fourCheeses,
     ingredients:
       "Моцарелла, сыр блю чиз с голубой плесенью, фета, пармезан, соус ранч, тесто",
-    price: 465,
+		prices: [{ id: 0, price: 465 }, { id: 1, price: 655 }, { id: 2, price: 875 }],
     additionalIngredients: [
       {
         id: 0,
@@ -3319,7 +3319,7 @@ export const menu: MenuItemTypes[] = [
     title: "Пицца Сырная",
     image: cheese,
     ingredients: "Моцарелла ,чеддер, фета, соус цезарь, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -3493,7 +3493,7 @@ export const menu: MenuItemTypes[] = [
     image: meat,
     ingredients:
       "Пепперони, ветчина, копчёная курица, моцарелла, майонезный соус, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,
@@ -3636,7 +3636,7 @@ export const menu: MenuItemTypes[] = [
     image: margarita,
     ingredients:
       "Очень много моцареллы, томаты, фирменный томатный соус, тесто",
-    price: 399,
+		prices: [{ id: 0, price: 399 }, { id: 1, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,

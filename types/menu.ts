@@ -24,12 +24,17 @@ export interface menuCategoriesTypes {
   image?: StaticImageData;
 }
 
+export interface PricesType {
+	id: number
+	price: number
+}
+
 export interface MenuItemTypes {
 	id: number;
   title: string;
   image: string | StaticImageData;
   ingredients: string;
-  price: number;
+	prices: PricesType[];
   additionalIngredients: additionalIngredientsTypes[];
 	removeIngredients: Option[];
   categories?: menuCategoriesTypes[];

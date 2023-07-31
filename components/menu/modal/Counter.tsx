@@ -17,7 +17,7 @@ const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handle
     <>
       <button
         className={`${
-					counterValue <= initialValue ? "text-grayDark" : "opacity-100 hover:text-primary"
+					counterValue <= initialValue ? "text-grayDark opacity-30" : "hover:text-primary"
 					} text-grayDark  p-2`}
         type="button"
 				onClick={() => handleDecrement()}
@@ -26,7 +26,7 @@ const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handle
       </button>
 			<span className="whitespace-nowrap">{counterValue} шт.</span>
       <button
-				className={`${counterValue >= (maxValue || 100) ? "text-grayDark" : "text-grayDark hover:text-primary"} text-grayDark p-2"`}
+				className={`${counterValue >= (maxValue || 99) ? "text-grayDark opacity-30" : "text-grayDark hover:text-primary"} text-grayDark p-2"`}
         type="button"
 				onClick={() => handleIncrement()}
       >

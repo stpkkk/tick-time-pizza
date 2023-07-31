@@ -14,7 +14,7 @@ interface LeftModalContentProps {
 
 const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) => {
 	const dispatch = useAppDispatch()
-	const { clickedMenuItem, itemAmount, additionalIngredients } = useAppSelector(state => state.menuReducer)
+	const { clickedMenuItem, itemAmount, additionalIngredients, selectedSize } = useAppSelector(state => state.menuReducer)
 
 	const modalLeft = useRef<HTMLDivElement>(null)
 
@@ -41,11 +41,14 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 		}
 	}
 
+
+	const itemPrice = clickedMenuItem?.prices.find((item) => item.id === selectedSize?.id)?.price
+
 	const additionalIngredientsPrice = additionalIngredients.reduce((acc, ing) => acc + (ing.price * (ing.amount || 1)) * itemAmount, 0)
 
-	const totalPrice = clickedMenuItem?.price
-		? clickedMenuItem?.price * itemAmount + additionalIngredientsPrice
-		: ""
+	const totalPrice = clickedMenuItem?.prices
+		? (itemPrice || 579) * itemAmount + additionalIngredientsPrice
+		: "Цена не указана"
 
 	return (
 		<div
@@ -53,8 +56,8 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 			ref={modalLeft}
 		>
 			<Image
-				src={clickedMenuItem?.image ? clickedMenuItem?.image : ""}
-				alt={clickedMenuItem?.title ? clickedMenuItem?.title : ""}
+				src={clickedMenuItem?.image ? clickedMenuItem?.image : "Картинка не загрузилась"}
+				alt={clickedMenuItem?.title ? clickedMenuItem?.title : "😢"}
 				width={325}
 				height={325}
 			/>

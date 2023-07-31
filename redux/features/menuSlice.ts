@@ -23,10 +23,10 @@ const initialState: HeaderState = {
   clickedMenuItem: null,
   selectedCategory: null,
   selectedSize: null,
-  selectedDough: null,
-	removedIngredients: [],
+	selectedDough: null,
 	isAllIngredients: false,
 	itemAmount: 1,
+	removedIngredients: [],
 	additionalIngredients: [],
 };
 
@@ -53,6 +53,9 @@ const menuSlice = createSlice({
     toggleModal: state => {
       state.isModalOpen = !state.isModalOpen;
 			state.isAllIngredients = false;
+			state.removedIngredients = []
+			state.additionalIngredients = []
+			state.itemAmount = 1
     },
 
     toggleTooltip: state => {
