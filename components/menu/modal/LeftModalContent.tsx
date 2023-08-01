@@ -30,15 +30,11 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 	}, [])
 
 	const handleIncrement = () => {
-		if (clickedMenuItem?.id) {
-			dispatch(incrementItemAmount(clickedMenuItem.id))
-		}
+		dispatch(incrementItemAmount(clickedMenuItem?.id || 0))
 	}
 
 	const handleDecrement = () => {
-		if (clickedMenuItem?.id) {
-			dispatch(decrementItemAmount(clickedMenuItem.id))
-		}
+		dispatch(decrementItemAmount(clickedMenuItem?.id || 0))
 	}
 
 
@@ -49,6 +45,7 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 	const totalPrice = clickedMenuItem?.prices
 		? (itemPrice || 579) * itemAmount + additionalIngredientsPrice
 		: "Цена не указана"
+
 
 	return (
 		<div
@@ -67,10 +64,10 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 			<div className="flex_between flex-row gap-7 w-full whitespace-nowrap max-w-[236px]">
 				<div className="flex_between flex-1 max-w-[128px] gap-2 w-22 sm:w-32 text-base -ml-2">
 					<Counter
-						handleIncrement={handleIncrement}
-						handleDecrement={handleDecrement}
 						initialValue={1}
 						value={itemAmount}
+						handleIncrement={handleIncrement}
+						handleDecrement={handleDecrement}
 					/>
 				</div>
 				<div>
