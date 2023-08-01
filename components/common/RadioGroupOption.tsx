@@ -8,7 +8,7 @@ export interface RadioGroupOptionProps {
 	className: string
 	isChecked?: boolean
 	crossed?: string
-	isDisable?: boolean
+	isDisabled?: boolean
 }
 
 const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
@@ -16,7 +16,7 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
   className,
   isChecked,
 	crossed,
-	isDisable
+	isDisabled
 }) => {
 	const backgroundClass = isChecked 
 		? "bg-yellow no-underline hover:bg-yellowLight"
@@ -24,9 +24,9 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
 
 	return option.name !== null && (
     <RadioGroup.Option
-			disabled={isDisable}
+			disabled={isDisabled}
       value={option}
-			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${isDisable && "pointer-events-none text-grayDark"}`}
+			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${isDisabled && "pointer-events-none text-grayDark"}`}
 		> 
 
 			<div className="flex justify-between items-center gap-2">

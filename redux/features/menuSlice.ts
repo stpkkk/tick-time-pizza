@@ -11,7 +11,7 @@ export interface HeaderState {
 	removedIngredients: Option[];
 	selectedCategory: Option | null;
 	isAllIngredients: boolean
-	[itemId: number]: number
+	isDisabled: boolean;
 	itemAmount: number
 	additionalIngredients: additionalIngredientsTypes[]
 }
@@ -25,6 +25,7 @@ const initialState: HeaderState = {
   selectedSize: null,
 	selectedDough: null,
 	isAllIngredients: false,
+	isDisabled: false,
 	itemAmount: 1,
 	removedIngredients: [],
 	additionalIngredients: [],
@@ -51,8 +52,7 @@ const menuSlice = createSlice({
 
     // Modal
     toggleModal: state => {
-      state.isModalOpen = !state.isModalOpen;
-
+			state.isModalOpen = !state.isModalOpen;
     },
 
     toggleTooltip: state => {

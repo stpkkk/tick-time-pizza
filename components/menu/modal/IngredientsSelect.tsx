@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
@@ -6,28 +5,38 @@ import IngredientsSelectItem from "./IngredientsSelectItem";
 import { setAllIngredients } from "@/redux/features/menuSlice";
 import { BsPlusSquare } from "react-icons/bs";
 import ModalSubTitle from "./ModalSubTitle";
+import { additionalIngredientsTypes } from '@/types'
 
 const IngredientsSelect: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { clickedMenuItem, isAllIngredients } = useAppSelector(
+	const { clickedMenuItem, isAllIngredients, selectedDough, selectedSize } = useAppSelector(
     state => state.menuReducer
   );
 
-  const sliceTo = isAllIngredients
-    ? clickedMenuItem?.additionalIngredients.length
-    : 5;
+	const sliceTo = isAllIngredients ? clickedMenuItem?.additionalIngredients.length : 5;
 
   const showMore = sliceTo !== undefined && sliceTo <= 5;
+
+	const isDisabled = (ingredient: additionalIngredientsTypes) => {
+		const isPizzaHeart = ingredient.name === "Пицца \"Сердце\""
+		const isCheeseSide = ingredient.name === "Сырный Бортик"
+		const isThinDoughSelected = selectedDough?.name === "Тонкое"
+		const isSelectedSize23 = selectedSize?.name === 23
+
+		return isPizzaHeart && isThinDoughSelected || isPizzaHeart && isSelectedSize23 || isCheeseSide && isThinDoughSelected
+	};
 
   return (
     <div>
       <ModalSubTitle text="Добавить ингредиенты:" />
       <ul className="flex flex-col flex-wrap gap-2.5">
-        {clickedMenuItem?.additionalIngredients
-          .slice(0, sliceTo)
-          .map(ingredient => (
-						<IngredientsSelectItem ingredient={ingredient} key={ingredient.id} />
-          ))}
+				{clickedMenuItem?.additionalIngredients.slice(0, sliceTo).map(ingredient => (
+					<IngredientsSelectItem
+						ingredient={ingredient}
+						isDisabled={isDisabled(ingredient)}
+						key={ingredient.id}
+					/>
+				))}
       </ul>
       {showMore ? (
         <button

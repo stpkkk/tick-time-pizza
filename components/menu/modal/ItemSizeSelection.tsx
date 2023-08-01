@@ -3,8 +3,7 @@ import React from "react"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   setSelectedDough,
-  setSelectedSize,
-  initializeDefaultValues,
+	setSelectedSize,
 } from "@/redux/features/menuSlice";
 import { RadioGroup } from "@headlessui/react"
 import { RadioGroupOption } from "@/components/common";
@@ -69,7 +68,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={size.id}
 								option={size}
                 isChecked={selectedSize === size}
-								isDisable={selectedDough?.name === thinDough && size.name === smallSize}
+								isDisabled={selectedDough?.name === thinDough && size.name === smallSize}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}
@@ -82,7 +81,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={dough.id}
                 option={dough}
 								isChecked={dough === selectedDough}
-								isDisable={selectedSize?.name === smallSize && selectedDough !== dough}
+								isDisabled={selectedSize?.name === smallSize && selectedDough !== dough}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}

@@ -80,7 +80,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
 			{
@@ -261,7 +261,7 @@ export const menu: MenuItemTypes[] = [
         price: 15,
       },
 			{
-				id: 3, image: heart, name: "Пицца 'Сердце'",
+				id: 3, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
 			{
@@ -443,7 +443,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -599,7 +599,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -778,7 +778,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -917,7 +917,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1049,7 +1049,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1210,7 +1210,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1368,7 +1368,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1540,7 +1540,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1680,7 +1680,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1805,7 +1805,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -1977,7 +1977,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2128,7 +2128,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2281,7 +2281,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2429,7 +2429,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2573,7 +2573,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2734,7 +2734,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -2883,7 +2883,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -3029,7 +3029,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -3202,7 +3202,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -3360,7 +3360,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -3535,7 +3535,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {
@@ -3679,7 +3679,7 @@ export const menu: MenuItemTypes[] = [
         price: 119,
       },
 			{
-				id: 2, image: heart, name: "Пицца 'Сердце'",
+				id: 2, image: heart, name: "Пицца \"Сердце\"",
 				maxAmount: 1, weight: 1, price: 95
 			},
       {

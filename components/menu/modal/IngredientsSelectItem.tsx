@@ -8,9 +8,10 @@ import { additionalIngredientsTypes } from '@/types'
 
 type IngredientsSelectItemProps = {
 	ingredient: additionalIngredientsTypes
+	isDisabled: boolean
 };
 
-const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredient }) => {
+const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredient, isDisabled }) => {
 	const dispatch = useAppDispatch()
 	const ingredientItem = useAppSelector((state) =>
 		state.menuReducer.additionalIngredients.find((item) => item.id === ingredient.id)
@@ -31,8 +32,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 
   return (
 		<li
-			key={ingredient.id}
-			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 ? "bg-yellow" : "bg-grayLight"}`}
+			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 && !isDisabled ? "bg-yellow" : "bg-grayLight"} ${isDisabled && "text-grayDark"}`}
     >
       <div className="flex flex-grow flex-auto basis-[calc(100%-7rem)] items-center flex-row gap-5">
         <div className="w-27 h-27">
@@ -43,17 +43,17 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 						{ingredient.name}
           </span>
           <span className="md:text-xs md:leading-[15px] text-sm leading-[17px] font-normal whitespace-nowrap">
-						{ingredient.weight} г&nbsp;{ingredient.price} ₽
-          </span>
+						{!isDisabled ? `${ingredient.weight} г ${ingredient.price} ₽` : "Выберите другие параметры"}
+					</span>
         </div>
         <div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
-					<Counter
+					{isDisabled || <Counter
 						handleIncrement={handleIncrement}
 						handleDecrement={handleDecrement}
 						initialValue={0}
 						maxValue={ingredient.maxAmount}
 						value={ingredientAmount}
-					/>
+					/>}
         </div>
       </div>
     </li>
