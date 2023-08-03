@@ -14,10 +14,19 @@ type IngredientsSelectItemProps = {
 
 const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredient, isDisabled }) => {
 	const dispatch = useAppDispatch()
+
 	const ingredientItem = useAppSelector((state) =>
 		state.menuReducer.additionalIngredients.find((item) => item.id === ingredient.id)
 	)
+
 	const ingredientAmount = ingredientItem?.amount || 0;
+
+	// Reset disabled ingredient amount to 0
+	useEffect(() => {
+		if (isDisabled) {
+			dispatch(decrementIngredientAmount({ ingredient }))
+		}
+	}, [dispatch, ingredient, isDisabled])
 
 	const handleDecrement = () => {
 		if (ingredientAmount > 0) {
@@ -30,13 +39,6 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 			dispatch(incrementIngredientAmount({ ingredient }))
 		}
 	};
-
-	// Reset disabled ingredient amount to 0
-	useEffect(() => {
-		if (isDisabled) {
-			dispatch(decrementIngredientAmount({ ingredient }))
-		}
-	}, [dispatch, ingredient, isDisabled])
 
   return (
 		<li
@@ -54,15 +56,17 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 						{!isDisabled ? `${ingredient.weight} г ${ingredient.price} ₽` : "Выберите другие параметры"}
 					</span>
         </div>
-        <div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
-					{isDisabled || <Counter
-						handleIncrement={handleIncrement}
-						handleDecrement={handleDecrement}
-						initialValue={0}
-						maxValue={ingredient.maxAmount}
-						value={ingredientAmount}
-					/>}
-        </div>
+				{!isDisabled && (
+					<div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
+						<Counter
+							handleIncrement={handleIncrement}
+							handleDecrement={handleDecrement}
+							initialValue={0}
+							maxValue={ingredient.maxAmount}
+							value={ingredientAmount}
+						/>
+					</div>
+				)}
       </div>
     </li>
   );

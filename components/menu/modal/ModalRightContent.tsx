@@ -6,11 +6,11 @@ import IngredientsSelect from './IngredientsSelect'
 import IngredientsRemove from './IngredientsRemove'
 import NutritionalValue from './NutritionalValue'
 
-interface RightModalContentProps {
+interface ModalRightContentProps {
 	modalHeight: number
 }
 
-const RightModalContent: React.FC<RightModalContentProps> = ({ modalHeight }) => {
+const ModalRightContent: React.FC<ModalRightContentProps> = ({ modalHeight }) => {
 	const { clickedMenuItem } = useAppSelector(state => state.menuReducer)
 
 	return (
@@ -29,4 +29,4 @@ const RightModalContent: React.FC<RightModalContentProps> = ({ modalHeight }) =>
 	)
 }
 
-export default RightModalContent
+export default ModalRightContent

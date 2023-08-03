@@ -6,6 +6,7 @@ import {
 	setSelectedSize,
 } from "@/redux/features/menuSlice";
 import { RadioGroup } from "@headlessui/react"
+
 import { RadioGroupOption } from "@/components/common";
 import { Option } from "@/types";
 
@@ -13,7 +14,9 @@ const ItemSizeSelection: React.FC = () => {
   const { clickedMenuItem, selectedSize, selectedDough } = useAppSelector(
 		(state) => state.menuReducer
 	);
+
 	const dispatch = useAppDispatch()
+
 	const thinDough = "Тонкое"
 	const smallSize = 23;
 
@@ -44,6 +47,14 @@ const ItemSizeSelection: React.FC = () => {
 		}
 	}
 
+	const getIsDisabledSize = (size: Option) => {
+		return selectedDough?.name === thinDough && size.name === smallSize
+	}
+
+	const getIsDisabledDough = (dough: Option) => {
+		return selectedSize?.name === smallSize && selectedDough !== dough
+	}
+
 	const handleSizeChange = (size: Option) => {
 		dispatch(setSelectedSize(size))
 	}
@@ -56,9 +67,9 @@ const ItemSizeSelection: React.FC = () => {
     <>
       <div>
 				<span className="font-bold md:text-sm md:leading-[15px] text-base leading-5 md:mb-4 mb-5">
-					Вес:
+					Вес:&nbsp;
 				</span>
-				<span>&nbsp;{getTotalWeight()} г</span>
+				<span>{getTotalWeight()} г</span>
       </div>
       <div className="flex flex-col gap-2">
 				<RadioGroup value={selectedSize} onChange={handleSizeChange}>
@@ -68,7 +79,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={size.id}
 								option={size}
                 isChecked={selectedSize === size}
-								isDisabled={selectedDough?.name === thinDough && size.name === smallSize}
+								isDisabled={getIsDisabledSize(size)}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}
@@ -81,7 +92,7 @@ const ItemSizeSelection: React.FC = () => {
                 key={dough.id}
                 option={dough}
 								isChecked={dough === selectedDough}
-								isDisabled={selectedSize?.name === smallSize && selectedDough !== dough}
+								isDisabled={getIsDisabledDough(dough)}
                 className="leading-[15px] w-full h-[60px] flex_center"
               />
             ))}

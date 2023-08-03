@@ -2262,7 +2262,7 @@ export const menu: MenuItemTypes[] = [
     image: fourSeasons,
     ingredients:
       "Фирменный томатный соус, моцарелла, пепперони, ветчина, охотничьи колбаски, буженина из свинины, сыр блю чиз, сыр фета, томаты",
-		prices: [{ id: 1, price: 579 }, { id: 2, price: 739 }],
+		prices: [{ id: 0, price: 579 }, { id: 2, price: 739 }],
     additionalIngredients: [
       {
         id: 0,

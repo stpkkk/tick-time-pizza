@@ -1,22 +1,24 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef, useCallback } from "react"
 import { initializeDefaultValues, toggleModal } from "@/redux/features/menuSlice"
 import { useAppDispatch } from "@/redux/hooks"
 import { RiCloseFill } from "react-icons/ri";
 
-import LeftModalContent from './LeftModalContent'
-import RightModalContent from './RightModalContent'
+import ModalLeftContent from './ModalLeftContent'
+import ModalRightContent from './ModalRightContent'
 
 const Modal: React.FC = () => {
 	const dispatch = useAppDispatch();
+
 	const modalRef = useRef<HTMLDivElement>(null);
+
   const [modalHeight, setModalHeight] = useState<number>(0);
 
-  const handleClickOutside = (e: MouseEvent) => {
+	const handleClickOutside = useCallback((e: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       dispatch(toggleModal());
     }
-  };
+	}, [])
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -53,8 +55,8 @@ const Modal: React.FC = () => {
               <RiCloseFill size={36} />
             </button>
             <form className="modal_form">
-							<LeftModalContent setModalHeight={setModalHeight} />
-							<RightModalContent modalHeight={modalHeight} />
+							<ModalLeftContent setModalHeight={setModalHeight} />
+							<ModalRightContent modalHeight={modalHeight} />
             </form>
           </div>
         </div>

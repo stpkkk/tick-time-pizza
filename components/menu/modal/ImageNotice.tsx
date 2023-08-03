@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react"
 import { toggleTooltip } from "@/redux/features/menuSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
@@ -15,11 +15,11 @@ const ImageNotice: React.FC = () => {
     dispatch(toggleTooltip());
   };
 
-  const handleClickOutside = (e: MouseEvent) => {
+	const handleClickOutside = useCallback((e: MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       dispatch(toggleTooltip());
     }
-  };
+	}, []); 
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

@@ -1,33 +1,34 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { decrementItemAmount, incrementItemAmount } from '@/redux/features/menuSlice'
 import Image from 'next/image'
 import { HeartIcon } from '@/public/assets/icons'
 
 import ImageNotice from './ImageNotice'
 import Counter from './Counter'
-import { decrementItemAmount, incrementItemAmount } from '@/redux/features/menuSlice'
 
-interface LeftModalContentProps {
+interface ModalLeftContentProps {
 	setModalHeight: React.Dispatch<React.SetStateAction<number>>
 }
 
-const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) => {
+const ModalLeftContent: React.FC<ModalLeftContentProps> = ({ setModalHeight }) => {
 	const dispatch = useAppDispatch()
+
 	const { clickedMenuItem, itemAmount, additionalIngredients, selectedSize } = useAppSelector(state => state.menuReducer)
 
 	const modalLeft = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
-		const getModalHeight = () => {
-			if (modalLeft.current) {
-				const height = modalLeft.current.clientHeight
-				setModalHeight(height)
-			}
+	const getModalHeight = useCallback(() => {
+		if (modalLeft.current) {
+			const height = modalLeft.current.clientHeight
+			setModalHeight(height)
 		}
+	}, [setModalHeight])
 
+	useEffect(() => {
 		getModalHeight()
-	}, [])
+	}, [getModalHeight])
 
 	const handleIncrement = () => {
 		dispatch(incrementItemAmount(clickedMenuItem?.id || 0))
@@ -87,4 +88,4 @@ const LeftModalContent: React.FC<LeftModalContentProps> = ({ setModalHeight }) =
 	)
 }
 
-export default LeftModalContent
+export default ModalLeftContent
