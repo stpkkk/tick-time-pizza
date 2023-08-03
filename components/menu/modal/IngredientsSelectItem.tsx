@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { decrementIngredientAmount, incrementIngredientAmount } from "@/redux/features/menuSlice"
 import Image from "next/image";
@@ -26,13 +27,20 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 
 	const handleIncrement = () => {
 		if (ingredientAmount < ingredient.maxAmount) {
-		dispatch(incrementIngredientAmount({ ingredient }))
+			dispatch(incrementIngredientAmount({ ingredient }))
 		}
 	};
 
+	// Reset disabled ingredient amount to 0
+	useEffect(() => {
+		if (isDisabled) {
+			dispatch(decrementIngredientAmount({ ingredient }))
+		}
+	}, [dispatch, ingredient, isDisabled])
+
   return (
 		<li
-			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 && !isDisabled ? "bg-yellow" : "bg-grayLight"} ${isDisabled && "text-grayDark"}`}
+			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 ? "bg-yellow" : "bg-grayLight"} ${isDisabled && "text-grayDark"}`}
     >
       <div className="flex flex-grow flex-auto basis-[calc(100%-7rem)] items-center flex-row gap-5">
         <div className="w-27 h-27">
