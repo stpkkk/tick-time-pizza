@@ -21,14 +21,14 @@ const ItemSizeSelection: React.FC = () => {
 	const smallSize = 23;
 
 	const getWeightBySize = () => {
-		return clickedMenuItem?.weightItem.find((item) => item.id === selectedSize?.id)
+		return clickedMenuItem?.weights.find((item) => item.id === selectedSize?.id)
 	}
 
 	const getWeightByDough = () => {
 		const isThinDough = selectedDough?.name === thinDough
 		return isThinDough
-			? clickedMenuItem?.weightItem.slice(-2)
-			: clickedMenuItem?.weightItem.slice(0, 1)
+			? clickedMenuItem?.weights.slice(-2)
+			: clickedMenuItem?.weights.slice(0, 1)
 	}
 
 	const getTotalWeight = () => {

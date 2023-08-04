@@ -68,140 +68,142 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
 			{
 				id: 3, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
       {
         id: 4,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 5, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 6,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 7, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 8, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 9,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 10,
         image: pimiento,
         name: "Болгарский Перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 11,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 12,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 13,
         image: roastPork,
         name: "Буженина",
 				maxAmount: 3,
-        weight: 30,
-        price: 45,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 60 }, { id: 2, value: 90 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 75 }, { id: 2, price: 105 }]
       },
       {
         id: 14,
         image: onionFree,
         name: "Лук Фри",
 				maxAmount: 5,
-        weight: 10,
-        price: 10,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 17 }, { id: 2, value: 23 }],
+				prices: [{ id: 0, price: 10 }, { id: 1, price: 20 }, { id: 2, price: 30 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Соус Бургер на пиццу",
 				maxAmount: 3,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -226,7 +228,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 31.37,
       calories: 237.06,
     },
-		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 855 }, { id: 3, weight: 530 }, { id: 4, weight: 765 }]
+		weights: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 855 }, { id: 3, weight: 530 }, { id: 4, weight: 765 }]
   },
   {
     id: 1,
@@ -241,160 +243,164 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
       {
         id: 2,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 3, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 23,
-        price: 45,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: cheeseBlue,
         name: "Сыр Блю Чиз",
 				maxAmount: 5,
-        weight: 15,
-        price: 55,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 95 }, { id: 2, price: 115 }]
       },
       {
         id: 15,
         image: pimiento,
         name: "Болгарский Перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 16,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 17,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 18,
         image: roastPork,
         name: "Буженина",
 				maxAmount: 3,
-        weight: 30,
-        price: 45,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 60 }, { id: 2, value: 90 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 75 }, { id: 2, price: 105 }]
       },
       {
         id: 19,
         image: onionFree,
         name: "Лук Фри",
 				maxAmount: 5,
-        weight: 10,
-        price: 10,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 17 }, { id: 2, value: 23 }],
+				prices: [{ id: 0, price: 10 }, { id: 1, price: 20 }, { id: 2, price: 30 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 21,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 22,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 23,
         image: sauce,
         name: "Соус Бургер на пиццу",
 				maxAmount: 3,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
+
       },
     ],
     removeIngredients: [
@@ -416,7 +422,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.41,
       calories: 291.98,
     },
-		weightItem: [{ id: 0, weight: 360 }, { id: 1, weight: 540 }, { id: 2, weight: 730 }, { id: 3, weight: 450 }, { id: 4, weight: 640 }]
+		weights: [{ id: 0, weight: 360 }, { id: 1, weight: 540 }, { id: 2, weight: 730 }, { id: 3, weight: 450 }, { id: 4, weight: 640 }]
   },
   {
     id: 2,
@@ -431,124 +437,126 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 11, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 12,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 14,
 				image: roastPork,
         name: "Буженина",
 				maxAmount: 3,
-        weight: 30,
-        price: 45,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 60 }, { id: 2, value: 90 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 75 }, { id: 2, price: 105 }]
       },
       {
         id: 15,
         image: onionFree,
         name: "Лук Фри",
 				maxAmount: 5,
-        weight: 10,
-        price: 10,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 17 }, { id: 2, value: 23 }],
+				prices: [{ id: 0, price: 10 }, { id: 1, price: 20 }, { id: 2, price: 30 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -572,7 +580,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.18,
       calories: 295.5,
     },
-		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 570 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
+		weights: [{ id: 0, weight: 380 }, { id: 1, weight: 570 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
   },
   {
     id: 3,
@@ -587,148 +595,150 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: pimiento,
         name: "Болгарский перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 15,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 16,
         image: roastPork,
         name: "Буженина",
 				maxAmount: 3,
-        weight: 30,
-        price: 45,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 60 }, { id: 2, value: 90 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 75 }, { id: 2, price: 105 }]
       },
       {
         id: 17,
         image: onionFree,
         name: "Лук Фри",
 				maxAmount: 5,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 17 }, { id: 2, value: 23 }],
+				prices: [{ id: 0, price: 10 }, { id: 1, price: 20 }, { id: 2, price: 30 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 21,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -751,7 +761,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.85,
       calories: 301.8,
     },
-		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 500 }, { id: 4, weight: 700 }]
+		weights: [{ id: 0, weight: 380 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 500 }, { id: 4, weight: 700 }]
   },
   {
     id: 4,
@@ -766,104 +776,106 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 8,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 9,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 11,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 12,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 13,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 14,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -890,7 +902,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.88,
       calories: 263.26,
     },
-		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 630 }, { id: 2, weight: 860 }, { id: 3, weight: 480 }, { id: 4, weight: 780 }]
+		weights: [{ id: 0, weight: 400 }, { id: 1, weight: 630 }, { id: 2, weight: 860 }, { id: 3, weight: 480 }, { id: 4, weight: 780 }]
   },
   {
     id: 5,
@@ -905,100 +917,102 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 11, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 12,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: pineapple,
         name: "Ананасы",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 45 }, { id: 2, price: 65 }]
       },
       {
         id: 15,
         image: cheeseBlue,
         name: "Сыр Блю Чиз",
 				maxAmount: 5,
-        weight: 15,
-        price: 55,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 95 }, { id: 2, price: 115 }]
       },
     ],
     removeIngredients: [
@@ -1022,7 +1036,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.92,
       calories: 316.47,
     },
-		weightItem: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 610 }]
+		weights: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 610 }]
   },
   {
     id: 6,
@@ -1037,128 +1051,131 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 16,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 17,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1183,7 +1200,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.93,
       calories: 296.61,
     },
-		weightItem: [{ id: 0, weight: 380 }, { id: 1, weight: 550 }, { id: 2, weight: 750 }, { id: 3, weight: 460 }, { id: 4, weight: 660 }]
+		weights: [{ id: 0, weight: 380 }, { id: 1, weight: 550 }, { id: 2, weight: 750 }, { id: 3, weight: 460 }, { id: 4, weight: 660 }]
   },
   {
     id: 7,
@@ -1198,124 +1215,126 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1341,7 +1360,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.77,
       calories: 321.35,
     },
-		weightItem: [{ id: 0, weight: 382 }, { id: 1, weight: 570 }, { id: 2, weight: 770 }, { id: 3, weight: 480 }, { id: 4, weight: 680 }]
+		weights: [{ id: 0, weight: 382 }, { id: 1, weight: 570 }, { id: 2, weight: 770 }, { id: 3, weight: 480 }, { id: 4, weight: 680 }]
   },
   {
     id: 8,
@@ -1356,140 +1375,142 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 16,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1513,7 +1534,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.86,
       calories: 323.37,
     },
-		weightItem: [{ id: 0, weight: 375 }, { id: 1, weight: 530 }, { id: 2, weight: 710 }, { id: 3, weight: 450 }, { id: 4, weight: 620 }]
+		weights: [{ id: 0, weight: 375 }, { id: 1, weight: 530 }, { id: 2, weight: 710 }, { id: 3, weight: 450 }, { id: 4, weight: 620 }]
   },
   {
     id: 9,
@@ -1528,108 +1549,110 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 11, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 12,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 13,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 14,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1653,7 +1676,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.39,
       calories: 294.17,
     },
-		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 760 }, { id: 3, weight: 480 }, { id: 4, weight: 670 }]
+		weights: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 760 }, { id: 3, weight: 480 }, { id: 4, weight: 670 }]
   },
   {
     id: 10,
@@ -1668,92 +1691,93 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
       {
         id: 5,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 6, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 7, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 8,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 9, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 10,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 11,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 12,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 13,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1778,7 +1802,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.09,
       calories: 268.95,
     },
-		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 550 }, { id: 2, weight: 770 }, { id: 3, weight: 460 }, { id: 4, weight: 680 }]
+		weights: [{ id: 0, weight: 365 }, { id: 1, weight: 550 }, { id: 2, weight: 770 }, { id: 3, weight: 460 }, { id: 4, weight: 680 }]
   },
   {
     id: 11,
@@ -1793,136 +1817,139 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: pimiento,
         name: "Болгарский перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 16,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -1950,7 +1977,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.77,
       calories: 242.68,
     },
-		weightItem: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 850 }, { id: 3, weight: 530 }, { id: 4, weight: 770 }]
+		weights: [{ id: 0, weight: 400 }, { id: 1, weight: 620 }, { id: 2, weight: 850 }, { id: 3, weight: 530 }, { id: 4, weight: 770 }]
   },
   {
     id: 12,
@@ -1965,120 +1992,121 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
       {
         id: 5,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 6, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 7, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 8,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 9, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 10, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 11,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 12,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: pineapple,
         name: "Ананасы",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 45 }, { id: 2, price: 65 }]
       },
       {
         id: 14,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -2101,7 +2129,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 36.52,
       calories: 280.95,
     },
-		weightItem: [{ id: 0, weight: 350 }, { id: 1, weight: 510 }, { id: 2, weight: 690 }, { id: 3, weight: 410 }, { id: 4, weight: 600 }]
+		weights: [{ id: 0, weight: 350 }, { id: 1, weight: 510 }, { id: 2, weight: 690 }, { id: 3, weight: 410 }, { id: 4, weight: 600 }]
   },
   {
     id: 13,
@@ -2116,120 +2144,123 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -2254,7 +2285,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.97,
       calories: 313.43,
     },
-		weightItem: [{ id: 0, weight: 375 }, { id: 1, weight: 560 }, { id: 2, weight: 760 }, { id: 3, weight: 470 }, { id: 4, weight: 670 }]
+		weights: [{ id: 0, weight: 375 }, { id: 1, weight: 560 }, { id: 2, weight: 760 }, { id: 3, weight: 470 }, { id: 4, weight: 670 }]
   },
   {
     id: 14,
@@ -2269,112 +2300,114 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 50,
-        price: 50,
+				weights: [{ id: 0, value: 50 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 50 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 25,
-        price: 25,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 50, price: 35
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
       {
         id: 5,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 50,
-        price: 65,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 6, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 37, price: 65
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 7, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 32, price: 55
+				maxAmount: 5, weights: [{ id: 0, value: 32 }, { id: 1, value: 32 }, { id: 2, value: 36 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 8,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 30,
-        price: 45,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 9, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 15, price: 10
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 10, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 15, price: 35
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 11,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 55,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 12,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 40,
-        price: 65,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: pineapple,
         name: "Ананасы",
 				maxAmount: 5,
-        weight: 40,
-        price: 45,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 45 }, { id: 2, price: 65 }]
       },
       {
         id: 14,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -2402,7 +2435,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 34.15,
       calories: 277.39,
     },
-		weightItem: [{ id: 1, weight: 530 }, { id: 2, weight: 700 }, { id: 3, weight: 450 }, { id: 4, weight: 610 }]
+		weights: [{ id: 1, weight: 530 }, { id: 2, weight: 700 }, { id: 3, weight: 450 }, { id: 4, weight: 610 }]
   },
   {
     id: 15,
@@ -2417,116 +2450,118 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
       {
         id: 5,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 6, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 7, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: pimiento,
         name: "Болгарский перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [{ id: 0, name: "Пепперони" }],
@@ -2546,7 +2581,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.12,
       calories: 310.17,
     },
-		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
+		weights: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
   },
   {
     id: 16,
@@ -2561,128 +2596,131 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -2707,7 +2745,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 31.21,
       calories: 285.12,
     },
-		weightItem: [{ id: 0, weight: 390 }, { id: 1, weight: 600 }, { id: 2, weight: 810 }, { id: 3, weight: 510 }, { id: 4, weight: 730 }]
+		weights: [{ id: 0, weight: 390 }, { id: 1, weight: 600 }, { id: 2, weight: 810 }, { id: 3, weight: 510 }, { id: 4, weight: 730 }]
   },
   {
     id: 17,
@@ -2722,116 +2760,118 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 14,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -2856,7 +2896,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 32.63,
       calories: 321.23,
     },
-		weightItem: [{ id: 0, weight: 395 }, { id: 1, weight: 590 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
+		weights: [{ id: 0, weight: 395 }, { id: 1, weight: 590 }, { id: 2, weight: 800 }, { id: 3, weight: 500 }, { id: 4, weight: 710 }]
   },
   {
     id: 18,
@@ -2871,112 +2911,115 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -3002,7 +3045,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.25,
       calories: 269.56,
     },
-		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 780 }, { id: 3, weight: 480 }, { id: 4, weight: 690 }]
+		weights: [{ id: 0, weight: 385 }, { id: 1, weight: 570 }, { id: 2, weight: 780 }, { id: 3, weight: 480 }, { id: 4, weight: 690 }]
   },
   {
     id: 19,
@@ -3017,140 +3060,142 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 11, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 12,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: pimiento,
         name: "Болгарский перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 15,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 16,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -3175,7 +3220,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.54,
       calories: 310.48,
     },
-		weightItem: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
+		weights: [{ id: 0, weight: 365 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
   },
   {
     id: 20,
@@ -3190,124 +3235,126 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 10, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 11, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 12,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 13,
         image: cheeseFeta,
         name: "Сыр Фета",
 				maxAmount: 5,
-        weight: 10,
-        price: 19,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 20 }, { id: 2, value: 30 }],
+				prices: [{ id: 0, price: 19 }, { id: 1, price: 29 }, { id: 2, price: 39 }],
       },
       {
         id: 14,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -3334,7 +3381,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 33.66,
       calories: 342.65,
     },
-		weightItem: [{ id: 0, weight: 360 }, { id: 1, weight: 530 }, { id: 2, weight: 730 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
+		weights: [{ id: 0, weight: 360 }, { id: 1, weight: 530 }, { id: 2, weight: 730 }, { id: 3, weight: 440 }, { id: 4, weight: 640 }]
   },
   {
     id: 21,
@@ -3348,144 +3395,147 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: cheeseFeta,
         name: "Сыр Фета",
 				maxAmount: 5,
-        weight: 10,
-        price: 19,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 20 }, { id: 2, value: 30 }],
+				prices: [{ id: 0, price: 19 }, { id: 1, price: 29 }, { id: 2, price: 39 }],
       },
       {
         id: 15,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 16,
         image: pimiento,
         name: "Болгарский Перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 17,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 18,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 19,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 20,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 21,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -3508,7 +3558,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 35.49,
       calories: 324.23,
     },
-		weightItem: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 620 }]
+		weights: [{ id: 0, weight: 355 }, { id: 1, weight: 520 }, { id: 2, weight: 700 }, { id: 3, weight: 430 }, { id: 4, weight: 620 }]
   },
   {
     id: 22,
@@ -3523,112 +3573,115 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
 			{
 				id: 9, image: bacon, name: "Бекон",
-				maxAmount: 5, weight: 23, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 23 }, { id: 1, value: 32 }, { id: 2, value: 36 }], prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
       {
         id: 10,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 11,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 12, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 13, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 14,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 15,
         image: sauce,
         name: "Барбекю Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 16,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 17,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [
@@ -3652,7 +3705,7 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 30.54,
       calories: 269.08,
     },
-		weightItem: [{ id: 0, weight: 385 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 490 }, { id: 4, weight: 690 }]
+		weights: [{ id: 0, weight: 385 }, { id: 1, weight: 580 }, { id: 2, weight: 780 }, { id: 3, weight: 490 }, { id: 4, weight: 690 }]
   },
   {
     id: 23,
@@ -3667,164 +3720,167 @@ export const menu: MenuItemTypes[] = [
         image: mozzarella,
         name: "Сыр Моцарелла",
 				maxAmount: 5,
-        weight: 30,
-        price: 35,
+				weights: [{ id: 0, value: 30 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 50 }, { id: 2, price: 65 }],
       },
       {
         id: 1,
         image: cheeseSide,
         name: "Сырный Бортик",
 				maxAmount: 1,
-        weight: 125,
-        price: 119,
+				weights: [{ id: 0, value: 205 }, { id: 1, value: 205 }, { id: 2, value: 205 },],
+				prices: [{ id: 0, price: 179 }, { id: 1, price: 179 }, { id: 2, price: 179 }],
       },
 			{
 				id: 2, image: heart, name: "Пицца \"Сердце\"",
-				maxAmount: 1, weight: 1, price: 95
+				maxAmount: 1, weights: [{ id: 0, value: 1 }, { id: 1, value: 1 }, { id: 2, value: 1 }], prices: [{ id: 0, price: 95 }, { id: 1, price: 95 }, { id: 2, price: 95 }]
 			},
       {
         id: 3,
         image: jalapeno,
         name: "Перец Халапеньо",
 				maxAmount: 5,
-        weight: 12,
-        price: 15,
+				weights: [{ id: 0, value: 12 }, { id: 1, value: 25 }, { id: 2, value: 38 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 25 }, { id: 2, price: 35 }]
       },
 			{
 				id: 4, image: tomato, name: "Томаты",
-				maxAmount: 5, weight: 25, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }],
 			},
 			{
 				id: 5, image: champignon, name: "Шампиньоны",
-				maxAmount: 5, weight: 15, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 6,
         image: chickenSmoked,
         name: "Копченая Курица",
 				maxAmount: 5,
-        weight: 25,
-        price: 55,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 50 }, { id: 2, value: 75 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
 			{
 				id: 7, image: ham, name: "Ветчина",
-				maxAmount: 5, weight: 21, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 21 }, { id: 1, value: 34 }, { id: 2, value: 44 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 55 }, { id: 2, price: 65 }]
 			},
 			{
 				id: 8, image: pepperoniAdds, name: "Пепперони",
-				maxAmount: 5, weight: 26, price: 45
+				maxAmount: 5, weights: [{ id: 0, value: 26 }, { id: 1, value: 37 }, { id: 2, value: 49 }],
+				prices: [{ id: 0, price: 45 }, { id: 1, price: 65 }, { id: 2, price: 85 }]
 			},
       {
         id: 9,
         image: huntingSausages,
         name: "Охотничьи Колбаски",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 10,
         image: pickledCucumbers,
         name: "Огурцы Маринованные",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
       },
 			{
 				id: 11, image: onionBulb, name: "Лук Репчатый",
-				maxAmount: 5, weight: 8, price: 5
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 5 }, { id: 1, price: 10 }, { id: 2, price: 15 }]
 			},
 			{
 				id: 12, image: onionGreen, name: "Зеленый Лук",
-				maxAmount: 5, weight: 8, price: 25
+				maxAmount: 5, weights: [{ id: 0, value: 8 }, { id: 1, value: 15 }, { id: 2, value: 25 }], prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 45 }]
 			},
       {
         id: 13,
         image: cheeseParmesan,
         name: "Сыр Пармезан",
 				maxAmount: 5,
-        weight: 15,
-        price: 35,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 55 }, { id: 2, price: 75 }]
       },
       {
         id: 14,
         image: cheeseFeta,
         name: "Сыр Фета",
 				maxAmount: 5,
-        weight: 10,
-        price: 19,
+				weights: [{ id: 0, value: 10 }, { id: 1, value: 20 }, { id: 2, value: 30 }],
+				prices: [{ id: 0, price: 19 }, { id: 1, price: 29 }, { id: 2, price: 39 }],
       },
       {
         id: 15,
         image: cheeseChedder,
         name: "Сыр Чеддер",
 				maxAmount: 5,
-        weight: 26,
-        price: 55,
+				weights: [{ id: 0, value: 26 }, { id: 1, value: 40 }, { id: 2, value: 50 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 65 }, { id: 2, price: 75 }]
       },
       {
         id: 16,
         image: cheeseBlue,
         name: "Сыр Блю Чиз",
 				maxAmount: 5,
-        weight: 15,
-        price: 55,
+				weights: [{ id: 0, value: 15 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 55 }, { id: 1, price: 95 }, { id: 2, price: 115 }]
       },
       {
         id: 17,
         image: pimiento,
         name: "Болгарский Перец",
 				maxAmount: 5,
-        weight: 17,
-        price: 25,
+				weights: [{ id: 0, value: 17 }, { id: 1, value: 35 }, { id: 2, value: 53 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 35 }, { id: 2, price: 50 }]
       },
       {
         id: 18,
         image: pineapple,
         name: "Ананасы",
 				maxAmount: 5,
-        weight: 20,
-        price: 25,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 25 }, { id: 1, price: 45 }, { id: 2, price: 65 }]
       },
       {
         id: 19,
         image: dill,
         name: "Укроп",
 				maxAmount: 1,
-        weight: 5,
-        price: 15,
+				weights: [{ id: 0, value: 5 }, { id: 1, value: 5 }, { id: 2, value: 5 }],
+				prices: [{ id: 0, price: 15 }, { id: 1, price: 15 }, { id: 2, price: 15 }]
       },
       {
         id: 20,
         image: garlic,
         name: "Чеснок",
 				maxAmount: 1,
-        weight: 8,
-        price: 5,
+				weights: [{ id: 0, value: 8 }, { id: 1, value: 8 }, { id: 2, value: 8 }],
+				prices: [{ id: 0, price: 5 }, { id: 1, price: 5 }, { id: 2, price: 5 }]
       },
       {
         id: 21,
         image: sauce,
         name: "Ранч Соус на пиццу",
 				maxAmount: 1,
-        weight: 23,
-        price: 35,
+				weights: [{ id: 0, value: 23 }, { id: 1, value: 35 }, { id: 2, value: 55 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 22,
         image: sauce,
         name: "Горчичный Соус на пиццу",
 				maxAmount: 1,
-        weight: 20,
-        price: 35,
+				weights: [{ id: 0, value: 20 }, { id: 1, value: 30 }, { id: 2, value: 45 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
       {
         id: 23,
         image: sauce,
         name: "Кетчуп Соус на пиццу",
 				maxAmount: 1,
-        weight: 25,
-        price: 35,
+				weights: [{ id: 0, value: 25 }, { id: 1, value: 40 }, { id: 2, value: 60 }],
+				prices: [{ id: 0, price: 35 }, { id: 1, price: 45 }, { id: 2, price: 55 }]
       },
     ],
     removeIngredients: [{ id: 0, name: "Томаты" }],
@@ -3847,6 +3903,6 @@ export const menu: MenuItemTypes[] = [
       carbohydrates: 29.18,
       calories: 261.75,
     },
-		weightItem: [{ id: 0, weight: 350 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
+		weights: [{ id: 0, weight: 350 }, { id: 1, weight: 530 }, { id: 2, weight: 720 }, { id: 3, weight: 440 }, { id: 4, weight: 630 }]
   },
 ];

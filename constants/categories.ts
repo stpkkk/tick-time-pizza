@@ -10,16 +10,16 @@ export const categories = [
   {
     id: 1,
     name: "Без Мяса",
-    image: bear,
+		image: leaf
   },
   {
     id: 2,
     name: "Подходит для Детей",
-    image: fire,
+		image: bear,
   },
   {
     id: 3,
     name: "Острая",
-    image: leaf,
+		image: fire,
   },
 ];

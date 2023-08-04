@@ -5,8 +5,11 @@ export interface additionalIngredientsTypes {
   id: number;
   image: string | StaticImageData;
 	name: string;
-  weight: number;
-  price: number;
+	weights: {
+		id: number,
+		value: number
+	}[]
+	prices: PricesType[]
 	amount?: number
 	maxAmount: number
 }
@@ -46,5 +49,5 @@ export interface MenuItemTypes {
 	sizes: Option[]
 	dough: Option[];
 	nutritionalValues: nutritionalValueTypes
-	weightItem: WeightType[]
+	weights: WeightType[]
 }

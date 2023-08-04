@@ -19,6 +19,8 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 		state.menuReducer.additionalIngredients.find((item) => item.id === ingredient.id)
 	)
 
+	const selectedSize = useAppSelector(state => state.menuReducer.selectedSize)
+
 	const ingredientAmount = ingredientItem?.amount || 0;
 
 	// Reset disabled ingredient amount to 0
@@ -40,6 +42,11 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 		}
 	};
 
+	const ingredientPrice = ingredient?.prices.find(item => item.id === selectedSize?.id)?.price
+
+
+	const ingredientWeight = ingredient?.weights.find(item => item.id === selectedSize?.id)?.value
+
   return (
 		<li
 			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 ? "bg-yellow" : "bg-grayLight"} ${isDisabled && "text-grayDark"}`}
@@ -53,7 +60,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 						{ingredient.name}
           </span>
           <span className="md:text-xs md:leading-[15px] text-sm leading-[17px] font-normal whitespace-nowrap">
-						{!isDisabled ? `${ingredient.weight} г ${ingredient.price} ₽` : "Выберите другие параметры"}
+						{!isDisabled ? `${ingredientWeight} г ${ingredientPrice} ₽` : "Выберите другие параметры"}
 					</span>
         </div>
 				{!isDisabled && (
