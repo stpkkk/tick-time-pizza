@@ -1,32 +1,32 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { MenuItemTypes, Option, additionalIngredientsTypes } from "@/types";
+import { IProduct, IOption, IAdditionalIngredient } from "@/types";
 
 export interface HeaderState {
   isModalOpen: boolean;
   isTooltipOpen: boolean;
   hoveredItemId: number | null;
-  clickedMenuItem: MenuItemTypes | null;
-  selectedSize: Option | null;
-  selectedDough: Option | null;
-	removedIngredients: Option[];
-	selectedCategory: Option | null;
+	selectedProduct: IProduct | null
+	selectedSize: IOption | null
+	selectedDough: IOption | null
+	removedIngredients: IOption[]
+	selectedCategory: IOption | null;
 	isAllIngredients: boolean
 	isDisabled: boolean;
-	itemAmount: number
-	additionalIngredients: additionalIngredientsTypes[]
+	productAmount: number
+	additionalIngredients: IAdditionalIngredient[]
 }
 
 const initialState: HeaderState = {
   isModalOpen: false,
   isTooltipOpen: false,
   hoveredItemId: null,
-  clickedMenuItem: null,
+	selectedProduct: null,
   selectedCategory: null,
   selectedSize: null,
 	selectedDough: null,
 	isAllIngredients: false,
 	isDisabled: false,
-	itemAmount: 1,
+	productAmount: 1,
 	removedIngredients: [],
 	additionalIngredients: [],
 };
@@ -39,14 +39,14 @@ const menuSlice = createSlice({
       state.hoveredItemId = action.payload;
     },
 
-    setClickedMenuItem: (
+		setSelectedProduct: (
       state,
-      action: PayloadAction<MenuItemTypes | null>
+			action: PayloadAction<IProduct | null>
     ) => {
-      state.clickedMenuItem = action.payload;
+			state.selectedProduct = action.payload;
     },
 
-    setSelectedCategory: (state, action: PayloadAction<Option | null>) => {
+		setSelectedCategory: (state, action: PayloadAction<IOption | null>) => {
       state.selectedCategory = action.payload;
     },
 
@@ -59,15 +59,15 @@ const menuSlice = createSlice({
       state.isTooltipOpen = !state.isTooltipOpen;
     },
 
-    setSelectedSize: (state, action: PayloadAction<Option | null>) => {
+		setSelectedSize: (state, action: PayloadAction<IOption | null>) => {
       state.selectedSize = action.payload;
     },
 
-    setSelectedDough: (state, action: PayloadAction<Option | null>) => {
+		setSelectedDough: (state, action: PayloadAction<IOption | null>) => {
       state.selectedDough = action.payload;
     },
 
-		setRemovedIngredients: (state, action: PayloadAction<Option[]>) => {
+		setRemovedIngredients: (state, action: PayloadAction<IOption[]>) => {
 			state.removedIngredients = action.payload
 		},
 
@@ -76,33 +76,33 @@ const menuSlice = createSlice({
 		},
 
 		initializeDefaultValues: state => {
-			if (state.clickedMenuItem) {
-				state.selectedSize = state.clickedMenuItem.sizes[0]
-				state.selectedDough = state.clickedMenuItem.dough[1]
+			if (state.selectedProduct) {
+				state.selectedSize = state.selectedProduct.sizes[0]
+				state.selectedDough = state.selectedProduct.dough[1]
 				state.isAllIngredients = false
 				state.removedIngredients = []
 				state.additionalIngredients = []
-				state.itemAmount = 1
+				state.productAmount = 1
 			}
 
 			if (state.selectedSize?.name === null) {
-				state.selectedSize = state.clickedMenuItem?.sizes[1] || null
-				state.selectedDough = state.clickedMenuItem?.dough[0] || null
+				state.selectedSize = state.selectedProduct?.sizes[1] || null
+				state.selectedDough = state.selectedProduct?.dough[0] || null
 			}
 		},
 
 		// Counters Actions
-		incrementItemAmount: (state, action: PayloadAction<number>) => {
-			state.itemAmount++
+		incrementProductAmount: (state, action: PayloadAction<number>) => {
+			state.productAmount++
     },
 
-		decrementItemAmount: (state, action: PayloadAction<number>) => {
-			if (state.itemAmount > 1) state.itemAmount--
+		decrementProductAmount: (state, action: PayloadAction<number>) => {
+			if (state.productAmount > 1) state.productAmount--
 		},
 
 		incrementIngredientAmount: (
 			state,
-			action: PayloadAction<{ ingredient: additionalIngredientsTypes }>
+			action: PayloadAction<{ ingredient: IAdditionalIngredient }>
 		) => {
 			const { ingredient } = action.payload
 			const existingIngredient = state.additionalIngredients.find(
@@ -118,7 +118,7 @@ const menuSlice = createSlice({
 
 		decrementIngredientAmount: (
 			state,
-			action: PayloadAction<{ ingredient: additionalIngredientsTypes }>
+			action: PayloadAction<{ ingredient: IAdditionalIngredient }>
 		) => {
 			const { ingredient } = action.payload
 			const existingIngredient = state.additionalIngredients.find(
@@ -140,14 +140,14 @@ const menuSlice = createSlice({
 export const {
   toggleModal,
   setHoveredItemId,
-  setClickedMenuItem,
+	setSelectedProduct,
   setSelectedSize,
   setSelectedDough,
 	setRemovedIngredients,
   setSelectedCategory,
   initializeDefaultValues,
-	incrementItemAmount,
-	decrementItemAmount,
+	incrementProductAmount,
+	decrementProductAmount,
 	incrementIngredientAmount,
 	decrementIngredientAmount,
   toggleTooltip,

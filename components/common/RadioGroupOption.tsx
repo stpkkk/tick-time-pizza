@@ -2,17 +2,17 @@
 import React from "react";
 import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
-import { Option } from '@/types'
+import { IOption } from '@/types'
 
-export interface RadioGroupOptionProps {
-	option: Option
+export interface IRadioGroupOptionProps {
+	option: IOption
 	className: string
 	isChecked?: boolean
 	crossed?: string
 	isDisabled?: boolean
 }
 
-const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
+const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
   option,
   className,
   isChecked,
@@ -24,7 +24,7 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
 		: "bg-grayLight no-underline hover:bg-gray";
 
 	return option.name !== null && (
-    <RadioGroup.Option
+		<RadioGroup.Option
 			disabled={isDisabled}
       value={option}
 			className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${isDisabled && "pointer-events-none text-grayDark"}`}
@@ -46,7 +46,7 @@ const RadioGroupOption: React.FC<RadioGroupOptionProps> = ({
 					<span className={`${crossed}`}>{option.name}</span>
 				</div>
 			</div>
-    </RadioGroup.Option>
+		</RadioGroup.Option>
   );
 };
 

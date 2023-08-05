@@ -8,10 +8,10 @@ import { RadioGroupOption } from "./common";
 import { categories } from "@/constants";
 
 const Categories: React.FC = () => {
+	const dispatch = useAppDispatch();
   const selectedCategory = useAppSelector(
     state => state.menuReducer.selectedCategory
-  );
-  const dispatch = useAppDispatch();
+	);
 
   useEffect(() => {
     // Set the default selected category

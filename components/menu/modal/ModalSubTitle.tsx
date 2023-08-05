@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ModalSubTitleProps {
+type ModalSubTitleProps = {
   text: string;
 }
 

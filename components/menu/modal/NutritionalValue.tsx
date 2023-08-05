@@ -4,9 +4,9 @@ import { useAppSelector } from "@/redux/hooks";
 import ModalSubTitle from "./ModalSubTitle";
 
 const NutritionalValue: React.FC = () => {
-  const { clickedMenuItem } = useAppSelector(state => state.menuReducer);
+	const { selectedProduct } = useAppSelector(state => state.menuReducer);
 
-  const nutrients = clickedMenuItem?.nutritionalValues;
+	const nutrients = selectedProduct?.nutritionalValues;
 
   return (
     <div>

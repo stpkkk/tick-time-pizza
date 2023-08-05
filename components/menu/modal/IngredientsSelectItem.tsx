@@ -5,10 +5,10 @@ import { decrementIngredientAmount, incrementIngredientAmount } from "@/redux/fe
 import Image from "next/image";
 
 import Counter from "./Counter"
-import { additionalIngredientsTypes } from '@/types'
+import { IAdditionalIngredient } from '@/types'
 
 type IngredientsSelectItemProps = {
-	ingredient: additionalIngredientsTypes
+	ingredient: IAdditionalIngredient
 	isDisabled: boolean
 };
 
@@ -18,10 +18,11 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 	const ingredientItem = useAppSelector((state) =>
 		state.menuReducer.additionalIngredients.find((item) => item.id === ingredient.id)
 	)
-
 	const selectedSize = useAppSelector(state => state.menuReducer.selectedSize)
 
 	const ingredientAmount = ingredientItem?.amount || 0;
+	const ingredientPrice = ingredient?.prices.find(item => item.id === selectedSize?.id)?.price
+	const ingredientWeight = ingredient?.weights.find(item => item.id === selectedSize?.id)?.value
 
 	// Reset disabled ingredient amount to 0
 	useEffect(() => {
@@ -41,11 +42,6 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 			dispatch(incrementIngredientAmount({ ingredient }))
 		}
 	};
-
-	const ingredientPrice = ingredient?.prices.find(item => item.id === selectedSize?.id)?.price
-
-
-	const ingredientWeight = ingredient?.weights.find(item => item.id === selectedSize?.id)?.value
 
   return (
 		<li

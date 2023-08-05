@@ -1,53 +1,53 @@
 import { StaticImageData } from "next/image";
-import { Option } from "./radio-option";
+import { IOption } from './radio-option'
 
-export interface additionalIngredientsTypes {
+export interface IPrice {
+	id: number
+	price: number
+}
+
+export interface IWeight {
+	id?: number
+	weight?: number | null
+}
+
+export interface IAdditionalIngredient {
   id: number;
   image: string | StaticImageData;
-	name: string;
+	name: string
 	weights: {
-		id: number,
+		id: number
 		value: number
 	}[]
-	prices: PricesType[]
+	prices: IPrice[]
 	amount?: number
 	maxAmount: number
 }
 
-export interface nutritionalValueTypes {
+export interface INutritionalValue {
   proteins: number;
   fats: number;
   carbohydrates: number;
   calories: number;
 }
 
-export interface menuCategoriesTypes {
+export interface IMenuCategory {
   key: number;
   title: string;
   image?: StaticImageData;
 }
 
-export interface PricesType {
-	id: number
-	price: number
-}
-
-export interface WeightType {
-	id?: number
-	weight?: number | null
-}
-
-export interface MenuItemTypes {
+export interface IProduct {
 	id: number;
   title: string;
   image: string | StaticImageData;
   ingredients: string;
-	prices: PricesType[];
-  additionalIngredients: additionalIngredientsTypes[];
-	removeIngredients: Option[];
-  categories?: menuCategoriesTypes[];
-	sizes: Option[]
-	dough: Option[];
-	nutritionalValues: nutritionalValueTypes
-	weights: WeightType[]
+	prices: IPrice[]
+	additionalIngredients: IAdditionalIngredient[]
+	removeIngredients: IOption[]
+	categories?: IMenuCategory[]
+	sizes: IOption[]
+	dough: IOption[]
+	weights: IWeight[]
+	nutritionalValues: INutritionalValue
 }

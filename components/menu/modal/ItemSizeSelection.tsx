@@ -8,10 +8,10 @@ import {
 import { RadioGroup } from "@headlessui/react"
 
 import { RadioGroupOption } from "@/components/common";
-import { Option } from "@/types";
+import { IOption } from "@/types";
 
 const ItemSizeSelection: React.FC = () => {
-  const { clickedMenuItem, selectedSize, selectedDough } = useAppSelector(
+	const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
 		(state) => state.menuReducer
 	);
 
@@ -21,45 +21,45 @@ const ItemSizeSelection: React.FC = () => {
 	const smallSize = 23;
 
 	const getWeightBySize = () => {
-		return clickedMenuItem?.weights.find((item) => item.id === selectedSize?.id)
+		return selectedProduct?.weights.find((item) => item.id === selectedSize?.id)
 	}
 
 	const getWeightByDough = () => {
 		const isThinDough = selectedDough?.name === thinDough
 		return isThinDough
-			? clickedMenuItem?.weights.slice(-2)
-			: clickedMenuItem?.weights.slice(0, 1)
+			? selectedProduct?.weights.slice(-2)
+			: selectedProduct?.weights.slice(0, 1)
 	}
 
 	const getTotalWeight = () => {
 		const weightBySize = getWeightBySize()
 		const weightByDough = getWeightByDough()
 
-		if (!selectedDough || !clickedMenuItem || !weightBySize || !weightByDough) {
+		if (!selectedDough || !selectedProduct || !weightBySize || !weightByDough) {
 			return null
 		}
 
 		if (selectedDough.name === thinDough) {
-			const selectedSizeIndex = clickedMenuItem.sizes.findIndex((_, i) => i + 1 === selectedSize?.id)
+			const selectedSizeIndex = selectedProduct.sizes.findIndex((_, i) => i + 1 === selectedSize?.id)
 			return weightByDough[selectedSizeIndex]?.weight
 		} else {
 			return weightBySize.weight
 		}
 	}
 
-	const getIsDisabledSize = (size: Option) => {
+	const getIsDisabledSize = (size: IOption) => {
 		return selectedDough?.name === thinDough && size.name === smallSize
 	}
 
-	const getIsDisabledDough = (dough: Option) => {
+	const getIsDisabledDough = (dough: IOption) => {
 		return selectedSize?.name === smallSize && selectedDough !== dough
 	}
 
-	const handleSizeChange = (size: Option) => {
+	const handleSizeChange = (size: IOption) => {
 		dispatch(setSelectedSize(size))
 	}
 
-	const handleDoughChange = (dough: Option) => {
+	const handleDoughChange = (dough: IOption) => {
 		dispatch(setSelectedDough(dough))
 	};
 
@@ -74,7 +74,7 @@ const ItemSizeSelection: React.FC = () => {
       <div className="flex flex-col gap-2">
 				<RadioGroup value={selectedSize} onChange={handleSizeChange}>
 					<div className="flex flex-row gap-2.5">
-						{clickedMenuItem?.sizes.map((size) => (
+						{selectedProduct?.sizes.map((size) => (
               <RadioGroupOption
                 key={size.id}
 								option={size}
@@ -87,7 +87,7 @@ const ItemSizeSelection: React.FC = () => {
         </RadioGroup>
 				<RadioGroup value={selectedDough} onChange={handleDoughChange}>
 					<div className="flex flex-row gap-2.5">
-						{clickedMenuItem?.dough.map((dough) => (
+						{selectedProduct?.dough.map((dough) => (
               <RadioGroupOption
                 key={dough.id}
                 option={dough}

@@ -1,5 +1,5 @@
 export * from "./modal";
 import Menu from "./Menu";
-import MenuItem from "./MenuItem";
+import Product from "./Product";
 
-export { Menu, MenuItem };
+export { Menu, Product }

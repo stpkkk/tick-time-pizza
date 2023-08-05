@@ -1,4 +1,4 @@
-import { MenuItemTypes } from "@/types";
+import { IProduct } from "@/types"
 import porkRoast from "../public/assets/images/pizza-pork-roast.webp";
 import americana from "../public/assets/images/pizza-americana.webp";
 import caesar from "../public/assets/images/pizza-caesar.webp";
@@ -54,7 +54,7 @@ import bear from "../public/assets/images/cat-bear.webp";
 import fire from "../public/assets/images/cat-fire.webp";
 import leaf from "../public/assets/images/cat-leaf.webp";
 
-export const menu: MenuItemTypes[] = [
+export const menu: IProduct[] = [
   {
     id: 0,
     title: "Пицца ЧикенБургер",

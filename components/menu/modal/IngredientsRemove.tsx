@@ -6,16 +6,16 @@ import { RadioGroupOption } from "@/components/common"
 import { RadioGroup } from "@headlessui/react"
 
 import ModalSubTitle from "./ModalSubTitle"
-import { Option } from "@/types"
+import { IOption } from "@/types"
 
 const IngredientsRemove: React.FC = () => {
 	const dispatch = useAppDispatch()
 
-	const { clickedMenuItem, removedIngredients } = useAppSelector(
+	const { selectedProduct, removedIngredients } = useAppSelector(
 		(state) => state.menuReducer
 	)
 
-	const handleIngredientChange = (ingredient: Option) => {
+	const handleIngredientChange = (ingredient: IOption) => {
 		const updatedIngredients = removedIngredients.includes(ingredient)
 			? removedIngredients.filter((item) => item !== ingredient)
 			: [...removedIngredients, ingredient]
@@ -27,7 +27,7 @@ const IngredientsRemove: React.FC = () => {
 			<ModalSubTitle text="Убрать ингредиенты:" />
 			<RadioGroup value={null} onChange={handleIngredientChange}>
 				<div className="flex flex-row flex-wrap gap-2.5 w-full">
-					{clickedMenuItem?.removeIngredients.map((ingredient) => (
+					{selectedProduct?.removeIngredients.map((ingredient) => (
 						<RadioGroupOption
 							key={ingredient.id}
 							option={ingredient}

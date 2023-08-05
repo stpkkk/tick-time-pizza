@@ -1,7 +1,7 @@
 import React from "react"
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
-interface CounterProps {
+type CounterProps = {
 	value: number
 	initialValue: number
 	maxValue?: number

@@ -16,6 +16,7 @@ const HeaderMobile: React.FC = () => {
   const handleClick = () => {
     dispatch(toggleNav());
   };
+
   return (
     <header className="hidden header sm:flex sm:items-center sm:px-6 uppercase">
       <Logo />

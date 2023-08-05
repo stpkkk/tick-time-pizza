@@ -5,19 +5,18 @@ import IngredientsSelectItem from "./IngredientsSelectItem";
 import { setAllIngredients } from "@/redux/features/menuSlice";
 import { BsPlusSquare } from "react-icons/bs";
 import ModalSubTitle from "./ModalSubTitle";
-import { additionalIngredientsTypes } from '@/types'
+import { IAdditionalIngredient } from '@/types'
 
 const IngredientsSelect: React.FC = () => {
   const dispatch = useAppDispatch();
-	const { clickedMenuItem, isAllIngredients, selectedDough, selectedSize } = useAppSelector(
+	const { selectedProduct, isAllIngredients, selectedDough, selectedSize } = useAppSelector(
     state => state.menuReducer
   );
 
-	const sliceTo = isAllIngredients ? clickedMenuItem?.additionalIngredients.length : 5;
-
+	const sliceTo = isAllIngredients ? selectedProduct?.additionalIngredients.length : 5;
   const showMore = sliceTo !== undefined && sliceTo <= 5;
 
-	const isDisabled = (ingredient: additionalIngredientsTypes) => {
+	const isDisabled = (ingredient: IAdditionalIngredient) => {
 		const isPizzaHeart = ingredient.name === "Пицца \"Сердце\""
 		const isCheeseSide = ingredient.name === "Сырный Бортик"
 		const isThinDoughSelected = selectedDough?.name === "Тонкое"
@@ -30,7 +29,7 @@ const IngredientsSelect: React.FC = () => {
     <div>
       <ModalSubTitle text="Добавить ингредиенты:" />
       <ul className="flex flex-col flex-wrap gap-2.5">
-				{clickedMenuItem?.additionalIngredients.slice(0, sliceTo).map(ingredient => (
+				{selectedProduct?.additionalIngredients.slice(0, sliceTo).map(ingredient => (
 					<IngredientsSelectItem
 						ingredient={ingredient}
 						isDisabled={isDisabled(ingredient)}

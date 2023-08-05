@@ -6,12 +6,12 @@ import IngredientsSelect from './IngredientsSelect'
 import IngredientsRemove from './IngredientsRemove'
 import NutritionalValue from './NutritionalValue'
 
-interface ModalRightContentProps {
+type ModalRightContentProps = {
 	modalHeight: number
 }
 
 const ModalRightContent: React.FC<ModalRightContentProps> = ({ modalHeight }) => {
-	const { clickedMenuItem } = useAppSelector(state => state.menuReducer)
+	const { selectedProduct } = useAppSelector(state => state.menuReducer)
 
 	return (
 		<div
@@ -19,7 +19,7 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({ modalHeight }) =>
 			style={{ height: `${modalHeight}px` }}
 		>
 			<h4 className="uppercase font-zheldor text-[2.5rem] leading-[3rem]">
-				{clickedMenuItem?.title}
+				{selectedProduct?.title}
 			</h4>
 			<ItemSizeSelection />
 			<IngredientsSelect />
