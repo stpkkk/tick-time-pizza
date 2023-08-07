@@ -19,7 +19,7 @@ const ImageNotice: React.FC = () => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       dispatch(toggleTooltip());
     }
-	}, []); 
+	}, [dispatch]); 
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

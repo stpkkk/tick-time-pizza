@@ -6,19 +6,27 @@ import { RiCloseFill } from "react-icons/ri";
 
 import ModalLeftContent from './ModalLeftContent'
 import ModalRightContent from './ModalRightContent'
+import ModalTotal from "./ModalTotal";
 
 const Modal: React.FC = () => {
-	const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-	const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const [modalHeight, setModalHeight] = useState<number>(0);
 
-	const handleClickOutside = useCallback((e: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      dispatch(toggleModal());
-    }
-	}, [])
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(e.target as Node) &&
+        modalRef.current.clientWidth > 768
+      ) {
+        dispatch(toggleModal());
+      }
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -28,40 +36,45 @@ const Modal: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.classList.remove("overflow-hidden");
     };
-	}, [handleClickOutside]);
+  }, [handleClickOutside]);
 
-	useEffect(() => {
-		dispatch(initializeDefaultValues())
-	}, [dispatch]);
+  useEffect(() => {
+    dispatch(initializeDefaultValues());
+  }, [dispatch]);
 
   const handleClick = () => {
     dispatch(toggleModal());
   };
 
   return (
-    <div className="relative z-10">
-      <div className="fixed inset-0 bg-black bg-opacity-25 opacity-100" />
-      <div className="fixed inset-0 overflow-y-auto">
-        <div className="flex_center min-h-full sm:text-center sm:items-stretch p-4 sm:p-0">
-          <div
-            ref={modalRef}
-            className="relative max-w-[950px] w-full overflow-hidden bg-white align-middle drop-shadow-custom transition-all rounded-2xl opacity-100 scale-100 sm:rounded-none"
-          >
-            <button
-              className="flex items-center z-10 gap-3 text-grayDark hover:text-primary absolute sm:top-0 sm:right-0 sm:p-1 top-[18px] right-[18px]"
-              type="button"
-              onClick={handleClick}
+    <>
+      <div className="relative z-10">
+        <div className="fixed inset-0 bg-black bg-opacity-25 opacity-100" />
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex_center min-h-full sm:text-center sm:items-stretch p-4 sm:p-0">
+            <div
+              ref={modalRef}
+              className="relative max-w-[950px] w-full overflow-hidden bg-white align-middle drop-shadow-custom transition-all rounded-2xl opacity-100 scale-100 sm:rounded-none"
             >
-              <RiCloseFill size={36} />
-            </button>
-            <form className="modal_form">
-							<ModalLeftContent setModalHeight={setModalHeight} />
-							<ModalRightContent modalHeight={modalHeight} />
-            </form>
+              <button
+                className="absolute flex items-center z-10 gap-3 text-grayDark hover:text-primary sm:top-0 sm:right-0 sm:p-1 top-[18px] right-[18px]"
+                type="button"
+                onClick={handleClick}
+              >
+                <RiCloseFill size={36} className="md:w-7" />
+              </button>
+              <form className="modal_form">
+                <ModalLeftContent setModalHeight={setModalHeight} />
+                <ModalRightContent modalHeight={modalHeight} />
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="fixed hidden sm:w-full sm:block sm:bg-white z-10 left-0 bottom-0 p-4 pb-[30px] drop-shadow-custom rounded-2xl">
+        <ModalTotal />
+      </div>
+    </>
   );
 };
 

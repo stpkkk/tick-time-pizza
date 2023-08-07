@@ -1,5 +1,5 @@
 import Modal from "./Modal";
-import ItemSizeSelection from "./ItemSizeSelection";
+import ProductSizeSelection from "./ProductSizeSelection";
 import Counter from "./Counter";
 import ImageNotice from "./ImageNotice";
 import IngredientsSelect from "./IngredientsSelect";
@@ -7,12 +7,14 @@ import IngredientsSelectItem from "./IngredientsSelectItem";
 import IngredientsRemove from "./IngredientsRemove";
 import NutritionalValue from "./NutritionalValue";
 import ModalSubTitle from "./ModalSubTitle";
-import ModalLeftContent from "./ModalLeftContent"
+import ModalLeftContent from "./ModalLeftContent";
 import ModalRightContent from "./ModalRightContent";
+import ProductTitle from "./ProductTitle";
+import ModalTotal from "./ModalTotal";
 
 export {
   Modal,
-  ItemSizeSelection,
+  ProductSizeSelection,
   Counter,
   ImageNotice,
   IngredientsSelect,
@@ -20,6 +22,8 @@ export {
   IngredientsRemove,
   NutritionalValue,
   ModalSubTitle,
-	ModalLeftContent,
-	ModalRightContent
+  ModalLeftContent,
+  ModalRightContent,
+  ProductTitle,
+  ModalTotal,
 };

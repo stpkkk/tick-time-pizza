@@ -17,18 +17,26 @@ const Counter: React.FC<CounterProps> = ({ initialValue, handleDecrement, handle
     <>
       <button
         className={`${
-					counterValue <= initialValue ? "text-grayDark opacity-30" : "hover:text-primary"
-					} text-grayDark  p-2`}
+          counterValue <= initialValue
+            ? "text-grayDark opacity-30"
+            : "hover:text-primary"
+        } text-grayDark`}
         type="button"
-				onClick={() => handleDecrement()}
+        onClick={() => handleDecrement()}
       >
         <AiOutlineMinusCircle size={18} />
       </button>
-			<span className="whitespace-nowrap">{counterValue} шт.</span>
+      <span className="whitespace-nowrap sm:text-[12px]">
+        {counterValue} шт.
+      </span>
       <button
-				className={`${counterValue >= (maxValue || 99) ? "text-grayDark opacity-30" : "text-grayDark hover:text-primary"} text-grayDark p-2"`}
+        className={`${
+          counterValue >= (maxValue || 99)
+            ? "text-grayDark opacity-30"
+            : "text-grayDark hover:text-primary"
+        } text-grayDark`}
         type="button"
-				onClick={() => handleIncrement()}
+        onClick={() => handleIncrement()}
       >
         <AiOutlinePlusCircle size={18} />
       </button>
