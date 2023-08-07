@@ -11,22 +11,26 @@ const Footer: React.FC = () => {
     <footer className="drop-shadow-custom mt-8">
       <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
-          <Link href="https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim">
+          <Link
+            href="https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim"
+            as="Google Store"
+          >
             <Image
               src={google}
               width={150}
               height={50}
-              loading="lazy"
               alt="Google Play"
               className="max-w-[150px] h-[50px]"
             />
           </Link>
-          <Link href="https://apps.apple.com/ru/app/id1482770584">
+          <Link
+            href="https://apps.apple.com/ru/app/id1482770584"
+            as="Apple Store"
+          >
             <Image
               src={apple}
               width={150}
               height={50}
-              loading="lazy"
               alt="Apple Store"
               className="max-w-[150px] h-[50px]"
             />
@@ -38,7 +42,7 @@ const Footer: React.FC = () => {
               className="py-3 whitespace-nowrap sm:text-[14px]"
               key={link.key}
             >
-							<Link href={link.href}>
+              <Link href={link.href} as="about">
                 {link.text}
               </Link>
             </li>
@@ -56,8 +60,13 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="w-full flex flex-col gap-3 text-right underline sm:items-center whitespace-nowrap">
-          <Link href="/legal">Правовая информация</Link>
-          <Link href="https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/">
+          <Link href="/legal" as="legal">
+            Правовая информация
+          </Link>
+          <Link
+            href="https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/"
+            as="Igor Stepanov"
+          >
             Поддержка сайта Степанов Игорь
           </Link>
         </div>

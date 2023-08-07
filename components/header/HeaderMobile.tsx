@@ -21,7 +21,7 @@ const HeaderMobile: React.FC = () => {
     <header className="hidden header sm:flex sm:items-center sm:px-6 uppercase">
       <Logo />
       <div className="flex_center">
-        <Link href="cart" className="px-2">
+        <Link href="cart" as="cart" className="px-2">
           <BsBasket2 size={30} />
         </Link>
         <button

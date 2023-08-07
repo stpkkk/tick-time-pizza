@@ -55,7 +55,7 @@ const HeaderDesktop: React.FC = () => {
   const CartTooltip = () => (
     <div className="right-0 header_tooltip">
       <p className="block text-start mb-4">Корзина пока пуста</p>
-      <Link href="/cart">
+      <Link href="/cart" as="cart">
         <button className="btn_red">Перейти в корзину</button>
       </Link>
     </div>
@@ -84,6 +84,7 @@ const HeaderDesktop: React.FC = () => {
       </div>
       <Link
         href="/login"
+        as="login"
         className="flex_center flex-col gap-2 w-[6rem] h-full hover:bg-grayLight ml-[28px]"
       >
         <RiLoginCircleLine size={25} />
@@ -96,6 +97,7 @@ const HeaderDesktop: React.FC = () => {
       >
         <Link
           href="/cart"
+          as="cart"
           className="flex_center flex-col gap-2 w-[6rem] h-full "
         >
           <BsBasket2 size={25} />

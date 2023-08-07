@@ -32,16 +32,17 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
   }, [getModalHeight]);
 
   return (
-    <div className="fill flex_between flex-col gap-[30px]" ref={modalLeft}>
+    <div className="flex_between flex-col gap-[30px]" ref={modalLeft}>
       <div className="hidden sm:block">
         <ProductTitle />
       </div>
       <div className="relative flex_center flex-col gap-[30px] sm:gap-0 w-full">
         <Image
-          src={selectedProduct?.image || "Картинка не загрузилась"}
+          src={selectedProduct?.image || "😢"}
           alt={selectedProduct?.title || "😢"}
           width={325}
           height={325}
+          className="aspect-square w-full h-full max-w-[325px] max-h-[325px] sm:max-w-[250px] sm:max-h-[250px]"
         />
         <div className="absolute top-0 right-0 cursor-pointer">
           <HeartIcon />

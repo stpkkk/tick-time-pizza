@@ -44,32 +44,40 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
 	};
 
   return (
-		<li
-			className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${ingredientAmount > 0 ? "bg-yellow" : "bg-grayLight"} ${isDisabled && "text-grayDark"}`}
+    <li
+      className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${
+        ingredientAmount > 0 ? "bg-yellow" : "bg-grayLight"
+      } ${isDisabled && "text-grayDark"}`}
     >
       <div className="flex flex-grow flex-auto basis-[calc(100%-7rem)] items-center flex-row gap-5">
-        <div className="w-27 h-27">
-					<Image src={ingredient.image} alt={ingredient.name} width={27} height={27} />
-        </div>
+        <Image
+          src={ingredient.image}
+          alt={ingredient.name}
+          width={27}
+          height={27}
+          className="w-full h-full max-w-[27px] max-h-[27px]"
+        />
         <div className="flex flex-col gap-1.5">
           <span className="md:text-xs md:leading-[15px] text-sm leading-[17px] font-bold break-words">
-						{ingredient.name}
+            {ingredient.name}
           </span>
           <span className="md:text-xs md:leading-[15px] text-sm leading-[17px] font-normal whitespace-nowrap">
-						{!isDisabled ? `${ingredientWeight} г ${ingredientPrice} ₽` : "Выберите другие параметры"}
-					</span>
+            {!isDisabled
+              ? `${ingredientWeight} г ${ingredientPrice} ₽`
+              : "Выберите другие параметры"}
+          </span>
         </div>
-				{!isDisabled && (
-					<div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
-						<Counter
-							handleIncrement={handleIncrement}
-							handleDecrement={handleDecrement}
-							initialValue={0}
-							maxValue={ingredient.maxAmount}
-							value={ingredientAmount}
-						/>
-					</div>
-				)}
+        {!isDisabled && (
+          <div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
+            <Counter
+              handleIncrement={handleIncrement}
+              handleDecrement={handleDecrement}
+              initialValue={0}
+              maxValue={ingredient.maxAmount}
+              value={ingredientAmount}
+            />
+          </div>
+        )}
       </div>
     </li>
   );

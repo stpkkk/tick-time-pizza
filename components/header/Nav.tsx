@@ -20,7 +20,7 @@ const Nav: React.FC = () => {
       >
         {navLinks.map(link => (
           <li className="p-2 cursor-pointer" key={link.key}>
-            <Link draggable="false" href={link.href}>
+            <Link draggable="false" as="nav" href={link.href}>
               {link.text}
             </Link>
           </li>
@@ -28,6 +28,7 @@ const Nav: React.FC = () => {
         <li>
           <Link
             href="/login"
+            as="login"
             className="hidden sm:flex sm:items-center sm:gap-2 sm:p-2 sm:cursor-pointer"
           >
             <div>Войти</div>

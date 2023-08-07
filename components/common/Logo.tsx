@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Logo: React.FC = () => {
   return (
-    <Link href="/" className="mr-auto">
+    <Link href="/" as="main" className="mr-auto">
       <Image src={logo} width={45} height={45} alt="logo" priority />
     </Link>
   );
