@@ -41,7 +41,7 @@ const Product: React.FC<ProductProps> = ({ item }) => {
 
 	return (
     <li
-      className="relative h-full max-w-[290px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-custom rounded-lg sm:p-4 bg-white"
+      className="relative h-full max-w-[255px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-custom rounded-lg sm:p-4 bg-white"
       onMouseOver={handleMouseOverItem}
       onMouseOut={handleMouseOutItem}
       onClick={() => handleClick(item)}

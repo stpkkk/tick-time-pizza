@@ -13,6 +13,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Logo } from "../common";
 import Nav from "./Nav";
 import Phone from "./Phone";
+import ProgressBar from "./ProgressBar";
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -36,7 +37,7 @@ const HeaderDesktop: React.FC = () => {
     dispatch(setIsHoveringCart(true));
   };
 
-	const handleMouseOutCart = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseOutCart = (e: React.MouseEvent<HTMLDivElement>) => {
     const isHoveringTooltip =
       e.relatedTarget instanceof HTMLElement &&
       e.currentTarget.contains(e.relatedTarget);
@@ -105,6 +106,7 @@ const HeaderDesktop: React.FC = () => {
         </Link>
         {isHoveringCart && <CartTooltip />}
       </div>
+      <ProgressBar />
     </header>
   );
 };

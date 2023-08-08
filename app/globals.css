@@ -29,6 +29,10 @@
 	box-sizing: border-box;
 }
 
+html::-webkit-scrollbar  {
+	display: none;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
