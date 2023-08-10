@@ -38,16 +38,16 @@ export interface IMenuCategory {
 }
 
 export interface IProduct {
-	id: number;
+  id: number;
   title: string;
   image: string | StaticImageData;
   ingredients: string;
-	prices: IPrice[]
-	additionalIngredients: IAdditionalIngredient[]
-	removeIngredients: IOption[]
-	categories?: IMenuCategory[]
-	sizes: IOption[]
-	dough: IOption[]
-	weights: IWeight[]
-	nutritionalValues: INutritionalValue
+  prices: IPrice[];
+  additionalIngredients: IAdditionalIngredient[];
+  removeIngredients: IOption[];
+  categories?: IMenuCategory[];
+  sizes: IOption[];
+  dough: IOption[];
+  weights: IWeight[];
+  nutritionalValues: INutritionalValue;
 }

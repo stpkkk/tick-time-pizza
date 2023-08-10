@@ -1,3 +1,4 @@
 import HeartIcon from "./HeartIcon";
+import HeartIconRed from "./HeartIconRed";
 
-export { HeartIcon };
+export { HeartIcon, HeartIconRed };
