@@ -1786,7 +1786,7 @@ export const menu: IProduct[] = [
       { id: 2, name: "Сыр Пармезан" },
       { id: 3, name: "Листья Салата" },
     ],
-    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
+    categories: [{ id: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -1961,7 +1961,7 @@ export const menu: IProduct[] = [
       { id: 5, name: "Листья Салата" },
       { id: 6, name: "Соус Кетчуп" },
     ],
-    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
+    categories: [{ id: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -2113,7 +2113,7 @@ export const menu: IProduct[] = [
       { id: 0, name: "Бекон" },
       { id: 1, name: "Ананасы" },
     ],
-    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
+    categories: [{ id: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -2565,7 +2565,7 @@ export const menu: IProduct[] = [
       },
     ],
     removeIngredients: [{ id: 0, name: "Пепперони" }],
-    categories: [{ key: 0, title: "Острая", image: fire }],
+    categories: [{ id: 0, title: "Острая", image: fire }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -3029,7 +3029,7 @@ export const menu: IProduct[] = [
       { id: 3, name: " Болгарский Перец" },
       { id: 4, name: "Барбекю соус" },
     ],
-    categories: [{ key: 0, title: "Острая", image: fire }],
+    categories: [{ id: 0, title: "Острая", image: fire }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -3204,7 +3204,7 @@ export const menu: IProduct[] = [
       { id: 2, name: "Сыр Пармезан" },
       { id: 3, name: "Укроп" },
     ],
-    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
+    categories: [{ id: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -3363,8 +3363,8 @@ export const menu: IProduct[] = [
       { id: 2, name: "Сыр Блю Чиз" },
     ],
     categories: [
-      { key: 0, title: "Без Мяса", image: leaf },
-      { key: 1, title: "Подходит для Детей", image: bear },
+      { id: 0, title: "Без Мяса", image: leaf },
+      { id: 1, title: "Подходит для Детей", image: bear },
     ],
     sizes: [
       { id: 0, name: 23 },
@@ -3542,7 +3542,7 @@ export const menu: IProduct[] = [
       { id: 0, name: "Сыр Фета" },
       { id: 1, name: "Сыр Чеддер" },
     ],
-    categories: [{ key: 0, title: "Подходит для Детей", image: bear }],
+    categories: [{ id: 0, title: "Подходит для Детей", image: bear }],
     sizes: [
       { id: 0, name: 23 },
       { id: 1, name: 28 },
@@ -3885,8 +3885,8 @@ export const menu: IProduct[] = [
     ],
     removeIngredients: [{ id: 0, name: "Томаты" }],
     categories: [
-      { key: 0, title: "Без Мяса", image: leaf },
-      { key: 1, title: "Подходит для Детей", image: bear },
+      { id: 0, title: "Без Мяса", image: leaf },
+      { id: 1, title: "Подходит для Детей", image: bear },
     ],
     sizes: [
       { id: 0, name: 23 },

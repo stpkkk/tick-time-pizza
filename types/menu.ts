@@ -32,7 +32,7 @@ export interface INutritionalValue {
 }
 
 export interface IMenuCategory {
-  key: number;
+  id: number;
   title: string;
   image?: StaticImageData;
 }

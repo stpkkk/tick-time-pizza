@@ -87,7 +87,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
             alt={cat.title}
             width={16}
             height={16}
-            key={cat.key}
+            key={cat.id}
           />
         ))}
       </div>
