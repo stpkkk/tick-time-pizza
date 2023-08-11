@@ -24,7 +24,7 @@ const Categories: React.FC = () => {
     <RadioGroup
       value={selectedCategory}
       onChange={category => dispatch(setSelectedCategory(category))}
-      className="w-full max-w-[700px] my-[30px] mt-[120px]"
+      className="w-full max-w-[900px] my-[30px]"
     >
       <div className="flex flex-row gap-2 flex-nowrap overflow-x-scroll scroll whitespace-nowrap scroll-smooth no-scrollbar">
         {categories.map(category => (
@@ -32,7 +32,7 @@ const Categories: React.FC = () => {
             key={category.id}
             option={category}
             isChecked={selectedCategory === category}
-            className="leading-[20px] px-[30px] py-[20px]"
+            className="leading-[20px] px-[30px] py-[20px] sm:px-3 sm:py-[10px]"
           />
         ))}
       </div>

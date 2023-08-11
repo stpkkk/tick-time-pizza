@@ -45,7 +45,7 @@ const menuSlice = createSlice({
       state.selectedProduct = action.payload;
     },
 
-    setSelectedCategory: (state, action: PayloadAction<IOption>) => {
+    setSelectedCategory: (state, action: PayloadAction<IOption | null>) => {
       state.selectedCategory = action.payload;
     },
 

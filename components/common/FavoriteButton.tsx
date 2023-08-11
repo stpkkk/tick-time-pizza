@@ -5,7 +5,7 @@ import {
   removeFromFavorites,
 } from "@/redux/features/menuSlice";
 
-import { HeartIcon, HeartIconRed } from "@/public/assets/icons";
+import { HeartIconGray, HeartIconRed } from "@/public/assets/icons";
 import { IProduct } from "@/types";
 
 type FavoriteButtonProps = {
@@ -33,12 +33,12 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
 
   return (
     <button
-      className="cursor-pointer"
+      className="cursor-pointer fill-grayDark"
       onClick={toggleFavorite}
       type="button"
       title="Добавить в избранное"
     >
-      {isProductFavorite ? <HeartIconRed /> : <HeartIcon />}
+      {isProductFavorite ? <HeartIconRed /> : <HeartIconGray />}
     </button>
   );
 };

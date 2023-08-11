@@ -9,17 +9,21 @@ export const categories = [
   },
   {
     id: 1,
-    name: "Без Мяса",
-		image: leaf
+    name: "Избранное",
   },
   {
     id: 2,
-    name: "Подходит для Детей",
-		image: bear,
+    name: "Без Мяса",
+    image: leaf,
   },
   {
     id: 3,
+    name: "Подходит для Детей",
+    image: bear,
+  },
+  {
+    id: 4,
     name: "Острая",
-		image: fire,
+    image: fire,
   },
 ];

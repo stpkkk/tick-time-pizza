@@ -1,4 +1,4 @@
-import HeartIcon from "./HeartIcon";
+import HeartIconGray from "./HeartIconGray";
 import HeartIconRed from "./HeartIconRed";
 
-export { HeartIcon, HeartIconRed };
+export { HeartIconGray, HeartIconRed };
