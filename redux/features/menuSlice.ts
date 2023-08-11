@@ -106,11 +106,11 @@ const menuSlice = createSlice({
     },
 
     // Counters Actions
-    incrementProductAmount: state => {
+    incrementProductAmount: (state, action: PayloadAction<number>) => {
       state.productAmount++;
     },
 
-    decrementProductAmount: state => {
+    decrementProductAmount: (state, action: PayloadAction<number>) => {
       if (state.productAmount > 1) state.productAmount--;
     },
 
