@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Footer, Header } from "@/components";
+import { BackToTopButton, Footer, Header } from "@/components";
 import { Providers } from "./providers";
 
 export const metadata = {
@@ -16,6 +16,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <Header />
           {children}
           <Footer />
+          <BackToTopButton />
         </Providers>
       </body>
     </html>
