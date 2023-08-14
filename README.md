@@ -27,10 +27,12 @@ This is the template login details to use the bank functionality. The project do
 
 - Next.js
 - React.js
+- Typescript
 - Redux-Toolkit
 - Tailwind
 - Headless UI
 - React-Icons 
+- Swiper
 
 ## Getting Started
 

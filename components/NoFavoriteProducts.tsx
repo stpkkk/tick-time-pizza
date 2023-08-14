@@ -4,7 +4,7 @@ import { setSelectedCategory } from "@/redux/features/menuSlice";
 
 import { categories } from "@/constants";
 
-const NoProduct: React.FC = () => {
+const NoFavoriteProducts: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
@@ -29,4 +29,4 @@ const NoProduct: React.FC = () => {
   );
 };
 
-export default NoProduct;
+export default NoFavoriteProducts;

@@ -4,7 +4,7 @@ import { useAppSelector } from "@/redux/hooks";
 
 import { menu } from "@/constants";
 import Product from "./Product";
-import NoProduct from "../NoProduct";
+import NoFavoriteProducts from "../NoFavoriteProducts";
 import { Modal } from "./modal";
 import { IProduct } from "@/types";
 
@@ -50,7 +50,7 @@ const Menu: React.FC = () => {
             ))}
           </ul>
         ) : (
-          <NoProduct />
+          <NoFavoriteProducts />
         )}
       </div>
       {isModalOpen && <Modal />}

@@ -3,6 +3,6 @@ export * from "./header";
 export * from "./menu";
 import Footer from "./Footer";
 import Categories from "./Categories";
-import NoProduct from "./NoProduct";
+import NoFavoriteProducts from "./NoFavoriteProducts";
 
-export { Footer, Categories, NoProduct };
+export { Footer, Categories, NoFavoriteProducts };
