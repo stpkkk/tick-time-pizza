@@ -18,25 +18,27 @@ const HeaderMobile: React.FC = () => {
   };
 
   return (
-    <header className="hidden header sm:flex sm:items-center sm:px-6 uppercase">
-      <Logo />
-      <div className="flex_center">
-        <Link href="cart" as="cart" className="px-2">
-          <BsBasket2 size={30} />
-        </Link>
-        <button
-          className="px-2 cursor-pointer"
-          type="button"
-          onClick={handleClick}
-        >
-          {isNavOpen ? (
-            <RiCloseFill size={40} />
-          ) : (
-            <RxHamburgerMenu size={30} />
-          )}
-        </button>
+    <header className="hidden fixed z-10 top-0 sm:block w-full content_container drop-shadow-custom">
+      <div className="flex items-center px-4  shadow bg-white rounded-b-2xl  w-full h-[70px] relative ">
+        <Logo />
+        <div className="flex_center">
+          <Link href="cart" as="cart" className="px-2">
+            <BsBasket2 size={30} />
+          </Link>
+          <button
+            className="px-2 cursor-pointer"
+            type="button"
+            onClick={handleClick}
+          >
+            {isNavOpen ? (
+              <RiCloseFill size={40} />
+            ) : (
+              <RxHamburgerMenu size={30} />
+            )}
+          </button>
+        </div>
+        {isNavOpen && <Nav />}
       </div>
-      {isNavOpen && <Nav />}
     </header>
   );
 };

@@ -13,7 +13,7 @@ const Phone: React.FC = () => {
           33-02-04
         </Link>
       </div>
-      <p className="text-[10px] sm:text-[8px] leading-[0.75rem]">
+      <p className="text-[10px] sm:text-[8px] leading-[0.75rem] font-semibold">
         круглосуточная
         <br /> бесплатная доставка*
       </p>

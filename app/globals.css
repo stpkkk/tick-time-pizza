@@ -49,12 +49,34 @@ html::-webkit-scrollbar  {
   }
 }
 
-body {
-  @apply max-h-screen mx-auto max-w-[1262px] w-full px-4 bg-white text-primary font-montserrat;
+/* Swiper */
+
+.swiper-pagination .swiper-pagination-bullet {
+	opacity: 1;
+	border: white solid 1px;
+	background-color: transparent;
+	width: 10px;
+	height: 10px;
 }
 
-.header {
-  @apply h-[90px] px-[60px] bg-white text-primary rounded-b-2xl  drop-shadow-custom fixed z-10 top-0 mx-auto left-1/2 -translate-x-1/2 w-full max-w-[1230px] ;
+.swiper-pagination .swiper-pagination-bullet-active {
+	background-color: white;
+}
+
+.swiper-slide {
+  filter: grayscale(100%) opacity(0.3);
+}
+
+.swiper-slide-active {
+  filter: grayscale(0%) opacity(1);
+}
+
+body {
+  @apply max-h-screen bg-white text-primary font-montserrat;
+}
+
+.content_container {
+  @apply mx-auto max-w-[1262px] pl-[1rem] pr-[1rem];
 }
 
 .modal_form {
@@ -62,7 +84,7 @@ body {
 }
 
 .header_dropdown {
-  @apply max-w-[190px] w-full hover:bg-grayLight hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
+  @apply max-w-[190px] w-full hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
 }
 
 .header_tooltip {
@@ -70,7 +92,7 @@ body {
 }
 
 .nav_links {
-  @apply flex gap-2 text-sm font-semibold w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl;
+  @apply flex flex-row gap-2 w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl md:flex-col sm:uppercase;
 }
 
 

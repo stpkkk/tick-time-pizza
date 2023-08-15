@@ -4,5 +4,6 @@ export * from "./menu";
 import Footer from "./Footer";
 import Categories from "./Categories";
 import NoFavoriteProducts from "./NoFavoriteProducts";
+import Slider from "./Slider";
 
-export { Footer, Categories, NoFavoriteProducts };
+export { Footer, Categories, NoFavoriteProducts, Slider };

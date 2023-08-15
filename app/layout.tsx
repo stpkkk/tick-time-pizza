@@ -13,10 +13,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="ru">
       <body>
         <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <BackToTopButton />
+          <div className="w-full min-h-full flex flex-col items-center overflow-hidden min-w-[320px]">
+            <Header />
+            {children}
+            <Footer />
+            <BackToTopButton />
+          </div>
         </Providers>
       </body>
     </html>

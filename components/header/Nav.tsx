@@ -10,13 +10,11 @@ const Nav: React.FC = () => {
   const isNavOpen = useAppSelector(state => state.headerReducer.isNavOpen);
 
   return (
-    <nav className="sm:flex sm:flex-col">
+    <nav className="sm:flex sm:flex-col font-semibold">
       <ul
         className={`${
-          isNavOpen
-            ? "absolute sm:left-0 sm:top-[70px] p-4 flex_start flex-col"
-            : "md:hidden"
-        } nav_links`}
+          isNavOpen ? "absolute sm:left-0 sm:top-[58px] p-6" : "md:hidden"
+        } nav_links -z-10`}
       >
         {navLinks.map(link => (
           <li className="p-2 cursor-pointer" key={link.key}>
@@ -38,9 +36,9 @@ const Nav: React.FC = () => {
         <li className="hidden sm:flex">
           <Phone />
         </li>
-        <li className="text-[10px] hidden sm:flex leading-[0.75rem]">
-          *минимальная сумма заказа на доставку равна стоимости средней пиццы.
-        </li>
+        <p className="!text-[10px] text-xs font-normal normal-case hidden sm:block">
+          *Минимальная сумма заказа на доставку без учета скидок — 545 рублей!
+        </p>
       </ul>
     </nav>
   );

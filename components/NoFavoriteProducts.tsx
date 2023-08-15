@@ -8,7 +8,7 @@ const NoFavoriteProducts: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
+    <div className="sm:bg-white sm:drop-shadow-custom sm:p-4 rounded-2xl">
       <p className="sm:text-[12px] sm:leading-[15px] text-base leading-5 mb-4 font-semibold">
         Вы ещё не добавили свои любимые товары в «Избранное»
       </p>

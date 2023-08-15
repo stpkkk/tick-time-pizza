@@ -63,50 +63,51 @@ const HeaderDesktop: React.FC = () => {
   );
 
   return (
-    <header className="relative flex_between sm:hidden header">
-      <Logo />
-      <div className="md:flex-grow md:ml-[20px]">
-        <div
-          className={`${isNavOpen && "bg-grayLight"} header_dropdown`}
-          onClick={handleClick}
-        >
-          <span className="block text-sm font-semibold">Меню</span>
-          <IoIosArrowDown />
+    <header className="sm:hidden fixed z-10 top-0 content_container w-full  ">
+      <div className="flex_center px-[60px] h-[90px] bg-white rounded-b-2xl drop-shadow-custom">
+        <Logo />
+        <div className="md:flex-grow md:ml-[20px] md:relative text-sm">
+          <div className="header_dropdown" onClick={handleClick}>
+            <span className="block font-semibold">Меню</span>
+            <IoIosArrowDown />
+          </div>
+          <div className="md:absolute w-full bottom-1">
+            <Nav />
+          </div>
         </div>
-        <Nav />
-      </div>
-      <div
-        className="hover:bg-grayLight ml-4 relative h-full"
-        onMouseOver={handleMouseOverPhone}
-        onMouseOut={handleMouseOutPhone}
-      >
-        <Phone />
-        {isHoveringPhone && <PhoneTooltip />}
-      </div>
-      <Link
-        href="/login"
-        as="login"
-        className="flex_center flex-col gap-2 w-[6rem] h-full hover:bg-grayLight ml-[28px]"
-      >
-        <RiLoginCircleLine size={25} />
-        <span className="text-sm font-semibold">Войти</span>
-      </Link>
-      <div
-        className="h-full hover:bg-grayLight relative"
-        onMouseOver={handleMouseOverCart}
-        onMouseOut={handleMouseOutCart}
-      >
-        <Link
-          href="/cart"
-          as="cart"
-          className="flex_center flex-col gap-2 w-[6rem] h-full "
+        <div
+          className="hover:bg-grayLight ml-4 relative h-full"
+          onMouseOver={handleMouseOverPhone}
+          onMouseOut={handleMouseOutPhone}
         >
-          <BsBasket2 size={25} />
-          <span className="text-sm font-semibold">Корзина</span>
+          <Phone />
+          {isHoveringPhone && <PhoneTooltip />}
+        </div>
+        <Link
+          href="/login"
+          as="login"
+          className="flex_center flex-col gap-2 w-[6rem] h-full hover:bg-grayLight ml-[28px]"
+        >
+          <RiLoginCircleLine size={25} />
+          <span className="text-sm font-semibold">Кабинет</span>
         </Link>
-        {isHoveringCart && <CartTooltip />}
+        <div
+          className="h-full hover:bg-grayLight relative"
+          onMouseOver={handleMouseOverCart}
+          onMouseOut={handleMouseOutCart}
+        >
+          <Link
+            href="/cart"
+            as="cart"
+            className="flex_center flex-col gap-2 w-[6rem] h-full "
+          >
+            <BsBasket2 size={25} />
+            <span className="text-sm font-semibold">Корзина</span>
+          </Link>
+          {isHoveringCart && <CartTooltip />}
+        </div>
+        <ProgressBar />
       </div>
-      <ProgressBar />
     </header>
   );
 };
