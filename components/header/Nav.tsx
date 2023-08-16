@@ -1,12 +1,14 @@
 import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { RiLoginCircleLine } from "react-icons/ri";
 import { navLinks } from "@/constants";
 import Phone from "./Phone";
 
 const Nav: React.FC = () => {
+  const pathname = usePathname();
   const isNavOpen = useAppSelector(state => state.headerReducer.isNavOpen);
 
   return (
@@ -18,7 +20,12 @@ const Nav: React.FC = () => {
       >
         {navLinks.map(link => (
           <li className="p-2 cursor-pointer" key={link.key}>
-            <Link draggable="false" as="nav" href={link.href}>
+            <Link
+              className={`${pathname === link.href && "text-secondary"}`}
+              draggable="false"
+              as={link.href}
+              href={link.href}
+            >
               {link.text}
             </Link>
           </li>

@@ -84,12 +84,12 @@ const HeaderDesktop: React.FC = () => {
           {isHoveringPhone && <PhoneTooltip />}
         </div>
         <Link
-          href="/login"
-          as="login"
+          href="/account"
+          as="account"
           className="flex_center flex-col gap-2 w-[6rem] h-full hover:bg-grayLight ml-[28px]"
         >
           <RiLoginCircleLine size={25} />
-          <span className="text-sm font-semibold">Кабинет</span>
+          <span className="text-sm font-semibold">Войти</span>
         </Link>
         <div
           className="h-full hover:bg-grayLight relative"
