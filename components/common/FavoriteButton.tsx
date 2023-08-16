@@ -33,7 +33,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
 
   return (
     <button
-      className="cursor-pointer fill-grayDark"
+      className="cursor-pointer fill-secondary"
       onClick={toggleFavorite}
       type="button"
       title="Добавить в избранное"

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Categories, Menu, Slider } from "@/components";
+import { Categories, Menu, Banner } from "@/components";
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-1 flex-col items-center w-full">
-      <Slider />
+      <Banner />
       <Categories />
       <Menu />
     </div>

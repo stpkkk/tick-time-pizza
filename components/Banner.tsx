@@ -18,15 +18,14 @@ import slide4 from "../public/assets/images/slider/slide-4.webp";
 import slide5 from "../public/assets/images/slider/slide-5.webp";
 import slide6 from "../public/assets/images/slider/slide-6.webp";
 import slide7 from "../public/assets/images/slider/slide-7.webp";
-import slideTu from "../public/assets/images/slider/slide-tuesday.webp";
+import slideWed from "../public/assets/images/slider/slide-wed.webp";
 
-// import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css";
 
 SwiperCore.use([Navigation]);
 
-const Slider = () => {
+const Banner = () => {
   const swiperRef = useRef<SwiperCore>();
   const slides = [
     { id: 0, image: slide1 },
@@ -36,7 +35,7 @@ const Slider = () => {
     { id: 4, image: slide5 },
     { id: 5, image: slide6 },
     { id: 6, image: slide7 },
-    { id: 7, image: slideTu },
+    { id: 7, image: slideWed },
   ];
 
   return (
@@ -78,7 +77,6 @@ const Slider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
         <div className="absolute top-1/2 -translate-y-1/2 left-[15px] z-[5] sm:hidden">
           <button
             type="button"
@@ -109,4 +107,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Banner;
