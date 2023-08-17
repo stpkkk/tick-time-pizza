@@ -18,8 +18,8 @@ const HeaderMobile: React.FC = () => {
   };
 
   return (
-    <header className="hidden fixed z-10 top-0 sm:block w-full content_container drop-shadow-custom">
-      <div className="flex items-center px-4  shadow bg-white rounded-b-2xl  w-full h-[70px] relative ">
+    <header className="hidden fixed z-10 top-0 sm:block content_container drop-shadow-custom">
+      <div className="flex items-center px-4 shadow bg-white rounded-b-2xl h-[70px] relative">
         <Logo />
         <div className="flex_center">
           <Link href="cart" as="cart" className="px-2">

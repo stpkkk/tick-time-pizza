@@ -8,7 +8,7 @@ import apple from "../public/assets/images/App-Store.webp";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="content_container w-full drop-shadow-custom mt-[50px]  sm:mb-4">
+    <footer className="content_container drop-shadow-custom mt-[50px] sm:mb-4">
       <div className="flex_between py-8 px-[60px] md:px-4 bg-white text-primary sm:flex-col-reverse rounded-t-2xl ">
         <div className="flex_center sm:gap-0 gap-2">
           <Link

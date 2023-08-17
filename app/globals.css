@@ -72,11 +72,11 @@ html::-webkit-scrollbar  {
 }
 
 body {
-  @apply max-h-screen bg-white text-primary font-montserrat;
+  @apply bg-white text-primary font-montserrat;
 }
 
 .content_container {
-  @apply mx-auto max-w-[1262px] pl-[1rem] pr-[1rem];
+  @apply mx-auto max-w-[1262px] pl-[1rem] pr-[1rem] w-full;
 }
 
 .modal_form {

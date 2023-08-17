@@ -4,9 +4,11 @@ import { useAppSelector } from "@/redux/hooks";
 
 import { menu } from "@/constants";
 import Product from "./Product";
-import NoFavoriteProducts from "../NoFavoriteProducts";
+import NoFavoriteProducts from "./NoFavoriteProducts";
 import { Modal } from "./modal";
 import { IProduct } from "@/types";
+import Banner from "./Banner";
+import Categories from "./Categories";
 
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, favoriteProducts } = useAppSelector(
@@ -41,7 +43,9 @@ const Menu: React.FC = () => {
   const productsToShow = getCategoryProducts(selectedCategory?.name || "");
 
   return (
-    <div className="content_container w-full">
+    <>
+      <Banner />
+      <Categories />
       <div className="py-[50px] px-[60px] bg-white rounded-2xl drop-shadow-custom sm:drop-shadow-none sm:p-0">
         {productsToShow.length > 0 ? (
           <ul className="grid grid-cols-4 sm:grid-cols-1 justify-items-center items-start gap-y-[50px] gap-x-[30px] sm:gap-y-5">
@@ -54,7 +58,7 @@ const Menu: React.FC = () => {
         )}
       </div>
       {isModalOpen && <Modal />}
-    </div>
+    </>
   );
 };
 

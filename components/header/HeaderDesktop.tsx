@@ -17,7 +17,7 @@ import ProgressBar from "./ProgressBar";
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isNavOpen, isHoveringPhone, isHoveringCart } = useAppSelector(
+  const { isHoveringPhone, isHoveringCart } = useAppSelector(
     state => state.headerReducer
   );
 
@@ -63,7 +63,7 @@ const HeaderDesktop: React.FC = () => {
   );
 
   return (
-    <header className="sm:hidden fixed z-10 top-0 content_container w-full  ">
+    <header className="sm:hidden fixed z-10 top-0 content_container">
       <div className="flex_center px-[60px] h-[90px] bg-white rounded-b-2xl drop-shadow-custom">
         <Logo />
         <div className="md:flex-grow md:ml-[20px] md:relative text-sm">

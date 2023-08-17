@@ -4,14 +4,14 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setSelectedCategory } from "@/redux/features/menuSlice";
 import { RadioGroup } from "@headlessui/react";
 
-import { RadioGroupOption } from "./common";
+import { RadioGroupOption } from "../common";
 import { categories } from "@/constants";
 
 const Categories: React.FC = () => {
-	const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const selectedCategory = useAppSelector(
     state => state.menuReducer.selectedCategory
-	);
+  );
 
   useEffect(() => {
     // Set the default selected category
@@ -21,7 +21,7 @@ const Categories: React.FC = () => {
   }, [selectedCategory, dispatch]);
 
   return (
-    <div className="max-w-full mx-auto sm:my-4 my-[30px]">
+    <div className="flex_center max-w-full sm:my-4 my-[30px]">
       <RadioGroup
         value={selectedCategory}
         onChange={category => dispatch(setSelectedCategory(category))}

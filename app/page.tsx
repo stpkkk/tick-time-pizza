@@ -1,12 +1,10 @@
 import React from "react";
 
-import { Categories, Menu, Banner } from "@/components";
+import { Menu } from "@/components";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-1 flex-col items-center w-full">
-      <Banner />
-      <Categories />
+    <div className="content_container min-h-[calc(100vh-268px)]">
       <Menu />
     </div>
   );
