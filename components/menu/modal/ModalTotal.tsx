@@ -6,6 +6,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import Counter from "./Counter";
+import { useLocalStorage } from "@/hooks";
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,10 +16,14 @@ const ModalTotal: React.FC = () => {
     productAmount,
     additionalIngredients,
     selectedSize,
+    removedIngredients,
+    selectedDough,
   } = useAppSelector(state => state.menuReducer);
 
-  const itemPrice = selectedProduct?.prices.find(
-    item => item.id === selectedSize?.id
+  const [cartProduct, setCartProduct] = useLocalStorage([], "cart");
+
+  const productPrice = selectedProduct?.prices.find(
+    price => price.id === selectedSize?.id
   )?.price;
 
   const additionalIngredientsPrice = additionalIngredients.reduce(
@@ -32,7 +37,7 @@ const ModalTotal: React.FC = () => {
 
   const totalPrice =
     selectedProduct?.prices &&
-    (itemPrice || 579) * productAmount + additionalIngredientsPrice;
+    (productPrice || 579) * productAmount + additionalIngredientsPrice;
 
   const handleIncrement = () => {
     dispatch(incrementProductAmount(selectedProduct?.id || 0));
@@ -40,6 +45,19 @@ const ModalTotal: React.FC = () => {
 
   const handleDecrement = () => {
     dispatch(decrementProductAmount(selectedProduct?.id || 0));
+  };
+
+  const addToCart = () => {
+    const updatedSelectedProduct = {
+      ...selectedProduct,
+      productAmount,
+      selectedSize,
+      selectedDough,
+      additionalIngredients,
+      removedIngredients,
+    };
+
+    setCartProduct([...cartProduct, updatedSelectedProduct]);
   };
 
   return (
@@ -59,7 +77,9 @@ const ModalTotal: React.FC = () => {
           </span>
         </div>
       </div>
-      <button className="btn_red sm:max-w-full">Добавить в корзину</button>
+      <button className="btn_red sm:max-w-full" onClick={addToCart}>
+        Добавить в корзину
+      </button>
     </div>
   );
 };
