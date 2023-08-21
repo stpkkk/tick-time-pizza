@@ -50,4 +50,7 @@ export interface IProduct {
   dough: IOption[];
   weights: IWeight[];
   nutritionalValues: INutritionalValue;
+  selectedSize?: IOption;
+  selectedDough?: IOption;
+  removedIngredients?: IOption[];
 }

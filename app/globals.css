@@ -79,6 +79,12 @@ body {
   @apply mx-auto max-w-[1262px] pl-[1rem] pr-[1rem] w-full;
 }
 
+.h1 {
+  @apply text-[2.5rem] leading-[3rem] font-normal font-zheldor;
+}
+
+
+
 .modal_form {
   @apply grid grid-cols-2 gap-[60px] py-[60px] pl-[60px] sm:px-8 sm:pt-8 sm:pb-44 bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:block
 }

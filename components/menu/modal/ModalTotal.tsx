@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import Counter from "./Counter";
 import { useLocalStorage } from "@/hooks";
+import { calculatePrices } from "@/utils";
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -22,30 +23,12 @@ const ModalTotal: React.FC = () => {
 
   const [cartProduct, setCartProduct] = useLocalStorage([], "cart");
 
-  const productPrice = selectedProduct?.prices.find(
-    price => price.id === selectedSize?.id
-  )?.price;
-
-  const additionalIngredientsPrice = additionalIngredients.reduce(
-    (acc, ing) =>
-      acc +
-      (ing.prices.find(price => price.id === selectedSize?.id)?.price || 100) *
-        (ing.amount || 1) *
-        productAmount,
-    0
-  );
-
-  const totalPrice =
-    selectedProduct?.prices &&
-    (productPrice || 579) * productAmount + additionalIngredientsPrice;
-
-  const handleIncrement = () => {
-    dispatch(incrementProductAmount(selectedProduct?.id || 0));
-  };
-
-  const handleDecrement = () => {
-    dispatch(decrementProductAmount(selectedProduct?.id || 0));
-  };
+  const price = calculatePrices(
+    selectedProduct,
+    selectedSize,
+    additionalIngredients,
+    productAmount
+  ).totalPrice;
 
   const addToCart = () => {
     const updatedSelectedProduct = {
@@ -60,6 +43,14 @@ const ModalTotal: React.FC = () => {
     setCartProduct([...cartProduct, updatedSelectedProduct]);
   };
 
+  const handleIncrement = () => {
+    dispatch(incrementProductAmount(selectedProduct?.id || 0));
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrementProductAmount(selectedProduct?.id || 0));
+  };
+
   return (
     <div className="flex_center flex-col gap-[30px]">
       <div className="flex_between w-full sm:flex-row-reverse sm:px-4">
@@ -72,9 +63,7 @@ const ModalTotal: React.FC = () => {
           />
         </div>
         <div>
-          <span className="text-xl font-semibold sm:text-base">
-            {totalPrice} ₽
-          </span>
+          <span className="text-xl font-semibold sm:text-base">{price} ₽</span>
         </div>
       </div>
       <button className="btn_red sm:max-w-full" onClick={addToCart}>
