@@ -5,7 +5,8 @@ import {
   removeFromFavorites,
 } from "@/redux/features/menuSlice";
 
-import { HeartIconGray, HeartIconRed } from "@/public/assets/icons";
+import HeartIconRed from "./HeartIconRed";
+import HeartIconGray from "./HeartIconGray";
 import { IProduct } from "@/types";
 
 type FavoriteButtonProps = {

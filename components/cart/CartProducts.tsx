@@ -67,7 +67,7 @@ const CartProducts: React.FC = () => {
                       <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
                         Убрать:&nbsp;
                         {item.removedIngredients?.map(ing => (
-                          <span>{ing.name},&nbsp;</span>
+                          <span key={ing.id}>{ing.name},&nbsp;</span>
                         ))}
                       </p>
                     )}
@@ -75,7 +75,7 @@ const CartProducts: React.FC = () => {
                     <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
                       Добавить:&nbsp;
                       {item.additionalIngredients.map(ing => (
-                        <span>
+                        <span key={ing.id}>
                           {ing.name}&nbsp;({ing.amount}шт.),&nbsp;
                         </span>
                       ))}
