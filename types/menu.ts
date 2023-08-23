@@ -53,4 +53,5 @@ export interface IProduct {
   selectedSize?: IOption;
   selectedDough?: IOption;
   removedIngredients?: IOption[];
+  productAmount?: number;
 }

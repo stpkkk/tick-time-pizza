@@ -12,9 +12,10 @@ export interface HeaderState {
   selectedCategory: IOption | null;
   isAllIngredients: boolean;
   isDisabled: boolean;
-  productAmount: number;
   additionalIngredients: IAdditionalIngredient[];
   favoriteProducts: IProduct[];
+  productAmount: number;
+  cartProducts: IProduct[];
 }
 
 const initialState: HeaderState = {
@@ -27,10 +28,11 @@ const initialState: HeaderState = {
   selectedDough: null,
   isAllIngredients: false,
   isDisabled: false,
-  productAmount: 1,
   removedIngredients: [],
   additionalIngredients: [],
   favoriteProducts: [],
+  productAmount: 1,
+  cartProducts: [],
 };
 
 const menuSlice = createSlice({
@@ -74,6 +76,14 @@ const menuSlice = createSlice({
       state.isAllIngredients = true;
     },
 
+    incrementProductAmount: state => {
+      state.productAmount++;
+    },
+
+    decrementProductAmount: state => {
+      state.productAmount--;
+    },
+
     initializeDefaultValues: state => {
       if (state.selectedProduct) {
         state.selectedSize = state.selectedProduct.sizes[0];
@@ -105,15 +115,7 @@ const menuSlice = createSlice({
       );
     },
 
-    // Counters Actions
-    incrementProductAmount: (state, action: PayloadAction<number>) => {
-      state.productAmount++;
-    },
-
-    decrementProductAmount: (state, action: PayloadAction<number>) => {
-      if (state.productAmount > 1) state.productAmount--;
-    },
-
+    //Ingredient Amount
     incrementIngredientAmount: (
       state,
       action: PayloadAction<{ ingredient: IAdditionalIngredient }>
@@ -152,6 +154,10 @@ const menuSlice = createSlice({
         }
       }
     },
+
+    addToCart: (state, action: PayloadAction<IProduct[]>) => {
+      state.cartProducts = action.payload;
+    },
   },
 });
 
@@ -164,14 +170,15 @@ export const {
   setRemovedIngredients,
   setSelectedCategory,
   initializeDefaultValues,
-  incrementProductAmount,
-  decrementProductAmount,
   incrementIngredientAmount,
   decrementIngredientAmount,
   toggleTooltip,
   setAllIngredients,
   addToFavorites,
   removeFromFavorites,
+  decrementProductAmount,
+  incrementProductAmount,
+  addToCart,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

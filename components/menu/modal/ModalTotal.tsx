@@ -1,24 +1,23 @@
 import React from "react";
-import {
-  decrementProductAmount,
-  incrementProductAmount,
-} from "@/redux/features/menuSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import Counter from "./Counter";
 import { useLocalStorage } from "@/hooks";
 import { calculatePrices } from "@/utils";
+import {
+  decrementProductAmount,
+  incrementProductAmount,
+} from "@/redux/features/menuSlice";
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
-
   const {
     selectedProduct,
-    productAmount,
     additionalIngredients,
     selectedSize,
     removedIngredients,
     selectedDough,
+    productAmount,
   } = useAppSelector(state => state.menuReducer);
 
   const [cartProduct, setCartProduct] = useLocalStorage([], "cart");
@@ -44,11 +43,11 @@ const ModalTotal: React.FC = () => {
   };
 
   const handleIncrement = () => {
-    dispatch(incrementProductAmount(selectedProduct?.id || 0));
+    dispatch(incrementProductAmount());
   };
 
   const handleDecrement = () => {
-    dispatch(decrementProductAmount(selectedProduct?.id || 0));
+    if (productAmount > 1) dispatch(decrementProductAmount());
   };
 
   return (

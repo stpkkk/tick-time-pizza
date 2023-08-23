@@ -2,7 +2,7 @@
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
-import CartProducts from "@/components/cart/CartProducts";
+import CartProducts from "@/components/cart/Cart";
 import { useRouter } from "next/navigation";
 
 const Cart: React.FC = () => {
