@@ -70,6 +70,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({ ingredien
         {!isDisabled && (
           <div className="gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto">
             <Counter
+              minValue={0}
               handleIncrement={handleIncrement}
               handleDecrement={handleDecrement}
               initialValue={0}

@@ -53,6 +53,7 @@ const Cart: React.FC = () => {
     const updatedItems = cartProducts.filter(item => item.id !== itemId);
     updateItemsInLocalStorage(updatedItems);
   };
+	console.log(cartProducts);
 
   return (
     <div className="flex sm:flex-col flex-row gap-[30px] w-full">

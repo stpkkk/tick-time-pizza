@@ -64,6 +64,7 @@ const CartProduct: React.FC<CartProductProps> = ({
       </div>
       <div className="flex_center gap-5">
         <Counter
+          minValue={1}
           value={item.productAmount || 1}
           initialValue={item.productAmount || 1}
           handleDecrement={onDecrement}
@@ -75,7 +76,7 @@ const CartProduct: React.FC<CartProductProps> = ({
         <RiDeleteBin6Line
           size={20}
           onClick={onRemove}
-          className="text-grayDark"
+          className="text-grayDark cursor-pointer hover:text-primary"
         />
       </div>
     </li>

@@ -55,6 +55,7 @@ const ModalTotal: React.FC = () => {
       <div className="flex_between w-full sm:flex-row-reverse sm:px-4">
         <div className="flex_between text-base w-full max-w-[128px] sm:max-w-[96px]">
           <Counter
+            minValue={1}
             initialValue={1}
             value={productAmount}
             handleIncrement={handleIncrement}
