@@ -23,49 +23,50 @@ const Cart: React.FC = () => {
   };
 
   const modifyCartItem = (
-    itemId: number,
-    modifier: (item: IProduct) => IProduct
+    productId: number,
+    modifier: (product: IProduct) => IProduct
   ) => {
-    const updatedItems = cartProducts.map(item =>
-      item.id === itemId ? modifier(item) : item
+    const updatedItems = cartProducts.map(product =>
+      product.id === productId ? modifier(product) : product
     );
     updateItemsInLocalStorage(updatedItems);
   };
 
-  const handleIncrement = (itemId: number) => {
-    modifyCartItem(itemId, item => ({
-      ...item,
-      productAmount: (item.productAmount || 1) + 1,
+  const handleIncrement = (productId: number) => {
+    modifyCartItem(productId, product => ({
+      ...product,
+      productAmount: (product.productAmount || 1) + 1,
     }));
   };
 
-  const handleDecrement = (itemId: number) => {
-    modifyCartItem(itemId, item => ({
-      ...item,
+  const handleDecrement = (productId: number) => {
+    modifyCartItem(productId, product => ({
+      ...product,
       productAmount:
-        item.productAmount && item.productAmount > 1
-          ? item.productAmount - 1
+        product.productAmount && product.productAmount > 1
+          ? product.productAmount - 1
           : 1,
     }));
   };
 
-  const removeItem = (itemId: number) => {
-    const updatedItems = cartProducts.filter(item => item.id !== itemId);
+  const removeItem = (productId: number) => {
+    const updatedItems = cartProducts.filter(
+      product => product.id !== productId
+    );
     updateItemsInLocalStorage(updatedItems);
   };
-	console.log(cartProducts);
 
   return (
     <div className="flex sm:flex-col flex-row gap-[30px] w-full">
       <div className="w-full max-w-[calc(100%-420px)]">
         <ul className="sm:py-8 sm:px-4 py-[50px] px-[60px] rounded-2xl drop-shadow-custom bg-white flex flex-col gap-[30px]">
-          {cartProducts.map(item => (
+          {cartProducts.map(product => (
             <CartProduct
-              key={item.id}
-              item={item}
-              onIncrement={() => handleIncrement(item.id)}
-              onDecrement={() => handleDecrement(item.id)}
-              onRemove={() => removeItem(item.id)}
+              key={product.id}
+              product={product}
+              onIncrement={() => handleIncrement(product.id)}
+              onDecrement={() => handleDecrement(product.id)}
+              onRemove={() => removeItem(product.id)}
             />
           ))}
         </ul>

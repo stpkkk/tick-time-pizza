@@ -7,53 +7,54 @@ import { calculatePrices } from "@/utils";
 import { IProduct } from "@/types";
 
 interface CartProductProps {
-  item: IProduct;
+  product: IProduct;
   onIncrement: () => void;
   onDecrement: () => void;
   onRemove: () => void;
 }
 
 const CartProduct: React.FC<CartProductProps> = ({
-  item,
+  product,
   onIncrement,
   onDecrement,
   onRemove,
 }) => {
   const totalPrice = calculatePrices(
-    item,
-    item.selectedSize || null,
-    item.additionalIngredients,
-    item.productAmount || 1
+    product,
+    product.selectedSize || null,
+    product.additionalIngredients,
+    product.productAmount || 1
   ).totalPrice;
 
   return (
-    <li className="flex_center flex-none md:gap-4 gap-5" key={item.id}>
+    <li className="flex_center flex-none md:gap-4 gap-5" key={product.id}>
       <Image
-        src={item.image}
-        alt={item.title}
+        src={product.image}
+        alt={product.title}
         loading="lazy"
         className="aspect-square w-full h-full max-w-[76px] max-h-[76px]"
       />
-      <div className="flex sm:flex-col flex-row items-start sm:gap-3.5 gap-4 w-full pt-3.5 min-w-[1px]">
+      <div className="flex sm:flex-col flex-row products-start sm:gap-3.5 gap-4 w-full pt-3.5 min-w-[1px]">
         <div className="mr-auto min-w-[1px] max-w-full">
           <span className="sm:text-xs sm:leading-[15px] text-base leading-5 block break-words font-semibold">
-            {item.title}
+            {product.title}
           </span>
           <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
-            {item.selectedSize?.name},{item.selectedDough?.name}
+            {product.selectedSize?.name},{product.selectedDough?.name}
           </p>
-          {item.removedIngredients && item.removedIngredients.length > 0 && (
-            <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
-              Убрать:&nbsp;
-              {item.removedIngredients?.map(ing => (
-                <span key={ing.id}>{ing.name},&nbsp;</span>
-              ))}
-            </p>
-          )}
-          {item.additionalIngredients.length > 0 && (
+          {product.removedIngredients &&
+            product.removedIngredients.length > 0 && (
+              <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
+                Убрать:&nbsp;
+                {product.removedIngredients?.map(ing => (
+                  <span key={ing.id}>{ing.name},&nbsp;</span>
+                ))}
+              </p>
+            )}
+          {product.additionalIngredients.length > 0 && (
             <p className="sm:text-[8px] text-xs leading-[15px] mt-[5px] break-words font-normal">
               Добавить:&nbsp;
-              {item.additionalIngredients.map(ing => (
+              {product.additionalIngredients.map(ing => (
                 <span key={ing.id}>
                   {ing.name}&nbsp;({ing.amount}шт.),&nbsp;
                 </span>
@@ -65,8 +66,8 @@ const CartProduct: React.FC<CartProductProps> = ({
       <div className="flex_center gap-5">
         <Counter
           minValue={1}
-          value={item.productAmount || 1}
-          initialValue={item.productAmount || 1}
+          value={product.productAmount || 1}
+          initialValue={product.productAmount || 1}
           handleDecrement={onDecrement}
           handleIncrement={onIncrement}
         />
