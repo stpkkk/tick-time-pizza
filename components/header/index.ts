@@ -5,6 +5,7 @@ import Phone from "./Phone";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderCart from "./HeaderCart";
 import CartTooltip from "./CartTooltip";
+import HeaderCartItem from "./HeaderCartItem";
 
 export {
   Nav,
@@ -14,4 +15,5 @@ export {
   HeaderDesktop,
   HeaderCart,
   CartTooltip,
+  HeaderCartItem,
 };

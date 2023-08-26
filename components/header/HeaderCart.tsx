@@ -44,7 +44,14 @@ const HeaderCart: React.FC = () => {
         <BsBasket2 size={25} />
         <span className="text-sm font-semibold">Корзина</span>
       </Link>
-      <div>{isHoveringCart && <CartTooltip products={cartProducts} />}</div>
+      <div>
+        {isHoveringCart && (
+          <CartTooltip
+            products={cartProducts}
+            cartTooltipRef={cartTooltipRef}
+          />
+        )}
+      </div>
     </div>
   );
 };
