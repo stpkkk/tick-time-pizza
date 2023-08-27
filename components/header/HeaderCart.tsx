@@ -1,11 +1,14 @@
 "use client";
-import React, { useRef } from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { addToCart } from "@/redux/features/menuSlice";
 import { setIsHoveringCart } from "@/redux/features/headerSlice";
 import { BsBasket2 } from "react-icons/bs";
 
 import CartTooltip from "./CartTooltip";
+import { calculateCartTotalPrice } from "@/utils";
+import { IProduct } from "@/types";
 
 const HeaderCart: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -14,11 +17,15 @@ const HeaderCart: React.FC = () => {
     state => state.headerReducer.isHoveringCart
   );
 
+  const cartTooltipRef = useRef<HTMLDivElement | null>(null);
+  const cartTotalPrice = calculateCartTotalPrice(cartProducts).cartTotalPrice;
+  const totalAmount = cartProducts
+    .map(product => product.productAmount)
+    .reduce((amount, acc) => amount + acc, 0);
+
   const handleMouseOverCart = () => {
     dispatch(setIsHoveringCart(true));
   };
-
-  const cartTooltipRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseOutCart = (e: React.MouseEvent<HTMLDivElement>) => {
     const isHoveringTooltip =
@@ -29,6 +36,14 @@ const HeaderCart: React.FC = () => {
       dispatch(setIsHoveringCart(false));
     }
   };
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem("cart");
+    if (storedItems) {
+      const parsedItems = JSON.parse(storedItems) as IProduct[];
+      dispatch(addToCart(parsedItems));
+    }
+  }, []);
 
   return (
     <div
@@ -42,7 +57,16 @@ const HeaderCart: React.FC = () => {
         className="flex_center flex-col gap-2 w-[6rem] h-full "
       >
         <BsBasket2 size={25} />
-        <span className="text-sm font-semibold">Корзина</span>
+        <span className="text-sm font-semibold">
+          {cartTotalPrice <= 0 ? "Корзина" : `${cartTotalPrice} ₽`}
+        </span>
+        {totalAmount ? (
+          <span className="absolute top-4 right-6 flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold">
+            {totalAmount}
+          </span>
+        ) : (
+          ""
+        )}
       </Link>
       <div>
         {isHoveringCart && (

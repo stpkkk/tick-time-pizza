@@ -1,6 +1,6 @@
 import { IAdditionalIngredient, IOption, IProduct } from "@/types";
 
-export function calculatePrices(
+export function calculateProductPrices(
   selectedProduct: IProduct | null,
   selectedSize: IOption | null,
   additionalIngredients: IAdditionalIngredient[],
@@ -19,7 +19,7 @@ export function calculatePrices(
     0
   );
 
-  const totalPrice =
+  const totalProductPrice =
     (selectedProduct?.prices && productPrice !== null ? productPrice : 579) *
       productAmount +
     additionalIngredientsPrice;
@@ -27,6 +27,24 @@ export function calculatePrices(
   return {
     productPrice,
     additionalIngredientsPrice,
-    totalPrice,
+    totalProductPrice,
   };
 }
+
+export function calculateCartTotalPrice(cartProducts: IProduct[]) {
+  const cartTotalPrice = cartProducts
+    .map(product =>
+      calculateProductPrices(
+        product,
+        product.selectedSize || null,
+        product.additionalIngredients,
+        product.productAmount || 1
+      )
+    )
+    .reduce((acc, sum) => sum.totalProductPrice + acc, 0);
+
+  return {
+    cartTotalPrice,
+  };
+}
+

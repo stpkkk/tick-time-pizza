@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 import Counter from "./Counter";
 import { useLocalStorage } from "@/hooks";
-import { calculatePrices } from "@/utils";
+import { calculateProductPrices } from "@/utils";
 import {
   decrementProductAmount,
   incrementProductAmount,
@@ -22,13 +22,6 @@ const ModalTotal: React.FC = () => {
 
   const [cartProduct, setCartProduct] = useLocalStorage([], "cart");
 
-  const price = calculatePrices(
-    selectedProduct,
-    selectedSize,
-    additionalIngredients,
-    productAmount
-  ).totalPrice;
-
   const addToCart = () => {
     const updatedSelectedProduct = {
       ...selectedProduct,
@@ -41,6 +34,13 @@ const ModalTotal: React.FC = () => {
 
     setCartProduct([...cartProduct, updatedSelectedProduct]);
   };
+
+  const totalProductPrice = calculateProductPrices(
+    selectedProduct,
+    selectedSize,
+    additionalIngredients,
+    productAmount
+  ).totalProductPrice;
 
   const handleIncrement = () => {
     dispatch(incrementProductAmount());
@@ -63,7 +63,9 @@ const ModalTotal: React.FC = () => {
           />
         </div>
         <div>
-          <span className="text-xl font-semibold sm:text-base">{price} ₽</span>
+          <span className="text-xl font-semibold sm:text-base">
+            {totalProductPrice} ₽
+          </span>
         </div>
       </div>
       <button className="btn_red sm:max-w-full" onClick={addToCart}>

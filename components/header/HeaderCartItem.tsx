@@ -1,6 +1,8 @@
-import { IProduct } from "@/types";
-import { calculatePrices } from "@/utils";
+import React from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
+
+import { calculateProductPrices } from "@/utils";
+import { IProduct } from "@/types";
 
 interface HeaderCartItemProps {
   product: IProduct;
@@ -11,12 +13,12 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   product,
   onRemove,
 }) => {
-  const totalPrice = calculatePrices(
+  const totalProductPrice = calculateProductPrices(
     product,
     product.selectedSize || null,
     product.additionalIngredients,
     product.productAmount || 1
-  ).totalPrice;
+  ).totalProductPrice;
 
   return (
     <div>
@@ -28,7 +30,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
           {product.productAmount} шт.
         </p>
         <p className="text-[14px] md:text-sm font-semibold w-10 md:w-16 text-center whitespace-nowrap">
-          {totalPrice} ₽
+          {totalProductPrice} ₽
         </p>
         <button type="button" onClick={() => onRemove(product.id)}>
           <RiDeleteBin6Line

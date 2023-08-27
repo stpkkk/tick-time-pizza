@@ -1,1 +1,4 @@
-export { calculatePrices } from "./calculatePrices";
+export {
+  calculateProductPrices,
+  calculateCartTotalPrice,
+} from "./calculatePrices";

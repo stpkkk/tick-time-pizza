@@ -3,7 +3,7 @@ import Image from "next/image";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import { Counter } from "../menu";
-import { calculatePrices } from "@/utils";
+import { calculateProductPrices } from "@/utils";
 import { IProduct } from "@/types";
 
 interface CartProductProps {
@@ -19,12 +19,12 @@ const CartProduct: React.FC<CartProductProps> = ({
   onDecrement,
   onRemove,
 }) => {
-  const totalPrice = calculatePrices(
+  const totalProductPrice = calculateProductPrices(
     product,
     product.selectedSize || null,
     product.additionalIngredients,
     product.productAmount || 1
-  ).totalPrice;
+  ).totalProductPrice;
 
   return (
     <li className="flex_center flex-none md:gap-4 gap-5" key={product.id}>
@@ -72,7 +72,7 @@ const CartProduct: React.FC<CartProductProps> = ({
           handleIncrement={onIncrement}
         />
         <p className="sm:text-xs sm:leading-[15px] text-base leading-5 whitespace-nowrap font-semibold w-20 text-center">
-          {totalPrice} ₽
+          {totalProductPrice} ₽
         </p>
         <RiDeleteBin6Line
           size={20}

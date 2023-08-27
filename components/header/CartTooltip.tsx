@@ -3,8 +3,9 @@ import React, { MutableRefObject, useEffect } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/hooks";
 import { addToCart } from "@/redux/features/menuSlice";
-import { IProduct } from "@/types";
+
 import HeaderCartItem from "./HeaderCartItem";
+import { IProduct } from "@/types";
 
 interface CartTooltipProps {
   products: IProduct[];
@@ -17,14 +18,6 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const isCartEmpty = products.length === 0;
-
-  useEffect(() => {
-    const storedItems = localStorage.getItem("cart");
-    if (storedItems) {
-      const parsedItems = JSON.parse(storedItems) as IProduct[];
-      dispatch(addToCart(parsedItems));
-    }
-  }, []);
 
   const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
     dispatch(addToCart(updatedItems));
