@@ -20,7 +20,7 @@ const HeaderCart: React.FC = () => {
   const cartTooltipRef = useRef<HTMLDivElement | null>(null);
   const cartTotalPrice = calculateCartTotalPrice(cartProducts).cartTotalPrice;
   const totalAmount = cartProducts
-    .map(product => product.productAmount)
+    .map(product => product.productAmount || 0)
     .reduce((amount, acc) => amount + acc, 0);
 
   const handleMouseOverCart = () => {
@@ -43,7 +43,7 @@ const HeaderCart: React.FC = () => {
       const parsedItems = JSON.parse(storedItems) as IProduct[];
       dispatch(addToCart(parsedItems));
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div
