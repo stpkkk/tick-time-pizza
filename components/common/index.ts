@@ -4,6 +4,7 @@ import FavoriteButton from "./FavoriteButton";
 import BackToTopButton from "./BackToTopButton";
 import HeartIconGray from "./HeartIconGray";
 import HeartIconRed from "./HeartIconRed";
+import BackButton from "./BackButton";
 
 export {
   Logo,
@@ -12,4 +13,5 @@ export {
   BackToTopButton,
   HeartIconGray,
   HeartIconRed,
+  BackButton,
 };

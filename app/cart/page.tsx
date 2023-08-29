@@ -1,27 +1,18 @@
 "use client";
 import React from "react";
-import { FiArrowLeft } from "react-icons/fi";
+import { BackButton, Cart } from "@/components";
 
-import CartProducts from "@/components/cart/Cart";
-import { useRouter } from "next/navigation";
-
-const Cart: React.FC = () => {
-  const router = useRouter();
+const CartPage: React.FC = () => {
   return (
-    <div className="content_container h-[calc(100vh-268px)] pt-[90px]">
-      <div className="flex flex-row gap-4 md:ml-4 md:my-4 my-10 ml-6">
-        <button
-          className="flex items-center gap-3 font-semibold text-sm text-primary disabled:text-dark-light"
-          type="button"
-          onClick={() => router.back()}
-        >
-          <FiArrowLeft size={20} />
-        </button>
-        <h1 className="h1">Корзина</h1>
+    <div className="content_container min-h-[calc(100vh-268px)] pt-[90px] sm:pt-[70px]">
+      <div className="flex flex-row gap-2 md:ml-4 md:my-4 my-10 ml-6">
+        <BackButton />
+        <div className="h1">Корзина</div>
       </div>
-      <CartProducts />
+      <Cart />
+      <div className="h1 my-10 ml-[60px] sm:my-4 sm:ml-4">Рекомендуем:</div>
     </div>
   );
 };
 
-export default Cart;
+export default CartPage;

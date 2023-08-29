@@ -39,7 +39,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
       dispatch(setSelectedProduct(selectedProduct));
     }
 
-    dispatch(toggleModal());
+    dispatch(toggleModal(true));
   };
 
   return (
@@ -83,7 +83,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
       <div className="absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1">
         {product.categories?.map(cat => (
           <Image
-            src={cat.image ? cat.image : "😢"}
+            src={cat.image ? cat.image : ""}
             alt={cat.title}
             width={16}
             height={16}

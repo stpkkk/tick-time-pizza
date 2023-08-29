@@ -22,7 +22,7 @@ const Modal: React.FC = () => {
         !modalRef.current.contains(e.target as Node) &&
         modalRef.current.clientWidth > 768
       ) {
-        dispatch(toggleModal());
+        dispatch(toggleModal(false));
       }
     },
     [dispatch]
@@ -43,7 +43,7 @@ const Modal: React.FC = () => {
   }, [dispatch]);
 
   const handleClick = () => {
-    dispatch(toggleModal());
+    dispatch(toggleModal(false));
   };
 
   return (
@@ -71,7 +71,7 @@ const Modal: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="fixed hidden sm:w-full sm:block sm:bg-white z-10 left-0 bottom-0 p-4 pb-[30px] drop-shadow-custom rounded-2xl">
+      <div className="fixed hidden w-full sm:block bg-white z-10 left-0 bottom-0 p-4 pb-[30px] drop-shadow-custom rounded-2xl">
         <ModalTotal />
       </div>
     </>

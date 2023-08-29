@@ -52,8 +52,8 @@ const menuSlice = createSlice({
     },
 
     // Modal
-    toggleModal: state => {
-      state.isModalOpen = !state.isModalOpen;
+    toggleModal: (state, action: PayloadAction<boolean>) => {
+      state.isModalOpen = action.payload;
     },
 
     toggleTooltip: state => {

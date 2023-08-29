@@ -38,8 +38,8 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
       </div>
       <div className="relative flex_center flex-col gap-[30px] sm:gap-0 w-full">
         <Image
-          src={selectedProduct?.image || "😢"}
-          alt={selectedProduct?.title || "😢"}
+          src={selectedProduct?.image || ""}
+          alt={selectedProduct?.title || ""}
           width={325}
           height={325}
           className="aspect-square w-full h-full max-w-[325px] max-h-[325px] sm:max-w-[250px] sm:max-h-[250px]"

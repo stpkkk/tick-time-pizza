@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   addToFavorites,
   removeFromFavorites,
+  setHoveredItemId,
 } from "@/redux/features/menuSlice";
 
 import HeartIconRed from "./HeartIconRed";
@@ -26,8 +27,10 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
     if (product) {
       if (isProductFavorite) {
         dispatch(removeFromFavorites(product.id));
+        dispatch(setHoveredItemId(null));
       } else {
         dispatch(addToFavorites(product));
+        dispatch(setHoveredItemId(null));
       }
     }
   };

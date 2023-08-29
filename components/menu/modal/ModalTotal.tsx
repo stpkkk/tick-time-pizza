@@ -1,13 +1,15 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import {
+  addToCart,
+  decrementProductAmount,
+  incrementProductAmount,
+  toggleModal,
+} from "@/redux/features/menuSlice";
 
 import Counter from "./Counter";
 import { useLocalStorage } from "@/hooks";
 import { calculateProductPrices } from "@/utils";
-import {
-  decrementProductAmount,
-  incrementProductAmount,
-} from "@/redux/features/menuSlice";
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,9 +22,9 @@ const ModalTotal: React.FC = () => {
     productAmount,
   } = useAppSelector(state => state.menuReducer);
 
-  const [cartProduct, setCartProduct] = useLocalStorage([], "cart");
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], "cart");
 
-  const addToCart = () => {
+  const addProductToCart = async () => {
     const updatedSelectedProduct = {
       ...selectedProduct,
       productAmount,
@@ -32,7 +34,11 @@ const ModalTotal: React.FC = () => {
       removedIngredients,
     };
 
-    setCartProduct([...cartProduct, updatedSelectedProduct]);
+    const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
+
+    dispatch(addToCart(updatedCartProduct));
+    await setCartProductInLS(updatedCartProduct);
+    dispatch(toggleModal(false));
   };
 
   const totalProductPrice = calculateProductPrices(
@@ -68,7 +74,7 @@ const ModalTotal: React.FC = () => {
           </span>
         </div>
       </div>
-      <button className="btn_red sm:max-w-full" onClick={addToCart}>
+      <button className="btn_red" onClick={addProductToCart}>
         Добавить в корзину
       </button>
     </div>

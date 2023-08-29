@@ -21,23 +21,22 @@ const Categories: React.FC = () => {
   }, [selectedCategory, dispatch]);
 
   return (
-    <div className="flex_center max-w-full sm:my-4 my-[30px]">
+    <div className="flex_center max-w-full sm:my-4 my-[30px] ">
       <RadioGroup
         value={selectedCategory}
         onChange={category => dispatch(setSelectedCategory(category))}
+        className="flex flex-row whitespace-nowrap md:gap-2 gap-4  scroll-px-4 no-scrollbar overflow-x-scroll scroll scroll-smooth"
       >
-        <div className="flex flex-row overflow-x-scroll scroll whitespace-nowrap scroll-smooth md:gap-2 gap-4 scroll-px-4 no-scrollbar">
-          <div className="min-w-[0.5rem]" />
-          {categories.map(category => (
-            <RadioGroupOption
-              key={category.id}
-              option={category}
-              isChecked={selectedCategory === category}
-              className="w-auto leading-[20px] px-[30px] py-[20px] sm:px-3 sm:py-[10px]"
-            />
-          ))}
-          <div className="min-w-[0.5rem]" />
-        </div>
+        <div className="min-w-[0.5rem]" />
+        {categories.map(category => (
+          <RadioGroupOption
+            key={category.id}
+            option={category}
+            isChecked={selectedCategory === category}
+            className="w-auto leading-[20px] px-[30px] py-[20px] sm:px-3 sm:py-[10px]"
+          />
+        ))}
+        <div className="min-w-[0.5rem]" />
       </RadioGroup>
     </div>
   );

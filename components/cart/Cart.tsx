@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import CartProduct from "./CartProduct";
-import { IProduct } from "@/types";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addToCart } from "@/redux/features/menuSlice";
+
+import CartProduct from "./CartProduct";
+import EmptyCart from "./EmptyCart";
+import { IProduct } from "@/types";
 
 const Cart: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +17,7 @@ const Cart: React.FC = () => {
       const parsedItems = JSON.parse(storedItems) as IProduct[];
       dispatch(addToCart(parsedItems));
     }
-  }, []);
+  }, [dispatch]);
 
   const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
     dispatch(addToCart(updatedItems));
@@ -58,18 +60,22 @@ const Cart: React.FC = () => {
 
   return (
     <div className="flex sm:flex-col flex-row gap-[30px] w-full">
-      <div className="w-full max-w-[calc(100%-420px)]">
-        <ul className="sm:py-8 sm:px-4 py-[50px] px-[60px] rounded-2xl drop-shadow-custom bg-white flex flex-col gap-[30px]">
-          {cartProducts.map(product => (
-            <CartProduct
-              key={product.id}
-              product={product}
-              onIncrement={() => handleIncrement(product.id)}
-              onDecrement={() => handleDecrement(product.id)}
-              onRemove={() => removeItem(product.id)}
-            />
-          ))}
-        </ul>
+      <div className="md:max-w-full w-full max-w-[calc(100%-420px)]">
+        {cartProducts.length > 0 ? (
+          <ul className="flex flex-col gap-[30px] py-[50px] px-[60px] sm:py-8 sm:px-4 rounded-2xl drop-shadow-custom bg-white">
+            {cartProducts.map(product => (
+              <CartProduct
+                key={product.id}
+                product={product}
+                onIncrement={() => handleIncrement(product.id)}
+                onDecrement={() => handleDecrement(product.id)}
+                onRemove={() => removeItem(product.id)}
+              />
+            ))}
+          </ul>
+        ) : (
+          <EmptyCart />
+        )}
       </div>
     </div>
   );

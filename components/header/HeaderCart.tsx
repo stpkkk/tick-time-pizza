@@ -47,28 +47,32 @@ const HeaderCart: React.FC = () => {
 
   return (
     <div
-      className="h-full hover:bg-grayLight relative"
+      className="h-full hover:bg-grayLight sm:hover:bg-white relative"
       onMouseOver={handleMouseOverCart}
       onMouseOut={handleMouseOutCart}
     >
       <Link
         href="/cart"
         as="cart"
-        className="flex_center flex-col gap-2 w-[6rem] h-full "
+        className="flex_center sm:flex-row-reverse flex-col gap-2 w-[6rem] h-full"
       >
         <BsBasket2 size={25} />
-        <span className="text-sm font-semibold">
-          {cartTotalPrice <= 0 ? "Корзина" : `${cartTotalPrice} ₽`}
-        </span>
+        <div className="text-sm font-semibold">
+          {cartTotalPrice <= 0 ? (
+            <span className="sm:hidden">Корзина</span>
+          ) : (
+            `${cartTotalPrice} ₽`
+          )}
+        </div>
         {totalAmount ? (
-          <span className="absolute top-4 right-6 flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold">
+          <span className="top-4 right-6 header_total_amount">
             {totalAmount}
           </span>
         ) : (
           ""
         )}
       </Link>
-      <div>
+      <div className="sm:hidden">
         {isHoveringCart && (
           <CartTooltip
             products={cartProducts}
