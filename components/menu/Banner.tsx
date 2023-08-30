@@ -82,6 +82,7 @@ const Banner = () => {
           type="button"
           className="swiper-button-prev"
           onClick={() => swiperRef.current?.slidePrev()}
+          aria-label="previous-slide"
         >
           <IoIosArrowDropleftCircle
             size={30}
@@ -95,6 +96,7 @@ const Banner = () => {
           type="button"
           className="swiper-button-next"
           onClick={() => swiperRef.current?.slideNext()}
+          aria-label="next-slide"
         >
           <IoIosArrowDroprightCircle
             size={30}

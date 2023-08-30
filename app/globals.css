@@ -6,21 +6,25 @@
   font-family: "ALS-Zheldor";
   src: url("../public/fonts/ALS-Zheldor-Regular.ttf");
   font-weight: 400;
+	font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../public/fonts/Montserrat-Regular.ttf");
   font-weight: 400;
+	font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../public/fonts/Montserrat-SemiBold.ttf");
   font-weight: 600;
+	font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
   src: url("../public/fonts/Montserrat-Bold.ttf");
   font-weight: 700;
+	font-display: swap;
 }
 
 * {

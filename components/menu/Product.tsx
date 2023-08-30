@@ -56,7 +56,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
           <Image
             src={product.image}
             alt={product.title}
-            loading="lazy"
+            loading="eager"
             className={`${
               isItemHovered && "opacity-50"
             } self-center aspect-square w-full h-full max-w-[255px] max-h-[255px]`}

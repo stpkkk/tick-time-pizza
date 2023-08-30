@@ -66,7 +66,7 @@ const CartProduct: React.FC<CartProductProps> = ({
       <Image
         src={image}
         alt={title}
-        loading="lazy"
+        loading="eager"
         className="aspect-square w-full h-full max-w-[76px] max-h-[76px]"
       />
       <div className="flex pt-4 sm:pt-0 md:flex-wrap md:flex-col flex-row sm:items-start sm:gap-3.5 gap-4 min-w-[1px] w-full">
