@@ -3,7 +3,7 @@ import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 
 import { menu } from "@/constants";
-import Product from "./Product";
+import ProductItem from "./ProductItem";
 import NoFavoriteProducts from "./NoFavoriteProducts";
 import { Modal } from "./modal";
 import { IProduct } from "@/types";
@@ -50,7 +50,7 @@ const Menu: React.FC = () => {
         {productsToShow.length > 0 ? (
           <ul className="grid grid-cols-4 sm:grid-cols-1 justify-items-center items-start gap-y-[50px] gap-x-[30px] sm:gap-y-5">
             {productsToShow.map((product: IProduct) => (
-              <Product key={product.id} product={product} />
+              <ProductItem key={product.id} product={product} />
             ))}
           </ul>
         ) : (
