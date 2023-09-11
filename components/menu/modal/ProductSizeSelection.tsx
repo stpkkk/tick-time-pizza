@@ -1,24 +1,26 @@
-"use client";
-import React from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setSelectedDough, setSelectedSize } from "@/redux/features/menuSlice";
-import { RadioGroup } from "@headlessui/react";
+'use client';
+import React from 'react';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
+import { RadioGroup } from '@headlessui/react';
 
-import { RadioGroupOption } from "@/components/common";
-import { IOption } from "@/types";
+import { RadioGroupOption } from '@/components/common';
+import { IOption } from '@/types';
 
 const ProductSizeSelection: React.FC = () => {
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
-    state => state.menuReducer
+    (state) => state.menuReducer,
   );
 
   const dispatch = useAppDispatch();
 
-  const thinDough = "Тонкое";
+  const thinDough = 'Тонкое';
   const smallSize = 23;
 
   const getWeightBySize = () => {
-    return selectedProduct?.weights.find(item => item.id === selectedSize?.id);
+    return selectedProduct?.weights.find(
+      (item) => item.id === selectedSize?.id,
+    );
   };
 
   const getWeightByDough = () => {
@@ -38,7 +40,7 @@ const ProductSizeSelection: React.FC = () => {
 
     if (selectedDough.name === thinDough) {
       const selectedSizeIndex = selectedProduct.sizes.findIndex(
-        (_, i) => i + 1 === selectedSize?.id
+        (_, i) => i + 1 === selectedSize?.id,
       );
       return weightByDough[selectedSizeIndex]?.weight;
     } else {
@@ -65,34 +67,34 @@ const ProductSizeSelection: React.FC = () => {
   return (
     <>
       <div>
-        <span className="font-bold md:text-sm md:leading-[15px] text-base leading-5 md:mb-4 mb-5">
+        <span className='font-bold md:text-sm md:leading-[15px] text-base leading-5 md:mb-4 mb-5'>
           Вес:&nbsp;
         </span>
         <span>{getTotalWeight()} г</span>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className='flex flex-col gap-2'>
         <RadioGroup value={selectedSize} onChange={handleSizeChange}>
-          <div className="flex flex-row gap-2.5">
-            {selectedProduct?.sizes.map(size => (
+          <div className='flex flex-row gap-2.5'>
+            {selectedProduct?.sizes.map((size) => (
               <RadioGroupOption
                 key={size.id}
                 option={size}
                 isChecked={selectedSize === size}
                 isDisabled={getIsDisabledSize(size)}
-                className="leading-[15px] w-full h-[60px] flex_center"
+                className='leading-[15px] w-full h-[60px] flex_center'
               />
             ))}
           </div>
         </RadioGroup>
         <RadioGroup value={selectedDough} onChange={handleDoughChange}>
-          <div className="flex flex-row gap-2.5">
-            {selectedProduct?.dough.map(dough => (
+          <div className='flex flex-row gap-2.5'>
+            {selectedProduct?.dough.map((dough) => (
               <RadioGroupOption
                 key={dough.id}
                 option={dough}
                 isChecked={dough === selectedDough}
                 isDisabled={getIsDisabledDough(dough)}
-                className="leading-[15px] w-full h-[60px] flex_center"
+                className='leading-[15px] w-full h-[60px] flex_center'
               />
             ))}
           </div>

@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "ALS-Zheldor";
-  src: url("../public/fonts/ALS-Zheldor-Regular.ttf");
+  font-family: 'ALS-Zheldor';
+  src: url('../public/fonts/ALS-Zheldor-Regular.ttf');
   font-weight: 400;
-	font-display: swap;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../public/fonts/Montserrat-Regular.ttf");
+  font-family: 'Montserrat';
+  src: url('../public/fonts/Montserrat-Regular.ttf');
   font-weight: 400;
-	font-display: swap;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../public/fonts/Montserrat-SemiBold.ttf");
+  font-family: 'Montserrat';
+  src: url('../public/fonts/Montserrat-SemiBold.ttf');
   font-weight: 600;
-	font-display: swap;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../public/fonts/Montserrat-Bold.ttf");
+  font-family: 'Montserrat';
+  src: url('../public/fonts/Montserrat-Bold.ttf');
   font-weight: 700;
-	font-display: swap;
+  font-display: swap;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html::-webkit-scrollbar  {
-	display: none;
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .modal_mobile_height {
@@ -56,15 +56,15 @@ html::-webkit-scrollbar  {
 /* Swiper */
 
 .swiper-pagination .swiper-pagination-bullet {
-	opacity: 1;
-	border: white solid 1px;
-	background-color: transparent;
-	width: 10px;
-	height: 10px;
+  opacity: 1;
+  border: white solid 1px;
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-	background-color: white;
+  background-color: white;
 }
 
 .swiper-slide {
@@ -88,7 +88,7 @@ body {
 }
 
 .modal_form {
-  @apply grid grid-cols-2 gap-[60px] py-[60px] pl-[60px] sm:px-8 sm:pt-8 sm:pb-44 bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:block
+  @apply grid grid-cols-2 gap-[60px] py-[60px] pl-[60px] sm:px-8 sm:pt-8 sm:pb-44 bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:block;
 }
 
 .header_dropdown {
@@ -100,13 +100,12 @@ body {
 }
 
 .header_total_amount {
-  @apply  absolute flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold;
+  @apply absolute flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold;
 }
 
 .nav_links {
   @apply flex flex-row gap-2 w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl md:flex-col sm:uppercase;
 }
-
 
 /*Buttons*/
 .btn_red {

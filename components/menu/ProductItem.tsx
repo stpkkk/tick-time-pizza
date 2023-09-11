@@ -17,10 +17,11 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const dispatch = useAppDispatch();
-  const { hoveredItemId } = useAppSelector(state => state.menuReducer);
+  const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
-  const starterPrice = product.prices.find(product => product.id === 0)?.price;
+  const starterPrice = product.prices.find((product) => product.id === 0)
+    ?.price;
 
   const handleMouseOverItem = () => {
     dispatch(setHoveredItemId(product.id));
@@ -32,7 +33,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   const handleClickProduct = (clickedProduct: IProduct) => {
     const selectedProduct = menu.find(
-      product => product.id === clickedProduct.id
+      (product) => product.id === clickedProduct.id,
     );
 
     if (selectedProduct) {
@@ -81,7 +82,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
         <FavoriteButton product={product} />
       </div>
       <div className='absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1'>
-        {product.categories?.map(cat => (
+        {product.categories?.map((cat) => (
           <Image
             src={cat.image ? cat.image : ''}
             alt={cat.title}

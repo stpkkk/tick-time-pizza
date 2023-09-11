@@ -1,5 +1,5 @@
-import { useReadingProgress } from "@/hooks";
-import React from "react";
+import { useReadingProgress } from '@/hooks';
+import React from 'react';
 
 const ProgressBar: React.FC = () => {
   const completion = useReadingProgress();
@@ -10,7 +10,7 @@ const ProgressBar: React.FC = () => {
         transform: `width(${completion - 100}%)`,
         width: `${completion}%`,
       }}
-      className="absolute bg-yellow h-1.5 top-0 left-0"
+      className='absolute bg-yellow h-1.5 top-0 left-0'
     />
   );
 };

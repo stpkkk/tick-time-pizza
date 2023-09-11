@@ -1,27 +1,27 @@
-import { StaticImageData } from "next/image";
-import { IOption } from './radio-option'
+import { StaticImageData } from 'next/image';
+import { IOption } from './radio-option';
 
 export interface IPrice {
-	id: number
-	price: number
+  id: number;
+  price: number;
 }
 
 export interface IWeight {
-	id?: number
-	weight?: number | null
+  id?: number;
+  weight?: number | null;
 }
 
 export interface IAdditionalIngredient {
   id: number;
   image: string | StaticImageData;
-	name: string
-	weights: {
-		id: number
-		value: number
-	}[]
-	prices: IPrice[]
-	amount?: number
-	maxAmount: number
+  name: string;
+  weights: {
+    id: number;
+    value: number;
+  }[];
+  prices: IPrice[];
+  amount?: number;
+  maxAmount: number;
 }
 
 export interface INutritionalValue {

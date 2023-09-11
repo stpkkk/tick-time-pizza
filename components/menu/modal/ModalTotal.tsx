@@ -1,15 +1,15 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import React from 'react';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
   addToCart,
   decrementProductAmount,
   incrementProductAmount,
   toggleModal,
-} from "@/redux/features/menuSlice";
+} from '@/redux/features/menuSlice';
 
-import Counter from "./Counter";
-import { useLocalStorage } from "@/hooks";
-import { calculateProductPrices } from "@/utils";
+import Counter from './Counter';
+import { useLocalStorage } from '@/hooks';
+import { calculateProductPrices } from '@/utils';
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,9 +20,9 @@ const ModalTotal: React.FC = () => {
     removedIngredients,
     selectedDough,
     productAmount,
-  } = useAppSelector(state => state.menuReducer);
+  } = useAppSelector((state) => state.menuReducer);
 
-  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], "cart");
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const addProductToCart = async () => {
     const updatedSelectedProduct = {
@@ -45,7 +45,7 @@ const ModalTotal: React.FC = () => {
     selectedProduct,
     selectedSize,
     additionalIngredients,
-    productAmount
+    productAmount,
   ).totalProductPrice;
 
   const handleIncrement = () => {
@@ -57,9 +57,9 @@ const ModalTotal: React.FC = () => {
   };
 
   return (
-    <div className="flex_center flex-col gap-[30px]">
-      <div className="flex_between w-full sm:flex-row-reverse sm:px-4">
-        <div className="flex_between text-base w-full max-w-[128px] sm:max-w-[96px]">
+    <div className='flex_center flex-col gap-[30px]'>
+      <div className='flex_between w-full sm:flex-row-reverse sm:px-4'>
+        <div className='flex_between text-base w-full max-w-[128px] sm:max-w-[96px]'>
           <Counter
             minValue={1}
             initialValue={1}
@@ -69,12 +69,12 @@ const ModalTotal: React.FC = () => {
           />
         </div>
         <div>
-          <span className="text-xl font-semibold sm:text-base">
+          <span className='text-xl font-semibold sm:text-base'>
             {totalProductPrice} ₽
           </span>
         </div>
       </div>
-      <button className="btn_red" onClick={addProductToCart}>
+      <button className='btn_red' onClick={addProductToCart}>
         Добавить в корзину
       </button>
     </div>

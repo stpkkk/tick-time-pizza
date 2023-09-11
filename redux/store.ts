@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
-import headerReducer from "./features/headerSlice";
-import menuReducer from "./features/menuSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import headerReducer from './features/headerSlice';
+import menuReducer from './features/menuSlice';
 
 export const store = configureStore({
   reducer: { headerReducer, menuReducer },

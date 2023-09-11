@@ -22,7 +22,6 @@ Bankist is a fictional online bank. It is a project introduced by <a href="https
 
 This is the template login details to use the bank functionality. The project does not include any backend and does not have an actual registration funcionality. Make sure to use usernames are lowercase! -->
 
-
 ## Technologies Used
 
 - Next.js
@@ -31,7 +30,7 @@ This is the template login details to use the bank functionality. The project do
 - Redux-Toolkit
 - Tailwind
 - Headless UI
-- React-Icons 
+- React-Icons
 - Swiper
 
 ## Getting Started

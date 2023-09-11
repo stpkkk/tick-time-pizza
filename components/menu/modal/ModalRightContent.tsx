@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import ProductSizeSelection from "./ProductSizeSelection";
-import IngredientsSelect from "./IngredientsSelect";
-import IngredientsRemove from "./IngredientsRemove";
-import NutritionalValue from "./NutritionalValue";
-import ProductTitle from "./ProductTitle";
+import ProductSizeSelection from './ProductSizeSelection';
+import IngredientsSelect from './IngredientsSelect';
+import IngredientsRemove from './IngredientsRemove';
+import NutritionalValue from './NutritionalValue';
+import ProductTitle from './ProductTitle';
 
 type ModalRightContentProps = {
   modalHeight: number;
@@ -20,7 +20,7 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
         height: `${modalHeight}px`,
       }}
     >
-      <div className="sm:hidden">
+      <div className='sm:hidden'>
         <ProductTitle />
       </div>
       <ProductSizeSelection />

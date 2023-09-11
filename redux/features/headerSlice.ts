@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface HeaderState {
   isNavOpen: boolean;
@@ -13,10 +13,10 @@ const initialState: HeaderState = {
 };
 
 const headerSlice = createSlice({
-  name: "header",
+  name: 'header',
   initialState,
   reducers: {
-    toggleNav: state => {
+    toggleNav: (state) => {
       state.isNavOpen = !state.isNavOpen;
     },
     setIsHoveringPhone: (state, action: PayloadAction<boolean>) => {

@@ -1,4 +1,4 @@
 export {
   calculateProductPrices,
   calculateCartTotalPrice,
-} from "./calculatePrices";
+} from './calculatePrices';

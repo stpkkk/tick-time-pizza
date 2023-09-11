@@ -1,14 +1,14 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import React from 'react';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
   addToFavorites,
   removeFromFavorites,
   setHoveredItemId,
-} from "@/redux/features/menuSlice";
+} from '@/redux/features/menuSlice';
 
-import HeartIconRed from "./HeartIconRed";
-import HeartIconGray from "./HeartIconGray";
-import { IProduct } from "@/types";
+import HeartIconRed from './HeartIconRed';
+import HeartIconGray from './HeartIconGray';
+import { IProduct } from '@/types';
 
 type FavoriteButtonProps = {
   product: IProduct | null;
@@ -17,11 +17,11 @@ type FavoriteButtonProps = {
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
   const dispatch = useAppDispatch();
   const favoriteProducts = useAppSelector(
-    state => state.menuReducer.favoriteProducts
+    (state) => state.menuReducer.favoriteProducts,
   );
 
   const isProductFavorite =
-    product && favoriteProducts?.some(item => item.id === product.id);
+    product && favoriteProducts?.some((item) => item.id === product.id);
 
   const toggleFavorite = () => {
     if (product) {
@@ -37,10 +37,10 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
 
   return (
     <button
-      className="cursor-pointer"
+      className='cursor-pointer'
       onClick={toggleFavorite}
-      type="button"
-      title="Добавить в избранное"
+      type='button'
+      title='Добавить в избранное'
     >
       {isProductFavorite ? <HeartIconRed /> : <HeartIconGray />}
     </button>

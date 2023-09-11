@@ -1,5 +1,5 @@
-import React from "react"
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import React from 'react';
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 
 type CounterProps = {
   value: number;
@@ -25,24 +25,24 @@ const Counter: React.FC<CounterProps> = ({
       <button
         className={`${
           counterValue <= minValue
-            ? "text-grayDark opacity-30"
-            : "hover:text-primary"
+            ? 'text-grayDark opacity-30'
+            : 'hover:text-primary'
         } text-grayDark`}
-        type="button"
+        type='button'
         onClick={() => handleDecrement()}
       >
         <AiOutlineMinusCircle size={18} />
       </button>
-      <span className="whitespace-nowrap sm:text-[12px]">
+      <span className='whitespace-nowrap sm:text-[12px]'>
         {counterValue} шт.
       </span>
       <button
         className={`${
           counterValue >= (maxValue || 99)
-            ? "text-grayDark opacity-30"
-            : "text-grayDark hover:text-primary"
+            ? 'text-grayDark opacity-30'
+            : 'text-grayDark hover:text-primary'
         } text-grayDark`}
-        type="button"
+        type='button'
         onClick={() => handleIncrement()}
       >
         <AiOutlinePlusCircle size={18} />
@@ -51,4 +51,4 @@ const Counter: React.FC<CounterProps> = ({
   );
 };
 
-export default Counter
+export default Counter;

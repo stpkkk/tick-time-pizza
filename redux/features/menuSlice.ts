@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IProduct, IOption, IAdditionalIngredient } from "@/types";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { IProduct, IOption, IAdditionalIngredient } from '@/types';
 
 export interface HeaderState {
   isModalOpen: boolean;
@@ -36,7 +36,7 @@ const initialState: HeaderState = {
 };
 
 const menuSlice = createSlice({
-  name: "menu",
+  name: 'menu',
   initialState,
   reducers: {
     setHoveredItemId: (state, action: PayloadAction<number | null>) => {
@@ -56,7 +56,7 @@ const menuSlice = createSlice({
       state.isModalOpen = action.payload;
     },
 
-    toggleTooltip: state => {
+    toggleTooltip: (state) => {
       state.isTooltipOpen = !state.isTooltipOpen;
     },
 
@@ -72,19 +72,19 @@ const menuSlice = createSlice({
       state.removedIngredients = action.payload;
     },
 
-    setAllIngredients: state => {
+    setAllIngredients: (state) => {
       state.isAllIngredients = true;
     },
 
-    incrementProductAmount: state => {
+    incrementProductAmount: (state) => {
       state.productAmount++;
     },
 
-    decrementProductAmount: state => {
+    decrementProductAmount: (state) => {
       state.productAmount--;
     },
 
-    initializeDefaultValues: state => {
+    initializeDefaultValues: (state) => {
       if (state.selectedProduct) {
         state.selectedSize = state.selectedProduct.sizes[0];
         state.selectedDough = state.selectedProduct.dough[1];
@@ -103,7 +103,7 @@ const menuSlice = createSlice({
     //Favorite Actions
     addToFavorites: (state, action: PayloadAction<IProduct>) => {
       const product = action.payload;
-      if (!state.favoriteProducts?.some(item => item.id === product?.id)) {
+      if (!state.favoriteProducts?.some((item) => item.id === product?.id)) {
         state.favoriteProducts?.push(product);
       }
     },
@@ -111,18 +111,18 @@ const menuSlice = createSlice({
     removeFromFavorites: (state, action: PayloadAction<number>) => {
       const productId = action.payload;
       state.favoriteProducts = state.favoriteProducts.filter(
-        item => item.id !== productId
+        (item) => item.id !== productId,
       );
     },
 
     //Ingredient Amount
     incrementIngredientAmount: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        item => item.id === ingredient.id
+        (item) => item.id === ingredient.id,
       );
 
       if (existingIngredient) {
@@ -134,11 +134,11 @@ const menuSlice = createSlice({
 
     decrementIngredientAmount: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        item => item.id === ingredient.id
+        (item) => item.id === ingredient.id,
       );
 
       if (
@@ -149,7 +149,7 @@ const menuSlice = createSlice({
         existingIngredient.amount -= 1;
         if (existingIngredient.amount === 0) {
           state.additionalIngredients = state.additionalIngredients.filter(
-            item => item.id !== ingredient.id
+            (item) => item.id !== ingredient.id,
           );
         }
       }
@@ -182,4 +182,3 @@ export const {
 } = menuSlice.actions;
 
 export default menuSlice.reducer;
-
