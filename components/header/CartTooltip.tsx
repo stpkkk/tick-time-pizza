@@ -24,8 +24,10 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
     localStorage.setItem('cart', JSON.stringify(updatedItems));
   };
 
-  const onRemove = (productId: number) => {
-    const updatedItems = products.filter((product) => product.id !== productId);
+  const onRemove = (productUUID: number) => {
+    const updatedItems = products.filter(
+      product => product.uuid !== productUUID
+    );
     updateItemsInLocalStorage(updatedItems);
   };
 
@@ -37,8 +39,8 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
         </div>
       ) : (
         <ul className='max-h-[222px] scroll-container thin_scroll overflow-auto md:mb-4 mb-[30px] flex flex-col gap-4 pr-2 -mr-2'>
-          {products.map((product) => (
-            <li key={product.id}>
+          {products.map(product => (
+            <li key={product.uuid}>
               <HeaderCartItem product={product} onRemove={onRemove} />
             </li>
           ))}

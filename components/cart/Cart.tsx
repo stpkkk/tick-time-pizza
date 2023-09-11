@@ -16,7 +16,7 @@ const Cart: React.FC = () => {
   useEffect(() => {
     const storedItems = localStorage.getItem('cart');
     if (storedItems) {
-      const parsedItems = JSON.parse(storedItems) as IProduct[];
+      const parsedItems = JSON.parse(storedItems);
       dispatch(addToCart(parsedItems));
     }
   }, [dispatch]);
@@ -27,24 +27,24 @@ const Cart: React.FC = () => {
   };
 
   const modifyCartItem = (
-    productId: number,
-    modifier: (product: IProduct) => IProduct,
+    productUUID: number,
+    modifier: (product: IProduct) => IProduct
   ) => {
-    const updatedItems = cartProducts.map((product) =>
-      product.id === productId ? modifier(product) : product,
+    const updatedItems = cartProducts.map(product =>
+      product.uuid === productUUID ? modifier(product) : product
     );
     updateItemsInLocalStorage(updatedItems);
   };
 
-  const handleIncrement = (productId: number) => {
-    modifyCartItem(productId, (product) => ({
+  const handleIncrement = (productUUID: number) => {
+    modifyCartItem(productUUID, product => ({
       ...product,
       productAmount: (product.productAmount || 1) + 1,
     }));
   };
 
-  const handleDecrement = (productId: number) => {
-    modifyCartItem(productId, (product) => ({
+  const handleDecrement = (productUUID: number) => {
+    modifyCartItem(productUUID, product => ({
       ...product,
       productAmount:
         product.productAmount && product.productAmount > 1
@@ -53,9 +53,9 @@ const Cart: React.FC = () => {
     }));
   };
 
-  const removeItem = (productId: number) => {
+  const removeItem = (productUUID: number) => {
     const updatedItems = cartProducts.filter(
-      (product) => product.id !== productId,
+      product => product.uuid !== productUUID
     );
     updateItemsInLocalStorage(updatedItems);
   };
@@ -65,13 +65,13 @@ const Cart: React.FC = () => {
       <div className='md:max-w-full w-full max-w-[calc(100%-420px)]'>
         {cartProducts.length > 0 ? (
           <ul className='flex flex-col gap-[30px] py-[50px] px-[60px] sm:py-8 sm:px-4 rounded-2xl drop-shadow-custom bg-white'>
-            {cartProducts.map((product) => (
+            {cartProducts.map(product => (
               <CartProduct
-                key={product.id}
+                key={product.uuid}
                 product={product}
-                onIncrement={() => handleIncrement(product.id)}
-                onDecrement={() => handleDecrement(product.id)}
-                onRemove={() => removeItem(product.id)}
+                onIncrement={() => handleIncrement(product?.uuid || 0)}
+                onDecrement={() => handleDecrement(product?.uuid || 0)}
+                onRemove={() => removeItem(product?.uuid || 0)}
               />
             ))}
           </ul>

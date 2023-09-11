@@ -6,7 +6,7 @@ import { IProduct } from '@/types';
 
 interface HeaderCartItemProps {
   product: IProduct;
-  onRemove: (productId: number) => void;
+  onRemove: (productUUID: number) => void;
 }
 
 const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
@@ -32,7 +32,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
         <p className='text-[14px] md:text-sm font-semibold w-10 md:w-16 text-center whitespace-nowrap'>
           {totalProductPrice} ₽
         </p>
-        <button type='button' onClick={() => onRemove(product.id)}>
+        <button type='button' onClick={() => onRemove(product.uuid || 0)}>
           <RiDeleteBin6Line
             size={15}
             className='text-grayDark cursor-pointer hover:text-primary'

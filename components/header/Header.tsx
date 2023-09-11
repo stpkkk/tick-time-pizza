@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const storedItems = localStorage.getItem('cart');
     if (storedItems) {
-      const parsedItems = JSON.parse(storedItems) as IProduct[];
+      const parsedItems = JSON.parse(storedItems);
       dispatch(addToCart(parsedItems));
     }
   }, [dispatch]);

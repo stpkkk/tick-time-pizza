@@ -32,6 +32,7 @@ const ModalTotal: React.FC = () => {
       selectedDough,
       additionalIngredients,
       removedIngredients,
+      uuid: crypto.randomUUID(),
     };
 
     const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
