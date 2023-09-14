@@ -75,7 +75,7 @@ const ModalTotal: React.FC = () => {
           </span>
         </div>
       </div>
-      <button className='btn_red' onClick={addProductToCart}>
+      <button className='btn_red' type='submit' onSubmit={addProductToCart}>
         Добавить в корзину
       </button>
     </div>

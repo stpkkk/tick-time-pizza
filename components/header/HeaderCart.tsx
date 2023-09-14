@@ -8,7 +8,6 @@ import { BsBasket2 } from 'react-icons/bs';
 
 import CartTooltip from './CartTooltip';
 import { calculateCartTotalPrice } from '@/utils';
-import { IProduct } from '@/types';
 
 const HeaderCart: React.FC = () => {
   const dispatch = useAppDispatch();

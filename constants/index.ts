@@ -1,6 +1,4 @@
-import { navLinks } from './nav-links';
-import { footerLinks } from './footer-links';
-import { categories } from './categories';
-import { menu } from './menu';
-
-export { navLinks, footerLinks, categories, menu };
+export * from './nav-links';
+export * from './footer-links';
+export * from './categories';
+export * from './menu';
