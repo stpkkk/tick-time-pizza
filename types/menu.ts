@@ -20,8 +20,8 @@ export interface IAdditionalIngredient {
     value: number;
   }[];
   prices: IPrice[];
-  amount?: number;
-  maxAmount: number;
+  quantity?: number;
+  maxQuantity: number;
 }
 
 export interface INutritionalValue {
@@ -53,6 +53,6 @@ export interface IProduct {
   selectedSize?: IOption;
   selectedDough?: IOption;
   removedIngredients?: IOption[];
-  productAmount?: number;
+  productQuantity?: number;
   uuid?: number;
 }

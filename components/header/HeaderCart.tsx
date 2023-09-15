@@ -20,9 +20,9 @@ const HeaderCart: React.FC = () => {
 
   const cartTooltipRef = useRef<HTMLDivElement | null>(null);
   const cartTotalPrice = calculateCartTotalPrice(cartProducts).cartTotalPrice;
-  const totalAmount = cartProducts
-    .map((product) => product.productAmount || 0)
-    .reduce((amount, acc) => amount + acc, 0);
+  const totalQuantity = cartProducts
+    .map((product) => product.productQuantity || 0)
+    .reduce((quantity, acc) => quantity + acc, 0);
 
   const handleMouseOverCart = () => {
     dispatch(setIsHoveringCart(true));
@@ -65,9 +65,9 @@ const HeaderCart: React.FC = () => {
             `${cartTotalPrice} ₽`
           )}
         </div>
-        {totalAmount ? (
-          <span className='top-4 right-6 header_total_amount'>
-            {totalAmount}
+        {totalQuantity ? (
+          <span className='top-4 right-6 header_total_quantity'>
+            {totalQuantity}
           </span>
         ) : (
           ''

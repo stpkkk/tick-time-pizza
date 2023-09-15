@@ -37,18 +37,18 @@ const Cart: React.FC = () => {
   };
 
   const handleIncrement = (productUUID: number) => {
-    modifyCartItem(productUUID, product => ({
+    modifyCartItem(productUUID, (product) => ({
       ...product,
-      productAmount: (product.productAmount || 1) + 1,
+      productQuantity: (product.productQuantity || 1) + 1,
     }));
   };
 
   const handleDecrement = (productUUID: number) => {
-    modifyCartItem(productUUID, product => ({
+    modifyCartItem(productUUID, (product) => ({
       ...product,
-      productAmount:
-        product.productAmount && product.productAmount > 1
-          ? product.productAmount - 1
+      productQuantity:
+        product.productQuantity && product.productQuantity > 1
+          ? product.productQuantity - 1
           : 1,
     }));
   };

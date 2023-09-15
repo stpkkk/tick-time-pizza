@@ -66,10 +66,10 @@ const Modal: React.FC = () => {
               >
                 <RiCloseFill size={36} className='md:w-7' />
               </button>
-              <form className='modal_form'>
+              <div className='modal_form'>
                 <ModalLeftContent setModalHeight={setModalHeight} />
                 <ModalRightContent modalHeight={modalHeight} />
-              </form>
+              </div>
             </div>
           </div>
         </div>

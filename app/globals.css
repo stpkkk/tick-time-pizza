@@ -99,7 +99,7 @@ body {
   @apply bg-white w-[400px] absolute top-[90px] rounded-b-2xl text-[12px] pb-[30px] px-[20px] pt-[20px];
 }
 
-.header_total_amount {
+.header_total_quantity {
   @apply absolute flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold;
 }
 

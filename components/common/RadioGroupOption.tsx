@@ -28,7 +28,7 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
       <RadioGroup.Option
         disabled={isDisabled}
         value={option}
-        className={`${backgroundClass} ${className}  cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${
+        className={`${backgroundClass} ${className} cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] ${
           isDisabled && 'pointer-events-none text-grayDark'
         }`}
       >

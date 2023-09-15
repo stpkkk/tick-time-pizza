@@ -14,7 +14,7 @@ export interface HeaderState {
   isDisabled: boolean;
   additionalIngredients: IAdditionalIngredient[];
   favoriteProducts: IProduct[];
-  productAmount: number;
+  productQuantity: number;
   cartProducts: IProduct[];
 }
 
@@ -31,7 +31,7 @@ const initialState: HeaderState = {
   removedIngredients: [],
   additionalIngredients: [],
   favoriteProducts: [],
-  productAmount: 1,
+  productQuantity: 1,
   cartProducts: [],
 };
 
@@ -76,12 +76,12 @@ const menuSlice = createSlice({
       state.isAllIngredients = true;
     },
 
-    incrementProductAmount: (state) => {
-      state.productAmount++;
+    incrementproductQuantity: (state) => {
+      state.productQuantity++;
     },
 
-    decrementProductAmount: (state) => {
-      state.productAmount--;
+    decrementproductQuantity: (state) => {
+      state.productQuantity--;
     },
 
     initializeDefaultValues: (state) => {
@@ -91,7 +91,7 @@ const menuSlice = createSlice({
         state.isAllIngredients = false;
         state.removedIngredients = [];
         state.additionalIngredients = [];
-        state.productAmount = 1;
+        state.productQuantity = 1;
       }
 
       if (state.selectedSize?.name === null) {
@@ -111,45 +111,45 @@ const menuSlice = createSlice({
     removeFromFavorites: (state, action: PayloadAction<number>) => {
       const productId = action.payload;
       state.favoriteProducts = state.favoriteProducts.filter(
-        (item) => item.id !== productId,
+        (item) => item.id !== productId
       );
     },
 
-    //Ingredient Amount
-    incrementIngredientAmount: (
+    //Ingredient Quantity
+    incrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        (item) => item.id === ingredient.id,
+        (item) => item.id === ingredient.id
       );
 
       if (existingIngredient) {
-        existingIngredient.amount = (existingIngredient.amount || 0) + 1;
+        existingIngredient.quantity = (existingIngredient.quantity || 0) + 1;
       } else {
-        state.additionalIngredients.push({ ...ingredient, amount: 1 });
+        state.additionalIngredients.push({ ...ingredient, quantity: 1 });
       }
     },
 
-    decrementIngredientAmount: (
+    decrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        (item) => item.id === ingredient.id,
+        (item) => item.id === ingredient.id
       );
 
       if (
         existingIngredient &&
-        existingIngredient.amount &&
-        existingIngredient.amount > 0
+        existingIngredient.quantity &&
+        existingIngredient.quantity > 0
       ) {
-        existingIngredient.amount -= 1;
-        if (existingIngredient.amount === 0) {
+        existingIngredient.quantity -= 1;
+        if (existingIngredient.quantity === 0) {
           state.additionalIngredients = state.additionalIngredients.filter(
-            (item) => item.id !== ingredient.id,
+            (item) => item.id !== ingredient.id
           );
         }
       }
@@ -170,14 +170,14 @@ export const {
   setRemovedIngredients,
   setSelectedCategory,
   initializeDefaultValues,
-  incrementIngredientAmount,
-  decrementIngredientAmount,
+  incrementIngredientQuantity,
+  decrementIngredientQuantity,
   toggleTooltip,
   setAllIngredients,
   addToFavorites,
   removeFromFavorites,
-  decrementProductAmount,
-  incrementProductAmount,
+  decrementproductQuantity,
+  incrementproductQuantity,
   addToCart,
 } = menuSlice.actions;
 

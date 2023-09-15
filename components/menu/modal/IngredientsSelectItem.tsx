@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
-  decrementIngredientAmount,
-  incrementIngredientAmount,
+  decrementIngredientQuantity,
+  incrementIngredientQuantity,
 } from '@/redux/features/menuSlice';
 import Image from 'next/image';
 
@@ -23,44 +23,44 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
 
   const ingredientItem = useAppSelector((state) =>
     state.menuReducer.additionalIngredients.find(
-      (item) => item.id === ingredient.id,
-    ),
+      (item) => item.id === ingredient.id
+    )
   );
   const selectedSize = useAppSelector(
-    (state) => state.menuReducer.selectedSize,
+    (state) => state.menuReducer.selectedSize
   );
 
-  const ingredientAmount = ingredientItem?.amount || 0;
+  const ingredientQuantity = ingredientItem?.quantity || 0;
   const ingredientPrice = ingredient?.prices.find(
-    (item) => item.id === selectedSize?.id,
+    (item) => item.id === selectedSize?.id
   )?.price;
   const ingredientWeight = ingredient?.weights.find(
-    (item) => item.id === selectedSize?.id,
+    (item) => item.id === selectedSize?.id
   )?.value;
 
-  // Reset disabled ingredient amount to 0
+  // Reset disabled ingredient quantity to 0
   useEffect(() => {
     if (isDisabled) {
-      dispatch(decrementIngredientAmount({ ingredient }));
+      dispatch(decrementIngredientQuantity({ ingredient }));
     }
   }, [dispatch, ingredient, isDisabled]);
 
   const handleDecrement = () => {
-    if (ingredientAmount > 0) {
-      dispatch(decrementIngredientAmount({ ingredient }));
+    if (ingredientQuantity > 0) {
+      dispatch(decrementIngredientQuantity({ ingredient }));
     }
   };
 
   const handleIncrement = () => {
-    if (ingredientAmount < ingredient.maxAmount) {
-      dispatch(incrementIngredientAmount({ ingredient }));
+    if (ingredientQuantity < ingredient.maxQuantity) {
+      dispatch(incrementIngredientQuantity({ ingredient }));
     }
   };
 
   return (
     <li
       className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${
-        ingredientAmount > 0 ? 'bg-yellow' : 'bg-grayLight'
+        ingredientQuantity > 0 ? 'bg-yellow' : 'bg-grayLight'
       } ${isDisabled && 'text-grayDark'}`}
     >
       <div className='flex flex-grow flex-auto basis-[calc(100%-7rem)] items-center flex-row gap-5'>
@@ -88,8 +88,8 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
               handleIncrement={handleIncrement}
               handleDecrement={handleDecrement}
               initialValue={0}
-              maxValue={ingredient.maxAmount}
-              value={ingredientAmount}
+              maxValue={ingredient.maxQuantity}
+              value={ingredientQuantity}
             />
           </div>
         )}

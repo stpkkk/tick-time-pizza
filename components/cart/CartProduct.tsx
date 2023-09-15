@@ -30,7 +30,7 @@ const renderIngredientsToAdd = (ingredients: IAdditionalIngredient[]) => {
       Добавить:&nbsp;
       {ingredients.map((ing) => (
         <span key={ing.id}>
-          {ing.name}&nbsp;({ing.amount}шт.),&nbsp;
+          {ing.name}&nbsp;({ing.quantity}шт.),&nbsp;
         </span>
       ))}
     </p>
@@ -50,7 +50,7 @@ const CartProduct: React.FC<CartProductProps> = ({
     selectedDough,
     removedIngredients,
     additionalIngredients,
-    productAmount,
+    productQuantity,
     id,
   } = product;
 
@@ -58,7 +58,7 @@ const CartProduct: React.FC<CartProductProps> = ({
     product,
     selectedSize || null,
     additionalIngredients,
-    productAmount || 1
+    productQuantity || 1
   );
 
   return (
@@ -90,8 +90,8 @@ const CartProduct: React.FC<CartProductProps> = ({
         <div className='flex_start sm:flex_center flex-row gap-5 sm:gap-2 leading-[20px]'>
           <Counter
             minValue={1}
-            value={productAmount || 1}
-            initialValue={productAmount || 1}
+            value={productQuantity || 1}
+            initialValue={productQuantity || 1}
             handleDecrement={onDecrement}
             handleIncrement={onIncrement}
           />
