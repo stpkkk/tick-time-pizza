@@ -7,6 +7,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import Image from 'next/image';
 
+import pizza from '../../public/assets/icons/pizza.svg';
 import { FavoriteButton } from '../common';
 import { menu } from '@/constants';
 import { IProduct } from '@/types';
@@ -20,8 +21,9 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
-  const starterPrice = product.prices.find((product) => product.id === 0)
-    ?.price;
+  const starterPrice = product.prices.find(
+    (product) => product.id === 0
+  )?.price;
 
   const handleMouseOverItem = () => {
     dispatch(setHoveredItemId(product.id));
@@ -33,7 +35,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   const handleClickProduct = (clickedProduct: IProduct) => {
     const selectedProduct = menu.find(
-      (product) => product.id === clickedProduct.id,
+      (product) => product.id === clickedProduct.id
     );
 
     if (selectedProduct) {
@@ -57,7 +59,8 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
           <Image
             src={product.image}
             alt={product.title}
-            loading='eager'
+            placeholder='blur'
+            blurDataURL={pizza.src}
             className={`${
               isItemHovered && 'opacity-50'
             } self-center aspect-square w-full h-full max-w-[255px] max-h-[255px]`}
@@ -97,3 +100,4 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 };
 
 export default ProductItem;
+

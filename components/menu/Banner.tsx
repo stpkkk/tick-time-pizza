@@ -11,6 +11,7 @@ import Image from 'next/image';
 import SwiperCore from 'swiper';
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import pattern from '../../public/assets/icons/pattern.svg';
 import slide1 from '../../public/assets/images/slider/slide-1.webp';
 import slide2 from '../../public/assets/images/slider/slide-2.webp';
 import slide3 from '../../public/assets/images/slider/slide-3.webp';
@@ -68,8 +69,8 @@ const Banner = () => {
               alt='Акция в Тик Тайм'
               width={800}
               height={100}
-              priority
-              decoding='async'
+              placeholder='blur'
+              blurDataURL={pattern.src}
               className='h-auto w-full rounded-2xl'
               quality={100}
               key={slide.id}

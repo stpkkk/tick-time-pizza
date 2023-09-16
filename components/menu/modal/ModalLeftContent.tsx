@@ -4,6 +4,7 @@ import { useAppSelector } from '@/redux/hooks';
 import Image from 'next/image';
 
 import { FavoriteButton } from '@/components/common';
+import pizza from '../../../public/assets/icons/pizza.svg';
 import ImageNotice from './ImageNotice';
 import ProductTitle from './ProductTitle';
 import ModalTotal from './ModalTotal';
@@ -40,6 +41,8 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
         <Image
           src={selectedProduct?.image || ''}
           alt={selectedProduct?.title || ''}
+          placeholder='blur'
+          blurDataURL={pizza.src}
           width={325}
           height={325}
           className='aspect-square w-full h-full max-w-[325px] max-h-[325px] sm:max-w-[250px] sm:max-h-[250px]'
