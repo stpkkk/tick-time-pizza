@@ -23,7 +23,11 @@ module.exports = {
       },
       screens: {
         sm: { max: '768px' },
-        md: { max: '1280px' },
+        md: { max: '1024px' },
+        lg: { max: '1280px' },
+        smMin: '768px',
+        mdMin: '1024px',
+        lgMin: '1280px',
       },
       fontFamily: {
         zheldor: ['ALS-Zheldor', 'sans-serif'],

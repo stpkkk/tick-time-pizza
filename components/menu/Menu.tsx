@@ -51,7 +51,7 @@ const Menu: React.FC = () => {
       <Categories />
       <div className='py-[50px] px-[60px] bg-white rounded-2xl drop-shadow-custom sm:drop-shadow-none sm:p-0'>
         {productsToShow.length > 0 ? (
-          <ul className='grid grid-cols-4 sm:grid-cols-1 justify-items-center items-start gap-y-[50px] gap-x-[30px] sm:gap-y-5'>
+          <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center items-start gap-y-[50px] gap-x-[30px] sm:gap-y-5'>
             {productsToShow.map((product: IProduct) => (
               <ProductItem key={product.id} product={product} />
             ))}
