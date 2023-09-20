@@ -2,8 +2,8 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
   addToCart,
-  decrementproductQuantity,
-  incrementproductQuantity,
+  decrementProductQuantity,
+  incrementProductQuantity,
   toggleModal,
 } from '@/redux/features/menuSlice';
 
@@ -50,11 +50,11 @@ const ModalTotal: React.FC = () => {
   ).totalProductPrice;
 
   const handleIncrement = () => {
-    dispatch(incrementproductQuantity());
+    dispatch(incrementProductQuantity());
   };
 
   const handleDecrement = () => {
-    if (productQuantity > 1) dispatch(decrementproductQuantity());
+    if (productQuantity > 1) dispatch(decrementProductQuantity());
   };
 
   return (

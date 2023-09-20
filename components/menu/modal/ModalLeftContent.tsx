@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import Image from 'next/image';
 
-import { FavoriteButton } from '@/components/common';
+import { BookmarkButton } from '@/components/common';
 import pizza from '../../../public/assets/icons/pizza.svg';
 import ImageNotice from './ImageNotice';
 import ProductTitle from './ProductTitle';
@@ -48,7 +48,7 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
           className='aspect-square w-full h-full max-w-[325px] max-h-[325px] sm:max-w-[250px] sm:max-h-[250px]'
         />
         <div className='absolute top-0 right-0'>
-          <FavoriteButton product={selectedProduct} />
+          <BookmarkButton product={selectedProduct} />
         </div>
         <ImageNotice />
         <p className='block text-center text-sm sm:text-[0.75rem] sm:mb-[30px] leading-[1.25rem]'>

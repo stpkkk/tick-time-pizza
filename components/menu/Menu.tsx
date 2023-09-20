@@ -4,23 +4,20 @@ import { useAppSelector } from '@/redux/hooks';
 
 import { menu } from '@/constants';
 import ProductItem from './ProductItem';
-import NoFavoriteProducts from './NoFavoriteProducts';
+import NoBookmarks from './NoBookmarks';
 import { Modal } from './modal';
 import { IProduct } from '@/types';
 import Banner from './Banner';
 import Categories from './Categories';
 
 const Menu: React.FC = () => {
-  const { isModalOpen, selectedCategory, favoriteProducts } = useAppSelector(
-    (state) => state.menuReducer,
+  const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(
+    (state) => state.menuReducer
   );
 
   function filterByCategoryTitle(menu: IProduct[], categoryTitle: string) {
-    return menu.filter(
-      (product) =>
-        product.categories?.some(
-          (category) => category.title === categoryTitle,
-        ),
+    return menu.filter((product) =>
+      product.categories?.some((category) => category.title === categoryTitle)
     );
   }
 
@@ -31,7 +28,7 @@ const Menu: React.FC = () => {
   const getCategoryProducts = (category: string | number): IProduct[] => {
     switch (category) {
       case 'Избранное':
-        return favoriteProducts;
+        return bookmarks;
       case 'Без Мяса':
         return withoutMeatArray;
       case 'Подходит для Детей':
@@ -57,7 +54,7 @@ const Menu: React.FC = () => {
             ))}
           </ul>
         ) : (
-          <NoFavoriteProducts />
+          <NoBookmarks />
         )}
       </div>
       {isModalOpen && <Modal />}

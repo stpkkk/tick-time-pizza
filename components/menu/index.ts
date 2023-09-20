@@ -3,6 +3,6 @@ import Menu from './Menu';
 import ProductItem from './ProductItem';
 import Banner from './Banner';
 import Categories from './Categories';
-import NoFavoriteProducts from './NoFavoriteProducts';
+import NoBookmarks from './NoBookmarks';
 
-export { Menu, ProductItem, Banner, Categories, NoFavoriteProducts };
+export { Menu, ProductItem, Banner, Categories, NoBookmarks };

@@ -13,7 +13,7 @@ export interface HeaderState {
   isAllIngredients: boolean;
   isDisabled: boolean;
   additionalIngredients: IAdditionalIngredient[];
-  favoriteProducts: IProduct[];
+  bookmarks: IProduct[];
   productQuantity: number;
   cartProducts: IProduct[];
 }
@@ -30,7 +30,7 @@ const initialState: HeaderState = {
   isDisabled: false,
   removedIngredients: [],
   additionalIngredients: [],
-  favoriteProducts: [],
+  bookmarks: [],
   productQuantity: 1,
   cartProducts: [],
 };
@@ -39,6 +39,7 @@ const menuSlice = createSlice({
   name: 'menu',
   initialState,
   reducers: {
+    //Menu
     setHoveredItemId: (state, action: PayloadAction<number | null>) => {
       state.hoveredItemId = action.payload;
     },
@@ -76,46 +77,14 @@ const menuSlice = createSlice({
       state.isAllIngredients = true;
     },
 
-    incrementproductQuantity: (state) => {
+    incrementProductQuantity: (state) => {
       state.productQuantity++;
     },
 
-    decrementproductQuantity: (state) => {
+    decrementProductQuantity: (state) => {
       state.productQuantity--;
     },
 
-    initializeDefaultValues: (state) => {
-      if (state.selectedProduct) {
-        state.selectedSize = state.selectedProduct.sizes[0];
-        state.selectedDough = state.selectedProduct.dough[1];
-        state.isAllIngredients = false;
-        state.removedIngredients = [];
-        state.additionalIngredients = [];
-        state.productQuantity = 1;
-      }
-
-      if (state.selectedSize?.name === null) {
-        state.selectedSize = state.selectedProduct?.sizes[1] || null;
-        state.selectedDough = state.selectedProduct?.dough[0] || null;
-      }
-    },
-
-    //Favorite Actions
-    addToFavorites: (state, action: PayloadAction<IProduct>) => {
-      const product = action.payload;
-      if (!state.favoriteProducts?.some((item) => item.id === product?.id)) {
-        state.favoriteProducts?.push(product);
-      }
-    },
-
-    removeFromFavorites: (state, action: PayloadAction<number>) => {
-      const productId = action.payload;
-      state.favoriteProducts = state.favoriteProducts.filter(
-        (item) => item.id !== productId
-      );
-    },
-
-    //Ingredient Quantity
     incrementIngredientQuantity: (
       state,
       action: PayloadAction<{ ingredient: IAdditionalIngredient }>
@@ -158,6 +127,36 @@ const menuSlice = createSlice({
     addToCart: (state, action: PayloadAction<IProduct[]>) => {
       state.cartProducts = action.payload;
     },
+
+    //Bookmarks Actions
+    addToBookmarks: (state, action: PayloadAction<IProduct>) => {
+      const product = action.payload;
+      if (!state.bookmarks?.some((item) => item.id === product?.id)) {
+        state.bookmarks?.push(product);
+      }
+    },
+
+    removeFromBookmarks: (state, action: PayloadAction<number>) => {
+      const productId = action.payload;
+      state.bookmarks = state.bookmarks.filter((item) => item.id !== productId);
+    },
+
+    //Initial Values
+    initializeDefaultValues: (state) => {
+      if (state.selectedProduct) {
+        state.selectedSize = state.selectedProduct.sizes[0];
+        state.selectedDough = state.selectedProduct.dough[1];
+        state.isAllIngredients = false;
+        state.removedIngredients = [];
+        state.additionalIngredients = [];
+        state.productQuantity = 1;
+      }
+
+      if (state.selectedSize?.name === null) {
+        state.selectedSize = state.selectedProduct?.sizes[1] || null;
+        state.selectedDough = state.selectedProduct?.dough[0] || null;
+      }
+    },
   },
 });
 
@@ -174,10 +173,10 @@ export const {
   decrementIngredientQuantity,
   toggleTooltip,
   setAllIngredients,
-  addToFavorites,
-  removeFromFavorites,
-  decrementproductQuantity,
-  incrementproductQuantity,
+  addToBookmarks,
+  removeFromBookmarks,
+  decrementProductQuantity,
+  incrementProductQuantity,
   addToCart,
 } = menuSlice.actions;
 

@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import Image from 'next/image';
 
 import pizza from '../../public/assets/icons/pizza.svg';
-import { FavoriteButton } from '../common';
+import { BookmarkButton } from '../common';
 import { menu } from '@/constants';
 import { IProduct } from '@/types';
 
@@ -82,7 +82,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
         </div>
       </div>
       <div className='absolute z-[1] top-0 right-0 sm:p-2 sm:top-2 sm:right-2'>
-        <FavoriteButton product={product} />
+        <BookmarkButton product={product} />
       </div>
       <div className='absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1'>
         {product.categories?.map((cat) => (

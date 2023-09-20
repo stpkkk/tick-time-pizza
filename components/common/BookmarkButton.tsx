@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
-  addToFavorites,
-  removeFromFavorites,
+  addToBookmarks,
+  removeFromBookmarks,
   setHoveredItemId,
 } from '@/redux/features/menuSlice';
 
@@ -10,26 +10,24 @@ import HeartIconRed from './HeartIconRed';
 import HeartIconGray from './HeartIconGray';
 import { IProduct } from '@/types';
 
-type FavoriteButtonProps = {
+type BookmarkButtonProps = {
   product: IProduct | null;
 };
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
+const BookmarkButton: React.FC<BookmarkButtonProps> = ({ product }) => {
   const dispatch = useAppDispatch();
-  const favoriteProducts = useAppSelector(
-    (state) => state.menuReducer.favoriteProducts,
-  );
+  const bookmarks = useAppSelector((state) => state.menuReducer.bookmarks);
 
-  const isProductFavorite =
-    product && favoriteProducts?.some((item) => item.id === product.id);
+  const isBookmarked =
+    product && bookmarks?.some((item) => item.id === product.id);
 
-  const toggleFavorite = () => {
+  const toggleBookmarked = () => {
     if (product) {
-      if (isProductFavorite) {
-        dispatch(removeFromFavorites(product.id));
+      if (isBookmarked) {
+        dispatch(removeFromBookmarks(product.id));
         dispatch(setHoveredItemId(null));
       } else {
-        dispatch(addToFavorites(product));
+        dispatch(addToBookmarks(product));
         dispatch(setHoveredItemId(null));
       }
     }
@@ -38,13 +36,13 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ product }) => {
   return (
     <button
       className='cursor-pointer'
-      onClick={toggleFavorite}
+      onClick={toggleBookmarked}
       type='button'
       title='Добавить в избранное'
     >
-      {isProductFavorite ? <HeartIconRed /> : <HeartIconGray />}
+      {isBookmarked ? <HeartIconRed /> : <HeartIconGray />}
     </button>
   );
 };
 
-export default FavoriteButton;
+export default BookmarkButton;
