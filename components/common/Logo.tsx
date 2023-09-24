@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
       <Image
         src={logo}
         alt='logo'
-        className='w-full h-full max-w-[57px] max-h-[57px] sm:max-w-[45px] sm:max-h-[45px]'
+        className='h-full max-h-[57px] w-full max-w-[57px] sm:max-h-[45px] sm:max-w-[45px]'
       />
     </Link>
   );

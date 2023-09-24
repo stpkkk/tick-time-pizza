@@ -12,14 +12,14 @@ const Nav: React.FC = () => {
   const isNavOpen = useAppSelector((state) => state.headerReducer.isNavOpen);
 
   return (
-    <nav className='sm:flex sm:flex-col font-semibold'>
+    <nav className='font-semibold sm:flex sm:flex-col'>
       <ul
         className={`${
-          isNavOpen ? 'absolute sm:left-0 sm:top-[58px] p-6' : 'md:hidden'
+          isNavOpen ? 'absolute p-6 sm:left-0 sm:top-[58px]' : 'md:hidden'
         } nav_links -z-10`}
       >
         {navLinks.map((link) => (
-          <li className='p-2 cursor-pointer' key={link.key}>
+          <li className='cursor-pointer p-2' key={link.key}>
             <Link
               className={`${pathname === link.href && 'text-secondary'}`}
               draggable='false'
@@ -34,7 +34,7 @@ const Nav: React.FC = () => {
           <Link
             href='/login'
             as='login'
-            className='hidden sm:flex sm:items-center sm:gap-2 sm:p-2 sm:cursor-pointer'
+            className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
           >
             <div>Войти</div>
             <RiLoginCircleLine size={25} />
@@ -43,7 +43,7 @@ const Nav: React.FC = () => {
         <li className='hidden sm:flex'>
           <Phone />
         </li>
-        <p className='!text-[10px] text-xs font-normal normal-case hidden sm:block'>
+        <p className='hidden !text-[10px] text-xs font-normal normal-case sm:block'>
           *Минимальная сумма заказа на доставку без учета скидок — 545 рублей!
         </p>
       </ul>

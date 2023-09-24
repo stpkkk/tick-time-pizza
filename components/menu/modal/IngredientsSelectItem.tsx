@@ -23,19 +23,19 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
 
   const ingredientItem = useAppSelector((state) =>
     state.menuReducer.additionalIngredients.find(
-      (item) => item.id === ingredient.id
-    )
+      (item) => item.id === ingredient.id,
+    ),
   );
   const selectedSize = useAppSelector(
-    (state) => state.menuReducer.selectedSize
+    (state) => state.menuReducer.selectedSize,
   );
 
   const ingredientQuantity = ingredientItem?.quantity || 0;
   const ingredientPrice = ingredient?.prices.find(
-    (item) => item.id === selectedSize?.id
+    (item) => item.id === selectedSize?.id,
   )?.price;
   const ingredientWeight = ingredient?.weights.find(
-    (item) => item.id === selectedSize?.id
+    (item) => item.id === selectedSize?.id,
   )?.value;
 
   // Reset disabled ingredient quantity to 0
@@ -59,30 +59,30 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
 
   return (
     <li
-      className={`flex justify-between flex-row px-4 py-2.5 rounded-2xl ${
+      className={`flex flex-row justify-between rounded-2xl px-4 py-2.5 ${
         ingredientQuantity > 0 ? 'bg-yellow' : 'bg-grayLight'
       } ${isDisabled && 'text-grayDark'}`}
     >
-      <div className='flex flex-grow flex-auto basis-[calc(100%-7rem)] items-center flex-row gap-5'>
+      <div className='flex flex-auto flex-grow basis-[calc(100%-7rem)] flex-row items-center gap-5'>
         <Image
           src={ingredient.image}
           alt={ingredient.name}
           width={27}
           height={27}
-          className='w-full h-full max-w-[27px] max-h-[27px]'
+          className='h-full max-h-[27px] w-full max-w-[27px]'
         />
         <div className='flex flex-col gap-1.5'>
-          <span className='md:text-xs md:leading-[15px] text-sm leading-[17px] font-bold break-words'>
+          <span className='break-words text-sm font-bold leading-[17px] md:text-xs md:leading-[15px]'>
             {ingredient.name}
           </span>
-          <span className='md:text-xs md:leading-[15px] text-sm leading-[17px] font-normal whitespace-nowrap'>
+          <span className='whitespace-nowrap text-sm font-normal leading-[17px] md:text-xs md:leading-[15px]'>
             {!isDisabled
               ? `${ingredientWeight} г ${ingredientPrice} ₽`
               : 'Выберите другие параметры'}
           </span>
         </div>
         {!isDisabled && (
-          <div className='gap-2 flex justify-between flex-nowrap items-center text-xs sm:text-base ml-auto'>
+          <div className='ml-auto flex flex-nowrap items-center justify-between gap-2 text-xs sm:text-base'>
             <Counter
               minValue={0}
               handleIncrement={handleIncrement}

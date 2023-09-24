@@ -39,14 +39,14 @@ const ImageNotice: React.FC = () => {
   const TooltipContent = (
     <>
       <div
-        className='absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary'
+        className='absolute left-0 top-0 z-20 cursor-pointer text-grayDark hover:text-primary'
         onClick={handleClickExclamation}
       >
         <AiOutlineExclamationCircle size={18} />
       </div>
-      <div className='absolute -top-2 -left-2 z-10 bg-white drop-shadow-custom rounded-2xl py-6 px-9 max-w-[296px]'>
+      <div className='absolute -left-2 -top-2 z-10 max-w-[296px] rounded-2xl bg-white px-9 py-6 drop-shadow-custom'>
         <div
-          className='absolute top-0 right-0 p-2 cursor-pointer text-grayDark hover:text-primary'
+          className='absolute right-0 top-0 cursor-pointer p-2 text-grayDark hover:text-primary'
           onClick={handleClickExclamation}
         >
           <RiCloseFill size={24} />
@@ -59,12 +59,12 @@ const ImageNotice: React.FC = () => {
   );
 
   return isTooltipOpen ? (
-    <div ref={modalRef} className='absolute top-0 left-0 w-full'>
+    <div ref={modalRef} className='absolute left-0 top-0 w-full'>
       {TooltipContent}
     </div>
   ) : (
     <div
-      className='absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary'
+      className='absolute left-0 top-0 z-20 cursor-pointer text-grayDark hover:text-primary'
       onClick={handleClickExclamation}
     >
       <AiOutlineExclamationCircle size={18} />

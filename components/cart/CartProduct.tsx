@@ -15,7 +15,7 @@ interface CartProductProps {
 
 const renderIngredientsToRemove = (ingredients: IOption[]) => {
   return (
-    <p className='sm:text-[10px] text-xs leading-[15px] sm:leading-[0.75rem] mt-[5px] break-words font-normal'>
+    <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem]'>
       Убрать:&nbsp;
       {ingredients.map((ing) => (
         <span key={ing.id}>{ing.name},&nbsp;</span>
@@ -26,7 +26,7 @@ const renderIngredientsToRemove = (ingredients: IOption[]) => {
 
 const renderIngredientsToAdd = (ingredients: IAdditionalIngredient[]) => {
   return (
-    <p className='sm:text-[10px] text-xs leading-[15px] mt-[5px] break-words font-normal'>
+    <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px]'>
       Добавить:&nbsp;
       {ingredients.map((ing) => (
         <span key={ing.id}>
@@ -58,23 +58,23 @@ const CartProduct: React.FC<CartProductProps> = ({
     product,
     selectedSize || null,
     additionalIngredients,
-    productQuantity || 1
+    productQuantity || 1,
   );
 
   return (
-    <li className='flex_start md:gap-4 gap-5 flex-none' key={id}>
+    <li className='flex_start flex-none gap-5 md:gap-4' key={id}>
       <Image
         src={image}
         alt={title}
         loading='eager'
-        className='aspect-square w-full h-full max-w-[76px] max-h-[76px]'
+        className='aspect-square h-full max-h-[76px] w-full max-w-[76px]'
       />
-      <div className='flex pt-4 sm:pt-0 md:flex-wrap md:flex-col flex-row sm:items-start sm:gap-3.5 gap-4 min-w-[1px] w-full'>
+      <div className='flex w-full min-w-[1px] flex-row gap-4 pt-4 sm:items-start sm:gap-3.5 sm:pt-0 md:flex-col md:flex-wrap'>
         <div className='mr-auto min-w-[1px] max-w-full'>
-          <span className='sm:text-xs leading-[15px] sm:leading-[0.75rem] text-base  font-semibold'>
+          <span className='text-base font-semibold leading-[15px] sm:text-xs  sm:leading-[0.75rem]'>
             {title}
           </span>
-          <p className='sm:text-[10px] text-xs leading-[15px] sm:leading-[0.75rem] mt-[5px] break-words font-normal'>
+          <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem]'>
             {selectedSize?.name},&nbsp;{selectedDough?.name}
           </p>
           <p className='break-words'>
@@ -87,7 +87,7 @@ const CartProduct: React.FC<CartProductProps> = ({
               renderIngredientsToAdd(additionalIngredients)}
           </p>
         </div>
-        <div className='flex_start sm:flex_center flex-row gap-5 sm:gap-2 leading-[20px]'>
+        <div className='flex_start sm:flex_center flex-row gap-5 leading-[20px] sm:gap-2'>
           <Counter
             minValue={1}
             value={productQuantity || 1}
@@ -95,7 +95,7 @@ const CartProduct: React.FC<CartProductProps> = ({
             handleDecrement={onDecrement}
             handleIncrement={onIncrement}
           />
-          <p className='sm:text-xs sm:leading-[20px] text-base leading-5 whitespace-nowrap font-semibold'>
+          <p className='whitespace-nowrap text-base font-semibold leading-5 sm:text-xs sm:leading-[20px]'>
             {totalProductPrice} ₽
           </p>
         </div>
@@ -104,7 +104,7 @@ const CartProduct: React.FC<CartProductProps> = ({
         <RiDeleteBin6Line
           size={20}
           onClick={onRemove}
-          className='text-grayDark cursor-pointer hover:text-primary'
+          className='cursor-pointer text-grayDark hover:text-primary'
         />
       </button>
     </li>

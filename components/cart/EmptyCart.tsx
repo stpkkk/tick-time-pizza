@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 const EmptyCart: React.FC = () => {
   return (
-    <div className='flex flex-col gap-30px sm:py-8 sm:px-4 py-[50px] px-[60px] rounded-2xl drop-shadow-custom bg-white'>
+    <div className='gap-30px flex flex-col rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:px-4 sm:py-8'>
       <div>
-        <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold'>
+        <p className='text-base font-semibold leading-5 sm:text-xs sm:leading-[15px]'>
           Корзина пока пуста.
         </p>
-        <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] mt-3.5'>
+        <p className='mt-3.5 text-sm leading-[17px] sm:text-xs sm:leading-[15px]'>
           Чтобы оформить заказ, добавьте в корзину несколько товаров из{' '}
           <Link className='underline' href='/'>
             каталога
@@ -19,7 +19,7 @@ const EmptyCart: React.FC = () => {
           </Link>
           .
         </p>
-        <Link className='btn_red max-w-[236px] mt-[30px]' href='/'>
+        <Link className='btn_red mt-[30px] max-w-[236px]' href='/'>
           выбрать пиццу
         </Link>
       </div>

@@ -6,7 +6,7 @@ const ProductTitle: React.FC = () => {
     ?.title;
 
   return (
-    <h4 className='uppercase font-zheldor text-[2.5rem] leading-[3rem] sm:text-[1.5rem] sm:leading-[1.75rem]'>
+    <h4 className='font-zheldor text-[2.5rem] uppercase leading-[3rem] sm:text-[1.5rem] sm:leading-[1.75rem]'>
       {title}
     </h4>
   );

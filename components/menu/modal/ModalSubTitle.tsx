@@ -6,7 +6,7 @@ type ModalSubTitleProps = {
 
 const ModalSubTitle: React.FC<ModalSubTitleProps> = ({ text }) => {
   return (
-    <div className='md:text-sm md:leading-[15px] text-base leading-5 font-bold md:mb-4 mb-5'>
+    <div className='mb-5 text-base font-bold leading-5 md:mb-4 md:text-sm md:leading-[15px]'>
       <span>{text}</span>
     </div>
   );

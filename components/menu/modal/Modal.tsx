@@ -54,13 +54,13 @@ const Modal: React.FC = () => {
       <div className='relative z-10'>
         <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
         <div className='fixed inset-0 overflow-y-auto'>
-          <div className='flex_center min-h-full sm:text-center sm:items-stretch p-4 sm:p-0'>
+          <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
             <div
               ref={modalRef}
-              className='relative max-w-[950px] w-full overflow-hidden bg-white align-middle drop-shadow-custom transition-all rounded-2xl opacity-100 scale-100 sm:rounded-none'
+              className='relative w-full max-w-[950px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none'
             >
               <button
-                className='absolute flex items-center z-10 gap-3 text-grayDark hover:text-primary sm:top-0 sm:right-0 sm:p-1 top-[18px] right-[18px]'
+                className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
                 type='button'
                 onClick={handleClick}
               >
@@ -74,7 +74,7 @@ const Modal: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='fixed hidden w-full sm:block bg-white z-10 left-0 bottom-0 p-4 pb-[30px] drop-shadow-custom rounded-2xl'>
+      <div className='fixed bottom-0 left-0 z-10 hidden w-full rounded-2xl bg-white p-4 pb-[30px] drop-shadow-custom sm:block'>
         <ModalTotal />
       </div>
     </>

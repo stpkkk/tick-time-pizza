@@ -37,7 +37,7 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
       <div className='hidden sm:block'>
         <ProductTitle />
       </div>
-      <div className='relative flex_center flex-col gap-[30px] sm:gap-0 w-full'>
+      <div className='flex_center relative w-full flex-col gap-[30px] sm:gap-0'>
         <Image
           src={selectedProduct?.image || ''}
           alt={selectedProduct?.title || ''}
@@ -45,17 +45,17 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
           blurDataURL={pizza.src}
           width={325}
           height={325}
-          className='aspect-square w-full h-full max-w-[325px] max-h-[325px] sm:max-w-[250px] sm:max-h-[250px]'
+          className='aspect-square h-full max-h-[325px] w-full max-w-[325px] sm:max-h-[250px] sm:max-w-[250px]'
         />
-        <div className='absolute top-0 right-0'>
+        <div className='absolute right-0 top-0'>
           <BookmarkButton product={selectedProduct} />
         </div>
         <ImageNotice />
-        <p className='block text-center text-sm sm:text-[0.75rem] sm:mb-[30px] leading-[1.25rem]'>
+        <p className='block text-center text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
           {selectedProduct?.ingredients}
         </p>
       </div>
-      <div className='sm:hidden max-w-[236px] w-full'>
+      <div className='w-full max-w-[236px] sm:hidden'>
         <ModalTotal />
       </div>
     </div>

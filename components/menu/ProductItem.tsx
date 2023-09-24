@@ -21,9 +21,8 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
-  const starterPrice = product.prices.find(
-    (product) => product.id === 0
-  )?.price;
+  const starterPrice = product.prices.find((product) => product.id === 0)
+    ?.price;
 
   const handleMouseOverItem = () => {
     dispatch(setHoveredItemId(product.id));
@@ -35,7 +34,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   const handleClickProduct = (clickedProduct: IProduct) => {
     const selectedProduct = menu.find(
-      (product) => product.id === clickedProduct.id
+      (product) => product.id === clickedProduct.id,
     );
 
     if (selectedProduct) {
@@ -47,12 +46,12 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   return (
     <li
-      className='relative h-full max-w-[255px] sm:max-w-[420px] w-full flex flex-col cursor-pointer sm:drop-shadow-custom rounded-lg sm:p-4 bg-white'
+      className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-lg bg-white sm:max-w-[420px] sm:p-4 sm:drop-shadow-custom'
       onMouseOver={handleMouseOverItem}
       onMouseOut={handleMouseOutItem}
     >
       <div
-        className='flex flex-col justify-between h-full'
+        className='flex h-full flex-col justify-between'
         onClick={() => handleClickProduct(product)}
       >
         <div className='flex flex-col gap-4'>
@@ -63,14 +62,14 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
             blurDataURL={pizza.src}
             className={`${
               isItemHovered && 'opacity-50'
-            } self-center aspect-square w-full h-full max-w-[255px] max-h-[255px]`}
+            } aspect-square h-full max-h-[255px] w-full max-w-[255px] self-center`}
           />
-          <span className='block font-semibold leading-5 mb-4'>
+          <span className='mb-4 block font-semibold leading-5'>
             {product.title}
           </span>
         </div>
         <div>
-          <p className='text-[14px] leading-[15px] sm:text-[12px] mb-4'>
+          <p className='mb-4 text-[14px] leading-[15px] sm:text-[12px]'>
             {product.ingredients}
           </p>
         </div>
@@ -81,10 +80,10 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
           </button>
         </div>
       </div>
-      <div className='absolute z-[1] top-0 right-0 sm:p-2 sm:top-2 sm:right-2'>
+      <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <BookmarkButton product={product} />
       </div>
-      <div className='absolute z-[1] top-0 left-0 sm:p-2 sm:top-2 sm:left-2 flex flex-col gap-1'>
+      <div className='absolute left-0 top-0 z-[1] flex flex-col gap-1 sm:left-2 sm:top-2 sm:p-2'>
         {product.categories?.map((cat) => (
           <Image
             src={cat.image ? cat.image : ''}
@@ -100,4 +99,3 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 };
 
 export default ProductItem;
-

@@ -26,13 +26,13 @@ const IngredientsRemove: React.FC = () => {
     <div>
       <ModalSubTitle text='Убрать ингредиенты:' />
       <RadioGroup value={null} onChange={handleIngredientChange}>
-        <div className='flex flex-row flex-wrap gap-2.5 w-full'>
+        <div className='flex w-full flex-row flex-wrap gap-2.5'>
           {selectedProduct?.removeIngredients.map((ingredient) => (
             <RadioGroupOption
               key={ingredient.id}
               option={ingredient}
               isChecked={removedIngredients.includes(ingredient)}
-              className={`leading-[15px] h-[60px] flex_center whitespace-nowrap px-4 py-2.5`}
+              className={`flex_center h-[60px] whitespace-nowrap px-4 py-2.5 leading-[15px]`}
               crossed={`${
                 removedIngredients.includes(ingredient) && 'line-through'
               }`}

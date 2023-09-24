@@ -4,7 +4,7 @@ export function calculateProductPrices(
   selectedProduct: IProduct | null,
   selectedSize: IOption | null,
   additionalIngredients: IAdditionalIngredient[],
-  productQuantity: number
+  productQuantity: number,
 ) {
   const productPrice =
     selectedProduct?.prices?.find((price) => price.id === selectedSize?.id)
@@ -17,7 +17,7 @@ export function calculateProductPrices(
         100) *
         (ing.quantity || 1) *
         productQuantity,
-    0
+    0,
   );
 
   const totalProductPrice =
@@ -39,8 +39,8 @@ export function calculateCartTotalPrice(cartProducts: IProduct[]) {
         product,
         product.selectedSize || null,
         product.additionalIngredients,
-        product.productQuantity || 1
-      )
+        product.productQuantity || 1,
+      ),
     )
     .reduce((acc, sum) => sum.totalProductPrice + acc, 0);
 

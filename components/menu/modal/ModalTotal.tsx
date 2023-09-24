@@ -46,7 +46,7 @@ const ModalTotal: React.FC = () => {
     selectedProduct,
     selectedSize,
     additionalIngredients,
-    productQuantity
+    productQuantity,
   ).totalProductPrice;
 
   const handleIncrement = () => {
@@ -60,7 +60,7 @@ const ModalTotal: React.FC = () => {
   return (
     <div className='flex_center flex-col gap-[30px]'>
       <div className='flex_between w-full sm:flex-row-reverse sm:px-4'>
-        <div className='flex_between text-base w-full max-w-[128px] sm:max-w-[96px]'>
+        <div className='flex_between w-full max-w-[128px] text-base sm:max-w-[96px]'>
           <Counter
             minValue={1}
             initialValue={1}

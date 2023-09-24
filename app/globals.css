@@ -76,59 +76,59 @@ html::-webkit-scrollbar {
 }
 
 body {
-  @apply bg-white text-primary font-montserrat;
+  @apply bg-white font-montserrat text-primary;
 }
 
 .content_container {
-  @apply mx-auto max-w-[1262px] pl-[1rem] pr-[1rem] w-full;
+  @apply mx-auto w-full max-w-[1262px] pl-[1rem] pr-[1rem];
 }
 
 .h1 {
-  @apply text-[2.5rem] leading-[3rem] font-normal font-zheldor sm:text-2xl;
+  @apply font-zheldor text-[2.5rem] font-normal leading-[3rem] sm:text-2xl;
 }
 
 .modal_form {
-  @apply grid grid-cols-2 gap-[60px] py-[60px] pl-[60px] sm:px-8 sm:pt-8 sm:pb-44 bg-white drop-shadow-custom text-left h-full overflow-auto overflow-x-hidden sm:block;
+  @apply grid h-full grid-cols-2 gap-[60px] overflow-auto overflow-x-hidden bg-white py-[60px] pl-[60px] text-left drop-shadow-custom sm:block sm:px-8 sm:pb-44 sm:pt-8;
 }
 
 .header_dropdown {
-  @apply max-w-[190px] w-full hidden md:flex md:items-center md:gap-2 md:h-[90px] md:pl-7 sm:hidden;
+  @apply hidden w-full max-w-[190px] sm:hidden md:flex md:h-[90px] md:items-center md:gap-2 md:pl-7;
 }
 
 .header_tooltip {
-  @apply bg-white w-[400px] absolute top-[90px] rounded-b-2xl text-[12px] pb-[30px] px-[20px] pt-[20px];
+  @apply absolute top-[90px] w-[400px] rounded-b-2xl bg-white px-[20px] pb-[30px] pt-[20px] text-[12px];
 }
 
 .header_total_quantity {
-  @apply absolute flex p-1 items-center bg-secondary min-w-[19px] h-[19px] rounded-full justify-center text-white text-[10px] font-semibold;
+  @apply absolute flex h-[19px] min-w-[19px] items-center justify-center rounded-full bg-secondary p-1 text-[10px] font-semibold text-white;
 }
 
 .nav_links {
-  @apply flex flex-row gap-2 w-full md:max-w-[190px] sm:min-w-full bg-white rounded-b-2xl md:flex-col sm:uppercase;
+  @apply flex w-full flex-row gap-2 rounded-b-2xl bg-white sm:min-w-full sm:uppercase md:max-w-[190px] md:flex-col;
 }
 
 /*Buttons*/
 .btn_red {
-  @apply bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[60px] sm:h-[50px] w-full;
+  @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-secondary px-4 py-2 text-xs font-bold uppercase text-white hover:bg-secondaryLight sm:h-[50px];
 }
 
 .btn_yellow {
-  @apply bg-yellow hover:bg-yellowLight text-primary font-bold py-2 px-4 rounded-2xl text-xs flex items-center justify-center uppercase h-[45px] w-full;
+  @apply flex h-[45px] w-full items-center justify-center rounded-2xl bg-yellow px-4 py-2 text-xs font-bold uppercase text-primary hover:bg-yellowLight;
 }
 
 /* FLEX */
 .flex_center {
-  @apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 .flex_start {
-  @apply flex justify-start items-start;
+  @apply flex items-start justify-start;
 }
 
 .flex_end {
-  @apply flex justify-end items-center;
+  @apply flex items-center justify-end;
 }
 
 .flex_between {
-  @apply flex justify-between items-center flex-wrap;
+  @apply flex flex-wrap items-center justify-between;
 }

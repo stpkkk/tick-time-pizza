@@ -30,26 +30,26 @@ const HeaderDesktop: React.FC = () => {
   };
 
   const PhoneTooltip = () => (
-    <div className='left-0 header_tooltip'>
+    <div className='header_tooltip left-0'>
       *минимальная сумма заказа на доставку равна стоимости средней пиццы.
     </div>
   );
 
   return (
-    <header className='sm:hidden fixed z-10 top-0 content_container'>
-      <div className='flex_center px-[60px] h-[90px] bg-white rounded-b-2xl drop-shadow-custom'>
+    <header className='content_container fixed top-0 z-10 sm:hidden'>
+      <div className='flex_center h-[90px] rounded-b-2xl bg-white px-[60px] drop-shadow-custom'>
         <Logo />
-        <div className='md:flex-grow md:ml-[20px] md:relative text-sm'>
+        <div className='text-sm md:relative md:ml-[20px] md:flex-grow'>
           <div className='header_dropdown' onClick={handleClick}>
             <span className='block font-semibold'>Меню</span>
             <IoIosArrowDown />
           </div>
-          <div className='md:absolute w-full bottom-1'>
+          <div className='bottom-1 w-full md:absolute'>
             <Nav />
           </div>
         </div>
         <div
-          className='hover:bg-grayLight ml-4 relative h-full'
+          className='relative ml-4 h-full hover:bg-grayLight'
           onMouseOver={handleMouseOverPhone}
           onMouseOut={handleMouseOutPhone}
         >
@@ -59,7 +59,7 @@ const HeaderDesktop: React.FC = () => {
         <Link
           href='/account'
           as='account'
-          className='flex_center flex-col gap-2 w-[6rem] h-full hover:bg-grayLight ml-[28px]'
+          className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />
           <span className='text-sm font-semibold'>Войти</span>

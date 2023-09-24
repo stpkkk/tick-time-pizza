@@ -15,7 +15,7 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
 }) => {
   return (
     <div
-      className={`modal_mobile_height flex flex-col gap-[30px] pr-[50px] scroll scroll-container overflow-auto modal_scroll sm:overflow-visible sm:pr-0`}
+      className={`modal_mobile_height scroll scroll-container flex flex-col gap-[30px] overflow-auto pr-[50px] modal_scroll sm:overflow-visible sm:pr-0`}
       style={{
         height: `${modalHeight}px`,
       }}

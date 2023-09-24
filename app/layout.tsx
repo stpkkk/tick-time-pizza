@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='ru'>
       <body>
         <Providers>
-          <div className='w-full min-h-full flex flex-col items-center overflow-hidden min-w-[320px]'>
+          <div className='flex min-h-full w-full min-w-[320px] flex-col items-center overflow-hidden'>
             <Header />
             {children}
             <Footer />

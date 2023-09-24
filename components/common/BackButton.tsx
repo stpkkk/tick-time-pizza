@@ -8,7 +8,7 @@ const BackButton: React.FC = () => {
 
   return (
     <button
-      className='flex items-center font-semibold text-sm text-grayDark hover:text-primary'
+      className='flex items-center text-sm font-semibold text-grayDark hover:text-primary'
       type='button'
       onClick={() => router.back()}
     >

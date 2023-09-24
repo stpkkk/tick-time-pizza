@@ -12,12 +12,15 @@ import Categories from './Categories';
 
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(
-    (state) => state.menuReducer
+    (state) => state.menuReducer,
   );
 
   function filterByCategoryTitle(menu: IProduct[], categoryTitle: string) {
-    return menu.filter((product) =>
-      product.categories?.some((category) => category.title === categoryTitle)
+    return menu.filter(
+      (product) =>
+        product.categories?.some(
+          (category) => category.title === categoryTitle,
+        ),
     );
   }
 
@@ -46,9 +49,9 @@ const Menu: React.FC = () => {
     <>
       <Banner />
       <Categories />
-      <div className='py-[50px] px-[60px] bg-white rounded-2xl drop-shadow-custom sm:drop-shadow-none sm:p-0'>
+      <div className='rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:p-0 sm:drop-shadow-none'>
         {productsToShow.length > 0 ? (
-          <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center items-start gap-y-[50px] gap-x-[30px] sm:gap-y-5'>
+          <ul className='grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4'>
             {productsToShow.map((product: IProduct) => (
               <ProductItem key={product.id} product={product} />
             ))}

@@ -21,11 +21,11 @@ const Categories: React.FC = () => {
   }, [selectedCategory, dispatch]);
 
   return (
-    <div className='flex_center max-w-full sm:my-4 my-[30px] '>
+    <div className='flex_center my-[30px] max-w-full sm:my-4 '>
       <RadioGroup
         value={selectedCategory}
         onChange={(category) => dispatch(setSelectedCategory(category))}
-        className='flex flex-row whitespace-nowrap md:gap-2 gap-4  scroll-px-4 no-scrollbar overflow-x-scroll scroll scroll-smooth'
+        className='no-scrollbar scroll flex scroll-px-4 flex-row  gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap md:gap-2'
       >
         <div className='min-w-[0.5rem]' />
         {categories.map((category) => (
@@ -33,7 +33,7 @@ const Categories: React.FC = () => {
             key={category.id}
             option={category}
             isChecked={selectedCategory === category}
-            className='w-auto leading-[20px] px-[30px] py-[20px] sm:px-3 sm:py-[10px]'
+            className='w-auto px-[30px] py-[20px] leading-[20px] sm:px-3 sm:py-[10px]'
           />
         ))}
         <div className='min-w-[0.5rem]' />

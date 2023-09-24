@@ -32,16 +32,16 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
           isDisabled && 'pointer-events-none text-grayDark'
         }`}
       >
-        <div className='flex justify-between items-center gap-2'>
+        <div className='flex items-center justify-between gap-2'>
           {option.image && (
-            <div className='w-5 h-5'>
+            <div className='h-5 w-5'>
               <Image
                 src={option.image}
                 alt={option.name.toString()}
                 width={20}
                 height={20}
                 loading='eager'
-                className='sm:w-4 sm:h-4'
+                className='sm:h-4 sm:w-4'
               />
             </div>
           )}

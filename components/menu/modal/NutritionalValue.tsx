@@ -12,7 +12,7 @@ const NutritionalValue: React.FC = () => {
     <div>
       <ModalSubTitle text='Пищевая ценность на 100 г:' />
       <div>
-        <p className='md:text-xs md:leading-[15px] text-sm leading-[17px]'>
+        <p className='text-sm leading-[17px] md:text-xs md:leading-[15px]'>
           Белки - {nutrients?.proteins} г, Жиры - {nutrients?.fats} г, Углеводы
           - {nutrients?.carbohydrates} г, Калории - {nutrients?.calories} ккал
         </p>

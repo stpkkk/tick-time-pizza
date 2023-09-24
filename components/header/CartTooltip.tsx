@@ -26,20 +26,20 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
 
   const onRemove = (productUUID: number) => {
     const updatedItems = products.filter(
-      product => product.uuid !== productUUID
+      (product) => product.uuid !== productUUID,
     );
     updateItemsInLocalStorage(updatedItems);
   };
 
   return (
-    <div className='right-0 header_tooltip' ref={cartTooltipRef}>
+    <div className='header_tooltip right-0' ref={cartTooltipRef}>
       {isCartEmpty ? (
         <div className='mb-4'>
           <span className='text-start'>Корзина пока пуста</span>
         </div>
       ) : (
-        <ul className='max-h-[222px] scroll-container thin_scroll overflow-auto md:mb-4 mb-[30px] flex flex-col gap-4 pr-2 -mr-2'>
-          {products.map(product => (
+        <ul className='scroll-container -mr-2 mb-[30px] flex max-h-[222px] flex-col gap-4 overflow-auto pr-2 thin_scroll md:mb-4'>
+          {products.map((product) => (
             <li key={product.uuid}>
               <HeaderCartItem product={product} onRemove={onRemove} />
             </li>

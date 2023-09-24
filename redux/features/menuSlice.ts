@@ -87,11 +87,11 @@ const menuSlice = createSlice({
 
     incrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        (item) => item.id === ingredient.id
+        (item) => item.id === ingredient.id,
       );
 
       if (existingIngredient) {
@@ -103,11 +103,11 @@ const menuSlice = createSlice({
 
     decrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>
+      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
     ) => {
       const { ingredient } = action.payload;
       const existingIngredient = state.additionalIngredients.find(
-        (item) => item.id === ingredient.id
+        (item) => item.id === ingredient.id,
       );
 
       if (
@@ -118,7 +118,7 @@ const menuSlice = createSlice({
         existingIngredient.quantity -= 1;
         if (existingIngredient.quantity === 0) {
           state.additionalIngredients = state.additionalIngredients.filter(
-            (item) => item.id !== ingredient.id
+            (item) => item.id !== ingredient.id,
           );
         }
       }

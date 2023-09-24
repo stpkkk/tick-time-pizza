@@ -41,7 +41,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className='relative rounded-2xl mt-[120px] sm:mt-[90px]'>
+    <div className='relative mt-[120px] rounded-2xl sm:mt-[90px]'>
       <Swiper
         slidesPerView='auto'
         spaceBetween={40}
@@ -78,7 +78,7 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='absolute top-1/2 -translate-y-1/2 left-[15px] z-[5] sm:hidden'>
+      <div className='absolute left-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
         <button
           type='button'
           className='swiper-button-prev'
@@ -92,7 +92,7 @@ const Banner = () => {
         </button>
       </div>
 
-      <div className='absolute top-1/2 -translate-y-1/2 right-[15px] z-[5] sm:hidden'>
+      <div className='absolute right-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
         <button
           type='button'
           className='swiper-button-next'

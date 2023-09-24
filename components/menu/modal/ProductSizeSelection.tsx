@@ -67,7 +67,7 @@ const ProductSizeSelection: React.FC = () => {
   return (
     <>
       <div>
-        <span className='font-bold md:text-sm md:leading-[15px] text-base leading-5 md:mb-4 mb-5'>
+        <span className='mb-5 text-base font-bold leading-5 md:mb-4 md:text-sm md:leading-[15px]'>
           Вес:&nbsp;
         </span>
         <span>{getTotalWeight()} г</span>
@@ -81,7 +81,7 @@ const ProductSizeSelection: React.FC = () => {
                 option={size}
                 isChecked={selectedSize === size}
                 isDisabled={getIsDisabledSize(size)}
-                className='leading-[15px] w-full h-[60px] flex_center'
+                className='flex_center h-[60px] w-full leading-[15px]'
               />
             ))}
           </div>
@@ -94,7 +94,7 @@ const ProductSizeSelection: React.FC = () => {
                 option={dough}
                 isChecked={dough === selectedDough}
                 isDisabled={getIsDisabledDough(dough)}
-                className='leading-[15px] w-full h-[60px] flex_center'
+                className='flex_center h-[60px] w-full leading-[15px]'
               />
             ))}
           </div>

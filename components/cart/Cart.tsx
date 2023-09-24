@@ -28,10 +28,10 @@ const Cart: React.FC = () => {
 
   const modifyCartItem = (
     productUUID: number,
-    modifier: (product: IProduct) => IProduct
+    modifier: (product: IProduct) => IProduct,
   ) => {
-    const updatedItems = cartProducts.map(product =>
-      product.uuid === productUUID ? modifier(product) : product
+    const updatedItems = cartProducts.map((product) =>
+      product.uuid === productUUID ? modifier(product) : product,
     );
     updateItemsInLocalStorage(updatedItems);
   };
@@ -55,17 +55,17 @@ const Cart: React.FC = () => {
 
   const removeItem = (productUUID: number) => {
     const updatedItems = cartProducts.filter(
-      product => product.uuid !== productUUID
+      (product) => product.uuid !== productUUID,
     );
     updateItemsInLocalStorage(updatedItems);
   };
 
   return (
-    <div className='flex sm:flex-col flex-row gap-[30px] w-full'>
-      <div className='md:max-w-full w-full max-w-[calc(100%-420px)]'>
+    <div className='flex w-full flex-row gap-[30px] sm:flex-col'>
+      <div className='w-full max-w-[calc(100%-420px)] md:max-w-full'>
         {cartProducts.length > 0 ? (
-          <ul className='flex flex-col gap-[30px] py-[50px] px-[60px] sm:py-8 sm:px-4 rounded-2xl drop-shadow-custom bg-white'>
-            {cartProducts.map(product => (
+          <ul className='flex flex-col gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:px-4 sm:py-8'>
+            {cartProducts.map((product) => (
               <CartProduct
                 key={product.uuid}
                 product={product}

@@ -48,14 +48,14 @@ const HeaderCart: React.FC = () => {
 
   return (
     <div
-      className='h-full hover:bg-grayLight sm:hover:bg-white relative'
+      className='relative h-full hover:bg-grayLight sm:hover:bg-white'
       onMouseOver={handleMouseOverCart}
       onMouseOut={handleMouseOutCart}
     >
       <Link
         href='/cart'
         as='cart'
-        className='flex_center sm:flex-row-reverse flex-col gap-2 w-[6rem] h-full'
+        className='flex_center h-full w-[6rem] flex-col gap-2 sm:flex-row-reverse'
       >
         <BsBasket2 size={25} />
         <div className='text-sm font-semibold'>
@@ -66,7 +66,7 @@ const HeaderCart: React.FC = () => {
           )}
         </div>
         {totalQuantity ? (
-          <span className='top-4 right-6 header_total_quantity'>
+          <span className='header_total_quantity right-6 top-4'>
             {totalQuantity}
           </span>
         ) : (
