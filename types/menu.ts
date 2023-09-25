@@ -47,8 +47,8 @@ export interface IProduct {
   additionalIngredients: IAdditionalIngredient[];
   removeIngredients: IOption[];
   categories?: IMenuCategory[];
-  sizes: IOption[];
-  dough: IOption[];
+  sizes?: IOption[];
+  dough?: IOption[];
   weights: IWeight[];
   nutritionalValues: INutritionalValue;
   selectedSize?: IOption;

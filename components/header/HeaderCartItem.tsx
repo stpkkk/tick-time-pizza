@@ -39,9 +39,11 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
           />
         </button>
       </div>
-      <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-        {product.selectedSize?.name},{product.selectedDough?.name}
-      </p>
+      {product.selectedSize?.name && product.selectedDough?.name && (
+        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+          {product.selectedSize?.name},{product.selectedDough?.name}
+        </p>
+      )}
       {product.removedIngredients && product.removedIngredients.length > 0 && (
         <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
           Убрать:&nbsp;

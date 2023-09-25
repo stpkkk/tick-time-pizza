@@ -15,7 +15,7 @@ interface CartProductProps {
 
 const renderIngredientsToRemove = (ingredients: IOption[]) => {
   return (
-    <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem]'>
+    <p className='cart_ingredients'>
       Убрать:&nbsp;
       {ingredients.map((ing) => (
         <span key={ing.id}>{ing.name},&nbsp;</span>
@@ -26,7 +26,7 @@ const renderIngredientsToRemove = (ingredients: IOption[]) => {
 
 const renderIngredientsToAdd = (ingredients: IAdditionalIngredient[]) => {
   return (
-    <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px]'>
+    <p className='cart_ingredients'>
       Добавить:&nbsp;
       {ingredients.map((ing) => (
         <span key={ing.id}>
@@ -74,18 +74,21 @@ const CartProduct: React.FC<CartProductProps> = ({
           <span className='text-base font-semibold leading-[15px] sm:text-xs  sm:leading-[0.75rem]'>
             {title}
           </span>
-          <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem]'>
-            {selectedSize?.name},&nbsp;{selectedDough?.name}
-          </p>
-          <p className='break-words'>
+          {selectedSize?.name && selectedDough?.name && (
+            <p className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem]'>
+              <span>{selectedSize?.name}</span>,&nbsp;
+              <span>{selectedDough?.name}</span>
+            </p>
+          )}
+          <div>
             {removedIngredients &&
               removedIngredients.length > 0 &&
               renderIngredientsToRemove(removedIngredients)}
-          </p>
-          <p className='break-words'>
+          </div>
+          <div>
             {additionalIngredients.length > 0 &&
               renderIngredientsToAdd(additionalIngredients)}
-          </p>
+          </div>
         </div>
         <div className='flex_start sm:flex_center flex-row gap-5 leading-[20px] sm:gap-2'>
           <Counter
@@ -95,9 +98,9 @@ const CartProduct: React.FC<CartProductProps> = ({
             handleDecrement={onDecrement}
             handleIncrement={onIncrement}
           />
-          <p className='whitespace-nowrap text-base font-semibold leading-5 sm:text-xs sm:leading-[20px]'>
+          <span className='whitespace-nowrap text-base font-semibold leading-5 sm:text-xs sm:leading-[20px]'>
             {totalProductPrice} ₽
-          </p>
+          </span>
         </div>
       </div>
       <button className='flex_start gap-5 pt-4 sm:pt-0' type='button'>

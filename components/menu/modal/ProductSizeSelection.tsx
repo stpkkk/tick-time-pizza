@@ -38,7 +38,7 @@ const ProductSizeSelection: React.FC = () => {
       return null;
     }
 
-    if (selectedDough.name === thinDough) {
+    if (selectedDough.name === thinDough && selectedProduct.sizes) {
       const selectedSizeIndex = selectedProduct.sizes.findIndex(
         (_, i) => i + 1 === selectedSize?.id,
       );
@@ -70,36 +70,38 @@ const ProductSizeSelection: React.FC = () => {
         <span className='mb-5 text-base font-bold leading-5 md:mb-4 md:text-sm md:leading-[15px]'>
           Вес:&nbsp;
         </span>
-        <span>{getTotalWeight()} г</span>
+        <span>{getTotalWeight() || selectedProduct?.weights[0].weight} г</span>
       </div>
-      <div className='flex flex-col gap-2'>
-        <RadioGroup value={selectedSize} onChange={handleSizeChange}>
-          <div className='flex flex-row gap-2.5'>
-            {selectedProduct?.sizes?.map((size, i) => (
-              <RadioGroupOption
-                key={size.id}
-                option={size}
-                isChecked={selectedSize === size}
-                isDisabled={getIsDisabledSize(size)}
-                className='flex_center h-[60px] w-full leading-[15px]'
-              />
-            ))}
-          </div>
-        </RadioGroup>
-        <RadioGroup value={selectedDough} onChange={handleDoughChange}>
-          <div className='flex flex-row gap-2.5'>
-            {selectedProduct?.dough?.map((dough) => (
-              <RadioGroupOption
-                key={dough.id}
-                option={dough}
-                isChecked={dough === selectedDough}
-                isDisabled={getIsDisabledDough(dough)}
-                className='flex_center h-[60px] w-full leading-[15px]'
-              />
-            ))}
-          </div>
-        </RadioGroup>
-      </div>
+      {selectedProduct?.sizes && selectedProduct?.dough && (
+        <div className='flex flex-col gap-2'>
+          <RadioGroup value={selectedSize} onChange={handleSizeChange}>
+            <div className='flex flex-row gap-2.5'>
+              {selectedProduct?.sizes?.map((size) => (
+                <RadioGroupOption
+                  key={size.id}
+                  option={size}
+                  isChecked={selectedSize === size}
+                  isDisabled={getIsDisabledSize(size)}
+                  className='flex_center h-[60px] w-full leading-[15px]'
+                />
+              ))}
+            </div>
+          </RadioGroup>
+          <RadioGroup value={selectedDough} onChange={handleDoughChange}>
+            <div className='flex flex-row gap-2.5'>
+              {selectedProduct?.dough?.map((dough) => (
+                <RadioGroupOption
+                  key={dough.id}
+                  option={dough}
+                  isChecked={dough === selectedDough}
+                  isDisabled={getIsDisabledDough(dough)}
+                  className='flex_center h-[60px] w-full leading-[15px]'
+                />
+              ))}
+            </div>
+          </RadioGroup>
+        </div>
+      )}
     </>
   );
 };

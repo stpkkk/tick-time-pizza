@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IProduct, IOption, IAdditionalIngredient } from '@/types';
 
-export interface HeaderState {
+export interface MenuState {
   isModalOpen: boolean;
   isTooltipOpen: boolean;
   hoveredItemId: number | null;
@@ -18,7 +18,7 @@ export interface HeaderState {
   cartProducts: IProduct[];
 }
 
-const initialState: HeaderState = {
+const initialState: MenuState = {
   isModalOpen: false,
   isTooltipOpen: false,
   hoveredItemId: null,
@@ -144,17 +144,30 @@ const menuSlice = createSlice({
     //Initial Values
     initializeDefaultValues: (state) => {
       if (state.selectedProduct) {
-        state.selectedSize = state.selectedProduct.sizes[0];
-        state.selectedDough = state.selectedProduct.dough[1];
         state.isAllIngredients = false;
         state.removedIngredients = [];
         state.additionalIngredients = [];
         state.productQuantity = 1;
       }
 
-      if (state.selectedSize?.name === null) {
-        state.selectedSize = state.selectedProduct?.sizes[1] || null;
-        state.selectedDough = state.selectedProduct?.dough[0] || null;
+      if (
+        state.selectedProduct &&
+        state.selectedProduct.sizes &&
+        state.selectedProduct.group === 'pizzas'
+      ) {
+        state.selectedSize = state.selectedProduct.sizes[0];
+      } else {
+        state.selectedSize = null;
+      }
+
+      if (
+        state.selectedProduct &&
+        state.selectedProduct.dough &&
+        state.selectedProduct.group === 'pizzas'
+      ) {
+        state.selectedDough = state.selectedProduct.dough[1];
+      } else {
+        state.selectedDough = null;
       }
     },
   },
