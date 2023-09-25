@@ -1,5 +1,5 @@
 'use client';
-import React, { MutableRefObject, useEffect } from 'react';
+import React, { MutableRefObject } from 'react';
 import Link from 'next/link';
 import { useAppDispatch } from '@/redux/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
