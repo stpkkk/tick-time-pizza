@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { useAppSelector } from '@/redux/hooks';
 
 import { menu } from '@/constants';
@@ -14,6 +15,17 @@ const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(
     (state) => state.menuReducer,
   );
+  const pathname = usePathname();
+  // console.log(pathname);
+
+  const pizzasMenu = menu.filter((item) => item.group === 'pizzas');
+  const snacksMenu = menu.filter((item) => item.group === 'snacks');
+  const drinksMenu = menu.filter((item) => item.group === 'drinks');
+  const desertsMenu = menu.filter((item) => item.group === 'desserts');
+
+  const forChildrenArray = filterByCategoryTitle(menu, 'Подходит для Детей');
+  const withoutMeatArray = filterByCategoryTitle(menu, 'Без Мяса');
+  const hotArray = filterByCategoryTitle(menu, 'Острая');
 
   function filterByCategoryTitle(menu: IProduct[], categoryTitle: string) {
     return menu.filter(
@@ -24,9 +36,20 @@ const Menu: React.FC = () => {
     );
   }
 
-  const forChildrenArray = filterByCategoryTitle(menu, 'Подходит для Детей');
-  const withoutMeatArray = filterByCategoryTitle(menu, 'Без Мяса');
-  const hotArray = filterByCategoryTitle(menu, 'Острая');
+  const getGroupProducts = (pathname: string): IProduct[] => {
+    switch (pathname) {
+      case '/snacks':
+        return snacksMenu;
+      case '/drinks':
+        return drinksMenu;
+      case '/desserts':
+        return desertsMenu;
+      default:
+        return pizzasMenu;
+    }
+  };
+
+  const productsGroup = getGroupProducts(pathname);
 
   const getCategoryProducts = (category: string | number): IProduct[] => {
     switch (category) {
@@ -39,7 +62,7 @@ const Menu: React.FC = () => {
       case 'Острая':
         return hotArray;
       default:
-        return menu;
+        return productsGroup;
     }
   };
 

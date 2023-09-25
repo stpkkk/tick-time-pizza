@@ -41,6 +41,7 @@ export interface IProduct {
   id: number;
   title: string;
   image: string | StaticImageData;
+  group: string;
   ingredients: string;
   prices: IPrice[];
   additionalIngredients: IAdditionalIngredient[];

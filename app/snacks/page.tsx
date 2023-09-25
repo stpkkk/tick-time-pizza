@@ -1,9 +1,10 @@
 import React from 'react';
+import { Menu } from '@/components';
 
-const Snacks = () => {
+const Snacks: React.FC = () => {
   return (
-    <div className='content_container h-[calc(100vh-268px)] pt-[120px]'>
-      Snacks
+    <div className='content_container min-h-[calc(100vh-268px)]'>
+      <Menu />
     </div>
   );
 };
