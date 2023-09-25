@@ -24,6 +24,24 @@ import chickenBurger from '../public/assets/images/pizza-chicken-burger.webp';
 import cheese from '../public/assets/images/pizza-cheese.webp';
 import italian from '../public/assets/images/pizza-italian.webp';
 
+import pastaChickenMushroom from '../public/assets/images/snacks/pasta-chicken-mushroom.webp';
+import pastaCarbonara from '../public/assets/images/snacks/pasta-carbonara.webp';
+import dumplingsCheese from '../public/assets/images/snacks/dumplings-cheese.webp';
+import potatoChickenFry from '../public/assets/images/snacks/potato-chicken-fry.webp';
+import soupTomatoCream from '../public/assets/images/snacks/soup-tomato-cream.webp';
+import hotrollPepperoni from '../public/assets/images/snacks/hotroll-pepperoni.webp';
+import saladVegetablesEgg from '../public/assets/images/snacks/salad-vegetables-egg.webp';
+
+import milkshakeYuzu from '../public/assets/images/drinks/milkshake-yuzu.webp';
+import milkshakeBerries from '../public/assets/images/drinks/milkshake-berries.webp';
+import milkshakeMint from '../public/assets/images/drinks/milkshake-mint.webp';
+import morsBlueberryMint from '../public/assets/images/drinks/mors-blueberry-mint.webp';
+import evervessCola from '../public/assets/images/drinks/evervess-cola.webp';
+
+import sweetSticks from '../public/assets/images/desserts/sweet-sticks.webp';
+import cheesecakeCaramel from '../public/assets/images/desserts/cheesecake-caramel.webp';
+import iceCreamVanilla from '../public/assets/images/desserts/ice-cream-vanilla.webp';
+
 import mozzarella from '../public/assets/images/adds-mozzarella.png';
 import onionGreen from '../public/assets/images/adds-onion-green.png';
 import bacon from '../public/assets/images/adds-bacon.png';
@@ -49,6 +67,7 @@ import cheeseBlue from '../public/assets/images/adds-cheese-blue.png';
 import cheeseFeta from '../public/assets/images/adds-cheese-feta.png';
 import sauce from '../public/assets/images/adds-sauce.png';
 import pepperoniAdds from '../public/assets/images/adds-pepperoni.png';
+import cucumberFresh from '../public/assets/images/adds-cucumber-fresh.png';
 
 import bear from '../public/assets/images/cat-bear.webp';
 import fire from '../public/assets/images/cat-fire.webp';
@@ -59,6 +78,7 @@ export const menu: IProduct[] = [
     id: 0,
     title: 'Пицца ЧикенБургер',
     image: chickenBurger,
+    group: 'pizzas',
     ingredients:
       'Копченая курица, моцарелла, маринованные огурцы, болгарский перец, красный лук, соус бургер Heinz, фирменный томатный соус, тесто',
     prices: [
@@ -422,6 +442,7 @@ export const menu: IProduct[] = [
     id: 1,
     title: 'Пицца Итальянская',
     image: italian,
+    group: 'pizzas',
     ingredients:
       'Пепперони, два вида сыра моцареллы, шампиньоны, фирменный томатный соус, базилик, орегано, тесто',
     prices: [
@@ -846,6 +867,7 @@ export const menu: IProduct[] = [
     id: 2,
     title: 'Пицца Запечённая Буженина',
     image: porkRoast,
+    group: 'pizzas',
     ingredients:
       'Буженина из свинины, моцарелла, маринованные огурцы, лук фри, лук красный, майонезный соус, тесто',
     prices: [
@@ -1192,6 +1214,7 @@ export const menu: IProduct[] = [
     id: 3,
     title: 'Пицца Мясной Хит',
     image: meatHit,
+    group: 'pizzas',
     ingredients:
       'Ветчина, буженина из свинины, охотничьи колбаски, моцарелла, фирменный томатный соус, майонезный соус, тесто',
     prices: [
@@ -1585,6 +1608,7 @@ export const menu: IProduct[] = [
     id: 4,
     title: 'Пицца Курица и Колбаски',
     image: chickenSausages,
+    group: 'pizzas',
     ingredients:
       'Копченая курица, охотничьи колбаски, моцарелла, маринованные огурцы, томаты, красный лук, свежий укроп, майонезный соус, кетчуп, тесто',
     prices: [
@@ -1886,6 +1910,7 @@ export const menu: IProduct[] = [
     id: 5,
     title: 'Пицца Курочка Блю Чиз',
     image: chickenBlueCheese,
+    group: 'pizzas',
     ingredients:
       'Много курицы, моцарелла, сыр блю чиз с голубой плесенью, соус ранч, тесто',
     prices: [
@@ -2184,6 +2209,7 @@ export const menu: IProduct[] = [
     id: 6,
     title: 'Пицца Классика',
     image: classic,
+    group: 'pizzas',
     ingredients:
       'Ветчина, пепперони, моцарелла, пармезан, шампиньоны, фирменный соус томатный, тесто',
     prices: [
@@ -2547,6 +2573,7 @@ export const menu: IProduct[] = [
     id: 7,
     title: 'Пицца Жюльен',
     image: julien,
+    group: 'pizzas',
     ingredients:
       'Бекон, копчёная курица, моцарелла, чеддер, свежие шампиньоны, сливки, укроп, майонезный соус, тесто',
     prices: [
@@ -2895,6 +2922,7 @@ export const menu: IProduct[] = [
     id: 8,
     title: 'Пицца Ветчина и бекон',
     image: hamBacon,
+    group: 'pizzas',
     ingredients:
       'Ветчина, бекон, моцарелла, чеддер, красный лук, соус цезарь, тесто',
     prices: [
@@ -3273,6 +3301,7 @@ export const menu: IProduct[] = [
     id: 9,
     title: 'Пицца Американа',
     image: americana,
+    group: 'pizzas',
     ingredients:
       'Бекон, моцарелла, чеддер, маринованные огурцы, фирменный томатный соус, медово - горчичный соус, тесто',
     prices: [
@@ -3587,6 +3616,7 @@ export const menu: IProduct[] = [
     id: 10,
     title: 'Пицца Цезарь',
     image: caesar,
+    group: 'pizzas',
     ingredients:
       'Копчёная курица, салат айсберг, моцарелла, пармезан, томаты, соус цезарь, тесто',
     prices: [
@@ -3854,6 +3884,7 @@ export const menu: IProduct[] = [
     id: 11,
     title: 'Пицца Дон Кебаб',
     image: donKebab,
+    group: 'pizzas',
     ingredients:
       'Копченая курица, моцарелла, свежие огурцы, томаты, красный лук, салат айсберг, свежий укроп, кетчуп, майонезный соус, тесто',
     prices: [
@@ -4236,6 +4267,7 @@ export const menu: IProduct[] = [
     id: 12,
     title: 'Пицца Гавайская',
     image: hawaii,
+    group: 'pizzas',
     ingredients:
       'Много бекона, моцарелла, ананасы, фирменный томатный соус, тесто',
     prices: [
@@ -4565,6 +4597,7 @@ export const menu: IProduct[] = [
     id: 13,
     title: 'Пицца Охотничья',
     image: hunter,
+    group: 'pizzas',
     ingredients:
       'Пепперони, охотничьи колбаски, моцарелла, свежие шампиньоны, свежий укроп, соус ранч, фирменный томатный соус, тест',
     prices: [
@@ -4912,6 +4945,7 @@ export const menu: IProduct[] = [
     id: 14,
     title: 'Пицца 4 сезона',
     image: fourSeasons,
+    group: 'pizzas',
     ingredients:
       'Фирменный томатный соус, моцарелла, пепперони, ветчина, охотничьи колбаски, буженина из свинины, сыр блю чиз, сыр фета, томаты',
     prices: [
@@ -5228,6 +5262,7 @@ export const menu: IProduct[] = [
     id: 15,
     title: 'Пицца Пепперони',
     image: pepperoni,
+    group: 'pizzas',
     ingredients:
       'Много пепперони, много моцареллы, фирменный томатный соус, тесто',
     prices: [
@@ -5554,6 +5589,7 @@ export const menu: IProduct[] = [
     id: 16,
     title: 'Пицца Деревенская',
     image: country,
+    group: 'pizzas',
     ingredients:
       'Ветчина, копчёная курица, моцарелла, зеленый лук, маринованные огурцы, майонезный соус, фирменный томатный соус, тесто',
     prices: [
@@ -5917,6 +5953,7 @@ export const menu: IProduct[] = [
     id: 17,
     title: 'Пицца Ранч',
     image: ranch,
+    group: 'pizzas',
     ingredients:
       'Копчёная курица, ветчина, моцарелла, томаты, чеснок, соус ранч, тесто',
     prices: [
@@ -6248,6 +6285,7 @@ export const menu: IProduct[] = [
     id: 18,
     title: 'Пицца Жгучая Барбекю',
     image: sizzlingBarbecue,
+    group: 'pizzas',
     ingredients:
       'Пепперони, моцарелла, красный лук, халапеньо, болгарский перец, фирменный томатный соус, барбекю соус, тесто',
     prices: [
@@ -6580,6 +6618,7 @@ export const menu: IProduct[] = [
     id: 19,
     title: 'Пицца Карбонара',
     image: carbonara,
+    group: 'pizzas',
     ingredients:
       'Много бекона, моцарелла, пармезан, томаты, сливки, свежий укроп, соус ранч, тесто',
     prices: [
@@ -6959,6 +6998,7 @@ export const menu: IProduct[] = [
     id: 20,
     title: 'Пицца 4 сыра',
     image: fourCheeses,
+    group: 'pizzas',
     ingredients:
       'Моцарелла, сыр блю чиз с голубой плесенью, фета, пармезан, соус ранч, тесто',
     prices: [
@@ -7308,6 +7348,7 @@ export const menu: IProduct[] = [
     id: 21,
     title: 'Пицца Сырная',
     image: cheese,
+    group: 'pizzas',
     ingredients: 'Моцарелла ,чеддер, фета, соус цезарь, тесто',
     prices: [
       { id: 0, price: 399 },
@@ -7700,6 +7741,7 @@ export const menu: IProduct[] = [
     id: 22,
     title: 'Пицца Мясная',
     image: meat,
+    group: 'pizzas',
     ingredients:
       'Пепперони, ветчина, копчёная курица, моцарелла, майонезный соус, фирменный томатный соус, тесто',
     prices: [
@@ -8030,6 +8072,7 @@ export const menu: IProduct[] = [
     id: 23,
     title: 'Пицца Маргарита',
     image: margarita,
+    group: 'pizzas',
     ingredients:
       'Очень много моцареллы, томаты, фирменный томатный соус, тесто',
     prices: [
@@ -8450,5 +8493,1072 @@ export const menu: IProduct[] = [
       { id: 3, weight: 440 },
       { id: 4, weight: 630 },
     ],
+  },
+  {
+    id: 24,
+    title: 'Паста "Курино-Грибная"',
+    image: pastaChickenMushroom,
+    group: 'snacks',
+    ingredients:
+      'Копченая курица, бекон, свежие шампиньоны, моцарелла, сливки, соус ранч, паста',
+    prices: [{ id: 0, price: 249 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+      {
+        id: 1,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 2,
+        image: champignon,
+        name: 'Шампиньоны',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 3,
+        image: chickenSmoked,
+        name: 'Копченая Курица',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 4,
+        image: bacon,
+        name: 'Бекон',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 5,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 6,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 7,
+        image: cheeseParmesan,
+        name: 'Сыр Пармезан',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 8,
+        image: cheeseFeta,
+        name: 'Сыр Фета',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, price: 29 }],
+      },
+      {
+        id: 9,
+        image: cheeseChedder,
+        name: 'Сыр Чеддер',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 10,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Шампиньоны' },
+      { id: 1, name: 'Копченая Курица' },
+      { id: 2, name: 'Бекон' },
+    ],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 11.79,
+      fats: 15.02,
+      carbohydrates: 16.79,
+      calories: 249.49,
+    },
+    weights: [{ id: 0, weight: 220 }],
+  },
+  {
+    id: 25,
+    title: 'Паста "Карбонара"',
+    image: pastaCarbonara,
+    group: 'snacks',
+    ingredients: 'Бекон, пармезан, моцарелла, томаты, сливки, соус ранч, паста',
+    prices: [{ id: 0, price: 249 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+      {
+        id: 1,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 2,
+        image: tomato,
+        name: 'Томаты',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 3,
+        image: champignon,
+        name: 'Шампиньоны',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 4,
+        image: chickenSmoked,
+        name: 'Копченая Курица',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 5,
+        image: ham,
+        name: 'Ветчина',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 6,
+        image: bacon,
+        name: 'Бекон',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 7,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 8,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 9,
+        image: cheeseParmesan,
+        name: 'Сыр Пармезан',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 10,
+        image: cheeseChedder,
+        name: 'Сыр Чеддер',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 11,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Томаты' },
+      { id: 1, name: 'Бекон' },
+      { id: 2, name: 'Сыр Пармезан' },
+    ],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 12.37,
+      fats: 15.8,
+      carbohydrates: 17.32,
+      calories: 260.9,
+    },
+    weights: [{ id: 0, weight: 240 }],
+  },
+  {
+    id: 26,
+    title: 'Пельмени под сыром',
+    image: dumplingsCheese,
+    group: 'snacks',
+    ingredients:
+      'Жареные пельмени с курицей и говядиной, моцарелла, сливки, соус ранч',
+    prices: [{ id: 0, price: 229 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+      {
+        id: 1,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 2,
+        image: tomato,
+        name: 'Томаты',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 3,
+        image: champignon,
+        name: 'Шампиньоны',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 4,
+        image: pickledCucumbers,
+        name: 'Огурцы Маринованные',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 5,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 6,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 7,
+        image: cheeseChedder,
+        name: 'Сыр Чеддер',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 8,
+        image: dill,
+        name: 'Укроп',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, price: 15 }],
+      },
+      {
+        id: 9,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+      {
+        id: 10,
+        image: sauce,
+        name: 'Ранч Соус на пиццу',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 11,
+        image: cheeseBlue,
+        name: 'Сыр Блю Чиз',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 95 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Сыр Моцарелла' },
+      { id: 1, name: 'Соус Ранч' },
+    ],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 12.33,
+      fats: 13.55,
+      carbohydrates: 16.36,
+      calories: 236.71,
+    },
+    weights: [{ id: 0, weight: 240 }],
+  },
+  {
+    id: 27,
+    title: 'Картофель чикен фри',
+    image: potatoChickenFry,
+    group: 'snacks',
+    ingredients:
+      'Куриные кусочки, картофель фри, соус бургер, кетчуп, майонезный соус, лук фри, укроп',
+    prices: [{ id: 0, price: 239 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: tomato,
+        name: 'Томаты',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 1,
+        image: pickledCucumbers,
+        name: 'Огурцы Маринованные',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 2,
+        image: cucumberFresh,
+        name: 'Огурцы Свежие',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 20 }],
+      },
+      {
+        id: 3,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 4,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 5,
+        image: pimiento,
+        name: 'Болгарский Перец',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 6,
+        image: pineapple,
+        name: 'Ананасы',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 7,
+        image: dill,
+        name: 'Укроп',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, price: 15 }],
+      },
+      {
+        id: 8,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+      {
+        id: 9,
+        image: sauce,
+        name: 'Ранч Соус на пиццу',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 10,
+        image: sauce,
+        name: 'Барбекю Соус на пиццу',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 11,
+        image: sauce,
+        name: 'Горчичный Соус на пиццу',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 12,
+        image: sauce,
+        name: 'Кетчуп Соус на пиццу',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 13,
+        image: sauce,
+        name: 'Соус Бургер на пиццу',
+        maxQuantity: 3,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Сыр Моцарелла' },
+      { id: 1, name: 'Соус Ранч' },
+    ],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 12.33,
+      fats: 13.55,
+      carbohydrates: 16.36,
+      calories: 236.71,
+    },
+    weights: [{ id: 0, weight: 240 }],
+  },
+  {
+    id: 28,
+    title: 'Салат Овощной с яйцом',
+    image: saladVegetablesEgg,
+    group: 'snacks',
+    ingredients:
+      'Салат айсберг, томаты, яйцо, огурцы свежие, лук зеленый, заправка - масло оливковое (15 г).',
+    prices: [{ id: 0, price: 119 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+      {
+        id: 1,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 2,
+        image: tomato,
+        name: 'Томаты',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 3,
+        image: chickenSmoked,
+        name: 'Копченая Курица',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 4,
+        image: ham,
+        name: 'Ветчина',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 5,
+        image: bacon,
+        name: 'Бекон',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 6,
+        image: pickledCucumbers,
+        name: 'Огурцы Маринованные',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 7,
+        image: cucumberFresh,
+        name: 'Огурцы Свежие',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 20 }],
+      },
+      {
+        id: 8,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 9,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 10,
+        image: cheeseParmesan,
+        name: 'Сыр Пармезан',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 11,
+        image: cheeseFeta,
+        name: 'Сыр Фета',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, price: 29 }],
+      },
+      {
+        id: 12,
+        image: pimiento,
+        name: 'Болгарский Перец',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 13,
+        image: dill,
+        name: 'Укроп',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, price: 15 }],
+      },
+      {
+        id: 14,
+        image: roastPork,
+        name: 'Буженина',
+        maxQuantity: 3,
+        weights: [{ id: 0, value: 60 }],
+        prices: [{ id: 0, price: 75 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Томаты' },
+      { id: 1, name: 'Огурцы Свежие' },
+      { id: 2, name: 'Зеленый Лук' },
+      { id: 3, name: 'Листья Салата' },
+      { id: 4, name: 'Яйцо' },
+    ],
+    categories: [
+      { id: 0, title: 'Без Мяса', image: leaf },
+      { id: 1, title: 'Подходит для детей', image: bear },
+    ],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 4.33,
+      fats: 22.17,
+      carbohydrates: 2.38,
+      calories: 226.38,
+    },
+    weights: [{ id: 0, weight: 130 }],
+  },
+  {
+    id: 29,
+    title: 'Томатный Крем Суп"',
+    image: soupTomatoCream,
+    group: 'snacks',
+    ingredients: 'Соус из томатов, сливки, вода, сухарики',
+    prices: [{ id: 0, price: 159 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Сыр Моцарелла' }],
+    categories: [{ id: 0, title: 'Без Мяса', image: leaf }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 4.12,
+      fats: 4.39,
+      carbohydrates: 3.75,
+      calories: 70.95,
+    },
+    weights: [{ id: 0, weight: 260 }],
+  },
+  {
+    id: 30,
+    title: 'Хот-Ролл с Пепперони"',
+    image: hotrollPepperoni,
+    group: 'snacks',
+    ingredients: 'Пепперони, моцарелла, томаты, соус ранч, пшеничная лепёшка',
+    prices: [{ id: 0, price: 199 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 1,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 2,
+        image: onionGreen,
+        name: 'Зеленый Лук',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 35 }],
+      },
+      {
+        id: 3,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Томаты' },
+      { id: 1, name: 'Пепперони' },
+    ],
+    categories: [{ id: 0, title: 'Острая', image: fire }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 11.34,
+      fats: 18.9,
+      carbohydrates: 20.4,
+      calories: 297.06,
+    },
+    weights: [{ id: 0, weight: 190 }],
+  },
+  {
+    id: 31,
+    title: 'Милкшейк "Юдзу" 0,3"',
+    image: milkshakeYuzu,
+    group: 'drinks',
+    ingredients: 'Концентрат юдзу, молоко, мороженое. 0,3 л.',
+    prices: [{ id: 0, price: 209 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 2.81,
+      fats: 7.77,
+      carbohydrates: 17.13,
+      calories: 149.73,
+    },
+    weights: [{ id: 0, weight: 300 }],
+  },
+  {
+    id: 32,
+    title: 'Милкшейк Лесные Ягоды 0,3',
+    image: milkshakeBerries,
+    group: 'drinks',
+    ingredients: 'Пюре лесные ягоды, сливочное мороженое, молоко. 0,3 л.',
+    prices: [{ id: 0, price: 209 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 2.81,
+      fats: 7.77,
+      carbohydrates: 17.13,
+      calories: 149.73,
+    },
+    weights: [{ id: 0, weight: 300 }],
+  },
+  {
+    id: 33,
+    title: 'Милкшейк Мятный 0,3',
+    image: milkshakeMint,
+    group: 'drinks',
+    ingredients: 'Сироп мята, ванильное мороженое, молоко. 0,3 л.',
+    prices: [{ id: 0, price: 209 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 2.9,
+      fats: 8.01,
+      carbohydrates: 17,
+      calories: 151.63,
+    },
+    weights: [{ id: 0, weight: 300 }],
+  },
+  {
+    id: 34,
+    title: 'Evervess Кола 1 л.',
+    image: evervessCola,
+    group: 'drinks',
+    ingredients: 'Evervess Кола 1 л.',
+    prices: [{ id: 0, price: 155 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 0,
+      fats: 0,
+      carbohydrates: 11.2,
+      calories: 44,
+    },
+    weights: [{ id: 0, weight: 1000 }],
+  },
+  {
+    id: 35,
+    title: 'Морс Черника с мятой 0,5 бут',
+    image: morsBlueberryMint,
+    group: 'drinks',
+    ingredients: 'Концентрированный морс, вода. 0,5 л.',
+    prices: [{ id: 0, price: 129 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 0,
+      fats: 0,
+      carbohydrates: 9.28,
+      calories: 37.12,
+    },
+    weights: [{ id: 0, weight: 500 }],
+  },
+  {
+    id: 36,
+    title: 'Сладкие палочки',
+    image: sweetSticks,
+    group: 'desserts',
+    ingredients: 'Ананасы, карамельный соус, малиновый соус, моцарелла, тесто',
+    prices: [{ id: 0, price: 399 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 9.49,
+      fats: 6.49,
+      carbohydrates: 45.81,
+      calories: 279.59,
+    },
+    weights: [{ id: 0, weight: 530 }],
+  },
+  {
+    id: 37,
+    title: 'Чизкейк с Карамельным соусом',
+    image: cheesecakeCaramel,
+    group: 'desserts',
+    ingredients: 'Чизкейк Нью-Йорк политый карамельным соусом',
+    prices: [{ id: 0, price: 159 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [
+      { id: 0, title: 'Без мяса', image: leaf },
+      { id: 1, title: 'Подходит для Детей', image: bear },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 5.24,
+      fats: 23.37,
+      carbohydrates: 35.46,
+      calories: 373.11,
+    },
+    weights: [{ id: 0, weight: 120 }],
+  },
+  {
+    id: 38,
+    title: 'Пломбир Ванильный',
+    image: iceCreamVanilla,
+    group: 'desserts',
+    ingredients:
+      'Сливки питьевые пастеризованные, вода питьевая, сахар, молоко сухое цельное, молоко сухое обезжиренное, крахмал из тапиоки, соль, ароматизатор идентичный натуральному «Ванилин»',
+    prices: [{ id: 0, price: 159 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+    ],
+    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    sizes: [
+      { id: 0, name: 23 },
+      { id: 1, name: 28 },
+      { id: 2, name: 33 },
+    ],
+    categories: [
+      { id: 0, title: 'Без мяса', image: leaf },
+      { id: 1, title: 'Подходит для Детей', image: bear },
+    ],
+    dough: [
+      { id: 0, name: 'Тонкое' },
+      { id: 1, name: 'Традиционное' },
+    ],
+    nutritionalValues: {
+      proteins: 0,
+      fats: 0,
+      carbohydrates: 0,
+      calories: 0,
+    },
+    weights: [{ id: 0, weight: 70 }],
   },
 ];

@@ -75,7 +75,7 @@ const ProductSizeSelection: React.FC = () => {
       <div className='flex flex-col gap-2'>
         <RadioGroup value={selectedSize} onChange={handleSizeChange}>
           <div className='flex flex-row gap-2.5'>
-            {selectedProduct?.sizes.map((size, i) => (
+            {selectedProduct?.sizes?.map((size, i) => (
               <RadioGroupOption
                 key={size.id}
                 option={size}
@@ -88,7 +88,7 @@ const ProductSizeSelection: React.FC = () => {
         </RadioGroup>
         <RadioGroup value={selectedDough} onChange={handleDoughChange}>
           <div className='flex flex-row gap-2.5'>
-            {selectedProduct?.dough.map((dough) => (
+            {selectedProduct?.dough?.map((dough) => (
               <RadioGroupOption
                 key={dough.id}
                 option={dough}
