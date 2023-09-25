@@ -14,16 +14,21 @@ export function calculateProductPrices(
     (acc, ing) =>
       acc +
       (ing.prices.find((price) => price.id === selectedSize?.id)?.price ||
-        100) *
+        ing.prices.at(0)!.price) *
         (ing.quantity || 1) *
         productQuantity,
     0,
   );
 
   const totalProductPrice =
-    (selectedProduct?.prices && productPrice !== null ? productPrice : 579) *
-      productQuantity +
+    (productPrice || selectedProduct!.prices[0].price) * productQuantity +
     additionalIngredientsPrice;
+  // const totalProductPrice =
+  //   (selectedProduct?.prices && productPrice !== null
+  //     ? productPrice
+  //     : selectedProduct?.prices[0].price || 579) *
+  //     productQuantity +
+  //   additionalIngredientsPrice;
 
   return {
     productPrice,

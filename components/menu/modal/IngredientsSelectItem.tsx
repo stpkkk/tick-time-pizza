@@ -31,12 +31,12 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   );
 
   const ingredientQuantity = ingredientItem?.quantity || 0;
-  const ingredientPrice = ingredient?.prices.find(
-    (item) => item.id === selectedSize?.id,
-  )?.price;
-  const ingredientWeight = ingredient?.weights.find(
-    (item) => item.id === selectedSize?.id,
-  )?.value;
+  const ingredientPrice =
+    ingredient?.prices.find((item) => item.id === selectedSize?.id)?.price ||
+    ingredient?.prices.at(0)?.price;
+  const ingredientWeight =
+    ingredient?.weights.find((item) => item.id === selectedSize?.id)?.value ||
+    ingredient?.weights.at(0)?.value;
 
   // Reset disabled ingredient quantity to 0
   useEffect(() => {
