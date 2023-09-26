@@ -44,13 +44,13 @@ export interface IProduct {
   group: string;
   ingredients: string;
   prices: IPrice[];
-  additionalIngredients: IAdditionalIngredient[];
-  removeIngredients: IOption[];
+  additionalIngredients?: IAdditionalIngredient[];
+  removeIngredients?: IOption[];
   categories?: IMenuCategory[];
   sizes?: IOption[];
   dough?: IOption[];
   weights: IWeight[];
-  nutritionalValues: INutritionalValue;
+  nutritionalValues?: INutritionalValue;
   selectedSize?: IOption;
   selectedDough?: IOption;
   removedIngredients?: IOption[];

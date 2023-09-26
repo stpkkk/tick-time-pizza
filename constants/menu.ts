@@ -9126,22 +9126,11 @@ export const menu: IProduct[] = [
   },
   {
     id: 29,
-    title: 'Томатный Крем Суп"',
+    title: 'Томатный Крем Суп',
     image: soupTomatoCream,
     group: 'snacks',
     ingredients: 'Соус из томатов, сливки, вода, сухарики',
     prices: [{ id: 0, price: 159 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: mozzarella,
-        name: 'Сыр Моцарелла',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Сыр Моцарелла' }],
     categories: [{ id: 0, title: 'Без Мяса', image: leaf }],
     nutritionalValues: {
       proteins: 4.12,
@@ -9153,7 +9142,7 @@ export const menu: IProduct[] = [
   },
   {
     id: 30,
-    title: 'Хот-Ролл с Пепперони"',
+    title: 'Хот-Ролл с Пепперони',
     image: hotrollPepperoni,
     group: 'snacks',
     ingredients: 'Пепперони, моцарелла, томаты, соус ранч, пшеничная лепёшка',
@@ -9207,22 +9196,11 @@ export const menu: IProduct[] = [
   },
   {
     id: 31,
-    title: 'Милкшейк "Юдзу" 0,3"',
+    title: 'Милкшейк "Юдзу" 0,3',
     image: milkshakeYuzu,
     group: 'drinks',
     ingredients: 'Концентрат юдзу, молоко, мороженое. 0,3 л.',
     prices: [{ id: 0, price: 209 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     nutritionalValues: {
       proteins: 2.81,
       fats: 7.77,
@@ -9238,17 +9216,6 @@ export const menu: IProduct[] = [
     group: 'drinks',
     ingredients: 'Пюре лесные ягоды, сливочное мороженое, молоко. 0,3 л.',
     prices: [{ id: 0, price: 209 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     nutritionalValues: {
       proteins: 2.81,
@@ -9265,17 +9232,6 @@ export const menu: IProduct[] = [
     group: 'drinks',
     ingredients: 'Сироп мята, ванильное мороженое, молоко. 0,3 л.',
     prices: [{ id: 0, price: 209 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     nutritionalValues: {
       proteins: 2.9,
       fats: 8.01,
@@ -9291,17 +9247,6 @@ export const menu: IProduct[] = [
     group: 'drinks',
     ingredients: 'Evervess Кола 1 л.',
     prices: [{ id: 0, price: 155 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     nutritionalValues: {
       proteins: 0,
       fats: 0,
@@ -9317,17 +9262,6 @@ export const menu: IProduct[] = [
     group: 'drinks',
     ingredients: 'Концентрированный морс, вода. 0,5 л.',
     prices: [{ id: 0, price: 129 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     nutritionalValues: {
       proteins: 0,
       fats: 0,
@@ -9343,17 +9277,6 @@ export const menu: IProduct[] = [
     group: 'desserts',
     ingredients: 'Ананасы, карамельный соус, малиновый соус, моцарелла, тесто',
     prices: [{ id: 0, price: 399 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     nutritionalValues: {
       proteins: 9.49,
       fats: 6.49,
@@ -9369,17 +9292,6 @@ export const menu: IProduct[] = [
     group: 'desserts',
     ingredients: 'Чизкейк Нью-Йорк политый карамельным соусом',
     prices: [{ id: 0, price: 159 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     categories: [
       { id: 0, title: 'Без мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
@@ -9400,27 +9312,10 @@ export const menu: IProduct[] = [
     ingredients:
       'Сливки питьевые пастеризованные, вода питьевая, сахар, молоко сухое цельное, молоко сухое обезжиренное, крахмал из тапиоки, соль, ароматизатор идентичный натуральному «Ванилин»',
     prices: [{ id: 0, price: 159 }],
-    additionalIngredients: [
-      {
-        id: 0,
-        image: jalapeno,
-        name: 'Перец Халапеньо',
-        maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
-      },
-    ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
     categories: [
       { id: 0, title: 'Без мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
     ],
-    nutritionalValues: {
-      proteins: 0,
-      fats: 0,
-      carbohydrates: 0,
-      calories: 0,
-    },
     weights: [{ id: 0, weight: 70 }],
   },
 ];
