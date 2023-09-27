@@ -43,7 +43,7 @@ export function calculateCartTotalPrice(cartProducts: IProduct[]) {
       calculateProductPrices(
         product,
         product.selectedSize || null,
-        product.additionalIngredients,
+        product.additionalIngredients || [],
         product.productQuantity || 1,
       ),
     )
