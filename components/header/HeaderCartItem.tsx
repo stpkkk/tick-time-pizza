@@ -16,7 +16,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   const totalProductPrice = calculateProductPrices(
     product,
     product.selectedSize || null,
-    product.additionalIngredients,
+    product.additionalIngredients || [],
     product.productQuantity || 1,
   ).totalProductPrice;
 
@@ -52,7 +52,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
           ))}
         </p>
       )}
-      {product.additionalIngredients.length > 0 && (
+      {product.additionalIngredients && product.additionalIngredients.length > 0 && (
         <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
           Добавить:&nbsp;
           {product.additionalIngredients.map((ing) => (
