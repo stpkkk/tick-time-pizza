@@ -83,7 +83,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <BookmarkButton product={product} />
       </div>
-      <div className='absolute left-0 top-0 z-[1] flex flex-col gap-1 sm:left-2 sm:top-2 sm:p-2'>
+      <div className='absolute left-0 top-0 z-[1] flex flex-col	 gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'>
         {product.categories?.map((cat) => (
           <Image
             src={cat.image ? cat.image : ''}

@@ -7,6 +7,7 @@ import IngredientsRemove from './IngredientsRemove';
 import NutritionalValue from './NutritionalValue';
 import ProductTitle from './ProductTitle';
 import ProductWeight from './ProductWeight';
+import Image from 'next/image';
 
 type ModalRightContentProps = {
   modalHeight: number;
@@ -24,6 +25,25 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
         height: `${modalHeight}px`,
       }}
     >
+      <ul
+        className={`${
+          selectedProduct?.categories ? 'block' : 'hidden'
+        } flex items-center gap-4 sm:justify-center`}
+      >
+        {selectedProduct?.categories &&
+          selectedProduct?.categories.map((cat) => (
+            <li className='flex_center gap-2' key={cat.id}>
+              <Image
+                src={cat.image || ''}
+                alt={cat.title}
+                className='h-auto w-5'
+              />
+              <span className='text-[0.75rem] font-bold md:text-xs md:leading-[15px]'>
+                {cat.title}
+              </span>
+            </li>
+          ))}
+      </ul>
       <div className='sm:hidden'>
         <ProductTitle />
       </div>
