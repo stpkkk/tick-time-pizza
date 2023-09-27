@@ -51,9 +51,11 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
           <BookmarkButton product={selectedProduct} />
         </div>
         <ImageNotice />
-        <p className='block text-center text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
-          {selectedProduct?.ingredients}
-        </p>
+        {selectedProduct?.additionalIngredients && (
+          <p className='block text-center text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
+            {selectedProduct?.ingredients}
+          </p>
+        )}
       </div>
       <div className='w-full max-w-[236px] sm:hidden'>
         <ModalTotal />

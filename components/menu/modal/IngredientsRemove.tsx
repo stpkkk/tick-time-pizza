@@ -22,7 +22,7 @@ const IngredientsRemove: React.FC = () => {
     dispatch(setRemovedIngredients(updatedIngredients));
   };
 
-  return (
+  return selectedProduct?.removeIngredients && (
     <div>
       <ModalSubTitle text='Убрать ингредиенты:' />
       <RadioGroup value={null} onChange={handleIngredientChange}>

@@ -11,6 +11,7 @@ import ModalLeftContent from './ModalLeftContent';
 import ModalRightContent from './ModalRightContent';
 import ProductTitle from './ProductTitle';
 import ModalTotal from './ModalTotal';
+import ProductWeight from './ProductWeight';
 
 export {
   Modal,
@@ -26,4 +27,5 @@ export {
   ModalRightContent,
   ProductTitle,
   ModalTotal,
+	ProductWeight
 };
