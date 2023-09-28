@@ -1,14 +1,14 @@
 'use client';
+
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { RadioGroupOption } from '@/components/common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { IOption } from '@/types';
 import { RadioGroup } from '@headlessui/react';
 
-import { RadioGroupOption } from '@/components/common';
-import { IOption } from '@/types';
-
 const ProductSizeSelection: React.FC = () => {
-	const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
     (state) => state.menuReducer,
   );
@@ -33,34 +33,34 @@ const ProductSizeSelection: React.FC = () => {
   };
 
   return (
-        <div className='flex flex-col gap-2'>
-          <RadioGroup value={selectedSize} onChange={handleSizeChange}>
-            <div className='flex flex-row gap-2.5'>
-              {selectedProduct?.sizes?.map((size) => (
-                <RadioGroupOption
-                  key={size.id}
-                  option={size}
-                  isChecked={selectedSize === size}
-                  isDisabled={getIsDisabledSize(size)}
-                  className='flex_center h-[60px] w-full leading-[15px]'
-                />
-              ))}
-            </div>
-          </RadioGroup>
-          <RadioGroup value={selectedDough} onChange={handleDoughChange}>
-            <div className='flex flex-row gap-2.5'>
-              {selectedProduct?.dough?.map((dough) => (
-                <RadioGroupOption
-                  key={dough.id}
-                  option={dough}
-                  isChecked={dough === selectedDough}
-                  isDisabled={getIsDisabledDough(dough)}
-                  className='flex_center h-[60px] w-full leading-[15px]'
-                />
-              ))}
-            </div>
-          </RadioGroup>
+    <div className='flex flex-col gap-2'>
+      <RadioGroup value={selectedSize} onChange={handleSizeChange}>
+        <div className='flex flex-row gap-2.5'>
+          {selectedProduct?.sizes?.map((size) => (
+            <RadioGroupOption
+              key={size.id}
+              option={size}
+              isChecked={selectedSize === size}
+              isDisabled={getIsDisabledSize(size)}
+              className='flex_center h-[60px] w-full leading-[15px]'
+            />
+          ))}
         </div>
+      </RadioGroup>
+      <RadioGroup value={selectedDough} onChange={handleDoughChange}>
+        <div className='flex flex-row gap-2.5'>
+          {selectedProduct?.dough?.map((dough) => (
+            <RadioGroupOption
+              key={dough.id}
+              option={dough}
+              isChecked={dough === selectedDough}
+              isDisabled={getIsDisabledDough(dough)}
+              className='flex_center h-[60px] w-full leading-[15px]'
+            />
+          ))}
+        </div>
+      </RadioGroup>
+    </div>
   );
 };
 

@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { footerLinks } from '@/constants';
-import google from '../public/assets/images/Google.webp';
 import apple from '../public/assets/images/App-Store.webp';
+import google from '../public/assets/images/Google.webp';
+import { footerLinks } from '@/constants';
 
 const Footer: React.FC = () => {
   return (

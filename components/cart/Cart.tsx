@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
 
+import React, { useEffect } from 'react';
 import CartProduct from './CartProduct';
 import EmptyCart from './EmptyCart';
+import { addToCart } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 const Cart: React.FC = () => {

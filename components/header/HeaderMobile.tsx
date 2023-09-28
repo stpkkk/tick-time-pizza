@@ -1,12 +1,11 @@
 import React from 'react';
+import { RiCloseFill } from 'react-icons/ri';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import Logo from '../common/Logo';
+import HeaderCart from './HeaderCart';
+import Nav from './Nav';
 import { toggleNav } from '@/redux/features/headerSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-
-import { RxHamburgerMenu } from 'react-icons/rx';
-import Nav from './Nav';
-import Logo from '../common/Logo';
-import { RiCloseFill } from 'react-icons/ri';
-import HeaderCart from './HeaderCart';
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();

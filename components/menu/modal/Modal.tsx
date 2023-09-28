@@ -1,15 +1,15 @@
 'use client';
+
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { RiCloseFill } from 'react-icons/ri';
+import ModalLeftContent from './ModalLeftContent';
+import ModalRightContent from './ModalRightContent';
+import ModalTotal from './ModalTotal';
 import {
   initializeDefaultValues,
   toggleModal,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
-import { RiCloseFill } from 'react-icons/ri';
-
-import ModalLeftContent from './ModalLeftContent';
-import ModalRightContent from './ModalRightContent';
-import ModalTotal from './ModalTotal';
 
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();

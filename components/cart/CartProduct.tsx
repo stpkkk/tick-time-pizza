@@ -1,10 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-
+import Image from 'next/image';
 import { Counter } from '../menu';
-import { calculateProductPrices } from '@/utils';
 import { IAdditionalIngredient, IOption, IProduct } from '@/types';
+import { calculateProductPrices } from '@/utils';
 
 interface CartProductProps {
   product: IProduct;

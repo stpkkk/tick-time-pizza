@@ -1,11 +1,10 @@
 import React from 'react';
-import { useAppSelector } from '@/redux/hooks';
+import { RiLoginCircleLine } from 'react-icons/ri';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-import { RiLoginCircleLine } from 'react-icons/ri';
-import { navLinks } from '@/constants';
 import Phone from './Phone';
+import { navLinks } from '@/constants';
+import { useAppSelector } from '@/redux/hooks';
 
 const Nav: React.FC = () => {
   const pathname = usePathname();

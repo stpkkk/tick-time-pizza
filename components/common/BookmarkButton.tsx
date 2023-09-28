@@ -1,13 +1,12 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import HeartIconGray from './HeartIconGray';
+import HeartIconRed from './HeartIconRed';
 import {
   addToBookmarks,
   removeFromBookmarks,
   setHoveredItemId,
 } from '@/redux/features/menuSlice';
-
-import HeartIconRed from './HeartIconRed';
-import HeartIconGray from './HeartIconGray';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 type BookmarkButtonProps = {

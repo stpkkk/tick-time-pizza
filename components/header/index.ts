@@ -1,11 +1,11 @@
-import Nav from './Nav';
-import HeaderMobile from './HeaderMobile';
-import Header from './Header';
-import Phone from './Phone';
-import HeaderDesktop from './HeaderDesktop';
-import HeaderCart from './HeaderCart';
 import CartTooltip from './CartTooltip';
+import Header from './Header';
+import HeaderCart from './HeaderCart';
 import HeaderCartItem from './HeaderCartItem';
+import HeaderDesktop from './HeaderDesktop';
+import HeaderMobile from './HeaderMobile';
+import Nav from './Nav';
+import Phone from './Phone';
 
 export {
   Nav,

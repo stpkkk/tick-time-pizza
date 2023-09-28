@@ -1,15 +1,14 @@
 import React from 'react';
+import Image from 'next/image';
+import pizza from '../../public/assets/icons/pizza.svg';
+import { BookmarkButton } from '../common';
+import { menu } from '@/constants';
 import {
   setSelectedProduct,
   setHoveredItemId,
   toggleModal,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import Image from 'next/image';
-
-import pizza from '../../public/assets/icons/pizza.svg';
-import { BookmarkButton } from '../common';
-import { menu } from '@/constants';
 import { IProduct } from '@/types';
 
 interface IProductItemProps {

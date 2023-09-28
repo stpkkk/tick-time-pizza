@@ -1,6 +1,6 @@
 import './globals.css';
-import { BackToTopButton, Footer, Header } from '@/components';
 import { Providers } from './providers';
+import { BackToTopButton, Footer, Header } from '@/components';
 
 export const metadata = {
   title: 'Пицца в Петрозаводске "Тик Тайм". Доставка Пиццы ',

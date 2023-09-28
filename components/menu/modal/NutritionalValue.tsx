@@ -1,7 +1,6 @@
 import React from 'react';
-import { useAppSelector } from '@/redux/hooks';
-
 import ModalSubTitle from './ModalSubTitle';
+import { useAppSelector } from '@/redux/hooks';
 
 const NutritionalValue: React.FC = () => {
   const { selectedProduct } = useAppSelector((state) => state.menuReducer);

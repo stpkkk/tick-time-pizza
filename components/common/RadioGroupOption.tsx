@@ -1,8 +1,9 @@
 'use client';
+
 import React from 'react';
-import { RadioGroup } from '@headlessui/react';
 import Image from 'next/image';
 import { IOption } from '@/types';
+import { RadioGroup } from '@headlessui/react';
 
 export interface IRadioGroupOptionProps {
   option: IOption;
