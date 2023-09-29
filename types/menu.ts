@@ -42,14 +42,14 @@ export interface IProduct {
   title: string;
   image: string | StaticImageData;
   group: string;
-  ingredients: string;
+  ingredients?: string;
   prices: IPrice[];
   additionalIngredients?: IAdditionalIngredient[];
   removeIngredients?: IOption[];
   categories?: IMenuCategory[];
   sizes?: IOption[];
   dough?: IOption[];
-  weights: IWeight[];
+  weights?: IWeight[];
   nutritionalValues?: INutritionalValue;
   selectedSize?: IOption;
   selectedDough?: IOption;

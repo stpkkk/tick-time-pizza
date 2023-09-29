@@ -1,64 +1,78 @@
-import bacon from '../public/assets/images/adds-bacon.png';
-import champignon from '../public/assets/images/adds-champignon.png';
-import cheeseBlue from '../public/assets/images/adds-cheese-blue.png';
-import cheeseChedder from '../public/assets/images/adds-cheese-chedder.png';
-import cheeseFeta from '../public/assets/images/adds-cheese-feta.png';
-import cheeseParmesan from '../public/assets/images/adds-cheese-parmesan.png';
-import cheeseSide from '../public/assets/images/adds-cheese-side.png';
-import chickenSmoked from '../public/assets/images/adds-chicken-smoked.png';
-import cucumberFresh from '../public/assets/images/adds-cucumber-fresh.png';
-import dill from '../public/assets/images/adds-dill.png';
-import garlic from '../public/assets/images/adds-garlic.png';
-import ham from '../public/assets/images/adds-ham.png';
-import heart from '../public/assets/images/adds-heart.png';
-import huntingSausages from '../public/assets/images/adds-hunting-sausages.png';
-import jalapeno from '../public/assets/images/adds-jalapeno.png';
-import mozzarella from '../public/assets/images/adds-mozzarella.png';
-import onionBulb from '../public/assets/images/adds-onion-bulb.png';
-import onionFree from '../public/assets/images/adds-onion-free.png';
-import onionGreen from '../public/assets/images/adds-onion-green.png';
-import pepperoniAdds from '../public/assets/images/adds-pepperoni.png';
-import pickledCucumbers from '../public/assets/images/adds-pickled-cucumbers.png';
-import pimiento from '../public/assets/images/adds-pimiento.png';
-import pineapple from '../public/assets/images/adds-pineapple.png';
-import roastPork from '../public/assets/images/adds-roast-pork.png';
-import sauce from '../public/assets/images/adds-sauce.png';
-import tomato from '../public/assets/images/adds-tomato.png';
+//adds
+import bacon from '../public/assets/images/add-ings/adds-bacon.png';
+import champignon from '../public/assets/images/add-ings/adds-champignon.png';
+import cheeseBlue from '../public/assets/images/add-ings/adds-cheese-blue.png';
+import cheeseChedder from '../public/assets/images/add-ings/adds-cheese-chedder.png';
+import cheeseFeta from '../public/assets/images/add-ings/adds-cheese-feta.png';
+import cheeseParmesan from '../public/assets/images/add-ings/adds-cheese-parmesan.png';
+import cheeseSide from '../public/assets/images/add-ings/adds-cheese-side.png';
+import chickenSmoked from '../public/assets/images/add-ings/adds-chicken-smoked.png';
+import cucumberFresh from '../public/assets/images/add-ings/adds-cucumber-fresh.png';
+import dill from '../public/assets/images/add-ings/adds-dill.png';
+import garlic from '../public/assets/images/add-ings/adds-garlic.png';
+import ham from '../public/assets/images/add-ings/adds-ham.png';
+import heart from '../public/assets/images/add-ings/adds-heart.png';
+import huntingSausages from '../public/assets/images/add-ings/adds-hunting-sausages.png';
+import jalapeno from '../public/assets/images/add-ings/adds-jalapeno.png';
+import mozzarella from '../public/assets/images/add-ings/adds-mozzarella.png';
+import onionBulb from '../public/assets/images/add-ings/adds-onion-bulb.png';
+import onionFree from '../public/assets/images/add-ings/adds-onion-free.png';
+import onionGreen from '../public/assets/images/add-ings/adds-onion-green.png';
+import pepperoniAdds from '../public/assets/images/add-ings/adds-pepperoni.png';
+import pickledCucumbers from '../public/assets/images/add-ings/adds-pickled-cucumbers.png';
+import pimiento from '../public/assets/images/add-ings/adds-pimiento.png';
+import pineapple from '../public/assets/images/add-ings/adds-pineapple.png';
+import roastPork from '../public/assets/images/add-ings/adds-roast-pork.png';
+import sauce from '../public/assets/images/add-ings/adds-sauce.png';
+import tomato from '../public/assets/images/add-ings/adds-tomato.png';
+//categories
 import bear from '../public/assets/images/cat-bear.webp';
 import fire from '../public/assets/images/cat-fire.webp';
 import leaf from '../public/assets/images/cat-leaf.webp';
+//desserts
 import cheesecakeCaramel from '../public/assets/images/desserts/cheesecake-caramel.webp';
 import iceCreamVanilla from '../public/assets/images/desserts/ice-cream-vanilla.webp';
 import sweetSticks from '../public/assets/images/desserts/sweet-sticks.webp';
+//drinks
 import evervessCola from '../public/assets/images/drinks/evervess-cola.webp';
 import milkshakeBerries from '../public/assets/images/drinks/milkshake-berries.webp';
 import milkshakeMint from '../public/assets/images/drinks/milkshake-mint.webp';
 import milkshakeYuzu from '../public/assets/images/drinks/milkshake-yuzu.webp';
 import morsBlueberryMint from '../public/assets/images/drinks/mors-blueberry-mint.webp';
-import americana from '../public/assets/images/pizza-americana.webp';
-import caesar from '../public/assets/images/pizza-caesar.webp';
-import carbonara from '../public/assets/images/pizza-carbonara.webp';
-import cheese from '../public/assets/images/pizza-cheese.webp';
-import chickenBlueCheese from '../public/assets/images/pizza-chicken-blue-cheese.webp';
-import chickenBurger from '../public/assets/images/pizza-chicken-burger.webp';
-import chickenSausages from '../public/assets/images/pizza-chicken-sausages.webp';
-import classic from '../public/assets/images/pizza-classic.webp';
-import country from '../public/assets/images/pizza-country.webp';
-import donKebab from '../public/assets/images/pizza-don-kebab.webp';
-import fourCheeses from '../public/assets/images/pizza-four-cheeses.webp';
-import fourSeasons from '../public/assets/images/pizza-four-seasons.webp';
-import hamBacon from '../public/assets/images/pizza-ham-bacon.webp';
-import hawaii from '../public/assets/images/pizza-hawaii.webp';
-import hunter from '../public/assets/images/pizza-hunter.webp';
-import italian from '../public/assets/images/pizza-italian.webp';
-import julien from '../public/assets/images/pizza-julien.webp';
-import margarita from '../public/assets/images/pizza-margarita.webp';
-import meatHit from '../public/assets/images/pizza-meat-hit.webp';
-import meat from '../public/assets/images/pizza-meat.webp';
-import pepperoni from '../public/assets/images/pizza-pepperoni.webp';
-import porkRoast from '../public/assets/images/pizza-pork-roast.webp';
-import ranch from '../public/assets/images/pizza-ranch.webp';
-import sizzlingBarbecue from '../public/assets/images/pizza-sizzling-barbecue.webp';
+//pizza
+import americana from '../public/assets/images/pizzas/pizza-americana.webp';
+import caesar from '../public/assets/images/pizzas/pizza-caesar.webp';
+import carbonara from '../public/assets/images/pizzas/pizza-carbonara.webp';
+import cheese from '../public/assets/images/pizzas/pizza-cheese.webp';
+import chickenBlueCheese from '../public/assets/images/pizzas/pizza-chicken-blue-cheese.webp';
+import chickenBurger from '../public/assets/images/pizzas/pizza-chicken-burger.webp';
+import chickenSausages from '../public/assets/images/pizzas/pizza-chicken-sausages.webp';
+import classic from '../public/assets/images/pizzas/pizza-classic.webp';
+import country from '../public/assets/images/pizzas/pizza-country.webp';
+import donKebab from '../public/assets/images/pizzas/pizza-don-kebab.webp';
+import fourCheeses from '../public/assets/images/pizzas/pizza-four-cheeses.webp';
+import fourSeasons from '../public/assets/images/pizzas/pizza-four-seasons.webp';
+import hamBacon from '../public/assets/images/pizzas/pizza-ham-bacon.webp';
+import hawaii from '../public/assets/images/pizzas/pizza-hawaii.webp';
+import hunter from '../public/assets/images/pizzas/pizza-hunter.webp';
+import italian from '../public/assets/images/pizzas/pizza-italian.webp';
+import julien from '../public/assets/images/pizzas/pizza-julien.webp';
+import margarita from '../public/assets/images/pizzas/pizza-margarita.webp';
+import meatHit from '../public/assets/images/pizzas/pizza-meat-hit.webp';
+import meat from '../public/assets/images/pizzas/pizza-meat.webp';
+import pepperoni from '../public/assets/images/pizzas/pizza-pepperoni.webp';
+import porkRoast from '../public/assets/images/pizzas/pizza-pork-roast.webp';
+import ranch from '../public/assets/images/pizzas/pizza-ranch.webp';
+import sizzlingBarbecue from '../public/assets/images/pizzas/pizza-sizzling-barbecue.webp';
+//sauces
+import jamRaspberry from '../public/assets/images/sauces/jam-raspberry.webp';
+import bbqSauce from '../public/assets/images/sauces/sauce-bbq.webp';
+import buffaloSauce from '../public/assets/images/sauces/sauce-buffalo.webp';
+import caesarSauce from '../public/assets/images/sauces/sauce-caesar.webp';
+import cheeseSauce from '../public/assets/images/sauces/sauce-cheese.webp';
+import ketchup from '../public/assets/images/sauces/sauce-ketchup.webp';
+import garlicSauce from '../public/assets/images/sauces/sauсe-garlic.webp';
+//snacks
 import dumplingsCheese from '../public/assets/images/snacks/dumplings-cheese.webp';
 import hotrollPepperoni from '../public/assets/images/snacks/hotroll-pepperoni.webp';
 import pastaCarbonara from '../public/assets/images/snacks/pasta-carbonara.webp';
@@ -9312,5 +9326,54 @@ export const menu: IProduct[] = [
       { id: 1, title: 'Подходит для Детей', image: bear },
     ],
     weights: [{ id: 0, weight: 70 }],
+  },
+  {
+    id: 39,
+    title: 'соус Кетчуп',
+    image: ketchup,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 40,
+    title: 'соус BBQ',
+    image: bbqSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 41,
+    title: 'соус Баффало',
+    image: buffaloSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 42,
+    title: 'соус Чесночный',
+    image: garlicSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 43,
+    title: 'соус Сырный',
+    image: cheeseSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 44,
+    title: 'Малиновое варенье 30 гр.',
+    image: jamRaspberry,
+    group: 'sauces',
+    prices: [{ id: 0, price: 29 }],
+  },
+  {
+    id: 45,
+    title: 'Соус Цезарь',
+    image: caesarSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 29 }],
   },
 ];

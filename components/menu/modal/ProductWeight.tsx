@@ -8,16 +8,17 @@ const ProductWeight: React.FC = () => {
   const thinDough = 'Тонкое';
 
   const getWeightBySize = () => {
-    return selectedProduct?.weights.find(
-      (item) => item.id === selectedSize?.id,
+    return (
+      selectedProduct?.weights &&
+      selectedProduct?.weights.find((item) => item.id === selectedSize?.id)
     );
   };
 
   const getWeightByDough = () => {
     const isThinDough = selectedDough?.name === thinDough;
     return isThinDough
-      ? selectedProduct?.weights.slice(-2)
-      : selectedProduct?.weights.slice(0, 1);
+      ? selectedProduct?.weights && selectedProduct?.weights.slice(-2)
+      : selectedProduct?.weights && selectedProduct?.weights.slice(0, 1);
   };
 
   const getTotalWeight = () => {
@@ -43,7 +44,11 @@ const ProductWeight: React.FC = () => {
       <span className='mb-5 text-base font-bold leading-5 md:mb-4 md:text-sm md:leading-[15px]'>
         Вес:&nbsp;
       </span>
-      <span>{getTotalWeight() || selectedProduct?.weights[0].weight} г</span>
+      <span>
+        {getTotalWeight() ||
+          (selectedProduct?.weights && selectedProduct?.weights[0].weight)}{' '}
+        г
+      </span>
     </div>
   );
 };
