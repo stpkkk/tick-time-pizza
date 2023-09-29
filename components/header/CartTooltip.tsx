@@ -1,10 +1,10 @@
 'use client';
+
 import React, { MutableRefObject } from 'react';
 import Link from 'next/link';
-import { useAppDispatch } from '@/redux/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
-
 import HeaderCartItem from './HeaderCartItem';
+import { addToCart } from '@/redux/features/menuSlice';
+import { useAppDispatch } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 interface CartTooltipProps {

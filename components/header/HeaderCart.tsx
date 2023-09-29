@@ -1,12 +1,12 @@
 'use client';
-import React, { useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
-import { setIsHoveringCart } from '@/redux/features/headerSlice';
-import { BsBasket2 } from 'react-icons/bs';
 
+import React, { useRef, useEffect } from 'react';
+import { BsBasket2 } from 'react-icons/bs';
+import Link from 'next/link';
 import CartTooltip from './CartTooltip';
+import { setIsHoveringCart } from '@/redux/features/headerSlice';
+import { addToCart } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { calculateCartTotalPrice } from '@/utils';
 
 const HeaderCart: React.FC = () => {

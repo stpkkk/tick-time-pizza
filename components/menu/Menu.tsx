@@ -1,22 +1,21 @@
 'use client';
+
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { useAppSelector } from '@/redux/hooks';
-
-import { menu } from '@/constants';
-import ProductItem from './ProductItem';
-import NoBookmarks from './NoBookmarks';
-import { Modal } from './modal';
-import { IProduct } from '@/types';
 import Banner from './Banner';
 import Categories from './Categories';
+import NoBookmarks from './NoBookmarks';
+import ProductItem from './ProductItem';
+import { Modal } from './modal';
+import { menu } from '@/constants';
+import { useAppSelector } from '@/redux/hooks';
+import { IProduct } from '@/types';
 
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(
     (state) => state.menuReducer,
   );
   const pathname = usePathname();
-  // console.log(pathname);
 
   const pizzasMenu = menu.filter((item) => item.group === 'pizzas');
   const snacksMenu = menu.filter((item) => item.group === 'snacks');

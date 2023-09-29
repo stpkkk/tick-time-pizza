@@ -1,13 +1,13 @@
 'use client';
-import React, { useCallback, useEffect, useRef } from 'react';
-import { useAppSelector } from '@/redux/hooks';
-import Image from 'next/image';
 
-import { BookmarkButton } from '@/components/common';
+import React, { useCallback, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import pizza from '../../../public/assets/icons/pizza.svg';
 import ImageNotice from './ImageNotice';
-import ProductTitle from './ProductTitle';
 import ModalTotal from './ModalTotal';
+import ProductTitle from './ProductTitle';
+import { BookmarkButton } from '@/components/common';
+import { useAppSelector } from '@/redux/hooks';
 
 interface ModalLeftContentProps {
   setModalHeight: React.Dispatch<React.SetStateAction<number>>;

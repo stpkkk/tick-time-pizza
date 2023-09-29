@@ -1,8 +1,7 @@
 import React from 'react';
-import { useAppDispatch } from '@/redux/hooks';
-import { setSelectedCategory } from '@/redux/features/menuSlice';
-
 import { categories } from '@/constants';
+import { setSelectedCategory } from '@/redux/features/menuSlice';
+import { useAppDispatch } from '@/redux/hooks';
 
 const NoBookmarks: React.FC = () => {
   const dispatch = useAppDispatch();

@@ -1,8 +1,8 @@
-export * from './modal';
-import Menu from './Menu';
-import ProductItem from './ProductItem';
 import Banner from './Banner';
 import Categories from './Categories';
+import Menu from './Menu';
 import NoBookmarks from './NoBookmarks';
+import ProductItem from './ProductItem';
 
+export * from './modal';
 export { Menu, ProductItem, Banner, Categories, NoBookmarks };

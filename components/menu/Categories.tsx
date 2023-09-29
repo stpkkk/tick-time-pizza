@@ -1,11 +1,11 @@
 'use client';
-import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { setSelectedCategory } from '@/redux/features/menuSlice';
-import { RadioGroup } from '@headlessui/react';
 
+import React, { useEffect } from 'react';
 import { RadioGroupOption } from '../common';
 import { categories } from '@/constants';
+import { setSelectedCategory } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { RadioGroup } from '@headlessui/react';
 
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();

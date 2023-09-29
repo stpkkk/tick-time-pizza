@@ -1,16 +1,16 @@
 'use client';
-import React, { useRef } from 'react';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useRef } from 'react';
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
 } from 'react-icons/io';
-
 import Image from 'next/image';
 import SwiperCore from 'swiper';
-
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
 import slide1 from '../../public/assets/images/slider/slide-1.webp';
 import slide2 from '../../public/assets/images/slider/slide-2.webp';
@@ -19,11 +19,8 @@ import slide4 from '../../public/assets/images/slider/slide-4.webp';
 import slide5 from '../../public/assets/images/slider/slide-5.webp';
 import slide6 from '../../public/assets/images/slider/slide-6.webp';
 import slide7 from '../../public/assets/images/slider/slide-7.webp';
-import slideWed from '../../public/assets/images/slider/slide-wed.webp';
 import slideTh from '../../public/assets/images/slider/slide-th.webp';
-
-import 'swiper/css/pagination';
-import 'swiper/css';
+import slideWed from '../../public/assets/images/slider/slide-wed.webp';
 
 SwiperCore.use([Navigation]);
 

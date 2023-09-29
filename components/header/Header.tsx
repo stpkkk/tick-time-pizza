@@ -1,11 +1,11 @@
 'use client';
-import React, { useEffect } from 'react';
 
-import HeaderMobile from './HeaderMobile';
+import React, { useEffect } from 'react';
 import HeaderDesktop from './HeaderDesktop';
+import HeaderMobile from './HeaderMobile';
 import { addToCart } from '@/redux/features/menuSlice';
-import { IProduct } from '@/types';
 import { useAppDispatch } from '@/redux/hooks';
+import { IProduct } from '@/types';
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();

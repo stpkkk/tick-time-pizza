@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect, useRef, useCallback } from 'react';
-import { toggleTooltip } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
+import React, { useEffect, useRef, useCallback } from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
+import { toggleTooltip } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ImageNotice: React.FC = () => {
   const dispatch = useAppDispatch();

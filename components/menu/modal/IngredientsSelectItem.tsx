@@ -1,13 +1,13 @@
 'use client';
+
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import Image from 'next/image';
+import Counter from './Counter';
 import {
   decrementIngredientQuantity,
   incrementIngredientQuantity,
 } from '@/redux/features/menuSlice';
-import Image from 'next/image';
-
-import Counter from './Counter';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IAdditionalIngredient } from '@/types';
 
 type IngredientsSelectItemProps = {

@@ -1,5 +1,5 @@
-import { useReadingProgress } from '@/hooks';
 import React from 'react';
+import { useReadingProgress } from '@/hooks';
 
 const ProgressBar: React.FC = () => {
   const completion = useReadingProgress();

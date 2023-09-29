@@ -1,13 +1,12 @@
 import React from 'react';
-import { useAppSelector } from '@/redux/hooks';
-
-import ProductSizeSelection from './ProductSizeSelection';
-import IngredientsSelect from './IngredientsSelect';
+import Image from 'next/image';
 import IngredientsRemove from './IngredientsRemove';
+import IngredientsSelect from './IngredientsSelect';
 import NutritionalValue from './NutritionalValue';
+import ProductSizeSelection from './ProductSizeSelection';
 import ProductTitle from './ProductTitle';
 import ProductWeight from './ProductWeight';
-import Image from 'next/image';
+import { useAppSelector } from '@/redux/hooks';
 
 type ModalRightContentProps = {
   modalHeight: number;

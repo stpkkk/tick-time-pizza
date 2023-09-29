@@ -1,15 +1,14 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { setIsHoveringPhone, toggleNav } from '@/redux/features/headerSlice';
-import Link from 'next/link';
-
-import { RiLoginCircleLine } from 'react-icons/ri';
 import { IoIosArrowDown } from 'react-icons/io';
+import { RiLoginCircleLine } from 'react-icons/ri';
+import Link from 'next/link';
 import { Logo } from '../common';
+import HeaderCart from './HeaderCart';
 import Nav from './Nav';
 import Phone from './Phone';
 import ProgressBar from './ProgressBar';
-import HeaderCart from './HeaderCart';
+import { setIsHoveringPhone, toggleNav } from '@/redux/features/headerSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();

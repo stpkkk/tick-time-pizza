@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IProduct, IOption, IAdditionalIngredient } from '@/types';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface MenuState {
   isModalOpen: boolean;

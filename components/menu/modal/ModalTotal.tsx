@@ -1,14 +1,13 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import Counter from './Counter';
+import { useLocalStorage } from '@/hooks';
 import {
   addToCart,
   decrementProductQuantity,
   incrementProductQuantity,
   toggleModal,
 } from '@/redux/features/menuSlice';
-
-import Counter from './Counter';
-import { useLocalStorage } from '@/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { calculateProductPrices } from '@/utils';
 
 const ModalTotal: React.FC = () => {
