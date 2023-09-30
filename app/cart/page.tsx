@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { BackButton, Cart } from '@/components';
+import { BackButton, Cart, Tabs } from '@/components';
 
 const CartPage: React.FC = () => {
   return (
@@ -12,6 +12,7 @@ const CartPage: React.FC = () => {
       </div>
       <Cart />
       <div className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</div>
+      <Tabs />
     </div>
   );
 };
