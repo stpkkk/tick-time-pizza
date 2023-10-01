@@ -71,6 +71,7 @@ import buffaloSauce from '../public/assets/images/sauces/sauce-buffalo.webp';
 import caesarSauce from '../public/assets/images/sauces/sauce-caesar.webp';
 import cheeseSauce from '../public/assets/images/sauces/sauce-cheese.webp';
 import ketchup from '../public/assets/images/sauces/sauce-ketchup.webp';
+import sweetSourSauce from '../public/assets/images/sauces/sauce-sweet-sour.webp';
 import garlicSauce from '../public/assets/images/sauces/sauсe-garlic.webp';
 //snacks
 import dumplingsCheese from '../public/assets/images/snacks/dumplings-cheese.webp';
@@ -9364,14 +9365,21 @@ export const menu: IProduct[] = [
   },
   {
     id: 44,
+    title: 'соус Кисло-Сладкий',
+    image: sweetSourSauce,
+    group: 'sauces',
+    prices: [{ id: 0, price: 45 }],
+  },
+  {
+    id: 45,
     title: 'Малиновое варенье 30 гр.',
     image: jamRaspberry,
     group: 'sauces',
     prices: [{ id: 0, price: 29 }],
   },
   {
-    id: 45,
-    title: 'Соус Цезарь',
+    id: 46,
+    title: 'cоус Цезарь',
     image: caesarSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 29 }],
