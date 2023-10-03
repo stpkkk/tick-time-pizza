@@ -50,7 +50,7 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
       {selectedProduct?.sizes && selectedProduct?.dough && (
         <ProductSizeSelection />
       )}
-      {selectedProduct?.additionalIngredients?.length === 0 || (
+      {selectedProduct?.additionalIngredients && selectedProduct?.additionalIngredients?.length >= 0 || (
         <p className='block text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
           {selectedProduct?.ingredients}
         </p>

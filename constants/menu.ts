@@ -83,6 +83,7 @@ import saladVegetablesEgg from '../public/assets/images/snacks/salad-vegetables-
 import soupTomatoCream from '../public/assets/images/snacks/soup-tomato-cream.webp';
 import { IProduct } from '@/types';
 
+
 export const menu: IProduct[] = [
   {
     id: 0,
@@ -9334,6 +9335,7 @@ export const menu: IProduct[] = [
     image: ketchup,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 40,
@@ -9341,6 +9343,7 @@ export const menu: IProduct[] = [
     image: bbqSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 41,
@@ -9348,6 +9351,7 @@ export const menu: IProduct[] = [
     image: buffaloSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 42,
@@ -9355,6 +9359,7 @@ export const menu: IProduct[] = [
     image: garlicSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 43,
@@ -9362,6 +9367,7 @@ export const menu: IProduct[] = [
     image: cheeseSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 44,
@@ -9369,6 +9375,7 @@ export const menu: IProduct[] = [
     image: sweetSourSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 45 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 45,
@@ -9376,6 +9383,7 @@ export const menu: IProduct[] = [
     image: jamRaspberry,
     group: 'sauces',
     prices: [{ id: 0, price: 29 }],
+    weights: [{ id: 0, weight: 30 }],
   },
   {
     id: 46,
@@ -9383,5 +9391,6 @@ export const menu: IProduct[] = [
     image: caesarSauce,
     group: 'sauces',
     prices: [{ id: 0, price: 29 }],
+    weights: [{ id: 0, weight: 30 }],
   },
 ];

@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../../public/assets/icons/pizza.svg';
+import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
+import { useAppDispatch } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 type ProductListProps = {
@@ -8,6 +10,20 @@ type ProductListProps = {
 };
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
+  const dispatch = useAppDispatch();
+
+  const handleClickProduct = (clickedProduct: IProduct) => {
+    const selectedProduct = products.find(
+      (product) => product.id === clickedProduct.id,
+    );
+
+    if (selectedProduct) {
+      dispatch(setSelectedProduct(selectedProduct));
+    }
+
+    dispatch(toggleModal(true));
+  };
+
   return (
     <ul
       className='grid grid-cols-2 gap-7 sm:no-scrollbar sm:scroll sm:flex sm:scroll-px-4 flex-row sm:gap-4 sm:overflow-x-scroll sm:scroll-smooth whitespace-nowrap w-full sm:h-[135px]'
@@ -32,6 +48,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
               {product.prices[0].price} ₽
             </span>
             <button
+              onClick={() => handleClickProduct(product)}
               className='btn_yellow min-w-[150px] sm:max-w-[100px] sm:h-[35px]'
               type='button'
             >
