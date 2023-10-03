@@ -1,25 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../../public/assets/icons/pizza.svg';
-import { menu } from '@/constants';
 import { IProduct } from '@/types';
 
-const PopularTab: React.FC = () => {
-  const shuffled = menu.sort(function () {
-    return 0.5 - Math.random();
-  });
-  const popularProducts = shuffled.slice(0, 8);
+type ProductListProps = {
+  products: IProduct[];
+};
 
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
     <ul
       className='grid grid-cols-2 gap-7 sm:no-scrollbar sm:scroll sm:flex sm:scroll-px-4 flex-row sm:gap-4 sm:overflow-x-scroll sm:scroll-smooth whitespace-nowrap w-full sm:h-[135px]'
-      id='popular'
+      role='tabpanel'
     >
-      {popularProducts?.map((sauce: IProduct) => (
-        <li className='flex flex-none gap-4 mb-6' key={sauce.id}>
+      {products.map((product) => (
+        <li className='flex flex-none gap-4 mb-6' key={product.id}>
           <Image
-            src={sauce.image}
-            alt={sauce.title}
+            src={product.image}
+            alt={product.title}
             placeholder='blur'
             blurDataURL={pizza.src}
             width={150}
@@ -28,9 +26,11 @@ const PopularTab: React.FC = () => {
           />
           <div className='flex justify-between flex-col gap-4 font-bold'>
             <span className='block sm:text-xs whitespace-pre-wrap max-w-[150px]'>
-              {sauce.title}
+              {product.title}
             </span>
-            <span className='block sm:text-xs'>{sauce.prices[0].price} ₽</span>
+            <span className='block sm:text-xs'>
+              {product.prices[0].price} ₽
+            </span>
             <button
               className='btn_yellow min-w-[150px] sm:max-w-[100px] sm:h-[35px]'
               type='button'
@@ -44,4 +44,4 @@ const PopularTab: React.FC = () => {
   );
 };
 
-export default PopularTab;
+export default ProductList;

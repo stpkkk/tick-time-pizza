@@ -1,5 +1,5 @@
-import PopularTab from './PopularTab';
-import SauceTab from './SauceTab';
+import ProductList from './ProductList';
+import Tab from './Tab';
 import Tabs from './Tabs';
 
-export { SauceTab, PopularTab, Tabs };
+export { Tab, ProductList, Tabs };
