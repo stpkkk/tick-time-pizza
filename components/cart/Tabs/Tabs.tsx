@@ -1,10 +1,11 @@
 import React from 'react';
 import ProductList from './ProductList';
 import Tab from './Tab';
-import { Modal } from '@/components/menu';
+import { Modal } from '@/components/modal';
 import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
+
 
 const Tabs: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState(1);

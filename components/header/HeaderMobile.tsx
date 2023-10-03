@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import Logo from '../common/Logo';
+import { Logo } from '../common';
 import HeaderCart from './HeaderCart';
 import Nav from './Nav';
 import { toggleNav } from '@/redux/features/headerSlice';

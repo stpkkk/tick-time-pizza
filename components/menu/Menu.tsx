@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import { Modal } from '../modal';
 import Banner from './Banner';
 import Categories from './Categories';
 import NoBookmarks from './NoBookmarks';
 import ProductItem from './ProductItem';
-import { Modal } from './modal';
 import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
+
 
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(

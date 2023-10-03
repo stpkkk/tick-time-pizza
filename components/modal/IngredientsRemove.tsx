@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
+import { RadioGroupOption } from '../common';
 import ModalSubTitle from './ModalSubTitle';
-import { RadioGroupOption } from '@/components/common';
 import { setRemovedIngredients } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IOption } from '@/types';

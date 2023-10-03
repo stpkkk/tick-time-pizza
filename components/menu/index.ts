@@ -4,5 +4,4 @@ import Menu from './Menu';
 import NoBookmarks from './NoBookmarks';
 import ProductItem from './ProductItem';
 
-export * from './modal';
 export { Menu, ProductItem, Banner, Categories, NoBookmarks };

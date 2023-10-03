@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import Image from 'next/image';
-import { Counter } from '../menu';
+import { Counter } from '../modal';
 import { IAdditionalIngredient, IOption, IProduct } from '@/types';
 import { calculateProductPrices } from '@/utils';
 

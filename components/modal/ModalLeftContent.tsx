@@ -2,11 +2,11 @@
 
 import React, { useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import pizza from '../../../public/assets/icons/pizza.svg';
+import pizza from '../../public/assets/icons/pizza.svg';
+import { BookmarkButton } from '../common';
 import ImageNotice from './ImageNotice';
 import ModalTotal from './ModalTotal';
 import ProductTitle from './ProductTitle';
-import { BookmarkButton } from '@/components/common';
 import { useAppSelector } from '@/redux/hooks';
 
 interface ModalLeftContentProps {

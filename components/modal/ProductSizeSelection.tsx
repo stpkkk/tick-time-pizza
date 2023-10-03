@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { RadioGroupOption } from '@/components/common';
+import { RadioGroupOption } from '../common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IOption } from '@/types';
