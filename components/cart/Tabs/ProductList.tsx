@@ -26,11 +26,11 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
 
   return (
     <ul
-      className='grid grid-cols-2 gap-7 sm:no-scrollbar sm:scroll sm:flex sm:scroll-px-4 flex-row sm:gap-4 sm:overflow-x-scroll sm:scroll-smooth whitespace-nowrap w-full sm:h-[135px]'
+      className='grid grid-cols-2 gap-7 md:no-scrollbar md:scroll md:flex md:scroll-px-4 md:flex-row sm:gap-4 md:overflow-x-scroll md:scroll-smooth whitespace-nowrap w-full sm:h-[135px]'
       role='tabpanel'
     >
       {products.map((product) => (
-        <li className='flex flex-none gap-4 mb-6' key={product.id}>
+        <li className='flex flex-none gap-4 mb-6 ' key={product.id}>
           <Image
             src={product.image}
             alt={product.title}
@@ -38,7 +38,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
             blurDataURL={pizza.src}
             width={150}
             height={150}
-            className='aspect-square h-full max-h-[150px] w-full max-w-[150px] sm:max-h-[102px] sm:max-w-[102px]'
+            className='aspect-square h-full max-h-[150px] w-full max-w-[150px] sm:max-h-[102px] sm:max-w-[102px] lg:max-h-[90px] lg:max-w-[90px]'
           />
           <div className='flex justify-between flex-col gap-4 font-bold'>
             <span className='block sm:text-xs whitespace-pre-wrap max-w-[150px]'>

@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { IOption } from './radio-option';
 
+
 export interface IPrice {
   id: number;
   price: number;
