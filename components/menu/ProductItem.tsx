@@ -23,11 +23,11 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   const starterPrice = product.prices.find((product) => product.id === 0)
     ?.price;
 
-  const handleMouseOverItem = () => {
+  const handleMouseEnterItem = () => {
     dispatch(setHoveredItemId(product.id));
   };
 
-  const handleMouseOutItem = () => {
+  const handleMouseLeaveItem = () => {
     dispatch(setHoveredItemId(null));
   };
 
@@ -46,8 +46,8 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
   return (
     <li
       className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-lg bg-white sm:max-w-[420px] sm:p-4 sm:drop-shadow-custom'
-      onMouseOver={handleMouseOverItem}
-      onMouseOut={handleMouseOutItem}
+      onMouseEnter={handleMouseEnterItem}
+      onMouseLeave={handleMouseLeaveItem}
     >
       <div
         className='flex h-full flex-col justify-between'

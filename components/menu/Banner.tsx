@@ -64,11 +64,9 @@ const Banner = () => {
             <Image
               src={slide.image}
               alt='Акция в Тик Тайм'
-              width={1230}
-              height={389}
               placeholder='blur'
               blurDataURL={pattern.src}
-              className='h-auto w-full rounded-2xl'
+              className=' rounded-2xl h-full max-h-[389px] w-full max-w-[1230px]'
               quality={100}
               key={slide.id}
             />

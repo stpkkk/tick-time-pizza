@@ -6,7 +6,6 @@ import HeaderMobile from './HeaderMobile';
 import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
-
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 

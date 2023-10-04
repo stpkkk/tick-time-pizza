@@ -83,7 +83,6 @@ import saladVegetablesEgg from '../public/assets/images/snacks/salad-vegetables-
 import soupTomatoCream from '../public/assets/images/snacks/soup-tomato-cream.webp';
 import { IProduct } from '@/types';
 
-
 export const menu: IProduct[] = [
   {
     id: 0,

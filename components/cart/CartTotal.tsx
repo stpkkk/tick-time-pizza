@@ -2,7 +2,6 @@ import React from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import { calculateCartTotalPrice } from '@/utils';
 
-
 const CartTotal: React.FC = () => {
   const [isPromoDisabled, setIsPromoDisabled] = React.useState(true);
   const cartProducts = useAppSelector(

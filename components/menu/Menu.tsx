@@ -11,7 +11,6 @@ import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory, bookmarks } = useAppSelector(
     (state) => state.menuReducer,

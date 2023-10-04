@@ -6,7 +6,6 @@ import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-
 const Tabs: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState(1);
   const [hydrated, setHydrated] = React.useState(false);
