@@ -35,7 +35,7 @@ const Tabs: React.FC = () => {
   return (
     <>
       <div className='flex flex-wrap drop-shadow-custom rounded-2xl'>
-        <div className='w-full max-w-[calc(100%-420px)] md:max-w-full'>
+        <div className='w-full md:max-w-full'>
           <ul className='flex flex-wrap gap-x-2 flex-row' role='tablist'>
             <Tab
               label='Соусы'

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { BackButton, Cart, Tabs } from '@/components';
+import { BackButton, Cart, CartTotal, Tabs } from '@/components';
 
 const CartPage: React.FC = () => {
   return (
@@ -10,9 +10,16 @@ const CartPage: React.FC = () => {
         <BackButton />
         <div className='h1'>Корзина</div>
       </div>
-      <Cart />
-      <div className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</div>
-      <Tabs />
+      <div className='flex flex-row sm:flex-col gap-[30px]'>
+        <div className='flex flex-col max-w-[calc(100%-420px)] sm:max-w-full'>
+          <Cart />
+          <div className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</div>
+          <Tabs />
+        </div>
+        <div className='flex-none w-[390px] sm:w-full'>
+          <CartTotal />
+        </div>
+      </div>
     </div>
   );
 };

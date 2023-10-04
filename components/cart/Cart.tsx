@@ -62,7 +62,7 @@ const Cart: React.FC = () => {
 
   return (
     <div className='flex w-full flex-row gap-[30px] sm:flex-col'>
-      <div className='w-full max-w-[calc(100%-420px)] md:max-w-full'>
+      <div className='w-full md:max-w-full'>
         {cartProducts.length > 0 ? (
           <ul className='flex flex-col gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:px-4 sm:py-8'>
             {cartProducts.map((product) => (
