@@ -41,7 +41,7 @@ const CartTotal: React.FC = () => {
             </label>
             <button
               type='submit'
-              className='bg-yellow hover:bg-yellowLight font-bold py-2 px-6 rounded-2xl text-sm disabled:bg-gray absolute sm:rounded-[13px] top-1 right-[3px] md:right-1 uppercase md:px-6 h-[52px]'
+              className='bg-yellow hover:bg-yellowLight font-bold py-2 px-6 rounded-2xl text-sm disabled:bg-gray disabled:text-grayDark absolute sm:rounded-[13px] top-1 right-[3px] md:right-1 uppercase md:px-6 h-[52px]'
               disabled={isPromoDisabled}
             >
               ок
@@ -70,7 +70,7 @@ const CartTotal: React.FC = () => {
         </button>
         <p className='text-[0.645rem] leading-[15px]'>
           С условиями оферты и политикой конфиденциальности можно ознакомиться,
-          перейдя по этой
+          перейдя по этой{' '}
           <a target='_blank' className='underline' href='/legal'>
             ссылке
           </a>
