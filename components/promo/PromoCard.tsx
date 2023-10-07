@@ -2,26 +2,31 @@ import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { Promos } from '@/types';
+import { promos } from '@/constants';
+import { toggleModal } from '@/redux/features/menuSlice';
+import { setSelectedPromo } from '@/redux/features/promoSlice';
+import { useAppDispatch } from '@/redux/hooks';
+import { Promo } from '@/types';
+import { getCurrentDay } from '@/utils';
 
 type PromoCardProps = {
-  promo: Promos;
+  promo: Promo;
 };
 
 const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
-  const days = [
-    'Воскресенье',
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-    'Суббота',
-  ];
-  const d = new Date();
-  const n = d.getDay();
-
+  const dispatch = useAppDispatch();
+  const currentDay = getCurrentDay();
   const isPizzaOfTheDay = promo.title === 'Пицца дня.';
+
+  const handleClickPromo = (clickedPromo: Promo) => {
+    const selectedPromo = promos.find((promo) => promo.id === clickedPromo.id);
+
+    if (selectedPromo) {
+      dispatch(setSelectedPromo(selectedPromo));
+    }
+
+    dispatch(toggleModal(true));
+  };
 
   return (
     <article className='flex flex-col w-full h-full bg-white sm:max-w-[420px] max-w-[350px] md:max-w-[350px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4'>
@@ -33,21 +38,25 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         width={350}
         height={197}
+        onClick={() => handleClickPromo(promo)}
         className='aspect-square h-full max-h-[197px] w-full max-w-[350px] sm:max-h-[144px] cursor-pointer rounded-2xl mb-4 sm:self-center'
       />
       <span className='block font-semibold leading-5 mb-4'>
-        {isPizzaOfTheDay ? promo.title + ' ' + days[n] : promo.title}
+        {isPizzaOfTheDay ? promo.title + ' ' + currentDay : promo.title}
       </span>
       <footer className='flex-1 flex justify-start items-center gap-7'>
-        <button className='btn_yellow max-w-[100px] sm:max-h-[35px]'>
-          Выбрать
-        </button>
+        {promo.isRedirect && (
+          <button className='btn_yellow max-w-[100px] sm:max-h-[35px]'>
+            Выбрать
+          </button>
+        )}
+
         <button
           type='button'
-          // onClick={() => ''}
+          onClick={() => handleClickPromo(promo)}
           className='flex justify-between items-center flex-nowrap flex-row gap-3 text-sm font-semibold text-grayDark hover:text-primary'
         >
-          <BsPlusSquare size={24} className='sm:w-[21px] sm:h-[21px]' />
+          <BsPlusSquare size={24} className='sm:w-[20px] sm:h-[20px]' />
           <span className='sm:text-xs sm:leading-[15px]'>Подробнее</span>
         </button>
       </footer>

@@ -87,7 +87,7 @@ body {
   @apply font-zheldor text-[2.5rem] font-normal leading-[3rem] sm:text-2xl;
 }
 
-.modal_form {
+.modal {
   @apply grid h-full grid-cols-2 gap-[60px] overflow-auto overflow-x-hidden bg-white py-[60px] pl-[60px] text-left drop-shadow-custom sm:block sm:px-8 sm:pb-44 sm:pt-8;
 }
 

@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
-import { PromoCard } from '@/components';
+import { ModalPromo, PromoCard } from '@/components';
 import { promos } from '@/constants';
+import { useAppSelector } from '@/redux/hooks';
 
 const Promo: React.FC = () => {
+  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
+
   return (
     <div className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:mt-[70px]'>
       <div className='h1 my-10 sm:my-4 ml-[60px] sm:ml-4'>Акции</div>
@@ -11,6 +16,7 @@ const Promo: React.FC = () => {
           <PromoCard promo={promo} key={crypto.randomUUID()} />
         ))}
       </div>
+      {isModalOpen && <ModalPromo />}
     </div>
   );
 };

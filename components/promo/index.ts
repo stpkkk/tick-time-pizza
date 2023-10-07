@@ -1,3 +1,4 @@
+import ModalPromo from './ModalPromo';
 import PromoCard from './PromoCard';
 
-export { PromoCard };
+export { PromoCard, ModalPromo };
