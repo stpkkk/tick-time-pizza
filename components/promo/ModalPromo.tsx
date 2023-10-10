@@ -1,15 +1,16 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import Image from 'next/image';
+import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { toggleModal } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { getCurrentDay } from '@/utils';
+import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedPromo } = useAppSelector((state) => state.promoReducer);
-  const currentDay = getCurrentDay();
+  const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = selectedPromo!.title === 'Пицца дня.';
   const modalRef = React.useRef<HTMLDivElement>(null);
 
@@ -72,12 +73,12 @@ const ModalPromo: React.FC = () => {
                 {selectedPromo?.description}
               </p>
               {selectedPromo?.isRedirect && (
-                <button
-                  className='btn_yellow max-w-[100px] h-[45px] sm:h-[35px]'
-                  type='button'
+                <Link
+                  className='btn_yellow max-w-[100px] sm:max-h-[35px]'
+                  href={`/promo/${selectedPromo.id}`}
                 >
                   Выбрать
-                </button>
+                </Link>
               )}
             </div>
           </div>

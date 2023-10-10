@@ -8,7 +8,7 @@ import { toggleModal } from '@/redux/features/menuSlice';
 import { setSelectedPromo } from '@/redux/features/promoSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promo } from '@/types';
-import { getCurrentDay } from '@/utils';
+import { getPizzaOfTheDay } from '@/utils';
 
 type PromoCardProps = {
   promo: Promo;
@@ -16,7 +16,7 @@ type PromoCardProps = {
 
 const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
   const dispatch = useAppDispatch();
-  const currentDay = getCurrentDay();
+  const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = promo.title === 'Пицца дня.';
 
   const handleClickPromo = (clickedPromo: Promo) => {

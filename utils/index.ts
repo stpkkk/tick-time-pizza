@@ -1,2 +1,2 @@
 export * from './calculatePrices';
-export * from './getCurrentDay';
+export * from './getPizzaOfTheDay';
