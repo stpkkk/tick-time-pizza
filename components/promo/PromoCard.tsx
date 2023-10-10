@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { promos } from '@/constants';
 import { toggleModal } from '@/redux/features/menuSlice';
@@ -46,9 +47,12 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
       </span>
       <footer className='flex-1 flex justify-start items-center gap-7'>
         {promo.isRedirect && (
-          <button className='btn_yellow max-w-[100px] sm:max-h-[35px]'>
+          <Link
+            className='btn_yellow max-w-[100px] sm:max-h-[35px]'
+            href={`/promo/${promo.id}`}
+          >
             Выбрать
-          </button>
+          </Link>
         )}
 
         <button
