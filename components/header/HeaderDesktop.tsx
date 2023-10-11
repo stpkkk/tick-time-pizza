@@ -57,7 +57,6 @@ const HeaderDesktop: React.FC = () => {
         </div>
         <Link
           href='/account'
-          as='account'
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />

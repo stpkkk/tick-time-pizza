@@ -10,10 +10,7 @@ const Footer: React.FC = () => {
     <footer className='content_container mt-[50px] drop-shadow-custom sm:mb-4'>
       <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4 '>
         <div className='flex_center gap-2 sm:gap-0'>
-          <Link
-            href='https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim'
-            as='Google Store'
-          >
+          <Link href='https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim'>
             <Image
               src={google}
               width={150}
@@ -22,10 +19,7 @@ const Footer: React.FC = () => {
               className='h-[50px] max-w-[150px]'
             />
           </Link>
-          <Link
-            href='https://apps.apple.com/ru/app/id1482770584'
-            as='Apple Store'
-          >
+          <Link href='https://apps.apple.com/ru/app/id1482770584'>
             <Image
               src={apple}
               width={150}
@@ -60,10 +54,7 @@ const Footer: React.FC = () => {
         </div>
         <div className='flex w-full flex-col gap-3 whitespace-nowrap text-right underline sm:items-center'>
           <Link href='/legal'>Правовая информация</Link>
-          <Link
-            href='https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/'
-            as='Igor Stepanov'
-          >
+          <Link href='https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/'>
             Поддержка сайта Степанов Игорь
           </Link>
         </div>

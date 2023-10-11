@@ -54,7 +54,6 @@ const HeaderCart: React.FC = () => {
     >
       <Link
         href='/cart'
-        as='cart'
         className='flex_center h-full w-[6rem] flex-col gap-2 sm:flex-row-reverse'
       >
         <BsBasket2 size={25} />

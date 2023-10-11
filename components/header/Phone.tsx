@@ -7,7 +7,6 @@ const Phone: React.FC = () => {
       <div>
         <Link
           href='tel:330204'
-          as='phone'
           className='font-zheldor text-[2rem] leading-10 '
         >
           33-02-04

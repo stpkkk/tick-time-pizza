@@ -22,7 +22,6 @@ const Nav: React.FC = () => {
             <Link
               className={`${pathname === link.href && 'text-secondary'}`}
               draggable='false'
-              as={link.href}
               href={link.href}
             >
               {link.text}
@@ -32,7 +31,6 @@ const Nav: React.FC = () => {
         <li>
           <Link
             href='/login'
-            as='login'
             className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
           >
             <div>Войти</div>
