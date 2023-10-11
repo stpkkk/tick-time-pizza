@@ -45,7 +45,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
   return (
     <li
-      className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-lg bg-white sm:max-w-[420px] sm:p-4 sm:drop-shadow-custom'
+      className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-2xl bg-white sm:max-w-[420px] md:p-4 sm:drop-shadow-custom'
       onMouseEnter={handleMouseEnterItem}
       onMouseLeave={handleMouseLeaveItem}
     >

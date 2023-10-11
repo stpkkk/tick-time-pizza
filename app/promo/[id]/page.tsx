@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { BackButton, ProductItem } from '@/components';
+import { BackButton, ProductItem, PromoTotal } from '@/components';
 import { menu, promos } from '@/constants';
 import { IProduct } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
@@ -59,12 +59,15 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
         </div>
       </div>
-      <div className='flex flex-col gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:px-4 sm:p-0 max-w-[915px] sm:drop-shadow-none  sm:mx-auto'>
-        <div className='grid smMin:grid-cols-1 mdMin:grid-cols-2 lgMin:grid-cols-3 gap-[30px] sm:gap-4'>
-          {promoProducts.map((product) => (
-            <ProductItem key={product.id} product={product} />
-          ))}
+      <div className='flex justify-between gap-[30px] '>
+        <div className='flex flex-col sm:gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] w-full drop-shadow-custom md:px-4  sm:drop-shadow-none sm:mx-auto'>
+          <div className='grid justify-items-center smMin:grid-cols-1 mdMin:grid-cols-2 lgMin:grid-cols-3 gap-[30px] sm:gap-4 '>
+            {promoProducts.map((product) => (
+              <ProductItem key={product.id} product={product} />
+            ))}
+          </div>
         </div>
+        <PromoTotal />
       </div>
     </div>
   );
