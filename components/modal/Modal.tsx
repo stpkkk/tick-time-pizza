@@ -11,7 +11,11 @@ import {
 } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
-const Modal: React.FC = () => {
+type ModalProps = {
+  promoTitle: string;
+};
+
+const Modal: React.FC<ModalProps> = ({ promoTitle }) => {
   const dispatch = useAppDispatch();
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -68,7 +72,10 @@ const Modal: React.FC = () => {
               </button>
               <div className='modal'>
                 <ModalLeftContent setModalHeight={setModalHeight} />
-                <ModalRightContent modalHeight={modalHeight} />
+                <ModalRightContent
+                  modalHeight={modalHeight}
+                  promoTitle={promoTitle}
+                />
               </div>
             </div>
           </div>

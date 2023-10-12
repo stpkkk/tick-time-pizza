@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { BackButton, ProductItem, PromoTotal } from '@/components';
+import { Modal } from '@/components/modal';
 import { menu, promos } from '@/constants';
+import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 
@@ -13,6 +15,7 @@ type PromoProps = {
 };
 
 const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
+  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
   const pizzas = menu.filter((product) => product.group === 'pizzas');
   const promo = promos.find((p) => p.id === +id);
   const currentDay = getPizzaOfTheDay().dayOfWeek;
@@ -59,7 +62,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
         </div>
       </div>
-      <div className='flex justify-between gap-[30px] '>
+      <div className='flex justify-between gap-[30px]'>
         <div className='flex flex-col sm:gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] w-full drop-shadow-custom md:px-4  sm:drop-shadow-none sm:mx-auto'>
           <div className='grid justify-items-center smMin:grid-cols-1 mdMin:grid-cols-2 lgMin:grid-cols-3 gap-[30px] sm:gap-4 '>
             {promoProducts.map((product) => (
@@ -69,6 +72,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
         </div>
         <PromoTotal />
       </div>
+      {isModalOpen && <Modal promoTitle={promoTitle} />}
     </div>
   );
 };
