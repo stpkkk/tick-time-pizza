@@ -10,12 +10,10 @@ import { useAppSelector } from '@/redux/hooks';
 
 type ModalRightContentProps = {
   modalHeight: number;
-  promoTitle: string;
 };
 
 const ModalRightContent: React.FC<ModalRightContentProps> = ({
   modalHeight,
-  promoTitle,
 }) => {
   const { selectedProduct } = useAppSelector((state) => state.menuReducer);
 
@@ -50,7 +48,7 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
       </div>
       <ProductWeight />
       {selectedProduct?.sizes && selectedProduct?.dough && (
-        <ProductSizeSelection promoTitle={promoTitle} />
+        <ProductSizeSelection />
       )}
       {(selectedProduct?.additionalIngredients &&
         selectedProduct?.additionalIngredients?.length >= 0) || (

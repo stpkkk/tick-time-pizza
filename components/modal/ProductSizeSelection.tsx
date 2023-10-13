@@ -4,16 +4,10 @@ import React from 'react';
 import { RadioGroupOption } from '../common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { IOption } from '@/types';
+import { IOption, Promos } from '@/types';
 import { RadioGroup } from '@headlessui/react';
 
-type ProductSizeSelectionProps = {
-  promoTitle: string;
-};
-
-const ProductSizeSelection: React.FC<ProductSizeSelectionProps> = ({
-  promoTitle,
-}) => {
+const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
     (state) => state.menuReducer,
@@ -41,7 +35,7 @@ const ProductSizeSelection: React.FC<ProductSizeSelectionProps> = ({
   };
 
   const sizes =
-    promoTitle === '4 пиццы по цене 3'
+    promoTitle === Promos.FOUR_BIG_PIZZAS
       ? selectedProduct?.sizes?.filter((size) => size.name === bigSize)
       : selectedProduct?.sizes;
 
@@ -53,7 +47,7 @@ const ProductSizeSelection: React.FC<ProductSizeSelectionProps> = ({
             <RadioGroupOption
               key={size.id}
               option={size}
-              isChecked={selectedSize === size || isBigPizzaOnly}
+              isChecked={selectedSize === size}
               isDisabled={getIsDisabledSize(size)}
               className='flex_center h-[60px] w-full leading-[15px]'
             />

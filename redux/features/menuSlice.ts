@@ -1,4 +1,4 @@
-import { IProduct, IOption, IAdditionalIngredient } from '@/types';
+import { IProduct, IOption, IAdditionalIngredient, Promos } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface MenuState {
@@ -161,7 +161,7 @@ const menuSlice = createSlice({
         state.selectedProduct.sizes &&
         state.selectedProduct.group === 'pizzas'
       ) {
-        if (state.promoTitle === '4 пиццы по цене 3') {
+        if (state.promoTitle === Promos.FOUR_BIG_PIZZAS) {
           state.selectedSize = state.selectedProduct.sizes[2];
         } else {
           state.selectedSize = state.selectedProduct.sizes[0];

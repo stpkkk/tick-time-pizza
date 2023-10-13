@@ -5,7 +5,7 @@ import { BackButton, ProductItem, PromoTotal } from '@/components';
 import { Modal } from '@/components/modal';
 import { menu, promos } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
-import { IProduct } from '@/types';
+import { IProduct, Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 
 type PromoProps = {
@@ -24,6 +24,13 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
     (pizza) => pizza.title === getPizzaOfTheDay().pizzaOfTheDay,
   );
   const promoTitle = promo?.title ?? '';
+  const {
+    FOUR_BIG_PIZZAS,
+    PIZZA_OF_THE_DAY,
+    MARGARITA,
+    THREE_PIZZA_999,
+    PEPPERONI,
+  } = Promos;
 
   const filterPizzaByName = (name: string) =>
     pizzas.filter((product) => product.title === name);
@@ -37,15 +44,15 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
 
   const getPromoProducts = (title: string): IProduct[] => {
     switch (title) {
-      case '4 пиццы по цене 3':
+      case FOUR_BIG_PIZZAS:
         return fourPizzasPriceThree;
-      case 'Пицца дня.':
+      case PIZZA_OF_THE_DAY:
         return pizzaOfTheDay;
-      case 'Маргарита всегда со скидкой!':
+      case MARGARITA:
         return margarita;
-      case 'Три пиццы за 999 рублей':
+      case THREE_PIZZA_999:
         return threePizza999;
-      case 'Для любителей Пепперони':
+      case PEPPERONI:
         return pepperoni;
       default:
         return pizzas;
