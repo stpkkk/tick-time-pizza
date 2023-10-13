@@ -22,10 +22,10 @@ const Contacts: React.FC = () => {
           Заказы на доставку принимаем 24/7.
         </p>
         {pizzerias.map((pizzeria) => (
-          <Pizzerias pizzeria={pizzeria} />
+          <Pizzerias pizzeria={pizzeria} key={pizzeria.id} />
         ))}
         <p className='sm:text-sm text-base sm:mb-[30px] mb-[50px]'>
-          Телефон для заказа пиццы, еды и напитков в "Тик Тайм":{' '}
+          Телефон для заказа пиццы, еды и напитков в &quot;Тик Тайм&quot;:{' '}
           <span>
             <a className='underline' href='tel:330204'>
               33-02-04;
@@ -37,7 +37,7 @@ const Contacts: React.FC = () => {
             +7(905)299-92-08.
           </a>
           <br />
-          Время работы "Отдела сервиса" каждый день с 10:00 до 22:00;
+          Время работы &quot;Отдела сервиса&quot; каждый день с 10:00 до 22:00;
           <br />
           <a className='underline' href='mailto:ticktime.mail@gmail.com'>
             ticktime.mail@gmail.com

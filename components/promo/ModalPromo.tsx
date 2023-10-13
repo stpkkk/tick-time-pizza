@@ -14,11 +14,14 @@ const ModalPromo: React.FC = () => {
   const isPizzaOfTheDay = selectedPromo!.title === 'Пицца дня.';
   const modalRef = React.useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (e: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      dispatch(toggleModal(false));
-    }
-  };
+  const handleClickOutside = React.useCallback(
+    (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        dispatch(toggleModal(false));
+      }
+    },
+    [dispatch],
+  );
 
   React.useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
