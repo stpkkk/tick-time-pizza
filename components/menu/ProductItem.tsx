@@ -14,7 +14,7 @@ import { IProduct } from '@/types';
 
 interface IProductItemProps {
   product: IProduct;
-  promoTitle: string;
+  promoTitle?: string;
 }
 
 const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
@@ -40,7 +40,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
 
     if (selectedProduct) {
       dispatch(setSelectedProduct(selectedProduct));
-      dispatch(setPromoTitle(promoTitle));
+      dispatch(setPromoTitle(promoTitle || ''));
     }
 
     dispatch(toggleModal(true));
