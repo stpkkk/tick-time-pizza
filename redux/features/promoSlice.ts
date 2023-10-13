@@ -16,9 +16,10 @@ const promoSlice = createSlice({
     setSelectedPromo: (state, action: PayloadAction<Promo>) => {
       state.selectedPromo = action.payload;
     },
+    
   },
 });
 
-export const { setSelectedPromo } = promoSlice.actions;
+export const { setSelectedPromo, } = promoSlice.actions;
 
 export default promoSlice.reducer;

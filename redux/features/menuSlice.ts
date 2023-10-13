@@ -16,6 +16,7 @@ export interface MenuState {
   bookmarks: IProduct[];
   productQuantity: number;
   cartProducts: IProduct[];
+  promoTitle: string;
 }
 
 const initialState: MenuState = {
@@ -33,6 +34,7 @@ const initialState: MenuState = {
   bookmarks: [],
   productQuantity: 1,
   cartProducts: [],
+  promoTitle: '',
 };
 
 const menuSlice = createSlice({
@@ -128,6 +130,10 @@ const menuSlice = createSlice({
       state.cartProducts = action.payload;
     },
 
+    setPromoTitle: (state, action: PayloadAction<string>) => {
+      state.promoTitle = action.payload;
+    },
+
     //Bookmarks Actions
     addToBookmarks: (state, action: PayloadAction<IProduct>) => {
       const product = action.payload;
@@ -155,7 +161,11 @@ const menuSlice = createSlice({
         state.selectedProduct.sizes &&
         state.selectedProduct.group === 'pizzas'
       ) {
-        state.selectedSize = state.selectedProduct.sizes[0];
+        if (state.promoTitle === '4 пиццы по цене 3') {
+          state.selectedSize = state.selectedProduct.sizes[2];
+        } else {
+          state.selectedSize = state.selectedProduct.sizes[0];
+        }
       } else {
         state.selectedSize = null;
       }
@@ -191,6 +201,7 @@ export const {
   decrementProductQuantity,
   incrementProductQuantity,
   addToCart,
+  setPromoTitle,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

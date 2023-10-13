@@ -18,6 +18,7 @@ const ProductSizeSelection: React.FC<ProductSizeSelectionProps> = ({
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
     (state) => state.menuReducer,
   );
+  const { promoTitle } = useAppSelector((state) => state.menuReducer);
 
   const thinDough = 'Тонкое';
   const smallSize = 23;
@@ -43,9 +44,6 @@ const ProductSizeSelection: React.FC<ProductSizeSelectionProps> = ({
     promoTitle === '4 пиццы по цене 3'
       ? selectedProduct?.sizes?.filter((size) => size.name === bigSize)
       : selectedProduct?.sizes;
-
-  const isBigPizzaOnly =
-    selectedProduct?.sizes?.at(0) && promoTitle === '4 пиццы по цене 3';
 
   return (
     <div className='flex flex-col gap-2'>

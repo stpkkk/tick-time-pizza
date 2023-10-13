@@ -8,14 +8,16 @@ import {
   setHoveredItemId,
   toggleModal,
 } from '@/redux/features/menuSlice';
+import { setPromoTitle } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 interface IProductItemProps {
   product: IProduct;
+  promoTitle: string;
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
+const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
   const dispatch = useAppDispatch();
   const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
 
@@ -38,6 +40,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 
     if (selectedProduct) {
       dispatch(setSelectedProduct(selectedProduct));
+      dispatch(setPromoTitle(promoTitle));
     }
 
     dispatch(toggleModal(true));
