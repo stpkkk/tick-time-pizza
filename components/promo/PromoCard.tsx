@@ -5,7 +5,7 @@ import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { promos } from '@/constants';
 import { toggleModal } from '@/redux/features/menuSlice';
-import { setSelectedPromo } from '@/redux/features/promoSlice';
+import { setSelectedPromo } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promo } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';

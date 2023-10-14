@@ -16,7 +16,9 @@ interface ModalLeftContentProps {
 const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
   setModalHeight,
 }) => {
-  const { selectedProduct } = useAppSelector((state) => state.menuReducer);
+  const { selectedProduct, selectedPromo } = useAppSelector(
+    (state) => state.menuReducer,
+  );
 
   const modalLeft = useRef<HTMLDivElement>(null);
 
@@ -51,7 +53,7 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
           <BookmarkButton product={selectedProduct} />
         </div>
         <ImageNotice />
-        {selectedProduct?.additionalIngredients && (
+        {selectedProduct?.additionalIngredients && !selectedPromo && (
           <p className='block text-center text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
             {selectedProduct?.ingredients}
           </p>

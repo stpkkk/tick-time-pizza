@@ -8,16 +8,16 @@ import {
   setHoveredItemId,
   toggleModal,
 } from '@/redux/features/menuSlice';
-import { setPromoTitle } from '@/redux/features/menuSlice';
+import { setSelectedPromo } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { IProduct } from '@/types';
+import { IProduct, Promo } from '@/types';
 
 interface IProductItemProps {
   product: IProduct;
-  promoTitle?: string;
+  promo?: Promo;
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
+const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
   const dispatch = useAppDispatch();
   const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
 
@@ -40,9 +40,9 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
 
     if (selectedProduct) {
       dispatch(setSelectedProduct(selectedProduct));
-      dispatch(setPromoTitle(promoTitle || ''));
     }
 
+    dispatch(setSelectedPromo(promo || null));
     dispatch(toggleModal(true));
   };
 
@@ -85,17 +85,19 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promoTitle }) => {
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <BookmarkButton product={product} />
       </div>
-      <div className='absolute left-0 top-0 z-[1] flex flex-col	 gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'>
-        {product.categories?.map((cat) => (
-          <Image
-            src={cat.image ? cat.image : ''}
-            alt={cat.title}
-            width={16}
-            height={16}
-            key={cat.id}
-          />
-        ))}
-      </div>
+      {!promo && (
+        <div className='absolute left-0 top-0 z-[1] flex flex-col	 gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'>
+          {product.categories?.map((cat) => (
+            <Image
+              src={cat.image ? cat.image : ''}
+              alt={cat.title}
+              width={16}
+              height={16}
+              key={cat.id}
+            />
+          ))}
+        </div>
+      )}
     </li>
   );
 };

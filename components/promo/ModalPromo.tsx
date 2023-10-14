@@ -9,7 +9,7 @@ import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedPromo } = useAppSelector((state) => state.promoReducer);
+  const { selectedPromo } = useAppSelector((state) => state.menuReducer);
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = selectedPromo!.title === 'Пицца дня.';
   const modalRef = React.useRef<HTMLDivElement>(null);

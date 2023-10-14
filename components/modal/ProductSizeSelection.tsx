@@ -9,10 +9,8 @@ import { RadioGroup } from '@headlessui/react';
 
 const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
-    (state) => state.menuReducer,
-  );
-  const { promoTitle } = useAppSelector((state) => state.menuReducer);
+  const { selectedProduct, selectedSize, selectedDough, selectedPromo } =
+    useAppSelector((state) => state.menuReducer);
 
   const thinDough = 'Тонкое';
   const smallSize = 23;
@@ -35,7 +33,7 @@ const ProductSizeSelection: React.FC = () => {
   };
 
   const sizes =
-    promoTitle === Promos.FOUR_BIG_PIZZAS
+    selectedPromo?.title === Promos.FOUR_BIG_PIZZAS
       ? selectedProduct?.sizes?.filter((size) => size.name === bigSize)
       : selectedProduct?.sizes;
 

@@ -15,7 +15,9 @@ type ModalRightContentProps = {
 const ModalRightContent: React.FC<ModalRightContentProps> = ({
   modalHeight,
 }) => {
-  const { selectedProduct } = useAppSelector((state) => state.menuReducer);
+  const { selectedProduct, selectedPromo } = useAppSelector(
+    (state) => state.menuReducer,
+  );
 
   return (
     <div
@@ -24,28 +26,35 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
         height: `${modalHeight}px`,
       }}
     >
-      <ul
-        className={`${
-          selectedProduct?.categories ? 'block' : 'hidden'
-        } flex items-center gap-4 sm:justify-center`}
-      >
-        {selectedProduct?.categories &&
-          selectedProduct?.categories.map((cat) => (
-            <li className='flex_center gap-2' key={cat.id}>
-              <Image
-                src={cat.image || ''}
-                alt={cat.title}
-                className='h-auto w-5'
-              />
-              <span className='text-[0.75rem] font-bold md:text-xs md:leading-[15px]'>
-                {cat.title}
-              </span>
-            </li>
-          ))}
-      </ul>
+      {!selectedPromo && (
+        <ul
+          className={`${
+            selectedProduct?.categories ? 'block' : 'hidden'
+          } flex items-center gap-4 sm:justify-center`}
+        >
+          {selectedProduct?.categories &&
+            selectedProduct?.categories.map((cat) => (
+              <li className='flex_center gap-2' key={cat.id}>
+                <Image
+                  src={cat.image || ''}
+                  alt={cat.title}
+                  className='h-auto w-5'
+                />
+                <span className='text-[0.75rem] font-bold md:text-xs md:leading-[15px]'>
+                  {cat.title}
+                </span>
+              </li>
+            ))}
+        </ul>
+      )}
       <div className='sm:hidden'>
         <ProductTitle />
       </div>
+      {selectedPromo && (
+        <p className='block text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
+          {selectedProduct?.ingredients}
+        </p>
+      )}
       <ProductWeight />
       {selectedProduct?.sizes && selectedProduct?.dough && (
         <ProductSizeSelection />
@@ -56,9 +65,11 @@ const ModalRightContent: React.FC<ModalRightContentProps> = ({
           {selectedProduct?.ingredients}
         </p>
       )}
-      <IngredientsSelect />
-      <IngredientsRemove />
-      {selectedProduct?.nutritionalValues && <NutritionalValue />}
+      {!selectedPromo && <IngredientsSelect />}
+      {!selectedPromo && <IngredientsRemove />}
+      {!selectedPromo && selectedProduct?.nutritionalValues && (
+        <NutritionalValue />
+      )}
     </div>
   );
 };

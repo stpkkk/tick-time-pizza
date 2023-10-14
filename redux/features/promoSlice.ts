@@ -2,11 +2,11 @@ import { Promo } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface PromoState {
-  selectedPromo: Promo | null;
+  // selectedPromo: Promo | null;
 }
 
 const initialState: PromoState = {
-  selectedPromo: null,
+  // selectedPromo: null,
 };
 
 const promoSlice = createSlice({
@@ -14,12 +14,11 @@ const promoSlice = createSlice({
   initialState,
   reducers: {
     setSelectedPromo: (state, action: PayloadAction<Promo>) => {
-      state.selectedPromo = action.payload;
+      // state.selectedPromo = action.payload;
     },
-    
   },
 });
 
-export const { setSelectedPromo, } = promoSlice.actions;
+export const {} = promoSlice.actions;
 
 export default promoSlice.reducer;

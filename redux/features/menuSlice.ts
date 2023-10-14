@@ -1,4 +1,10 @@
-import { IProduct, IOption, IAdditionalIngredient, Promos } from '@/types';
+import {
+  IProduct,
+  IOption,
+  IAdditionalIngredient,
+  Promos,
+  Promo,
+} from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface MenuState {
@@ -16,7 +22,7 @@ export interface MenuState {
   bookmarks: IProduct[];
   productQuantity: number;
   cartProducts: IProduct[];
-  promoTitle: string;
+  selectedPromo: Promo | null;
 }
 
 const initialState: MenuState = {
@@ -34,7 +40,7 @@ const initialState: MenuState = {
   bookmarks: [],
   productQuantity: 1,
   cartProducts: [],
-  promoTitle: '',
+  selectedPromo: null,
 };
 
 const menuSlice = createSlice({
@@ -130,8 +136,8 @@ const menuSlice = createSlice({
       state.cartProducts = action.payload;
     },
 
-    setPromoTitle: (state, action: PayloadAction<string>) => {
-      state.promoTitle = action.payload;
+    setSelectedPromo: (state, action: PayloadAction<Promo | null>) => {
+      state.selectedPromo = action.payload;
     },
 
     //Bookmarks Actions
@@ -161,7 +167,7 @@ const menuSlice = createSlice({
         state.selectedProduct.sizes &&
         state.selectedProduct.group === 'pizzas'
       ) {
-        if (state.promoTitle === Promos.FOUR_BIG_PIZZAS) {
+        if (state.selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
           state.selectedSize = state.selectedProduct.sizes[2];
         } else {
           state.selectedSize = state.selectedProduct.sizes[0];
@@ -201,7 +207,7 @@ export const {
   decrementProductQuantity,
   incrementProductQuantity,
   addToCart,
-  setPromoTitle,
+  setSelectedPromo,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;
