@@ -18,7 +18,7 @@ const PromoTotal: React.FC = () => {
               Выберите необходимое количество товаров из каталога слева.
             </p>
             <div className='w-full sm:px-4 bg-white '>
-              <div className='flex gap-2.5 sm:justify-center items-center my-4 text-sm justify-start'>
+              <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start'>
                 <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
                   -799 ₽
                 </span>

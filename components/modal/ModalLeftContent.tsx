@@ -6,6 +6,7 @@ import pizza from '../../public/assets/icons/pizza.svg';
 import { BookmarkButton } from '../common';
 import ImageNotice from './ImageNotice';
 import ModalTotal from './ModalTotal';
+import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
 import { useAppSelector } from '@/redux/hooks';
 
@@ -54,9 +55,9 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
         </div>
         <ImageNotice />
         {selectedProduct?.additionalIngredients && !selectedPromo && (
-          <p className='block text-center text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
-            {selectedProduct?.ingredients}
-          </p>
+          <div className='text-center'>
+            <ProductIngredients />
+          </div>
         )}
       </div>
       <div className='w-full max-w-[236px] sm:hidden'>
