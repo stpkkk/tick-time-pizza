@@ -22,19 +22,16 @@ export const getPizzaOfTheDay = () => {
   const d = new Date();
   const currentHour = d.getHours();
   const dayOfWeek = d.getDay();
-  let pizzaIndex = dayOfWeek % pizzas.length;
+  let dayIndex = dayOfWeek;
+  let pizzaIndex = dayOfWeek;
 
   if (currentHour < 1) {
-    // Если текущее время меньше 1:00 ночи, используем пиццу предыдущего дня
-    if (dayOfWeek === 0) {
-      pizzaIndex = pizzas.length - 1;
-    } else {
-      pizzaIndex = (dayOfWeek - 1) % pizzas.length;
-    }
+    dayIndex = (dayOfWeek + 6) % 7;
+    pizzaIndex = dayIndex;
   }
 
   return {
-    dayOfWeek: days[dayOfWeek],
+    dayOfWeek: days[dayIndex],
     pizzaOfTheDay: pizzas[pizzaIndex],
   };
 };
