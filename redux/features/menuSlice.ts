@@ -4,6 +4,8 @@ import {
   IAdditionalIngredient,
   Promos,
   Promo,
+  Sizes,
+  Dough,
 } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
@@ -168,9 +170,15 @@ const menuSlice = createSlice({
         state.selectedProduct.group === 'pizzas'
       ) {
         if (state.selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
-          state.selectedSize = state.selectedProduct.sizes[2];
+          state.selectedSize =
+            state.selectedProduct?.sizes.find(
+              (size) => size.name === Sizes.BIG,
+            ) || null;
         } else {
-          state.selectedSize = state.selectedProduct.sizes[0];
+          state.selectedSize =
+            state.selectedProduct?.sizes.find(
+              (size) => size.name === Sizes.SMALL,
+            ) || null;
         }
       } else {
         state.selectedSize = null;
@@ -181,7 +189,16 @@ const menuSlice = createSlice({
         state.selectedProduct.dough &&
         state.selectedProduct.group === 'pizzas'
       ) {
-        state.selectedDough = state.selectedProduct.dough[1];
+        if (state.selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
+          state.selectedDough =
+            state.selectedProduct.dough.find((d) => d.name === Dough.THIN) ||
+            null;
+        } else {
+          state.selectedDough =
+            state.selectedProduct.dough.find(
+              (d) => d.name === Dough.TRADITIONAL,
+            ) || null;
+        }
       } else {
         state.selectedDough = null;
       }

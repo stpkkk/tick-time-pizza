@@ -3,6 +3,17 @@ export enum Promos {
   PIZZA_OF_THE_DAY = 'Пицца дня.',
   DINNERR_PIZZA = 'Пицца на обед',
   MARGARITA = 'Маргарита всегда со скидкой!',
-  THREE_PIZZA_999 = 'Три пиццы за 999 рублей',
+  THREE_PIZZAS_999 = 'Три пиццы за 999 рублей',
   PEPPERONI = 'Для любителей Пепперони',
+}
+
+export enum Dough {
+  TRADITIONAL = 'Традиционное',
+  THIN = 'Тонкое',
+}
+
+export enum Sizes {
+  SMALL = 23,
+  MEDIUM = 28,
+  BIG = 33,
 }

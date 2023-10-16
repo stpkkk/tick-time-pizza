@@ -28,7 +28,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
     FOUR_BIG_PIZZAS,
     PIZZA_OF_THE_DAY,
     MARGARITA,
-    THREE_PIZZA_999,
+    THREE_PIZZAS_999,
     PEPPERONI,
   } = Promos;
 
@@ -50,7 +50,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
         return pizzaOfTheDay;
       case MARGARITA:
         return margarita;
-      case THREE_PIZZA_999:
+      case THREE_PIZZAS_999:
         return threePizza999;
       case PEPPERONI:
         return pepperoni;

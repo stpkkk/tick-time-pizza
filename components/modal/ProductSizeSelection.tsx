@@ -4,24 +4,23 @@ import React from 'react';
 import { RadioGroupOption } from '../common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { IOption, Promos } from '@/types';
+import { Dough, IOption, Promos, Sizes } from '@/types';
 import { RadioGroup } from '@headlessui/react';
 
 const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, selectedSize, selectedDough, selectedPromo } =
     useAppSelector((state) => state.menuReducer);
-
-  const thinDough = 'Тонкое';
-  const smallSize = 23;
-  const bigSize = 33;
+  const { THIN, TRADITIONAL } = Dough;
+  const { SMALL, BIG } = Sizes;
+  const { FOUR_BIG_PIZZAS, THREE_PIZZAS_999 } = Promos;
 
   const getIsDisabledSize = (size: IOption) => {
-    return selectedDough?.name === thinDough && size.name === smallSize;
+    return selectedDough?.name === THIN && size.name === SMALL;
   };
 
   const getIsDisabledDough = (dough: IOption) => {
-    return selectedSize?.name === smallSize && selectedDough !== dough;
+    return selectedSize?.name === SMALL && selectedDough !== dough;
   };
 
   const handleSizeChange = (size: IOption) => {
@@ -32,10 +31,23 @@ const ProductSizeSelection: React.FC = () => {
     dispatch(setSelectedDough(dough));
   };
 
-  const sizes =
-    selectedPromo?.title === Promos.FOUR_BIG_PIZZAS
-      ? selectedProduct?.sizes?.filter((size) => size.name === bigSize)
-      : selectedProduct?.sizes;
+  const dough =
+    selectedPromo?.title === THREE_PIZZAS_999
+      ? selectedProduct?.dough?.filter((d) => d.name === TRADITIONAL)
+      : selectedProduct?.dough;
+
+  const getSizes = (promoTitle: string) => {
+    switch (promoTitle) {
+      case FOUR_BIG_PIZZAS:
+        return selectedProduct?.sizes?.filter((size) => size.name === BIG);
+      case THREE_PIZZAS_999:
+        return selectedProduct?.sizes?.filter((size) => size.name === SMALL);
+      default:
+        return selectedProduct?.sizes;
+    }
+  };
+
+  const sizes = getSizes(selectedPromo?.title || '');
 
   return (
     <div className='flex flex-col gap-2'>
@@ -54,7 +66,7 @@ const ProductSizeSelection: React.FC = () => {
       </RadioGroup>
       <RadioGroup value={selectedDough} onChange={handleDoughChange}>
         <div className='flex flex-row gap-2.5'>
-          {selectedProduct?.dough?.map((dough) => (
+          {dough?.map((dough) => (
             <RadioGroupOption
               key={dough.id}
               option={dough}

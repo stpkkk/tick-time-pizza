@@ -77,6 +77,7 @@ const ModalPromo: React.FC = () => {
               </p>
               {selectedPromo?.isRedirect && (
                 <Link
+                  onClick={handleClick}
                   className='btn_yellow max-w-[100px] sm:max-h-[35px]'
                   href={`/promo/${selectedPromo.id}`}
                 >
