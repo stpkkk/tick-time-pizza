@@ -27,7 +27,7 @@ const Cart: React.FC = () => {
   };
 
   const modifyCartItem = (
-    productUUID: number,
+    productUUID: string,
     modifier: (product: IProduct) => IProduct,
   ) => {
     const updatedItems = cartProducts.map((product) =>
@@ -36,14 +36,14 @@ const Cart: React.FC = () => {
     updateItemsInLocalStorage(updatedItems);
   };
 
-  const handleIncrement = (productUUID: number) => {
+  const handleIncrement = (productUUID: string) => {
     modifyCartItem(productUUID, (product) => ({
       ...product,
       productQuantity: (product.productQuantity || 1) + 1,
     }));
   };
 
-  const handleDecrement = (productUUID: number) => {
+  const handleDecrement = (productUUID: string) => {
     modifyCartItem(productUUID, (product) => ({
       ...product,
       productQuantity:
@@ -53,7 +53,7 @@ const Cart: React.FC = () => {
     }));
   };
 
-  const removeItem = (productUUID: number) => {
+  const removeItem = (productUUID: string) => {
     const updatedItems = cartProducts.filter(
       (product) => product.uuid !== productUUID,
     );
@@ -69,9 +69,9 @@ const Cart: React.FC = () => {
               <CartProduct
                 key={product.uuid}
                 product={product}
-                onIncrement={() => handleIncrement(product?.uuid || 0)}
-                onDecrement={() => handleDecrement(product?.uuid || 0)}
-                onRemove={() => removeItem(product?.uuid || 0)}
+                onIncrement={() => handleIncrement(product?.uuid || '')}
+                onDecrement={() => handleDecrement(product?.uuid || '')}
+                onRemove={() => removeItem(product?.uuid || '')}
               />
             ))}
           </ul>

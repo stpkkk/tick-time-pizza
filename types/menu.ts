@@ -55,5 +55,5 @@ export interface IProduct {
   selectedDough?: IOption;
   removedIngredients?: IOption[];
   productQuantity?: number;
-  uuid?: number;
+  uuid?: string;
 }

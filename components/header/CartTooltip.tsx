@@ -24,7 +24,7 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
     localStorage.setItem('cart', JSON.stringify(updatedItems));
   };
 
-  const onRemove = (productUUID: number) => {
+  const onRemove = (productUUID: string) => {
     const updatedItems = products.filter(
       (product) => product.uuid !== productUUID,
     );

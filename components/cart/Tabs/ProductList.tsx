@@ -30,7 +30,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
       role='tabpanel'
     >
       {products.map((product) => (
-        <li className='flex flex-none gap-4 mb-6 ' key={product.id}>
+        <li className='flex flex-none gap-4 mb-6' key={product.id}>
           <Image
             src={product.image}
             alt={product.title}

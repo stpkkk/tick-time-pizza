@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Counter from './Counter';
 import { useLocalStorage } from '@/hooks';
 import {
@@ -9,10 +9,11 @@ import {
   toggleModal,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { calculateProductPrices } from '@/utils';
+import { calculateProductPrices, generateUUID } from '@/utils';
 
 const ModalTotal: React.FC = () => {
   const dispatch = useAppDispatch();
+
   const {
     selectedProduct,
     additionalIngredients,
@@ -25,9 +26,11 @@ const ModalTotal: React.FC = () => {
   } = useAppSelector((state) => state.menuReducer);
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-  const maxValue = (selectedPromo && selectedPromo.maxValue) || 100;
 
-  const addProductToCart = async () => {
+  const addProductToCart = useCallback(async () => {
+    const uuid = generateUUID();
+
+    // Create an updated product object
     const updatedSelectedProduct = {
       ...selectedProduct,
       productQuantity,
@@ -35,12 +38,17 @@ const ModalTotal: React.FC = () => {
       selectedDough,
       additionalIngredients,
       removedIngredients,
-      uuid: crypto.randomUUID(),
+      uuid,
     };
 
+    // Update the cart products and promo products
     const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
+    const updatedPromoProducts = [
+      ...(promoProductsList || []),
+      updatedSelectedProduct,
+    ];
 
-    dispatch(addToPromoProductsList(updatedSelectedProduct));
+    dispatch(addToPromoProductsList(updatedPromoProducts));
 
     if (!selectedPromo) {
       dispatch(addToCart(updatedCartProduct));
@@ -48,8 +56,21 @@ const ModalTotal: React.FC = () => {
     }
 
     dispatch(toggleModal(false));
-  };
+  }, [
+    selectedProduct,
+    selectedSize,
+    selectedDough,
+    additionalIngredients,
+    removedIngredients,
+    productQuantity,
+    selectedPromo,
+    promoProductsList,
+    cartProductInLS,
+    setCartProductInLS,
+    dispatch,
+  ]);
 
+  // Calculate the total product price
   const totalProductPrice = calculateProductPrices(
     selectedProduct,
     selectedSize,
@@ -58,21 +79,24 @@ const ModalTotal: React.FC = () => {
   ).totalProductPrice;
 
   const handleIncrement = () => {
-    if (productQuantity < maxValue) dispatch(incrementProductQuantity());
+    if (productQuantity < (selectedPromo?.maxValue || 99)) {
+      dispatch(incrementProductQuantity());
+    }
   };
 
   const handleDecrement = () => {
-    if (productQuantity > 1) dispatch(decrementProductQuantity());
+    if (productQuantity > 1) {
+      dispatch(decrementProductQuantity());
+    }
   };
 
-  console.log(promoProductsList);
   return (
     <div className='flex_center flex-col gap-[30px]'>
       <div className='flex_between w-full sm:flex-row-reverse sm:px-4'>
         <div className='flex_between w-full max-w-[128px] text-base sm:max-w-[96px]'>
           <Counter
             minValue={1}
-            maxValue={maxValue}
+            maxValue={selectedPromo?.maxValue || 99}
             initialValue={1}
             value={productQuantity}
             handleIncrement={handleIncrement}

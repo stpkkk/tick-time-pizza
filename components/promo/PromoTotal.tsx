@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
+import { generateUUID } from '@/utils';
 
 const PromoTotal: React.FC = () => {
   const { promoProductsList } = useAppSelector((state) => state.menuReducer);
@@ -24,8 +25,9 @@ const PromoTotal: React.FC = () => {
             <div className='w-full sm:px-4 bg-white '>
               <ul>
                 {promoProductsList.map((product: IProduct) => (
-                  <li key={product.id}>
+                  <li key={generateUUID()}>
                     <div className=''>{product.title}</div>
+                    <div className=''>{product.selectedDough?.name}</div>
                   </li>
                 ))}
               </ul>

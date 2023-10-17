@@ -144,11 +144,8 @@ const menuSlice = createSlice({
       state.selectedPromo = action.payload;
     },
 
-    addToPromoProductsList: (state, action: PayloadAction<IProduct>) => {
-      if (state.selectedPromo) {
-        const product = action.payload;
-        state.promoProductsList.push(product);
-      }
+    addToPromoProductsList: (state, action: PayloadAction<any>) => {
+      state.promoProductsList = action.payload;
     },
 
     //Bookmarks Actions

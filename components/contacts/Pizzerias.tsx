@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pizzerias as PizzeriasType } from '@/types';
+import { generateUUID } from '@/utils';
 
 type PizzeriasProps = {
   pizzeria: PizzeriasType;
@@ -13,7 +14,7 @@ const Pizzerias: React.FC<PizzeriasProps> = ({ pizzeria }) => {
       </span>
       <ul>
         {pizzeria.openingHours.map((openingHour, i) => (
-          <li key={crypto.randomUUID()}>{openingHour}</li>
+          <li key={generateUUID()}>{openingHour}</li>
         ))}
       </ul>
     </div>

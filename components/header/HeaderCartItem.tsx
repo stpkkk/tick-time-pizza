@@ -5,7 +5,7 @@ import { calculateProductPrices } from '@/utils';
 
 interface HeaderCartItemProps {
   product: IProduct;
-  onRemove: (productUUID: number) => void;
+  onRemove: (productUUID: string) => void;
 }
 
 const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
@@ -31,7 +31,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
         <p className='w-10 whitespace-nowrap text-center text-[14px] font-semibold md:w-16 md:text-sm'>
           {totalProductPrice} ₽
         </p>
-        <button type='button' onClick={() => onRemove(product.uuid || 0)}>
+        <button type='button' onClick={() => onRemove(product.uuid || '')}>
           <RiDeleteBin6Line
             size={15}
             className='cursor-pointer text-grayDark hover:text-primary'
