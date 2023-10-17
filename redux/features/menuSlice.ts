@@ -25,6 +25,7 @@ export interface MenuState {
   productQuantity: number;
   cartProducts: IProduct[];
   selectedPromo: Promo | null;
+  promoProductsList: IProduct[];
 }
 
 const initialState: MenuState = {
@@ -43,6 +44,7 @@ const initialState: MenuState = {
   productQuantity: 1,
   cartProducts: [],
   selectedPromo: null,
+  promoProductsList: [],
 };
 
 const menuSlice = createSlice({
@@ -142,6 +144,13 @@ const menuSlice = createSlice({
       state.selectedPromo = action.payload;
     },
 
+    addToPromoProductsList: (state, action: PayloadAction<IProduct>) => {
+      if (state.selectedPromo) {
+        const product = action.payload;
+        state.promoProductsList.push(product);
+      }
+    },
+
     //Bookmarks Actions
     addToBookmarks: (state, action: PayloadAction<IProduct>) => {
       const product = action.payload;
@@ -225,6 +234,7 @@ export const {
   incrementProductQuantity,
   addToCart,
   setSelectedPromo,
+  addToPromoProductsList,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

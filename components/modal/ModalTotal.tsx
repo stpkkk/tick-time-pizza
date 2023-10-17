@@ -3,6 +3,7 @@ import Counter from './Counter';
 import { useLocalStorage } from '@/hooks';
 import {
   addToCart,
+  addToPromoProductsList,
   decrementProductQuantity,
   incrementProductQuantity,
   toggleModal,
@@ -19,9 +20,12 @@ const ModalTotal: React.FC = () => {
     removedIngredients,
     selectedDough,
     productQuantity,
+    selectedPromo,
+    promoProductsList,
   } = useAppSelector((state) => state.menuReducer);
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
+  const maxValue = (selectedPromo && selectedPromo.maxValue) || 100;
 
   const addProductToCart = async () => {
     const updatedSelectedProduct = {
@@ -36,8 +40,13 @@ const ModalTotal: React.FC = () => {
 
     const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
 
-    dispatch(addToCart(updatedCartProduct));
-    await setCartProductInLS(updatedCartProduct);
+    dispatch(addToPromoProductsList(updatedSelectedProduct));
+
+    if (!selectedPromo) {
+      dispatch(addToCart(updatedCartProduct));
+      await setCartProductInLS(updatedCartProduct);
+    }
+
     dispatch(toggleModal(false));
   };
 
@@ -49,19 +58,21 @@ const ModalTotal: React.FC = () => {
   ).totalProductPrice;
 
   const handleIncrement = () => {
-    dispatch(incrementProductQuantity());
+    if (productQuantity < maxValue) dispatch(incrementProductQuantity());
   };
 
   const handleDecrement = () => {
     if (productQuantity > 1) dispatch(decrementProductQuantity());
   };
 
+  console.log(promoProductsList);
   return (
     <div className='flex_center flex-col gap-[30px]'>
       <div className='flex_between w-full sm:flex-row-reverse sm:px-4'>
         <div className='flex_between w-full max-w-[128px] text-base sm:max-w-[96px]'>
           <Counter
             minValue={1}
+            maxValue={maxValue}
             initialValue={1}
             value={productQuantity}
             handleIncrement={handleIncrement}
