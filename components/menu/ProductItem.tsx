@@ -7,8 +7,8 @@ import {
   setSelectedProduct,
   setHoveredItemId,
   toggleModal,
+  setSelectedPromo,
 } from '@/redux/features/menuSlice';
-import { setSelectedPromo } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
 
@@ -19,14 +19,16 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
   const dispatch = useAppDispatch();
-  const { hoveredItemId } = useAppSelector((state) => state.menuReducer);
+  const { hoveredItemId, totalPromoProductsQuantity, selectedPromo } =
+    useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
   const starterPrice = product.prices.find((product) => product.id === 0)
     ?.price;
 
   const handleMouseEnterItem = () => {
-    dispatch(setHoveredItemId(product.id));
+    if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo)
+      dispatch(setHoveredItemId(product.id));
   };
 
   const handleMouseLeaveItem = () => {
@@ -34,17 +36,15 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
   };
 
   const handleClickProduct = (clickedProduct: IProduct) => {
-    const selectedProduct = menu.find(
-      (product) => product.id === clickedProduct.id,
-    );
+    if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo) {
+      const selectedProduct = menu.find(
+        (product) => product.id === clickedProduct.id,
+      );
 
-    if (selectedProduct) {
-      dispatch(setSelectedProduct(selectedProduct));
+      dispatch(setSelectedProduct(selectedProduct || null));
+      dispatch(setSelectedPromo(promo || null));
+      dispatch(toggleModal(true));
     }
-
-    dispatch(setSelectedPromo(promo || null));
-
-    dispatch(toggleModal(true));
   };
 
   return (
@@ -78,7 +78,13 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
         </div>
         <div className='flex_between'>
           <span className='font-semibold'>{`от ${starterPrice} ₽`}</span>
-          <button className='btn_yellow max-w-[112px]' type='button'>
+          <button
+            className={`btn_yellow max-w-[112px] disabled:bg-gray disabled:text-grayDark `}
+            disabled={
+              promo && totalPromoProductsQuantity === selectedPromo?.maxValue
+            }
+            type='button'
+          >
             Выбрать
           </button>
         </div>

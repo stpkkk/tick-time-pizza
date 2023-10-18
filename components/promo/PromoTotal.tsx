@@ -1,17 +1,31 @@
 import React from 'react';
 import PromoTotalItem from './PromoTotalItem';
-import { useAppSelector } from '@/redux/hooks';
+import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { Promo } from '@/types';
 import { generateUUID } from '@/utils';
 
-const PromoTotal: React.FC = () => {
+type PromoTotalProps = {
+  promo: Promo;
+};
+
+const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
+  const dispatch = useAppDispatch();
+  const { totalPromoProductsQuantity } = useAppSelector(
+    (state) => state.menuReducer,
+  );
+
   const { promoProductsList, selectedPromo } = useAppSelector(
     (state) => state.menuReducer,
   );
 
-  const totalPromoProductsQuantity = promoProductsList.reduce(
-    (acc, product) => acc + (product.productQuantity || 0),
-    0,
-  );
+  React.useEffect(() => {
+    const newTotalQuantity = promoProductsList.reduce(
+      (acc, product) => acc + (product.productQuantity || 0),
+      0,
+    );
+    dispatch(setTotalPromoProductsQuantity(newTotalQuantity));
+  }, [promoProductsList]);
 
   return (
     <div className='w-full max-w-[285px]'>

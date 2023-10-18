@@ -27,6 +27,7 @@ export interface MenuState {
   selectedPromo: Promo | null;
   promoProductsList: IProduct[];
   isPromoModalOpen: boolean;
+  totalPromoProductsQuantity: number;
 }
 
 const initialState: MenuState = {
@@ -47,6 +48,7 @@ const initialState: MenuState = {
   selectedPromo: null,
   promoProductsList: [],
   isPromoModalOpen: false,
+  totalPromoProductsQuantity: 0,
 };
 
 const menuSlice = createSlice({
@@ -58,7 +60,7 @@ const menuSlice = createSlice({
       state.hoveredItemId = action.payload;
     },
 
-    setSelectedProduct: (state, action: PayloadAction<IProduct>) => {
+    setSelectedProduct: (state, action: PayloadAction<IProduct | null>) => {
       state.selectedProduct = action.payload;
     },
 
@@ -161,6 +163,10 @@ const menuSlice = createSlice({
       state.promoProductsList = state.promoProductsList.filter(
         (item) => item.uuid !== productUUID,
       );
+    },
+
+    setTotalPromoProductsQuantity: (state, action: PayloadAction<number>) => {
+      state.totalPromoProductsQuantity = action.payload;
     },
 
     incrementPromoProductQuantity: (
@@ -286,6 +292,7 @@ export const {
   incrementPromoProductQuantity,
   decrementPromoProductQuantity,
   setIsPromoModalOpen,
+  setTotalPromoProductsQuantity,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

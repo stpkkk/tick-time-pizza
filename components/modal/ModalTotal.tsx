@@ -23,6 +23,7 @@ const ModalTotal: React.FC = () => {
     productQuantity,
     selectedPromo,
     promoProductsList,
+    totalPromoProductsQuantity,
   } = useAppSelector((state) => state.menuReducer);
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
@@ -79,7 +80,7 @@ const ModalTotal: React.FC = () => {
   ).totalProductPrice;
 
   const handleIncrement = () => {
-    if (productQuantity < (selectedPromo?.maxValue || 99)) {
+    if (totalPromoProductsQuantity < (selectedPromo?.maxValue || 99)) {
       dispatch(incrementProductQuantity());
     }
   };

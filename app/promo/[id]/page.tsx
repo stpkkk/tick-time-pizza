@@ -77,7 +77,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
             ))}
           </div>
         </div>
-        <PromoTotal />
+        <PromoTotal promo={promo} />
       </div>
       {isModalOpen && <Modal />}
     </div>
