@@ -2,9 +2,7 @@ import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { Counter } from '../modal';
 import {
-  decrementProductQuantity,
   decrementPromoProductQuantity,
-  incrementProductQuantity,
   incrementPromoProductQuantity,
   removePromoProductsList,
 } from '@/redux/features/menuSlice';
@@ -13,9 +11,13 @@ import { IProduct } from '@/types';
 
 type PromoTotalItemProps = {
   product: IProduct;
+  totalPromoProductsQuantity: number;
 };
 
-const PromoTotalItem: React.FC<PromoTotalItemProps> = ({ product }) => {
+const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
+  product,
+  totalPromoProductsQuantity,
+}) => {
   const dispatch = useAppDispatch();
   const { selectedPromo, productQuantity } = useAppSelector(
     (state) => state.menuReducer,
@@ -24,7 +26,8 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({ product }) => {
   const handleIncrement = () => {
     if (
       product.productQuantity &&
-      product?.productQuantity < (selectedPromo?.maxValue || 99)
+      product?.productQuantity < (selectedPromo?.maxValue || 99) &&
+      totalPromoProductsQuantity < (selectedPromo?.maxValue || 99)
     ) {
       dispatch(incrementPromoProductQuantity({ product }));
     }

@@ -5,6 +5,6 @@ export type Promo = {
   title: string;
   image: string | StaticImageData;
   isRedirect: boolean;
-	maxValue?: number;
+  maxValue?: number;
   description: string;
 };

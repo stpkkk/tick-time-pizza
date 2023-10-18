@@ -6,7 +6,7 @@ import { promos } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 
 const PromoList: React.FC = () => {
-  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
+  const { isPromoModalOpen } = useAppSelector((state) => state.menuReducer);
 
   return (
     <div className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:mt-[70px]'>
@@ -16,7 +16,7 @@ const PromoList: React.FC = () => {
           <PromoCard promo={promo} key={promo.id} />
         ))}
       </div>
-      {isModalOpen && <ModalPromo />}
+      {isPromoModalOpen && <ModalPromo />}
     </div>
   );
 };

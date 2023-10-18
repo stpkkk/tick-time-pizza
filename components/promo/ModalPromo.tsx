@@ -3,7 +3,7 @@ import { RiCloseFill } from 'react-icons/ri';
 import Image from 'next/image';
 import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { toggleModal } from '@/redux/features/menuSlice';
+import { setIsPromoModalOpen } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { getPizzaOfTheDay } from '@/utils';
 
@@ -17,7 +17,7 @@ const ModalPromo: React.FC = () => {
   const handleClickOutside = React.useCallback(
     (e: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-        dispatch(toggleModal(false));
+        dispatch(setIsPromoModalOpen(false));
       }
     },
     [dispatch],
@@ -34,7 +34,7 @@ const ModalPromo: React.FC = () => {
   }, [handleClickOutside]);
 
   const handleClick = () => {
-    dispatch(toggleModal(false));
+    dispatch(setIsPromoModalOpen(false));
   };
 
   return (

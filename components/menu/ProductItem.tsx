@@ -43,6 +43,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
     }
 
     dispatch(setSelectedPromo(promo || null));
+
     dispatch(toggleModal(true));
   };
 

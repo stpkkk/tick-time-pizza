@@ -32,6 +32,7 @@ export const promos: Promo[] = [
     title: 'Пицца дня.',
     image: pizzaOfTheDay,
     isRedirect: true,
+    maxValue: 1,
     description:
       'Каждый день одна из наших пицц со скидкой 100 рублей! Обращаем ваше внимание, пицца дня меняется каждый день в 01:00..',
   },
@@ -63,6 +64,7 @@ export const promos: Promo[] = [
     title: 'Маргарита всегда со скидкой!',
     image: promoMargarita,
     isRedirect: true,
+    maxValue: 1,
     description:
       'Каждый день, с утра до вечера скидка на все размеры пиццы "Маргарита" - 100 рублей!',
   },

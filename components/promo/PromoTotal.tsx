@@ -4,7 +4,14 @@ import { useAppSelector } from '@/redux/hooks';
 import { generateUUID } from '@/utils';
 
 const PromoTotal: React.FC = () => {
-  const { promoProductsList } = useAppSelector((state) => state.menuReducer);
+  const { promoProductsList, selectedPromo } = useAppSelector(
+    (state) => state.menuReducer,
+  );
+
+  const totalPromoProductsQuantity = promoProductsList.reduce(
+    (acc, product) => acc + (product.productQuantity || 0),
+    0,
+  );
 
   return (
     <div className='w-full max-w-[285px]'>
@@ -15,7 +22,10 @@ const PromoTotal: React.FC = () => {
               Пицца
             </span>
             <span className='text-xs font-semibold text-right'>
-              Выбрано: <span className='whitespace-nowrap'>0 из 2</span>
+              Выбрано:{' '}
+              <span className='whitespace-nowrap'>
+                {totalPromoProductsQuantity} из {selectedPromo?.maxValue}
+              </span>
             </span>
           </div>
           <div className='flex flex-col gap-[30px] p-[30px]'>
@@ -26,7 +36,10 @@ const PromoTotal: React.FC = () => {
               <ul className='flex flex-col gap-[30px]'>
                 {promoProductsList.map((product) => (
                   <li className=' flex flex-col gap-2.5' key={generateUUID()}>
-                    <PromoTotalItem product={product} />
+                    <PromoTotalItem
+                      product={product}
+                      totalPromoProductsQuantity={totalPromoProductsQuantity}
+                    />
                   </li>
                 ))}
               </ul>
@@ -37,7 +50,9 @@ const PromoTotal: React.FC = () => {
               </div>
               <button
                 type='submit'
-                disabled
+                disabled={
+                  totalPromoProductsQuantity !== selectedPromo?.maxValue
+                }
                 className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
               >
                 Добавить в корзину
