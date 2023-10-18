@@ -1,6 +1,6 @@
 import React from 'react';
+import PromoTotalItem from './PromoTotalItem';
 import { useAppSelector } from '@/redux/hooks';
-import { IProduct } from '@/types';
 import { generateUUID } from '@/utils';
 
 const PromoTotal: React.FC = () => {
@@ -23,11 +23,10 @@ const PromoTotal: React.FC = () => {
               Выберите необходимое количество товаров из каталога слева.
             </p>
             <div className='w-full sm:px-4 bg-white '>
-              <ul>
-                {promoProductsList.map((product: IProduct) => (
-                  <li key={generateUUID()}>
-                    <div className=''>{product.title}</div>
-                    <div className=''>{product.selectedDough?.name}</div>
+              <ul className='flex flex-col gap-[30px]'>
+                {promoProductsList.map((product) => (
+                  <li className=' flex flex-col gap-2.5' key={generateUUID()}>
+                    <PromoTotalItem product={product} />
                   </li>
                 ))}
               </ul>

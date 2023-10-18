@@ -140,12 +140,55 @@ const menuSlice = createSlice({
       state.cartProducts = action.payload;
     },
 
+    //Promo Actions
     setSelectedPromo: (state, action: PayloadAction<Promo | null>) => {
       state.selectedPromo = action.payload;
     },
 
     addToPromoProductsList: (state, action: PayloadAction<any>) => {
       state.promoProductsList = action.payload;
+    },
+
+    removePromoProductsList: (state, action: PayloadAction<string>) => {
+      const productUUID = action.payload;
+      state.promoProductsList = state.promoProductsList.filter(
+        (item) => item.uuid !== productUUID,
+      );
+    },
+
+    incrementPromoProductQuantity: (
+      state,
+      action: PayloadAction<{ product: IProduct }>,
+    ) => {
+      const { product } = action.payload;
+      const existingProduct = state.promoProductsList.find(
+        (item) => item.id === product.id,
+      );
+
+      if (existingProduct) {
+        existingProduct.productQuantity =
+          (existingProduct.productQuantity || 0) + 1;
+      } else {
+        state.promoProductsList.push({ ...product, productQuantity: 1 });
+      }
+    },
+
+    decrementPromoProductQuantity: (
+      state,
+      action: PayloadAction<{ product: IProduct }>,
+    ) => {
+      const { product } = action.payload;
+      const existingIngredient = state.promoProductsList.find(
+        (item) => item.id === product.id,
+      );
+
+      if (
+        existingIngredient &&
+        existingIngredient.productQuantity &&
+        existingIngredient.productQuantity > 0
+      ) {
+        existingIngredient.productQuantity -= 1;
+      }
     },
 
     //Bookmarks Actions
@@ -232,6 +275,9 @@ export const {
   addToCart,
   setSelectedPromo,
   addToPromoProductsList,
+  removePromoProductsList,
+  incrementPromoProductQuantity,
+  decrementPromoProductQuantity,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;
