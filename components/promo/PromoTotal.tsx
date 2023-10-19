@@ -2,8 +2,12 @@ import React from 'react';
 import PromoTotalItem from './PromoTotalItem';
 import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { Promo } from '@/types';
-import { generateUUID } from '@/utils';
+import { Prices, Promo } from '@/types';
+import {
+  calculateCartTotalPrice,
+  calculateProductPrices,
+  generateUUID,
+} from '@/utils';
 
 type PromoTotalProps = {
   promo?: Promo;
@@ -11,9 +15,25 @@ type PromoTotalProps = {
 
 const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   const dispatch = useAppDispatch();
-  const { totalPromoProductsQuantity, promoProductsList } = useAppSelector(
-    (state) => state.menuReducer,
+  const {
+    totalPromoProductsQuantity,
+    promoProductsList,
+    selectedProduct,
+    selectedSize,
+    productQuantity,
+  } = useAppSelector((state) => state.menuReducer);
+
+  const { cartTotalPrice } = calculateCartTotalPrice(promoProductsList);
+  const { productPrice } = calculateProductPrices(
+    selectedProduct,
+    selectedSize,
+    [],
+    productQuantity,
   );
+  const priceWithDiscount = productPrice && cartTotalPrice - productPrice;
+  const isQuantityMax = totalPromoProductsQuantity === promo?.maxValue;
+  const promoPrice =
+    (priceWithDiscount ?? '-' + Prices.BIG) || priceWithDiscount;
 
   React.useEffect(() => {
     const newTotalQuantity = promoProductsList.reduce(
@@ -39,9 +59,11 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
             </span>
           </div>
           <div className='flex flex-col gap-[30px] p-[30px]'>
-            <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] sm:hidden'>
-              Выберите необходимое количество товаров из каталога слева.
-            </p>
+            {!isQuantityMax && (
+              <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] sm:hidden'>
+                Выберите необходимое количество товаров из каталога слева.
+              </p>
+            )}
             <div className='w-full sm:px-4 bg-white '>
               <ul className='flex flex-col gap-[30px]'>
                 {promoProductsList.map((product) => (
@@ -55,12 +77,17 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
               </ul>
               <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
                 <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
-                  -799 ₽
+                  {promoPrice} ₽
                 </span>
+                {isQuantityMax ? (
+                  <span className='line-through text-grayDark font-semibold whitespace-nowrap text-base'>
+                    {cartTotalPrice} ₽
+                  </span>
+                ) : null}
               </div>
               <button
                 type='submit'
-                disabled={totalPromoProductsQuantity !== promo?.maxValue}
+                disabled={!isQuantityMax}
                 className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
               >
                 Добавить в корзину

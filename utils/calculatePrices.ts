@@ -1,4 +1,4 @@
-import { IAdditionalIngredient, IOption, IProduct } from '@/types';
+import { IAdditionalIngredient, IOption, IProduct, Prices } from '@/types';
 
 export function calculateProductPrices(
   selectedProduct: IProduct | null,

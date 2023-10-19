@@ -17,3 +17,9 @@ export enum Sizes {
   MEDIUM = 28,
   BIG = 33,
 }
+
+export enum Prices {
+  SMALL = 399,
+  MEDIUM = 579,
+  BIG = 739,
+}
