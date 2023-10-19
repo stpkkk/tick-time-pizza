@@ -6,16 +6,12 @@ import { Promo } from '@/types';
 import { generateUUID } from '@/utils';
 
 type PromoTotalProps = {
-  promo: Promo;
+  promo?: Promo;
 };
 
 const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   const dispatch = useAppDispatch();
-  const { totalPromoProductsQuantity } = useAppSelector(
-    (state) => state.menuReducer,
-  );
-
-  const { promoProductsList, selectedPromo } = useAppSelector(
+  const { totalPromoProductsQuantity, promoProductsList } = useAppSelector(
     (state) => state.menuReducer,
   );
 
@@ -25,7 +21,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
       0,
     );
     dispatch(setTotalPromoProductsQuantity(newTotalQuantity));
-  }, [promoProductsList]);
+  }, [promoProductsList, dispatch]);
 
   return (
     <div className='w-full max-w-[285px]'>
@@ -38,7 +34,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
             <span className='text-xs font-semibold text-right'>
               Выбрано:{' '}
               <span className='whitespace-nowrap'>
-                {totalPromoProductsQuantity} из {selectedPromo?.maxValue}
+                {totalPromoProductsQuantity} из {promo?.maxValue}
               </span>
             </span>
           </div>
@@ -64,9 +60,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
               </div>
               <button
                 type='submit'
-                disabled={
-                  totalPromoProductsQuantity !== selectedPromo?.maxValue
-                }
+                disabled={totalPromoProductsQuantity !== promo?.maxValue}
                 className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
               >
                 Добавить в корзину

@@ -80,7 +80,11 @@ const ModalTotal: React.FC = () => {
   ).totalProductPrice;
 
   const handleIncrement = () => {
-    if (totalPromoProductsQuantity < (selectedPromo?.maxValue || 99)) {
+    if (
+      productQuantity < (selectedPromo?.maxValue || 99) &&
+      (selectedPromo?.maxValue || 99) - productQuantity >
+        totalPromoProductsQuantity
+    ) {
       dispatch(incrementProductQuantity());
     }
   };
