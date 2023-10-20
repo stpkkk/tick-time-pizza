@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               className='whitespace-nowrap py-3 sm:text-[14px]'
               key={link.key}
             >
-              <Link href={link.href} as='about'>
+              <Link href={link.href}>
                 {link.text}
               </Link>
             </li>

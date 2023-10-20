@@ -13,8 +13,8 @@ const ProductSizeSelection: React.FC = () => {
     useAppSelector((state) => state.menuReducer);
 
   const { THIN, TRADITIONAL } = Dough;
-  const { SMALL, BIG } = Sizes;
-  const { FOUR_BIG_PIZZAS, THREE_PIZZAS_999 } = Promos;
+  const { SMALL, MEDIUM, BIG } = Sizes;
+  const { FOUR_BIG_PIZZAS, THREE_PIZZAS_999, PEPPERONI, DINNER_PIZZA } = Promos;
 
   const getIsDisabledSize = (size: IOption) => {
     return selectedDough?.name === THIN && size.name === SMALL;
@@ -41,8 +41,12 @@ const ProductSizeSelection: React.FC = () => {
     switch (promoTitle) {
       case FOUR_BIG_PIZZAS:
         return selectedProduct?.sizes?.filter((size) => size.name === BIG);
+      case PEPPERONI:
+        return selectedProduct?.sizes?.filter((size) => size.name === BIG);
       case THREE_PIZZAS_999:
         return selectedProduct?.sizes?.filter((size) => size.name === SMALL);
+      case DINNER_PIZZA:
+        return selectedProduct?.sizes?.filter((size) => size.name === MEDIUM);
       default:
         return selectedProduct?.sizes;
     }

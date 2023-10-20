@@ -2,7 +2,7 @@ import React from 'react';
 import PromoTotalItem from './PromoTotalItem';
 import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { Prices, Promo } from '@/types';
+import { Prices, Promo, Promos } from '@/types';
 import {
   calculateCartTotalPrice,
   calculateProductPrices,
@@ -30,10 +30,30 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
     [],
     productQuantity,
   );
-  const priceWithDiscount = productPrice && cartTotalPrice - productPrice;
   const isQuantityMax = totalPromoProductsQuantity === promo?.maxValue;
-  const promoPrice =
-    (priceWithDiscount ?? '-' + Prices.BIG) || priceWithDiscount;
+
+  const fourBigPizzasPrice =
+    (productPrice && cartTotalPrice - productPrice) ?? '-' + Prices.BIG;
+  const pizzaDiscount100 = (productPrice && cartTotalPrice - 100) ?? -100;
+
+  const getPriceWithDiscount = (promoTitle: string) => {
+    switch (promoTitle) {
+      case Promos.FOUR_BIG_PIZZAS:
+        return fourBigPizzasPrice;
+      case Promos.PIZZA_OF_THE_DAY:
+        return pizzaDiscount100;
+      case Promos.PEPPERONI:
+        return Prices.TWO_BIG_PEPPERONIES;
+      case Promos.MARGARITA:
+        return pizzaDiscount100;
+      case Promos.THREE_PIZZAS_999:
+        return Prices.THREE_SMALL_PIZZAS;
+      case Promos.DINNER_PIZZA:
+        return Prices.TWO_MEDIUM_DINNER_PIZZAS;
+    }
+  };
+
+  const priceWithDiscount = getPriceWithDiscount(promo?.title || '');
 
   React.useEffect(() => {
     const newTotalQuantity = promoProductsList.reduce(
@@ -77,7 +97,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
               </ul>
               <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
                 <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
-                  {promoPrice} ₽
+                  {priceWithDiscount} ₽
                 </span>
                 {isQuantityMax ? (
                   <span className='line-through text-grayDark font-semibold whitespace-nowrap text-base'>

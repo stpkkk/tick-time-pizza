@@ -33,7 +33,7 @@ const Counter: React.FC<CounterProps> = ({
       >
         <AiOutlineMinusCircle size={18} />
       </button>
-      <span className='whitespace-nowrap sm:text-[12px]'>
+      <span className='whitespace-nowrap text-sm sm:text-[12px]'>
         {counterValue} шт.
       </span>
       <button

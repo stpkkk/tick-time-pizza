@@ -46,7 +46,7 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
           ))}
         </ul>
       )}
-      <Link href='/cart' as='cart'>
+      <Link href='/cart'>
         <button className='btn_red'>Перейти в корзину</button>
       </Link>
     </div>

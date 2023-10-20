@@ -219,50 +219,50 @@ const menuSlice = createSlice({
 
     //Initial Values
     initializeDefaultValues: (state) => {
-      if (state.selectedProduct) {
+      const { selectedProduct, selectedPromo } = state;
+
+      if (selectedProduct) {
         state.isAllIngredients = false;
         state.removedIngredients = [];
         state.additionalIngredients = [];
         state.productQuantity = 1;
-      }
 
-      if (
-        state.selectedProduct &&
-        state.selectedProduct.sizes &&
-        state.selectedProduct.group === 'pizzas'
-      ) {
-        if (state.selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
-          state.selectedSize =
-            state.selectedProduct?.sizes.find(
-              (size) => size.name === Sizes.BIG,
-            ) || null;
-        } else {
-          state.selectedSize =
-            state.selectedProduct?.sizes.find(
-              (size) => size.name === Sizes.SMALL,
-            ) || null;
-        }
-      } else {
-        state.selectedSize = null;
-      }
+        if (selectedProduct.group === 'pizzas') {
+          if (
+            selectedPromo?.title === Promos.FOUR_BIG_PIZZAS ||
+            selectedPromo?.title === Promos.PEPPERONI
+          ) {
+            state.selectedSize =
+              selectedProduct.sizes?.find((size) => size.name === Sizes.BIG) ||
+              null;
+          } else if (selectedPromo?.title === Promos.DINNER_PIZZA) {
+            state.selectedSize =
+              selectedProduct.sizes?.find(
+                (size) => size.name === Sizes.MEDIUM,
+              ) || null;
+          } else {
+            state.selectedSize =
+              selectedProduct.sizes?.find(
+                (size) => size.name === Sizes.SMALL,
+              ) || null;
+          }
 
-      if (
-        state.selectedProduct &&
-        state.selectedProduct.dough &&
-        state.selectedProduct.group === 'pizzas'
-      ) {
-        if (state.selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
-          state.selectedDough =
-            state.selectedProduct.dough.find((d) => d.name === Dough.THIN) ||
-            null;
+          if (selectedProduct.dough) {
+            if (selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
+              state.selectedDough =
+                selectedProduct.dough.find((d) => d.name === Dough.THIN) ||
+                null;
+            } else {
+              state.selectedDough =
+                selectedProduct.dough.find(
+                  (d) => d.name === Dough.TRADITIONAL,
+                ) || null;
+            }
+          }
         } else {
-          state.selectedDough =
-            state.selectedProduct.dough.find(
-              (d) => d.name === Dough.TRADITIONAL,
-            ) || null;
+          state.selectedSize = null;
+          state.selectedDough = null;
         }
-      } else {
-        state.selectedDough = null;
       }
     },
   },

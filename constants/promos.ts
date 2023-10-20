@@ -41,6 +41,7 @@ export const promos: Promo[] = [
     title: 'Пицца на обед',
     image: dinner,
     isRedirect: true,
+    maxValue: 2,
     description: '',
   },
   {
