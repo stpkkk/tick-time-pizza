@@ -24,12 +24,6 @@ export function calculateProductPrices(
     (productPrice || selectedProduct?.prices[0].price || 599) *
       productQuantity +
     additionalIngredientsPrice;
-  // const totalProductPrice =
-  //   (selectedProduct?.prices && productPrice !== null
-  //     ? productPrice
-  //     : selectedProduct?.prices[0].price || 579) *
-  //     productQuantity +
-  //   additionalIngredientsPrice;
 
   return {
     productPrice,
@@ -38,8 +32,8 @@ export function calculateProductPrices(
   };
 }
 
-export function calculateCartTotalPrice(cartProducts: IProduct[]) {
-  const cartTotalPrice = cartProducts
+export function calculateTotalPrice(products: IProduct[]) {
+  const totalPrice = products
     .map((product) =>
       calculateProductPrices(
         product,
@@ -51,6 +45,6 @@ export function calculateCartTotalPrice(cartProducts: IProduct[]) {
     .reduce((acc, sum) => sum.totalProductPrice + acc, 0);
 
   return {
-    cartTotalPrice,
+    totalPrice,
   };
 }

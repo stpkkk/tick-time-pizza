@@ -1,13 +1,13 @@
 import React from 'react';
 import { useAppSelector } from '@/redux/hooks';
-import { calculateCartTotalPrice } from '@/utils';
+import { calculateTotalPrice } from '@/utils';
 
 const CartTotal: React.FC = () => {
   const [isPromoDisabled, setIsPromoDisabled] = React.useState(true);
   const cartProducts = useAppSelector(
     (state) => state.menuReducer.cartProducts,
   );
-  const cartTotalPrice = calculateCartTotalPrice(cartProducts).cartTotalPrice;
+  const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const totalProducts = cartProducts.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,

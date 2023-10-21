@@ -4,7 +4,7 @@ import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Prices, Promo, Promos } from '@/types';
 import {
-  calculateCartTotalPrice,
+  calculateTotalPrice,
   calculateProductPrices,
   generateUUID,
 } from '@/utils';
@@ -23,7 +23,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
     productQuantity,
   } = useAppSelector((state) => state.menuReducer);
 
-  const { cartTotalPrice } = calculateCartTotalPrice(promoProductsList);
+  const { totalPrice } = calculateTotalPrice(promoProductsList);
   const { productPrice } = calculateProductPrices(
     selectedProduct,
     selectedSize,
@@ -33,8 +33,8 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   const isQuantityMax = totalPromoProductsQuantity === promo?.maxValue;
 
   const fourBigPizzasPrice =
-    (productPrice && cartTotalPrice - productPrice) ?? '-' + Prices.BIG;
-  const pizzaDiscount100 = (productPrice && cartTotalPrice - 100) ?? -100;
+    (productPrice && totalPrice - productPrice) ?? '-' + Prices.BIG;
+  const pizzaDiscount100 = (productPrice && totalPrice - 100) ?? -100;
 
   const getPriceWithDiscount = (promoTitle: string) => {
     switch (promoTitle) {
@@ -101,7 +101,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
                 </span>
                 {isQuantityMax ? (
                   <span className='line-through text-grayDark font-semibold whitespace-nowrap text-base'>
-                    {cartTotalPrice} ₽
+                    {totalPrice} ₽
                   </span>
                 ) : null}
               </div>
