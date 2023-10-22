@@ -1,6 +1,12 @@
 import React from 'react';
+import promoImg from '../../public/assets/icons/promo.svg';
 import PromoTotalItem from './PromoTotalItem';
-import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
+import { useLocalStorage } from '@/hooks';
+import {
+  addToCart,
+  setPromoDiscount,
+  setTotalPromoProductsQuantity,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Prices, Promo, Promos } from '@/types';
 import {
@@ -21,6 +27,8 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
     selectedProduct,
     selectedSize,
     productQuantity,
+    additionalIngredients,
+    selectedPromo,
   } = useAppSelector((state) => state.menuReducer);
 
   const { totalPrice } = calculateTotalPrice(promoProductsList);
@@ -35,6 +43,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   const fourBigPizzasPrice =
     (productPrice && totalPrice - productPrice) ?? '-' + Prices.BIG;
   const pizzaDiscount100 = (productPrice && totalPrice - 100) ?? -100;
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const getPriceWithDiscount = (promoTitle: string) => {
     switch (promoTitle) {
@@ -54,6 +63,38 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   };
 
   const priceWithDiscount = getPriceWithDiscount(promo?.title || '');
+
+  const addProductToCart = React.useCallback(async () => {
+    const uuid = generateUUID();
+
+    const updatedPromoProduct = {
+      ...selectedProduct,
+      uuid,
+      productQuantity: 1,
+      additionalIngredients,
+      title: `Акция: ${selectedPromo?.title}`,
+      image: promoImg,
+      totalProductPrice: priceWithDiscount,
+      promoProducts: promoProductsList,
+    };
+
+    const updatedCartProduct = [...cartProductInLS, updatedPromoProduct];
+
+    dispatch(addToCart(updatedCartProduct));
+    await setCartProductInLS(updatedCartProduct);
+
+    if (priceWithDiscount) {
+      dispatch(setPromoDiscount(priceWithDiscount));
+    }
+  }, [
+    selectedProduct,
+    selectedSize,
+    // additionalIngredients,
+    productQuantity,
+    promoProductsList,
+    setCartProductInLS,
+    dispatch,
+  ]);
 
   React.useEffect(() => {
     const newTotalQuantity = promoProductsList.reduce(
@@ -106,9 +147,10 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
                 ) : null}
               </div>
               <button
+                className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
+                onClick={addProductToCart}
                 type='submit'
                 disabled={!isQuantityMax}
-                className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
               >
                 Добавить в корзину
               </button>

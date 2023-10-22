@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { Promo } from './promo';
 import { IOption } from './radio-option';
 
 export interface IPrice {
@@ -56,4 +57,6 @@ export interface IProduct {
   removedIngredients?: IOption[];
   productQuantity?: number;
   uuid?: string;
+  totalProductPrice?: number;
+  promoProducts?: IProduct[];
 }

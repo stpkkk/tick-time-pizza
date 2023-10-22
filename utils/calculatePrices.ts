@@ -1,4 +1,4 @@
-import { IAdditionalIngredient, IOption, IProduct, Prices } from '@/types';
+import { IAdditionalIngredient, IOption, IProduct } from '@/types';
 
 export function calculateProductPrices(
   selectedProduct: IProduct | null,
@@ -21,7 +21,7 @@ export function calculateProductPrices(
   );
 
   const totalProductPrice =
-    (productPrice || selectedProduct?.prices[0].price || 599) *
+    (productPrice || selectedProduct?.totalProductPrice || 599) *
       productQuantity +
     additionalIngredientsPrice;
 

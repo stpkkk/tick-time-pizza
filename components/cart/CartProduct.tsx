@@ -3,7 +3,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import Image from 'next/image';
 import { Counter } from '../modal';
 import { IAdditionalIngredient, IOption, IProduct } from '@/types';
-import { calculateProductPrices } from '@/utils';
+import { calculateProductPrices, generateUUID } from '@/utils';
 
 interface CartProductProps {
   product: IProduct;
@@ -36,6 +36,20 @@ const renderIngredientsToAdd = (ingredients: IAdditionalIngredient[]) => {
   );
 };
 
+const renderPromoProducts = (products: IProduct[]) => {
+  return (
+    <ul className='cart_ingredients flex-col'>
+      {products.map((product) => (
+        <li key={generateUUID()}>
+          {product.title}&nbsp;{product.selectedSize?.name}, &nbsp;
+          {product.selectedDough?.name}&nbsp;(
+          {product.productQuantity}шт.)
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const CartProduct: React.FC<CartProductProps> = ({
   product,
   onIncrement,
@@ -50,6 +64,7 @@ const CartProduct: React.FC<CartProductProps> = ({
     removedIngredients,
     additionalIngredients,
     productQuantity,
+    promoProducts,
     id,
   } = product;
 
@@ -88,6 +103,11 @@ const CartProduct: React.FC<CartProductProps> = ({
             {additionalIngredients &&
               additionalIngredients.length > 0 &&
               renderIngredientsToAdd(additionalIngredients)}
+          </div>
+          <div>
+            {promoProducts &&
+              promoProducts.length > 0 &&
+              renderPromoProducts(promoProducts)}
           </div>
         </div>
         <div className='flex_start sm:flex_center flex-row gap-5 leading-[20px] sm:gap-2'>

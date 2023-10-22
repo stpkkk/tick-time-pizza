@@ -26,6 +26,13 @@ const ModalTotal: React.FC = () => {
     totalPromoProductsQuantity,
   } = useAppSelector((state) => state.menuReducer);
 
+  const totalProductPrice = calculateProductPrices(
+    selectedProduct,
+    selectedSize,
+    additionalIngredients,
+    productQuantity,
+  ).totalProductPrice;
+
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const addProductToCart = useCallback(async () => {
@@ -39,6 +46,7 @@ const ModalTotal: React.FC = () => {
       selectedDough,
       additionalIngredients,
       removedIngredients,
+      totalProductPrice,
       uuid,
     };
 
@@ -67,14 +75,6 @@ const ModalTotal: React.FC = () => {
     setCartProductInLS,
     dispatch,
   ]);
-
-  // Calculate the total product price
-  const totalProductPrice = calculateProductPrices(
-    selectedProduct,
-    selectedSize,
-    additionalIngredients,
-    productQuantity,
-  ).totalProductPrice;
 
   const handleIncrement = () => {
     if (
