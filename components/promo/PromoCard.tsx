@@ -5,6 +5,7 @@ import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { promos } from '@/constants';
 import {
+  resetPromoProductsList,
   setIsPromoModalOpen,
   setSelectedPromo,
 } from '@/redux/features/menuSlice';
@@ -25,6 +26,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
     const selectedPromo = promos.find((p) => p.id === clickedPromo.id);
     dispatch(setSelectedPromo(selectedPromo || null));
     dispatch(setIsPromoModalOpen(openModal));
+    dispatch(resetPromoProductsList());
   };
 
   return (

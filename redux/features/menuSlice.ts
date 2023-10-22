@@ -158,6 +158,10 @@ const menuSlice = createSlice({
       state.promoProductsList = action.payload;
     },
 
+    resetPromoProductsList: (state) => {
+      state.promoProductsList = [];
+    },
+
     removePromoProductsList: (state, action: PayloadAction<string>) => {
       const productUUID = action.payload;
       state.promoProductsList = state.promoProductsList.filter(
@@ -293,6 +297,7 @@ export const {
   decrementPromoProductQuantity,
   setIsPromoModalOpen,
   setTotalPromoProductsQuantity,
+  resetPromoProductsList,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

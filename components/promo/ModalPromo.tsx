@@ -3,7 +3,10 @@ import { RiCloseFill } from 'react-icons/ri';
 import Image from 'next/image';
 import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { setIsPromoModalOpen } from '@/redux/features/menuSlice';
+import {
+  resetPromoProductsList,
+  setIsPromoModalOpen,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { getPizzaOfTheDay } from '@/utils';
 
@@ -35,6 +38,7 @@ const ModalPromo: React.FC = () => {
 
   const handleClick = () => {
     dispatch(setIsPromoModalOpen(false));
+    dispatch(resetPromoProductsList());
   };
 
   return (

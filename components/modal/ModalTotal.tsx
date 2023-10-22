@@ -44,14 +44,11 @@ const ModalTotal: React.FC = () => {
 
     // Update the cart products and promo products
     const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
-    const updatedPromoProducts = [
-      ...(promoProductsList || []),
-      updatedSelectedProduct,
-    ];
+    const updatedPromoProducts = [...promoProductsList, updatedSelectedProduct];
 
-    dispatch(addToPromoProductsList(updatedPromoProducts));
-
-    if (!selectedPromo) {
+    if (selectedPromo) {
+      dispatch(addToPromoProductsList(updatedPromoProducts));
+    } else {
       dispatch(addToCart(updatedCartProduct));
       await setCartProductInLS(updatedCartProduct);
     }
