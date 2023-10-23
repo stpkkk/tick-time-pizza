@@ -46,7 +46,7 @@ const ModalTotal: React.FC = () => {
       selectedDough,
       additionalIngredients,
       removedIngredients,
-      totalProductPrice,
+      totalPrice: totalProductPrice,
       uuid,
     };
 
@@ -69,6 +69,7 @@ const ModalTotal: React.FC = () => {
     additionalIngredients,
     removedIngredients,
     productQuantity,
+    totalProductPrice,
     selectedPromo,
     promoProductsList,
     cartProductInLS,

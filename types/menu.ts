@@ -57,6 +57,6 @@ export interface IProduct {
   removedIngredients?: IOption[];
   productQuantity?: number;
   uuid?: string;
-  totalProductPrice?: number;
+  totalPrice?: number;
   promoProducts?: IProduct[];
 }

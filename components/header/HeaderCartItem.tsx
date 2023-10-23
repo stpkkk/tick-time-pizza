@@ -1,6 +1,5 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 import { calculateProductPrices, generateUUID } from '@/utils';
 
@@ -15,12 +14,12 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
 }) => {
   const { promoProducts } = product;
 
-  const totalProductPrice = calculateProductPrices(
+  const { totalProductPrice } = calculateProductPrices(
     product,
     product.selectedSize || null,
     product.additionalIngredients || [],
     product.productQuantity || 1,
-  ).totalProductPrice;
+  );
 
   const renderPromoProducts = (products: IProduct[]) => {
     return (

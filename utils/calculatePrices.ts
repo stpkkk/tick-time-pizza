@@ -21,8 +21,7 @@ export function calculateProductPrices(
   );
 
   const totalProductPrice =
-    (productPrice || selectedProduct?.totalProductPrice || 599) *
-      productQuantity +
+    (productPrice || selectedProduct?.totalPrice || 599) * productQuantity +
     additionalIngredientsPrice;
 
   return {

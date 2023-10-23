@@ -63,36 +63,42 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
 
   const priceWithDiscount = getPriceWithDiscount(promo?.title || '');
 
-  const addProductToCart = React.useCallback(async () => {
-    const uuid = generateUUID();
+  const addProductToCart = React.useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    const updatedPromoProduct = {
-      ...selectedProduct,
-      uuid,
-      productQuantity: 1,
-      title: `Акция: ${selectedPromo?.title}`,
-      image: promoImg,
-      totalProductPrice: priceWithDiscount,
-      promoProducts: promoProductsList,
-    };
+      const uuid = generateUUID();
 
-    const updatedCartProduct = [...cartProductInLS, updatedPromoProduct];
+      const updatedPromoProduct = {
+        ...selectedProduct,
+        uuid,
+        productQuantity: 1,
+        title: `Акция: ${selectedPromo?.title}`,
+        image: promoImg,
+        totalPrice: priceWithDiscount,
+        promoProducts: promoProductsList,
+        additionalIngredients: [],
+      };
 
-    dispatch(addToCart(updatedCartProduct));
-    await setCartProductInLS(updatedCartProduct);
+      const updatedCartProduct = [...cartProductInLS, updatedPromoProduct];
 
-    if (priceWithDiscount) {
-      dispatch(setPromoDiscount(priceWithDiscount));
-    }
-  }, [
-    selectedProduct,
-    setCartProductInLS,
-    promoProductsList,
-    priceWithDiscount,
-    cartProductInLS,
-    selectedPromo?.title,
-    dispatch,
-  ]);
+      dispatch(addToCart(updatedCartProduct));
+      await setCartProductInLS(updatedCartProduct);
+
+      if (priceWithDiscount) {
+        dispatch(setPromoDiscount(priceWithDiscount));
+      }
+    },
+    [
+      selectedProduct,
+      setCartProductInLS,
+      promoProductsList,
+      priceWithDiscount,
+      cartProductInLS,
+      selectedPromo?.title,
+      dispatch,
+    ],
+  );
 
   React.useEffect(() => {
     const newTotalQuantity = promoProductsList.reduce(
@@ -105,7 +111,11 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   return (
     <div className='w-full max-w-[285px]'>
       <div className='rounded-2xl drop-shadow-custom h-auto overflow-hidden bg-white'>
-        <form noValidate className='flex flex-col gap-30px'>
+        <form
+          noValidate
+          className='flex flex-col gap-30px'
+          onSubmit={addProductToCart}
+        >
           <div className='flex_between bg-yellow px-[30px] py-5'>
             <span className='font-zheldor text-lg leading-5 uppercase'>
               Пицца
@@ -146,7 +156,6 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
               </div>
               <button
                 className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
-                onClick={addProductToCart}
                 type='submit'
                 disabled={!isQuantityMax}
               >
