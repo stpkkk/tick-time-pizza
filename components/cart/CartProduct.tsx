@@ -94,21 +94,22 @@ const CartProduct: React.FC<CartProductProps> = ({
               <span>{selectedDough?.name}</span>
             </p>
           )}
-          <div>
-            {removedIngredients &&
-              removedIngredients.length > 0 &&
-              renderIngredientsToRemove(removedIngredients)}
-          </div>
-          <div>
-            {additionalIngredients &&
-              additionalIngredients.length > 0 &&
-              renderIngredientsToAdd(additionalIngredients)}
-          </div>
-          <div>
-            {promoProducts &&
-              promoProducts.length > 0 &&
-              renderPromoProducts(promoProducts)}
-          </div>
+          {promoProducts ? (
+            promoProducts.length > 0 && renderPromoProducts(promoProducts)
+          ) : (
+            <>
+              <div>
+                {removedIngredients &&
+                  removedIngredients.length > 0 &&
+                  renderIngredientsToRemove(removedIngredients)}
+              </div>
+              <div>
+                {additionalIngredients &&
+                  additionalIngredients.length > 0 &&
+                  renderIngredientsToAdd(additionalIngredients)}
+              </div>
+            </>
+          )}
         </div>
         <div className='flex_start sm:flex_center flex-row gap-5 leading-[20px] sm:gap-2'>
           <Counter

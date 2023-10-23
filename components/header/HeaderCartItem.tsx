@@ -1,7 +1,8 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
-import { calculateProductPrices } from '@/utils';
+import { calculateProductPrices, generateUUID } from '@/utils';
 
 interface HeaderCartItemProps {
   product: IProduct;
@@ -12,12 +13,28 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   product,
   onRemove,
 }) => {
+  const { promoProducts } = product;
+
   const totalProductPrice = calculateProductPrices(
     product,
     product.selectedSize || null,
     product.additionalIngredients || [],
     product.productQuantity || 1,
   ).totalProductPrice;
+
+  const renderPromoProducts = (products: IProduct[]) => {
+    return (
+      <ul className='cart_ingredients flex-col'>
+        {products.map((product) => (
+          <li key={generateUUID()}>
+            {product.title}&nbsp;{product.selectedSize?.name}, &nbsp;
+            {product.selectedDough?.name}&nbsp;(
+            {product.productQuantity}шт.)
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <div>
@@ -38,30 +55,37 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
           />
         </button>
       </div>
-      {product.selectedSize?.name && product.selectedDough?.name && (
-        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-          {product.selectedSize?.name},{product.selectedDough?.name}
-        </p>
+      {promoProducts && promoProducts.length > 0 ? (
+        renderPromoProducts(promoProducts)
+      ) : (
+        <div>
+          {product.selectedSize?.name && product.selectedDough?.name && (
+            <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+              {product.selectedSize?.name},{product.selectedDough?.name}
+            </p>
+          )}
+          {product.removedIngredients &&
+            product.removedIngredients.length > 0 && (
+              <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+                Убрать:&nbsp;
+                {product.removedIngredients?.map((ing) => (
+                  <span key={ing.id}>{ing.name},&nbsp;</span>
+                ))}
+              </p>
+            )}
+          {product.additionalIngredients &&
+            product.additionalIngredients.length > 0 && (
+              <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+                Добавить:&nbsp;
+                {product.additionalIngredients.map((ing) => (
+                  <span key={ing.id}>
+                    {ing.name}&nbsp;({ing.quantity}шт.),&nbsp;
+                  </span>
+                ))}
+              </p>
+            )}
+        </div>
       )}
-      {product.removedIngredients && product.removedIngredients.length > 0 && (
-        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-          Убрать:&nbsp;
-          {product.removedIngredients?.map((ing) => (
-            <span key={ing.id}>{ing.name},&nbsp;</span>
-          ))}
-        </p>
-      )}
-      {product.additionalIngredients &&
-        product.additionalIngredients.length > 0 && (
-          <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-            Добавить:&nbsp;
-            {product.additionalIngredients.map((ing) => (
-              <span key={ing.id}>
-                {ing.name}&nbsp;({ing.quantity}шт.),&nbsp;
-              </span>
-            ))}
-          </p>
-        )}
     </div>
   );
 };

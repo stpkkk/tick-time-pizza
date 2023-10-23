@@ -27,7 +27,6 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
     selectedProduct,
     selectedSize,
     productQuantity,
-    additionalIngredients,
     selectedPromo,
   } = useAppSelector((state) => state.menuReducer);
 
@@ -71,7 +70,6 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
       ...selectedProduct,
       uuid,
       productQuantity: 1,
-      additionalIngredients,
       title: `Акция: ${selectedPromo?.title}`,
       image: promoImg,
       totalProductPrice: priceWithDiscount,
@@ -88,11 +86,11 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
     }
   }, [
     selectedProduct,
-    selectedSize,
-    // additionalIngredients,
-    productQuantity,
-    promoProductsList,
     setCartProductInLS,
+    promoProductsList,
+    priceWithDiscount,
+    cartProductInLS,
+    selectedPromo?.title,
     dispatch,
   ]);
 
