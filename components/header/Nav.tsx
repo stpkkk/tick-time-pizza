@@ -17,17 +17,23 @@ const Nav: React.FC = () => {
           isNavOpen ? 'absolute p-6 sm:left-0 sm:top-[58px]' : 'md:hidden'
         } nav_links -z-10`}
       >
-        {navLinks.map((link) => (
-          <li className='cursor-pointer p-2' key={link.key}>
-            <Link
-              className={`${pathname === link.href && 'text-secondary'}`}
-              draggable='false'
-              href={link.href}
-            >
-              {link.text}
-            </Link>
-          </li>
-        ))}
+        {navLinks.map((link) => {
+          const isActive =
+            pathname === link.href ||
+            (link.href !== '/' && pathname.startsWith(link.href));
+
+          return (
+            <li className='cursor-pointer p-2' key={link.key}>
+              <Link
+                className={`${isActive ? 'text-secondary' : ''}`}
+                draggable='false'
+                href={link.href}
+              >
+                {link.text}
+              </Link>
+            </li>
+          );
+        })}
         <li>
           <Link
             href='/login'
