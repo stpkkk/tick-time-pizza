@@ -10,6 +10,10 @@ const CartTotal: React.FC = () => {
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
+  const discount = cartProducts.reduce(
+    (acc, product) => acc + (product?.discount ?? 0),
+    0,
+  );
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -56,7 +60,7 @@ const CartTotal: React.FC = () => {
             <span className='whitespace-nowrap'>{cartTotalPrice} ₽</span>
           </p>
           <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] flex justify-between font-normal'>
-            Скидка<span className='whitespace-nowrap'>0 ₽</span>
+            Скидка<span className='whitespace-nowrap'>{discount} ₽</span>
           </p>
         </div>
         <button

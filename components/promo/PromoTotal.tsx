@@ -4,6 +4,7 @@ import PromoTotalItem from './PromoTotalItem';
 import { useLocalStorage } from '@/hooks';
 import {
   addToCart,
+  resetPromoProductsList,
   setPromoDiscount,
   setTotalPromoProductsQuantity,
 } from '@/redux/features/menuSlice';
@@ -62,6 +63,8 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
   };
 
   const priceWithDiscount = getPriceWithDiscount(promo?.title || '');
+  const discount =
+    typeof priceWithDiscount === 'number' ? totalPrice - priceWithDiscount : 0;
 
   const addProductToCart = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -78,6 +81,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
         totalPrice: priceWithDiscount,
         promoProducts: promoProductsList,
         additionalIngredients: [],
+        discount,
       };
 
       const updatedCartProduct = [...cartProductInLS, updatedPromoProduct];
@@ -88,6 +92,8 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
       if (priceWithDiscount) {
         dispatch(setPromoDiscount(priceWithDiscount));
       }
+
+      dispatch(resetPromoProductsList());
     },
     [
       selectedProduct,
@@ -96,6 +102,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({ promo }) => {
       priceWithDiscount,
       cartProductInLS,
       selectedPromo?.title,
+      discount,
       dispatch,
     ],
   );

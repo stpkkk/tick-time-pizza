@@ -59,4 +59,5 @@ export interface IProduct {
   uuid?: string;
   totalPrice?: number;
   promoProducts?: IProduct[];
+  discount?: number;
 }
