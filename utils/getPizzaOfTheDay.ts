@@ -33,5 +33,6 @@ export const getPizzaOfTheDay = () => {
   return {
     dayOfWeek: days[dayIndex],
     pizzaOfTheDay: pizzas[pizzaIndex],
+    dayIndex,
   };
 };

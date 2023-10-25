@@ -1,28 +1,26 @@
 'use client';
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import {
-  IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
 } from 'react-icons/io';
 import Image from 'next/image';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
-import { Modal } from '../modal';
 import { menu, slides } from '@/constants';
 import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch } from '@/redux/hooks';
 import { Slide } from '@/types';
 
 SwiperCore.use([Navigation]);
 
 const Banner = () => {
   const dispatch = useAppDispatch();
-  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
   const swiperRef = useRef<SwiperCore>();
 
   const handleClick = (selectedSlide: Slide) => {
@@ -63,7 +61,7 @@ const Banner = () => {
           <SwiperSlide key={index}>
             <Image
               src={slide.image}
-              alt='Акция в Тик Тайм'
+              alt='Пицца дня'
               placeholder='blur'
               blurDataURL={pattern.src}
               className=' rounded-2xl h-full max-h-[389px] w-full max-w-[1230px] cursor-pointer'
