@@ -73,6 +73,7 @@ import cheeseSauce from '../public/assets/images/sauces/sauce-cheese.webp';
 import ketchup from '../public/assets/images/sauces/sauce-ketchup.webp';
 import sweetSourSauce from '../public/assets/images/sauces/sauce-sweet-sour.webp';
 import garlicSauce from '../public/assets/images/sauces/sauсe-garlic.webp';
+import cheeseSticks from '../public/assets/images/snacks/cheese-sticks.webp';
 //snacks
 import dumplingsCheese from '../public/assets/images/snacks/dumplings-cheese.webp';
 import hotrollPepperoni from '../public/assets/images/snacks/hotroll-pepperoni.webp';
@@ -9152,6 +9153,149 @@ export const menu: IProduct[] = [
   },
   {
     id: 30,
+    title: 'Сырные палочки Блю Чиз',
+    image: cheeseSticks,
+    group: 'snacks',
+    ingredients:
+      'Фирменный томатный соус, моцарелла, сыр блю чиз с голубой плесенью',
+    prices: [{ id: 0, price: 399 }],
+    additionalIngredients: [
+      {
+        id: 0,
+        image: mozzarella,
+        name: 'Сыр Моцарелла',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 50 }],
+      },
+      {
+        id: 1,
+        image: jalapeno,
+        name: 'Перец Халапеньо',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, price: 25 }],
+      },
+      {
+        id: 2,
+        image: chickenSmoked,
+        name: 'Копченая Курица',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 3,
+        image: ham,
+        name: 'Ветчина',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 4,
+        image: pepperoniAdds,
+        name: 'Пепперони',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 37 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 5,
+        image: bacon,
+        name: 'Бекон',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 6,
+        image: huntingSausages,
+        name: 'Охотничьи Колбаски',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 45 }],
+      },
+      {
+        id: 7,
+        image: onionBulb,
+        name: 'Лук Репчатый',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, price: 10 }],
+      },
+      {
+        id: 8,
+        image: cheeseParmesan,
+        name: 'Сыр Пармезан',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 55 }],
+      },
+      {
+        id: 9,
+        image: cheeseFeta,
+        name: 'Сыр Фета',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, price: 29 }],
+      },
+      {
+        id: 10,
+        image: cheeseChedder,
+        name: 'Сыр Чеддер',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, price: 65 }],
+      },
+      {
+        id: 11,
+        image: dill,
+        name: 'Укроп',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, price: 15 }],
+      },
+      {
+        id: 12,
+        image: garlic,
+        name: 'Чеснок',
+        maxQuantity: 1,
+        weights: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, price: 5 }],
+      },
+      {
+        id: 13,
+        image: onionFree,
+        name: 'Лук Фри',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 17 }],
+        prices: [{ id: 0, price: 20 }],
+      },
+      {
+        id: 14,
+        image: cheeseBlue,
+        name: 'Сыр Блю Чиз',
+        maxQuantity: 5,
+        weights: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, price: 95 }],
+      },
+    ],
+    removeIngredients: [
+      { id: 0, name: 'Томаты' },
+      { id: 1, name: 'Пепперони' },
+    ],
+    categories: [{ id: 0, title: 'Без Мяса', image: leaf }],
+    nutritionalValues: {
+      proteins: 11.34,
+      fats: 18.9,
+      carbohydrates: 20.4,
+      calories: 297.06,
+    },
+    weights: [{ id: 0, weight: 190 }],
+  },
+  {
+    id: 31,
     title: 'Хот-Ролл с Пепперони',
     image: hotrollPepperoni,
     group: 'snacks',
@@ -9205,7 +9349,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 190 }],
   },
   {
-    id: 31,
+    id: 32,
     title: 'Милкшейк "Юдзу" 0,3',
     image: milkshakeYuzu,
     group: 'drinks',
@@ -9220,7 +9364,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 300 }],
   },
   {
-    id: 32,
+    id: 33,
     title: 'Милкшейк Лесные Ягоды 0,3',
     image: milkshakeBerries,
     group: 'drinks',
@@ -9236,7 +9380,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 300 }],
   },
   {
-    id: 33,
+    id: 34,
     title: 'Милкшейк Мятный 0,3',
     image: milkshakeMint,
     group: 'drinks',
@@ -9251,7 +9395,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 300 }],
   },
   {
-    id: 34,
+    id: 35,
     title: 'Evervess Кола 1 л.',
     image: evervessCola,
     group: 'drinks',
@@ -9266,7 +9410,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 1000 }],
   },
   {
-    id: 35,
+    id: 36,
     title: 'Морс Черника с мятой 0,5 бут',
     image: morsBlueberryMint,
     group: 'drinks',
@@ -9281,7 +9425,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 500 }],
   },
   {
-    id: 36,
+    id: 37,
     title: 'Сладкие палочки',
     image: sweetSticks,
     group: 'desserts',
@@ -9296,7 +9440,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 530 }],
   },
   {
-    id: 37,
+    id: 38,
     title: 'Чизкейк с Карамельным соусом',
     image: cheesecakeCaramel,
     group: 'desserts',
@@ -9315,7 +9459,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 120 }],
   },
   {
-    id: 38,
+    id: 39,
     title: 'Пломбир Ванильный',
     image: iceCreamVanilla,
     group: 'desserts',
@@ -9329,7 +9473,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 70 }],
   },
   {
-    id: 39,
+    id: 40,
     title: 'соус Кетчуп',
     image: ketchup,
     group: 'sauces',
@@ -9337,7 +9481,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 40,
+    id: 41,
     title: 'соус BBQ',
     image: bbqSauce,
     group: 'sauces',
@@ -9345,7 +9489,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 41,
+    id: 42,
     title: 'соус Баффало',
     image: buffaloSauce,
     group: 'sauces',
@@ -9353,7 +9497,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 42,
+    id: 43,
     title: 'соус Чесночный',
     image: garlicSauce,
     group: 'sauces',
@@ -9361,7 +9505,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 43,
+    id: 44,
     title: 'соус Сырный',
     image: cheeseSauce,
     group: 'sauces',
@@ -9369,7 +9513,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 44,
+    id: 45,
     title: 'соус Кисло-Сладкий',
     image: sweetSourSauce,
     group: 'sauces',
@@ -9377,7 +9521,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 45,
+    id: 46,
     title: 'Малиновое варенье 30 гр.',
     image: jamRaspberry,
     group: 'sauces',
@@ -9385,7 +9529,7 @@ export const menu: IProduct[] = [
     weights: [{ id: 0, weight: 30 }],
   },
   {
-    id: 46,
+    id: 47,
     title: 'cоус Цезарь',
     image: caesarSauce,
     group: 'sauces',

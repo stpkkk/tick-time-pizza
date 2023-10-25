@@ -12,14 +12,30 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
-import { slides } from '@/constants';
+import { Modal } from '../modal';
+import { menu, slides } from '@/constants';
+import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { Slide } from '@/types';
 
 SwiperCore.use([Navigation]);
 
 const Banner = () => {
+  const dispatch = useAppDispatch();
+  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
   const swiperRef = useRef<SwiperCore>();
 
-  const handleClick = () => {};
+  const handleClick = (selectedSlide: Slide) => {
+    const selectedProduct = menu.find(
+      (product) => product.title === selectedSlide.title,
+    );
+
+    if (selectedProduct) {
+      dispatch(setSelectedProduct(selectedProduct));
+    }
+
+    dispatch(toggleModal(true));
+  };
 
   return (
     <div className='relative mt-[120px] rounded-2xl sm:mt-[90px]'>
@@ -44,15 +60,16 @@ const Banner = () => {
         className='!overflow-visible'
       >
         {slides?.map((slide, index) => (
-          <SwiperSlide key={index} onClick={handleClick}>
+          <SwiperSlide key={index}>
             <Image
               src={slide.image}
               alt='Акция в Тик Тайм'
               placeholder='blur'
               blurDataURL={pattern.src}
-              className=' rounded-2xl h-full max-h-[389px] w-full max-w-[1230px]'
+              className=' rounded-2xl h-full max-h-[389px] w-full max-w-[1230px] cursor-pointer'
               quality={100}
               key={slide.id}
+              onClick={() => handleClick(slide)}
             />
           </SwiperSlide>
         ))}

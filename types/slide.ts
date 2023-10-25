@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-export type Slides = {
+export type Slide = {
   id: number;
   image: string | StaticImageData;
   title: string;

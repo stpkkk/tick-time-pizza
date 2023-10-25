@@ -7,10 +7,10 @@ import slide6 from '../public/assets/images/slider/slide-6.webp';
 import slide7 from '../public/assets/images/slider/slide-7.webp';
 import slideTh from '../public/assets/images/slider/slide-th.webp';
 import slideWed from '../public/assets/images/slider/slide-wed.webp';
-import { Slides } from '@/types';
+import { Slide } from '@/types';
 
-export const slides: Slides[] = [
-  { id: 0, image: slide1, title: 'Сырные палочки' },
+export const slides: Slide[] = [
+  { id: 0, image: slide1, title: 'Сырные палочки Блю Чиз' },
   { id: 1, image: slide2, title: 'Салат овощной с яйцом' },
   { id: 2, image: slide3, title: 'Пломбир Ванильный' },
   { id: 3, image: slide4, title: 'Фруктовый Салат' },
@@ -18,5 +18,4 @@ export const slides: Slides[] = [
   { id: 5, image: slide6, title: 'Картофель чикен фри' },
   { id: 6, image: slide7, title: 'Пицца Итальянская' },
   { id: 7, image: slideWed, title: 'Пицца Пепперони' },
-  { id: 8, image: slideWed, title: 'Пицца Мясная' },
 ];
