@@ -12,30 +12,14 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
-import slide1 from '../../public/assets/images/slider/slide-1.webp';
-import slide2 from '../../public/assets/images/slider/slide-2.webp';
-import slide3 from '../../public/assets/images/slider/slide-3.webp';
-import slide4 from '../../public/assets/images/slider/slide-4.webp';
-import slide5 from '../../public/assets/images/slider/slide-5.webp';
-import slide6 from '../../public/assets/images/slider/slide-6.webp';
-import slide7 from '../../public/assets/images/slider/slide-7.webp';
-import slideTh from '../../public/assets/images/slider/slide-th.webp';
-import slideWed from '../../public/assets/images/slider/slide-wed.webp';
+import { slides } from '@/constants';
 
 SwiperCore.use([Navigation]);
 
 const Banner = () => {
   const swiperRef = useRef<SwiperCore>();
-  const slides = [
-    { id: 0, image: slide1 },
-    { id: 1, image: slide2 },
-    { id: 2, image: slide3 },
-    { id: 3, image: slide4 },
-    { id: 4, image: slide5 },
-    { id: 5, image: slide6 },
-    { id: 6, image: slide7 },
-    { id: 7, image: slideWed },
-  ];
+
+  const handleClick = () => {};
 
   return (
     <div className='relative mt-[120px] rounded-2xl sm:mt-[90px]'>
@@ -60,7 +44,7 @@ const Banner = () => {
         className='!overflow-visible'
       >
         {slides?.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} onClick={handleClick}>
             <Image
               src={slide.image}
               alt='Акция в Тик Тайм'
