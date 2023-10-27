@@ -28,8 +28,8 @@ export function calculateProductPrices(
 
   const totalProductPrice =
     (productPrice ||
-      selectedProduct?.totalPrice ||
       selectedProduct?.prices[0].price ||
+      selectedProduct?.totalPrice ||
       599) *
       productQuantity +
     additionalIngredientsPrice;

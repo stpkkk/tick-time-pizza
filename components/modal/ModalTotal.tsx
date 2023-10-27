@@ -26,12 +26,12 @@ const ModalTotal: React.FC = () => {
     totalPromoProductsQuantity,
   } = useAppSelector((state) => state.menuReducer);
 
-  const totalProductPrice = calculateProductPrices(
+  const { totalProductPrice } = calculateProductPrices(
     selectedProduct,
     selectedSize,
     additionalIngredients,
     productQuantity,
-  ).totalProductPrice;
+  );
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 

@@ -9430,7 +9430,7 @@ export const menu: IProduct[] = [
     image: sweetSticks,
     group: 'desserts',
     ingredients: 'Ананасы, карамельный соус, малиновый соус, моцарелла, тесто',
-    prices: [{ id: 0, price: 399 }],
+    prices: [{ id: 0, price: 349 }],
     nutritionalValues: {
       proteins: 9.49,
       fats: 6.49,
