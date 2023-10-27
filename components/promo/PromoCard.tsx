@@ -30,7 +30,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
   };
 
   return (
-    <article className='flex flex-col w-full h-full bg-white sm:max-w-[420px] max-w-[350px] md:max-w-[350px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4'>
+    <article className='flex flex-col w-full h-full bg-white sm:max-w-[420px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4'>
       <Image
         src={promo.image}
         alt={promo.title}
