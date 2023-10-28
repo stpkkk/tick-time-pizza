@@ -19,7 +19,7 @@ const HeaderMobile: React.FC = () => {
     <header className='content_container fixed top-0 z-10 hidden drop-shadow-custom sm:block'>
       <div className='relative flex h-[70px] items-center rounded-b-2xl bg-white px-4 shadow'>
         <Logo />
-        <div className='flex_center'>
+        <div className='flex_center h-full'>
           <HeaderCart />
           <button
             className='cursor-pointer px-2'

@@ -11,9 +11,7 @@ import { calculateTotalPrice } from '@/utils';
 
 const HeaderCart: React.FC = () => {
   const dispatch = useAppDispatch();
-  const cartProducts = useAppSelector(
-    (state) => state.menuReducer.cartProducts,
-  );
+  const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const isHoveringCart = useAppSelector(
     (state) => state.headerReducer.isHoveringCart,
   );
@@ -65,7 +63,7 @@ const HeaderCart: React.FC = () => {
           )}
         </div>
         {totalQuantity ? (
-          <span className='header_total_quantity right-6 top-4'>
+          <span className='header_total_quantity right-6 md:-right-1 top-4'>
             {totalQuantity}
           </span>
         ) : (

@@ -147,7 +147,9 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           {!isQuantityMax ? (
             <>
               <span className='block font-semibold text-sm mb-4'>
-                Выберите первый товар
+                Выберите{' '}
+                {totalPromoProductsQuantity === 0 ? 'первый' : 'следующий'}{' '}
+                товар
               </span>
               <button
                 className='btn_red max-w-[100px] !max-h-[35px]'
