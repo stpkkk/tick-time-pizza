@@ -5,7 +5,7 @@ import { BackButton, Cart, CartTotal, Tabs } from '@/components';
 
 const CartPage: React.FC = () => {
   return (
-    <div className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-[70px]'>
+    <div className='content_container min-h-[calc(100vh-268px)] mt-[90px]'>
       <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
         <BackButton />
         <div className='h1'>Корзина</div>

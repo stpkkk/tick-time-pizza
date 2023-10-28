@@ -6,9 +6,13 @@ import Phone from './Phone';
 import { navLinks } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 
-const Nav: React.FC = () => {
+type NavProps = {
+  handleToggleMenu?: React.MouseEventHandler<HTMLAnchorElement>;
+};
+
+const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
   const pathname = usePathname();
-  const isNavOpen = useAppSelector((state) => state.headerReducer.isNavOpen);
+  const { isNavOpen } = useAppSelector((state) => state.headerReducer);
 
   return (
     <nav className='font-semibold sm:flex sm:flex-col'>
@@ -26,6 +30,7 @@ const Nav: React.FC = () => {
             <li className='cursor-pointer p-2' key={link.key}>
               <Link
                 className={`${isActive ? 'text-secondary' : ''}`}
+                onClick={handleToggleMenu}
                 draggable='false'
                 href={link.href}
               >

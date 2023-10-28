@@ -1,9 +1,21 @@
 import React from 'react';
 
-const PromoTotalPrice = () => {
+type PromoTotalProps = {
+  addProductToCart: any;
+  totalPrice: number;
+  priceWithDiscount?: number | string;
+  isQuantityMax: boolean;
+};
+
+const PromoTotalPrice: React.FC<PromoTotalProps> = ({
+  addProductToCart,
+  totalPrice,
+  isQuantityMax,
+  priceWithDiscount,
+}) => {
   return (
     <>
-      {/* <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
+      <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
         <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
           {priceWithDiscount} ₽
         </span>
@@ -12,11 +24,12 @@ const PromoTotalPrice = () => {
             {totalPrice} ₽
           </span>
         ) : null}
-      </div> */}
+      </div>
       <button
         className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
-        type='submit'
-        // disabled={!isQuantityMax}
+        onClick={addProductToCart}
+        type='button'
+        disabled={!isQuantityMax}
       >
         Добавить в корзину
       </button>

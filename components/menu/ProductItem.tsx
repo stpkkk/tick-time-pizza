@@ -8,6 +8,7 @@ import {
   setHoveredItemId,
   toggleModal,
   setSelectedPromo,
+  setIsProductsListModalOpen,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
@@ -19,8 +20,12 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
   const dispatch = useAppDispatch();
-  const { hoveredItemId, totalPromoProductsQuantity, selectedPromo } =
-    useAppSelector((state) => state.menuReducer);
+  const {
+    hoveredItemId,
+    totalPromoProductsQuantity,
+    selectedPromo,
+    isProductsListModalOpen,
+  } = useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
   const starterPrice = product.prices.find((product) => product.id === 0)
@@ -44,6 +49,10 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
       dispatch(setSelectedProduct(selectedProduct || null));
       dispatch(setSelectedPromo(promo || null));
       dispatch(toggleModal(true));
+
+      if (isProductsListModalOpen) {
+        dispatch(setIsProductsListModalOpen(false));
+      }
     }
   };
 

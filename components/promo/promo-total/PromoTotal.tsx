@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
+import PromoProductsList from './PromoSelectedProductsList';
 import PromoTotalHeader from './PromoTotalHeader';
-import PromoTotalItem from './PromoTotalItem';
+import PromoTotalPrice from './PromoTotalPrice';
 import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Promo } from '@/types';
-import { generateUUID } from '@/utils';
 
 type PromoTotalProps = {
   promo?: Promo;
-  addProductToCart: any;
+  addProductToCart: (e: React.FormEvent<HTMLFormElement>) => void;
   totalPrice: number;
   priceWithDiscount?: number | string;
   isQuantityMax: boolean;
@@ -24,9 +24,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
   priceWithDiscount,
 }) => {
   const dispatch = useAppDispatch();
-  const { totalPromoProductsQuantity, promoProductsList } = useAppSelector(
-    (state) => state.menuReducer,
-  );
+  const { promoProductsList } = useAppSelector((state) => state.menuReducer);
 
   React.useEffect(() => {
     const newTotalQuantity = promoProductsList.reduce(
@@ -54,33 +52,15 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
               </p>
             )}
             <div className='w-full sm:px-4 bg-white '>
-              <ul className='flex flex-col gap-[30px]'>
-                {promoProductsList.map((product) => (
-                  <li className=' flex flex-col gap-2.5' key={generateUUID()}>
-                    <PromoTotalItem
-                      product={product}
-                      totalPromoProductsQuantity={totalPromoProductsQuantity}
-                    />
-                  </li>
-                ))}
-              </ul>
-              <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
-                <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
-                  {priceWithDiscount} ₽
-                </span>
-                {isQuantityMax ? (
-                  <span className='line-through text-grayDark font-semibold whitespace-nowrap text-base'>
-                    {totalPrice} ₽
-                  </span>
-                ) : null}
+              <PromoProductsList />
+              <div className='sm:hidden'>
+                <PromoTotalPrice
+                  addProductToCart={addProductToCart}
+                  isQuantityMax={isQuantityMax}
+                  priceWithDiscount={priceWithDiscount}
+                  totalPrice={totalPrice}
+                />
               </div>
-              <button
-                className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
-                type='submit'
-                disabled={!isQuantityMax}
-              >
-                Добавить в корзину
-              </button>
             </div>
           </div>
         </form>

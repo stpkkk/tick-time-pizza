@@ -33,7 +33,7 @@ const HeaderMobile: React.FC = () => {
             )}
           </button>
         </div>
-        {isNavOpen && <Nav />}
+        {isNavOpen && <Nav handleToggleMenu={handleToggleMenu} />}
       </div>
     </header>
   );

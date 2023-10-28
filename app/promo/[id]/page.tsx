@@ -1,12 +1,16 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import promoImg from '../../../public/assets/icons/promo.svg';
 import {
   BackButton,
-  ProductItem,
+  ModalPromoProdutsList,
+  PromoProductsList,
+  PromoSelectedProductsList,
   PromoTotal,
   PromoTotalHeader,
+  PromoTotalPrice,
 } from '@/components';
 import { Modal } from '@/components/modal';
 import { promos } from '@/constants';
@@ -14,6 +18,7 @@ import { useLocalStorage } from '@/hooks';
 import {
   addToCart,
   resetPromoProductsList,
+  setIsProductsListModalOpen,
   setPromoDiscount,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -24,7 +29,6 @@ import {
   generateUUID,
   getPizzaOfTheDay,
   getPriceWithDiscount,
-  getPromoProducts,
 } from '@/utils';
 
 type PromoProps = {
@@ -35,8 +39,10 @@ type PromoProps = {
 
 const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   const {
     isModalOpen,
+    isProductsListModalOpen,
     promoProductsList,
     selectedProduct,
     selectedSize,
@@ -48,7 +54,6 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = promo?.title === Promos.PIZZA_OF_THE_DAY;
   const promoTitle = promo?.title ?? '';
-  const promoProducts = getPromoProducts(promoTitle);
 
   const { totalPrice } = calculateTotalPrice(promoProductsList);
   const { productPrice } = calculateProductPrices(
@@ -99,6 +104,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       }
 
       dispatch(resetPromoProductsList());
+      router.push('/promo');
     },
     [
       selectedProduct,
@@ -108,9 +114,14 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       cartProductInLS,
       selectedPromo?.title,
       discount,
+      router,
       dispatch,
     ],
   );
+
+  const handleClickOpenProductsList = () => {
+    dispatch(setIsProductsListModalOpen(true));
+  };
 
   return (
     <div className='content_container min-h-[calc(100vh-358px)] mt-[90px] sm:mt-[70px] sm:px-0'>
@@ -120,16 +131,33 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
         </div>
       </div>
-      <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5'>
+      <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
         <PromoTotalHeader promo={promo} />
       </div>
       <div className='flex justify-between gap-[30px]'>
-        <div className='flex flex-col sm:gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] w-full drop-shadow-custom md:px-4  sm:drop-shadow-none sm:mx-auto'>
-          <div className='grid justify-items-center smMin:grid-cols-1 mdMin:grid-cols-2 lgMin:grid-cols-3 gap-[30px] sm:gap-4 '>
-            {promoProducts.map((product) => (
-              <ProductItem key={product.id} product={product} promo={promo} />
-            ))}
-          </div>
+        <div className='sm:hidden'>
+          <PromoProductsList promo={promo} />
+        </div>
+        <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
+          {promoProductsList.length > 0 && (
+            <div className='mb-[30px]'>
+              <PromoSelectedProductsList />
+            </div>
+          )}
+          {!isQuantityMax ? (
+            <>
+              <span className='block font-semibold text-sm mb-4'>
+                Выберите первый товар
+              </span>
+              <button
+                className='btn_red max-w-[100px] !max-h-[35px]'
+                onClick={handleClickOpenProductsList}
+                type='button'
+              >
+                Выбрать
+              </button>
+            </>
+          ) : null}
         </div>
         <PromoTotal
           promo={promo}
@@ -139,7 +167,16 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
+      <div className='bg-white drop-shadow-custom rounded-t-2xl p-4 pt-0 hidden sm:block w-full fixed bottom-0 left-0'>
+        <PromoTotalPrice
+          addProductToCart={addProductToCart}
+          isQuantityMax={isQuantityMax}
+          priceWithDiscount={priceWithDiscount}
+          totalPrice={totalPrice}
+        />
+      </div>
       {isModalOpen && <Modal />}
+      {isProductsListModalOpen && <ModalPromoProdutsList promo={promo} />}
     </div>
   );
 };
