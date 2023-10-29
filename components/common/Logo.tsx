@@ -5,10 +5,12 @@ import logo from '../../public/assets/icons/logo.svg';
 
 const Logo: React.FC = () => {
   return (
-    <Link href='/' className='mr-auto'>
+    <Link href='/' className='mr-auto flex-shrink-0'>
       <Image
         src={logo}
         alt='logo'
+        width={57}
+        height={57}
         className='h-full max-h-[57px] w-full max-w-[57px] sm:max-h-[45px] sm:max-w-[45px]'
       />
     </Link>

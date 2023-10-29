@@ -30,17 +30,15 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
   };
 
   return (
-    <article className='flex flex-col w-full h-full bg-white sm:max-w-[420px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4'>
+    <article className='flex_center flex-col w-full h-full bg-white max-w-[420px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4 '>
       <Image
         src={promo.image}
         alt={promo.title}
         placeholder='blur'
         blurDataURL={pizza.src}
-        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         width={350}
-        height={197}
         onClick={() => handlePromoClick(promo, true)}
-        className='aspect-square h-full max-h-[197px] w-full max-w-[350px] sm:max-h-[144px] cursor-pointer rounded-2xl mb-4 sm:self-center'
+        className='w-full h-auto max-w-[350px] cursor-pointer rounded-2xl mb-4 md:self-center'
       />
       <span className='block font-semibold leading-5 mb-4'>
         {isPizzaOfTheDay ? promo.title + ' ' + currentDay : promo.title}

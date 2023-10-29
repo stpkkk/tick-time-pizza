@@ -57,8 +57,8 @@ const ModalTotal: React.FC = () => {
     if (selectedPromo) {
       dispatch(addToPromoProductsList(updatedPromoProducts));
     } else {
-      dispatch(addToCart(updatedCartProduct));
       await setCartProductInLS(updatedCartProduct);
+      dispatch(addToCart(updatedCartProduct));
     }
 
     dispatch(toggleModal(false));

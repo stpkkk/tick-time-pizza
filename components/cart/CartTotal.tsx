@@ -11,7 +11,10 @@ const CartTotal: React.FC = () => {
     0,
   );
   const discount = cartProducts.reduce(
-    (acc, product) => acc + (product?.discount ?? 0),
+    (acc, product) =>
+      acc +
+      (product?.discount ?? 0) *
+        ((product?.productQuantity && product?.productQuantity) || 0),
     0,
   );
 

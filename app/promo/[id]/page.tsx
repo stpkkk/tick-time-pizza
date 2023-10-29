@@ -20,6 +20,7 @@ import {
   resetPromoProductsList,
   setIsProductsListModalOpen,
   setPromoDiscount,
+  setSelectedPromo,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Prices, Promos } from '@/types';
@@ -104,6 +105,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       }
 
       dispatch(resetPromoProductsList());
+      dispatch(setSelectedPromo(null));
       router.push('/promo');
     },
     [
