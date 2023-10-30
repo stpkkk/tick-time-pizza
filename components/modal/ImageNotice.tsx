@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useCallback } from 'react';
+import React from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
 import { toggleTooltip } from '@/redux/features/menuSlice';
@@ -8,16 +8,14 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ImageNotice: React.FC = () => {
   const dispatch = useAppDispatch();
-  const isTooltipOpen = useAppSelector(
-    (state) => state.menuReducer.isTooltipOpen,
-  );
-  const modalRef = useRef<HTMLDivElement>(null);
+  const { isTooltipOpen } = useAppSelector((state) => state.menuReducer);
+  const modalRef = React.useRef<HTMLDivElement>(null);
 
   const handleClickExclamation = () => {
     dispatch(toggleTooltip());
   };
 
-  const handleClickOutside = useCallback(
+  const handleClickOutside = React.useCallback(
     (e: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
         dispatch(toggleTooltip());
@@ -26,7 +24,7 @@ const ImageNotice: React.FC = () => {
     [dispatch],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     document.body.classList.add('overflow-hidden');
 

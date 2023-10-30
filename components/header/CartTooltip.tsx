@@ -1,6 +1,6 @@
 'use client';
 
-import React, { MutableRefObject } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import HeaderCartItem from './HeaderCartItem';
 import { addToCart } from '@/redux/features/menuSlice';
@@ -9,7 +9,7 @@ import { IProduct } from '@/types';
 
 interface CartTooltipProps {
   products: IProduct[];
-  cartTooltipRef: MutableRefObject<HTMLDivElement | null>;
+  cartTooltipRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 const CartTooltip: React.FC<CartTooltipProps> = ({

@@ -13,7 +13,6 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   onRemove,
 }) => {
   const { promoProducts } = product;
-
   const { totalProductPrice } = calculateProductPrices(
     product,
     product.selectedSize || null,
@@ -26,7 +25,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
       <ul className='cart_ingredients flex-col'>
         {products.map((product) => (
           <li key={generateUUID()}>
-            {product.title}&nbsp;{product.selectedSize?.name}, &nbsp;
+            {product.title}&nbsp;{product.selectedSize?.name},&nbsp;
             {product.selectedDough?.name}&nbsp;(
             {product.productQuantity}шт.)
           </li>

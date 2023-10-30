@@ -5,6 +5,7 @@ import { RadioGroupOption } from '../common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Dough, IOption, Promos, Sizes } from '@/types';
+import { getPromoProductSizes } from '@/utils';
 import { RadioGroup } from '@headlessui/react';
 
 const ProductSizeSelection: React.FC = () => {
@@ -12,16 +13,19 @@ const ProductSizeSelection: React.FC = () => {
   const { selectedProduct, selectedSize, selectedDough, selectedPromo } =
     useAppSelector((state) => state.menuReducer);
 
-  const { THIN, TRADITIONAL } = Dough;
-  const { SMALL, MEDIUM, BIG } = Sizes;
-  const { FOUR_BIG_PIZZAS, THREE_PIZZAS_999, PEPPERONI, DINNER_PIZZA } = Promos;
+  const dough =
+    selectedPromo?.title === Promos.THREE_PIZZAS_999
+      ? selectedProduct?.dough?.filter((d) => d.name === Dough.TRADITIONAL)
+      : selectedProduct?.dough;
+
+  const sizes = getPromoProductSizes(selectedPromo?.title || '');
 
   const getIsDisabledSize = (size: IOption) => {
-    return selectedDough?.name === THIN && size.name === SMALL;
+    return selectedDough?.name === Dough.THIN && size.name === Sizes.SMALL;
   };
 
   const getIsDisabledDough = (dough: IOption) => {
-    return selectedSize?.name === SMALL && selectedDough !== dough;
+    return selectedSize?.name === Sizes.SMALL && selectedDough !== dough;
   };
 
   const handleSizeChange = (size: IOption) => {
@@ -31,28 +35,6 @@ const ProductSizeSelection: React.FC = () => {
   const handleDoughChange = (dough: IOption) => {
     dispatch(setSelectedDough(dough));
   };
-
-  const dough =
-    selectedPromo?.title === THREE_PIZZAS_999
-      ? selectedProduct?.dough?.filter((d) => d.name === TRADITIONAL)
-      : selectedProduct?.dough;
-
-  const getSizes = (promoTitle: string) => {
-    switch (promoTitle) {
-      case FOUR_BIG_PIZZAS:
-        return selectedProduct?.sizes?.filter((size) => size.name === BIG);
-      case PEPPERONI:
-        return selectedProduct?.sizes?.filter((size) => size.name === BIG);
-      case THREE_PIZZAS_999:
-        return selectedProduct?.sizes?.filter((size) => size.name === SMALL);
-      case DINNER_PIZZA:
-        return selectedProduct?.sizes?.filter((size) => size.name === MEDIUM);
-      default:
-        return selectedProduct?.sizes;
-    }
-  };
-
-  const sizes = getSizes(selectedPromo?.title || '');
 
   return (
     <div className='flex flex-col gap-2'>

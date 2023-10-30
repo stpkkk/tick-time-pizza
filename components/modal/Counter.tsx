@@ -38,9 +38,7 @@ const Counter: React.FC<CounterProps> = ({
       </span>
       <button
         className={`${
-          counterValue >= (maxValue || 99)
-            ? 'text-grayDark opacity-30'
-            : 'text-grayDark hover:text-primary'
+          counterValue >= (maxValue || 99) ? 'opacity-30' : 'hover:text-primary'
         } text-grayDark`}
         type='button'
         onClick={() => handleIncrement()}

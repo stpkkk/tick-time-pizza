@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Counter from './Counter';
 import { useLocalStorage } from '@/hooks';
 import {
@@ -35,7 +35,7 @@ const ModalTotal: React.FC = () => {
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
-  const addProductToCart = useCallback(async () => {
+  const addProductToCart = React.useCallback(async () => {
     const uuid = generateUUID();
 
     // Create an updated product object

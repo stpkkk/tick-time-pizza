@@ -8,13 +8,14 @@ import {
   setIsPromoModalOpen,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedPromo } = useAppSelector((state) => state.menuReducer);
   const currentDay = getPizzaOfTheDay().dayOfWeek;
-  const isPizzaOfTheDay = selectedPromo!.title === 'Пицца дня.';
+  const isPizzaOfTheDay = selectedPromo!.title === Promos.PIZZA_OF_THE_DAY;
   const modalRef = React.useRef<HTMLDivElement>(null);
 
   const handleClickOutside = React.useCallback(

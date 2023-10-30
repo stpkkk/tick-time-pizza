@@ -12,9 +12,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
-  const isHoveringPhone = useAppSelector(
-    (state) => state.headerReducer.isHoveringPhone,
-  );
+  const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
 
   const handleClick = () => {
     dispatch(toggleNav());
@@ -53,7 +51,7 @@ const HeaderDesktop: React.FC = () => {
           onMouseOut={handleMouseOutPhone}
         >
           <Phone />
-          {isHoveringPhone && <PhoneTooltip />}
+          {isHoveringPhone ? <PhoneTooltip /> : null}
         </div>
         <Link
           href='/account'

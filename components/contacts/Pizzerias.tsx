@@ -13,7 +13,7 @@ const Pizzerias: React.FC<PizzeriasProps> = ({ pizzeria }) => {
         {pizzeria.adress}
       </span>
       <ul>
-        {pizzeria.openingHours.map((openingHour, i) => (
+        {pizzeria.openingHours.map((openingHour) => (
           <li key={generateUUID()}>{openingHour}</li>
         ))}
       </ul>

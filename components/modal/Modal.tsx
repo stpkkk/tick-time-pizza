@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import ModalLeftContent from './ModalLeftContent';
 import ModalRightContent from './ModalRightContent';
@@ -14,11 +14,10 @@ import { useAppDispatch } from '@/redux/hooks';
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = React.useRef<HTMLDivElement>(null);
+  const [modalHeight, setModalHeight] = React.useState<number>(0);
 
-  const [modalHeight, setModalHeight] = useState<number>(0);
-
-  const handleClickOutside = useCallback(
+  const handleClickOutside = React.useCallback(
     (e: MouseEvent) => {
       if (
         modalRef.current &&
@@ -31,7 +30,7 @@ const Modal: React.FC = () => {
     [dispatch],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     document.body.classList.add('overflow-hidden');
 
@@ -41,11 +40,11 @@ const Modal: React.FC = () => {
     };
   }, [handleClickOutside]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     dispatch(initializeDefaultValues());
   }, [dispatch]);
 
-  const handleClick = () => {
+  const handleClickClose = () => {
     dispatch(toggleModal(false));
   };
 
@@ -62,7 +61,7 @@ const Modal: React.FC = () => {
               <button
                 className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
                 type='button'
-                onClick={handleClick}
+                onClick={handleClickClose}
               >
                 <RiCloseFill size={36} className='md:w-7' />
               </button>

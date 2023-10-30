@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { BookmarkButton } from '../common';
@@ -21,17 +21,17 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
     (state) => state.menuReducer,
   );
 
-  const modalLeft = useRef<HTMLDivElement>(null);
+  const modalLeft = React.useRef<HTMLDivElement>(null);
 
   // Function to get the height of the modal left content
-  const getModalHeight = useCallback(() => {
+  const getModalHeight = React.useCallback(() => {
     if (modalLeft.current) {
       const height = modalLeft.current.clientHeight;
       setModalHeight(height);
     }
   }, [modalLeft, setModalHeight]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     getModalHeight();
   }, [getModalHeight]);
 
@@ -54,11 +54,11 @@ const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
           <BookmarkButton product={selectedProduct} />
         </div>
         <ImageNotice />
-        {selectedProduct?.additionalIngredients && !selectedPromo && (
+        {selectedProduct?.additionalIngredients && !selectedPromo ? (
           <div className='text-center'>
             <ProductIngredients />
           </div>
-        )}
+        ) : null}
       </div>
       <div className='w-full max-w-[236px] sm:hidden'>
         <ModalTotal />

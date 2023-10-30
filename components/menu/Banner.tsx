@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import React from 'react';
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
@@ -19,9 +19,9 @@ import { Slide } from '@/types';
 
 SwiperCore.use([Navigation]);
 
-const Banner = () => {
+const Banner: React.FC = () => {
   const dispatch = useAppDispatch();
-  const swiperRef = useRef<SwiperCore>();
+  const swiperRef = React.useRef<SwiperCore>();
 
   const handleClick = (selectedSlide: Slide) => {
     const selectedProduct = menu.find(

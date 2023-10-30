@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Counter from './Counter';
 import {
@@ -20,7 +20,6 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   isDisabled,
 }) => {
   const dispatch = useAppDispatch();
-
   const ingredientItem = useAppSelector((state) =>
     state.menuReducer.additionalIngredients.find(
       (item) => item.id === ingredient.id,
@@ -39,7 +38,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
     ingredient?.weights.at(0)?.value;
 
   // Reset disabled ingredient quantity to 0
-  useEffect(() => {
+  React.useEffect(() => {
     if (isDisabled) {
       dispatch(decrementIngredientQuantity({ ingredient }));
     }
@@ -81,7 +80,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
               : 'Выберите другие параметры'}
           </span>
         </div>
-        {!isDisabled && (
+        {!isDisabled ? (
           <div className='ml-auto flex flex-nowrap items-center justify-between gap-2 text-xs sm:text-base'>
             <Counter
               minValue={0}
@@ -92,7 +91,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
               value={ingredientQuantity}
             />
           </div>
-        )}
+        ) : null}
       </div>
     </li>
   );

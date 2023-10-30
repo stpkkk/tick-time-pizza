@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const isNavOpen = useAppSelector((state) => state.headerReducer.isNavOpen);
+  const { isNavOpen } = useAppSelector((state) => state.headerReducer);
 
   const handleToggleMenu = () => {
     dispatch(toggleNav());
@@ -33,7 +33,7 @@ const HeaderMobile: React.FC = () => {
             )}
           </button>
         </div>
-        {isNavOpen && <Nav handleToggleMenu={handleToggleMenu} />}
+        {isNavOpen ? <Nav handleToggleMenu={handleToggleMenu} /> : null}
       </div>
     </header>
   );

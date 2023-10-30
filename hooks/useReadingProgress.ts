@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React from 'react';
 
 const useReadingProgress = () => {
-  const [completion, setCompletion] = useState(0);
+  const [completion, setCompletion] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const updateScrollCompletion = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;

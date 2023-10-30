@@ -15,7 +15,7 @@ type BookmarkButtonProps = {
 
 const BookmarkButton: React.FC<BookmarkButtonProps> = ({ product }) => {
   const dispatch = useAppDispatch();
-  const bookmarks = useAppSelector((state) => state.menuReducer.bookmarks);
+  const { bookmarks } = useAppSelector((state) => state.menuReducer);
 
   const isBookmarked =
     product && bookmarks?.some((item) => item.id === product.id);

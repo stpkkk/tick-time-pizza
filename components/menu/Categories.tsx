@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { RadioGroupOption } from '../common';
 import { categories } from '@/constants';
 import { setSelectedCategory } from '@/redux/features/menuSlice';
@@ -13,7 +13,7 @@ const Categories: React.FC = () => {
     (state) => state.menuReducer.selectedCategory,
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Set the default selected category
     if (!selectedCategory) {
       dispatch(setSelectedCategory(categories[0]));
