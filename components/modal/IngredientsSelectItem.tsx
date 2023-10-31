@@ -20,15 +20,12 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   isDisabled,
 }) => {
   const dispatch = useAppDispatch();
-  const ingredientItem = useAppSelector((state) =>
-    state.menuReducer.additionalIngredients.find(
-      (item) => item.id === ingredient.id,
-    ),
+  const { additionalIngredients, selectedSize } = useAppSelector(
+    (state) => state.menuReducer,
   );
-  const selectedSize = useAppSelector(
-    (state) => state.menuReducer.selectedSize,
+  const ingredientItem = additionalIngredients.find(
+    (item) => item.id === ingredient.id,
   );
-
   const ingredientQuantity = ingredientItem?.quantity || 0;
   const ingredientPrice =
     ingredient?.prices.find((item) => item.id === selectedSize?.id)?.price ||
@@ -40,19 +37,19 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   // Reset disabled ingredient quantity to 0
   React.useEffect(() => {
     if (isDisabled) {
-      dispatch(decrementIngredientQuantity({ ingredient }));
+      dispatch(decrementIngredientQuantity(ingredient));
     }
   }, [dispatch, ingredient, isDisabled]);
 
   const handleDecrement = () => {
     if (ingredientQuantity > 0) {
-      dispatch(decrementIngredientQuantity({ ingredient }));
+      dispatch(decrementIngredientQuantity(ingredient));
     }
   };
 
   const handleIncrement = () => {
     if (ingredientQuantity < ingredient.maxQuantity) {
-      dispatch(incrementIngredientQuantity({ ingredient }));
+      dispatch(incrementIngredientQuantity(ingredient));
     }
   };
 

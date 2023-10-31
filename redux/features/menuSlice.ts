@@ -1,3 +1,4 @@
+import { type } from 'os';
 import {
   IProduct,
   IOption,
@@ -107,9 +108,9 @@ const menuSlice = createSlice({
 
     incrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<IAdditionalIngredient>,
     ) => {
-      const { ingredient } = action.payload;
+      const ingredient = action.payload;
       const existingIngredient = state.additionalIngredients.find(
         (item) => item.id === ingredient.id,
       );
@@ -123,9 +124,9 @@ const menuSlice = createSlice({
 
     decrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<IAdditionalIngredient>,
     ) => {
-      const { ingredient } = action.payload;
+      const ingredient = action.payload;
       const existingIngredient = state.additionalIngredients.find(
         (item) => item.id === ingredient.id,
       );
