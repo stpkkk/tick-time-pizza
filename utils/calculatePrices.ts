@@ -9,14 +9,14 @@ import {
 export function calculateProductPrices(
   selectedProduct: IProduct | null,
   selectedSize: IOption | null,
-  additionalIngredients: IAdditionalIngredient[],
+  selectedIngredients: IAdditionalIngredient[],
   productQuantity: number,
 ) {
   const productPrice =
     selectedProduct?.prices?.find((price) => price.id === selectedSize?.id)
       ?.price || null;
 
-  const additionalIngredientsPrice = additionalIngredients.reduce(
+  const selectedIngredientsPrice = selectedIngredients.reduce(
     (acc, ing) =>
       acc +
       (ing.prices.find((price) => price.id === selectedSize?.id)?.price ||
@@ -32,11 +32,11 @@ export function calculateProductPrices(
       selectedProduct?.prices[0].price ||
       599) *
       productQuantity +
-    additionalIngredientsPrice;
+    selectedIngredientsPrice;
 
   return {
     productPrice,
-    additionalIngredientsPrice,
+    selectedIngredientsPrice,
     totalProductPrice,
   };
 }
@@ -47,7 +47,7 @@ export function calculateTotalPrice(products: IProduct[]) {
       calculateProductPrices(
         product,
         product.selectedSize || null,
-        product.additionalIngredients || [],
+        product.selectedIngredients || [],
         product.productQuantity || 1,
       ),
     )

@@ -20,10 +20,10 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   isDisabled,
 }) => {
   const dispatch = useAppDispatch();
-  const { additionalIngredients, selectedSize } = useAppSelector(
+  const { selectedIngredients, selectedSize } = useAppSelector(
     (state) => state.menuReducer,
   );
-  const ingredientItem = additionalIngredients.find(
+  const ingredientItem = selectedIngredients.find(
     (item) => item.id === ingredient.id,
   );
   const ingredientQuantity = ingredientItem?.quantity || 0;
