@@ -17,7 +17,7 @@ const { dayIndex } = getPizzaOfTheDay();
 
 export const pizzaOfTheDaySlides: Slide[] = [
   { id: 0, image: carbonara, title: 'Пицца Карбонара' },
-  { id: 1, image: bakedPork, title: 'Пицца Запеченая Буженина' },
+  { id: 1, image: bakedPork, title: 'Пицца Запечённая Буженина' },
   { id: 2, image: pepperoni, title: 'Пицца Пепперони' },
   { id: 3, image: chickenSausages, title: 'Пицца Курица и Колбаски' },
   { id: 4, image: cheesePizza, title: 'Пицца Сырная' },
@@ -25,7 +25,7 @@ export const pizzaOfTheDaySlides: Slide[] = [
   { id: 6, image: hunter, title: 'Пицца Охотничья' },
 ];
 
-const slideOfTheDay = pizzaOfTheDaySlides[dayIndex];
+const slideOfTheDay = pizzaOfTheDaySlides[dayIndex - 1];
 
 export const slides: Slide[] = [
   { id: 0, image: slide1, title: 'Сырные палочки Блю Чиз' },

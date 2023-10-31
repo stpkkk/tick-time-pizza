@@ -6,13 +6,14 @@ import {
   IoIosArrowDroprightCircle,
 } from 'react-icons/io';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
-import { menu, slides } from '@/constants';
+import { menu, pizzaOfTheDaySlides, slides } from '@/constants';
 import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Slide } from '@/types';
@@ -22,17 +23,25 @@ SwiperCore.use([Navigation]);
 const Banner: React.FC = () => {
   const dispatch = useAppDispatch();
   const swiperRef = React.useRef<SwiperCore>();
+  const router = useRouter();
 
   const handleClick = (selectedSlide: Slide) => {
     const selectedProduct = menu.find(
       (product) => product.title === selectedSlide.title,
+    );
+    const isPizzaOfTheDaySlide = pizzaOfTheDaySlides.some(
+      (slide) => slide.title === selectedProduct?.title,
     );
 
     if (selectedProduct) {
       dispatch(setSelectedProduct(selectedProduct));
     }
 
-    dispatch(toggleModal(true));
+    if (isPizzaOfTheDaySlide) {
+      router.push(`/promo/${selectedProduct?.id}`);
+    } else {
+      dispatch(toggleModal(true));
+    }
   };
 
   return (
@@ -61,7 +70,7 @@ const Banner: React.FC = () => {
           <SwiperSlide key={index}>
             <Image
               src={slide.image}
-              alt='Пицца дня'
+              alt={slide.title}
               placeholder='blur'
               blurDataURL={pattern.src}
               className=' rounded-2xl h-full max-h-[389px] w-full max-w-[1230px] cursor-pointer'
