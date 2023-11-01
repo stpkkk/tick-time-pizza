@@ -2,7 +2,7 @@ import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
-import pizza from '../../public/assets/icons/pizza.svg';
+import pattern from '../../public/assets/icons/pattern-pizza-boxes.svg';
 import { promos } from '@/constants';
 import {
   resetPromoProductsList,
@@ -35,8 +35,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         src={promo.image}
         alt={promo.title}
         placeholder='blur'
-        blurDataURL={pizza.src}
-        width={350}
+        blurDataURL={pattern.src}
         onClick={() => handlePromoClick(promo, true)}
         className='w-full h-auto max-w-[350px] cursor-pointer rounded-2xl mb-4 md:self-center'
       />
