@@ -16,7 +16,7 @@ const ModalTotal: React.FC = () => {
 
   const {
     selectedProduct,
-    additionalIngredients,
+    selectedIngredients,
     selectedSize,
     removedIngredients,
     selectedDough,
@@ -29,7 +29,7 @@ const ModalTotal: React.FC = () => {
   const { totalProductPrice } = calculateProductPrices(
     selectedProduct,
     selectedSize,
-    additionalIngredients,
+    selectedIngredients,
     productQuantity,
   );
 
@@ -44,7 +44,7 @@ const ModalTotal: React.FC = () => {
       productQuantity,
       selectedSize,
       selectedDough,
-      additionalIngredients,
+      selectedIngredients,
       removedIngredients,
       totalPrice: totalProductPrice,
       uuid,
@@ -66,7 +66,7 @@ const ModalTotal: React.FC = () => {
     selectedProduct,
     selectedSize,
     selectedDough,
-    additionalIngredients,
+    selectedIngredients,
     removedIngredients,
     productQuantity,
     totalProductPrice,

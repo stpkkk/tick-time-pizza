@@ -62,7 +62,7 @@ const CartProduct: React.FC<CartProductProps> = ({
     selectedSize,
     selectedDough,
     removedIngredients,
-    additionalIngredients,
+    selectedIngredients,
     productQuantity,
     promoProducts,
     id,
@@ -71,7 +71,7 @@ const CartProduct: React.FC<CartProductProps> = ({
   const { totalProductPrice } = calculateProductPrices(
     product,
     selectedSize || null,
-    additionalIngredients || [],
+    selectedIngredients || [],
     productQuantity || 1,
   );
 
@@ -104,9 +104,9 @@ const CartProduct: React.FC<CartProductProps> = ({
                   renderIngredientsToRemove(removedIngredients)}
               </div>
               <div>
-                {additionalIngredients &&
-                  additionalIngredients.length > 0 &&
-                  renderIngredientsToAdd(additionalIngredients)}
+                {selectedIngredients &&
+                  selectedIngredients.length > 0 &&
+                  renderIngredientsToAdd(selectedIngredients)}
               </div>
             </>
           )}

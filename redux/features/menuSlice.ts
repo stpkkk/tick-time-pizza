@@ -20,7 +20,7 @@ export interface MenuState {
   selectedCategory: IOption | null;
   isAllIngredients: boolean;
   isDisabled: boolean;
-  additionalIngredients: IAdditionalIngredient[];
+  selectedIngredients: IAdditionalIngredient[];
   bookmarks: IProduct[];
   productQuantity: number;
   cartProducts: IProduct[];
@@ -43,7 +43,7 @@ const initialState: MenuState = {
   isAllIngredients: false,
   isDisabled: false,
   removedIngredients: [],
-  additionalIngredients: [],
+  selectedIngredients: [],
   bookmarks: [],
   productQuantity: 1,
   cartProducts: [],
@@ -107,26 +107,26 @@ const menuSlice = createSlice({
 
     incrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<IAdditionalIngredient>,
     ) => {
-      const { ingredient } = action.payload;
-      const existingIngredient = state.additionalIngredients.find(
+      const ingredient = action.payload;
+      const existingIngredient = state.selectedIngredients.find(
         (item) => item.id === ingredient.id,
       );
 
       if (existingIngredient) {
         existingIngredient.quantity = (existingIngredient.quantity || 0) + 1;
       } else {
-        state.additionalIngredients.push({ ...ingredient, quantity: 1 });
+        state.selectedIngredients.push({ ...ingredient, quantity: 1 });
       }
     },
 
     decrementIngredientQuantity: (
       state,
-      action: PayloadAction<{ ingredient: IAdditionalIngredient }>,
+      action: PayloadAction<IAdditionalIngredient>,
     ) => {
-      const { ingredient } = action.payload;
-      const existingIngredient = state.additionalIngredients.find(
+      const ingredient = action.payload;
+      const existingIngredient = state.selectedIngredients.find(
         (item) => item.id === ingredient.id,
       );
 
@@ -137,7 +137,7 @@ const menuSlice = createSlice({
       ) {
         existingIngredient.quantity -= 1;
         if (existingIngredient.quantity === 0) {
-          state.additionalIngredients = state.additionalIngredients.filter(
+          state.selectedIngredients = state.selectedIngredients.filter(
             (item) => item.id !== ingredient.id,
           );
         }
@@ -240,7 +240,7 @@ const menuSlice = createSlice({
       if (selectedProduct) {
         state.isAllIngredients = false;
         state.removedIngredients = [];
-        state.additionalIngredients = [];
+        state.selectedIngredients = [];
         state.productQuantity = 1;
 
         if (selectedProduct.group === 'pizzas') {

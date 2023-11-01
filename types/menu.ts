@@ -46,6 +46,7 @@ export interface IProduct {
   ingredients?: string;
   prices: IPrice[];
   additionalIngredients?: IAdditionalIngredient[];
+  selectedIngredients?: IAdditionalIngredient[];
   removeIngredients?: IOption[];
   categories?: IMenuCategory[];
   sizes?: IOption[];

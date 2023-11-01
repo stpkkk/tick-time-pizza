@@ -91,7 +91,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
         image: promoImg,
         totalPrice: priceWithDiscount,
         promoProducts: promoProductsList,
-        additionalIngredients: [],
+        selectedIngredients: [],
         discount,
       };
 
