@@ -13,10 +13,11 @@ import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
-import { menu, pizzaOfTheDaySlides, slides } from '@/constants';
+import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
-import { Slide } from '@/types';
+import { Promos, Slide } from '@/types';
+import { getPizzaOfTheDay } from '@/utils';
 
 SwiperCore.use([Navigation]);
 
@@ -24,21 +25,25 @@ const Banner: React.FC = () => {
   const dispatch = useAppDispatch();
   const swiperRef = React.useRef<SwiperCore>();
   const router = useRouter();
+  const { pizzaOfTheDay } = getPizzaOfTheDay();
 
   const handleClick = (selectedSlide: Slide) => {
     const selectedProduct = menu.find(
       (product) => product.title === selectedSlide.title,
     );
     const isPizzaOfTheDaySlide = pizzaOfTheDaySlides.some(
-      (slide) => slide.title === selectedProduct?.title,
+      (slide) => slide.title === pizzaOfTheDay,
     );
+    const pizzaOfTheDayId = promos.find(
+      (promo) => promo.title === Promos.PIZZA_OF_THE_DAY,
+    )?.id;
 
     if (selectedProduct) {
       dispatch(setSelectedProduct(selectedProduct));
     }
 
     if (isPizzaOfTheDaySlide) {
-      router.push(`/promo/${selectedProduct?.id}`);
+      router.push(`/promo/${pizzaOfTheDayId}`);
     } else {
       dispatch(toggleModal(true));
     }
