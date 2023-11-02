@@ -17,7 +17,6 @@ import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promos, Slide } from '@/types';
-import { getPizzaOfTheDay } from '@/utils';
 
 SwiperCore.use([Navigation]);
 
@@ -25,14 +24,13 @@ const Banner: React.FC = () => {
   const dispatch = useAppDispatch();
   const swiperRef = React.useRef<SwiperCore>();
   const router = useRouter();
-  const { pizzaOfTheDay } = getPizzaOfTheDay();
 
   const handleClick = (selectedSlide: Slide) => {
     const selectedProduct = menu.find(
       (product) => product.title === selectedSlide.title,
     );
     const isPizzaOfTheDaySlide = pizzaOfTheDaySlides.some(
-      (slide) => slide.title === pizzaOfTheDay,
+      (slide) => slide.title === selectedSlide.title,
     );
     const pizzaOfTheDayId = promos.find(
       (promo) => promo.title === Promos.PIZZA_OF_THE_DAY,
