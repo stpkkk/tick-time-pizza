@@ -16,9 +16,7 @@ const CartPage: React.FC = () => {
           <div className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</div>
           <Tabs />
         </div>
-        <div className='flex-none w-[390px] sm:w-full'>
-          <CartTotal />
-        </div>
+        <CartTotal />
       </div>
     </div>
   );
