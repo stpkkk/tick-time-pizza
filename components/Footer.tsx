@@ -3,15 +3,21 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import apple from '../public/assets/images/App-Store.webp';
 import google from '../public/assets/images/Google.webp';
 import { footerLinks } from '@/constants';
-import { useAppSelector } from '@/redux/hooks';
 
 const Footer: React.FC = () => {
-  const { selectedPromo } = useAppSelector((state) => state.menuReducer);
-  return !selectedPromo ? (
-    <footer className='content_container mt-[50px] drop-shadow-custom sm:mb-4'>
+  const pathname = usePathname();
+  const isPathnameStartsPromo = pathname.startsWith('/promo/');
+
+  return (
+    <footer
+      className={`${
+        isPathnameStartsPromo ? 'sm:hidden' : 'block '
+      } content_container mt-[50px] drop-shadow-custom sm:mb-4`}
+    >
       <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4 '>
         <div className='flex_center gap-2 sm:gap-0'>
           <Link href='https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim'>
@@ -62,7 +68,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  ) : null;
+  );
 };
 
 export default Footer;
