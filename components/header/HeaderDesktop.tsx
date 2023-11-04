@@ -54,7 +54,7 @@ const HeaderDesktop: React.FC = () => {
           {isHoveringPhone ? <PhoneTooltip /> : null}
         </div>
         <Link
-          href='/account'
+          href='/login'
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />

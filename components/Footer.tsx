@@ -61,7 +61,9 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className='flex w-full flex-col gap-3 whitespace-nowrap text-right underline sm:items-center'>
-          <Link href='/legal'>Правовая информация</Link>
+          <Link href='/legal' target='_blank'>
+            Правовая информация
+          </Link>
           <Link href='https://next-js-stpkkk-portfolio-git-ru-igorstepanov.vercel.app/'>
             Поддержка сайта Степанов Игорь
           </Link>
