@@ -233,7 +233,7 @@ const menuSlice = createSlice({
       state.bookmarks = state.bookmarks.filter((item) => item.id !== productId);
     },
 
-    //Initial Values
+    //Initial Modal Values
     initializeDefaultValues: (state) => {
       const { selectedProduct, selectedPromo } = state;
 

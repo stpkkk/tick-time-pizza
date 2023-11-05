@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { Counter } from '../../modal';
+import { Counter } from '../../common';
 import {
   decrementPromoProductQuantity,
   incrementPromoProductQuantity,

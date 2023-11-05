@@ -1,6 +1,7 @@
 import BackButton from './BackButton';
 import BackToTopButton from './BackToTopButton';
 import BookmarkButton from './BookmarkButton';
+import Counter from './Counter';
 import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
 import Logo from './Logo';
@@ -14,4 +15,5 @@ export {
   HeartIconGray,
   HeartIconRed,
   BackButton,
+  Counter,
 };

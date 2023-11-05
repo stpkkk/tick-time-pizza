@@ -46,7 +46,7 @@ const CartTotal: React.FC = () => {
             </label>
             <button
               type='submit'
-              className='btn_yellow max-w-[70px] disabled:bg-grayLight disabled:text-grayDark absolute sm:rounded-[13px] top-1 right-[3px] md:right-1 min-h-[52px]'
+              className='btn_yellow btn_disabled max-w-[70px] absolute sm:rounded-[13px] top-1 right-[3px] md:right-1 min-h-[52px]'
               disabled={isPromoDisabled}
             >
               ок
@@ -68,7 +68,7 @@ const CartTotal: React.FC = () => {
         </div>
         <button
           type='button'
-          className='btn_red w-full h-[60px] disabled:text-grayDark disabled:bg-grayLight'
+          className='btn_red btn_disabled w-full h-[60px]'
           disabled={cartTotalPrice > 0 ? false : true}
         >
           Оформить заказ

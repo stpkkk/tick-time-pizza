@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Counter from './Counter';
+import { Counter } from '../common';
 import {
   decrementIngredientQuantity,
   incrementIngredientQuantity,

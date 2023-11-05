@@ -1,4 +1,3 @@
-import Counter from './Counter';
 import ImageNotice from './ImageNotice';
 import IngredientsRemove from './IngredientsRemove';
 import IngredientsSelect from './IngredientsSelect';
@@ -18,7 +17,6 @@ import ProductWeight from './ProductWeight';
 export {
   Modal,
   ProductSizeSelection,
-  Counter,
   ImageNotice,
   IngredientsSelect,
   IngredientsSelectItem,

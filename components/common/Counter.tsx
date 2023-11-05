@@ -24,9 +24,7 @@ const Counter: React.FC<CounterProps> = ({
     <>
       <button
         className={`${
-          counterValue <= minValue
-            ? 'text-grayDark opacity-30'
-            : 'hover:text-primary'
+          counterValue <= minValue ? 'opacity-30' : 'hover:text-primary'
         } text-grayDark`}
         type='button'
         onClick={() => handleDecrement()}

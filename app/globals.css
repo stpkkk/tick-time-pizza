@@ -120,6 +120,10 @@ body {
   @apply flex h-[45px] w-full items-center justify-center rounded-2xl bg-yellow px-4 py-2 text-xs font-bold uppercase text-primary hover:bg-yellowLight;
 }
 
+.btn_disabled {
+  @apply disabled:pointer-events-none disabled:bg-grayLight disabled:text-grayDark;
+}
+
 /* FLEX */
 .flex_center {
   @apply flex items-center justify-center;

@@ -26,7 +26,7 @@ const PromoTotalPrice: React.FC<PromoTotalProps> = ({
         ) : null}
       </div>
       <button
-        className='bg-secondary hover:bg-secondaryLight text-white font-bold py-2 px-4 rounded-2xl disabled:text-grayDark sm:text-xs text-sm disabled:bg-gray w-full h-[60px] uppercase'
+        className='btn_red btn_disabled w-full h-[60px]'
         onClick={addProductToCart}
         type='button'
         disabled={!isQuantityMax}

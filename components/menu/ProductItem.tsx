@@ -88,7 +88,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
         <div className='flex_between'>
           <span className='font-semibold'>{`от ${starterPrice} ₽`}</span>
           <button
-            className={`btn_yellow max-w-[112px] disabled:bg-gray disabled:text-grayDark`}
+            className={`btn_yellow btn_disabled max-w-[112px]`}
             disabled={
               promo && totalPromoProductsQuantity === selectedPromo?.maxValue
             }
