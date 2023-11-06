@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         isPathnameStartsPromo ? 'sm:hidden' : 'block '
       } content_container mt-[50px] drop-shadow-custom sm:mb-4`}
     >
-      <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4 '>
+      <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4'>
         <div className='flex_center gap-2 sm:gap-0'>
           <Link href='https://play.google.com/store/apps/details?id=ru.sysdyn.ticktim'>
             <Image

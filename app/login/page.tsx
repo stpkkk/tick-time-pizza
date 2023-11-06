@@ -2,22 +2,41 @@
 
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import ReactInputMask from 'react-input-mask';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { generateUUID } from '@/utils';
+
+type User = {
+  uId: string;
+  phone: string;
+};
 
 const Login: React.FC = () => {
   const [phone, setPhone] = React.useState('');
+  const [isPhoneValid, setPhoneValid] = React.useState(false);
   const router = useRouter();
   const handleClickToMainPage = () => {
     router.push('/');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(e.target.value);
+    setPhoneValid(e.target.value.replaceAll(/[-+()_]/g, '').length === 11);
   };
 
-  const handleChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
+  const getUser = (user: User) => {
+    console.log(user);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isPhoneValid) {
+      getUser({
+        uId: generateUUID(),
+        phone: phone.slice(3).replaceAll(/[)-]/g, ''),
+      });
+    }
   };
 
   return (
@@ -33,13 +52,14 @@ const Login: React.FC = () => {
             <p className='block text-center'>
               Введите номер телефона, чтобы войти или зарегистрироваться
             </p>
-            <input
-              type='text'
-              defaultValue='+7 (___) ___-__-__'
-              autoFocus
-              onChange={handleChangePhone}
-              inputMode='numeric'
-              className='relative w-full px-3 py-4 border text-primary focus:outline-black text-center'
+            <ReactInputMask
+              className={`${
+                isPhoneValid ? '' : 'focus:outline-yellow'
+              } w-full px-3 py-4 border text-primary focus:outline-black text-center`}
+              mask='+7(999)99-999-99'
+              placeholder='+7 (___) ___-__-__'
+              value={phone}
+              onChange={handleChange}
             />
             <p className='block text-center'>
               При входе или регистрации вы принимаете условия{' '}
@@ -50,6 +70,7 @@ const Login: React.FC = () => {
             <button
               className='btn_red btn_disabled focus:outline-secondaryLight'
               type='submit'
+              disabled={!isPhoneValid}
             >
               Продолжить
             </button>
