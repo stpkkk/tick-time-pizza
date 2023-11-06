@@ -69,9 +69,9 @@ const Cart: React.FC = () => {
               <CartProduct
                 key={product.uuid}
                 product={product}
-                onIncrement={() => handleIncrement(product?.uuid || '')}
-                onDecrement={() => handleDecrement(product?.uuid || '')}
-                onRemove={() => removeItem(product?.uuid || '')}
+                onIncrement={() => handleIncrement(product.uuid!)}
+                onDecrement={() => handleDecrement(product?.uuid!)}
+                onRemove={() => removeItem(product?.uuid!)}
               />
             ))}
           </ul>

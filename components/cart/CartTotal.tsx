@@ -14,7 +14,7 @@ const CartTotal: React.FC = () => {
     (acc, product) =>
       acc +
       (product?.discount ?? 0) *
-        ((product?.productQuantity && product?.productQuantity) || 0),
+        (product?.productQuantity && product?.productQuantity)!,
     0,
   );
 

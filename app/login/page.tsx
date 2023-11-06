@@ -3,6 +3,7 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactInputMask from 'react-input-mask';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { generateUUID } from '@/utils';
@@ -15,6 +16,8 @@ type User = {
 const Login: React.FC = () => {
   const [phone, setPhone] = React.useState('');
   const [isPhoneValid, setPhoneValid] = React.useState(false);
+  const session = useSession();
+  console.log(session);
   const router = useRouter();
   const handleClickToMainPage = () => {
     router.push('/');
@@ -74,6 +77,14 @@ const Login: React.FC = () => {
             >
               Продолжить
             </button>
+            <Link href='/api/auth/signin' className='w-full'>
+              <button
+                className='btn_red btn_disabled focus:outline-secondaryLight'
+                type='button'
+              >
+                Google
+              </button>
+            </Link>
           </div>
           <button
             className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'

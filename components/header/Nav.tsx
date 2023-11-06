@@ -1,5 +1,8 @@
+'use client ';
+
 import React from 'react';
 import { RiLoginCircleLine } from 'react-icons/ri';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Phone from './Phone';
@@ -13,6 +16,7 @@ type NavProps = {
 const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
   const pathname = usePathname();
   const { isNavOpen } = useAppSelector((state) => state.headerReducer);
+  const session = useSession();
 
   return (
     <nav className='font-semibold sm:flex sm:flex-col'>
@@ -44,7 +48,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
             href='/login'
             className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
           >
-            <div>Войти</div>
+            <div>{session.data ? 'Профиль' : 'Войти'}</div>
             <RiLoginCircleLine size={25} />
           </Link>
         </li>

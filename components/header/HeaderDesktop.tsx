@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiLoginCircleLine } from 'react-icons/ri';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { Logo } from '../common';
 import HeaderCart from './HeaderCart';
@@ -13,6 +14,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
+  const session = useSession();
 
   const handleClick = () => {
     dispatch(toggleNav());
@@ -31,6 +33,8 @@ const HeaderDesktop: React.FC = () => {
       *минимальная сумма заказа на доставку равна стоимости средней пиццы.
     </div>
   );
+
+  console.log(session);
 
   return (
     <header className='content_container fixed top-0 z-10 sm:hidden'>
@@ -54,11 +58,13 @@ const HeaderDesktop: React.FC = () => {
           {isHoveringPhone ? <PhoneTooltip /> : null}
         </div>
         <Link
-          href='/login'
+          href={`${session?.data ? '/account' : '/login'}`}
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />
-          <span className='text-sm font-semibold'>Войти</span>
+          <span className='text-sm font-semibold'>
+            {session?.data ? 'Профиль' : 'Войти'}
+          </span>
         </Link>
         <HeaderCart />
         <ProgressBar />
