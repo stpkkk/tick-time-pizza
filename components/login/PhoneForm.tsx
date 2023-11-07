@@ -13,10 +13,10 @@ type PhoneFormProps = {
   phone: string;
 };
 
-type User = {
-  uId: string;
-  phone: string;
-};
+// type User = {
+//   uId: string;
+//   phone: string;
+// };
 
 const PhoneForm: React.FC<PhoneFormProps> = ({
   handleClickToMainPage,
@@ -34,16 +34,12 @@ const PhoneForm: React.FC<PhoneFormProps> = ({
   const handlePhoneSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isPhoneValid) {
-      getUser({
-        uId: generateUUID(),
-        phone: phone.slice(3).replaceAll(/[)-]/g, ''),
-      });
+      // getUser({
+      //   uId: generateUUID(),
+      //   phone: phone.slice(3).replaceAll(/[)-]/g, ''),
+      // });
+      setOTPForm(true);
     }
-    setOTPForm(true);
-  };
-
-  const getUser = (user: User) => {
-    console.log(user);
   };
 
   return (
