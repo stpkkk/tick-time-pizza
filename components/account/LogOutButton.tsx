@@ -15,7 +15,7 @@ const LogOutButton: React.FC = () => {
     <Link
       href='#'
       onClick={handleClickLogOut}
-      className='bg-red-300 font-bold p-4 block'
+      className='btn_yellow block max-w-[250px]'
     >
       Выйти
     </Link>

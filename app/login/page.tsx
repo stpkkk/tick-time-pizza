@@ -3,9 +3,10 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactInputMask from 'react-input-mask';
-import { useSession } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { GoogleButton } from '@/components';
 import { generateUUID } from '@/utils';
 
 type User = {
@@ -17,7 +18,6 @@ const Login: React.FC = () => {
   const [phone, setPhone] = React.useState('');
   const [isPhoneValid, setPhoneValid] = React.useState(false);
   const session = useSession();
-  console.log(session);
   const router = useRouter();
   const handleClickToMainPage = () => {
     router.push('/');
@@ -32,8 +32,23 @@ const Login: React.FC = () => {
     console.log(user);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const res = await signIn('credentials', {
+      email: formData.get('email'),
+      password: formData.get('password'),
+      redirect: false,
+    });
+
+    if (res && !res.error) {
+      router.push('/account');
+    } else {
+      console.log(res);
+    }
+
     if (isPhoneValid) {
       getUser({
         uId: generateUUID(),
@@ -64,27 +79,34 @@ const Login: React.FC = () => {
               value={phone}
               onChange={handleChange}
             />
+            <input
+              className='w-full px-3 py-4 border text-primary focus:outline-black text-center'
+              type='email'
+              name='email'
+              required
+            />
+            <input
+              className='w-full px-3 py-4 border text-primary focus:outline-black text-center'
+              type='password'
+              name='password'
+              required
+            />
             <p className='block text-center'>
               При входе или регистрации вы принимаете условия{' '}
               <Link href='/privacy-policy' className='underline'>
                 пользовательского соглашения
               </Link>
             </p>
-            <button
-              className='btn_red btn_disabled focus:outline-secondaryLight'
-              type='submit'
-              disabled={!isPhoneValid}
-            >
-              Продолжить
-            </button>
-            <Link href='/api/auth/signin' className='w-full'>
+            <div className='flex flex-col gap-2 w-full'>
               <button
                 className='btn_red btn_disabled focus:outline-secondaryLight'
-                type='button'
+                type='submit'
+                disabled={!isPhoneValid}
               >
-                Google
+                Продолжить
               </button>
-            </Link>
+              <GoogleButton />
+            </div>
           </div>
           <button
             className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'
