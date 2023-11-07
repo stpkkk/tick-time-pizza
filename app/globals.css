@@ -111,6 +111,14 @@ body {
   @apply mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem];
 }
 
+.login_form {
+  @apply relative flex min-h-[550px] w-full max-w-[600px] scale-100 flex-col items-center justify-center gap-8 overflow-hidden rounded-2xl bg-white px-[112px] py-[85px] align-middle opacity-100 drop-shadow-custom transition-all sm:h-full sm:gap-[30px] sm:rounded-none sm:p-8 sm:text-left;
+}
+
+.login_input {
+  @apply w-full border px-3 py-4 text-center text-primary focus:outline-black;
+}
+
 /*Buttons*/
 .btn_red {
   @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-secondary px-4 py-2 text-xs font-bold uppercase text-white hover:bg-secondaryLight sm:h-[50px];
