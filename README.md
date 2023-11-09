@@ -28,8 +28,10 @@ This is the template login details to use the bank functionality. The project do
 - React.js
 - Typescript
 - Redux-Toolkit
+- Firebase
 - Tailwind
 - Headless UI
+- Input Mask
 - React-Icons
 - Swiper
 
