@@ -1,11 +1,6 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp, getApps } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
+import 'firebase/auth';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const firebaseConfig = {
   apiKey: 'AIzaSyAN6ZY1jKiqEEI1AfGAsFmMmnrt1CFnpjI',
   authDomain: 'tick-time-pizza.firebaseapp.com',
@@ -16,8 +11,6 @@ export const firebaseConfig = {
   measurementId: 'G-CPHQMCLZXN',
 };
 
-// Initialize Firebase
-let firebase_app =
-  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const app = initializeApp(firebaseConfig);
 
-export default firebase_app;
+export { app };
