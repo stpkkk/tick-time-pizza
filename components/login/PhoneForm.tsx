@@ -45,6 +45,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({
         placeholder='+7 (___) ___-__-__'
         value={phone}
         onChange={handleChangePhoneNumber}
+        type='tel'
       />
       <p className='block text-center'>
         При входе или регистрации вы принимаете условия{' '}

@@ -5,7 +5,9 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { CgSpinner } from 'react-icons/cg';
 import { IoMdArrowBack } from 'react-icons/io';
 import ReactInputMask from 'react-input-mask';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import { app } from '@/firebase';
 
 type OTPFormProps = {
   handleClickToMainPage: () => void;
@@ -23,7 +25,16 @@ const OTPForm: React.FC<OTPFormProps> = ({
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const auth = getAuth(app);
   const router = useRouter();
+
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        router.push('/account');
+      }
+    });
+  }, [auth, router]);
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setOtp(e.target.value);
@@ -33,7 +44,6 @@ const OTPForm: React.FC<OTPFormProps> = ({
     try {
       await confirmationResult.confirm(otp);
       setOtp('');
-      router.push('/account');
     } catch (err) {
       console.error(err);
     }
@@ -64,6 +74,7 @@ const OTPForm: React.FC<OTPFormProps> = ({
             onChange={handleOTPChange}
             maxLength={6}
             autoFocus
+            type='text'
           />
           <button
             className='btn_red btn_disabled focus:outline-secondaryLight'

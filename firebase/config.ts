@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/auth';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAN6ZY1jKiqEEI1AfGAsFmMmnrt1CFnpjI',
-  authDomain: 'tick-time-pizza.firebaseapp.com',
-  projectId: 'tick-time-pizza',
-  storageBucket: 'tick-time-pizza.appspot.com',
-  messagingSenderId: '787243362974',
-  appId: '1:787243362974:web:cb3924f3de31974bb7a98f',
-  measurementId: 'G-CPHQMCLZXN',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
