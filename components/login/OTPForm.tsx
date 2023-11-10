@@ -52,7 +52,6 @@ const OTPForm: React.FC<OTPFormProps> = ({
         />
       ) : (
         <>
-          <div id='recaptcha-container'></div>
           <p className='block uppercase text-2xl'>Введите код</p>
           <p className='block text-center'>
             На номер {phone} отправлено СМС-сообщение с кодом

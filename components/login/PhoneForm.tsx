@@ -24,7 +24,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({
 
   const handleChangePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
-    setPhoneValid(e.target.value.replaceAll(/[-+()_]/g, '').length === 11);
+    setPhoneValid(e.target.value.replaceAll(/[-+()_]/g, '').length === 13);
   };
 
   const handlePhoneSubmit = (e: React.FormEvent) => {
@@ -41,7 +41,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({
       </p>
       <ReactInputMask
         className={`${isPhoneValid && 'focus:outline-yellow'} login_input`}
-        mask='+7(999)99-999-99'
+        mask='+7 (999) 999-99-99'
         placeholder='+7 (___) ___-__-__'
         value={phone}
         onChange={handleChangePhoneNumber}
