@@ -78,6 +78,8 @@ const Banner: React.FC = () => {
               blurDataURL={pattern.src}
               className='rounded-2xl h-full max-h-[389px] w-full max-w-[1230px] cursor-pointer'
               quality={100}
+              width={1230}
+              height={389}
               key={slide.id}
               onClick={() => handleClick(slide)}
             />
