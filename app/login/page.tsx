@@ -1,70 +1,29 @@
 'use client';
 
 import React from 'react';
-import {
-  ApplicationVerifier,
-  ConfirmationResult,
-  RecaptchaVerifier,
-  getAuth,
-  signInWithPhoneNumber,
-} from 'firebase/auth';
+import { RecaptchaVerifier, getAuth } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { OTPForm, PhoneForm } from '@/components';
 import { app } from '@/firebase/config';
-
-interface ExtendedWindow extends Window {
-  recaptchaVerifier?: RecaptchaVerifier;
-}
+import { useAppSelector } from '@/redux/hooks';
+import { ExtendedWindow } from '@/types';
 
 const Login: React.FC = () => {
-  const [isOTPForm, setOTPForm] = React.useState(false);
-  const [phone, setPhone] = React.useState('');
-  const [confirmationResult, setConfirmationResult] =
-    React.useState<ConfirmationResult | null>(
-      null as unknown as ConfirmationResult,
-    );
-
-  const [otpSent, setOtpSent] = React.useState(false);
-
   const router = useRouter();
   const auth = getAuth(app);
+  const { isOTPSent } = useAppSelector((state) => state.loginReducer);
 
   React.useEffect(() => {
     (window as ExtendedWindow).recaptchaVerifier = new RecaptchaVerifier(
       auth,
       'recaptcha-container',
       {
-        size: 'normal',
-        callback: (res: any) => {},
+        size: 'invisible',
+        callback: (res: null) => {},
         'expired-callback': () => {},
       },
     );
   }, [auth]);
-
-  const handleSendOtp = async () => {
-    try {
-      const formattedPhoneNumber = `+${phone.replace(/\D/g, '')}`;
-      const recaptchaVerifier = (window as ExtendedWindow).recaptchaVerifier;
-
-      if (recaptchaVerifier) {
-        const confirmation: ConfirmationResult = await signInWithPhoneNumber(
-          auth,
-          formattedPhoneNumber,
-          recaptchaVerifier as ApplicationVerifier,
-        );
-
-        console.log(confirmation);
-        setConfirmationResult(confirmation);
-        setOtpSent(true);
-        setPhone('');
-        alert('OTP has been sent!');
-      } else {
-        console.error('RecaptchaVerifier is not defined');
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   const handleClickToMainPage = () => {
     router.push('/');
@@ -76,23 +35,12 @@ const Login: React.FC = () => {
         <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
         <div
           className='fixed left-1/2 -translate-x-1/2 top-0 z-50'
-          id={!otpSent ? 'recaptcha-container' : ''}
+          id={!isOTPSent ? 'recaptcha-container' : ''}
         ></div>
-        {isOTPForm ? (
-          <OTPForm
-            handleClickToMainPage={handleClickToMainPage}
-            phone={phone}
-            confirmationResult={confirmationResult}
-            setOTPForm={setOTPForm}
-          />
+        {isOTPSent ? (
+          <OTPForm handleClickToMainPage={handleClickToMainPage} />
         ) : (
-          <PhoneForm
-            handleClickToMainPage={handleClickToMainPage}
-            setPhone={setPhone}
-            phone={phone}
-            handleSendOtp={handleSendOtp}
-            setOTPForm={setOTPForm}
-          />
+          <PhoneForm handleClickToMainPage={handleClickToMainPage} />
         )}
       </div>
     </div>

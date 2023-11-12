@@ -3,34 +3,67 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactInputMask from 'react-input-mask';
+import { useDispatch } from 'react-redux';
+import {
+  ApplicationVerifier,
+  getAuth,
+  signInWithPhoneNumber,
+} from 'firebase/auth';
 import Link from 'next/link';
+import { app } from '@/firebase';
+import {
+  setConfirmationResult,
+  setOtpSent,
+  setPhone,
+  setPhoneValid,
+} from '@/redux/features/loginSlice';
+import { useAppSelector } from '@/redux/hooks';
+import { ExtendedWindow } from '@/types';
 
 type PhoneFormProps = {
   handleClickToMainPage: () => void;
-  setOTPForm: React.Dispatch<React.SetStateAction<boolean>>;
-  setPhone: React.Dispatch<React.SetStateAction<string>>;
-  phone: string;
-  handleSendOtp: () => Promise<void>;
 };
 
-const PhoneForm: React.FC<PhoneFormProps> = ({
-  handleClickToMainPage,
-  setPhone,
-  phone,
-  handleSendOtp,
-  setOTPForm,
-}) => {
-  const [isPhoneValid, setPhoneValid] = React.useState(false);
+const PhoneForm: React.FC<PhoneFormProps> = ({ handleClickToMainPage }) => {
+  const auth = getAuth(app);
+  const dispatch = useDispatch();
+  const { phone, isPhoneValid } = useAppSelector((state) => state.loginReducer);
 
   const handleChangePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
-    setPhoneValid(e.target.value.replaceAll(/[-+()_]/g, '').length === 13);
+    dispatch(setPhone(e.target.value));
+    dispatch(
+      setPhoneValid(e.target.value.replaceAll(/[-+()_]/g, '').length === 13),
+    );
+  };
+
+  const handleSendOtp = async () => {
+    try {
+      const formattedPhoneNumber = `+${phone.replace(/\D/g, '')}`;
+      const recaptchaVerifier = (window as ExtendedWindow).recaptchaVerifier;
+
+      if (recaptchaVerifier) {
+        const confirmation = await signInWithPhoneNumber(
+          auth,
+          formattedPhoneNumber,
+          recaptchaVerifier as ApplicationVerifier,
+        );
+
+        console.log(confirmation);
+        dispatch(setConfirmationResult(confirmation));
+        dispatch(setOtpSent(true));
+        dispatch(setPhone(''));
+        console.log('OTP has been sent!');
+      } else {
+        console.error('RecaptchaVerifier is not defined');
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handlePhoneSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     handleSendOtp();
-    setOTPForm(true);
   };
 
   return (

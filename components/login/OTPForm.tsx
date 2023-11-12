@@ -1,56 +1,63 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { CgSpinner } from 'react-icons/cg';
 import { IoMdArrowBack } from 'react-icons/io';
 import ReactInputMask from 'react-input-mask';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { app } from '@/firebase';
+import {
+  setLoading,
+  setOtp,
+  setOtpSent,
+  setUser,
+} from '@/redux/features/loginSlice';
+import { useAppSelector } from '@/redux/hooks';
 
 type OTPFormProps = {
   handleClickToMainPage: () => void;
-  phone: string;
-  confirmationResult: any;
-  setOTPForm: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const OTPForm: React.FC<OTPFormProps> = ({
-  handleClickToMainPage,
-  phone,
-  confirmationResult,
-  setOTPForm,
-}) => {
-  const [otp, setOtp] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const auth = getAuth(app);
+const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
   const router = useRouter();
-
-  React.useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        router.push('/account');
-      }
-    });
-  }, [auth, router]);
+  const dispatch = useDispatch();
+  const { phone, otp, confirmationResult, loading } = useAppSelector(
+    (state) => state.loginReducer,
+  );
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOtp(e.target.value);
+    dispatch(setOtp(e.target.value));
   };
 
-  const handleOtpSubmit = async () => {
+  const handleOtpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
-      await confirmationResult.confirm(otp);
-      setOtp('');
-    } catch (err) {
-      console.error(err);
+      dispatch(setLoading(true));
+      if (confirmationResult) {
+        // Confirm the OTP code
+        const credential = await (
+          confirmationResult as ConfirmationResult
+        ).confirm(otp);
+        // User is signed in
+        const user = credential.user;
+        console.log('Successfully confirmed OTP. User:', user);
+        // Handle additional logic after successful OTP confirmation
+        dispatch(setUser(user));
+        router.push(`/account`);
+      } else {
+        console.error('confirmationResult is null');
+      }
+    } catch (error) {
+      console.error('Error confirming OTP:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleClickBack = () => {
-    setOTPForm(false);
+    dispatch(setOtpSent(false));
   };
 
   return (
