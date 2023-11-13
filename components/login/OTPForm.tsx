@@ -12,6 +12,7 @@ import {
   setLoading,
   setOtp,
   setOtpSent,
+  setOtpValid,
   setUser,
 } from '@/redux/features/loginSlice';
 import { useAppSelector } from '@/redux/hooks';
@@ -23,41 +24,45 @@ type OTPFormProps = {
 const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { phone, otp, confirmationResult, loading } = useAppSelector(
-    (state) => state.loginReducer,
-  );
+  const { phone, otp, confirmationResult, loading, isOtpValid } =
+    useAppSelector((state) => state.loginReducer);
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setOtp(e.target.value));
+    dispatch(setOtpValid(true));
   };
 
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       dispatch(setLoading(true));
-      if (confirmationResult) {
+      if (confirmationResult && otp.trim() !== '') {
         // Confirm the OTP code
         const credential = await (
           confirmationResult as ConfirmationResult
         ).confirm(otp);
+
         // User is signed in
         const user = credential.user;
         console.log('Successfully confirmed OTP. User:', user);
         // Handle additional logic after successful OTP confirmation
         dispatch(setUser(user));
-        router.push(`/account`);
+        router.push('/account');
       } else {
         console.error('confirmationResult is null');
+        dispatch(setOtpValid(false));
       }
     } catch (error) {
       console.error('Error confirming OTP:', error);
+      dispatch(setOtpValid(false));
     } finally {
-      setLoading(false);
+      dispatch(setLoading(false));
     }
   };
 
   const handleClickBack = () => {
     dispatch(setOtpSent(false));
+    dispatch(setOtpValid(true));
   };
 
   return (
@@ -69,8 +74,8 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
         />
       ) : (
         <>
-          <p className='block uppercase text-2xl'>Введите код</p>
-          <p className='block text-center'>
+          <p className='uppercase text-2xl'>Введите код</p>
+          <p className='text-center'>
             На номер {phone} отправлено СМС-сообщение с кодом
           </p>
           <ReactInputMask
@@ -83,6 +88,9 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
             autoFocus
             type='text'
           />
+          <p className='text-secondaryLight'>
+            {!isOtpValid ? 'Пароль неверный' : ''}
+          </p>
           <button
             className='btn_red btn_disabled focus:outline-secondaryLight'
             type='submit'

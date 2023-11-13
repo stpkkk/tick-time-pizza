@@ -14,15 +14,21 @@ const Login: React.FC = () => {
   const { isOTPSent } = useAppSelector((state) => state.loginReducer);
 
   React.useEffect(() => {
-    (window as ExtendedWindow).recaptchaVerifier = new RecaptchaVerifier(
+    const recaptchaVerifier = new RecaptchaVerifier(
       auth,
       'recaptcha-container',
       {
         size: 'invisible',
-        callback: (res: null) => {},
-        'expired-callback': () => {},
+        callback: (res: null) => {
+          // Handle reCAPTCHA response
+        },
+        'expired-callback': () => {
+          // Handle reCAPTCHA expiration
+        },
       },
     );
+
+    (window as ExtendedWindow).recaptchaVerifier = recaptchaVerifier;
   }, [auth]);
 
   const handleClickToMainPage = () => {
