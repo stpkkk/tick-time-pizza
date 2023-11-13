@@ -40,8 +40,10 @@ const Login: React.FC = () => {
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
         <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
         <div
-          className='fixed left-1/2 -translate-x-1/2 top-0 z-50'
-          id={!isOTPSent ? 'recaptcha-container' : ''}
+          id='recaptcha-container'
+          data-sitekey='6lcsaxsdaaaaaebn0spdcencnu9564misyrudzd_'
+          data-callback='sendform'
+          data-size='invisible'
         ></div>
         {isOTPSent ? (
           <OTPForm handleClickToMainPage={handleClickToMainPage} />
