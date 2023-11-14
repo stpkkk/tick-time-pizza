@@ -4,7 +4,6 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { CgSpinner } from 'react-icons/cg';
 import { IoMdArrowBack } from 'react-icons/io';
-import ReactInputMask from 'react-input-mask';
 import { useDispatch } from 'react-redux';
 import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
@@ -18,10 +17,10 @@ import {
 import { useAppSelector } from '@/redux/hooks';
 
 type OTPFormProps = {
-  handleClickToMainPage: () => void;
+  handleClose: () => void;
 };
 
-const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
+const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { phone, otp, confirmationResult, loading, isOtpValid } =
@@ -34,6 +33,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
 
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    dispatch(setOtp(''));
     try {
       dispatch(setLoading(true));
       if (confirmationResult && otp.trim() !== '') {
@@ -47,6 +47,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
         console.log('Successfully confirmed OTP. User:', user);
         // Handle additional logic after successful OTP confirmation
         dispatch(setUser(user));
+        dispatch(setOtpSent(false));
         router.push('/account');
       } else {
         console.error('confirmationResult is null');
@@ -62,6 +63,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
 
   const handleClickBack = () => {
     dispatch(setOtpSent(false));
+    dispatch(setOtp(''));
     dispatch(setOtpValid(true));
   };
 
@@ -78,9 +80,8 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
           <p className='text-center'>
             На номер {phone} отправлено СМС-сообщение с кодом
           </p>
-          <ReactInputMask
+          <input
             className='login_input'
-            mask=''
             placeholder='СМС-код'
             value={otp}
             onChange={handleOTPChange}
@@ -99,7 +100,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClickToMainPage }) => {
           </button>
           <button
             className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'
-            onClick={handleClickToMainPage}
+            onClick={handleClose}
             type='button'
           >
             <AiOutlineCloseCircle size={35} />

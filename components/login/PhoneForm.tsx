@@ -21,10 +21,10 @@ import { useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
 
 type PhoneFormProps = {
-  handleClickToMainPage: () => void;
+  handleClose: () => void;
 };
 
-const PhoneForm: React.FC<PhoneFormProps> = ({ handleClickToMainPage }) => {
+const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
   const auth = getAuth(app);
   const dispatch = useDispatch();
   const { phone, isPhoneValid } = useAppSelector((state) => state.loginReducer);
@@ -95,7 +95,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({ handleClickToMainPage }) => {
       </button>
       <button
         className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'
-        onClick={handleClickToMainPage}
+        onClick={handleClose}
         type='button'
       >
         <AiOutlineCloseCircle size={35} />

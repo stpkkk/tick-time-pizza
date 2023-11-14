@@ -1,9 +1,11 @@
 import React from 'react';
 import { RiLoginCircleLine } from 'react-icons/ri';
+import { getAuth } from 'firebase/auth';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Phone from './Phone';
 import { navLinks } from '@/constants';
+import { app } from '@/firebase';
 import { useAppSelector } from '@/redux/hooks';
 
 type NavProps = {
@@ -11,6 +13,7 @@ type NavProps = {
 };
 
 const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
+  const auth = getAuth(app);
   const pathname = usePathname();
   const { isNavOpen } = useAppSelector((state) => state.headerReducer);
 

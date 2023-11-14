@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
+  const { user } = useAppSelector((state) => state.loginReducer);
 
   const handleClick = () => {
     dispatch(toggleNav());
@@ -54,11 +55,13 @@ const HeaderDesktop: React.FC = () => {
           {isHoveringPhone ? <PhoneTooltip /> : null}
         </div>
         <Link
-          href='/login'
+          href={user ? '/account' : '/login'}
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />
-          <span className='text-sm font-semibold'>Войти</span>
+          <span className='text-sm font-semibold'>
+            {user ? 'Профиль' : 'Войти'}
+          </span>
         </Link>
         <HeaderCart />
         <ProgressBar />

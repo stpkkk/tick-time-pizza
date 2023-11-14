@@ -5,11 +5,13 @@ import { RecaptchaVerifier, getAuth } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { OTPForm, PhoneForm } from '@/components';
 import { app } from '@/firebase/config';
-import { useAppSelector } from '@/redux/hooks';
+import { setOtp } from '@/redux/features/loginSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
 
 const Login: React.FC = () => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const auth = getAuth(app);
   const { isOTPSent } = useAppSelector((state) => state.loginReducer);
 
@@ -31,8 +33,9 @@ const Login: React.FC = () => {
     (window as ExtendedWindow).recaptchaVerifier = recaptchaVerifier;
   }, [auth]);
 
-  const handleClickToMainPage = () => {
+  const handleClose = () => {
     router.push('/');
+    dispatch(setOtp(''));
   };
 
   return (
@@ -46,9 +49,9 @@ const Login: React.FC = () => {
           data-size='invisible'
         ></div>
         {isOTPSent ? (
-          <OTPForm handleClickToMainPage={handleClickToMainPage} />
+          <OTPForm handleClose={handleClose} />
         ) : (
-          <PhoneForm handleClickToMainPage={handleClickToMainPage} />
+          <PhoneForm handleClose={handleClose} />
         )}
       </div>
     </div>

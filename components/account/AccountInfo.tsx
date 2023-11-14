@@ -9,11 +9,13 @@ import { MdEmail } from 'react-icons/md';
 import { getAuth, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app } from '@/firebase';
-import { useAppSelector } from '@/redux/hooks';
+import { setUser } from '@/redux/features/loginSlice';
+import { useAppDispatch } from '@/redux/hooks';
 
 const AccountInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const accountInfo = [
     { id: 0, Icon: IoPerson, title: 'Ваше имя', value: '' },
@@ -37,6 +39,7 @@ const AccountInfo: React.FC = () => {
     try {
       await signOut(auth);
       router.push('/');
+      dispatch(setUser(null));
     } catch (err) {
       console.error(err);
     }
