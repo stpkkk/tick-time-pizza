@@ -23,7 +23,7 @@ type OTPFormProps = {
 const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { phone, otp, confirmationResult, loading, isOtpValid } =
+  const { phone, otp, confirmationResult, loading, isOtpValid, users } =
     useAppSelector((state) => state.loginReducer);
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,8 +45,14 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
         // User is signed in
         const user = credential.user;
         console.log('Successfully confirmed OTP. User:', user);
-        // Handle additional logic after successful OTP confirmation
-        dispatch(setUser(user));
+
+        const updatedUser = {
+          ...user,
+        };
+
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+
+        dispatch(setUser(updatedUser));
         dispatch(setOtpSent(false));
         router.push('/account');
       } else {

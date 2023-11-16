@@ -9,13 +9,17 @@ import { MdEmail } from 'react-icons/md';
 import { getAuth, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app } from '@/firebase';
-import { setUser } from '@/redux/features/loginSlice';
+import { addToUsers, setUser } from '@/redux/features/loginSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const AccountInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
   const dispatch = useAppDispatch();
+
+  // const storedUser = JSON.parse(localStorage.getItem('user')) ;
+
+  // console.log(storedUser);
 
   const accountInfo = [
     { id: 0, Icon: IoPerson, title: 'Ваше имя', value: '' },
@@ -24,7 +28,7 @@ const AccountInfo: React.FC = () => {
       id: 2,
       Icon: FaPhoneAlt,
       title: 'Ваш телефон',
-      value: auth.currentUser?.phoneNumber,
+      // value: auth?.currentUser.phoneNumber,
     },
     {
       id: 3,
@@ -51,17 +55,15 @@ const AccountInfo: React.FC = () => {
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
       <div className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
         {accountInfo.map(({ id, Icon, title, value }) => (
-          <>
-            <div className='flex gap-5' key={id}>
-              <Icon size={50} className='bg-yellow text-white p-2 rounded-lg' />
-              <div className='flex flex-col font-bold'>
-                <p className='text-grayDark'>{title}</p>
-                <p className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
-                  {value}
-                </p>
-              </div>
+          <div className='flex gap-5' key={id}>
+            <Icon size={50} className='bg-yellow text-white p-2 rounded-lg' />
+            <div className='flex flex-col font-bold'>
+              <p className='text-grayDark'>{title}</p>
+              <p className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
+                {value}
+              </p>
             </div>
-          </>
+          </div>
         ))}
       </div>
       <div className='flex gap-6'>

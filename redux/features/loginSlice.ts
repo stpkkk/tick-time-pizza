@@ -10,6 +10,7 @@ export interface LoginState {
   confirmationResult: null | ConfirmationResult;
   user: null | User;
   isOtpValid: boolean;
+  users: User[];
 }
 
 const initialState: LoginState = {
@@ -21,6 +22,7 @@ const initialState: LoginState = {
   loading: false,
   user: null,
   isOtpValid: true,
+  users: [],
 };
 
 const loginSlice = createSlice({
@@ -54,6 +56,9 @@ const loginSlice = createSlice({
     setOtpValid: (state, action: PayloadAction<boolean>) => {
       state.isOtpValid = action.payload;
     },
+    addToUsers: (state, action: PayloadAction<User[]>) => {
+      state.users = action.payload;
+    },
   },
 });
 
@@ -66,6 +71,7 @@ export const {
   setLoading,
   setUser,
   setOtpValid,
+	addToUsers
 } = loginSlice.actions;
 
 export default loginSlice.reducer;
