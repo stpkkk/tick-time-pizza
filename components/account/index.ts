@@ -1,3 +1,5 @@
 import AccountInfo from './AccountInfo';
+import NoOrders from './NoOrders';
+import Orders from './Orders';
 
-export { AccountInfo };
+export { AccountInfo, Orders, NoOrders };

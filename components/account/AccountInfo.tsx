@@ -9,7 +9,7 @@ import { MdEmail } from 'react-icons/md';
 import { getAuth, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app } from '@/firebase';
-import { addToUsers, setUser } from '@/redux/features/loginSlice';
+import { setUser } from '@/redux/features/loginSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const AccountInfo: React.FC = () => {
