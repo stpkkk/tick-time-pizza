@@ -50,7 +50,7 @@ const loginSlice = createSlice({
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    setUser: (state, action: PayloadAction<User | null>) => {
+    setCurrentUser: (state, action: PayloadAction<User | null>) => {
       state.user = action.payload;
     },
     setOtpValid: (state, action: PayloadAction<boolean>) => {
@@ -69,9 +69,9 @@ export const {
   setPhoneValid,
   setOtp,
   setLoading,
-  setUser,
+  setCurrentUser,
   setOtpValid,
-	addToUsers
+  addToUsers,
 } = loginSlice.actions;
 
 export default loginSlice.reducer;

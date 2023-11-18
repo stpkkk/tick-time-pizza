@@ -6,20 +6,33 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPerson, IoGift } from 'react-icons/io5';
 import { IoTicketOutline } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
-import { getAuth, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app } from '@/firebase';
-import { setUser } from '@/redux/features/loginSlice';
-import { useAppDispatch } from '@/redux/hooks';
+import { setCurrentUser } from '@/redux/features/loginSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const AccountInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.loginReducer);
 
-  // const storedUser = JSON.parse(localStorage.getItem('user')) ;
+  React.useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        // User present
+        dispatch(setCurrentUser(currentUser)); // Set user when authenticated
+      } else {
+        // User not logged in
+        dispatch(setCurrentUser(null));
+        router.push('/login'); // Redirect to login if on a protected page
+      }
+    });
 
-  // console.log(storedUser);
+    return () => unsubscribe(); // Clean up subscription
+  }, [dispatch, router]);
 
   const accountInfo = [
     { id: 0, Icon: IoPerson, title: 'Ваше имя', value: '' },
@@ -28,13 +41,13 @@ const AccountInfo: React.FC = () => {
       id: 2,
       Icon: FaPhoneAlt,
       title: 'Ваш телефон',
-      // value: auth?.currentUser.phoneNumber,
+      value: user?.phoneNumber,
     },
     {
       id: 3,
       Icon: MdEmail,
       title: 'Ваш e-mail',
-      value: 'cocksucker@yandex.ru',
+      value: '',
     },
     { id: 4, Icon: IoTicketOutline, title: 'Ваши тикеты', value: '0' },
   ];
@@ -43,7 +56,7 @@ const AccountInfo: React.FC = () => {
     try {
       await signOut(auth);
       router.push('/');
-      dispatch(setUser(null));
+      dispatch(setCurrentUser(null));
     } catch (err) {
       console.error(err);
     }
@@ -60,7 +73,7 @@ const AccountInfo: React.FC = () => {
             <div className='flex flex-col font-bold'>
               <p className='text-grayDark'>{title}</p>
               <p className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
-                {value}
+                {value || 'Не указан'}
               </p>
             </div>
           </div>

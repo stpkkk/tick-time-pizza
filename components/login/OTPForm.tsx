@@ -12,7 +12,7 @@ import {
   setOtp,
   setOtpSent,
   setOtpValid,
-  setUser,
+  setCurrentUser,
 } from '@/redux/features/loginSlice';
 import { useAppSelector } from '@/redux/hooks';
 
@@ -50,9 +50,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
           ...user,
         };
 
-        localStorage.setItem('user', JSON.stringify(updatedUser));
-
-        dispatch(setUser(updatedUser));
+        dispatch(setCurrentUser(updatedUser));
         dispatch(setOtpSent(false));
         router.push('/account');
       } else {
