@@ -9,14 +9,19 @@ import { MdEmail } from 'react-icons/md';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app } from '@/firebase';
-import { setCurrentUser } from '@/redux/features/loginSlice';
+import {
+  setCurrentUser,
+  setModalEditProfile,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const AccountInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector((state) => state.loginReducer);
+  const { user } = useAppSelector(
+    (state: { profileReducer: any }) => state.profileReducer,
+  );
 
   React.useEffect(() => {
     const auth = getAuth(app);
@@ -62,7 +67,9 @@ const AccountInfo: React.FC = () => {
     }
   };
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    dispatch(setModalEditProfile(true));
+  };
 
   return (
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
@@ -87,7 +94,7 @@ const AccountInfo: React.FC = () => {
           <button type='button'>
             <BiLogOut size={25} />
           </button>
-          <p>Выйти</p>
+          <span>Выйти</span>
         </div>
         <div
           className='flex gap-2 cursor-pointer text-grayDark hover:text-primary font-semibold'
@@ -96,7 +103,7 @@ const AccountInfo: React.FC = () => {
           <button type='button'>
             <BiSolidEdit size={25} />
           </button>
-          <p>Редактировать</p>
+          <span>Редактировать</span>
         </div>
       </div>
     </div>

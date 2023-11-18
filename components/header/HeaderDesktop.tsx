@@ -13,7 +13,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
-  const { user } = useAppSelector((state) => state.loginReducer);
+  const { user } = useAppSelector((state) => state.profileReducer);
 
   const handleClick = () => {
     dispatch(toggleNav());

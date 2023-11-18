@@ -13,7 +13,7 @@ import {
   setOtpSent,
   setOtpValid,
   setCurrentUser,
-} from '@/redux/features/loginSlice';
+} from '@/redux/features/profileSlice';
 import { useAppSelector } from '@/redux/hooks';
 
 type OTPFormProps = {
@@ -23,8 +23,8 @@ type OTPFormProps = {
 const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { phone, otp, confirmationResult, loading, isOtpValid, users } =
-    useAppSelector((state) => state.loginReducer);
+  const { phone, otp, confirmationResult, loading, isOtpValid } =
+    useAppSelector((state) => state.profileReducer);
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setOtp(e.target.value));

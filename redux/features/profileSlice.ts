@@ -1,7 +1,7 @@
 import { ConfirmationResult, User } from 'firebase/auth';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-export interface LoginState {
+export interface ProfileState {
   phone: string;
   otp: string;
   isPhoneValid: boolean;
@@ -10,10 +10,10 @@ export interface LoginState {
   confirmationResult: null | ConfirmationResult;
   user: null | User;
   isOtpValid: boolean;
-  users: User[];
+  isModalEditProfileOpen: boolean;
 }
 
-const initialState: LoginState = {
+const initialState: ProfileState = {
   phone: '',
   otp: '',
   isOTPSent: false,
@@ -22,11 +22,11 @@ const initialState: LoginState = {
   loading: false,
   user: null,
   isOtpValid: true,
-  users: [],
+  isModalEditProfileOpen: false,
 };
 
-const loginSlice = createSlice({
-  name: 'login',
+const profileSlice = createSlice({
+  name: 'profile',
   initialState,
   reducers: {
     setPhone: (state, action: PayloadAction<string>) => {
@@ -56,8 +56,8 @@ const loginSlice = createSlice({
     setOtpValid: (state, action: PayloadAction<boolean>) => {
       state.isOtpValid = action.payload;
     },
-    addToUsers: (state, action: PayloadAction<User[]>) => {
-      state.users = action.payload;
+    setModalEditProfile: (state, action: PayloadAction<boolean>) => {
+      state.isModalEditProfileOpen = action.payload;
     },
   },
 });
@@ -71,7 +71,7 @@ export const {
   setLoading,
   setCurrentUser,
   setOtpValid,
-  addToUsers,
-} = loginSlice.actions;
+  setModalEditProfile,
+} = profileSlice.actions;
 
-export default loginSlice.reducer;
+export default profileSlice.reducer;

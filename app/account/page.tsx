@@ -1,5 +1,5 @@
 import React from 'react';
-import { AccountInfo, NoOrders } from '@/components';
+import { AccountInfo, ModalEditProfile, NoOrders } from '@/components';
 
 const Account: React.FC = () => {
   return (
@@ -8,6 +8,7 @@ const Account: React.FC = () => {
       <AccountInfo />
       <h2 className='h1 px-[60px] my-[30px] sm:my-4'>Ваши заказы:</h2>
       <NoOrders />
+      <ModalEditProfile />
     </main>
   );
 };

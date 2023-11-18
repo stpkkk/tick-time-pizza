@@ -16,7 +16,7 @@ import {
   setOtpSent,
   setPhone,
   setPhoneValid,
-} from '@/redux/features/loginSlice';
+} from '@/redux/features/profileSlice';
 import { useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
 
@@ -27,7 +27,9 @@ type PhoneFormProps = {
 const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
   const auth = getAuth(app);
   const dispatch = useDispatch();
-  const { phone, isPhoneValid } = useAppSelector((state) => state.loginReducer);
+  const { phone, isPhoneValid } = useAppSelector(
+    (state) => state.profileReducer,
+  );
 
   const handleChangePhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setPhone(e.target.value));
