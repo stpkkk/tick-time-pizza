@@ -7,6 +7,7 @@ import CartTooltip from './CartTooltip';
 import { setIsHoveringCart } from '@/redux/features/headerSlice';
 import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { IProduct } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
 const HeaderCart: React.FC = () => {
@@ -17,8 +18,8 @@ const HeaderCart: React.FC = () => {
   const cartTooltipRef = React.useRef<HTMLDivElement | null>(null);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const totalQuantity = cartProducts
-    .map((product) => product.productQuantity || 0)
-    .reduce((quantity, acc) => quantity + acc, 0);
+    .map((product: IProduct) => product.productQuantity || 0)
+    .reduce((quantity: number, acc: number) => quantity + acc, 0);
 
   const handleMouseOverCart = () => {
     dispatch(setIsHoveringCart(true));

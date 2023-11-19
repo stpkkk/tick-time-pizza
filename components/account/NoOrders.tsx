@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const NoOrders: React.FC = () => {
   return (
@@ -9,9 +10,9 @@ const NoOrders: React.FC = () => {
       <p className='text-sm leading-[17px] sm:text-[12px] sm:leading-[15px]'>
         Перейдите в каталог, чтобы сделать ваш первый заказ.
       </p>
-      <button className='btn_red mt-[30px] max-w-[276px]' type='button'>
+      <Link href='/' className='btn_red mt-[30px] max-w-[276px]' type='button'>
         Выбрать пиццу
-      </button>
+      </Link>
     </div>
   );
 };

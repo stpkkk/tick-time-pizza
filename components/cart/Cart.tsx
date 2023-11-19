@@ -30,7 +30,7 @@ const Cart: React.FC = () => {
     productUUID: string,
     modifier: (product: IProduct) => IProduct,
   ) => {
-    const updatedItems = cartProducts.map((product) =>
+    const updatedItems = cartProducts.map((product: IProduct) =>
       product.uuid === productUUID ? modifier(product) : product,
     );
     updateItemsInLocalStorage(updatedItems);
@@ -55,7 +55,7 @@ const Cart: React.FC = () => {
 
   const removeItem = (productUUID: string) => {
     const updatedItems = cartProducts.filter(
-      (product) => product.uuid !== productUUID,
+      (product: IProduct) => product.uuid !== productUUID,
     );
     updateItemsInLocalStorage(updatedItems);
   };
@@ -65,7 +65,7 @@ const Cart: React.FC = () => {
       <div className='w-full md:max-w-full'>
         {cartProducts.length > 0 ? (
           <ul className='flex flex-col gap-[30px] rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:px-4 sm:py-8'>
-            {cartProducts.map((product) => (
+            {cartProducts.map((product: IProduct) => (
               <CartProduct
                 key={product.uuid}
                 product={product}
