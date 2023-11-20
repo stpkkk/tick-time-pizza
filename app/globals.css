@@ -128,6 +128,10 @@ body {
   @apply flex h-[45px] w-full items-center justify-center rounded-2xl bg-yellow px-4 py-2 text-xs font-bold uppercase text-primary hover:bg-yellowLight;
 }
 
+.btn_gray {
+  @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-grayDark px-4 py-2 text-xs font-bold uppercase text-white hover:opacity-50 sm:h-[50px];
+}
+
 .btn_disabled {
   @apply disabled:pointer-events-none disabled:bg-grayLight disabled:text-grayDark;
 }
