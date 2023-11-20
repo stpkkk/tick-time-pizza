@@ -20,7 +20,7 @@ const CartTotal: React.FC = () => {
 
   return (
     <div className='flex_center flex-none flex-wrap w-[390px] h-[443px] md:w-full drop-shadow-custom rounded-2xl sm:py-8 py-[50px] px-[60px] sm:px-4 bg-white'>
-      <div className='flex flex-col gap-[30px]'>
+      <form className='flex flex-col gap-[30px]'>
         <Promocode />
         <div>
           <span className='flex justify-between text-xl font-bold mb-4'>
@@ -36,7 +36,7 @@ const CartTotal: React.FC = () => {
           </p>
         </div>
         <button
-          type='button'
+          type='submit'
           className='btn_red btn_disabled w-full h-[60px]'
           disabled={cartTotalPrice > 0 ? false : true}
         >
@@ -49,7 +49,7 @@ const CartTotal: React.FC = () => {
             ссылке
           </a>
         </p>
-      </div>
+      </form>
     </div>
   );
 };

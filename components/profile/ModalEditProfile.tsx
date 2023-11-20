@@ -21,14 +21,19 @@ const ModalEditProfile: React.FC = () => {
   const onClickCancel = () => {
     dispatch(setModalEditProfile(false));
   };
-  const onClickSave = () => {};
+  const onHandleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
 
   return isModalEditProfileOpen ? (
     <div className='relative z-10'>
       <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
       <div className='fixed inset-0 overflow-y-auto'>
         <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
-          <div className='relative w-full max-w-[730px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'>
+          <form
+            className='relative w-full max-w-[730px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'
+            onSubmit={onHandleSubmit}
+          >
             <button
               className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
               type='button'
@@ -61,18 +66,19 @@ const ModalEditProfile: React.FC = () => {
               <button
                 className='btn_gray max-w-[236px]'
                 onClick={onClickCancel}
+                type='button'
               >
                 Отменить
               </button>
               <button
                 className='btn_red btn_disabled max-w-[236px]'
-                onClick={onClickSave}
+                type='submit'
                 disabled
               >
                 Сохранить
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

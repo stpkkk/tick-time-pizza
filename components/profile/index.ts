@@ -1,6 +1,6 @@
-import AccountInfo from './AccountInfo';
 import ModalEditProfile from './ModalEditProfile';
 import NoOrders from './NoOrders';
 import Orders from './Orders';
+import ProfileInfo from './ProfileInfo';
 
-export { AccountInfo, Orders, NoOrders, ModalEditProfile };
+export { ProfileInfo, Orders, NoOrders, ModalEditProfile };

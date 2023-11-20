@@ -15,7 +15,7 @@ import {
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-const AccountInfo: React.FC = () => {
+const ProfileInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -39,7 +39,7 @@ const AccountInfo: React.FC = () => {
     return () => unsubscribe(); // Clean up subscription
   }, [dispatch, router]);
 
-  const accountInfo = [
+  const profileInfo = [
     { id: 0, Icon: IoPerson, title: 'Ваше имя', value: '' },
     { id: 1, Icon: IoGift, title: 'Ваш день рождения', value: '' },
     {
@@ -74,7 +74,7 @@ const AccountInfo: React.FC = () => {
   return (
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
       <div className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
-        {accountInfo.map(({ id, Icon, title, value }) => (
+        {profileInfo.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>
             <Icon size={50} className='bg-yellow text-white p-2 rounded-lg' />
             <div className='flex flex-col font-bold'>
@@ -110,4 +110,4 @@ const AccountInfo: React.FC = () => {
   );
 };
 
-export default AccountInfo;
+export default ProfileInfo;

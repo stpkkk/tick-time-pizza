@@ -3,22 +3,15 @@ import React from 'react';
 type InputProps = {
   id: string;
   label: string;
-  onChange: () => void;
-  isButton?: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type: string;
 };
 
-const Input: React.FC<InputProps> = ({
-  id,
-  label,
-  type,
-  onChange,
-  isButton,
-}) => {
+const Input: React.FC<InputProps> = ({ id, label, type, onChange }) => {
   return (
     <div className='relative'>
       <input
-        // onChange={onInputChange}
+        onChange={onChange}
         id={id}
         name={id}
         type={type}
