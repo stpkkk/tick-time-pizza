@@ -5,9 +5,18 @@ type InputProps = {
   label: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type: string;
+  isValid?: boolean;
+  value?: string;
 };
 
-const Input: React.FC<InputProps> = ({ id, label, type, onChange }) => {
+const Input: React.FC<InputProps> = ({
+  id,
+  label,
+  type,
+  onChange,
+  value,
+  isValid,
+}) => {
   return (
     <div className='relative'>
       <input
@@ -15,7 +24,11 @@ const Input: React.FC<InputProps> = ({ id, label, type, onChange }) => {
         id={id}
         name={id}
         type={type}
-        className='px-6 md:py-4 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-gray border-solid focus:outline-none focus:ring-0 focus:border-yellow disabled:border-grayDark h-[60px] !appearance-none hover:appearance-none pr-20'
+        value={value}
+        placeholder=''
+        className={`px-6 md:py-4 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-gray border-solid focus:outline-none focus:ring-0 focus:border-yellow disabled:border-grayDark h-[60px] !appearance-none hover:appearance-none ${
+          !isValid && 'ring-2 ring-secondary'
+        }`}
       />
       <label
         htmlFor={id}

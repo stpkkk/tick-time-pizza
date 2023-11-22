@@ -19,9 +19,7 @@ const ProfileInfo: React.FC = () => {
   const auth = getAuth(app);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector(
-    (state: { profileReducer: any }) => state.profileReducer,
-  );
+  const { user } = useAppSelector((state) => state.profileReducer);
 
   React.useEffect(() => {
     const auth = getAuth(app);
@@ -40,19 +38,29 @@ const ProfileInfo: React.FC = () => {
   }, [dispatch, router]);
 
   const profileInfo = [
-    { id: 0, Icon: IoPerson, title: 'Ваше имя', value: '' },
-    { id: 1, Icon: IoGift, title: 'Ваш день рождения', value: '' },
+    {
+      id: 0,
+      Icon: IoPerson,
+      title: 'Ваше имя',
+      value: user?.name || 'Не указано',
+    },
+    {
+      id: 1,
+      Icon: IoGift,
+      title: 'Ваш день рождения',
+      value: user?.birthday || 'Не указан',
+    },
     {
       id: 2,
       Icon: FaPhoneAlt,
       title: 'Ваш телефон',
-      value: user?.phoneNumber,
+      value: user?.phoneNumber || 'Не указан',
     },
     {
       id: 3,
       Icon: MdEmail,
       title: 'Ваш e-mail',
-      value: '',
+      value: user?.email || 'Не указан',
     },
     { id: 4, Icon: IoTicketOutline, title: 'Ваши тикеты', value: '0' },
   ];
@@ -76,11 +84,14 @@ const ProfileInfo: React.FC = () => {
       <div className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
         {profileInfo.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>
-            <Icon size={50} className='bg-yellow text-white p-2 rounded-lg' />
+            <Icon
+              size={50}
+              className='bg-yellow text-white p-2 rounded-lg flex-shrink-0'
+            />
             <div className='flex flex-col font-bold'>
               <p className='text-grayDark'>{title}</p>
               <p className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
-                {value || 'Не указан'}
+                {value}
               </p>
             </div>
           </div>

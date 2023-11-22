@@ -1,4 +1,5 @@
-import { ConfirmationResult, User } from 'firebase/auth';
+import { ConfirmationResult } from 'firebase/auth';
+import { ExtendedUser } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface ProfileState {
@@ -8,7 +9,7 @@ export interface ProfileState {
   isOTPSent: boolean;
   loading: boolean;
   confirmationResult: null | ConfirmationResult;
-  user: null | User;
+  user: null | ExtendedUser;
   isOtpValid: boolean;
   isModalEditProfileOpen: boolean;
 }
@@ -50,7 +51,7 @@ const profileSlice = createSlice({
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
-    setCurrentUser: (state, action: PayloadAction<User | null>) => {
+    setCurrentUser: (state, action: PayloadAction<null | ExtendedUser>) => {
       state.user = action.payload;
     },
     setOtpValid: (state, action: PayloadAction<boolean>) => {

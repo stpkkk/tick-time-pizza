@@ -46,11 +46,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
         const user = credential.user;
         console.log('Successfully confirmed OTP. User:', user);
 
-        const updatedUser = {
-          ...user,
-        };
-
-        dispatch(setCurrentUser(updatedUser));
+        dispatch(setCurrentUser(user));
         dispatch(setOtpSent(false));
         router.push('/account');
       } else {

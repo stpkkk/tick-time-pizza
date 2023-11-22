@@ -3,26 +3,71 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { Input } from '../common';
-import { setModalEditProfile } from '@/redux/features/profileSlice';
+import {
+  setCurrentUser,
+  setModalEditProfile,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { ExtendedUser } from '@/types';
 
 const ModalEditProfile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isModalEditProfileOpen } = useAppSelector(
+  const { isModalEditProfileOpen, user } = useAppSelector(
     (state) => state.profileReducer,
   );
-  const handleClickClose = () => {
-    dispatch(setModalEditProfile(false));
+
+  const [nameValid, setNameValid] = React.useState(false);
+  const [emailValid, setEmailValid] = React.useState(false);
+  const [birthdayValid, setBirthdayValid] = React.useState(false);
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    birthday: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    if (name === 'name') {
+      setNameValid(!!value.trim());
+    }
+
+    if (name === 'email') {
+      setEmailValid(/\S+@\S+\.\S+/.test(value));
+    }
+
+    if (name === 'birthday') {
+      setBirthdayValid(!!value.trim());
+    }
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const onNameChange = () => {};
-  const onEmailChange = () => {};
-  const onBirthdayChange = () => {};
-  const onClickCancel = () => {
-    dispatch(setModalEditProfile(false));
-  };
-  const onHandleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (nameValid && emailValid && birthdayValid) {
+      dispatch(
+        setCurrentUser({
+          ...user,
+          ...formData,
+        } as ExtendedUser),
+      );
+
+      dispatch(setModalEditProfile(false));
+
+      // Reset validation states
+      setNameValid(true);
+      setEmailValid(true);
+      setBirthdayValid(true);
+    }
+  };
+
+  const closeModal = () => {
+    dispatch(setModalEditProfile(false));
   };
 
   return isModalEditProfileOpen ? (
@@ -32,12 +77,12 @@ const ModalEditProfile: React.FC = () => {
         <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
           <form
             className='relative w-full max-w-[730px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'
-            onSubmit={onHandleSubmit}
+            onSubmit={handleSubmit}
           >
             <button
               className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
               type='button'
-              onClick={handleClickClose}
+              onClick={closeModal}
             >
               <RiCloseFill size={36} className='md:w-7' />
             </button>
@@ -47,25 +92,29 @@ const ModalEditProfile: React.FC = () => {
                 id='name'
                 type='text'
                 label='Ваше имя'
-                onChange={onNameChange}
+                value={formData.name}
+                onChange={handleChange}
               />
               <Input
-                id='e-mail'
+                id='email'
                 type='text'
                 label='Ваш e-mail'
-                onChange={onEmailChange}
+                value={formData.email}
+                onChange={handleChange}
+                isValid={emailValid}
               />
               <Input
                 id='birthday'
-                type='text'
+                type='date'
                 label='Ваш день рождения'
-                onChange={onBirthdayChange}
+                value={formData.birthday}
+                onChange={handleChange}
               />
             </div>
             <div className='flex_center gap-[30px] sm:gap-2.5'>
               <button
                 className='btn_gray max-w-[236px]'
-                onClick={onClickCancel}
+                onClick={closeModal}
                 type='button'
               >
                 Отменить
@@ -73,7 +122,7 @@ const ModalEditProfile: React.FC = () => {
               <button
                 className='btn_red btn_disabled max-w-[236px]'
                 type='submit'
-                disabled
+                disabled={!nameValid || !birthdayValid || !emailValid}
               >
                 Сохранить
               </button>

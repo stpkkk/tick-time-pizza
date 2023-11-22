@@ -6,3 +6,4 @@ export * from './promo';
 export * from './slide';
 export * from './legals';
 export * from './global';
+export * from './user';
