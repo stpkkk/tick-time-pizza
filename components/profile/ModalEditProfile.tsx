@@ -2,73 +2,80 @@
 
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
+import { useFormik } from 'formik';
 import { Input } from '../common';
 import {
   setCurrentUser,
   setModalEditProfile,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { profileSchema } from '@/schemas';
 import { ExtendedUser } from '@/types';
 
 const ModalEditProfile: React.FC = () => {
   const dispatch = useAppDispatch();
+  const modalRef = React.useRef<HTMLFormElement>(null);
   const { isModalEditProfileOpen, user } = useAppSelector(
     (state) => state.profileReducer,
   );
 
-  const [nameValid, setNameValid] = React.useState(false);
-  const [emailValid, setEmailValid] = React.useState(false);
-  const [birthdayValid, setBirthdayValid] = React.useState(false);
-  const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    birthday: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    if (name === 'name') {
-      setNameValid(!!value.trim());
-    }
-
-    if (name === 'email') {
-      setEmailValid(/\S+@\S+\.\S+/.test(value));
-    }
-
-    if (name === 'birthday') {
-      setBirthdayValid(!!value.trim());
-    }
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (nameValid && emailValid && birthdayValid) {
-      dispatch(
-        setCurrentUser({
-          ...user,
-          ...formData,
-        } as ExtendedUser),
-      );
-
-      dispatch(setModalEditProfile(false));
-
-      // Reset validation states
-      setNameValid(true);
-      setEmailValid(true);
-      setBirthdayValid(true);
-    }
-  };
-
   const closeModal = () => {
     dispatch(setModalEditProfile(false));
   };
+
+  const {
+    handleChange,
+    values,
+    touched,
+    handleSubmit,
+    handleBlur,
+    errors,
+    resetForm,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      name: '',
+      birthday: '',
+    },
+    validationSchema: profileSchema,
+    onSubmit: (values) => {
+      dispatch(
+        setCurrentUser({
+          ...user,
+          ...values,
+        } as ExtendedUser),
+      );
+      closeModal();
+    },
+  });
+
+  const clickCancel = () => {
+    dispatch(setModalEditProfile(false));
+    resetForm();
+  };
+
+  const isFormNotValid =
+    (!values.name.trim() && !values.birthday.trim() && !values.email.trim()) ||
+    !!errors.email;
+
+  const handleClickOutside = React.useCallback(
+    (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        dispatch(setModalEditProfile(false));
+      }
+    },
+    [dispatch],
+  );
+
+  React.useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    document.body.classList.add('overflow-hidden');
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [handleClickOutside]);
 
   return isModalEditProfileOpen ? (
     <div className='relative z-10'>
@@ -77,6 +84,7 @@ const ModalEditProfile: React.FC = () => {
         <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
           <form
             className='relative w-full max-w-[730px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'
+            ref={modalRef}
             onSubmit={handleSubmit}
           >
             <button
@@ -92,29 +100,33 @@ const ModalEditProfile: React.FC = () => {
                 id='name'
                 type='text'
                 label='Ваше имя'
-                value={formData.name}
+                value={values.name}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
               <Input
                 id='email'
-                type='text'
+                type='email'
                 label='Ваш e-mail'
-                value={formData.email}
+                value={values.email}
                 onChange={handleChange}
-                isValid={emailValid}
+                isValid={!!touched.email && !!errors.email}
+                onBlur={handleBlur}
               />
               <Input
                 id='birthday'
                 type='date'
                 label='Ваш день рождения'
-                value={formData.birthday}
+                value={values.birthday}
                 onChange={handleChange}
+                isValid={!!touched.birthday && !!errors.birthday}
+                onBlur={handleBlur}
               />
             </div>
             <div className='flex_center gap-[30px] sm:gap-2.5'>
               <button
                 className='btn_gray max-w-[236px]'
-                onClick={closeModal}
+                onClick={clickCancel}
                 type='button'
               >
                 Отменить
@@ -122,7 +134,7 @@ const ModalEditProfile: React.FC = () => {
               <button
                 className='btn_red btn_disabled max-w-[236px]'
                 type='submit'
-                disabled={!nameValid || !birthdayValid || !emailValid}
+                disabled={isFormNotValid}
               >
                 Сохранить
               </button>
