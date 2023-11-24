@@ -41,7 +41,7 @@ const Login: React.FC = () => {
   return (
     <div className='content_container relative z-10 min-h-[calc(100vh-268px)] pt-[90px] sm:px-4'>
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
-        <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
+        <div className='overlay' />
         <div
           id='recaptcha-container'
           data-sitekey='6lcsaxsdaaaaaebn0spdcencnu9564misyrudzd_'

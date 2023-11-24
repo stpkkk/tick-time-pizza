@@ -79,68 +79,66 @@ const ModalEditProfile: React.FC = () => {
 
   return isModalEditProfileOpen ? (
     <div className='relative z-10'>
-      <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
-      <div className='fixed inset-0 overflow-y-auto'>
-        <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
-          <form
-            className='relative w-full max-w-[730px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'
-            ref={modalRef}
-            onSubmit={handleSubmit}
+      <div className='overlay' />
+      <div className='fixed inset-0 overflow-y-auto flex_center min-h-full sm:items-stretch sm:p-0 sm:text-center'>
+        <form
+          className='modal_inner max-w-[730px] sm:rounded-none px-16 py-[50px] sm:flex sm:flex-col sm:justify-center'
+          ref={modalRef}
+          onSubmit={handleSubmit}
+        >
+          <button
+            className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
+            type='button'
+            onClick={closeModal}
           >
+            <RiCloseFill size={36} className='md:w-7' />
+          </button>
+          <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
+          <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
+            <Input
+              id='name'
+              type='text'
+              label='Ваше имя'
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <Input
+              id='email'
+              type='email'
+              label='Ваш e-mail'
+              value={values.email}
+              onChange={handleChange}
+              isValid={!!touched.email && !!errors.email}
+              onBlur={handleBlur}
+            />
+            <Input
+              id='birthday'
+              type='date'
+              label='Ваш день рождения'
+              value={values.birthday}
+              onChange={handleChange}
+              isValid={!!touched.birthday && !!errors.birthday}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div className='flex_center gap-[30px] sm:gap-2.5'>
             <button
-              className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
+              className='btn_gray max-w-[236px]'
+              onClick={clickCancel}
               type='button'
-              onClick={closeModal}
             >
-              <RiCloseFill size={36} className='md:w-7' />
+              Отменить
             </button>
-            <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
-            <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
-              <Input
-                id='name'
-                type='text'
-                label='Ваше имя'
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              <Input
-                id='email'
-                type='email'
-                label='Ваш e-mail'
-                value={values.email}
-                onChange={handleChange}
-                isValid={!!touched.email && !!errors.email}
-                onBlur={handleBlur}
-              />
-              <Input
-                id='birthday'
-                type='date'
-                label='Ваш день рождения'
-                value={values.birthday}
-                onChange={handleChange}
-                isValid={!!touched.birthday && !!errors.birthday}
-                onBlur={handleBlur}
-              />
-            </div>
-            <div className='flex_center gap-[30px] sm:gap-2.5'>
-              <button
-                className='btn_gray max-w-[236px]'
-                onClick={clickCancel}
-                type='button'
-              >
-                Отменить
-              </button>
-              <button
-                className='btn_red btn_disabled max-w-[236px]'
-                type='submit'
-                disabled={isFormNotValid}
-              >
-                Сохранить
-              </button>
-            </div>
-          </form>
-        </div>
+            <button
+              className='btn_red btn_disabled max-w-[236px]'
+              type='submit'
+              disabled={isFormNotValid}
+            >
+              Сохранить
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   ) : null;

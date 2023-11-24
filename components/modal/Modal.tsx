@@ -51,12 +51,11 @@ const Modal: React.FC = () => {
   return (
     <>
       <div className='relative z-10'>
-        <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
-        <div className='fixed inset-0 overflow-y-auto'>
-          <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
+        <div className='overlay' />
+          <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
             <div
+              className='modal_inner max-w-[950px] sm:rounded-none'
               ref={modalRef}
-              className='relative w-full max-w-[950px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none'
             >
               <button
                 className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
@@ -72,7 +71,6 @@ const Modal: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
       <div className='fixed bottom-0 left-0 z-10 hidden w-full rounded-2xl bg-white p-4 pb-[30px] drop-shadow-custom sm:block'>
         <ModalTotal />
       </div>

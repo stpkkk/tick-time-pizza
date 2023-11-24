@@ -44,11 +44,11 @@ const ModalPromo: React.FC = () => {
 
   return (
     <div className='relative z-10'>
-      <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
+      <div className='overlay' />
       <div className='fixed inset-0 overflow-y-auto'>
         <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
           <div
-            className='relative w-full max-w-[500px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none sm:p-8 sm:flex sm:flex-col sm:gap-[30px] sm:text-left'
+            className='modal_inner max-w-[500px] sm:rounded-none sm:p-8 sm:flex sm:flex-col sm:gap-[30px] sm:text-left'
             ref={modalRef}
           >
             <div className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 rounded-full bg-white p-1 sm:p-0 sm:bg-transparent sm:top-2 sm:right-2'>

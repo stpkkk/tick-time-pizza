@@ -19,10 +19,9 @@ const ModalPromoProdutsList: React.FC<ModalPromoProdutsListProps> = ({
 
   return (
     <div className='relative z-10 hidden sm:block'>
-      <div className='fixed inset-0 bg-black bg-opacity-25 opacity-100' />
+      <div className='overlay' />
       <div className='fixed inset-0 overflow-y-auto'>
-        <div className='flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
-          <div className='relative w-full max-w-[950px] scale-100 overflow-hidden rounded-2xl bg-white align-middle opacity-100 drop-shadow-custom transition-all sm:rounded-none'>
+        <div className='modal_inner max-w-[950px] sm:rounded-none flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
             <button
               className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
               type='button'
@@ -34,7 +33,6 @@ const ModalPromoProdutsList: React.FC<ModalPromoProdutsListProps> = ({
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
