@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import CartProduct from './CartProduct';
 import EmptyCart from './EmptyCart';
 import { addToCart } from '@/redux/features/menuSlice';
@@ -13,7 +13,7 @@ const Cart: React.FC = () => {
     (state) => state.menuReducer.cartProducts,
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     const storedItems = localStorage.getItem('cart');
     if (storedItems) {
       const parsedItems = JSON.parse(storedItems);

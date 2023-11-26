@@ -1,11 +1,7 @@
 import React from 'react';
 import Promocode from './Promocode';
 import { useLocalStorage } from '@/hooks';
-import {
-  addToOrders,
-  setCurrentUser,
-  setOrder,
-} from '@/redux/features/profileSlice';
+import { addToOrders, setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedUser } from '@/types';
 import { calculateTotalPrice, generateUUID } from '@/utils';
@@ -13,16 +9,14 @@ import { calculateTotalPrice, generateUUID } from '@/utils';
 const CartTotal: React.FC = () => {
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const { user, orders, order } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { user, orders } = useAppSelector((state) => state.profileReducer);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const totalProducts = cartProducts.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
 
-  const [userInLS, setUserInLS] = useLocalStorage([], 'user');
+  const [userInLs, setUserInLS] = useLocalStorage({}, 'user');
 
   const discount = cartProducts.reduce(
     (acc, product) =>
@@ -36,12 +30,12 @@ const CartTotal: React.FC = () => {
     async (e: React.FormEvent) => {
       e.preventDefault();
       const updatedOrder = {
+        ...orders,
         id: generateUUID(),
         products: cartProducts,
       };
 
-      dispatch(setOrder(updatedOrder));
-      dispatch(addToOrders([updatedOrder]));
+      dispatch(addToOrders([...orders, updatedOrder]));
 
       const updatedUser: ExtendedUser = {
         ...user,
@@ -49,10 +43,9 @@ const CartTotal: React.FC = () => {
       };
 
       dispatch(setCurrentUser(updatedUser));
-      await setUserInLS([...userInLS, updatedUser]);
-      console.log(userInLS);
+      await setUserInLS(updatedUser);
     },
-    [cartProducts, dispatch, orders, setUserInLS, user, userInLS],
+    [cartProducts, dispatch, orders, setUserInLS, user],
   );
 
   return (

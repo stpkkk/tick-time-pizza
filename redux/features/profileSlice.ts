@@ -13,7 +13,6 @@ export interface ProfileState {
   isOtpValid: boolean;
   isModalEditProfileOpen: boolean;
   orders: IOrder[];
-  order: IOrder | null;
 }
 
 const initialState: ProfileState = {
@@ -27,7 +26,6 @@ const initialState: ProfileState = {
   isOtpValid: true,
   isModalEditProfileOpen: false,
   orders: [],
-  order: null,
 };
 
 const profileSlice = createSlice({
@@ -64,9 +62,6 @@ const profileSlice = createSlice({
     setModalEditProfile: (state, action: PayloadAction<boolean>) => {
       state.isModalEditProfileOpen = action.payload;
     },
-    setOrder: (state, action: PayloadAction<IOrder | null>) => {
-      state.order = action.payload;
-    },
     addToOrders: (state, action: PayloadAction<IOrder[]>) => {
       state.orders = action.payload;
     },
@@ -84,7 +79,6 @@ export const {
   setOtpValid,
   setModalEditProfile,
   addToOrders,
-  setOrder,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;

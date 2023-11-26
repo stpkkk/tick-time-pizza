@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import { ExtendedUser } from '@/types';
 
-function useLocalStorage(initialValue: [], key: string) {
+function useLocalStorage(initialValue: [] | ExtendedUser, key: string) {
   const getValue = () => {
     const storage = localStorage.getItem(key);
 
