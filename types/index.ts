@@ -7,3 +7,4 @@ export * from './slide';
 export * from './legals';
 export * from './global';
 export * from './user';
+export * from './order';

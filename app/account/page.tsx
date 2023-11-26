@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { ProfileInfo, ModalEditProfile, NoOrders } from '@/components';
+import { ProfileInfo, ModalEditProfile, NoOrders, Orders } from '@/components';
 
 const Profile: React.FC = () => {
   return (
@@ -7,7 +9,7 @@ const Profile: React.FC = () => {
       <h1 className='h1 px-[60px] my-[30px] sm:my-4'>Профиль</h1>
       <ProfileInfo />
       <h2 className='h1 px-[60px] my-[30px] sm:my-4'>Ваши заказы:</h2>
-      <NoOrders />
+      <Orders />
       <ModalEditProfile />
     </main>
   );
