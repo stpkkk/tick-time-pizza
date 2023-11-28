@@ -3,19 +3,20 @@
 import React from 'react';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
+import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 
+  const [cartProductInLS] = useLocalStorage([], 'cart');
+
   React.useEffect(() => {
-    const storedItems = localStorage.getItem('cart');
-    if (storedItems) {
-      const parsedItems = JSON.parse(storedItems);
-      dispatch(addToCart(parsedItems));
+    if (cartProductInLS) {
+      dispatch(addToCart(cartProductInLS));
     }
-  }, [dispatch]);
+  }, [dispatch, cartProductInLS]);
 
   return (
     <>

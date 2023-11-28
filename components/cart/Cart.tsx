@@ -3,6 +3,7 @@
 import React from 'react';
 import CartProduct from './CartProduct';
 import EmptyCart from './EmptyCart';
+import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
@@ -12,14 +13,13 @@ const Cart: React.FC = () => {
   const cartProducts = useAppSelector(
     (state) => state.menuReducer.cartProducts,
   );
+  const [cartProductInLS] = useLocalStorage([], 'cart');
 
   React.useEffect(() => {
-    const storedItems = localStorage.getItem('cart');
-    if (storedItems) {
-      const parsedItems = JSON.parse(storedItems);
-      dispatch(addToCart(parsedItems));
+    if (cartProductInLS) {
+      dispatch(addToCart(cartProductInLS));
     }
-  }, [dispatch]);
+  }, [dispatch, cartProductInLS]);
 
   const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
     dispatch(addToCart(updatedItems));

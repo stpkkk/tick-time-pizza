@@ -35,14 +35,6 @@ const HeaderCart: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
-    const storedItems = localStorage.getItem('cart');
-    if (storedItems) {
-      const parsedItems = JSON.parse(storedItems);
-      dispatch(addToCart(parsedItems));
-    }
-  }, [dispatch]);
-
   return (
     <div
       className='relative h-full hover:bg-grayLight sm:hover:bg-white'
