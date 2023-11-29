@@ -5,3 +5,4 @@ export * from './getCategoryProducts';
 export * from './getGroupProducts';
 export * from './getPromoProducts';
 export * from './getPromoProdutSizes';
+export * from './getFormattedDateTime';

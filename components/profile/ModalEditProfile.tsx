@@ -15,9 +15,7 @@ import { ExtendedUser } from '@/types';
 const ModalEditProfile: React.FC = () => {
   const dispatch = useAppDispatch();
   const modalRef = React.useRef<HTMLFormElement>(null);
-  const { isModalEditProfileOpen, user } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { user } = useAppSelector((state) => state.profileReducer);
 
   const closeModal = () => {
     dispatch(setModalEditProfile(false));
@@ -77,7 +75,7 @@ const ModalEditProfile: React.FC = () => {
     };
   }, [handleClickOutside]);
 
-  return isModalEditProfileOpen ? (
+  return (
     <div className='relative z-10'>
       <div className='overlay' />
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full sm:items-stretch sm:p-0 sm:text-center'>
@@ -141,7 +139,7 @@ const ModalEditProfile: React.FC = () => {
         </form>
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default ModalEditProfile;

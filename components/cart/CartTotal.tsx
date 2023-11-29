@@ -4,13 +4,18 @@ import { useLocalStorage } from '@/hooks';
 import { addToOrders, setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedUser } from '@/types';
-import { calculateTotalPrice, generateUUID } from '@/utils';
+import {
+  calculateTotalPrice,
+  generateUUID,
+  getFormattedDateTime,
+} from '@/utils';
 
 const CartTotal: React.FC = () => {
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const { user, orders } = useAppSelector((state) => state.profileReducer);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
+  const { formattedDate, formattedTime } = getFormattedDateTime();
   const totalProducts = cartProducts.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
@@ -33,19 +38,29 @@ const CartTotal: React.FC = () => {
         ...orders,
         id: generateUUID(),
         products: cartProducts,
+        date: formattedDate,
+        time: formattedTime,
       };
 
       dispatch(addToOrders([...orders, updatedOrder]));
 
       const updatedUser: ExtendedUser = {
         ...user,
-        orders,
+        orders: [...orders, updatedOrder],
       };
 
       dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
     },
-    [cartProducts, dispatch, orders, setUserInLS, user],
+    [
+      cartProducts,
+      dispatch,
+      orders,
+      setUserInLS,
+      user,
+      formattedDate,
+      formattedTime,
+    ],
   );
 
   return (

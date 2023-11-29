@@ -81,9 +81,9 @@ const ProfileInfo: React.FC = () => {
 
   return (
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
-      <div className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
+      <ul className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
         {profileInfo.map(({ id, Icon, title, value }) => (
-          <div className='flex gap-5' key={id}>
+          <li className='flex gap-5' key={id}>
             <Icon
               size={50}
               className='bg-yellow text-white p-2 rounded-lg flex-shrink-0'
@@ -94,9 +94,9 @@ const ProfileInfo: React.FC = () => {
                 {value}
               </p>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className='flex gap-6'>
         <div
           className='flex gap-2 cursor-pointer text-grayDark hover:text-primary font-semibold'

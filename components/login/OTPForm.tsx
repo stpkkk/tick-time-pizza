@@ -48,7 +48,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
 
         dispatch(setCurrentUser(user));
         dispatch(setOtpSent(false));
-        router.push('/account');
+        router.push('/profile');
       } else {
         console.error('confirmationResult is null');
         dispatch(setOtpValid(false));
