@@ -3,6 +3,7 @@
 import React from 'react';
 import { BiLogOut, BiSolidEdit } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { IoInformationCircleOutline } from 'react-icons/io5';
 import { IoPerson, IoGift } from 'react-icons/io5';
 import { IoTicketOutline } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
@@ -12,6 +13,7 @@ import { app } from '@/firebase';
 import {
   setCurrentUser,
   setModalEditProfile,
+  setModalTicketsInfo,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
@@ -65,6 +67,9 @@ const ProfileInfo: React.FC = () => {
     { id: 4, Icon: IoTicketOutline, title: 'Ваши тикеты', value: '0' },
   ];
 
+  const tickets = profileInfo.find((info) => info.title === 'Ваши тикеты')
+    ?.title;
+
   const handleLogout = async () => {
     try {
       router.push('/');
@@ -75,28 +80,45 @@ const ProfileInfo: React.FC = () => {
     }
   };
 
-  const handleEdit = () => {
+  const handleClickEdit = () => {
     dispatch(setModalEditProfile(true));
+  };
+
+  const handleClickTicketsNotice = () => {
+    dispatch(setModalTicketsInfo(true));
   };
 
   return (
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
-      <ul className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
+      <div className='grid md:gap-4 md:grid-cols-2 gap-6 grid-cols-3 mb-[44px]'>
         {profileInfo.map(({ id, Icon, title, value }) => (
-          <li className='flex gap-5' key={id}>
+          <div className='flex gap-5' key={id}>
             <Icon
               size={50}
               className='bg-yellow text-white p-2 rounded-lg flex-shrink-0'
             />
             <div className='flex flex-col font-bold'>
-              <p className='text-grayDark'>{title}</p>
-              <p className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
-                {value}
-              </p>
+              <div>
+                <span className='text-grayDark'>{title}</span>
+              </div>
+              <div className='relative'>
+                <span className='sm:text-xs sm:leading-[15px] text-base leading-5 break-all'>
+                  {value}
+                </span>
+                {title === tickets ? (
+                  <button
+                    className='absolute -top-4 -right-10 hover:text-primary text-grayDark'
+                    type='button'
+                    onClick={handleClickTicketsNotice}
+                  >
+                    <IoInformationCircleOutline size={30} />
+                  </button>
+                ) : null}
+              </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <div className='flex gap-6'>
         <div
           className='flex gap-2 cursor-pointer text-grayDark hover:text-primary font-semibold'
@@ -109,7 +131,7 @@ const ProfileInfo: React.FC = () => {
         </div>
         <div
           className='flex gap-2 cursor-pointer text-grayDark hover:text-primary font-semibold'
-          onClick={handleEdit}
+          onClick={handleClickEdit}
         >
           <button type='button'>
             <BiSolidEdit size={25} />
