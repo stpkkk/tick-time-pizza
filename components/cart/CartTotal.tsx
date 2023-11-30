@@ -1,7 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Promocode from './Promocode';
 import { useLocalStorage } from '@/hooks';
-import { addToOrders, setCurrentUser } from '@/redux/features/profileSlice';
+import { addToCart } from '@/redux/features/menuSlice';
+import {
+  addToOrders,
+  setCurrentUser,
+  setOrderPrice,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedUser } from '@/types';
 import {
@@ -12,24 +18,32 @@ import {
 
 const CartTotal: React.FC = () => {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const { user, orders } = useAppSelector((state) => state.profileReducer);
+  const { user, orders, orderPrice } = useAppSelector(
+    (state) => state.profileReducer,
+  );
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const { formattedDate, formattedTime } = getFormattedDateTime();
-  const totalProducts = cartProducts.reduce(
+  const totalProducts = cartProducts?.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
 
-  const [userInLs, setUserInLS] = useLocalStorage({}, 'user');
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
-  const discount = cartProducts.reduce(
+  const discount = cartProducts?.reduce(
     (acc, product) =>
       acc +
       (product?.discount ?? 0) *
         ((product?.productQuantity && product?.productQuantity) || 0),
     0,
   );
+
+  React.useEffect(() => {
+    dispatch(setOrderPrice(cartTotalPrice));
+  }, [dispatch, cartTotalPrice]);
 
   const handleSubmitOrder = React.useCallback(
     async (e: React.FormEvent) => {
@@ -40,8 +54,13 @@ const CartTotal: React.FC = () => {
         products: cartProducts,
         date: formattedDate,
         time: formattedTime,
+        price: orderPrice,
+        payMethod: 'По карте (при получении)',
+        tickets: 0,
+        address: 'Ленина, 37',
+        orderAccepted: '-',
+        deliveryTime: '-',
       };
-
       dispatch(addToOrders([...orders, updatedOrder]));
 
       const updatedUser: ExtendedUser = {
@@ -49,8 +68,11 @@ const CartTotal: React.FC = () => {
         orders: [...orders, updatedOrder],
       };
 
+      router.push('/profile');
       dispatch(setCurrentUser(updatedUser));
+      dispatch(addToCart([]));
       await setUserInLS(updatedUser);
+      await setCartProductInLS([]);
     },
     [
       cartProducts,
@@ -60,6 +82,9 @@ const CartTotal: React.FC = () => {
       user,
       formattedDate,
       formattedTime,
+      orderPrice,
+      router,
+      setCartProductInLS,
     ],
   );
 
@@ -83,7 +108,7 @@ const CartTotal: React.FC = () => {
         <button
           type='submit'
           className='btn_red btn_disabled w-full h-[60px]'
-          disabled={cartTotalPrice > 0 ? false : true}
+          disabled={cartTotalPrice || 0 > 0 ? false : true}
         >
           Оформить заказ
         </button>
