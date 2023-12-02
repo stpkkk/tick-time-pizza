@@ -39,7 +39,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className='content_container relative z-10 min-h-[calc(100vh-268px)] pt-[90px] sm:px-4'>
+    <main className='content_container relative z-10 min-h-[calc(100vh-268px)] pt-[90px] sm:px-4'>
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
         <div className='overlay' />
         <div
@@ -47,14 +47,14 @@ const Login: React.FC = () => {
           data-sitekey='6lcsaxsdaaaaaebn0spdcencnu9564misyrudzd_'
           data-callback='sendform'
           data-size='invisible'
-        ></div>
+        />
         {isOTPSent ? (
           <OTPForm handleClose={handleClose} />
         ) : (
           <PhoneForm handleClose={handleClose} />
         )}
       </div>
-    </div>
+    </main>
   );
 };
 

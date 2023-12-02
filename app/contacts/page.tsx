@@ -4,9 +4,9 @@ import { pizzerias } from '@/constants';
 
 const Contacts: React.FC = () => {
   return (
-    <div className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-0'>
+    <main className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
-        <div className='h1 my-10 sm:my-4'>Контакты</div>
+        <h1 className='h1 my-10 sm:my-4'>Контакты</h1>
         <p className='sm:text-sm text-base sm:mb-[30px] mb-[50px]'>
           <span>
             <a className='underline' href='/'>
@@ -77,7 +77,7 @@ const Contacts: React.FC = () => {
           ></iframe>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

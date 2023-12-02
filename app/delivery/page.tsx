@@ -2,9 +2,9 @@ import React from 'react';
 
 const Delivery: React.FC = () => {
   return (
-    <div className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-0'>
+    <main className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
-        <div className='h1 my-10 sm:my-4'>Доставка</div>
+        <h1 className='h1 my-10 sm:my-4'>Доставка</h1>
         <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold sm:mb-[30px] mb-[50px]'>
           Доставка еды и напитков всегда бесплатная!
         </p>
@@ -65,7 +65,7 @@ const Delivery: React.FC = () => {
           ></iframe>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

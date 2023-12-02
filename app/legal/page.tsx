@@ -4,7 +4,7 @@ import { generateUUID } from '@/utils';
 
 const Legal: React.FC = () => {
   return (
-    <div className='content_container min-h-[calc(100vh-268px)] pt-[90px] sm:px-4 !px-[60px]'>
+    <main className='content_container min-h-[calc(100vh-268px)] pt-[90px] sm:px-4 !px-[60px]'>
       <h1 className='h1 my-[30px] sm:my-4'>Правовая информация</h1>
       <p className='md:text-sm text-base mb-[30px]'>
         В зависимости от указанного адреса, будет выбрано предприятие
@@ -28,7 +28,7 @@ const Legal: React.FC = () => {
           </ul>
         </>
       ))}
-    </div>
+    </main>
   );
 };
 
