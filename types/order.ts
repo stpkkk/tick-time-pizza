@@ -5,7 +5,7 @@ export interface IOrder {
   time?: string;
   date?: string;
   products: IProduct[];
-  price: number;
+  orderPrice: number;
   payMethod: string;
   tickets?: number;
   address?: string;

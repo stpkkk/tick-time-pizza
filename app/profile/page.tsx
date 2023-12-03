@@ -26,12 +26,14 @@ const Profile: React.FC = () => {
   const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
 
   return (
-    <main className='content_container min-h-[calc(100vh-358px)] mt-[90px] sm:mt-[70px] sm:px-0'>
+    <main className='content_container min-h-[calc(100vh-358px)] mt-[90px] sm:mt-[70px] sm:px-4'>
       {mounted ? (
         <>
-          <h1 className='h1 px-[60px] my-[30px] sm:my-4'>Профиль</h1>
+          <h1 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
           <ProfileInfo />
-          <h2 className='h1 px-[60px] my-[30px] sm:my-4'>Ваши заказы:</h2>
+          <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>
+            Ваши заказы:
+          </h2>
           {isOrdersExist ? <Orders orders={userInLS?.orders} /> : <NoOrders />}
           {isModalEditProfileOpen ? <ModalEditProfile /> : null}
           {isModalTicketsInfo ? <ModalTicketsInfo /> : null}

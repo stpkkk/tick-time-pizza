@@ -38,21 +38,24 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
         </p>
       )}
       {product.removedIngredients && product.removedIngredients.length > 0 && (
-        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+        <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
           Убрать:{' '}
           {product.removedIngredients?.map((ing) => (
-            <span key={ing.id}>{`${ing.name}, `}</span>
+            <li className='inline' key={ing.id}>{`${ing.name}, `}</li>
           ))}
-        </p>
+        </ul>
       )}
       {product.selectedIngredients &&
         product.selectedIngredients.length > 0 && (
-          <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+          <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
             Добавить:{' '}
             {product.selectedIngredients.map((ing) => (
-              <span key={ing.id}>{`${ing.name} (${ing.quantity}шт.), `}</span>
+              <li
+                className='inline'
+                key={ing.id}
+              >{`${ing.name} (${ing.quantity}шт.), `}</li>
             ))}
-          </p>
+          </ul>
         )}
     </div>
   );

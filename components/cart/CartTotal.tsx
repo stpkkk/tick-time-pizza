@@ -10,15 +10,11 @@ import {
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedUser } from '@/types';
-import {
-  calculateTotalPrice,
-  generateUUID,
-  getFormattedDateTime,
-} from '@/utils';
+import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
 
 const CartTotal: React.FC = () => {
-  const dispatch = useAppDispatch();
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const { user, orders, orderPrice } = useAppSelector(
     (state) => state.profileReducer,
@@ -48,13 +44,18 @@ const CartTotal: React.FC = () => {
   const handleSubmitOrder = React.useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
+
+      const randomId = Math.floor(
+        Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
+      ).toString();
+
       const updatedOrder = {
         ...orders,
-        id: generateUUID(),
+        id: randomId,
         products: cartProducts,
         date: formattedDate,
         time: formattedTime,
-        price: orderPrice,
+        orderPrice,
         payMethod: 'По карте (при получении)',
         tickets: 0,
         address: 'Ленина, 37',
