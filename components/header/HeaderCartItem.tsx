@@ -1,7 +1,8 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { SelectedProductOptions } from '../common';
 import { IProduct } from '@/types';
-import { calculateProductPrices, generateUUID } from '@/utils';
+import { calculateProductPrices } from '@/utils';
 
 interface HeaderCartItemProps {
   product: IProduct;
@@ -12,7 +13,6 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   product,
   onRemove,
 }) => {
-  const { promoProducts } = product;
   const { totalProductPrice } = calculateProductPrices(
     product,
     product.selectedSize || null,
@@ -20,56 +20,14 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
     product.productQuantity || 1,
   );
 
-  const renderPromoProducts = (products: IProduct[]) => (
-    <ul className='cart_ingredients flex-col'>
-      {products.map((product) => (
-        <li key={generateUUID()}>
-          {`${product.title} ${product.selectedSize?.name}, ${product.selectedDough?.name} (${product.productQuantity} шт.)`}
-        </li>
-      ))}
-    </ul>
-  );
-
-  const renderIngredients = () => (
-    <div>
-      {product.selectedSize?.name && product.selectedDough?.name && (
-        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-          {`${product.selectedSize?.name},${product.selectedDough?.name}`}
-        </p>
-      )}
-      {product.removedIngredients && product.removedIngredients.length > 0 && (
-        <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-          Убрать:{' '}
-          {product.removedIngredients?.map((ing) => (
-            <li className='inline' key={ing.id}>{`${ing.name}, `}</li>
-          ))}
-        </ul>
-      )}
-      {product.selectedIngredients &&
-        product.selectedIngredients.length > 0 && (
-          <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-            Добавить:{' '}
-            {product.selectedIngredients.map((ing) => (
-              <li
-                className='inline'
-                key={ing.id}
-              >{`${ing.name} (${ing.quantity}шт.), `}</li>
-            ))}
-          </ul>
-        )}
-    </div>
-  );
-
   return (
-    <div>
+    <div className='flex flex-col gap-2'>
+      <SelectedProductOptions product={product} />
       <div className='flex flex-row gap-3'>
-        <p className='mr-auto break-words text-[14px] font-semibold md:text-sm'>
-          {product.title}
-        </p>
         <p className='whitespace-nowrap text-[14px] md:text-sm'>
           {`${product.productQuantity} шт.`}
         </p>
-        <p className='w-10 whitespace-nowrap text-center text-[14px] font-semibold md:w-16 md:text-sm'>
+        <p className='w-10 whitespace-nowrap text-center text-[14px] font-semibold md:w-16 md:text-sm mr-auto'>
           {`${totalProductPrice} ₽`}
         </p>
         <button type='button' onClick={() => onRemove(product.uuid || '')}>
@@ -79,9 +37,6 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
           />
         </button>
       </div>
-      {promoProducts && promoProducts.length > 0
-        ? renderPromoProducts(promoProducts)
-        : renderIngredients()}
     </div>
   );
 };

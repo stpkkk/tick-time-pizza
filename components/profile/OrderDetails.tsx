@@ -1,4 +1,5 @@
 import React from 'react';
+import { SelectedProductOptions } from '../common';
 import { IOrder } from '@/types';
 
 type OrderProps = {
@@ -65,38 +66,7 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
           {order.products.map((product) => (
             <tr className='flex justify-between gap-24 w-full' key={product.id}>
               <td className='flex flex-col gap-2 mr-auto'>
-                <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold '>
-                  {product.title}
-                </span>
-                {product.selectedSize?.name && product.selectedDough?.name && (
-                  <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-                    {`${product.selectedSize?.name},${product.selectedDough?.name}`}
-                  </p>
-                )}
-                {product.selectedIngredients &&
-                  product.selectedIngredients.length > 0 && (
-                    <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-                      Добавить:{' '}
-                      {product.selectedIngredients?.map((ing) => (
-                        <li
-                          className='inline'
-                          key={ing.id}
-                        >{`${ing.name} (${ing.quantity}шт.), `}</li>
-                      ))}
-                    </ul>
-                  )}
-                {product.removedIngredients &&
-                  product.removedIngredients.length > 0 && (
-                    <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
-                      Убрать:{' '}
-                      {product.removedIngredients?.map((ing) => (
-                        <li
-                          className='inline'
-                          key={ing.id}
-                        >{`${ing.name}, `}</li>
-                      ))}
-                    </ul>
-                  )}
+                <SelectedProductOptions product={product} />
               </td>
               <td className='whitespace-nowrap md:text-xs md:leading-[15px] text-base leading-5'>
                 {product.productQuantity} шт.
