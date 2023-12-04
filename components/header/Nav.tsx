@@ -1,11 +1,9 @@
 import React from 'react';
 import { RiLoginCircleLine } from 'react-icons/ri';
-import { getAuth } from 'firebase/auth';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Phone from './Phone';
 import { navLinks } from '@/constants';
-import { app } from '@/firebase';
 import { useAppSelector } from '@/redux/hooks';
 
 type NavProps = {
@@ -13,9 +11,9 @@ type NavProps = {
 };
 
 const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
-  const auth = getAuth(app);
   const pathname = usePathname();
   const { isNavOpen } = useAppSelector((state) => state.headerReducer);
+  const { user } = useAppSelector((state) => state.profileReducer);
 
   return (
     <nav className='font-semibold sm:flex sm:flex-col'>
@@ -44,10 +42,10 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
         })}
         <li>
           <Link
-            href='/login'
+            href={user ? '/profile' : '/login'}
             className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
           >
-            <div>Войти</div>
+            <div>{user ? 'Профиль' : 'Войти'}</div>
             <RiLoginCircleLine size={25} />
           </Link>
         </li>

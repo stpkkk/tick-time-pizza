@@ -21,9 +21,9 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
   );
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-row items-start gap-2'>
       <SelectedProductOptions product={product} />
-      <div className='flex flex-row gap-3'>
+      <div className='flex gap-3'>
         <p className='whitespace-nowrap text-[14px] md:text-sm'>
           {`${product.productQuantity} шт.`}
         </p>

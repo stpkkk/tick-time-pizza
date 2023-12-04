@@ -72,7 +72,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
       {loading ? (
         <CgSpinner
           size={70}
-          className='text-yellow absolute flex_center animate-spin'
+          className='text-yellow absolute flex_center animate-spin sm:max-w-[40px] sm:h-[40px]'
         />
       ) : (
         <>

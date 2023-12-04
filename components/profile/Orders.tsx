@@ -38,31 +38,29 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
               !isOrderOpen(order.id || '') || 'gap-[50px]'
             }`}
           >
-            <div className='flex_between w-full list-none'>
-              <div className='flex_center gap-10'>
+            <div className='flex justify-between items-center flex-nowrap w-full'>
+              <div className='flex_center gap-10 sm:gap-4'>
                 <div>
-                  <span className='font-bold text-xl leading-6 md:text-xs'>
+                  <p className='font-bold text-xl leading-6 md:text-xs'>
                     #{order.id}
-                  </span>
+                  </p>
                 </div>
-                <div className='flex_center text-white rounded-xl bg-grayDark p-4 md:p-2.5 h-[44px] sm:h-[32px]'>
-                  <span className='block text-sm font-bold uppercase'>
+                <div className='flex_center text-white rounded-xl bg-grayDark p-4 md:p-2 h-[44px] sm:h-[32px]'>
+                  <span className='font-bold uppercase sm:text-[10px]'>
                     Завершен
                   </span>
                 </div>
                 <div>
-                  <span className='text-xl leading-6 md:text-xs'>
+                  <p className='text-xl leading-6 md:text-xs '>
                     {order.date} в {order.time}
-                  </span>
+                  </p>
                 </div>
               </div>
-              <div className='flex gap-6 sm:gap-2.5'>
-                {isOrderOpen(order.id || '') ? (
-                  <IoIosArrowUp />
-                ) : (
-                  <IoIosArrowDown />
-                )}
-              </div>
+              {isOrderOpen(order.id || '') ? (
+                <IoIosArrowUp />
+              ) : (
+                <IoIosArrowDown />
+              )}
             </div>
             {isOrderOpen(order.id || '') && <OrderDetails order={order} />}
           </div>

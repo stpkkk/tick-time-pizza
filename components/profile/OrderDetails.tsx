@@ -1,5 +1,6 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
+import { useAppSelector } from '@/redux/hooks';
 import { IOrder } from '@/types';
 
 type OrderProps = {
@@ -7,57 +8,34 @@ type OrderProps = {
 };
 
 const OrderDetails: React.FC<OrderProps> = ({ order }) => {
+  const { selectedPromo } = useAppSelector((state) => state.menuReducer);
   return (
-    <div className='flex justify-between gap-[30px] w-full md:flex-wrap'>
+    <div className='flex justify-between gap-[30px] w-full md:flex-wrap md:text-xs md:leading-[15px] text-base leading-5'>
       <table className='max-w-[50%] w-full md:max-w-full'>
-        <tbody className='flex flex-col gap-4  w-full'>
+        <tbody className='flex flex-col gap-4 w-full [&>tr]:grid [&>tr]:grid-cols-2 [&>tr]:gap-2.5 [&>tr>td:first-child]:font-semibold'>
           <tr className='grid grid-cols-2 gap-2.5 whitespace-nowrap'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              К оплате:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              {order.orderPrice} ₽
-            </td>
+            <td className=''>К оплате:</td>
+            <td>{order.orderPrice} ₽</td>
           </tr>
-          <tr className='grid grid-cols-2 gap-2.5'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Способ оплаты:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              {order.payMethod}
-            </td>
+          <tr>
+            <td>Способ оплаты:</td>
+            <td>{order.payMethod}</td>
           </tr>
-          <tr className='grid grid-cols-2 gap-2.5'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Тикеты:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              {order.tickets}
-            </td>
+          <tr>
+            <td>Тикеты:</td>
+            <td>{order.tickets}</td>
           </tr>
-          <tr className='grid grid-cols-2 gap-2.5'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Доставка по адресу:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              {order.address}
-            </td>
+          <tr>
+            <td>Доставка по адресу:</td>
+            <td>{order.address}</td>
           </tr>
-          <tr className='grid grid-cols-2 gap-2.5'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Заказ принят:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              {order.time}
-            </td>
+          <tr>
+            <td>Заказ принят:</td>
+            <td>{order.time}</td>
           </tr>
-          <tr className='grid grid-cols-2 gap-2.5'>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Время доставки:
-            </td>
-            <td className='md:text-xs md:leading-[15px] text-base leading-5'>
-              40 минут
-            </td>
+          <tr>
+            <td>Время доставки:</td>
+            <td>40 минут</td>
           </tr>
         </tbody>
       </table>
@@ -68,10 +46,10 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
               <td className='flex flex-col gap-2 mr-auto'>
                 <SelectedProductOptions product={product} />
               </td>
-              <td className='whitespace-nowrap md:text-xs md:leading-[15px] text-base leading-5'>
+              <td className='whitespace-nowrap '>
                 {product.productQuantity} шт.
               </td>
-              <td className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold whitespace-nowrap'>
+              <td className='font-semibold whitespace-nowrap'>
                 {product.totalPrice} ₽
               </td>
             </tr>

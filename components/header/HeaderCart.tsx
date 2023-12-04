@@ -5,7 +5,6 @@ import { BsBasket2 } from 'react-icons/bs';
 import Link from 'next/link';
 import CartTooltip from './CartTooltip';
 import { setIsHoveringCart } from '@/redux/features/headerSlice';
-import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 import { calculateTotalPrice } from '@/utils';

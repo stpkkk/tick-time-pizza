@@ -114,10 +114,10 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       promoProductsList,
       priceWithDiscount,
       cartProductInLS,
-      selectedPromo?.title,
       discount,
       router,
       dispatch,
+      selectedPromo,
     ],
   );
 

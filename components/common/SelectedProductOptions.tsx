@@ -10,7 +10,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
   product,
 }) => {
   return (
-    <>
+    <div className='w-full'>
       <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold '>
         {product.title}
       </span>
@@ -56,7 +56,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
             )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

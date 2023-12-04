@@ -38,7 +38,10 @@ const Profile: React.FC = () => {
         </>
       ) : (
         <div className='grid min-h-[calc(100vh-358px)] place-items-center'>
-          <CgSpinner size={70} className='text-yellow animate-spin' />
+          <CgSpinner
+            size={70}
+            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
+          />
         </div>
       )}
     </main>
