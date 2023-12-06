@@ -82,12 +82,17 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       e.preventDefault();
 
       const uuid = generateUUID();
+      const title = `Акция: ${
+        isPizzaOfTheDay
+          ? selectedPromo?.title + ' ' + currentDay
+          : selectedPromo?.title
+      }`;
 
       const updatedPromoProduct = {
         ...selectedProduct,
         uuid,
         productQuantity: 1,
-        title: `Акция: ${selectedPromo?.title}`,
+        title,
         image: promoImg,
         totalPrice: priceWithDiscount,
         promoProducts: promoProductsList,
@@ -109,15 +114,17 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       router.push('/promo');
     },
     [
+      isPizzaOfTheDay,
+      selectedPromo?.title,
+      currentDay,
       selectedProduct,
-      setCartProductInLS,
-      promoProductsList,
       priceWithDiscount,
-      cartProductInLS,
+      promoProductsList,
       discount,
-      router,
+      cartProductInLS,
       dispatch,
-      selectedPromo,
+      setCartProductInLS,
+      router,
     ],
   );
 

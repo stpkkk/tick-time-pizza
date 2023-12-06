@@ -1,6 +1,5 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
-import { useAppSelector } from '@/redux/hooks';
 import { IOrder } from '@/types';
 
 type OrderProps = {
@@ -8,7 +7,6 @@ type OrderProps = {
 };
 
 const OrderDetails: React.FC<OrderProps> = ({ order }) => {
-  const { selectedPromo } = useAppSelector((state) => state.menuReducer);
   return (
     <div className='flex justify-between gap-[30px] w-full md:flex-wrap md:text-xs md:leading-[15px] text-base leading-5'>
       <table className='max-w-[50%] w-full md:max-w-full'>
