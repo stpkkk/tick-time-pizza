@@ -133,7 +133,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   };
 
   return (
-    <div className='content_container min-h-[calc(100vh-358px)] mt-[90px] sm:mt-[70px] sm:px-0'>
+    <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
       <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
         <BackButton />
         <div className='h1'>
@@ -188,7 +188,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
       </div>
       {isModalOpen && <Modal />}
       {isProductsListModalOpen && <ModalPromoProdutsList promo={promo} />}
-    </div>
+    </main>
   );
 };
 

@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
+import React from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import OrderDetails from './OrderDetails';
 import { IOrder } from '@/types';
@@ -10,7 +10,7 @@ type OrdersProps = {
 };
 
 const Orders: React.FC<OrdersProps> = ({ orders }) => {
-  const [openOrderIds, setOpenOrderIds] = useState<string[]>([]);
+  const [openOrderIds, setOpenOrderIds] = React.useState<string[]>([]);
 
   const toggleOrder = (selectedOrderId: string) => {
     setOpenOrderIds((prevIds) =>

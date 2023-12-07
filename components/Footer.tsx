@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     <footer
       className={`${
         isPathnameStartsPromo ? 'sm:hidden' : 'block '
-      } content_container mt-[50px] drop-shadow-custom sm:mb-4`}
+      } w-full max-w-[1262px] px-[1rem] mt-[50px] drop-shadow-custom sm:mb-4`}
     >
       <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4'>
         <div className='flex_center gap-2 sm:gap-0'>

@@ -1,18 +1,17 @@
 import React from 'react';
+import Link from 'next/link';
 import { Pizzerias } from '@/components';
 import { pizzerias } from '@/constants';
 
 const Contacts: React.FC = () => {
   return (
-    <main className='content_container min-h-[calc(100vh-268px)] mt-[90px] sm:pt-0'>
+    <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
         <h1 className='h1 my-10 sm:my-4'>Контакты</h1>
         <p className='sm:text-sm text-base sm:mb-[30px] mb-[50px]'>
-          <span>
-            <a className='underline' href='/'>
-              Заказ пиццы{' '}
-            </a>
-          </span>
+          <Link className='underline' href='/'>
+            Заказ пиццы
+          </Link>
           можно совершить прямиком с этого сайта или позвонив на наш телефон.
           Если у вас возникнут трудности при совершении заказа пиццы, то на
           страницах нашего сайта вы сможете найти информацию о способах

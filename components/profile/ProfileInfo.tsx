@@ -90,7 +90,7 @@ const ProfileInfo: React.FC = () => {
 
   return (
     <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
-      <div className='grid md:gap-4 smMin:grid-cols-2 mdMin:grid-cols-3  gap-6  mb-[44px]'>
+      <div className='grid md:gap-4 smMin:grid-cols-2 mdMin:grid-cols-3 gap-6 mb-[44px] sm:mb-6'>
         {profileInfo.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>
             <Icon
@@ -118,14 +118,20 @@ const ProfileInfo: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className='flex gap-6 text-grayDark hover:text-primary font-semibold sm:text-sm'>
-        <div className='flex gap-2 cursor-pointer' onClick={handleLogout}>
+      <div className='flex gap-6 text-grayDark font-semibold sm:text-sm'>
+        <div
+          className='flex gap-2 cursor-pointer hover:text-primary '
+          onClick={handleLogout}
+        >
           <button type='button'>
             <BiLogOut size={25} />
           </button>
           <span>Выйти</span>
         </div>
-        <div className='flex gap-2 cursor-pointer' onClick={handleClickEdit}>
+        <div
+          className='flex gap-2 cursor-pointer hover:text-primary '
+          onClick={handleClickEdit}
+        >
           <button type='button'>
             <BiSolidEdit size={25} />
           </button>

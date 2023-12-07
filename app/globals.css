@@ -79,8 +79,8 @@ body {
   @apply bg-white font-montserrat text-primary;
 }
 
-.content_container {
-  @apply mx-auto w-full max-w-[1262px] pl-[1rem] pr-[1rem];
+main {
+  @apply mx-auto min-h-[calc(100vh-358px)] w-full max-w-[1262px]  px-[1rem];
 }
 
 .h1 {
@@ -159,6 +159,6 @@ body {
   @apply fixed inset-0 bg-black bg-opacity-25 opacity-100;
 }
 
-.modal_inner {	
-  @apply relative w-full rounded-2xl bg-white drop-shadow-custom opacity-100 transition-all scale-100 overflow-hidden;
+.modal_inner {
+  @apply relative w-full scale-100 overflow-hidden rounded-2xl bg-white opacity-100 drop-shadow-custom transition-all;
 }

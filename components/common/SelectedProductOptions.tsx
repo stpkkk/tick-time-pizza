@@ -10,12 +10,12 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
   product,
 }) => {
   return (
-    <div className='w-full'>
-      <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold '>
+    <div className='flex flex-col gap-1 w-full sm:max-w-[165px]'>
+      <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
         {product.title}
       </span>
       {product.selectedSize?.name && product.selectedDough?.name && (
-        <p className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+        <p className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
           {`${product.selectedSize?.name},${product.selectedDough?.name}`}
         </p>
       )}
@@ -23,10 +23,14 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
         product.promoProducts.length > 0 && (
           <ul className='cart_ingredients flex-col'>
             {product.promoProducts.map((product) => (
-              <li key={generateUUID()}>
-                {product.title}&nbsp;{product.selectedSize?.name},&nbsp;
-                {product.selectedDough?.name}&nbsp;(
-                {product.productQuantity}шт.)
+              <li key={generateUUID()} className=' whitespace-nowrap'>
+                <p className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
+                  {product.title}&nbsp;
+                  <br />
+                  {product.selectedSize?.name},&nbsp;
+                  {product.selectedDough?.name}&nbsp;(
+                  {product.productQuantity}шт.)
+                </p>
               </li>
             ))}
           </ul>
@@ -35,7 +39,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
         <>
           {product.selectedIngredients &&
             product.selectedIngredients.length > 0 && (
-              <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+              <ul className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
                 Добавить:{' '}
                 {product.selectedIngredients?.map((ing) => (
                   <li
@@ -47,7 +51,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
             )}
           {product.removedIngredients &&
             product.removedIngredients.length > 0 && (
-              <ul className='break-words text-[12px] font-normal md:text-xs md:leading-[15px]'>
+              <ul className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
                 Убрать:{' '}
                 {product.removedIngredients?.map((ing) => (
                   <li className='inline' key={ing.id}>{`${ing.name}, `}</li>

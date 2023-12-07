@@ -34,7 +34,7 @@ const HeaderDesktop: React.FC = () => {
   );
 
   return (
-    <header className='content_container fixed top-0 z-10 sm:hidden'>
+    <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>
       <div className='flex_center h-[90px] rounded-b-2xl bg-white px-[60px] drop-shadow-custom'>
         <Logo />
         <div className='text-sm md:relative md:ml-[20px] md:flex-grow'>
@@ -55,7 +55,7 @@ const HeaderDesktop: React.FC = () => {
           {isHoveringPhone ? <PhoneTooltip /> : null}
         </div>
         <Link
-          href={user ? '/login' : '/profile'}
+          href={user ? '/profile' : '/login'}
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <RiLoginCircleLine size={25} />

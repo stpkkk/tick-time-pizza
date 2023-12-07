@@ -2,7 +2,7 @@ import React from 'react';
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <main className='content_container min-h-[calc(100vh-268px)] pt-[90px] sm:px-4 !px-[60px]'>
+    <main className='mt-[90px] sm:px-4 !px-[60px]'>
       <h1 className='h1 my-[30px] sm:my-4'>Политика конфиденциальности</h1>
       <p className='break-words whitespace-pre-wrap text-justify md:text-sm text-base'>
         Настоящая Политика конфиденциальности персональной информации (далее —

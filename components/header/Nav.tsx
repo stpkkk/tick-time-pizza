@@ -44,8 +44,9 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
           <Link
             href={user ? '/profile' : '/login'}
             className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
+            onClick={handleToggleMenu}
           >
-            <div>{user ? 'Профиль' : 'Войти'}</div>
+            {user ? 'Профиль' : 'Войти'}
             <RiLoginCircleLine size={25} />
           </Link>
         </li>

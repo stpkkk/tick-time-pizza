@@ -13,6 +13,7 @@ import {
   setOtpSent,
   setOtpValid,
   setCurrentUser,
+	setPhoneValid,
 } from '@/redux/features/profileSlice';
 import { useAppSelector } from '@/redux/hooks';
 
@@ -65,6 +66,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
     dispatch(setOtpSent(false));
     dispatch(setOtp(''));
     dispatch(setOtpValid(true));
+    dispatch(setPhoneValid(false));
   };
 
   return (

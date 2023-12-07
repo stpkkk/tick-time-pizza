@@ -39,7 +39,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <main className='content_container relative z-10 min-h-[calc(100vh-268px)] pt-[90px] sm:px-4'>
+    <main className='relative z-10 sm:px-4 mb-[90px]'>
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
         <div className='overlay' />
         <div
