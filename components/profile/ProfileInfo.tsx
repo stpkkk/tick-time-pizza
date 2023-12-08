@@ -89,7 +89,7 @@ const ProfileInfo: React.FC = () => {
   };
 
   return (
-    <div className='bg-white drop-shadow-custom rounded-2xl md:py-8 md:px-4 py-[50px] px-[60px]'>
+    <div className='container md:py-8 md:px-4 py-[50px] px-[60px]'>
       <div className='grid md:gap-4 smMin:grid-cols-2 mdMin:grid-cols-3 gap-6 mb-[44px] sm:mb-6'>
         {profileInfo.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>

@@ -5,7 +5,7 @@ import { generateUUID } from '@/utils';
 const Legal: React.FC = () => {
   return (
     <main className='mt-[90px] sm:px-4 !px-[60px]'>
-      <h1 className='h1 my-[30px] sm:my-4'>Правовая информация</h1>
+      <h1 className='title my-[30px] sm:my-4'>Правовая информация</h1>
       <p className='md:text-sm text-base mb-[30px]'>
         В зависимости от указанного адреса, будет выбрано предприятие
         приготовления Вашего заказа. Чтобы узнать более точную информацию по

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
@@ -28,7 +28,7 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
     <ul className='flex flex-col-reverse gap-[30px] sm:gap-4'>
       {orders?.map((order) => (
         <li
-          className='flex flex-col bg-white rounded-2xl drop-shadow-custom cursor-pointer px-[60px] py-[30px] sm:p-4'
+          className='flex flex-col container cursor-pointer px-[60px] py-[30px] sm:p-4'
           key={order.id}
           onClick={() => toggleOrder(order.id || '')}
           tabIndex={1}

@@ -42,7 +42,7 @@ const ImageNotice: React.FC = () => {
       >
         <AiOutlineExclamationCircle size={18} />
       </div>
-      <div className='absolute -left-2 -top-2 z-10 max-w-[296px] rounded-2xl bg-white px-9 py-6 drop-shadow-custom'>
+      <div className='container absolute -left-2 -top-2 z-10 max-w-[296px] px-9 py-6'>
         <div
           className='absolute right-0 top-0 cursor-pointer p-2 text-grayDark hover:text-primary'
           onClick={handleClickExclamation}

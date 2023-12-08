@@ -48,7 +48,7 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <div className='relative mt-[120px] rounded-2xl sm:mt-[90px]'>
+    <div className='relative overflow-hidden mt-[120px] rounded-2xl sm:mt-[90px]'>
       <Swiper
         slidesPerView='auto'
         spaceBetween={40}

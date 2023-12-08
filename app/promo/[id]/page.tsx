@@ -136,9 +136,9 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
       <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
         <BackButton />
-        <div className='h1'>
+        <h1 className='title'>
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
-        </div>
+        </h1>
       </div>
       <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
         <PromoTotalHeader promo={promo} />
@@ -178,7 +178,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      <div className='bg-white drop-shadow-custom rounded-t-2xl p-4 pt-0 hidden sm:block w-full fixed bottom-0 left-0'>
+      <div className='container p-4 pt-0 hidden sm:block w-full fixed bottom-0 left-0'>
         <PromoTotalPrice
           addProductToCart={addProductToCart}
           isQuantityMax={isQuantityMax}

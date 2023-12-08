@@ -61,11 +61,11 @@ const ModalPromo: React.FC = () => {
                 <RiCloseFill size={28} />
               </button>
             </div>
-            <div className='h1 hidden sm:block'>
+            <h3 className='title hidden sm:block'>
               {isPizzaOfTheDay
                 ? selectedPromo!.title + ' ' + currentDay
                 : selectedPromo!.title}
-            </div>
+            </h3>
             <Image
               src={selectedPromo!.image}
               alt={selectedPromo!.title}

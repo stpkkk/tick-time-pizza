@@ -20,17 +20,17 @@ const Menu: React.FC = () => {
     <>
       <Banner />
       <Categories />
-      <div className='rounded-2xl bg-white px-[60px] py-[50px] drop-shadow-custom sm:p-0 sm:drop-shadow-none'>
-        {productsToShow.length > 0 ? (
+      {productsToShow.length > 0 ? (
+        <div className='container px-[60px] py-[50px] sm:p-0 sm:drop-shadow-none'>
           <ul className='grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4'>
             {productsToShow.map((product: IProduct) => (
               <ProductItem key={product.id} product={product} />
             ))}
           </ul>
-        ) : (
-          <NoBookmarks />
-        )}
-      </div>
+        </div>
+      ) : (
+        <NoBookmarks />
+      )}
       {isModalOpen && <Modal />}
     </>
   );

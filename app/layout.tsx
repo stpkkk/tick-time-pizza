@@ -11,16 +11,14 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='ru'>
-      <body>
-        <Providers>
-          <div className='flex min-h-full w-full min-w-[320px] flex-col items-center overflow-hidden'>
-            <Header />
-            {children}
-            <Footer />
-            <BackToTopButton />
-          </div>
-        </Providers>
-      </body>
+      <Providers>
+        <body>
+          <Header />
+          {children}
+          <Footer />
+          <BackToTopButton />
+        </body>
+      </Providers>
     </html>
   );
 };

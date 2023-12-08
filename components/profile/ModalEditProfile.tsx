@@ -91,7 +91,9 @@ const ModalEditProfile: React.FC = () => {
           >
             <RiCloseFill size={36} className='md:w-7' />
           </button>
-          <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
+          <h3 className='title flex_center mb-[50px]'>
+            Редактирование профиля
+          </h3>
           <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
             <Input
               id='name'
