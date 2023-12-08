@@ -1,4 +1,5 @@
+import useCategoryProducts from './useCategoryProducts';
 import useLocalStorage from './useLocalStorage';
 import useReadingProgress from './useReadingProgress';
 
-export { useReadingProgress, useLocalStorage };
+export { useReadingProgress, useLocalStorage, useCategoryProducts };

@@ -6,15 +6,17 @@ import Banner from './Banner';
 import Categories from './Categories';
 import NoBookmarks from './NoBookmarks';
 import ProductItem from './ProductItem';
+import { useCategoryProducts } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
-import { getCategoryProducts } from '@/utils';
 
 const Menu: React.FC = () => {
   const { isModalOpen, selectedCategory } = useAppSelector(
     (state) => state.menuReducer,
   );
-  const productsToShow = getCategoryProducts(selectedCategory?.name || '');
+  const productsToShow: IProduct[] = useCategoryProducts(
+    selectedCategory?.name || '',
+  );
 
   return (
     <>

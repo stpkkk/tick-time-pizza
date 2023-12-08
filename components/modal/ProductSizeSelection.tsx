@@ -18,7 +18,10 @@ const ProductSizeSelection: React.FC = () => {
       ? selectedProduct?.dough?.filter((d) => d.name === Dough.TRADITIONAL)
       : selectedProduct?.dough;
 
-  const sizes = getPromoProductSizes(selectedPromo?.title || '');
+  const sizes = getPromoProductSizes(
+    selectedPromo?.title || '',
+    selectedProduct,
+  );
 
   const getIsDisabledSize = (size: IOption) => {
     return selectedDough?.name === Dough.THIN && size.name === Sizes.SMALL;
