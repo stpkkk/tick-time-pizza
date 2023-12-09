@@ -16,7 +16,7 @@ const Profile: React.FC = () => {
   const { isModalEditProfileOpen, isModalTicketsInfo } = useAppSelector(
     (state) => state.profileReducer,
   );
-  const [userInLS] = useLocalStorage({}, 'user');
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [mounted, setMounted] = React.useState(false);
   const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
 

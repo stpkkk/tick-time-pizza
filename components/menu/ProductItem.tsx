@@ -6,7 +6,7 @@ import { menu } from '@/constants';
 import {
   setSelectedProduct,
   setHoveredItemId,
-  toggleModal,
+  setModalProductOpen,
   setSelectedPromo,
   setIsProductsListModalOpen,
 } from '@/redux/features/menuSlice';
@@ -48,7 +48,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
 
       dispatch(setSelectedProduct(selectedProduct || null));
       dispatch(setSelectedPromo(promo || null));
-      dispatch(toggleModal(true));
+      dispatch(setModalProductOpen(true));
 
       if (isProductsListModalOpen) {
         dispatch(setIsProductsListModalOpen(false));

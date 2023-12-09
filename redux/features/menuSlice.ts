@@ -10,7 +10,8 @@ import {
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface MenuState {
-  isModalOpen: boolean;
+  isModalProductOpen: boolean;
+  modalHeight: number;
   isTooltipOpen: boolean;
   hoveredItemId: number | null;
   selectedProduct: IProduct | null;
@@ -33,7 +34,8 @@ export interface MenuState {
 }
 
 const initialState: MenuState = {
-  isModalOpen: false,
+  isModalProductOpen: false,
+  modalHeight: 0,
   isTooltipOpen: false,
   hoveredItemId: null,
   selectedProduct: null,
@@ -73,8 +75,12 @@ const menuSlice = createSlice({
     },
 
     // Modal
-    toggleModal: (state, action: PayloadAction<boolean>) => {
-      state.isModalOpen = action.payload;
+    setModalProductOpen: (state, action: PayloadAction<boolean>) => {
+      state.isModalProductOpen = action.payload;
+    },
+
+    setModalHeight: (state, action: PayloadAction<number>) => {
+      state.modalHeight = action.payload;
     },
 
     toggleTooltip: (state) => {
@@ -285,7 +291,8 @@ const menuSlice = createSlice({
 });
 
 export const {
-  toggleModal,
+  setModalProductOpen,
+  setModalHeight,
   setHoveredItemId,
   setSelectedProduct,
   setSelectedSize,

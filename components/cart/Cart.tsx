@@ -13,7 +13,7 @@ const Cart: React.FC = () => {
   const cartProducts = useAppSelector(
     (state) => state.menuReducer.cartProducts,
   );
-  const [cartProductInLS] = useLocalStorage([], 'cart');
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   React.useEffect(() => {
     if (cartProductInLS) {

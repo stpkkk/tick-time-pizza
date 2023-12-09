@@ -14,7 +14,10 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import pattern from '../../public/assets/icons/pattern.svg';
 import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
-import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
+import {
+  setSelectedProduct,
+  setModalProductOpen,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promos, Slide } from '@/types';
 
@@ -43,12 +46,12 @@ const Banner: React.FC = () => {
     if (isPizzaOfTheDaySlide) {
       router.push(`/promo/${pizzaOfTheDayId}`);
     } else {
-      dispatch(toggleModal(true));
+      dispatch(setModalProductOpen(true));
     }
   };
 
   return (
-    <div className='relative overflow-hidden mt-[120px] rounded-2xl sm:mt-[90px]'>
+    <div className='relative md:overflow-hidden mt-[120px] rounded-2xl sm:mt-[90px]'>
       <Swiper
         slidesPerView='auto'
         spaceBetween={40}

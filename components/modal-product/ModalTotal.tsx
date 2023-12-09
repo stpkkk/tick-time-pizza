@@ -6,7 +6,7 @@ import {
   addToPromoProductsList,
   decrementProductQuantity,
   incrementProductQuantity,
-  toggleModal,
+  setModalProductOpen,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { calculateProductPrices, generateUUID } from '@/utils';
@@ -61,7 +61,7 @@ const ModalTotal: React.FC = () => {
       dispatch(addToCart(updatedCartProduct));
     }
 
-    dispatch(toggleModal(false));
+    dispatch(setModalProductOpen(false));
   }, [
     selectedProduct,
     selectedSize,

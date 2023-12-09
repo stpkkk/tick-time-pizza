@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
@@ -8,28 +6,23 @@ import ImageNotice from './ImageNotice';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
-import { useAppSelector } from '@/redux/hooks';
+import { setModalHeight } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-interface ModalLeftContentProps {
-  setModalHeight: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const ModalLeftContent: React.FC<ModalLeftContentProps> = ({
-  setModalHeight,
-}) => {
+const ModalLeftContent: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { selectedProduct, selectedPromo } = useAppSelector(
     (state) => state.menuReducer,
   );
-
   const modalLeft = React.useRef<HTMLDivElement>(null);
 
   // Function to get the height of the modal left content
   const getModalHeight = React.useCallback(() => {
     if (modalLeft.current) {
       const height = modalLeft.current.clientHeight;
-      setModalHeight(height);
+      dispatch(setModalHeight(height));
     }
-  }, [modalLeft, setModalHeight]);
+  }, [modalLeft, dispatch]);
 
   React.useEffect(() => {
     getModalHeight();

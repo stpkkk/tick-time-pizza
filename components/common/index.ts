@@ -6,6 +6,7 @@ import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
 import Input from './Input';
 import Logo from './Logo';
+import ModalWrapper from './ModalWrapper';
 import RadioGroupOption from './RadioGroupOption';
 import SelectedProductOptions from './SelectedProductOptions';
 
@@ -19,5 +20,6 @@ export {
   BackButton,
   Counter,
   Input,
-	SelectedProductOptions
+  SelectedProductOptions,
+  ModalWrapper,
 };

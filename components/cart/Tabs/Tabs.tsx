@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductList from './ProductList';
 import Tab from './Tab';
-import { Modal } from '@/components/modal';
+import { ModalProduct } from '@/components';
 import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
@@ -11,7 +11,7 @@ const Tabs: React.FC = () => {
   const [hydrated, setHydrated] = React.useState(false);
   const [popularProducts, setPopularProducts] = React.useState<IProduct[]>([]);
 
-  const { isModalOpen } = useAppSelector((state) => state.menuReducer);
+  const { isModalProductOpen } = useAppSelector((state) => state.menuReducer);
   const sauces = menu.filter((product) => product.group === 'sauces');
 
   const handleTabClick = (tabNumber: number) => {
@@ -56,7 +56,7 @@ const Tabs: React.FC = () => {
           </div>
         </div>
       </div>
-      {isModalOpen && <Modal />}
+      {isModalProductOpen && <ModalProduct />}
     </>
   );
 };

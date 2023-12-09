@@ -5,7 +5,7 @@ const ProductIngredients: React.FC = () => {
   const { selectedProduct } = useAppSelector((state) => state.menuReducer);
 
   return (
-    <p className='block text-sm leading-[1.25rem] sm:mb-[30px] sm:text-[0.75rem]'>
+    <p className='block text-sm leading-[1.25rem] sm:mb-[16px] sm:text-[0.75rem]'>
       {selectedProduct?.ingredients}
     </p>
   );

@@ -8,5 +8,6 @@ export * from './contacts';
 export * from './promo';
 export * from './login';
 export * from './profile';
+export * from './modal-product';
 
 export { Footer };

@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../../public/assets/icons/pizza.svg';
-import { setSelectedProduct, toggleModal } from '@/redux/features/menuSlice';
+import {
+  setSelectedProduct,
+  setModalProductOpen,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
@@ -21,7 +24,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
       dispatch(setSelectedProduct(selectedProduct));
     }
 
-    dispatch(toggleModal(true));
+    dispatch(setModalProductOpen(true));
   };
 
   return (

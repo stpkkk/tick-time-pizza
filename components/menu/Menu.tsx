@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Modal } from '../modal';
+import { ModalProduct } from '../modal-product';
 import Banner from './Banner';
 import Categories from './Categories';
 import NoBookmarks from './NoBookmarks';
@@ -11,7 +11,7 @@ import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 const Menu: React.FC = () => {
-  const { isModalOpen, selectedCategory } = useAppSelector(
+  const { isModalProductOpen, selectedCategory } = useAppSelector(
     (state) => state.menuReducer,
   );
   const productsToShow: IProduct[] = useCategoryProducts(
@@ -33,7 +33,7 @@ const Menu: React.FC = () => {
       ) : (
         <NoBookmarks />
       )}
-      {isModalOpen && <Modal />}
+      {isModalProductOpen && <ModalProduct />}
     </>
   );
 };

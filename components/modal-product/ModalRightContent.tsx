@@ -9,20 +9,14 @@ import ProductTitle from './ProductTitle';
 import ProductWeight from './ProductWeight';
 import { useAppSelector } from '@/redux/hooks';
 
-type ModalRightContentProps = {
-  modalHeight: number;
-};
-
-const ModalRightContent: React.FC<ModalRightContentProps> = ({
-  modalHeight,
-}) => {
-  const { selectedProduct, selectedPromo } = useAppSelector(
+const ModalRightContent: React.FC = () => {
+  const { selectedProduct, selectedPromo, modalHeight } = useAppSelector(
     (state) => state.menuReducer,
   );
 
   return (
     <div
-      className={`modal_mobile_height scroll scroll-container flex flex-col gap-[30px] overflow-auto pr-[50px] modal_scroll sm:overflow-visible sm:pr-0`}
+      className={`modal_mobile_height scroll scroll-container flex flex-col gap-[30px] sm:gap-4 overflow-auto pr-[50px] modal_scroll sm:overflow-visible sm:pr-0`}
       style={{
         height: `${modalHeight}px`,
       }}

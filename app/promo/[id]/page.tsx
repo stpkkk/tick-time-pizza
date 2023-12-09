@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import promoImg from '../../../public/assets/icons/promo.svg';
 import {
   BackButton,
+  ModalProduct,
   ModalPromoProdutsList,
   PromoProductsList,
   PromoSelectedProductsList,
@@ -12,7 +13,6 @@ import {
   PromoTotalHeader,
   PromoTotalPrice,
 } from '@/components';
-import { Modal } from '@/components/modal';
 import { promos } from '@/constants';
 import { useLocalStorage } from '@/hooks';
 import {
@@ -42,7 +42,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {
-    isModalOpen,
+    isModalProductOpen,
     isProductsListModalOpen,
     promoProductsList,
     selectedProduct,
@@ -186,7 +186,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      {isModalOpen && <Modal />}
+      {isModalProductOpen && <ModalProduct />}
       {isProductsListModalOpen && <ModalPromoProdutsList promo={promo} />}
     </main>
   );

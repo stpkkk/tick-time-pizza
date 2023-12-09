@@ -91,10 +91,6 @@ main {
   @apply font-zheldor text-[2.5rem] font-normal leading-[3rem] sm:text-2xl;
 }
 
-.modal {
-  @apply grid h-full grid-cols-2 gap-[60px] overflow-auto overflow-x-hidden bg-white py-[60px] pl-[60px] text-left drop-shadow-custom sm:block sm:px-8 sm:pb-44 sm:pt-8;
-}
-
 .header_dropdown {
   @apply hidden w-full max-w-[190px] sm:hidden md:flex md:h-[90px] md:items-center md:gap-2 md:pl-7;
 }
@@ -164,5 +160,5 @@ main {
 }
 
 .modal_inner {
-  @apply relative w-full scale-100 overflow-hidden rounded-2xl bg-white opacity-100 drop-shadow-custom transition-all;
+  @apply relative flex w-full scale-100 flex-col justify-center overflow-hidden rounded-2xl bg-white opacity-100 drop-shadow-custom transition-all sm:max-w-full sm:rounded-none;
 }
