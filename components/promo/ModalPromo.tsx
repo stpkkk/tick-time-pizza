@@ -44,16 +44,16 @@ const ModalPromo: React.FC = () => {
             ? selectedPromo!.title + ' ' + currentDay
             : selectedPromo!.title}
         </h3>
-        <Image
-          src={selectedPromo!.image}
-          alt={selectedPromo!.title}
-          placeholder='blur'
-          blurDataURL={pizza.src}
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          width={500}
-          height={282}
-          className='aspect-square h-full max-h-[282px] w-full max-w-[500px] sm:max-h-[207px] sm:rounded-2xl'
-        />
+        <div className='relative w-full max-w-[500px] aspect-video cursor-pointer rounded-2xl self-center'>
+          <Image
+            src={selectedPromo!.image}
+            alt={selectedPromo!.title}
+            placeholder='blur'
+            blurDataURL={pizza.src}
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            className='w-full sm:rounded-2xl'
+          />
+        </div>
         <div className='px-[60px] py-[50px] sm:p-0'>
           <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] mb-[30px]'>
             {selectedPromo?.description}

@@ -2,7 +2,6 @@ import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
-import pattern from '../../public/assets/icons/pattern-pizza-boxes.svg';
 import { promos } from '@/constants';
 import {
   resetPromoProductsList,
@@ -31,14 +30,18 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
 
   return (
     <article className='flex_start md:flex_center flex-col w-full h-full bg-white max-w-[420px] sm:drop-shadow-custom sm:rounded-2xl sm:p-4 '>
-      <Image
-        src={promo.image}
-        alt={promo.title}
-        placeholder='blur'
-        blurDataURL={pattern.src}
-        onClick={() => handlePromoClick(promo, true)}
-        className='w-full h-auto max-w-[350px] cursor-pointer rounded-2xl mb-4 md:self-center'
-      />
+      <div className='relative w-full max-w-[350px] aspect-video cursor-pointer rounded-2xl mb-4 md:self-center'>
+        <Image
+          src={promo.image}
+          alt={promo.title}
+          placeholder='blur'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          fill
+          priority
+          onClick={() => handlePromoClick(promo, true)}
+          className='rounded-2xl'
+        />
+      </div>
       <span className='block font-semibold leading-5 mb-4'>
         {isPizzaOfTheDay ? promo.title + ' ' + currentDay : promo.title}
       </span>

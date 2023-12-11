@@ -67,15 +67,17 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
         onClick={() => handleClickProduct(product)}
       >
         <div className='flex flex-col gap-4'>
-          <Image
-            src={product.image}
-            alt={product.title}
-            placeholder='blur'
-            blurDataURL={pizza.src}
-            className={`${
-              isItemHovered && 'opacity-50'
-            } aspect-square h-full max-h-[255px] w-full max-w-[255px] self-center`}
-          />
+          <div className='relative w-full h-auto max-w-[255px] aspect-square cursor-pointer rounded-2xl self-center'>
+            <Image
+              src={product.image}
+              alt={product.title}
+              placeholder='blur'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              fill
+              priority
+              className={`${isItemHovered && 'opacity-50'}`}
+            />
+          </div>
           <span className='mb-4 block font-semibold leading-5'>
             {product.title}
           </span>
