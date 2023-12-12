@@ -16,13 +16,13 @@ import { getPizzaOfTheDay } from '@/utils';
 const { dayIndex } = getPizzaOfTheDay();
 
 export const pizzaOfTheDaySlides: Slide[] = [
-  { id: 0, image: bakedPork, title: 'Пицца Запечённая Буженина' },
+  { id: 0, image: hunter, title: 'Пицца Охотничья' },
   { id: 1, image: carbonara, title: 'Пицца Карбонара' },
-  { id: 2, image: pepperoni, title: 'Пицца Пепперони' },
-  { id: 3, image: chickenSausages, title: 'Пицца Курица и Колбаски' },
-  { id: 4, image: cheesePizza, title: 'Пицца Сырная' },
-  { id: 5, image: americana, title: 'Пицца Американа' },
-  { id: 6, image: hunter.src, title: 'Пицца Охотничья' },
+  { id: 2, image: bakedPork, title: 'Пицца Запечённая Буженина' },
+  { id: 3, image: pepperoni, title: 'Пицца Пепперони' },
+  { id: 4, image: chickenSausages, title: 'Пицца Курица и Колбаски' },
+  { id: 5, image: cheesePizza, title: 'Пицца Сырная' },
+  { id: 6, image: americana, title: 'Пицца Американа' },
 ];
 
 const slideOfTheDay = pizzaOfTheDaySlides[dayIndex];
