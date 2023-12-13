@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import pizza from '../../../public/assets/icons/pizza.svg';
+import pizza from '../../public/assets/icons/pizza.svg';
 import {
   setSelectedProduct,
   setModalProductOpen,
@@ -8,11 +8,13 @@ import {
 import { useAppDispatch } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-type ProductListProps = {
+type RecommendedProductsProps = {
   products: IProduct[];
 };
 
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
+  products,
+}) => {
   const dispatch = useAppDispatch();
 
   const handleClickProduct = (clickedProduct: IProduct) => {
@@ -64,4 +66,4 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
   );
 };
 
-export default ProductList;
+export default RecommendedProducts;

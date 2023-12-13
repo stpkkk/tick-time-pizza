@@ -3,6 +3,13 @@ import CartProduct from './CartProduct';
 import CartTotal from './CartTotal';
 import EmptyCart from './EmptyCart';
 import Promocode from './Promocode';
+import RecommendedProducts from './RecommendedProducts';
 
-export * from './Tabs';
-export { Cart, CartProduct, EmptyCart, CartTotal, Promocode };
+export {
+  Cart,
+  CartProduct,
+  EmptyCart,
+  CartTotal,
+  Promocode,
+  RecommendedProducts,
+};

@@ -10,6 +10,7 @@ import ModalWrapper from './ModalWrapper';
 import RadioGroupOption from './RadioGroupOption';
 import SelectedProductOptions from './SelectedProductOptions';
 
+export * from './Tabs';
 export {
   Logo,
   RadioGroupOption,
