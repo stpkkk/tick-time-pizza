@@ -24,7 +24,7 @@ const ModalTicketsInfo: React.FC = () => {
         >
           <RiCloseFill size={36} className='md:w-7' />
         </button>
-        <h3 className='title text-center mb-4'>Тикеты</h3>
+        <h3 className='h1 text-center mb-4'>Тикеты</h3>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] whitespace-pre-wrap'>
           Делай заказы на нашем сайте или в приложении, копи тикеты и оплачивай
           ими заказы! 1 тикет = 1 рублю.

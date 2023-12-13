@@ -4,7 +4,7 @@ const Delivery: React.FC = () => {
   return (
     <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
-        <h1 className='title my-10 sm:my-4'>Доставка</h1>
+        <h1 className='h1 my-10 sm:my-4'>Доставка</h1>
         <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold sm:mb-[30px] mb-[50px]'>
           Доставка еды и напитков всегда бесплатная!
         </p>

@@ -18,12 +18,10 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <h1 className='title px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
+      <h1 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
       <ProfileInfo />
       <section>
-        <h2 className='title px-[60px] my-[30px] sm:my-4 sm:px-4'>
-          Ваши заказы:
-        </h2>
+        <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>Ваши заказы:</h2>
         {isOrdersExist ? <Orders orders={userInLS?.orders} /> : <NoOrders />}
       </section>
       {isModalEditProfileOpen ? <ModalEditProfile /> : null}

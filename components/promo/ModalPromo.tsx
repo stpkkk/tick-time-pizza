@@ -39,7 +39,7 @@ const ModalPromo: React.FC = () => {
             <RiCloseFill size={28} />
           </button>
         </div>
-        <h3 className='title hidden sm:block'>
+        <h3 className='h1 hidden sm:block'>
           {isPizzaOfTheDay
             ? selectedPromo!.title + ' ' + currentDay
             : selectedPromo!.title}

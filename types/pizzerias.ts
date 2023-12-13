@@ -1,5 +1,5 @@
 export type Pizzerias = {
   id: number;
-  adress: string;
+  address: string;
   openingHours: string[];
 };

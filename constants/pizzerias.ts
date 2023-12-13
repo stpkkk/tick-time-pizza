@@ -3,7 +3,7 @@ import { Pizzerias } from '@/types';
 export const pizzerias: Pizzerias[] = [
   {
     id: 0,
-    adress: 'Проспект Ленина д.35',
+    address: 'Проспект Ленина д.35',
     openingHours: [
       'Пн с 08:00 по 23:00',
       'Вт с 08:00 по 23:00',
@@ -16,7 +16,7 @@ export const pizzerias: Pizzerias[] = [
   },
   {
     id: 1,
-    adress: 'Проспект Карельский д.20',
+    address: 'Проспект Карельский д.20',
     openingHours: [
       'Пн с 07:00 по 01:00',
       'Вт с 07:00 по 01:00',
@@ -29,7 +29,7 @@ export const pizzerias: Pizzerias[] = [
   },
   {
     id: 2,
-    adress: 'Улица Ленинградская д.12',
+    address: 'Улица Ленинградская д.12',
     openingHours: [
       'Пн с 08:00 по 01:00',
       'Вт с 08:00 по 01:00',
@@ -42,7 +42,7 @@ export const pizzerias: Pizzerias[] = [
   },
   {
     id: 3,
-    adress: 'Бульвар Интернационалистов д.20',
+    address: 'Бульвар Интернационалистов д.20',
     openingHours: [
       'Пн с 08:00 по 01:00',
       'Вт с 08:00 по 01:00',
@@ -55,7 +55,7 @@ export const pizzerias: Pizzerias[] = [
   },
   {
     id: 4,
-    adress: 'Улица Чапаева д.45',
+    address: 'Улица Чапаева д.45',
     openingHours: [
       'Пн с 08:00 по 01:00',
       'Вт с 08:00 по 01:00',

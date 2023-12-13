@@ -28,10 +28,10 @@ const Profile: React.FC = () => {
     <main className='mt-[90px] sm:mt-[70px] sm:px-4'>
       {mounted ? (
         <>
-          <h1 className='title px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
+          <h1 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
           <ProfileInfo />
           <section>
-            <h2 className='title px-[60px] my-[30px] sm:my-4 sm:px-4'>
+            <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>
               Ваши заказы:
             </h2>
             {isOrdersExist ? (

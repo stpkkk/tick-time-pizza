@@ -26,3 +26,23 @@ export enum Prices {
   TWO_BIG_PEPPERONIES = 1299,
   TWO_MEDIUM_DINNER_PIZZAS = 999,
 }
+
+export enum PaymentMethods {
+  CARDUPONRECEIPT = 'По карте (при получении)',
+  CASH = 'Наличные',
+  CARDONLINE = 'ОНЛАЙН (по карте)',
+}
+
+export enum DeliveryTime {
+  SOON = 'Поскорее',
+  TODAY = 'Сегодня',
+  TOMORROW = 'Завтра',
+}
+
+export enum ChangeMoneyFrom {
+  WITHOUTHCHANGE = 'Без сдачи',
+  $500 = 'Сегодня',
+  $1000 = '1000',
+  $2000 = '2000',
+  $5000 = '5000',
+}

@@ -136,7 +136,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
       <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
         <BackButton />
-        <h1 className='title'>
+        <h1 className='h1'>
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
         </h1>
       </div>

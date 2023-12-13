@@ -7,7 +7,7 @@ const Contacts: React.FC = () => {
   return (
     <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
-        <h1 className='title my-10 sm:my-4'>Контакты</h1>
+        <h1 className='h1 my-10 sm:my-4'>Контакты</h1>
         <p className='sm:text-sm text-base sm:mb-[30px] mb-[50px]'>
           <Link className='underline' href='/'>
             Заказ пиццы

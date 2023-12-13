@@ -87,8 +87,12 @@ main {
   @apply rounded-2xl bg-white drop-shadow-custom;
 }
 
-.title {
-  @apply font-zheldor text-[2.5rem] font-normal leading-[3rem] sm:text-2xl;
+.h1 {
+  @apply font-zheldor text-[2.5rem] font-normal uppercase leading-[3rem] sm:text-2xl;
+}
+
+.h3 {
+  @apply font-zheldor text-[1.5rem] font-normal uppercase leading-[2rem] sm:text-2xl;
 }
 
 .header_dropdown {
@@ -130,6 +134,10 @@ main {
 
 .btn_gray {
   @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-grayDark px-4 py-2 text-xs font-bold uppercase text-white hover:opacity-50 sm:h-[50px];
+}
+
+.btn_grayLight {
+  @apply flex cursor-pointer items-center justify-center  rounded-2xl bg-gray text-sm font-bold leading-[17px] opacity-100 hover:bg-opacity-50 sm:text-xs sm:leading-[15px];
 }
 
 .btn_disabled {

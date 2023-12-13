@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Tab from './Tab';
 
@@ -35,7 +37,7 @@ const Tabs: React.FC<TabsProps> = ({
         />
       </ul>
 
-      <div className='relative flex flex-col min-w-0 break-words bg-white w-full rounded-2xl rounded-tl-none px-[60px] py-[50px] flex-auto sm:px-4 sm:py-8'>
+      <div className='relative flex flex-col flex-auto min-w-0 break-words bg-white w-full rounded-2xl rounded-tl-none px-[60px] py-[50px] sm:px-4 sm:py-8'>
         {activeTab === 1 && contentFirst}
         {activeTab === 2 && contentSecond}
       </div>
