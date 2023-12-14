@@ -28,9 +28,9 @@ export enum Prices {
 }
 
 export enum PaymentMethods {
-  CARDUPONRECEIPT = 'По карте (при получении)',
+  CARD_UPON_RECEIPT = 'По карте (при получении)',
   CASH = 'Наличные',
-  CARDONLINE = 'ОНЛАЙН (по карте)',
+  CARD_ONLINE = 'ОНЛАЙН (по карте)',
 }
 
 export enum DeliveryTime {
@@ -40,8 +40,8 @@ export enum DeliveryTime {
 }
 
 export enum ChangeMoneyFrom {
-  WITHOUTHCHANGE = 'Без сдачи',
-  $500 = 'Сегодня',
+  WITHOUTH_CHANGE = 'Без сдачи',
+  $500 = '500',
   $1000 = '1000',
   $2000 = '2000',
   $5000 = '5000',

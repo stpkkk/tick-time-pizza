@@ -17,7 +17,7 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
           </tr>
           <tr>
             <td>Способ оплаты:</td>
-            <td>{order.payMethod}</td>
+            <td>{order.paymentMethod}</td>
           </tr>
           <tr>
             <td>Тикеты:</td>

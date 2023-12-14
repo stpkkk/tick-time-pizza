@@ -8,6 +8,7 @@ import HeartIconRed from './HeartIconRed';
 import Input from './Input';
 import Logo from './Logo';
 import ModalWrapper from './ModalWrapper';
+import RadioButton from './RadioButton';
 import RadioGroupOption from './RadioGroupOption';
 import SelectedProductOptions from './SelectedProductOptions';
 
@@ -25,4 +26,5 @@ export {
   SelectedProductOptions,
   ModalWrapper,
   ButtonsSaveCancel,
+  RadioButton,
 };

@@ -16,9 +16,15 @@ const CartTotal: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const { user, orders, orderPrice } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const {
+    user,
+    orders,
+    orderPrice,
+    paymentMethod,
+    deliveryTime,
+    cashChange,
+    pickPoint,
+  } = useAppSelector((state) => state.profileReducer);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const { formattedDate, formattedTime } = getFormattedDateTime();
   const totalProducts = cartProducts?.reduce(
@@ -56,11 +62,13 @@ const CartTotal: React.FC = () => {
         date: formattedDate,
         time: formattedTime,
         orderPrice,
-        payMethod: 'По карте (при получении)',
+        paymentMethod,
+        cashChange,
         tickets: 0,
         address: 'Ленина, 37',
         orderAccepted: '-',
-        deliveryTime: '-',
+        deliveryTime: deliveryTime,
+        pickPoint,
       };
       dispatch(addToOrders([...orders, updatedOrder]));
 
@@ -76,16 +84,20 @@ const CartTotal: React.FC = () => {
       await setCartProductInLS([]);
     },
     [
-      cartProducts,
-      dispatch,
       orders,
-      setUserInLS,
-      user,
+      cartProducts,
       formattedDate,
       formattedTime,
       orderPrice,
+      paymentMethod,
+      cashChange,
+      deliveryTime,
+      dispatch,
+      user,
       router,
+      setUserInLS,
       setCartProductInLS,
+      pickPoint,
     ],
   );
 

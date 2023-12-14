@@ -6,9 +6,11 @@ export interface IOrder {
   date?: string;
   products: IProduct[];
   orderPrice: number;
-  payMethod: string;
+  paymentMethod: string;
   tickets?: number;
   address?: string;
   orderAccepted?: string;
   deliveryTime?: string;
+  cashChange?: string;
+  pickPoint?: string;
 }

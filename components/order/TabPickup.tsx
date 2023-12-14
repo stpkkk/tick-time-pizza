@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {
-  SelectAddress,
   SelectChangeMoney,
   SelectDeliveryTime,
   SelectPaymentMethod,
@@ -13,7 +12,6 @@ const TabPickup: React.FC = () => {
   return (
     <div className='flex flex-col gap-[30px]'>
       <SelectPickupPoint />
-      <SelectAddress />
       <SelectPaymentMethod />
       <SelectChangeMoney />
       <SelectDeliveryTime />

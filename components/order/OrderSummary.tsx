@@ -1,6 +1,12 @@
+'use client';
+
 import React from 'react';
+import { useAppSelector } from '@/redux/hooks';
 
 const OrderSummary: React.FC = () => {
+  const { pickPoint } = useAppSelector((state) => state.profileReducer);
+  const isDelivery = 'Доставка';
+
   return (
     <section>
       <h2 className='h1 my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
@@ -9,9 +15,9 @@ const OrderSummary: React.FC = () => {
       <div className='container flex justify-between flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
         <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
           <div>
-            <h3 className='h3 mb-4'>Самовывоз</h3>
+            <h3 className='h3 mb-4'>{isDelivery ? 'Доставка' : 'Самовывоз'}</h3>
             <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              Пр-т Ленина 35
+              {isDelivery ? 'Выберите адрес доставки' : pickPoint}
             </span>
           </div>
           <div>

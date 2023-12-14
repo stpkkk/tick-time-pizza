@@ -16,10 +16,10 @@ const Tabs: React.FC<TabsProps> = ({
   labelFirst,
   labelSecond,
 }) => {
-  const [activeTab, setActiveTab] = React.useState(1);
+  const [activeTab, setActiveTab] = React.useState(labelFirst);
 
-  const handleTabClick = (tabNumber: number) => {
-    setActiveTab(tabNumber);
+  const handleTabClick = (selectedTab: string) => {
+    setActiveTab(selectedTab);
   };
 
   return (
@@ -27,19 +27,19 @@ const Tabs: React.FC<TabsProps> = ({
       <ul className='flex flex-wrap gap-x-2 flex-row' role='tablist'>
         <Tab
           label={labelFirst}
-          isActive={activeTab === 1}
-          onClick={() => handleTabClick(1)}
+          isActive={activeTab === labelFirst}
+          onClick={() => handleTabClick(labelFirst)}
         />
         <Tab
           label={labelSecond}
-          isActive={activeTab === 2}
-          onClick={() => handleTabClick(2)}
+          isActive={activeTab === labelSecond}
+          onClick={() => handleTabClick(labelSecond)}
         />
       </ul>
 
       <div className='relative flex flex-col flex-auto min-w-0 break-words bg-white w-full rounded-2xl rounded-tl-none px-[60px] py-[50px] sm:px-4 sm:py-8'>
-        {activeTab === 1 && contentFirst}
-        {activeTab === 2 && contentSecond}
+        {activeTab === labelFirst && contentFirst}
+        {activeTab === labelSecond && contentSecond}
       </div>
     </div>
   );

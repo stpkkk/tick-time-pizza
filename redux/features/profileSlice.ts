@@ -1,5 +1,12 @@
 import { ConfirmationResult } from 'firebase/auth';
-import { ExtendedUser, IOrder, IProduct } from '@/types';
+import { pizzerias } from '@/constants';
+import {
+  ChangeMoneyFrom,
+  DeliveryTime,
+  ExtendedUser,
+  IOrder,
+  PaymentMethods,
+} from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface ProfileState {
@@ -16,6 +23,10 @@ export interface ProfileState {
   orders: IOrder[];
   orderPrice: number;
   isModalAddAddressOpen: boolean;
+  paymentMethod: string;
+  cashChange: string;
+  deliveryTime: string;
+  pickPoint: string;
 }
 
 const initialState: ProfileState = {
@@ -32,6 +43,10 @@ const initialState: ProfileState = {
   orders: [],
   orderPrice: 0,
   isModalAddAddressOpen: false,
+  paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
+  cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
+  deliveryTime: DeliveryTime.SOON,
+  pickPoint: pizzerias.at(0).address,
 };
 
 const profileSlice = createSlice({
@@ -92,6 +107,23 @@ const profileSlice = createSlice({
     setModalAddAddress: (state, action: PayloadAction<boolean>) => {
       state.isModalAddAddressOpen = action.payload;
     },
+
+    //Order Form
+    setPaymentMethod: (state, action: PayloadAction<string>) => {
+      state.paymentMethod = action.payload;
+    },
+
+    setCashChange: (state, action: PayloadAction<string>) => {
+      state.cashChange = action.payload;
+    },
+
+    setDeliveryTime: (state, action: PayloadAction<string>) => {
+      state.deliveryTime = action.payload;
+    },
+
+    setPickPoint: (state, action: PayloadAction<string>) => {
+      state.pickPoint = action.payload;
+    },
   },
 });
 
@@ -109,6 +141,10 @@ export const {
   setModalTicketsInfo,
   setOrderPrice,
   setModalAddAddress,
+  setPaymentMethod,
+  setCashChange,
+  setDeliveryTime,
+  setPickPoint,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;
