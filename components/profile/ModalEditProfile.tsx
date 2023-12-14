@@ -3,7 +3,7 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { useFormik } from 'formik';
-import { Input, ModalWrapper } from '../common';
+import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import {
   setCurrentUser,
   setModalEditProfile,
@@ -18,6 +18,7 @@ const ModalEditProfile: React.FC = () => {
 
   const closeModal = () => {
     dispatch(setModalEditProfile(false));
+    resetForm();
   };
 
   const {
@@ -45,11 +46,6 @@ const ModalEditProfile: React.FC = () => {
       closeModal();
     },
   });
-
-  const clickCancel = () => {
-    dispatch(setModalEditProfile(false));
-    resetForm();
-  };
 
   const isFormNotValid =
     (!values.name.trim() && !values.birthday.trim() && !values.email.trim()) ||
@@ -98,22 +94,7 @@ const ModalEditProfile: React.FC = () => {
             onBlur={handleBlur}
           />
         </div>
-        <div className='flex_center gap-[30px] sm:gap-2.5'>
-          <button
-            className='btn_gray max-w-[236px]'
-            onClick={clickCancel}
-            type='button'
-          >
-            Отменить
-          </button>
-          <button
-            className='btn_red btn_disabled max-w-[236px]'
-            type='submit'
-            disabled={isFormNotValid}
-          >
-            Сохранить
-          </button>
-        </div>
+        <ButtonsSaveCancel disabled={isFormNotValid} clickCancel={closeModal} />
       </form>
     </ModalWrapper>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  BackButton,
+  ModalAddAddress,
   OrderSummary,
+  BackButton,
   TabDelivery,
   TabPickup,
   Tabs,
@@ -25,6 +26,7 @@ const Order: React.FC = () => {
         </section>
         <OrderSummary />
       </form>
+      <ModalAddAddress />
     </main>
   );
 };

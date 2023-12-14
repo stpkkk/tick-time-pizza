@@ -1,3 +1,4 @@
+import ModalAddAddress from './ModalAddAddress';
 import OrderSummary from './OrderSummary';
 import SelectAddress from './SelectAddress';
 import SelectChangeMoney from './SelectChangeMoney';
@@ -16,4 +17,5 @@ export {
   SelectChangeMoney,
   SelectPickupPoint,
   OrderSummary,
+  ModalAddAddress,
 };

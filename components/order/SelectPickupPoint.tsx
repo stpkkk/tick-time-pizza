@@ -5,8 +5,9 @@ const SelectPickupPoint: React.FC = () => {
   const handleClick = () => {};
 
   return (
-    <section>
-      <h3 className='h3 mb-4'>Где вам удобно получить заказ?</h3>
+    <section className='flex flex-col gap-4'>
+      <h3 className='h3'>Где вам удобно получить заказ?</h3>
+      <div className='min-h-[300px]' />
       <dl className='grid grid-flow-row lgMin:grid-cols-3 smMin:grid-cols-1 mdMin:grid-cols-2 gap-[30px]'>
         {pizzerias.map((pizzeria) => (
           <button

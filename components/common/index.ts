@@ -1,6 +1,7 @@
 import BackButton from './BackButton';
 import BackToTopButton from './BackToTopButton';
 import BookmarkButton from './BookmarkButton';
+import ButtonsSaveCancel from './ButtonsSaveCancel';
 import Counter from './Counter';
 import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
@@ -23,4 +24,5 @@ export {
   Input,
   SelectedProductOptions,
   ModalWrapper,
+  ButtonsSaveCancel,
 };

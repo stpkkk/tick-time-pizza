@@ -15,6 +15,7 @@ export interface ProfileState {
   isModalTicketsInfo: boolean;
   orders: IOrder[];
   orderPrice: number;
+  isModalAddAddressOpen: boolean;
 }
 
 const initialState: ProfileState = {
@@ -30,6 +31,7 @@ const initialState: ProfileState = {
   isModalTicketsInfo: false,
   orders: [],
   orderPrice: 0,
+  isModalAddAddressOpen: false,
 };
 
 const profileSlice = createSlice({
@@ -39,41 +41,56 @@ const profileSlice = createSlice({
     setPhone: (state, action: PayloadAction<string>) => {
       state.phone = action.payload;
     },
+
     setOtp: (state, action: PayloadAction<string>) => {
       state.otp = action.payload;
     },
+
     setOtpSent: (state, action: PayloadAction<boolean>) => {
       state.isOTPSent = action.payload;
     },
+
     setConfirmationResult: (
       state,
       action: PayloadAction<null | ConfirmationResult>,
     ) => {
       state.confirmationResult = action.payload;
     },
+
     setPhoneValid: (state, action: PayloadAction<boolean>) => {
       state.isPhoneValid = action.payload;
     },
+
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
+
     setCurrentUser: (state, action: PayloadAction<null | ExtendedUser>) => {
       state.user = action.payload;
     },
+
     setOtpValid: (state, action: PayloadAction<boolean>) => {
       state.isOtpValid = action.payload;
     },
+
     setModalEditProfile: (state, action: PayloadAction<boolean>) => {
       state.isModalEditProfileOpen = action.payload;
     },
+
     setModalTicketsInfo: (state, action: PayloadAction<boolean>) => {
       state.isModalTicketsInfo = action.payload;
     },
+
     setOrderPrice: (state, action: PayloadAction<number>) => {
       state.orderPrice = action.payload;
     },
+
     addToOrders: (state, action: PayloadAction<IOrder[]>) => {
       state.orders = action.payload;
+    },
+
+    setModalAddAddress: (state, action: PayloadAction<boolean>) => {
+      state.isModalAddAddressOpen = action.payload;
     },
   },
 });
@@ -91,6 +108,7 @@ export const {
   addToOrders,
   setModalTicketsInfo,
   setOrderPrice,
+  setModalAddAddress,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;

@@ -1,8 +1,14 @@
 import React from 'react';
 import { LuMapPin } from 'react-icons/lu';
+import { setModalAddAddress } from '@/redux/features/profileSlice';
+import { useAppDispatch } from '@/redux/hooks';
 
-const selectAddress: React.FC = () => {
-  const handleClick = () => {};
+const SelectAddress: React.FC = () => {
+  const dispatch = useAppDispatch();
+
+  const handleClickAddAddress = () => {
+    dispatch(setModalAddAddress(true));
+  };
 
   return (
     <section>
@@ -10,7 +16,7 @@ const selectAddress: React.FC = () => {
       <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center sm:gap-2.5 gap-[30px]'>
         <li
           className='btn_grayLight p-[30px] h-[96px] max-w-[255px] sm:max-w-full flex justify-between gap-5 w-full'
-          onClick={handleClick}
+          onClick={handleClickAddAddress}
         >
           <LuMapPin size={40} className='text-grayDark' />
           <button className='text-left w-full' type='button'>
@@ -22,4 +28,4 @@ const selectAddress: React.FC = () => {
   );
 };
 
-export default selectAddress;
+export default SelectAddress;
