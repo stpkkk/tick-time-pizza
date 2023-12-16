@@ -1,11 +1,11 @@
 import React from 'react';
 
 type RadioButtonProps = {
-  id: string;
+  id?: string;
   onChange: any;
   checked: boolean;
-  value: string;
-  name: string;
+  value?: string;
+  name?: string;
   className?: string;
   crossed?: string;
   isDisabled?: boolean;

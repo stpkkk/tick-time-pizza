@@ -1,9 +1,9 @@
 import React from 'react';
-import { Pizzerias as PizzeriasType } from '@/types';
+import { Pizzeria } from '@/types';
 import { generateUUID } from '@/utils';
 
 type PizzeriasProps = {
-  pizzeria: PizzeriasType;
+  pizzeria: Pizzeria;
 };
 
 const Pizzerias: React.FC<PizzeriasProps> = ({ pizzeria }) => {

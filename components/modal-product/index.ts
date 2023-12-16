@@ -13,6 +13,8 @@ import ProductIngredients from './ProductIngredients';
 import ProductSizeSelection from './ProductSizeSelection';
 import ProductTitle from './ProductTitle';
 import ProductWeight from './ProductWeight';
+import SelectDough from './SelectDough';
+import SelectSize from './SelectSize';
 
 export {
   ModalProduct,
@@ -30,4 +32,6 @@ export {
   ProductWeight,
   ModalCategories,
   ProductIngredients,
+  SelectDough,
+  SelectSize,
 };
