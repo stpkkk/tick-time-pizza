@@ -1,15 +1,16 @@
 import React from 'react';
+import { JsxElement } from 'typescript';
 
 type RadioButtonProps = {
   id?: string;
-  onChange: any;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
   value?: string;
   name?: string;
   className?: string;
   crossed?: string;
   isDisabled?: boolean;
-  innerHTML?: any;
+  innerHTML: React.ReactNode;
 };
 
 const RadioButton: React.FC<RadioButtonProps> = ({
