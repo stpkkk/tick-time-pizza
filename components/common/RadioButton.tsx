@@ -1,5 +1,4 @@
 import React from 'react';
-import { JsxElement } from 'typescript';
 
 type RadioButtonProps = {
   id?: string;

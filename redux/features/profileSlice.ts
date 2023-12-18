@@ -26,7 +26,7 @@ export interface ProfileState {
   paymentMethod: string;
   cashChange: string;
   deliveryTime: string;
-  pickPoint: string;
+  pickPoint?: string;
 }
 
 const initialState: ProfileState = {
@@ -46,7 +46,7 @@ const initialState: ProfileState = {
   paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
   cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
   deliveryTime: DeliveryTime.SOON,
-  pickPoint: pizzerias.at(0).address,
+  pickPoint: pizzerias.at(0)?.address,
 };
 
 const profileSlice = createSlice({

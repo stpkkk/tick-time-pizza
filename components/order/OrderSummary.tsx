@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
-import { useAppSelector } from '@/redux/hooks';
+import { SelectedProductOptions } from '../common';
+import { useLocalStorage } from '@/hooks';
+import { IOrder } from '@/types';
 
 const OrderSummary: React.FC = () => {
-  const { pickPoint } = useAppSelector((state) => state.profileReducer);
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const isDelivery = 'Доставка';
 
   return (
@@ -17,13 +19,27 @@ const OrderSummary: React.FC = () => {
           <div>
             <h3 className='h3 mb-4'>{isDelivery ? 'Доставка' : 'Самовывоз'}</h3>
             <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              {isDelivery ? 'Выберите адрес доставки' : pickPoint}
+              {!isDelivery ? 'Выберите адрес доставки' : userInLS.pickPoint}
             </span>
           </div>
           <div>
             <h2 className='h3 mb-4'>Состав заказа</h2>
+            <ul>
+              {userInLS?.orders?.map(
+                (order: IOrder) =>
+                  order?.products?.map((product) => (
+                    <li
+                      key={product.uuid}
+                      className='grid grid-cols-3 justify-items-center w-full'
+                    >
+                      <SelectedProductOptions product={product} />
+                      <div>{product.productQuantity} шт.</div>
+                      <div className='font-bold'>{product.totalPrice} ₽</div>
+                    </li>
+                  )),
+              )}
+            </ul>
           </div>
-          <ul>{}</ul>
         </div>
         <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
           <div>
@@ -33,7 +49,7 @@ const OrderSummary: React.FC = () => {
               name='comment'
               id='comment'
               rows={5}
-            ></textarea>
+            />
           </div>
           <div>
             <h3 className='h3 mb-4'>Использовать тикеты</h3>
