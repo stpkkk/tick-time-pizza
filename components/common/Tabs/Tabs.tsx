@@ -2,6 +2,9 @@
 
 import React from 'react';
 import Tab from './Tab';
+import { setSupplyType } from '@/redux/features/profileSlice';
+import { useAppDispatch } from '@/redux/hooks';
+import { SupplyType } from '@/types';
 
 type TabsProps = {
   contentFirst: React.JSX.Element;
@@ -16,10 +19,14 @@ const Tabs: React.FC<TabsProps> = ({
   labelFirst,
   labelSecond,
 }) => {
+  const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = React.useState(labelFirst);
 
   const handleTabClick = (selectedTab: string) => {
     setActiveTab(selectedTab);
+    if (selectedTab === SupplyType.DELIVERY || SupplyType.PICKUP) {
+      dispatch(setSupplyType(selectedTab));
+    }
   };
 
   return (

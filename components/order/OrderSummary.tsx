@@ -3,11 +3,16 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
 import { useLocalStorage } from '@/hooks';
-import { IOrder } from '@/types';
+import { useAppSelector } from '@/redux/hooks';
+import { IProduct, SupplyType } from '@/types';
 
 const OrderSummary: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const isDelivery = 'Доставка';
+  const { supplyType, orderPrice, pickPoint } = useAppSelector(
+    (state) => state.profileReducer,
+  );
+
+  const isDelivery = supplyType === SupplyType.DELIVERY;
 
   return (
     <section>
@@ -17,27 +22,26 @@ const OrderSummary: React.FC = () => {
       <div className='container flex justify-between flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
         <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
           <div>
-            <h3 className='h3 mb-4'>{isDelivery ? 'Доставка' : 'Самовывоз'}</h3>
+            <h3 className='h3 mb-4'>
+              {isDelivery ? SupplyType.DELIVERY : SupplyType.PICKUP}
+            </h3>
             <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              {!isDelivery ? 'Выберите адрес доставки' : userInLS.pickPoint}
+              {isDelivery ? 'Выберите адрес доставки' : pickPoint}
             </span>
           </div>
           <div>
             <h2 className='h3 mb-4'>Состав заказа</h2>
             <ul>
-              {userInLS?.orders?.map(
-                (order: IOrder) =>
-                  order?.products?.map((product) => (
-                    <li
-                      key={product.uuid}
-                      className='grid grid-cols-3 justify-items-center w-full'
-                    >
-                      <SelectedProductOptions product={product} />
-                      <div>{product.productQuantity} шт.</div>
-                      <div className='font-bold'>{product.totalPrice} ₽</div>
-                    </li>
-                  )),
-              )}
+              {userInLS?.orders.at(-1).products?.map((product: IProduct) => (
+                <li
+                  key={product.uuid}
+                  className='grid grid-cols-3 justify-items-center w-full'
+                >
+                  <SelectedProductOptions product={product} />
+                  <div>{product.productQuantity} шт.</div>
+                  <div className='font-bold'>{product.totalPrice} ₽</div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -61,7 +65,7 @@ const OrderSummary: React.FC = () => {
           </div>
           <div>
             <p className='font-bold sm:marker:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
-              К оплате: 399 ₽
+              К оплате: {userInLS?.orders.at(-1).orderPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
               Тикетов будет начислено: 12

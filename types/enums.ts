@@ -46,3 +46,8 @@ export enum ChangeMoneyFrom {
   $2000 = '2000',
   $5000 = '5000',
 }
+
+export enum SupplyType {
+  DELIVERY = 'Доставка',
+  PICKUP = 'Самовывоз',
+}

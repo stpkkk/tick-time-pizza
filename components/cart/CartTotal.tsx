@@ -4,7 +4,7 @@ import Promocode from './Promocode';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import {
-  addToOrders,
+  addToOrders, // setCurrentOrder,
   setCurrentUser,
   setOrderPrice,
 } from '@/redux/features/profileSlice';
@@ -59,6 +59,7 @@ const CartTotal: React.FC = () => {
         //! addresses: []
       };
       dispatch(addToOrders([...orders, updatedOrder]));
+      // dispatch(setCurrentOrder(updatedOrder));
 
       const updatedUser: ExtendedUser = {
         ...user,

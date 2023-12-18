@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
+import { useRouter } from 'next/navigation';
 import {
   ModalAddAddress,
   OrderSummary,
@@ -14,12 +15,13 @@ import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import { addToOrders, setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { ExtendedUser } from '@/types';
+import { ExtendedUser, SupplyType } from '@/types';
 
 const Order: React.FC = () => {
   const dispatch = useAppDispatch();
   const { pickPoint, orders, paymentMethod, cashChange, deliveryTime, user } =
     useAppSelector((state) => state.profileReducer);
+  const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
@@ -46,6 +48,7 @@ const Order: React.FC = () => {
 
       dispatch(setCurrentUser(updatedUser));
       dispatch(addToCart([]));
+      router.push('/profile');
       await setUserInLS(updatedUser);
     },
     [
@@ -57,6 +60,7 @@ const Order: React.FC = () => {
       dispatch,
       user,
       setUserInLS,
+      router,
     ],
   );
 
@@ -77,8 +81,8 @@ const Order: React.FC = () => {
               <Tabs
                 contentFirst={<TabDelivery />}
                 contentSecond={<TabPickup />}
-                labelFirst='Доставка'
-                labelSecond='Самовывоз'
+                labelFirst={SupplyType.DELIVERY}
+                labelSecond={SupplyType.PICKUP}
               />
             </section>
             <OrderSummary />

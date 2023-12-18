@@ -27,6 +27,8 @@ export interface ProfileState {
   cashChange: string;
   deliveryTime: string;
   pickPoint?: string;
+  supplyType?: string;
+  // currentOrder: IOrder | null;
 }
 
 const initialState: ProfileState = {
@@ -47,6 +49,8 @@ const initialState: ProfileState = {
   cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
   deliveryTime: DeliveryTime.SOON,
   pickPoint: pizzerias.at(0)?.address,
+  supplyType: '',
+  // currentOrder: null,
 };
 
 const profileSlice = createSlice({
@@ -124,6 +128,14 @@ const profileSlice = createSlice({
     setPickPoint: (state, action: PayloadAction<string>) => {
       state.pickPoint = action.payload;
     },
+
+    setSupplyType: (state, action: PayloadAction<string>) => {
+      state.supplyType = action.payload;
+    },
+
+    // setCurrentOrder: (state, action: PayloadAction<IOrder>) => {
+    //   state.currentOrder = action.payload;
+    // },
   },
 });
 
@@ -145,6 +157,8 @@ export const {
   setCashChange,
   setDeliveryTime,
   setPickPoint,
+  setSupplyType,
+  // setCurrentOrder,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;
