@@ -4,13 +4,9 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactInputMask from 'react-input-mask';
 import { useDispatch } from 'react-redux';
-import {
-  ApplicationVerifier,
-  getAuth,
-  signInWithPhoneNumber,
-} from 'firebase/auth';
+import { ApplicationVerifier, getAuth, signInWithPhoneNumber } from 'firebase/auth';
 import Link from 'next/link';
-import { app } from '@/firebase';
+import { app_firebase } from '@/firebase';
 import {
   setConfirmationResult,
   setOtpSent,
@@ -25,7 +21,7 @@ type PhoneFormProps = {
 };
 
 const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
-  const auth = getAuth(app);
+  const auth = getAuth(app_firebase);
   const dispatch = useDispatch();
   const { phone, isPhoneValid } = useAppSelector(
     (state) => state.profileReducer,

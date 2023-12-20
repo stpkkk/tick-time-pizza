@@ -2,9 +2,9 @@ import IngredientsRemove from './IngredientsRemove';
 import IngredientsSelect from './IngredientsSelect';
 import IngredientsSelectItem from './IngredientsSelectItem';
 import ModalCategories from './ModalCategories';
-import ModalLeftContent from './ModalLeftContent';
+import ContentLeft from './ContentLeft';
 import ModalProduct from './ModalProduct';
-import ModalRightContent from './ModalRightContent';
+import ContentRight from './ContentRight';
 import ModalSubTitle from './ModalSubTitle';
 import ModalTotal from './ModalTotal';
 import NutritionalValue from './NutritionalValue';
@@ -21,8 +21,8 @@ export {
   IngredientsRemove,
   NutritionalValue,
   ModalSubTitle,
-  ModalLeftContent,
-  ModalRightContent,
+  ContentLeft,
+  ContentRight,
   ProductTitle,
   ModalTotal,
   ProductWeight,

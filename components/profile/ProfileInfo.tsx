@@ -9,7 +9,7 @@ import { IoTicketOutline } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { app } from '@/firebase';
+import { app_firebase } from '@/firebase';
 import {
   setCurrentUser,
   setModalEditProfile,
@@ -18,13 +18,12 @@ import {
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ProfileInfo: React.FC = () => {
-  const auth = getAuth(app);
+  const auth = getAuth(app_firebase);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.profileReducer);
 
   React.useEffect(() => {
-    const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         // User present
@@ -37,7 +36,7 @@ const ProfileInfo: React.FC = () => {
     });
 
     return () => unsubscribe(); // Clean up subscription
-  }, [dispatch, router]);
+  }, [dispatch, router, auth]);
 
   const profileInfo = [
     {

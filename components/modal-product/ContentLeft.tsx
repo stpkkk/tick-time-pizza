@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { BookmarkButton, Notice } from '../common';
+import { ButtonBookmark, Notice } from '../common';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
 import { setModalHeight } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-const ModalLeftContent: React.FC = () => {
+const ContentLeft: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, selectedPromo } = useAppSelector(
     (state) => state.menuReducer,
@@ -43,7 +43,7 @@ const ModalLeftContent: React.FC = () => {
           className='aspect-square h-full max-h-[325px] w-full max-w-[325px] sm:max-h-[250px] sm:max-w-[250px]'
         />
         <div className='absolute right-0 top-0'>
-          <BookmarkButton product={selectedProduct} />
+          <ButtonBookmark product={selectedProduct} />
         </div>
         <div className='absolute left-0 top-0 w-full'>
           <Notice text='Изображение в рекламе и внешний вид продукта могут отличаться' />
@@ -61,4 +61,4 @@ const ModalLeftContent: React.FC = () => {
   );
 };
 
-export default ModalLeftContent;
+export default ContentLeft;

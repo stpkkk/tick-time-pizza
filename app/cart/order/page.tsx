@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import {
   ModalAddAddress,
   OrderSummary,
-  BackButton,
+  ButtonBack,
   TabDelivery,
   TabPickup,
   Tabs,
@@ -75,7 +75,7 @@ const Order: React.FC = () => {
           <form onSubmit={handleSubmitOrder}>
             <section>
               <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
-                <BackButton />
+                <ButtonBack />
                 <h1 className='h1'>Оформление заказа</h1>
               </div>
               <Tabs

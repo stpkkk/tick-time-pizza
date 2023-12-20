@@ -4,7 +4,7 @@ import React from 'react';
 import { RecaptchaVerifier, getAuth } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { OTPForm, PhoneForm } from '@/components';
-import { app } from '@/firebase/config';
+import { app_firebase } from '@/firebase/config';
 import { setOtp } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
@@ -12,7 +12,7 @@ import { ExtendedWindow } from '@/types';
 const Login: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const auth = getAuth(app);
+  const auth = getAuth(app_firebase);
   const { isOTPSent } = useAppSelector((state) => state.profileReducer);
 
   React.useEffect(() => {

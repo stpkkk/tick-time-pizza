@@ -9,7 +9,7 @@ import ProductTitle from './ProductTitle';
 import ProductWeight from './ProductWeight';
 import { useAppSelector } from '@/redux/hooks';
 
-const ModalRightContent: React.FC = () => {
+const ContentRight: React.FC = () => {
   const { selectedProduct, selectedPromo, modalHeight } = useAppSelector(
     (state) => state.menuReducer,
   );
@@ -43,4 +43,4 @@ const ModalRightContent: React.FC = () => {
   );
 };
 
-export default ModalRightContent;
+export default ContentRight;

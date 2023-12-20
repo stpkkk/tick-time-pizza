@@ -3,14 +3,12 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { ModalWrapper } from '../common';
-import ModalLeftContent from './ModalLeftContent';
-import ModalRightContent from './ModalRightContent';
+import ContentLeft from './ContentLeft';
+import ContentRight from './ContentRight';
 import ModalTotal from './ModalTotal';
-import {
-  initializeDefaultValues,
-  setModalProductOpen,
-} from '@/redux/features/menuSlice';
+import { initializeDefaultValues, setModalProductOpen } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
+
 
 const ModalProduct: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -38,8 +36,8 @@ const ModalProduct: React.FC = () => {
             <RiCloseFill size={36} className='md:w-7' />
           </button>
           <div className='grid grid-cols-2 gap-[60px] w-full h-full overflow-auto overflow-x-hidden py-[60px] pl-[60px] sm:block sm:px-8 sm:pb-44 sm:pt-8'>
-            <ModalLeftContent />
-            <ModalRightContent />
+            <ContentLeft />
+            <ContentRight />
           </div>
         </div>
       </ModalWrapper>

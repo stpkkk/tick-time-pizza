@@ -4,7 +4,8 @@ import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 
-const BackButton: React.FC = () => {
+
+const ButtonBack: React.FC = () => {
   const router = useRouter();
 
   return (
@@ -18,4 +19,4 @@ const BackButton: React.FC = () => {
   );
 };
 
-export default BackButton;
+export default ButtonBack;

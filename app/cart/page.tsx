@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {
-  BackButton,
+  ButtonBack,
   Cart,
   CartTotal,
   ModalProduct,
@@ -27,7 +27,7 @@ const CartPage: React.FC = () => {
   return (
     <main className='mt-[90px]'>
       <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
-        <BackButton />
+        <ButtonBack />
         <h1 className='h1'>Корзина</h1>
       </div>
       <div className='flex justify-between flex-row md:flex-col gap-[30px]'>

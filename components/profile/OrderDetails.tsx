@@ -39,7 +39,7 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
       </table>
       <table className='md:max-w-full'>
         <tbody className='flex_start flex-col gap-16 md:gap-8'>
-          {order.products.map((product) => (
+          {order.products?.map((product) => (
             <tr
               className='flex justify-between gap-24 sm:gap-4 w-full'
               key={product.id}

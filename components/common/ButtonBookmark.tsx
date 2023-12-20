@@ -1,19 +1,16 @@
 import React from 'react';
 import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
-import {
-  addToBookmarks,
-  removeFromBookmarks,
-  setHoveredItemId,
-} from '@/redux/features/menuSlice';
+import { addToBookmarks, removeFromBookmarks, setHoveredItemId } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-type BookmarkButtonProps = {
+
+type ButtonBookmarkProps = {
   product: IProduct | null;
 };
 
-const BookmarkButton: React.FC<BookmarkButtonProps> = ({ product }) => {
+const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   const dispatch = useAppDispatch();
   const { bookmarks } = useAppSelector((state) => state.menuReducer);
 
@@ -44,4 +41,4 @@ const BookmarkButton: React.FC<BookmarkButtonProps> = ({ product }) => {
   );
 };
 
-export default BookmarkButton;
+export default ButtonBookmark;
