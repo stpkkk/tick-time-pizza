@@ -11,6 +11,7 @@ import ModalWrapper from './ModalWrapper';
 import RadioButton from './RadioButton';
 import RadioGroupOption from './RadioGroupOption';
 import SelectedProductOptions from './SelectedProductOptions';
+import Notice from './Notice';
 
 export * from './Tabs';
 export {
@@ -27,4 +28,5 @@ export {
   ModalWrapper,
   ButtonsSaveCancel,
   RadioButton,
+	Notice
 };

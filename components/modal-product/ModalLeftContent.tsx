@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { BookmarkButton } from '../common';
-import ImageNotice from './ImageNotice';
+import { BookmarkButton, Notice } from '../common';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
@@ -46,7 +45,9 @@ const ModalLeftContent: React.FC = () => {
         <div className='absolute right-0 top-0'>
           <BookmarkButton product={selectedProduct} />
         </div>
-        <ImageNotice />
+        <div className='absolute left-0 top-0 w-full'>
+          <Notice text='Изображение в рекламе и внешний вид продукта могут отличаться' />
+        </div>
         {selectedProduct?.additionalIngredients && !selectedPromo ? (
           <div className='text-center'>
             <ProductIngredients />

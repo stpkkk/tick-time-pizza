@@ -1,12 +1,14 @@
-'use client';
-
 import React from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
 import { toggleTooltip } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-const ImageNotice: React.FC = () => {
+type NoticeProps = {
+  text: string;
+};
+
+const Notice: React.FC<NoticeProps> = ({ text }) => {
   const dispatch = useAppDispatch();
   const { isTooltipOpen } = useAppSelector((state) => state.menuReducer);
   const modalRef = React.useRef<HTMLDivElement>(null);
@@ -49,17 +51,15 @@ const ImageNotice: React.FC = () => {
         >
           <RiCloseFill size={24} />
         </div>
-        <p className='text-[12px] leading-[15px]'>
-          Изображение в рекламе и внешний вид продукта могут отличаться
+        <p className='text-[12px] leading-[15px] font-normal font-montserrat lowercase'>
+          {text}
         </p>
       </div>
     </>
   );
 
   return isTooltipOpen ? (
-    <div ref={modalRef} className='absolute left-0 top-0 w-full'>
-      {TooltipContent}
-    </div>
+    <div ref={modalRef}>{TooltipContent}</div>
   ) : (
     <div
       className='absolute left-0 top-0 z-20 cursor-pointer text-grayDark hover:text-primary'
@@ -70,4 +70,4 @@ const ImageNotice: React.FC = () => {
   );
 };
 
-export default ImageNotice;
+export default Notice;
