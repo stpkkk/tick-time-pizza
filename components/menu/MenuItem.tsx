@@ -2,22 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '../common';
 import { menu } from '@/constants';
-import {
-  setSelectedProduct,
-  setHoveredItemId,
-  setModalProductOpen,
-  setSelectedPromo,
-  setIsProductsListModalOpen,
-} from '@/redux/features/menuSlice';
+import { setSelectedProduct, setHoveredItemId, setModalProductOpen, setSelectedPromo, setIsProductsListModalOpen } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
 
-interface IProductItemProps {
+
+interface IMenuItemProps {
   product: IProduct;
   promo?: Promo;
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
@@ -119,4 +114,4 @@ const ProductItem: React.FC<IProductItemProps> = ({ product, promo }) => {
   );
 };
 
-export default ProductItem;
+export default MenuItem;
