@@ -4,7 +4,7 @@ import Promocode from './Promocode';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import {
-  addToOrders, // setCurrentOrder,
+  addToOrders,
   setCurrentUser,
   setOrderPrice,
 } from '@/redux/features/profileSlice';

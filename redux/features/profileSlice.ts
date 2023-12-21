@@ -6,6 +6,7 @@ import {
   ExtendedUser,
   IOrder,
   PaymentMethods,
+  SupplyType,
 } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
@@ -28,7 +29,7 @@ export interface ProfileState {
   deliveryTime: string;
   pickPoint?: string;
   supplyType?: string;
-  // currentOrder: IOrder | null;
+  isSignIn?: boolean;
 }
 
 const initialState: ProfileState = {
@@ -49,8 +50,8 @@ const initialState: ProfileState = {
   cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
   deliveryTime: DeliveryTime.SOON,
   pickPoint: pizzerias.at(0)?.address,
-  supplyType: '',
-  // currentOrder: null,
+  supplyType: SupplyType.DELIVERY,
+  isSignIn: false,
 };
 
 const profileSlice = createSlice({
@@ -133,9 +134,9 @@ const profileSlice = createSlice({
       state.supplyType = action.payload;
     },
 
-    // setCurrentOrder: (state, action: PayloadAction<IOrder>) => {
-    //   state.currentOrder = action.payload;
-    // },
+    setSignIn: (state, action: PayloadAction<boolean>) => {
+      state.isSignIn = action.payload;
+    },
   },
 });
 
@@ -158,7 +159,7 @@ export const {
   setDeliveryTime,
   setPickPoint,
   setSupplyType,
-  // setCurrentOrder,
+  setSignIn,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;

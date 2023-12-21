@@ -8,7 +8,7 @@ import { IProduct, SupplyType } from '@/types';
 
 const OrderSummary: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const { supplyType, orderPrice, pickPoint } = useAppSelector(
+  const { supplyType, pickPoint } = useAppSelector(
     (state) => state.profileReducer,
   );
 

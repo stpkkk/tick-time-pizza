@@ -44,7 +44,7 @@ const HeaderCart: React.FC = () => {
         href='/cart'
         className='flex_center h-full w-[6rem] flex-col gap-2 sm:flex-row-reverse'
       >
-        <BsBasket2 size={25} />
+        <BsBasket2 size={30} />
         <div className='text-sm font-semibold'>
           {cartTotalPrice <= 0 ? (
             <span className='sm:hidden'>Корзина</span>

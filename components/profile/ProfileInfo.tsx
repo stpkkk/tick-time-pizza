@@ -10,6 +10,7 @@ import { MdEmail } from 'react-icons/md';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app_firebase } from '@/firebase';
+import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalEditProfile,
@@ -22,21 +23,24 @@ const ProfileInfo: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.profileReducer);
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
   React.useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // User present
         dispatch(setCurrentUser(currentUser)); // Set user when authenticated
+        await setUserInLS(currentUser);
       } else {
         // User not logged in
         dispatch(setCurrentUser(null));
-        router.push('/login'); // Redirect to login if on a protected page
+        await setUserInLS(null);
+        router.push('/login');
       }
     });
 
     return () => unsubscribe(); // Clean up subscription
-  }, [dispatch, router, auth]);
+  }, [dispatch, router, auth, setUserInLS]);
 
   const profileInfo = [
     {

@@ -7,13 +7,14 @@ import { IoMdArrowBack } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import { useLocalStorage } from '@/hooks';
 import {
   setLoading,
   setOtp,
   setOtpSent,
   setOtpValid,
   setCurrentUser,
-	setPhoneValid,
+  setPhoneValid,
 } from '@/redux/features/profileSlice';
 import { useAppSelector } from '@/redux/hooks';
 
@@ -32,6 +33,8 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
     dispatch(setOtpValid(true));
   };
 
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(setOtp(''));
@@ -48,6 +51,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
         console.log('Successfully confirmed OTP. User:', user);
 
         dispatch(setCurrentUser(user));
+        await setUserInLS(user);
         dispatch(setOtpSent(false));
         router.push('/profile');
       } else {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { HiMiniUserCircle } from 'react-icons/hi2';
 import { RiLoginCircleLine } from 'react-icons/ri';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -42,12 +43,20 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
         })}
         <li>
           <Link
-            href={user ? '/profile' : '/login'}
+            href={!!user ? '/profile' : '/login'}
             className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
             onClick={handleToggleMenu}
           >
-            {user ? 'Профиль' : 'Войти'}
-            <RiLoginCircleLine size={25} />
+            <>
+              {!!user ? (
+                <HiMiniUserCircle size={25} />
+              ) : (
+                <RiLoginCircleLine size={25} />
+              )}
+              <span className='text-sm font-semibold'>
+                {!!user ? 'Профиль' : 'Войти'}
+              </span>
+            </>
           </Link>
         </li>
         <li className='hidden sm:flex'>
