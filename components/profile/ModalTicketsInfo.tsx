@@ -1,5 +1,4 @@
 import React from 'react';
-import { RiCloseFill } from 'react-icons/ri';
 import { ModalWrapper } from '../common';
 import { setModalTicketsInfo } from '@/redux/features/profileSlice';
 import { useAppDispatch } from '@/redux/hooks';
@@ -12,18 +11,8 @@ const ModalTicketsInfo: React.FC = () => {
   };
 
   return (
-    <ModalWrapper closeModal={closeModal}>
-      <div
-        className='modal_inner max-w-[500px] px-16 py-[50px] sm:p-8'
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
-          type='button'
-          onClick={closeModal}
-        >
-          <RiCloseFill size={36} className='md:w-7' />
-        </button>
+    <ModalWrapper closeModal={closeModal} width={500}>
+      <div className='px-16 py-[50px] sm:p-4'>
         <h3 className='h1 text-center mb-4'>Тикеты</h3>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] whitespace-pre-wrap'>
           Делай заказы на нашем сайте или в приложении, копи тикеты и оплачивай

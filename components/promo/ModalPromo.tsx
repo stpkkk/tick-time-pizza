@@ -24,19 +24,16 @@ const ModalPromo: React.FC = () => {
   };
 
   return (
-    <ModalWrapper closeModal={closeModal}>
-      <div
-        className='modal_inner items-center max-w-[500px] sm:p-8 sm:gap-[30px] sm:text-left sm:overflow-y-auto h-auto'
-        onClick={(e) => e.stopPropagation()}
-      >
+    <ModalWrapper closeModal={closeModal} width={500}>
+      <div className='sm:p-8 sm:flex sm:flex-col sm:gap-[30px] sm:text-left sm:overflow-y-auto h-full self-start'>
         <div className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 rounded-full bg-white p-1 sm:p-0 sm:bg-transparent sm:top-2 sm:right-2'>
           <button
-            className=' text-grayDark hover:text-primary sm:right-0 sm:top-0'
+            className='text-grayDark hover:text-primary sm:right-0 sm:top-0'
             type='button'
             onClick={closeModal}
             tabIndex={0}
           >
-            <RiCloseFill size={28} />
+            <RiCloseFill size={28} className='md:w-7'/>
           </button>
         </div>
         <h3 className='h1 hidden sm:block'>

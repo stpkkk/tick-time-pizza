@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { RiCloseFill } from 'react-icons/ri';
 import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import {
@@ -52,19 +51,11 @@ const ModalEditProfile: React.FC = () => {
     !!errors.email;
 
   return (
-    <ModalWrapper closeModal={closeModal}>
+    <ModalWrapper closeModal={closeModal} width={730}>
       <form
-        className='modal_inner max-w-[730px] px-16 py-[50px] sm:p-4'
-        onClick={(e) => e.stopPropagation()}
+        className='px-16 py-[50px] sm:p-4'
         onSubmit={handleSubmit}
       >
-        <button
-          className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
-          type='button'
-          onClick={closeModal}
-        >
-          <RiCloseFill size={36} className='md:w-7' />
-        </button>
         <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
         <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
           <Input

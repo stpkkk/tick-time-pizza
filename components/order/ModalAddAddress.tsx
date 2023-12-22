@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { RiCloseFill } from 'react-icons/ri';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import { setModalAddAddress } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -20,11 +19,8 @@ const ModalAddAddress: React.FC = () => {
   if (!isModalAddAddressOpen) return;
 
   return (
-    <ModalWrapper closeModal={closeModal}>
-      <form
-        className='modal_inner max-w-[990px] w-full py-[50px] px-[60px] sm:p-4'
-        onClick={(e) => e.stopPropagation()}
-      >
+    <ModalWrapper closeModal={closeModal} width={990}>
+      <form className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'>
         <h2 className='h1 text-center mb-[30px] sm:hidden'>
           Добавить новый адрес
         </h2>
@@ -83,13 +79,6 @@ const ModalAddAddress: React.FC = () => {
         <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full'>
           <ButtonsSaveCancel disabled={true} clickCancel={closeModal} />
         </div>
-        <button
-          className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
-          type='button'
-          onClick={closeModal}
-        >
-          <RiCloseFill size={36} className='md:w-7' />
-        </button>
       </form>
     </ModalWrapper>
   );
