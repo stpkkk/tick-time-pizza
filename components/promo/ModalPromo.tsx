@@ -14,7 +14,7 @@ import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedPromo } = useAppSelector((state) => state.menuReducer);
+  const { selectedPromo, isPromoModalOpen } = useAppSelector((state) => state.menuReducer);
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = selectedPromo!.title === Promos.PIZZA_OF_THE_DAY;
 
@@ -22,6 +22,8 @@ const ModalPromo: React.FC = () => {
     dispatch(setIsPromoModalOpen(false));
     dispatch(resetPromoProductsList());
   };
+
+	if (!isPromoModalOpen) return;
 
   return (
     <ModalWrapper closeModal={closeModal} width={500}>

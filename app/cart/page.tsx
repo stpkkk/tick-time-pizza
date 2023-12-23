@@ -10,11 +10,9 @@ import {
   Tabs,
 } from '@/components';
 import { menu } from '@/constants';
-import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 const CartPage: React.FC = () => {
-  const { isModalProductOpen } = useAppSelector((state) => state.menuReducer);
   const [popularProducts, setPopularProducts] = React.useState<IProduct[]>([]);
 
   const sauces = menu.filter((product) => product.group === 'sauces');
@@ -43,7 +41,7 @@ const CartPage: React.FC = () => {
         </div>
         <CartTotal />
       </div>
-      {isModalProductOpen && <ModalProduct />}
+      <ModalProduct />
     </main>
   );
 };

@@ -3,34 +3,14 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import promoImg from '../../../public/assets/icons/promo.svg';
-import {
-  ButtonBack,
-  ModalProduct,
-  ModalPromoProdutsList,
-  PromoProductsList,
-  PromoSelectedProductsList,
-  PromoTotal,
-  PromoTotalHeader,
-  PromoTotalPrice,
-} from '@/components';
+import { ButtonBack, ModalProduct, ModalPromoProdutsList, PromoProductsList, PromoSelectedProductsList, PromoTotal, PromoTotalHeader, PromoTotalPrice } from '@/components';
 import { promos } from '@/constants';
 import { useLocalStorage } from '@/hooks';
-import {
-  addToCart,
-  resetPromoProductsList,
-  setIsProductsListModalOpen,
-  setPromoDiscount,
-  setSelectedPromo,
-} from '@/redux/features/menuSlice';
+import { addToCart, resetPromoProductsList, setIsProductsListModalOpen, setPromoDiscount, setSelectedPromo } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Prices, Promos } from '@/types';
-import {
-  calculateProductPrices,
-  calculateTotalPrice,
-  generateUUID,
-  getPizzaOfTheDay,
-  getPriceWithDiscount,
-} from '@/utils';
+import { calculateProductPrices, calculateTotalPrice, generateUUID, getPizzaOfTheDay, getPriceWithDiscount } from '@/utils';
+
 
 type PromoProps = {
   params: {
@@ -42,7 +22,6 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {
-    isModalProductOpen,
     isProductsListModalOpen,
     promoProductsList,
     selectedProduct,
@@ -186,7 +165,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      {isModalProductOpen && <ModalProduct />}
+     <ModalProduct />
       {isProductsListModalOpen && <ModalPromoProdutsList promo={promo} />}
     </main>
   );

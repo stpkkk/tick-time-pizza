@@ -13,7 +13,7 @@ import { ExtendedUser } from '@/types';
 
 const ModalEditProfile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector((state) => state.profileReducer);
+  const { user, isModalEditProfileOpen } = useAppSelector((state) => state.profileReducer);
 
   const closeModal = () => {
     dispatch(setModalEditProfile(false));
@@ -49,6 +49,9 @@ const ModalEditProfile: React.FC = () => {
   const isFormNotValid =
     (!values.name.trim() && !values.birthday.trim() && !values.email.trim()) ||
     !!errors.email;
+
+		if (!isModalEditProfileOpen) return;
+
 
   return (
     <ModalWrapper closeModal={closeModal} width={730}>

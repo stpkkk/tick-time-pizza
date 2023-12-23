@@ -1,14 +1,19 @@
 import React from 'react';
 import { ModalWrapper } from '../common';
 import { setModalTicketsInfo } from '@/redux/features/profileSlice';
-import { useAppDispatch } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ModalTicketsInfo: React.FC = () => {
   const dispatch = useAppDispatch();
+  const { isModalTicketsInfo } = useAppSelector(
+    (state) => state.profileReducer,
+  );
 
   const closeModal = () => {
     dispatch(setModalTicketsInfo(false));
   };
+
+  if (!isModalTicketsInfo) return;
 
   return (
     <ModalWrapper closeModal={closeModal} width={500}>

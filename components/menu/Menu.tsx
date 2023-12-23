@@ -10,10 +10,9 @@ import { useCategoryProducts } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
+
 const Menu: React.FC = () => {
-  const { isModalProductOpen, selectedCategory } = useAppSelector(
-    (state) => state.menuReducer,
-  );
+  const { selectedCategory } = useAppSelector((state) => state.menuReducer);
   const productsToShow: IProduct[] = useCategoryProducts(
     selectedCategory?.name || '',
   );
@@ -33,7 +32,7 @@ const Menu: React.FC = () => {
       ) : (
         <NoBookmarks />
       )}
-      {isModalProductOpen && <ModalProduct />}
+      <ModalProduct />
     </>
   );
 };

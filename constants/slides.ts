@@ -3,8 +3,8 @@ import slide2 from '../public/assets/images/slider/slide-2.webp';
 import slide3 from '../public/assets/images/slider/slide-3.webp';
 import slide5 from '../public/assets/images/slider/slide-5.webp';
 import slide6 from '../public/assets/images/slider/slide-6.webp';
-import americana from '../public/assets/images/slider/slide-americana.webp';
 import bakedPork from '../public/assets/images/slider/slide-baked-pork-pizza.webp';
+import bbq from '../public/assets/images/slider/slide-bbq-pizza.webp';
 import carbonara from '../public/assets/images/slider/slide-carbonara.webp';
 import cheesePizza from '../public/assets/images/slider/slide-cheese-pizza.webp';
 import chickenSausages from '../public/assets/images/slider/slide-chicken-sausages.webp';
@@ -22,7 +22,7 @@ export const pizzaOfTheDaySlides: Slide[] = [
   { id: 3, image: pepperoni, title: 'Пицца Пепперони' },
   { id: 4, image: chickenSausages, title: 'Пицца Курица и Колбаски' },
   { id: 5, image: cheesePizza, title: 'Пицца Сырная' },
-  { id: 6, image: americana, title: 'Пицца Американа' },
+  { id: 6, image: bbq, title: 'Пицца Жгучая Барбекю' },
 ];
 
 const slideOfTheDay = pizzaOfTheDaySlides[dayIndex];

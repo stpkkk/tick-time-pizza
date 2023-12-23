@@ -2,20 +2,10 @@
 
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
-import {
-  ProfileInfo,
-  ModalEditProfile,
-  NoOrders,
-  Orders,
-  ModalTicketsInfo,
-} from '@/components';
+import { ProfileInfo, ModalEditProfile, NoOrders, Orders, ModalTicketsInfo } from '@/components';
 import { useLocalStorage } from '@/hooks';
-import { useAppSelector } from '@/redux/hooks';
 
 const Profile: React.FC = () => {
-  const { isModalEditProfileOpen, isModalTicketsInfo } = useAppSelector(
-    (state) => state.profileReducer,
-  );
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [mounted, setMounted] = React.useState(false);
   const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
@@ -40,8 +30,8 @@ const Profile: React.FC = () => {
               <NoOrders />
             )}
           </section>
-          {isModalEditProfileOpen ? <ModalEditProfile /> : null}
-          {isModalTicketsInfo ? <ModalTicketsInfo /> : null}
+          <ModalEditProfile />
+          <ModalTicketsInfo />
         </>
       ) : (
         <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
