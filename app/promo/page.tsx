@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ModalPromo, PromoCard } from '@/components';
 import { promos } from '@/constants';

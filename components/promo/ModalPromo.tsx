@@ -14,16 +14,18 @@ import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedPromo, isPromoModalOpen } = useAppSelector((state) => state.menuReducer);
+  const { selectedPromo, isPromoModalOpen } = useAppSelector(
+    (state) => state.menuReducer,
+  );
   const currentDay = getPizzaOfTheDay().dayOfWeek;
-  const isPizzaOfTheDay = selectedPromo!.title === Promos.PIZZA_OF_THE_DAY;
+  const isPizzaOfTheDay = selectedPromo?.title === Promos.PIZZA_OF_THE_DAY;
 
   const closeModal = () => {
     dispatch(setIsPromoModalOpen(false));
     dispatch(resetPromoProductsList());
   };
 
-	if (!isPromoModalOpen) return;
+  if (!isPromoModalOpen) return;
 
   return (
     <ModalWrapper closeModal={closeModal} width={500}>
@@ -35,7 +37,7 @@ const ModalPromo: React.FC = () => {
             onClick={closeModal}
             tabIndex={0}
           >
-            <RiCloseFill size={28} className='md:w-7'/>
+            <RiCloseFill size={28} className='md:w-7' />
           </button>
         </div>
         <h3 className='h1 hidden sm:block'>
