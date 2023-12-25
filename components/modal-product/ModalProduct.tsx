@@ -8,9 +8,12 @@ import ModalTotal from './ModalTotal';
 import { initializeDefaultValues, setModalProductOpen } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
+
 const ModalProduct: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isModalProductOpen } = useAppSelector((state) => state.menuReducer);
+  const { isModalProductOpen, selectedProduct } = useAppSelector(
+    (state) => state.menuReducer,
+  );
 
   const closeModal = () => {
     dispatch(setModalProductOpen(false));
@@ -18,7 +21,7 @@ const ModalProduct: React.FC = () => {
 
   React.useEffect(() => {
     dispatch(initializeDefaultValues());
-  }, [dispatch]);
+  }, [dispatch, selectedProduct]);
 
   if (!isModalProductOpen) return;
 
