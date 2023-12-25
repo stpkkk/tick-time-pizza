@@ -30,6 +30,7 @@ export interface ProfileState {
   pickPoint?: string;
   supplyType?: string;
   isSignIn?: boolean;
+  orderComment: string;
 }
 
 const initialState: ProfileState = {
@@ -52,6 +53,7 @@ const initialState: ProfileState = {
   pickPoint: pizzerias.at(0)?.address,
   supplyType: SupplyType.DELIVERY,
   isSignIn: false,
+  orderComment: '',
 };
 
 const profileSlice = createSlice({
@@ -137,6 +139,10 @@ const profileSlice = createSlice({
     setSignIn: (state, action: PayloadAction<boolean>) => {
       state.isSignIn = action.payload;
     },
+
+    setOrderComment: (state, action: PayloadAction<string>) => {
+      state.orderComment = action.payload;
+    },
   },
 });
 
@@ -160,6 +166,7 @@ export const {
   setPickPoint,
   setSupplyType,
   setSignIn,
+  setOrderComment,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;

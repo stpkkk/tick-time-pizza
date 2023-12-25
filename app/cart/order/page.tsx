@@ -70,33 +70,36 @@ const Order: React.FC = () => {
 
   return (
     <main className='mt-[90px]'>
-      {mounted ? (
-        <>
-          <form onSubmit={handleSubmitOrder}>
-            <section>
-              <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
-                <ButtonBack />
-                <h1 className='h1'>Оформление заказа</h1>
-              </div>
-              <Tabs
-                contentFirst={<TabDelivery />}
-                contentSecond={<TabPickup />}
-                labelFirst={SupplyType.DELIVERY}
-                labelSecond={SupplyType.PICKUP}
+      <>
+        <form onSubmit={handleSubmitOrder}>
+          <section>
+            <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
+              <ButtonBack />
+              <h1 className='h1'>Оформление заказа</h1>
+            </div>
+            <Tabs
+              contentFirst={<TabDelivery />}
+              contentSecond={<TabPickup />}
+              labelFirst={SupplyType.DELIVERY}
+              labelSecond={SupplyType.PICKUP}
+            />
+          </section>
+          {mounted ? (
+            <>
+              <OrderSummary />
+              <OrderSummary />
+            </>
+          ) : (
+            <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
+              <CgSpinner
+                size={70}
+                className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
               />
-            </section>
-            <OrderSummary />
-          </form>
-          <ModalAddAddress />
-        </>
-      ) : (
-        <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
-          <CgSpinner
-            size={70}
-            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
-          />
-        </div>
-      )}
+            </div>
+          )}
+        </form>
+        <ModalAddAddress />
+      </>
     </main>
   );
 };
