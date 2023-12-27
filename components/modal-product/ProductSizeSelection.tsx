@@ -16,7 +16,7 @@ const ProductSizeSelection: React.FC = () => {
 
   const dough =
     selectedPromo?.title === Promos.THREE_PIZZAS_999
-      ? selectedProduct?.dough?.filter((d) => d.name === Dough.TRADITIONAL)
+      ? selectedProduct?.dough?.filter((d) => d.value === Dough.TRADITIONAL)
       : selectedProduct?.dough;
 
   const sizes = getPromoProductSizes(
@@ -25,11 +25,11 @@ const ProductSizeSelection: React.FC = () => {
   );
 
   const getIsDisabledSize = (size: IOption) => {
-    return selectedDough?.name === Dough.THIN && size.name === Sizes.SMALL;
+    return selectedDough?.value === Dough.THIN && size.value === Sizes.SMALL;
   };
 
   const getIsDisabledDough = (dough: IOption) => {
-    return selectedSize?.name === Sizes.SMALL && selectedDough !== dough;
+    return selectedSize?.value === Sizes.SMALL && selectedDough !== dough;
   };
 
   const handleSizeChange = (size: IOption) => {

@@ -14,7 +14,7 @@ import { IProduct } from '@/types';
 const Menu: React.FC = () => {
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
   const productsToShow: IProduct[] = useCategoryProducts(
-    selectedCategory?.name || '',
+    selectedCategory?.value || '',
   );
 
   return (

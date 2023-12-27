@@ -2,6 +2,7 @@ import React from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import { Dough } from '@/types';
 
+
 const ProductWeight: React.FC = () => {
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
     (state) => state.menuReducer,
@@ -9,16 +10,16 @@ const ProductWeight: React.FC = () => {
 
   const getWeightBySize = () => {
     return (
-      selectedProduct?.weights &&
-      selectedProduct?.weights.find((item) => item.id === selectedSize?.id)
+      selectedProduct?.weight &&
+      selectedProduct?.weight.find((item) => item.id === selectedSize?.id)
     );
   };
 
   const getWeightByDough = () => {
-    const isThinDough = selectedDough?.name === Dough.THIN;
+    const isThinDough = selectedDough?.value === Dough.THIN;
     return isThinDough
-      ? selectedProduct?.weights && selectedProduct?.weights.slice(-2)
-      : selectedProduct?.weights && selectedProduct?.weights.slice(0, 1);
+      ? selectedProduct?.weight && selectedProduct?.weight.slice(-2)
+      : selectedProduct?.weight && selectedProduct?.weight.slice(0, 1);
   };
 
   const getTotalWeight = () => {
@@ -29,13 +30,13 @@ const ProductWeight: React.FC = () => {
       return null;
     }
 
-    if (selectedDough.name === Dough.THIN && selectedProduct.sizes) {
+    if (selectedDough.value === Dough.THIN && selectedProduct.sizes) {
       const selectedSizeIndex = selectedProduct.sizes.findIndex(
         (_, i) => i + 1 === selectedSize?.id,
       );
-      return weightByDough[selectedSizeIndex]?.weight;
+      return weightByDough[selectedSizeIndex]?.value;
     } else {
-      return weightBySize.weight;
+      return weightBySize.value;
     }
   };
 
@@ -46,7 +47,7 @@ const ProductWeight: React.FC = () => {
       </span>
       <span>
         {getTotalWeight() ||
-          (selectedProduct?.weights && selectedProduct?.weights[0].weight)}{' '}
+          (selectedProduct?.weight && selectedProduct?.weight[0].value)}{' '}
         г
       </span>
     </div>

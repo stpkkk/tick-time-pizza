@@ -25,7 +25,7 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
     : 'bg-grayLight no-underline hover:bg-gray';
 
   return (
-    option.name && (
+    option.value && (
       <RadioGroup.Option
         disabled={isDisabled}
         value={option}
@@ -38,7 +38,7 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
             <div className='h-5 w-5'>
               <Image
                 src={option.image}
-                alt={option.name.toString()}
+                alt={option.value.toString()}
                 width={20}
                 height={20}
                 loading='eager'
@@ -47,7 +47,7 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
             </div>
           )}
           <div>
-            <span className={crossed}>{option.name}</span>
+            <span className={crossed}>{option.value}</span>
           </div>
         </div>
       </RadioGroup.Option>

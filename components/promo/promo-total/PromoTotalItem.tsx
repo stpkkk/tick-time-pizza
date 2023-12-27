@@ -51,7 +51,7 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
             {product.title}
           </span>
           <p className='md:text-xs text-[0.625rem] leading-[0.75rem] mt-2.5'>
-            {product.selectedSize?.name}, {product.selectedDough?.name}
+            {product.selectedSize?.value}, {product.selectedDough?.value}
           </p>
         </div>
         <button

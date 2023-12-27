@@ -1,22 +1,22 @@
 import { StaticImageData } from 'next/image';
-import { Promo } from './promo';
 import { IOption } from './radio-option';
+
 
 export interface IPrice {
   id: number;
-  price: number;
+  value: number;
 }
 
 export interface IWeight {
   id?: number;
-  weight?: number | null;
+  value?: number | null;
 }
 
 export interface IAdditionalIngredient {
   id: number;
   image: string | StaticImageData;
   name: string;
-  weights: {
+  weight: {
     id: number;
     value: number;
   }[];
@@ -51,7 +51,7 @@ export interface IProduct {
   categories?: IMenuCategory[];
   sizes?: IOption[];
   dough?: IOption[];
-  weights?: IWeight[];
+  weight?: IWeight[];
   nutritionalValues?: INutritionalValue;
   selectedSize?: IOption;
   selectedDough?: IOption;

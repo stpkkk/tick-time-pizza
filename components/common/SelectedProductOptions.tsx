@@ -14,9 +14,9 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
       <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
         {product.title}
       </span>
-      {product.selectedSize?.name && product.selectedDough?.name && (
+      {product.selectedSize?.value && product.selectedDough?.value && (
         <p className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
-          {`${product.selectedSize?.name},${product.selectedDough?.name}`}
+          {`${product.selectedSize?.value},${product.selectedDough?.value}`}
         </p>
       )}
       {product.promoProducts ? (
@@ -27,8 +27,8 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
                 <p className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
                   {product.title}&nbsp;
                   <br />
-                  {product.selectedSize?.name},&nbsp;
-                  {product.selectedDough?.name}&nbsp;(
+                  {product.selectedSize?.value},&nbsp;
+                  {product.selectedDough?.value}&nbsp;(
                   {product.productQuantity}шт.)
                 </p>
               </li>
@@ -54,7 +54,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
               <ul className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>
                 Убрать:{' '}
                 {product.removedIngredients?.map((ing) => (
-                  <li className='inline' key={ing.id}>{`${ing.name}, `}</li>
+                  <li className='inline' key={ing.id}>{`${ing.value}, `}</li>
                 ))}
               </ul>
             )}

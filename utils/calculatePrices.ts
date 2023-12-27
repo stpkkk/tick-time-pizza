@@ -1,10 +1,5 @@
-import {
-  IAdditionalIngredient,
-  IOption,
-  IProduct,
-  Prices,
-  Promos,
-} from '@/types';
+import { IAdditionalIngredient, IOption, IProduct, Prices, Promos } from '@/types';
+
 
 export function calculateProductPrices(
   selectedProduct: IProduct | null,
@@ -14,13 +9,13 @@ export function calculateProductPrices(
 ) {
   const productPrice =
     selectedProduct?.prices?.find((price) => price.id === selectedSize?.id)
-      ?.price || null;
+      ?.value || null;
 
   const selectedIngredientsPrice = selectedIngredients.reduce(
     (acc, ing) =>
       acc +
-      (ing.prices.find((price) => price.id === selectedSize?.id)?.price ||
-        ing.prices.at(0)!.price) *
+      (ing.prices.find((price) => price.id === selectedSize?.id)?.value ||
+        ing.prices.at(0)!.value) *
         (ing.quantity || 1) *
         productQuantity,
     0,
@@ -29,7 +24,7 @@ export function calculateProductPrices(
   const totalProductPrice =
     (productPrice ||
       selectedProduct?.totalPrice ||
-      selectedProduct?.prices[0].price ||
+      selectedProduct?.prices[0].value ||
       599) *
       productQuantity +
     selectedIngredientsPrice;

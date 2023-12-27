@@ -3,12 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { Counter } from '../common';
-import {
-  decrementIngredientQuantity,
-  incrementIngredientQuantity,
-} from '@/redux/features/menuSlice';
+import { decrementIngredientQuantity, incrementIngredientQuantity } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IAdditionalIngredient } from '@/types';
+
 
 type IngredientsSelectItemProps = {
   ingredient: IAdditionalIngredient;
@@ -28,11 +26,11 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
   );
   const ingredientQuantity = ingredientItem?.quantity || 0;
   const ingredientPrice =
-    ingredient?.prices.find((item) => item.id === selectedSize?.id)?.price ||
-    ingredient?.prices.at(0)?.price;
+    ingredient?.prices.find((item) => item.id === selectedSize?.id)?.value ||
+    ingredient?.prices.at(0)?.value;
   const ingredientWeight =
-    ingredient?.weights.find((item) => item.id === selectedSize?.id)?.value ||
-    ingredient?.weights.at(0)?.value;
+    ingredient?.weight.find((item) => item.id === selectedSize?.id)?.value ||
+    ingredient?.weight.at(0)?.value;
 
   // Reset disabled ingredient quantity to 0
   React.useEffect(() => {

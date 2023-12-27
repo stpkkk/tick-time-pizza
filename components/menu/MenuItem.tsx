@@ -23,7 +23,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
 
   const isItemHovered = hoveredItemId === product.id;
   const starterPrice = product.prices.find((product) => product.id === 0)
-    ?.price;
+    ?.value;
 
   const handleMouseEnterItem = () => {
     if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo)

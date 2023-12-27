@@ -84,6 +84,7 @@ import saladVegetablesEgg from '../public/assets/images/snacks/salad-vegetables-
 import soupTomatoCream from '../public/assets/images/snacks/soup-tomato-cream.webp';
 import { IProduct } from '@/types';
 
+
 export const menu: IProduct[] = [
   {
     id: 0,
@@ -93,9 +94,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Копченая курица, моцарелла, маринованные огурцы, болгарский перец, красный лук, соус бургер Heinz, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -103,15 +104,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -119,15 +120,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -135,15 +136,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -151,15 +152,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -167,15 +168,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -183,15 +184,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -199,15 +200,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -215,15 +216,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -231,15 +232,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -247,15 +248,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -263,15 +264,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -279,15 +280,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -295,15 +296,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -311,15 +312,15 @@ export const menu: IProduct[] = [
         image: roastPork,
         name: 'Буженина',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 60 },
           { id: 2, value: 90 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 75 },
-          { id: 2, price: 105 },
+          { id: 0, value: 45 },
+          { id: 1, value: 75 },
+          { id: 2, value: 105 },
         ],
       },
       {
@@ -327,15 +328,15 @@ export const menu: IProduct[] = [
         image: onionFree,
         name: 'Лук Фри',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 17 },
           { id: 2, value: 23 },
         ],
         prices: [
-          { id: 0, price: 10 },
-          { id: 1, price: 20 },
-          { id: 2, price: 30 },
+          { id: 0, value: 10 },
+          { id: 1, value: 20 },
+          { id: 2, value: 30 },
         ],
       },
       {
@@ -343,15 +344,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -359,15 +360,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -375,15 +376,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -391,15 +392,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -407,33 +408,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Соус Бургер на пиццу',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Копченая Курица' },
-      { id: 1, name: 'Огурцы Маринованные' },
-      { id: 2, name: 'Лук Репчатый' },
-      { id: 3, name: 'Болгарский Перец' },
-      { id: 4, name: 'Соус Бургер' },
+      { id: 0, value: 'Копченая Курица' },
+      { id: 1, value: 'Огурцы Маринованные' },
+      { id: 2, value: 'Лук Репчатый' },
+      { id: 3, value: 'Болгарский Перец' },
+      { id: 4, value: 'Соус Бургер' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 10.7,
@@ -441,12 +442,12 @@ export const menu: IProduct[] = [
       carbohydrates: 31.37,
       calories: 237.06,
     },
-    weights: [
-      { id: 0, weight: 400 },
-      { id: 1, weight: 620 },
-      { id: 2, weight: 855 },
-      { id: 3, weight: 530 },
-      { id: 4, weight: 765 },
+    weight: [
+      { id: 0, value: 400 },
+      { id: 1, value: 620 },
+      { id: 2, value: 855 },
+      { id: 3, value: 530 },
+      { id: 4, value: 765 },
     ],
   },
   {
@@ -457,9 +458,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Пепперони, два вида сыра моцареллы, шампиньоны, фирменный томатный соус, базилик, орегано, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -467,15 +468,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -483,15 +484,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -499,15 +500,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -515,15 +516,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -531,15 +532,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -547,15 +548,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -563,15 +564,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -579,15 +580,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -595,15 +596,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -611,15 +612,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -627,15 +628,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -643,15 +644,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -659,15 +660,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -675,15 +676,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -691,15 +692,15 @@ export const menu: IProduct[] = [
         image: cheeseBlue,
         name: 'Сыр Блю Чиз',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 95 },
-          { id: 2, price: 115 },
+          { id: 0, value: 55 },
+          { id: 1, value: 95 },
+          { id: 2, value: 115 },
         ],
       },
       {
@@ -707,15 +708,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -723,15 +724,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -739,15 +740,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -755,15 +756,15 @@ export const menu: IProduct[] = [
         image: roastPork,
         name: 'Буженина',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 60 },
           { id: 2, value: 90 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 75 },
-          { id: 2, price: 105 },
+          { id: 0, value: 45 },
+          { id: 1, value: 75 },
+          { id: 2, value: 105 },
         ],
       },
       {
@@ -771,15 +772,15 @@ export const menu: IProduct[] = [
         image: onionFree,
         name: 'Лук Фри',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 17 },
           { id: 2, value: 23 },
         ],
         prices: [
-          { id: 0, price: 10 },
-          { id: 1, price: 20 },
-          { id: 2, price: 30 },
+          { id: 0, value: 10 },
+          { id: 1, value: 20 },
+          { id: 2, value: 30 },
         ],
       },
       {
@@ -787,15 +788,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -803,15 +804,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -819,15 +820,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -835,30 +836,30 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Соус Бургер на пиццу',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Шампиньоны' },
-      { id: 1, name: 'Пепперони' },
+      { id: 0, value: 'Шампиньоны' },
+      { id: 1, value: 'Пепперони' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 13.02,
@@ -866,12 +867,12 @@ export const menu: IProduct[] = [
       carbohydrates: 34.41,
       calories: 291.98,
     },
-    weights: [
-      { id: 0, weight: 360 },
-      { id: 1, weight: 540 },
-      { id: 2, weight: 730 },
-      { id: 3, weight: 450 },
-      { id: 4, weight: 640 },
+    weight: [
+      { id: 0, value: 360 },
+      { id: 1, value: 540 },
+      { id: 2, value: 730 },
+      { id: 3, value: 450 },
+      { id: 4, value: 640 },
     ],
   },
   {
@@ -882,9 +883,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Буженина из свинины, моцарелла, маринованные огурцы, лук фри, лук красный, майонезный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -892,15 +893,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -908,15 +909,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -924,15 +925,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -940,15 +941,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -956,15 +957,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -972,15 +973,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -988,15 +989,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -1004,15 +1005,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1020,15 +1021,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1036,15 +1037,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1052,15 +1053,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -1068,15 +1069,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1084,15 +1085,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -1100,15 +1101,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -1116,15 +1117,15 @@ export const menu: IProduct[] = [
         image: roastPork,
         name: 'Буженина',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 60 },
           { id: 2, value: 90 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 75 },
-          { id: 2, price: 105 },
+          { id: 0, value: 45 },
+          { id: 1, value: 75 },
+          { id: 2, value: 105 },
         ],
       },
       {
@@ -1132,15 +1133,15 @@ export const menu: IProduct[] = [
         image: onionFree,
         name: 'Лук Фри',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 17 },
           { id: 2, value: 23 },
         ],
         prices: [
-          { id: 0, price: 10 },
-          { id: 1, price: 20 },
-          { id: 2, price: 30 },
+          { id: 0, value: 10 },
+          { id: 1, value: 20 },
+          { id: 2, value: 30 },
         ],
       },
       {
@@ -1148,15 +1149,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1164,15 +1165,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1180,32 +1181,32 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Огурцы Маринованные' },
-      { id: 1, name: 'Лук Репчатый' },
-      { id: 2, name: 'Буженина' },
-      { id: 3, name: 'Лук Фри' },
+      { id: 0, value: 'Огурцы Маринованные' },
+      { id: 1, value: 'Лук Репчатый' },
+      { id: 2, value: 'Буженина' },
+      { id: 3, value: 'Лук Фри' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 9.98,
@@ -1213,12 +1214,12 @@ export const menu: IProduct[] = [
       carbohydrates: 34.18,
       calories: 295.5,
     },
-    weights: [
-      { id: 0, weight: 380 },
-      { id: 1, weight: 570 },
-      { id: 2, weight: 800 },
-      { id: 3, weight: 500 },
-      { id: 4, weight: 710 },
+    weight: [
+      { id: 0, value: 380 },
+      { id: 1, value: 570 },
+      { id: 2, value: 800 },
+      { id: 3, value: 500 },
+      { id: 4, value: 710 },
     ],
   },
   {
@@ -1229,9 +1230,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Ветчина, буженина из свинины, охотничьи колбаски, моцарелла, фирменный томатный соус, майонезный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -1239,15 +1240,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1255,15 +1256,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -1271,15 +1272,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -1287,15 +1288,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -1303,15 +1304,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1319,15 +1320,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1335,15 +1336,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -1351,15 +1352,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1367,15 +1368,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1383,15 +1384,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1399,15 +1400,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1415,15 +1416,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -1431,15 +1432,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1447,15 +1448,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -1463,15 +1464,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -1479,15 +1480,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -1495,15 +1496,15 @@ export const menu: IProduct[] = [
         image: roastPork,
         name: 'Буженина',
         maxQuantity: 3,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 60 },
           { id: 2, value: 90 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 75 },
-          { id: 2, price: 105 },
+          { id: 0, value: 45 },
+          { id: 1, value: 75 },
+          { id: 2, value: 105 },
         ],
       },
       {
@@ -1511,15 +1512,15 @@ export const menu: IProduct[] = [
         image: onionFree,
         name: 'Лук Фри',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 17 },
           { id: 2, value: 23 },
         ],
         prices: [
-          { id: 0, price: 10 },
-          { id: 1, price: 20 },
-          { id: 2, price: 30 },
+          { id: 0, value: 10 },
+          { id: 1, value: 20 },
+          { id: 2, value: 30 },
         ],
       },
       {
@@ -1527,15 +1528,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1543,15 +1544,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1559,15 +1560,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1575,31 +1576,31 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Ветчина' },
-      { id: 1, name: 'Охотничьи Колбаски' },
-      { id: 2, name: 'Буженина' },
+      { id: 0, value: 'Ветчина' },
+      { id: 1, value: 'Охотничьи Колбаски' },
+      { id: 2, value: 'Буженина' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.3,
@@ -1607,12 +1608,12 @@ export const menu: IProduct[] = [
       carbohydrates: 35.85,
       calories: 301.8,
     },
-    weights: [
-      { id: 0, weight: 380 },
-      { id: 1, weight: 580 },
-      { id: 2, weight: 780 },
-      { id: 3, weight: 500 },
-      { id: 4, weight: 700 },
+    weight: [
+      { id: 0, value: 380 },
+      { id: 1, value: 580 },
+      { id: 2, value: 780 },
+      { id: 3, value: 500 },
+      { id: 4, value: 700 },
     ],
   },
   {
@@ -1623,9 +1624,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Копченая курица, охотничьи колбаски, моцарелла, маринованные огурцы, томаты, красный лук, свежий укроп, майонезный соус, кетчуп, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -1633,15 +1634,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1649,15 +1650,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -1665,15 +1666,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -1681,15 +1682,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -1697,15 +1698,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1713,15 +1714,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1729,15 +1730,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -1745,15 +1746,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1761,15 +1762,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1777,15 +1778,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1793,15 +1794,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -1809,15 +1810,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -1825,15 +1826,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -1841,15 +1842,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1857,15 +1858,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -1873,35 +1874,35 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Охотничьи Колбаски' },
-      { id: 3, name: 'Огурцы Маринованные' },
-      { id: 4, name: 'Лук Репчатый' },
-      { id: 5, name: 'Укроп' },
-      { id: 6, name: 'Майонезный соус' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Охотничьи Колбаски' },
+      { id: 3, value: 'Огурцы Маринованные' },
+      { id: 4, value: 'Лук Репчатый' },
+      { id: 5, value: 'Укроп' },
+      { id: 6, value: 'Майонезный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 9.88,
@@ -1909,12 +1910,12 @@ export const menu: IProduct[] = [
       carbohydrates: 29.88,
       calories: 263.26,
     },
-    weights: [
-      { id: 0, weight: 400 },
-      { id: 1, weight: 630 },
-      { id: 2, weight: 860 },
-      { id: 3, weight: 480 },
-      { id: 4, weight: 780 },
+    weight: [
+      { id: 0, value: 400 },
+      { id: 1, value: 630 },
+      { id: 2, value: 860 },
+      { id: 3, value: 480 },
+      { id: 4, value: 780 },
     ],
   },
   {
@@ -1925,9 +1926,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Много курицы, моцарелла, сыр блю чиз с голубой плесенью, соус ранч, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -1935,15 +1936,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -1951,15 +1952,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -1967,15 +1968,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -1983,15 +1984,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -1999,15 +2000,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2015,15 +2016,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2031,15 +2032,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2047,15 +2048,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2063,15 +2064,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2079,15 +2080,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2095,15 +2096,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -2111,15 +2112,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2127,15 +2128,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2143,15 +2144,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2159,15 +2160,15 @@ export const menu: IProduct[] = [
         image: pineapple,
         name: 'Ананасы',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 45 },
-          { id: 2, price: 65 },
+          { id: 0, value: 25 },
+          { id: 1, value: 45 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2175,32 +2176,32 @@ export const menu: IProduct[] = [
         image: cheeseBlue,
         name: 'Сыр Блю Чиз',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 95 },
-          { id: 2, price: 115 },
+          { id: 0, value: 55 },
+          { id: 1, value: 95 },
+          { id: 2, value: 115 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Моцарелла' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Соус Ранч' },
-      { id: 3, name: 'Сыр Блю Чиз' },
+      { id: 0, value: 'Сыр Моцарелла' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Соус Ранч' },
+      { id: 3, value: 'Сыр Блю Чиз' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 13.06,
@@ -2208,12 +2209,12 @@ export const menu: IProduct[] = [
       carbohydrates: 34.92,
       calories: 316.47,
     },
-    weights: [
-      { id: 0, weight: 355 },
-      { id: 1, weight: 520 },
-      { id: 2, weight: 700 },
-      { id: 3, weight: 430 },
-      { id: 4, weight: 610 },
+    weight: [
+      { id: 0, value: 355 },
+      { id: 1, value: 520 },
+      { id: 2, value: 700 },
+      { id: 3, value: 430 },
+      { id: 4, value: 610 },
     ],
   },
   {
@@ -2224,9 +2225,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Ветчина, пепперони, моцарелла, пармезан, шампиньоны, фирменный соус томатный, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -2234,15 +2235,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2250,15 +2251,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -2266,15 +2267,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -2282,15 +2283,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -2298,15 +2299,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2314,15 +2315,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2330,15 +2331,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2346,15 +2347,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2362,15 +2363,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -2378,15 +2379,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2394,15 +2395,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2410,15 +2411,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2426,15 +2427,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -2442,15 +2443,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2458,15 +2459,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2474,15 +2475,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2490,15 +2491,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -2506,15 +2507,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -2522,15 +2523,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2538,33 +2539,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Моцарелла' },
-      { id: 1, name: 'Шампионьоны' },
-      { id: 2, name: 'Ветчина' },
-      { id: 3, name: 'Пепперони' },
-      { id: 4, name: 'Сыр Пармезан' },
+      { id: 0, value: 'Сыр Моцарелла' },
+      { id: 1, value: 'Шампионьоны' },
+      { id: 2, value: 'Ветчина' },
+      { id: 3, value: 'Пепперони' },
+      { id: 4, value: 'Сыр Пармезан' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 13.47,
@@ -2572,12 +2573,12 @@ export const menu: IProduct[] = [
       carbohydrates: 32.93,
       calories: 296.61,
     },
-    weights: [
-      { id: 0, weight: 380 },
-      { id: 1, weight: 550 },
-      { id: 2, weight: 750 },
-      { id: 3, weight: 460 },
-      { id: 4, weight: 660 },
+    weight: [
+      { id: 0, value: 380 },
+      { id: 1, value: 550 },
+      { id: 2, value: 750 },
+      { id: 3, value: 460 },
+      { id: 4, value: 660 },
     ],
   },
   {
@@ -2588,9 +2589,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Бекон, копчёная курица, моцарелла, чеддер, свежие шампиньоны, сливки, укроп, майонезный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -2598,15 +2599,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2614,15 +2615,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -2630,15 +2631,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -2646,15 +2647,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -2662,15 +2663,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2678,15 +2679,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2694,15 +2695,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2710,15 +2711,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2726,15 +2727,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2742,15 +2743,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2758,15 +2759,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2774,15 +2775,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -2790,15 +2791,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -2806,15 +2807,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2822,15 +2823,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -2838,15 +2839,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2854,15 +2855,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2870,15 +2871,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -2886,34 +2887,34 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Шампиньоны' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Бекон' },
-      { id: 3, name: 'Сыр Чеддер' },
-      { id: 4, name: 'Укроп' },
-      { id: 5, name: 'Майонезеный соус' },
+      { id: 0, value: 'Шампиньоны' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Бекон' },
+      { id: 3, value: 'Сыр Чеддер' },
+      { id: 4, value: 'Укроп' },
+      { id: 5, value: 'Майонезеный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.86,
@@ -2921,12 +2922,12 @@ export const menu: IProduct[] = [
       carbohydrates: 32.77,
       calories: 321.35,
     },
-    weights: [
-      { id: 0, weight: 382 },
-      { id: 1, weight: 570 },
-      { id: 2, weight: 770 },
-      { id: 3, weight: 480 },
-      { id: 4, weight: 680 },
+    weight: [
+      { id: 0, value: 382 },
+      { id: 1, value: 570 },
+      { id: 2, value: 770 },
+      { id: 3, value: 480 },
+      { id: 4, value: 680 },
     ],
   },
   {
@@ -2937,9 +2938,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Ветчина, бекон, моцарелла, чеддер, красный лук, соус цезарь, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -2947,15 +2948,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -2963,15 +2964,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -2979,15 +2980,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -2995,15 +2996,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -3011,15 +3012,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3027,15 +3028,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3043,15 +3044,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3059,15 +3060,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3075,15 +3076,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3091,15 +3092,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3107,15 +3108,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3123,15 +3124,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -3139,15 +3140,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3155,15 +3156,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3171,15 +3172,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3187,15 +3188,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -3203,15 +3204,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -3219,15 +3220,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3235,15 +3236,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3251,15 +3252,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3267,32 +3268,32 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Ветчина' },
-      { id: 1, name: 'Бекон' },
-      { id: 2, name: 'Лук Репчатый' },
-      { id: 3, name: 'Сыр Чеддер' },
+      { id: 0, value: 'Ветчина' },
+      { id: 1, value: 'Бекон' },
+      { id: 2, value: 'Лук Репчатый' },
+      { id: 3, value: 'Сыр Чеддер' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 13.04,
@@ -3300,12 +3301,12 @@ export const menu: IProduct[] = [
       carbohydrates: 35.86,
       calories: 323.37,
     },
-    weights: [
-      { id: 0, weight: 375 },
-      { id: 1, weight: 530 },
-      { id: 2, weight: 710 },
-      { id: 3, weight: 450 },
-      { id: 4, weight: 620 },
+    weight: [
+      { id: 0, value: 375 },
+      { id: 1, value: 530 },
+      { id: 2, value: 710 },
+      { id: 3, value: 450 },
+      { id: 4, value: 620 },
     ],
   },
   {
@@ -3316,9 +3317,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Бекон, моцарелла, чеддер, маринованные огурцы, фирменный томатный соус, медово - горчичный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -3326,15 +3327,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3342,15 +3343,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -3358,15 +3359,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -3374,15 +3375,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -3390,15 +3391,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3406,15 +3407,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3422,15 +3423,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3438,15 +3439,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3454,15 +3455,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3470,15 +3471,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3486,15 +3487,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -3502,15 +3503,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3518,15 +3519,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -3534,15 +3535,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3550,15 +3551,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3566,15 +3567,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3582,32 +3583,32 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Бекон' },
-      { id: 1, name: 'Огурцы Маринованные' },
-      { id: 2, name: 'Сыр Чеддер' },
-      { id: 3, name: 'Горчичный соус' },
+      { id: 0, value: 'Бекон' },
+      { id: 1, value: 'Огурцы Маринованные' },
+      { id: 2, value: 'Сыр Чеддер' },
+      { id: 3, value: 'Горчичный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.37,
@@ -3615,12 +3616,12 @@ export const menu: IProduct[] = [
       carbohydrates: 35.39,
       calories: 294.17,
     },
-    weights: [
-      { id: 0, weight: 385 },
-      { id: 1, weight: 570 },
-      { id: 2, weight: 760 },
-      { id: 3, weight: 480 },
-      { id: 4, weight: 670 },
+    weight: [
+      { id: 0, value: 385 },
+      { id: 1, value: 570 },
+      { id: 2, value: 760 },
+      { id: 3, value: 480 },
+      { id: 4, value: 670 },
     ],
   },
   {
@@ -3631,9 +3632,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Копчёная курица, салат айсберг, моцарелла, пармезан, томаты, соус цезарь, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -3641,15 +3642,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3657,15 +3658,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -3673,15 +3674,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -3689,15 +3690,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -3705,15 +3706,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3721,15 +3722,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3737,15 +3738,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3753,15 +3754,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3769,15 +3770,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3785,15 +3786,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3801,15 +3802,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -3817,15 +3818,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3833,15 +3834,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -3849,33 +3850,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Сыр Пармезан' },
-      { id: 3, name: 'Листья Салата' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Сыр Пармезан' },
+      { id: 3, value: 'Листья Салата' },
     ],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.84,
@@ -3883,12 +3884,12 @@ export const menu: IProduct[] = [
       carbohydrates: 32.09,
       calories: 268.95,
     },
-    weights: [
-      { id: 0, weight: 365 },
-      { id: 1, weight: 550 },
-      { id: 2, weight: 770 },
-      { id: 3, weight: 460 },
-      { id: 4, weight: 680 },
+    weight: [
+      { id: 0, value: 365 },
+      { id: 1, value: 550 },
+      { id: 2, value: 770 },
+      { id: 3, value: 460 },
+      { id: 4, value: 680 },
     ],
   },
   {
@@ -3899,9 +3900,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Копченая курица, моцарелла, свежие огурцы, томаты, красный лук, салат айсберг, свежий укроп, кетчуп, майонезный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -3909,15 +3910,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -3925,15 +3926,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -3941,15 +3942,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -3957,15 +3958,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -3973,15 +3974,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -3989,15 +3990,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4005,15 +4006,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4021,15 +4022,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4037,15 +4038,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -4053,15 +4054,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4069,15 +4070,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4085,15 +4086,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4101,15 +4102,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -4117,15 +4118,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4133,15 +4134,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4149,15 +4150,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -4165,15 +4166,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -4181,15 +4182,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4197,15 +4198,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4213,15 +4214,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4229,36 +4230,36 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Огурцы Свежие' },
-      { id: 3, name: 'Лук Репчатый' },
-      { id: 4, name: 'Укроп' },
-      { id: 5, name: 'Листья Салата' },
-      { id: 6, name: 'Соус Кетчуп' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Огурцы Свежие' },
+      { id: 3, value: 'Лук Репчатый' },
+      { id: 4, value: 'Укроп' },
+      { id: 5, value: 'Листья Салата' },
+      { id: 6, value: 'Соус Кетчуп' },
     ],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 9.38,
@@ -4266,12 +4267,12 @@ export const menu: IProduct[] = [
       carbohydrates: 29.77,
       calories: 242.68,
     },
-    weights: [
-      { id: 0, weight: 400 },
-      { id: 1, weight: 620 },
-      { id: 2, weight: 850 },
-      { id: 3, weight: 530 },
-      { id: 4, weight: 770 },
+    weight: [
+      { id: 0, value: 400 },
+      { id: 1, value: 620 },
+      { id: 2, value: 850 },
+      { id: 3, value: 530 },
+      { id: 4, value: 770 },
     ],
   },
   {
@@ -4282,9 +4283,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Много бекона, моцарелла, ананасы, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -4292,15 +4293,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4308,15 +4309,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -4324,15 +4325,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -4340,15 +4341,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -4356,15 +4357,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4372,15 +4373,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4388,15 +4389,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4404,15 +4405,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4420,15 +4421,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4436,15 +4437,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -4452,15 +4453,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4468,15 +4469,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4484,15 +4485,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4500,15 +4501,15 @@ export const menu: IProduct[] = [
         image: pineapple,
         name: 'Ананасы',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 45 },
-          { id: 2, price: 65 },
+          { id: 0, value: 25 },
+          { id: 1, value: 45 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4516,15 +4517,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4532,15 +4533,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4548,15 +4549,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4564,31 +4565,31 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Бекон' },
-      { id: 1, name: 'Ананасы' },
+      { id: 0, value: 'Бекон' },
+      { id: 1, value: 'Ананасы' },
     ],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.08,
@@ -4596,12 +4597,12 @@ export const menu: IProduct[] = [
       carbohydrates: 36.52,
       calories: 280.95,
     },
-    weights: [
-      { id: 0, weight: 350 },
-      { id: 1, weight: 510 },
-      { id: 2, weight: 690 },
-      { id: 3, weight: 410 },
-      { id: 4, weight: 600 },
+    weight: [
+      { id: 0, value: 350 },
+      { id: 1, value: 510 },
+      { id: 2, value: 690 },
+      { id: 3, value: 410 },
+      { id: 4, value: 600 },
     ],
   },
   {
@@ -4612,9 +4613,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Пепперони, охотничьи колбаски, моцарелла, свежие шампиньоны, свежий укроп, соус ранч, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -4622,15 +4623,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4638,15 +4639,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -4654,15 +4655,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -4670,15 +4671,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -4686,15 +4687,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4702,15 +4703,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4718,15 +4719,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -4734,15 +4735,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4750,15 +4751,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -4766,15 +4767,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4782,15 +4783,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4798,15 +4799,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4814,15 +4815,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -4830,15 +4831,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -4846,15 +4847,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -4862,15 +4863,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4878,15 +4879,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4894,15 +4895,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -4910,33 +4911,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Шампиньоны' },
-      { id: 1, name: 'Пепперони' },
-      { id: 2, name: 'Охотничьи Колбаски' },
-      { id: 3, name: 'Укроп' },
-      { id: 4, name: 'Соус Ранч' },
+      { id: 0, value: 'Шампиньоны' },
+      { id: 1, value: 'Пепперони' },
+      { id: 2, value: 'Охотничьи Колбаски' },
+      { id: 3, value: 'Укроп' },
+      { id: 4, value: 'Соус Ранч' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.78,
@@ -4944,12 +4945,12 @@ export const menu: IProduct[] = [
       carbohydrates: 32.97,
       calories: 313.43,
     },
-    weights: [
-      { id: 0, weight: 375 },
-      { id: 1, weight: 560 },
-      { id: 2, weight: 760 },
-      { id: 3, weight: 470 },
-      { id: 4, weight: 670 },
+    weight: [
+      { id: 0, value: 375 },
+      { id: 1, value: 560 },
+      { id: 2, value: 760 },
+      { id: 3, value: 470 },
+      { id: 4, value: 670 },
     ],
   },
   {
@@ -4960,8 +4961,8 @@ export const menu: IProduct[] = [
     ingredients:
       'Фирменный томатный соус, моцарелла, пепперони, ветчина, охотничьи колбаски, буженина из свинины, сыр блю чиз, сыр фета, томаты',
     prices: [
-      { id: 0, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -4969,15 +4970,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 50 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 50 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 50 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -4985,15 +4986,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -5001,15 +5002,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -5017,15 +5018,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -5033,15 +5034,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5049,15 +5050,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5065,15 +5066,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -5081,15 +5082,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 32 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 55 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5097,15 +5098,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5113,15 +5114,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -5129,15 +5130,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5145,15 +5146,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5161,15 +5162,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5177,15 +5178,15 @@ export const menu: IProduct[] = [
         image: pineapple,
         name: 'Ананасы',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 45 },
-          { id: 2, price: 65 },
+          { id: 0, value: 25 },
+          { id: 1, value: 45 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5193,15 +5194,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5209,15 +5210,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5225,36 +5226,36 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Ветчина' },
-      { id: 3, name: 'Пепперони' },
-      { id: 4, name: 'Охотничьи Колбаски' },
-      { id: 5, name: 'Сыр Фета' },
-      { id: 6, name: 'Буженина' },
-      { id: 7, name: 'Сыр Блю Чиз' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Ветчина' },
+      { id: 3, value: 'Пепперони' },
+      { id: 4, value: 'Охотничьи Колбаски' },
+      { id: 5, value: 'Сыр Фета' },
+      { id: 6, value: 'Буженина' },
+      { id: 7, value: 'Сыр Блю Чиз' },
     ],
     sizes: [
-      { id: 0, name: null },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: null },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.54,
@@ -5262,11 +5263,11 @@ export const menu: IProduct[] = [
       carbohydrates: 34.15,
       calories: 277.39,
     },
-    weights: [
-      { id: 1, weight: 530 },
-      { id: 2, weight: 700 },
-      { id: 3, weight: 450 },
-      { id: 4, weight: 610 },
+    weight: [
+      { id: 1, value: 530 },
+      { id: 2, value: 700 },
+      { id: 3, value: 450 },
+      { id: 4, value: 610 },
     ],
   },
   {
@@ -5277,9 +5278,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Много пепперони, много моцареллы, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -5287,15 +5288,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5303,15 +5304,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -5319,15 +5320,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -5335,15 +5336,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -5351,15 +5352,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5367,15 +5368,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5383,15 +5384,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5399,15 +5400,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -5415,15 +5416,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5431,15 +5432,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5447,15 +5448,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5463,15 +5464,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -5479,15 +5480,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5495,15 +5496,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5511,15 +5512,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -5527,15 +5528,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5543,15 +5544,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5559,28 +5560,28 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
-    removeIngredients: [{ id: 0, name: 'Пепперони' }],
+    removeIngredients: [{ id: 0, value: 'Пепперони' }],
     categories: [{ id: 0, title: 'Острая', image: fire }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 14.33,
@@ -5588,12 +5589,12 @@ export const menu: IProduct[] = [
       carbohydrates: 33.12,
       calories: 310.17,
     },
-    weights: [
-      { id: 0, weight: 365 },
-      { id: 1, weight: 530 },
-      { id: 2, weight: 720 },
-      { id: 3, weight: 440 },
-      { id: 4, weight: 630 },
+    weight: [
+      { id: 0, value: 365 },
+      { id: 1, value: 530 },
+      { id: 2, value: 720 },
+      { id: 3, value: 440 },
+      { id: 4, value: 630 },
     ],
   },
   {
@@ -5604,9 +5605,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Ветчина, копчёная курица, моцарелла, зеленый лук, маринованные огурцы, майонезный соус, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -5614,15 +5615,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5630,15 +5631,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -5646,15 +5647,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -5662,15 +5663,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -5678,15 +5679,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5694,15 +5695,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5710,15 +5711,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5726,15 +5727,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5742,15 +5743,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -5758,15 +5759,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5774,15 +5775,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5790,15 +5791,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5806,15 +5807,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -5822,15 +5823,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -5838,15 +5839,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -5854,15 +5855,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -5870,15 +5871,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5886,15 +5887,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5902,15 +5903,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -5918,33 +5919,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Копченая Курица' },
-      { id: 1, name: 'Ветчина' },
-      { id: 2, name: 'Огурцы Маринованные' },
-      { id: 3, name: 'Зеленый Лук' },
-      { id: 4, name: 'Майонезный соус' },
+      { id: 0, value: 'Копченая Курица' },
+      { id: 1, value: 'Ветчина' },
+      { id: 2, value: 'Огурцы Маринованные' },
+      { id: 3, value: 'Зеленый Лук' },
+      { id: 4, value: 'Майонезный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.56,
@@ -5952,12 +5953,12 @@ export const menu: IProduct[] = [
       carbohydrates: 31.21,
       calories: 285.12,
     },
-    weights: [
-      { id: 0, weight: 390 },
-      { id: 1, weight: 600 },
-      { id: 2, weight: 810 },
-      { id: 3, weight: 510 },
-      { id: 4, weight: 730 },
+    weight: [
+      { id: 0, value: 390 },
+      { id: 1, value: 600 },
+      { id: 2, value: 810 },
+      { id: 3, value: 510 },
+      { id: 4, value: 730 },
     ],
   },
   {
@@ -5968,9 +5969,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Копчёная курица, ветчина, моцарелла, томаты, чеснок, соус ранч, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -5978,15 +5979,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -5994,15 +5995,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -6010,15 +6011,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -6026,15 +6027,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -6042,15 +6043,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6058,15 +6059,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6074,15 +6075,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -6090,15 +6091,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6106,15 +6107,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6122,15 +6123,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6138,15 +6139,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6154,15 +6155,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -6170,15 +6171,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6186,15 +6187,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -6202,15 +6203,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6218,15 +6219,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6234,15 +6235,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6250,33 +6251,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Ветчина' },
-      { id: 3, name: 'Чеснок' },
-      { id: 4, name: 'Майонезный соус' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Ветчина' },
+      { id: 3, value: 'Чеснок' },
+      { id: 4, value: 'Майонезный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.42,
@@ -6284,12 +6285,12 @@ export const menu: IProduct[] = [
       carbohydrates: 32.63,
       calories: 321.23,
     },
-    weights: [
-      { id: 0, weight: 395 },
-      { id: 1, weight: 590 },
-      { id: 2, weight: 800 },
-      { id: 3, weight: 500 },
-      { id: 4, weight: 710 },
+    weight: [
+      { id: 0, value: 395 },
+      { id: 1, value: 590 },
+      { id: 2, value: 800 },
+      { id: 3, value: 500 },
+      { id: 4, value: 710 },
     ],
   },
   {
@@ -6300,9 +6301,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Пепперони, моцарелла, красный лук, халапеньо, болгарский перец, фирменный томатный соус, барбекю соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -6310,15 +6311,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6326,15 +6327,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -6342,15 +6343,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -6358,15 +6359,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -6374,15 +6375,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6390,15 +6391,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6406,15 +6407,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -6422,15 +6423,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6438,15 +6439,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -6454,15 +6455,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6470,15 +6471,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6486,15 +6487,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6502,15 +6503,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -6518,15 +6519,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6534,15 +6535,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6550,15 +6551,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6566,15 +6567,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6582,34 +6583,34 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Перец Халапеньо' },
-      { id: 1, name: 'Пепперони' },
-      { id: 2, name: 'Лук Репчатый' },
-      { id: 3, name: ' Болгарский Перец' },
-      { id: 4, name: 'Барбекю соус' },
+      { id: 0, value: 'Перец Халапеньо' },
+      { id: 1, value: 'Пепперони' },
+      { id: 2, value: 'Лук Репчатый' },
+      { id: 3, value: ' Болгарский Перец' },
+      { id: 4, value: 'Барбекю соус' },
     ],
     categories: [{ id: 0, title: 'Острая', image: fire }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 11.32,
@@ -6617,12 +6618,12 @@ export const menu: IProduct[] = [
       carbohydrates: 35.25,
       calories: 269.56,
     },
-    weights: [
-      { id: 0, weight: 385 },
-      { id: 1, weight: 570 },
-      { id: 2, weight: 780 },
-      { id: 3, weight: 480 },
-      { id: 4, weight: 690 },
+    weight: [
+      { id: 0, value: 385 },
+      { id: 1, value: 570 },
+      { id: 2, value: 780 },
+      { id: 3, value: 480 },
+      { id: 4, value: 690 },
     ],
   },
   {
@@ -6633,9 +6634,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Много бекона, моцарелла, пармезан, томаты, сливки, свежий укроп, соус ранч, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -6643,15 +6644,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6659,15 +6660,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -6675,15 +6676,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -6691,15 +6692,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -6707,15 +6708,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6723,15 +6724,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6739,15 +6740,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -6755,15 +6756,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6771,15 +6772,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -6787,15 +6788,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6803,15 +6804,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -6819,15 +6820,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -6835,15 +6836,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -6851,15 +6852,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -6867,15 +6868,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -6883,15 +6884,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -6899,15 +6900,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -6915,15 +6916,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6931,15 +6932,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6947,15 +6948,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -6963,33 +6964,33 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Бекон' },
-      { id: 2, name: 'Сыр Пармезан' },
-      { id: 3, name: 'Укроп' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Бекон' },
+      { id: 2, value: 'Сыр Пармезан' },
+      { id: 3, value: 'Укроп' },
     ],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.24,
@@ -6997,12 +6998,12 @@ export const menu: IProduct[] = [
       carbohydrates: 33.54,
       calories: 310.48,
     },
-    weights: [
-      { id: 0, weight: 365 },
-      { id: 1, weight: 530 },
-      { id: 2, weight: 720 },
-      { id: 3, weight: 440 },
-      { id: 4, weight: 640 },
+    weight: [
+      { id: 0, value: 365 },
+      { id: 1, value: 530 },
+      { id: 2, value: 720 },
+      { id: 3, value: 440 },
+      { id: 4, value: 640 },
     ],
   },
   {
@@ -7013,9 +7014,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Моцарелла, сыр блю чиз с голубой плесенью, фета, пармезан, соус ранч, тесто',
     prices: [
-      { id: 0, price: 465 },
-      { id: 1, price: 655 },
-      { id: 2, price: 875 },
+      { id: 0, value: 465 },
+      { id: 1, value: 655 },
+      { id: 2, value: 875 },
     ],
     additionalIngredients: [
       {
@@ -7023,15 +7024,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7039,15 +7040,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -7055,15 +7056,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -7071,15 +7072,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -7087,15 +7088,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7103,15 +7104,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7119,15 +7120,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7135,15 +7136,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7151,15 +7152,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7167,15 +7168,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7183,15 +7184,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -7199,15 +7200,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7215,15 +7216,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7231,15 +7232,15 @@ export const menu: IProduct[] = [
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 20 },
           { id: 2, value: 30 },
         ],
         prices: [
-          { id: 0, price: 19 },
-          { id: 1, price: 29 },
-          { id: 2, price: 39 },
+          { id: 0, value: 19 },
+          { id: 1, value: 29 },
+          { id: 2, value: 39 },
         ],
       },
       {
@@ -7247,15 +7248,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7263,15 +7264,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7279,15 +7280,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7295,15 +7296,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7311,35 +7312,35 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Пармезан' },
-      { id: 1, name: 'Сыр Фета' },
-      { id: 2, name: 'Сыр Блю Чиз' },
+      { id: 0, value: 'Сыр Пармезан' },
+      { id: 1, value: 'Сыр Фета' },
+      { id: 2, value: 'Сыр Блю Чиз' },
     ],
     categories: [
       { id: 0, title: 'Без Мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 15.03,
@@ -7347,12 +7348,12 @@ export const menu: IProduct[] = [
       carbohydrates: 33.66,
       calories: 342.65,
     },
-    weights: [
-      { id: 0, weight: 360 },
-      { id: 1, weight: 530 },
-      { id: 2, weight: 730 },
-      { id: 3, weight: 440 },
-      { id: 4, weight: 640 },
+    weight: [
+      { id: 0, value: 360 },
+      { id: 1, value: 530 },
+      { id: 2, value: 730 },
+      { id: 3, value: 440 },
+      { id: 4, value: 640 },
     ],
   },
   {
@@ -7362,9 +7363,9 @@ export const menu: IProduct[] = [
     group: 'pizzas',
     ingredients: 'Моцарелла ,чеддер, фета, соус цезарь, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -7372,15 +7373,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7388,15 +7389,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -7404,15 +7405,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -7420,15 +7421,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -7436,15 +7437,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7452,15 +7453,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7468,15 +7469,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7484,15 +7485,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7500,15 +7501,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -7516,15 +7517,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7532,15 +7533,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7548,15 +7549,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -7564,15 +7565,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7580,15 +7581,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7596,15 +7597,15 @@ export const menu: IProduct[] = [
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 20 },
           { id: 2, value: 30 },
         ],
         prices: [
-          { id: 0, price: 19 },
-          { id: 1, price: 29 },
-          { id: 2, price: 39 },
+          { id: 0, value: 19 },
+          { id: 1, value: 29 },
+          { id: 2, value: 39 },
         ],
       },
       {
@@ -7612,15 +7613,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7628,15 +7629,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -7644,15 +7645,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -7660,15 +7661,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7676,15 +7677,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7692,15 +7693,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7708,31 +7709,31 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Фета' },
-      { id: 1, name: 'Сыр Чеддер' },
+      { id: 0, value: 'Сыр Фета' },
+      { id: 1, value: 'Сыр Чеддер' },
     ],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 14.3,
@@ -7740,12 +7741,12 @@ export const menu: IProduct[] = [
       carbohydrates: 35.49,
       calories: 324.23,
     },
-    weights: [
-      { id: 0, weight: 355 },
-      { id: 1, weight: 520 },
-      { id: 2, weight: 700 },
-      { id: 3, weight: 430 },
-      { id: 4, weight: 620 },
+    weight: [
+      { id: 0, value: 355 },
+      { id: 1, value: 520 },
+      { id: 2, value: 700 },
+      { id: 3, value: 430 },
+      { id: 4, value: 620 },
     ],
   },
   {
@@ -7756,9 +7757,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Пепперони, ветчина, копчёная курица, моцарелла, майонезный соус, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -7766,15 +7767,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7782,15 +7783,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -7798,15 +7799,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -7814,15 +7815,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -7830,15 +7831,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7846,15 +7847,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7862,15 +7863,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -7878,15 +7879,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7894,15 +7895,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -7910,15 +7911,15 @@ export const menu: IProduct[] = [
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 32 },
           { id: 2, value: 36 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -7926,15 +7927,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -7942,15 +7943,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7958,15 +7959,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -7974,15 +7975,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -7990,15 +7991,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8006,15 +8007,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8022,15 +8023,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8038,32 +8039,32 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Копченая Курица' },
-      { id: 1, name: 'Ветчина' },
-      { id: 2, name: 'Пепперони' },
-      { id: 3, name: 'Майонезный соус' },
+      { id: 0, value: 'Копченая Курица' },
+      { id: 1, value: 'Ветчина' },
+      { id: 2, value: 'Пепперони' },
+      { id: 3, value: 'Майонезный соус' },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 12.44,
@@ -8071,12 +8072,12 @@ export const menu: IProduct[] = [
       carbohydrates: 30.54,
       calories: 269.08,
     },
-    weights: [
-      { id: 0, weight: 385 },
-      { id: 1, weight: 580 },
-      { id: 2, weight: 780 },
-      { id: 3, weight: 490 },
-      { id: 4, weight: 690 },
+    weight: [
+      { id: 0, value: 385 },
+      { id: 1, value: 580 },
+      { id: 2, value: 780 },
+      { id: 3, value: 490 },
+      { id: 4, value: 690 },
     ],
   },
   {
@@ -8087,9 +8088,9 @@ export const menu: IProduct[] = [
     ingredients:
       'Очень много моцареллы, томаты, фирменный томатный соус, тесто',
     prices: [
-      { id: 0, price: 399 },
-      { id: 1, price: 579 },
-      { id: 2, price: 739 },
+      { id: 0, value: 399 },
+      { id: 1, value: 579 },
+      { id: 2, value: 739 },
     ],
     additionalIngredients: [
       {
@@ -8097,15 +8098,15 @@ export const menu: IProduct[] = [
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 30 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 50 },
-          { id: 2, price: 65 },
+          { id: 0, value: 35 },
+          { id: 1, value: 50 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -8113,15 +8114,15 @@ export const menu: IProduct[] = [
         image: cheeseSide,
         name: 'Сырный Бортик',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 125 },
           { id: 1, value: 165 },
           { id: 2, value: 205 },
         ],
         prices: [
-          { id: 0, price: 119 },
-          { id: 1, price: 149 },
-          { id: 2, price: 179 },
+          { id: 0, value: 119 },
+          { id: 1, value: 149 },
+          { id: 2, value: 179 },
         ],
       },
       {
@@ -8129,15 +8130,15 @@ export const menu: IProduct[] = [
         image: heart,
         name: 'Пицца "Сердце"',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 1 },
           { id: 1, value: 1 },
           { id: 2, value: 1 },
         ],
         prices: [
-          { id: 0, price: 95 },
-          { id: 1, price: 95 },
-          { id: 2, price: 95 },
+          { id: 0, value: 95 },
+          { id: 1, value: 95 },
+          { id: 2, value: 95 },
         ],
       },
       {
@@ -8145,15 +8146,15 @@ export const menu: IProduct[] = [
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 12 },
           { id: 1, value: 25 },
           { id: 2, value: 38 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 25 },
-          { id: 2, price: 35 },
+          { id: 0, value: 15 },
+          { id: 1, value: 25 },
+          { id: 2, value: 35 },
         ],
       },
       {
@@ -8161,15 +8162,15 @@ export const menu: IProduct[] = [
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -8177,15 +8178,15 @@ export const menu: IProduct[] = [
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -8193,15 +8194,15 @@ export const menu: IProduct[] = [
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 50 },
           { id: 2, value: 75 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -8209,15 +8210,15 @@ export const menu: IProduct[] = [
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 21 },
           { id: 1, value: 34 },
           { id: 2, value: 44 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 55 },
-          { id: 2, price: 65 },
+          { id: 0, value: 45 },
+          { id: 1, value: 55 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -8225,15 +8226,15 @@ export const menu: IProduct[] = [
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 37 },
           { id: 2, value: 49 },
         ],
         prices: [
-          { id: 0, price: 45 },
-          { id: 1, price: 65 },
-          { id: 2, price: 85 },
+          { id: 0, value: 45 },
+          { id: 1, value: 65 },
+          { id: 2, value: 85 },
         ],
       },
       {
@@ -8241,15 +8242,15 @@ export const menu: IProduct[] = [
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8257,15 +8258,15 @@ export const menu: IProduct[] = [
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -8273,15 +8274,15 @@ export const menu: IProduct[] = [
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 10 },
-          { id: 2, price: 15 },
+          { id: 0, value: 5 },
+          { id: 1, value: 10 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -8289,15 +8290,15 @@ export const menu: IProduct[] = [
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 15 },
           { id: 2, value: 25 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 45 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 45 },
         ],
       },
       {
@@ -8305,15 +8306,15 @@ export const menu: IProduct[] = [
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 55 },
-          { id: 2, price: 75 },
+          { id: 0, value: 35 },
+          { id: 1, value: 55 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -8321,15 +8322,15 @@ export const menu: IProduct[] = [
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 10 },
           { id: 1, value: 20 },
           { id: 2, value: 30 },
         ],
         prices: [
-          { id: 0, price: 19 },
-          { id: 1, price: 29 },
-          { id: 2, price: 39 },
+          { id: 0, value: 19 },
+          { id: 1, value: 29 },
+          { id: 2, value: 39 },
         ],
       },
       {
@@ -8337,15 +8338,15 @@ export const menu: IProduct[] = [
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 26 },
           { id: 1, value: 40 },
           { id: 2, value: 50 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 65 },
-          { id: 2, price: 75 },
+          { id: 0, value: 55 },
+          { id: 1, value: 65 },
+          { id: 2, value: 75 },
         ],
       },
       {
@@ -8353,15 +8354,15 @@ export const menu: IProduct[] = [
         image: cheeseBlue,
         name: 'Сыр Блю Чиз',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 15 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 55 },
-          { id: 1, price: 95 },
-          { id: 2, price: 115 },
+          { id: 0, value: 55 },
+          { id: 1, value: 95 },
+          { id: 2, value: 115 },
         ],
       },
       {
@@ -8369,15 +8370,15 @@ export const menu: IProduct[] = [
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 17 },
           { id: 1, value: 35 },
           { id: 2, value: 53 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 35 },
-          { id: 2, price: 50 },
+          { id: 0, value: 25 },
+          { id: 1, value: 35 },
+          { id: 2, value: 50 },
         ],
       },
       {
@@ -8385,15 +8386,15 @@ export const menu: IProduct[] = [
         image: pineapple,
         name: 'Ананасы',
         maxQuantity: 5,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 25 },
-          { id: 1, price: 45 },
-          { id: 2, price: 65 },
+          { id: 0, value: 25 },
+          { id: 1, value: 45 },
+          { id: 2, value: 65 },
         ],
       },
       {
@@ -8401,15 +8402,15 @@ export const menu: IProduct[] = [
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 5 },
           { id: 1, value: 5 },
           { id: 2, value: 5 },
         ],
         prices: [
-          { id: 0, price: 15 },
-          { id: 1, price: 15 },
-          { id: 2, price: 15 },
+          { id: 0, value: 15 },
+          { id: 1, value: 15 },
+          { id: 2, value: 15 },
         ],
       },
       {
@@ -8417,15 +8418,15 @@ export const menu: IProduct[] = [
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 8 },
           { id: 1, value: 8 },
           { id: 2, value: 8 },
         ],
         prices: [
-          { id: 0, price: 5 },
-          { id: 1, price: 5 },
-          { id: 2, price: 5 },
+          { id: 0, value: 5 },
+          { id: 1, value: 5 },
+          { id: 2, value: 5 },
         ],
       },
       {
@@ -8433,15 +8434,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 23 },
           { id: 1, value: 35 },
           { id: 2, value: 55 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8449,15 +8450,15 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 20 },
           { id: 1, value: 30 },
           { id: 2, value: 45 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
       {
@@ -8465,31 +8466,31 @@ export const menu: IProduct[] = [
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [
+        weight: [
           { id: 0, value: 25 },
           { id: 1, value: 40 },
           { id: 2, value: 60 },
         ],
         prices: [
-          { id: 0, price: 35 },
-          { id: 1, price: 45 },
-          { id: 2, price: 55 },
+          { id: 0, value: 35 },
+          { id: 1, value: 45 },
+          { id: 2, value: 55 },
         ],
       },
     ],
-    removeIngredients: [{ id: 0, name: 'Томаты' }],
+    removeIngredients: [{ id: 0, value: 'Томаты' }],
     categories: [
       { id: 0, title: 'Без Мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
     ],
     sizes: [
-      { id: 0, name: 23 },
-      { id: 1, name: 28 },
-      { id: 2, name: 33 },
+      { id: 0, value: 23 },
+      { id: 1, value: 28 },
+      { id: 2, value: 33 },
     ],
     dough: [
-      { id: 0, name: 'Тонкое' },
-      { id: 1, name: 'Традиционное' },
+      { id: 0, value: 'Тонкое' },
+      { id: 1, value: 'Традиционное' },
     ],
     nutritionalValues: {
       proteins: 13.16,
@@ -8497,12 +8498,12 @@ export const menu: IProduct[] = [
       carbohydrates: 29.18,
       calories: 261.75,
     },
-    weights: [
-      { id: 0, weight: 350 },
-      { id: 1, weight: 530 },
-      { id: 2, weight: 720 },
-      { id: 3, weight: 440 },
-      { id: 4, weight: 630 },
+    weight: [
+      { id: 0, value: 350 },
+      { id: 1, value: 530 },
+      { id: 2, value: 720 },
+      { id: 3, value: 440 },
+      { id: 4, value: 630 },
     ],
   },
   {
@@ -8512,101 +8513,101 @@ export const menu: IProduct[] = [
     group: 'snacks',
     ingredients:
       'Копченая курица, бекон, свежие шампиньоны, моцарелла, сливки, соус ранч, паста',
-    prices: [{ id: 0, price: 249 }],
+    prices: [{ id: 0, value: 249 }],
     additionalIngredients: [
       {
         id: 0,
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 50 }],
       },
       {
         id: 1,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 2,
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 3,
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 4,
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 32 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 5,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 6,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 7,
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 8,
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 20 }],
-        prices: [{ id: 0, price: 29 }],
+        weight: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, value: 29 }],
       },
       {
         id: 9,
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 10,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Шампиньоны' },
-      { id: 1, name: 'Копченая Курица' },
-      { id: 2, name: 'Бекон' },
+      { id: 0, value: 'Шампиньоны' },
+      { id: 1, value: 'Копченая Курица' },
+      { id: 2, value: 'Бекон' },
     ],
     nutritionalValues: {
       proteins: 11.79,
@@ -8614,7 +8615,7 @@ export const menu: IProduct[] = [
       carbohydrates: 16.79,
       calories: 249.49,
     },
-    weights: [{ id: 0, weight: 220 }],
+    weight: [{ id: 0, value: 220 }],
   },
   {
     id: 25,
@@ -8622,109 +8623,109 @@ export const menu: IProduct[] = [
     image: pastaCarbonara,
     group: 'snacks',
     ingredients: 'Бекон, пармезан, моцарелла, томаты, сливки, соус ранч, паста',
-    prices: [{ id: 0, price: 249 }],
+    prices: [{ id: 0, value: 249 }],
     additionalIngredients: [
       {
         id: 0,
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 50 }],
       },
       {
         id: 1,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 2,
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 3,
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 4,
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 5,
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 34 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 6,
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 32 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 7,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 8,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 9,
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 10,
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 11,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Бекон' },
-      { id: 2, name: 'Сыр Пармезан' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Бекон' },
+      { id: 2, value: 'Сыр Пармезан' },
     ],
     nutritionalValues: {
       proteins: 12.37,
@@ -8732,7 +8733,7 @@ export const menu: IProduct[] = [
       carbohydrates: 17.32,
       calories: 260.9,
     },
-    weights: [{ id: 0, weight: 240 }],
+    weight: [{ id: 0, value: 240 }],
   },
   {
     id: 26,
@@ -8741,108 +8742,108 @@ export const menu: IProduct[] = [
     group: 'snacks',
     ingredients:
       'Жареные пельмени с курицей и говядиной, моцарелла, сливки, соус ранч',
-    prices: [{ id: 0, price: 229 }],
+    prices: [{ id: 0, value: 229 }],
     additionalIngredients: [
       {
         id: 0,
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 50 }],
       },
       {
         id: 1,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 2,
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 3,
         image: champignon,
         name: 'Шампиньоны',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 4,
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 5,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 6,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 7,
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 8,
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 5 }],
-        prices: [{ id: 0, price: 15 }],
+        weight: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, value: 15 }],
       },
       {
         id: 9,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
       {
         id: 10,
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 11,
         image: cheeseBlue,
         name: 'Сыр Блю Чиз',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 95 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 95 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Моцарелла' },
-      { id: 1, name: 'Соус Ранч' },
+      { id: 0, value: 'Сыр Моцарелла' },
+      { id: 1, value: 'Соус Ранч' },
     ],
     nutritionalValues: {
       proteins: 12.33,
@@ -8850,7 +8851,7 @@ export const menu: IProduct[] = [
       carbohydrates: 16.36,
       calories: 236.71,
     },
-    weights: [{ id: 0, weight: 270 }],
+    weight: [{ id: 0, value: 270 }],
   },
   {
     id: 27,
@@ -8859,124 +8860,124 @@ export const menu: IProduct[] = [
     group: 'snacks',
     ingredients:
       'Куриные кусочки, картофель фри, соус бургер, кетчуп, майонезный соус, лук фри, укроп',
-    prices: [{ id: 0, price: 239 }],
+    prices: [{ id: 0, value: 239 }],
     additionalIngredients: [
       {
         id: 0,
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 1,
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 2,
         image: cucumberFresh,
         name: 'Огурцы Свежие',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 20 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 20 }],
       },
       {
         id: 3,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 4,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 5,
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 6,
         image: pineapple,
         name: 'Ананасы',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 7,
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 5 }],
-        prices: [{ id: 0, price: 15 }],
+        weight: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, value: 15 }],
       },
       {
         id: 8,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
       {
         id: 9,
         image: sauce,
         name: 'Ранч Соус на пиццу',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 10,
         image: sauce,
         name: 'Барбекю Соус на пиццу',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 11,
         image: sauce,
         name: 'Горчичный Соус на пиццу',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 12,
         image: sauce,
         name: 'Кетчуп Соус на пиццу',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 13,
         image: sauce,
         name: 'Соус Бургер на пиццу',
         maxQuantity: 3,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 45 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Сыр Моцарелла' },
-      { id: 1, name: 'Соус Ранч' },
+      { id: 0, value: 'Сыр Моцарелла' },
+      { id: 1, value: 'Соус Ранч' },
     ],
     nutritionalValues: {
       proteins: 12.33,
@@ -8984,7 +8985,7 @@ export const menu: IProduct[] = [
       carbohydrates: 16.36,
       calories: 236.71,
     },
-    weights: [{ id: 0, weight: 200 }],
+    weight: [{ id: 0, value: 200 }],
   },
   {
     id: 28,
@@ -8993,135 +8994,135 @@ export const menu: IProduct[] = [
     group: 'snacks',
     ingredients:
       'Салат айсберг, томаты, яйцо, огурцы свежие, лук зеленый, заправка - масло оливковое (15 г).',
-    prices: [{ id: 0, price: 119 }],
+    prices: [{ id: 0, value: 119 }],
     additionalIngredients: [
       {
         id: 0,
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 50 }],
       },
       {
         id: 1,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 2,
         image: tomato,
         name: 'Томаты',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 3,
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 4,
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 34 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 5,
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 32 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 6,
         image: pickledCucumbers,
         name: 'Огурцы Маринованные',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 7,
         image: cucumberFresh,
         name: 'Огурцы Свежие',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 20 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 20 }],
       },
       {
         id: 8,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 9,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 10,
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 11,
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 20 }],
-        prices: [{ id: 0, price: 29 }],
+        weight: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, value: 29 }],
       },
       {
         id: 12,
         image: pimiento,
         name: 'Болгарский Перец',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 35 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 35 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 13,
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 5 }],
-        prices: [{ id: 0, price: 15 }],
+        weight: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, value: 15 }],
       },
       {
         id: 14,
         image: roastPork,
         name: 'Буженина',
         maxQuantity: 3,
-        weights: [{ id: 0, value: 60 }],
-        prices: [{ id: 0, price: 75 }],
+        weight: [{ id: 0, value: 60 }],
+        prices: [{ id: 0, value: 75 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Огурцы Свежие' },
-      { id: 2, name: 'Зеленый Лук' },
-      { id: 3, name: 'Листья Салата' },
-      { id: 4, name: 'Яйцо' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Огурцы Свежие' },
+      { id: 2, value: 'Зеленый Лук' },
+      { id: 3, value: 'Листья Салата' },
+      { id: 4, value: 'Яйцо' },
     ],
     categories: [
       { id: 0, title: 'Без Мяса', image: leaf },
@@ -9133,7 +9134,7 @@ export const menu: IProduct[] = [
       carbohydrates: 2.38,
       calories: 226.38,
     },
-    weights: [{ id: 0, weight: 130 }],
+    weight: [{ id: 0, value: 130 }],
   },
   {
     id: 29,
@@ -9141,7 +9142,7 @@ export const menu: IProduct[] = [
     image: soupTomatoCream,
     group: 'snacks',
     ingredients: 'Соус из томатов, сливки, вода, сухарики',
-    prices: [{ id: 0, price: 159 }],
+    prices: [{ id: 0, value: 159 }],
     categories: [{ id: 0, title: 'Без Мяса', image: leaf }],
     nutritionalValues: {
       proteins: 4.12,
@@ -9149,7 +9150,7 @@ export const menu: IProduct[] = [
       carbohydrates: 3.75,
       calories: 70.95,
     },
-    weights: [{ id: 0, weight: 260 }],
+    weight: [{ id: 0, value: 260 }],
   },
   {
     id: 30,
@@ -9158,132 +9159,132 @@ export const menu: IProduct[] = [
     group: 'snacks',
     ingredients:
       'Фирменный томатный соус, моцарелла, сыр блю чиз с голубой плесенью',
-    prices: [{ id: 0, price: 399 }],
+    prices: [{ id: 0, value: 399 }],
     additionalIngredients: [
       {
         id: 0,
         image: mozzarella,
         name: 'Сыр Моцарелла',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 50 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 50 }],
       },
       {
         id: 1,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 2,
         image: chickenSmoked,
         name: 'Копченая Курица',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 50 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 50 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 3,
         image: ham,
         name: 'Ветчина',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 34 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 34 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 4,
         image: pepperoniAdds,
         name: 'Пепперони',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 37 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 37 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 5,
         image: bacon,
         name: 'Бекон',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 32 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 32 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 6,
         image: huntingSausages,
         name: 'Охотничьи Колбаски',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 45 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 45 }],
       },
       {
         id: 7,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 8,
         image: cheeseParmesan,
         name: 'Сыр Пармезан',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 55 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 55 }],
       },
       {
         id: 9,
         image: cheeseFeta,
         name: 'Сыр Фета',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 20 }],
-        prices: [{ id: 0, price: 29 }],
+        weight: [{ id: 0, value: 20 }],
+        prices: [{ id: 0, value: 29 }],
       },
       {
         id: 10,
         image: cheeseChedder,
         name: 'Сыр Чеддер',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 40 }],
-        prices: [{ id: 0, price: 65 }],
+        weight: [{ id: 0, value: 40 }],
+        prices: [{ id: 0, value: 65 }],
       },
       {
         id: 11,
         image: dill,
         name: 'Укроп',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 5 }],
-        prices: [{ id: 0, price: 15 }],
+        weight: [{ id: 0, value: 5 }],
+        prices: [{ id: 0, value: 15 }],
       },
       {
         id: 12,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
       {
         id: 13,
         image: onionFree,
         name: 'Лук Фри',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 17 }],
-        prices: [{ id: 0, price: 20 }],
+        weight: [{ id: 0, value: 17 }],
+        prices: [{ id: 0, value: 20 }],
       },
       {
         id: 14,
         image: cheeseBlue,
         name: 'Сыр Блю Чиз',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 30 }],
-        prices: [{ id: 0, price: 95 }],
+        weight: [{ id: 0, value: 30 }],
+        prices: [{ id: 0, value: 95 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Пепперони' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Пепперони' },
     ],
     categories: [{ id: 0, title: 'Без Мяса', image: leaf }],
     nutritionalValues: {
@@ -9292,7 +9293,7 @@ export const menu: IProduct[] = [
       carbohydrates: 20.4,
       calories: 297.06,
     },
-    weights: [{ id: 0, weight: 190 }],
+    weight: [{ id: 0, value: 190 }],
   },
   {
     id: 31,
@@ -9300,44 +9301,44 @@ export const menu: IProduct[] = [
     image: hotrollPepperoni,
     group: 'snacks',
     ingredients: 'Пепперони, моцарелла, томаты, соус ранч, пшеничная лепёшка',
-    prices: [{ id: 0, price: 199 }],
+    prices: [{ id: 0, value: 199 }],
     additionalIngredients: [
       {
         id: 0,
         image: jalapeno,
         name: 'Перец Халапеньо',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 25 }],
-        prices: [{ id: 0, price: 25 }],
+        weight: [{ id: 0, value: 25 }],
+        prices: [{ id: 0, value: 25 }],
       },
       {
         id: 1,
         image: onionBulb,
         name: 'Лук Репчатый',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 10 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 10 }],
       },
       {
         id: 2,
         image: onionGreen,
         name: 'Зеленый Лук',
         maxQuantity: 5,
-        weights: [{ id: 0, value: 15 }],
-        prices: [{ id: 0, price: 35 }],
+        weight: [{ id: 0, value: 15 }],
+        prices: [{ id: 0, value: 35 }],
       },
       {
         id: 3,
         image: garlic,
         name: 'Чеснок',
         maxQuantity: 1,
-        weights: [{ id: 0, value: 8 }],
-        prices: [{ id: 0, price: 5 }],
+        weight: [{ id: 0, value: 8 }],
+        prices: [{ id: 0, value: 5 }],
       },
     ],
     removeIngredients: [
-      { id: 0, name: 'Томаты' },
-      { id: 1, name: 'Пепперони' },
+      { id: 0, value: 'Томаты' },
+      { id: 1, value: 'Пепперони' },
     ],
     categories: [{ id: 0, title: 'Острая', image: fire }],
     nutritionalValues: {
@@ -9346,7 +9347,7 @@ export const menu: IProduct[] = [
       carbohydrates: 20.4,
       calories: 297.06,
     },
-    weights: [{ id: 0, weight: 190 }],
+    weight: [{ id: 0, value: 190 }],
   },
   {
     id: 32,
@@ -9354,14 +9355,14 @@ export const menu: IProduct[] = [
     image: milkshakeYuzu,
     group: 'drinks',
     ingredients: 'Концентрат юдзу, молоко, мороженое. 0,3 л.',
-    prices: [{ id: 0, price: 209 }],
+    prices: [{ id: 0, value: 209 }],
     nutritionalValues: {
       proteins: 2.81,
       fats: 7.77,
       carbohydrates: 17.13,
       calories: 149.73,
     },
-    weights: [{ id: 0, weight: 300 }],
+    weight: [{ id: 0, value: 300 }],
   },
   {
     id: 33,
@@ -9369,7 +9370,7 @@ export const menu: IProduct[] = [
     image: milkshakeBerries,
     group: 'drinks',
     ingredients: 'Пюре лесные ягоды, сливочное мороженое, молоко. 0,3 л.',
-    prices: [{ id: 0, price: 209 }],
+    prices: [{ id: 0, value: 209 }],
     categories: [{ id: 0, title: 'Подходит для Детей', image: bear }],
     nutritionalValues: {
       proteins: 2.81,
@@ -9377,7 +9378,7 @@ export const menu: IProduct[] = [
       carbohydrates: 17.13,
       calories: 149.73,
     },
-    weights: [{ id: 0, weight: 300 }],
+    weight: [{ id: 0, value: 300 }],
   },
   {
     id: 34,
@@ -9385,14 +9386,14 @@ export const menu: IProduct[] = [
     image: milkshakeMint,
     group: 'drinks',
     ingredients: 'Сироп мята, ванильное мороженое, молоко. 0,3 л.',
-    prices: [{ id: 0, price: 209 }],
+    prices: [{ id: 0, value: 209 }],
     nutritionalValues: {
       proteins: 2.9,
       fats: 8.01,
       carbohydrates: 17,
       calories: 151.63,
     },
-    weights: [{ id: 0, weight: 300 }],
+    weight: [{ id: 0, value: 300 }],
   },
   {
     id: 35,
@@ -9400,14 +9401,14 @@ export const menu: IProduct[] = [
     image: evervessCola,
     group: 'drinks',
     ingredients: 'Evervess Кола 1 л.',
-    prices: [{ id: 0, price: 155 }],
+    prices: [{ id: 0, value: 155 }],
     nutritionalValues: {
       proteins: 0,
       fats: 0,
       carbohydrates: 11.2,
       calories: 44,
     },
-    weights: [{ id: 0, weight: 1000 }],
+    weight: [{ id: 0, value: 1000 }],
   },
   {
     id: 36,
@@ -9415,14 +9416,14 @@ export const menu: IProduct[] = [
     image: morsBlueberryMint,
     group: 'drinks',
     ingredients: 'Концентрированный морс, вода. 0,5 л.',
-    prices: [{ id: 0, price: 129 }],
+    prices: [{ id: 0, value: 129 }],
     nutritionalValues: {
       proteins: 0,
       fats: 0,
       carbohydrates: 9.28,
       calories: 37.12,
     },
-    weights: [{ id: 0, weight: 500 }],
+    weight: [{ id: 0, value: 500 }],
   },
   {
     id: 37,
@@ -9430,14 +9431,14 @@ export const menu: IProduct[] = [
     image: sweetSticks,
     group: 'desserts',
     ingredients: 'Ананасы, карамельный соус, малиновый соус, моцарелла, тесто',
-    prices: [{ id: 0, price: 349 }],
+    prices: [{ id: 0, value: 349 }],
     nutritionalValues: {
       proteins: 9.49,
       fats: 6.49,
       carbohydrates: 45.81,
       calories: 279.59,
     },
-    weights: [{ id: 0, weight: 530 }],
+    weight: [{ id: 0, value: 530 }],
   },
   {
     id: 38,
@@ -9445,7 +9446,7 @@ export const menu: IProduct[] = [
     image: cheesecakeCaramel,
     group: 'desserts',
     ingredients: 'Чизкейк Нью-Йорк политый карамельным соусом',
-    prices: [{ id: 0, price: 159 }],
+    prices: [{ id: 0, value: 159 }],
     categories: [
       { id: 0, title: 'Без мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
@@ -9456,7 +9457,7 @@ export const menu: IProduct[] = [
       carbohydrates: 35.46,
       calories: 373.11,
     },
-    weights: [{ id: 0, weight: 120 }],
+    weight: [{ id: 0, value: 120 }],
   },
   {
     id: 39,
@@ -9465,75 +9466,75 @@ export const menu: IProduct[] = [
     group: 'desserts',
     ingredients:
       'Сливки питьевые пастеризованные, вода питьевая, сахар, молоко сухое цельное, молоко сухое обезжиренное, крахмал из тапиоки, соль, ароматизатор идентичный натуральному «Ванилин»',
-    prices: [{ id: 0, price: 159 }],
+    prices: [{ id: 0, value: 159 }],
     categories: [
       { id: 0, title: 'Без мяса', image: leaf },
       { id: 1, title: 'Подходит для Детей', image: bear },
     ],
-    weights: [{ id: 0, weight: 70 }],
+    weight: [{ id: 0, value: 70 }],
   },
   {
     id: 40,
     title: 'соус Кетчуп',
     image: ketchup,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 41,
     title: 'соус BBQ',
     image: bbqSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 42,
     title: 'соус Баффало',
     image: buffaloSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 43,
     title: 'соус Чесночный',
     image: garlicSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 44,
     title: 'соус Сырный',
     image: cheeseSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 45,
     title: 'соус Кисло-Сладкий',
     image: sweetSourSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 45 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 45 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 46,
     title: 'Малиновое варенье 30 гр.',
     image: jamRaspberry,
     group: 'sauces',
-    prices: [{ id: 0, price: 29 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 29 }],
+    weight: [{ id: 0, value: 30 }],
   },
   {
     id: 47,
     title: 'cоус Цезарь',
     image: caesarSauce,
     group: 'sauces',
-    prices: [{ id: 0, price: 29 }],
-    weights: [{ id: 0, weight: 30 }],
+    prices: [{ id: 0, value: 29 }],
+    weight: [{ id: 0, value: 30 }],
   },
 ];

@@ -50,7 +50,7 @@ const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
               {product.title}
             </span>
             <span className='block sm:text-xs'>
-              {product.prices[0].price} ₽
+              {product.prices[0].value} ₽
             </span>
             <button
               onClick={() => handleClickProduct(product)}

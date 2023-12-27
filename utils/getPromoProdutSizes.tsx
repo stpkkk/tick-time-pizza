@@ -10,14 +10,14 @@ export const getPromoProductSizes = (
 
   switch (promoTitle) {
     case Promos.FOUR_BIG_PIZZAS:
-      return selectedProduct.sizes?.filter((size) => size.name === Sizes.BIG);
+      return selectedProduct.sizes?.filter((size) => size.value === Sizes.BIG);
     case Promos.PEPPERONI:
-      return selectedProduct.sizes?.filter((size) => size.name === Sizes.BIG);
+      return selectedProduct.sizes?.filter((size) => size.value === Sizes.BIG);
     case Promos.THREE_PIZZAS_999:
-      return selectedProduct.sizes?.filter((size) => size.name === Sizes.SMALL);
+      return selectedProduct.sizes?.filter((size) => size.value === Sizes.SMALL);
     case Promos.DINNER_PIZZA:
       return selectedProduct.sizes?.filter(
-        (size) => size.name === Sizes.MEDIUM,
+        (size) => size.value === Sizes.MEDIUM,
       );
     default:
       return selectedProduct.sizes;

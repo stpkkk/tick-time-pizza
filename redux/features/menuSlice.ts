@@ -1,13 +1,6 @@
-import {
-  IProduct,
-  IOption,
-  IAdditionalIngredient,
-  Promos,
-  Promo,
-  Sizes,
-  Dough,
-} from '@/types';
+import { IProduct, IOption, IAdditionalIngredient, Promos, Promo, Sizes, Dough } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+
 
 export interface MenuState {
   isModalProductOpen: boolean;
@@ -255,29 +248,29 @@ const menuSlice = createSlice({
             selectedPromo?.title === Promos.PEPPERONI
           ) {
             state.selectedSize =
-              selectedProduct.sizes?.find((size) => size.name === Sizes.BIG) ||
+              selectedProduct.sizes?.find((size) => size.value === Sizes.BIG) ||
               null;
           } else if (selectedPromo?.title === Promos.DINNER_PIZZA) {
             state.selectedSize =
               selectedProduct.sizes?.find(
-                (size) => size.name === Sizes.MEDIUM,
+                (size) => size.value === Sizes.MEDIUM,
               ) || null;
           } else {
             state.selectedSize =
               selectedProduct.sizes?.find(
-                (size) => size.name === Sizes.SMALL,
+                (size) => size.value === Sizes.SMALL,
               ) || null;
           }
 
           if (selectedProduct.dough) {
             if (selectedPromo?.title === Promos.FOUR_BIG_PIZZAS) {
               state.selectedDough =
-                selectedProduct.dough.find((d) => d.name === Dough.THIN) ||
+                selectedProduct.dough.find((d) => d.value === Dough.THIN) ||
                 null;
             } else {
               state.selectedDough =
                 selectedProduct.dough.find(
-                  (d) => d.name === Dough.TRADITIONAL,
+                  (d) => d.value === Dough.TRADITIONAL,
                 ) || null;
             }
           }

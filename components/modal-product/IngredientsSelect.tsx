@@ -6,6 +6,7 @@ import { setAllIngredients } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Dough, IAdditionalIngredient, Sizes } from '@/types';
 
+
 const IngredientsSelect: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, isAllIngredients, selectedDough, selectedSize } =
@@ -20,8 +21,8 @@ const IngredientsSelect: React.FC = () => {
   const isDisabled = (ingredient: IAdditionalIngredient) => {
     const isPizzaHeart = ingredient.name === 'Пицца "Сердце"';
     const isCheeseSide = ingredient.name === 'Сырный Бортик';
-    const isThinDoughSelected = selectedDough?.name === Dough.THIN;
-    const isSelectedSize23 = selectedSize?.name === Sizes.SMALL;
+    const isThinDoughSelected = selectedDough?.value === Dough.THIN;
+    const isSelectedSize23 = selectedSize?.value === Sizes.SMALL;
 
     return (
       (isPizzaHeart && isThinDoughSelected) ||
