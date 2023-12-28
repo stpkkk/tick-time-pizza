@@ -6,3 +6,4 @@ export * from './pizzerias';
 export * from './promos';
 export * from './slides';
 export * from './legals';
+export * from './sberbank';

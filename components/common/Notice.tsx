@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
+import Link from 'next/link';
 import { toggleTooltip } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
@@ -57,7 +58,10 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
         </div>
         <div className='' onClick={(e) => e.stopPropagation()}>
           <p className='text-[12px] leading-[15px] font-normal font-montserrat lowercase'>
-            {text}
+            {text}{' '}
+            <Link className='underline underline-offset-2' href='/sberbank'>
+              здесь
+            </Link>
           </p>
         </div>
       </div>

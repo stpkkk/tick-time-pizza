@@ -92,7 +92,7 @@ main {
 }
 
 .h3 {
-  @apply font-zheldor text-[1.5rem] font-normal uppercase leading-[2rem] sm:text-2xl;
+  @apply font-zheldor text-[1.5rem] font-normal uppercase leading-[2rem] sm:text-[1.125rem] sm:leading-[1.375rem];
 }
 
 .header_dropdown {
