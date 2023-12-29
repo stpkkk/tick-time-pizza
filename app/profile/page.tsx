@@ -2,7 +2,13 @@
 
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
-import { ProfileInfo, ModalEditProfile, NoOrders, Orders, ModalTicketsInfo } from '@/components';
+import {
+  ProfileInfo,
+  ModalEditProfile,
+  NoOrders,
+  Orders,
+  ModalTicketsInfo,
+} from '@/components';
 import { useLocalStorage } from '@/hooks';
 
 const Profile: React.FC = () => {
@@ -24,11 +30,7 @@ const Profile: React.FC = () => {
             <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>
               Ваши заказы:
             </h2>
-            {isOrdersExist ? (
-              <Orders orders={userInLS?.orders} />
-            ) : (
-              <NoOrders />
-            )}
+            {isOrdersExist ? <Orders /> : <NoOrders />}
           </section>
           <ModalEditProfile />
           <ModalTicketsInfo />

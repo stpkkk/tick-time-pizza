@@ -1,23 +1,23 @@
 import React from 'react';
 import { RadioButton } from '../common';
-import { setCashChange } from '@/redux/features/profileSlice';
+import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ChangeMoneyFrom, PaymentMethods } from '@/types';
 
 const SelectChangeMoney: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { cashChange, paymentMethod } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const ChangeMoneyFromArray: string[] = Object.values(ChangeMoneyFrom);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setCashChange(e.target.value));
+    dispatch(
+      setOrderFormData({ ...orderFormData, cashChange: e.target.value }),
+    );
   };
 
-  const isChecked = (value: string) => cashChange === value;
+  const isChecked = (value: string) => orderFormData.cashChange === value;
 
-  if (paymentMethod !== PaymentMethods.CASH) return null;
+  if (orderFormData.paymentMethod !== PaymentMethods.CASH) return null;
 
   return (
     <section>

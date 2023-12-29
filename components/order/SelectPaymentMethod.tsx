@@ -1,24 +1,26 @@
 import React from 'react';
 import { Notice, RadioButton } from '../common';
-import { setPaymentMethod } from '@/redux/features/profileSlice';
+import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { PaymentMethods } from '@/types';
 
 const SelectPaymentMethod: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { paymentMethod } = useAppSelector((state) => state.profileReducer);
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const paymentMethodsArray: string[] = Object.values(PaymentMethods);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setPaymentMethod(e.target.value));
+    dispatch(
+      setOrderFormData({ ...orderFormData, paymentMethod: e.target.value }),
+    );
   };
 
-  const isChecked = (value: string) => paymentMethod === value;
+  const isChecked = (value: string) => orderFormData.paymentMethod === value;
 
   return (
     <section>
       <h3 className='h3 mb-4 relative'>
-        Способо оплаты:
+        Способ оплаты:
         <span className='absolute w-full'>
           <Notice text='Внимание! Оплата по картам (онлайн) осуществляется через платежный шлюз Сбербанка. Переход на него осуществляется при нажатии на кнопку "Заказать". После успешной оплаты мы получим ваш платеж в течение 3-5 минут. Подробнее об оплате вы можете узнать' />
         </span>

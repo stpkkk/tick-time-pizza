@@ -40,13 +40,10 @@ const HeaderDesktop: React.FC = () => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // User present
-        dispatch(setCurrentUser(currentUser)); // Set user when authenticated
-        await setUserInLS(currentUser);
-        setUserInLS(currentUser);
+        dispatch(setCurrentUser(currentUser));
       } else {
         // User not logged in
         dispatch(setCurrentUser(null));
-        setUserInLS(null);
       }
     });
 

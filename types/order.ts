@@ -8,10 +8,11 @@ export interface IOrder {
   orderPrice?: number;
   paymentMethod?: string;
   tickets?: number;
-  address?: string;
+  deliveryAddress?: string;
   orderAccepted?: string;
   deliveryTime?: string;
   cashChange?: string;
   pickPoint?: string;
   comment?: string;
+  supplyMethod?: string;
 }

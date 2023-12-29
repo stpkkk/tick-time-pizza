@@ -21,7 +21,7 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
 
   const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
     dispatch(addToCart(updatedItems));
-    localStorage.setItem('cart', JSON.stringify(updatedItems));
+    localStorage.setItem('cart', JSON.stringify(updatedItems)); //?
   };
 
   const onRemove = (productUUID: string) => {

@@ -1,19 +1,24 @@
 import React from 'react';
 import { RadioButton } from '../common';
 import { pizzerias } from '@/constants';
-import { setPickPoint } from '@/redux/features/profileSlice';
+import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Pizzeria } from '@/types';
 
 const SelectPickupPoint: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { pickPoint } = useAppSelector((state) => state.profileReducer);
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
 
   const handleChange = (selectedPizzeria: Pizzeria) => {
-    dispatch(setPickPoint(selectedPizzeria.address));
+    dispatch(
+      setOrderFormData({
+        ...orderFormData,
+        pickPoint: selectedPizzeria.address,
+      }),
+    );
   };
 
-  const isChecked = (value: string) => pickPoint === value;
+  const isChecked = (value: string) => orderFormData.pickPoint === value;
 
   const renderPizzeriaDetails = (pizzeria: Pizzeria) => (
     <dl>

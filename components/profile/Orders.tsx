@@ -3,14 +3,13 @@
 import React from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import OrderDetails from './OrderDetails';
+import { useLocalStorage } from '@/hooks';
 import { IOrder } from '@/types';
+import { generateUUID } from '@/utils';
 
-type OrdersProps = {
-  orders?: IOrder[];
-};
-
-const Orders: React.FC<OrdersProps> = ({ orders }) => {
+const Orders: React.FC = () => {
   const [openOrderIds, setOpenOrderIds] = React.useState<string[]>([]);
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
   const toggleOrder = (selectedOrderId: string) => {
     setOpenOrderIds((prevIds) =>
@@ -26,10 +25,10 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
 
   return (
     <ul className='flex flex-col-reverse gap-[30px] sm:gap-4'>
-      {orders?.map((order) => (
+      {userInLS?.orders?.map((order: IOrder) => (
         <li
           className='flex flex-col container cursor-pointer px-[60px] py-[30px] sm:p-4'
-          key={order.id}
+          key={generateUUID()}
           onClick={() => toggleOrder(order.id || '')}
           tabIndex={1}
         >

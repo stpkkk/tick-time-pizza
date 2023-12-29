@@ -2,31 +2,20 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Promocode from './Promocode';
 import { useLocalStorage } from '@/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
-import {
-  addToOrders,
-  setCurrentUser,
-  setOrderPrice,
-} from '@/redux/features/profileSlice';
+import { setOrderPrice } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { ExtendedUser } from '@/types';
 import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
 
 const CartTotal: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const { user, orders, orderPrice } = useAppSelector(
-    (state) => state.profileReducer,
-  );
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
-  const { formattedDate, formattedTime } = getFormattedDateTime();
   const totalProducts = cartProducts?.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
 
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const discount = cartProducts?.reduce(
@@ -44,46 +33,10 @@ const CartTotal: React.FC = () => {
   const handleCheckoutOrder = React.useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
-
-      const randomId = Math.floor(
-        Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
-      ).toString();
-
-      const updatedOrder = {
-        ...orders,
-        id: randomId,
-        products: cartProducts,
-        date: formattedDate,
-        time: formattedTime,
-        orderPrice,
-        //! addresses: []
-      };
-      dispatch(addToOrders([...orders, updatedOrder]));
-      // dispatch(setCurrentOrder(updatedOrder));
-
-      const updatedUser: ExtendedUser = {
-        ...user,
-        orders: [...orders, updatedOrder],
-      };
-
-      router.push('/cart/order');
-      dispatch(setCurrentUser(updatedUser));
-      dispatch(addToCart([]));
-      await setUserInLS(updatedUser);
       await setCartProductInLS([]);
+      router.push('/cart/order');
     },
-    [
-      orders,
-      cartProducts,
-      formattedDate,
-      formattedTime,
-      orderPrice,
-      dispatch,
-      user,
-      router,
-      setUserInLS,
-      setCartProductInLS,
-    ],
+    [router, setCartProductInLS],
   );
 
   return (

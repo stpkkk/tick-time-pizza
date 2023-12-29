@@ -4,15 +4,13 @@ import React from 'react';
 import { SelectedProductOptions } from '../common';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
-import { IProduct, SupplyType } from '@/types';
+import { IProduct, Supply } from '@/types';
 
 const OrderSummary: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const { supplyType, pickPoint } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
 
-  const isDelivery = supplyType === SupplyType.DELIVERY;
+  const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
 
   return (
     <section>
@@ -23,10 +21,10 @@ const OrderSummary: React.FC = () => {
         <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
           <div>
             <h3 className='h3 mb-4'>
-              {isDelivery ? SupplyType.DELIVERY : SupplyType.PICKUP}
+              {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
             </h3>
             <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              {isDelivery ? 'Выберите адрес доставки' : pickPoint}
+              {isDelivery ? 'Выберите адрес доставки' : orderFormData.pickPoint}
             </span>
           </div>
           <div>

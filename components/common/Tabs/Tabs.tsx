@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Tab from './Tab';
-import { setSupplyType } from '@/redux/features/profileSlice';
-import { useAppDispatch } from '@/redux/hooks';
-import { SupplyType } from '@/types';
+import { setOrderFormData } from '@/redux/features/profileSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { Supply } from '@/types';
 
 type TabsProps = {
   contentFirst: React.JSX.Element;
@@ -20,12 +20,15 @@ const Tabs: React.FC<TabsProps> = ({
   labelSecond,
 }) => {
   const dispatch = useAppDispatch();
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const [activeTab, setActiveTab] = React.useState(labelFirst);
 
   const handleTabClick = (selectedTab: string) => {
     setActiveTab(selectedTab);
-    if (selectedTab === SupplyType.DELIVERY || SupplyType.PICKUP) {
-      dispatch(setSupplyType(selectedTab));
+    if (selectedTab === Supply.DELIVERY || Supply.PICKUP) {
+      dispatch(
+        setOrderFormData({ ...orderFormData, supplyMethod: selectedTab }),
+      );
     }
   };
 

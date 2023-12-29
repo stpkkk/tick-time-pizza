@@ -1,19 +1,21 @@
 import React from 'react';
 import { RadioButton } from '../common';
-import { setDeliveryTime } from '@/redux/features/profileSlice';
+import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { DeliveryTime } from '@/types';
 
 const SelectDeliveryTime: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { deliveryTime } = useAppSelector((state) => state.profileReducer);
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const DeliveryTimeArray: string[] = Object.values(DeliveryTime);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setDeliveryTime(e.target.value));
+    dispatch(
+      setOrderFormData({ ...orderFormData, deliveryTime: e.target.value }),
+    );
   };
 
-  const isChecked = (value: string) => deliveryTime === value;
+  const isChecked = (value: string) => orderFormData.deliveryTime === value;
 
   return (
     <section>
@@ -29,7 +31,9 @@ const SelectDeliveryTime: React.FC = () => {
               name={change}
               className='px-[30px] min-h-[60px] sm:max-w-full flex_center sm:px-4 sm:min-h-[50px]'
               innerHTML={
-                <span className='text-sm font-bold sm:text-[12px]'>{change}</span>
+                <span className='text-sm font-bold sm:text-[12px]'>
+                  {change}
+                </span>
               }
             />
           </li>

@@ -29,7 +29,7 @@ const ProfileInfo: React.FC = () => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // User present
-        dispatch(setCurrentUser(currentUser)); // Set user when authenticated
+        dispatch(setCurrentUser(currentUser));
         await setUserInLS(currentUser);
       } else {
         // User not logged in

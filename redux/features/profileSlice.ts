@@ -6,7 +6,7 @@ import {
   ExtendedUser,
   IOrder,
   PaymentMethods,
-  SupplyType,
+  Supply,
 } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
@@ -24,13 +24,7 @@ export interface ProfileState {
   orders: IOrder[];
   orderPrice: number;
   isModalAddAddressOpen: boolean;
-  paymentMethod: string;
-  cashChange: string;
-  deliveryTime: string;
-  pickPoint?: string;
-  supplyType?: string;
-  isSignIn?: boolean;
-  orderComment: string;
+  orderFormData: IOrder;
 }
 
 const initialState: ProfileState = {
@@ -47,13 +41,16 @@ const initialState: ProfileState = {
   orders: [],
   orderPrice: 0,
   isModalAddAddressOpen: false,
-  paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
-  cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
-  deliveryTime: DeliveryTime.SOON,
-  pickPoint: pizzerias.at(0)?.address,
-  supplyType: SupplyType.DELIVERY,
-  isSignIn: false,
-  orderComment: '',
+  orderFormData: {
+    comment: '',
+    tickets: 0,
+    deliveryAddress: '',
+    supplyMethod: Supply.DELIVERY,
+    paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
+    cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
+    deliveryTime: DeliveryTime.SOON,
+    pickPoint: pizzerias.at(0)?.address,
+  },
 };
 
 const profileSlice = createSlice({
@@ -115,33 +112,12 @@ const profileSlice = createSlice({
       state.isModalAddAddressOpen = action.payload;
     },
 
-    //Order Form
-    setPaymentMethod: (state, action: PayloadAction<string>) => {
-      state.paymentMethod = action.payload;
+    setOrderFormData: (state, action: PayloadAction<IOrder>) => {
+      state.orderFormData = action.payload;
     },
 
-    setCashChange: (state, action: PayloadAction<string>) => {
-      state.cashChange = action.payload;
-    },
-
-    setDeliveryTime: (state, action: PayloadAction<string>) => {
-      state.deliveryTime = action.payload;
-    },
-
-    setPickPoint: (state, action: PayloadAction<string>) => {
-      state.pickPoint = action.payload;
-    },
-
-    setSupplyType: (state, action: PayloadAction<string>) => {
-      state.supplyType = action.payload;
-    },
-
-    setSignIn: (state, action: PayloadAction<boolean>) => {
-      state.isSignIn = action.payload;
-    },
-
-    setOrderComment: (state, action: PayloadAction<string>) => {
-      state.orderComment = action.payload;
+    resetOrderFormData: () => {
+      setOrderFormData(initialState.orderFormData);
     },
   },
 });
@@ -160,13 +136,8 @@ export const {
   setModalTicketsInfo,
   setOrderPrice,
   setModalAddAddress,
-  setPaymentMethod,
-  setCashChange,
-  setDeliveryTime,
-  setPickPoint,
-  setSupplyType,
-  setSignIn,
-  setOrderComment,
+  setOrderFormData,
+  resetOrderFormData,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;

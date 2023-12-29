@@ -13,54 +13,86 @@ import {
 } from '@/components';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
-import { addToOrders, setCurrentUser } from '@/redux/features/profileSlice';
+import { addToOrders, resetOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { ExtendedUser, SupplyType } from '@/types';
+import { Supply } from '@/types';
+import { getFormattedDateTime } from '@/utils';
 
 const Order: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { pickPoint, orders, paymentMethod, cashChange, deliveryTime, user } =
-    useAppSelector((state) => state.profileReducer);
+  const { user, orderFormData, orderPrice } = useAppSelector(
+    (state) => state.profileReducer,
+  );
+  const { cartProducts } = useAppSelector((state) => state.menuReducer);
+
   const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const { formattedDate, formattedTime } = getFormattedDateTime();
+  const {
+    paymentMethod,
+    supplyMethod,
+    pickPoint,
+    tickets,
+    cashChange,
+    comment,
+    deliveryAddress,
+  } = orderFormData;
 
   const handleSubmitOrder = React.useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
 
-      const updatedOrder = {
-        ...orders,
+      const randomId = Math.floor(
+        Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
+      ).toString();
+
+      const newOrder = {
+        id: randomId,
+        products: cartProducts,
+        date: formattedDate,
+        time: formattedTime,
+        orderPrice,
         paymentMethod,
-        cashChange,
-        tickets: 0,
-        address: 'Ленина, 37',
-        orderAccepted: '-',
-        deliveryTime,
+        supplyMethod,
         pickPoint,
+        tickets,
+        cashChange,
+        comment,
+        deliveryAddress,
       };
-      dispatch(addToOrders([...orders, updatedOrder]));
 
-      const updatedUser: ExtendedUser = {
+      const updatedOrders = [...userInLS?.orders, newOrder];
+
+      dispatch(addToOrders(updatedOrders));
+
+      const updatedUser = {
         ...user,
-        orders: [...orders, updatedOrder],
+        orders: updatedOrders,
       };
 
-      dispatch(setCurrentUser(updatedUser));
       dispatch(addToCart([]));
-      router.push('/profile');
       await setUserInLS(updatedUser);
+      router.push('/profile');
+      dispatch(resetOrderFormData());
     },
     [
-      orders,
-      paymentMethod,
+      cartProducts,
       cashChange,
-      deliveryTime,
-      pickPoint,
+      comment,
+      deliveryAddress,
       dispatch,
-      user,
-      setUserInLS,
+      formattedDate,
+      formattedTime,
+      orderPrice,
+      paymentMethod,
+      pickPoint,
       router,
+      setUserInLS,
+      supplyMethod,
+      tickets,
+      user,
+      userInLS?.orders,
     ],
   );
 
@@ -80,15 +112,12 @@ const Order: React.FC = () => {
             <Tabs
               contentFirst={<TabDelivery />}
               contentSecond={<TabPickup />}
-              labelFirst={SupplyType.DELIVERY}
-              labelSecond={SupplyType.PICKUP}
+              labelFirst={Supply.DELIVERY}
+              labelSecond={Supply.PICKUP}
             />
           </section>
           {mounted ? (
-            <>
-              <OrderSummary />
-              <OrderSummary />
-            </>
+            <OrderSummary />
           ) : (
             <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
               <CgSpinner
