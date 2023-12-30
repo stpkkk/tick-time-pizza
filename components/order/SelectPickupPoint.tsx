@@ -33,7 +33,7 @@ const SelectPickupPoint: React.FC = () => {
     <section className='flex flex-col gap-4'>
       <h3 className='h3'>Где вам удобно получить заказ?</h3>
       <div className='min-h-[300px]' />
-      <div className='grid grid-flow-row lgMin:grid-cols-3 smMin:grid-cols-1 mdMin:grid-cols-2 gap-[30px]'>
+      <div className='grid grid-flow-row lgMin:grid-cols-3 smMin:grid-cols-1 mdMin:grid-cols-2 gap-[30px] sm:gap-4'>
         {pizzerias.map((pizzeria) => (
           <RadioButton
             key={pizzeria.id}

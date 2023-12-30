@@ -25,7 +25,7 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
           </tr>
           <tr>
             <td>Доставка по адресу:</td>
-            <td>{order.address}</td>
+            {/* <td>{order.address}</td> */}
           </tr>
           <tr>
             <td>Заказ принят:</td>

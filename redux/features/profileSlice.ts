@@ -47,7 +47,7 @@ const initialState: ProfileState = {
     deliveryAddress: '',
     supplyMethod: Supply.DELIVERY,
     paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
-    cashChange: ChangeMoneyFrom.WITHOUTH_CHANGE,
+    cashChange: ChangeMoneyFrom.WITHOUT_CHANGE,
     deliveryTime: DeliveryTime.SOON,
     pickPoint: pizzerias.at(0)?.address,
   },

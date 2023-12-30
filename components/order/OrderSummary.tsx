@@ -17,8 +17,8 @@ const OrderSummary: React.FC = () => {
       <h2 className='h1 my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
         Ваш заказ
       </h2>
-      <div className='container flex justify-between flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
-        <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
+      <div className='container grid grid-cols-2 sm:grid-cols-1 gap-[30px] flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
+        <div className='flex flex-col gap-[30px] sm:gap-4 sm:w-full'>
           <div>
             <h3 className='h3 mb-4'>
               {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
@@ -33,17 +33,23 @@ const OrderSummary: React.FC = () => {
               {userInLS?.orders?.at(-1).products?.map((product: IProduct) => (
                 <li
                   key={product.uuid}
-                  className='grid grid-cols-3 justify-items-center w-full'
+                  className='flex sm:gap-4 gap-[30px] w-full'
                 >
                   <SelectedProductOptions product={product} />
-                  <div>{product.productQuantity} шт.</div>
-                  <div className='font-bold'>{product.totalPrice} ₽</div>
+                  <div className='flex justify-between gap-6 w-1/3'>
+                    <div className='self-start whitespace-nowrap'>
+                      {product.productQuantity} шт.
+                    </div>
+                    <div className='font-bold whitespace-nowrap'>
+                      {product.totalPrice} ₽
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className='flex flex-col gap-[30px] w-1/2 sm:w-full'>
+        <div className='flex flex-col gap-[30px] basis-1/2 sm:w-full'>
           <div>
             <h3 className='h3 mb-4'>Комментарий к заказу</h3>
             <textarea

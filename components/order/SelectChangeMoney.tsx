@@ -1,8 +1,8 @@
-import React from 'react';
-import { RadioButton } from '../common';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { ChangeMoneyFrom, PaymentMethods } from '@/types';
+import { setOrderFormData } from '@/redux/features/profileSlice'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { ChangeMoneyFrom, PaymentMethods } from '@/types'
+import React from 'react'
+import { RadioButton } from '../common'
 
 const SelectChangeMoney: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ const SelectChangeMoney: React.FC = () => {
   return (
     <section>
       <h3 className='h3 mb-4'>Сдача С:</h3>
-      <ul className='flex sm:flex-col gap-[30px]'>
+      <ul className='flex sm:flex-col gap-[30px] sm:gap-4'>
         {ChangeMoneyFromArray.map((change) => (
           <li key={change}>
             <RadioButton

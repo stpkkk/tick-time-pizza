@@ -10,7 +10,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
   product,
 }) => {
   return (
-    <div className='flex flex-col gap-1 w-full sm:max-w-[165px] mb-2'>
+    <div className='flex flex-col gap-1 w-full  mb-2'>
       <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
         {product.title}
       </span>

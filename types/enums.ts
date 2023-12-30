@@ -40,7 +40,7 @@ export enum DeliveryTime {
 }
 
 export enum ChangeMoneyFrom {
-  WITHOUTH_CHANGE = 'Без сдачи',
+  WITHOUT_CHANGE = 'Без сдачи',
   $500 = '500',
   $1000 = '1000',
   $2000 = '2000',

@@ -20,7 +20,7 @@ const SelectDeliveryTime: React.FC = () => {
   return (
     <section>
       <h3 className='h3 mb-4'>Когда привезти заказ:</h3>
-      <ul className='flex sm:flex-col gap-[30px]'>
+      <ul className='flex sm:flex-col gap-[30px] sm:gap-4'>
         {DeliveryTimeArray.map((change) => (
           <li key={change}>
             <RadioButton

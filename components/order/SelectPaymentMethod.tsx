@@ -1,8 +1,8 @@
-import React from 'react';
-import { Notice, RadioButton } from '../common';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { PaymentMethods } from '@/types';
+import { setOrderFormData } from '@/redux/features/profileSlice'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { PaymentMethods } from '@/types'
+import React from 'react'
+import { Notice, RadioButton } from '../common'
 
 const SelectPaymentMethod: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -25,7 +25,7 @@ const SelectPaymentMethod: React.FC = () => {
           <Notice text='Внимание! Оплата по картам (онлайн) осуществляется через платежный шлюз Сбербанка. Переход на него осуществляется при нажатии на кнопку "Заказать". После успешной оплаты мы получим ваш платеж в течение 3-5 минут. Подробнее об оплате вы можете узнать' />
         </span>
       </h3>
-      <ul className='flex sm:flex-col gap-[30px]'>
+      <ul className='flex sm:flex-col gap-[30px] sm:gap-4'>
         {paymentMethodsArray.map((payMethod) => (
           <li key={payMethod}>
             <RadioButton
