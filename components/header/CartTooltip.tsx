@@ -3,33 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import HeaderCartItem from './HeaderCartItem';
-import { addToCart } from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
-import { IProduct } from '@/types';
+import { useAppSelector } from '@/redux/hooks';
 
 interface CartTooltipProps {
-  products: IProduct[];
   cartTooltipRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
-const CartTooltip: React.FC<CartTooltipProps> = ({
-  products,
-  cartTooltipRef,
-}) => {
-  const dispatch = useAppDispatch();
-  const isCartEmpty = products.length === 0;
-
-  const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
-    dispatch(addToCart(updatedItems));
-    localStorage.setItem('cart', JSON.stringify(updatedItems)); //?
-  };
-
-  const onRemove = (productUUID: string) => {
-    const updatedItems = products.filter(
-      (product) => product.uuid !== productUUID,
-    );
-    updateItemsInLocalStorage(updatedItems);
-  };
+const CartTooltip: React.FC<CartTooltipProps> = ({ cartTooltipRef }) => {
+  const { cartProducts } = useAppSelector((state) => state.menuReducer);
+  const isCartEmpty = cartProducts.length === 0;
 
   return (
     <div className='header_tooltip right-0' ref={cartTooltipRef}>
@@ -39,9 +21,9 @@ const CartTooltip: React.FC<CartTooltipProps> = ({
         </div>
       ) : (
         <ul className='scroll-container -mr-2 mb-[30px] flex max-h-[222px] flex-col gap-4 overflow-auto pr-2 thin_scroll md:mb-4'>
-          {products.map((product) => (
+          {cartProducts.map((product) => (
             <li key={product.uuid}>
-              <HeaderCartItem product={product} onRemove={onRemove} />
+              <HeaderCartItem product={product} />
             </li>
           ))}
         </ul>

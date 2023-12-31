@@ -1,24 +1,37 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { SelectedProductOptions } from '../common';
+import { addToCart } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 import { calculateProductPrices } from '@/utils';
 
 interface HeaderCartItemProps {
   product: IProduct;
-  onRemove: (productUUID: string) => void;
 }
 
-const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
-  product,
-  onRemove,
-}) => {
+const HeaderCartItem: React.FC<HeaderCartItemProps> = ({ product }) => {
+  const dispatch = useAppDispatch();
+  const { cartProducts } = useAppSelector((state) => state.menuReducer);
+
   const { totalProductPrice } = calculateProductPrices(
     product,
     product.selectedSize || null,
     product.selectedIngredients || [],
     product.productQuantity || 1,
   );
+
+  const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
+    dispatch(addToCart(updatedItems));
+    localStorage.setItem('cart', JSON.stringify(updatedItems));
+  };
+
+  const onRemove = (productUUID?: string) => {
+    const updatedItems = cartProducts.filter(
+      (product) => product.uuid !== productUUID,
+    );
+    updateItemsInLocalStorage(updatedItems);
+  };
 
   return (
     <div className='flex flex-row items-start gap-2'>
@@ -30,7 +43,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({
         <p className='w-10 whitespace-nowrap text-center text-[14px] font-semibold md:w-16 md:text-sm mr-auto'>
           {`${totalProductPrice} ₽`}
         </p>
-        <button type='button' onClick={() => onRemove(product.uuid || '')}>
+        <button type='button' onClick={() => onRemove(product.uuid)}>
           <RiDeleteBin6Line
             size={15}
             className='cursor-pointer text-grayDark hover:text-primary'

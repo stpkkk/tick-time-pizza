@@ -55,7 +55,10 @@ const HeaderDesktop: React.FC = () => {
       <div className='flex_center h-[90px] rounded-b-2xl bg-white px-[60px] drop-shadow-custom'>
         <Logo />
         <div className='text-sm md:relative md:ml-[20px] md:flex-grow'>
-          <div className='header_dropdown' onClick={handleClick}>
+          <div
+            className='hidden w-full max-w-[190px] sm:hidden md:flex md:h-[90px] md:items-center md:gap-2 md:pl-7'
+            onClick={handleClick}
+          >
             <span className='block font-semibold'>Меню</span>
             <IoIosArrowDown />
           </div>

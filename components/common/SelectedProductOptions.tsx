@@ -21,7 +21,7 @@ const SelectedProductOptions: React.FC<SelectedProductOptionsProps> = ({
       )}
       {product.promoProducts ? (
         product.promoProducts.length > 0 && (
-          <ul className='cart_ingredients flex-col'>
+          <ul className='mt-[5px] break-words text-xs font-normal leading-[15px] sm:text-[10px] sm:leading-[0.75rem] flex-col'>
             {product.promoProducts.map((product) => (
               <li key={generateUUID()} className=' whitespace-nowrap'>
                 <p className='break-words text-sm font-normal md:text-xs md:leading-[15px]'>

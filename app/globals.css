@@ -95,16 +95,8 @@ main {
   @apply font-zheldor text-[1.5rem] font-normal uppercase leading-[2rem] sm:text-[1.125rem] sm:leading-[1.375rem];
 }
 
-.header_dropdown {
-  @apply hidden w-full max-w-[190px] sm:hidden md:flex md:h-[90px] md:items-center md:gap-2 md:pl-7;
-}
-
 .header_tooltip {
   @apply absolute top-[90px] w-[400px] rounded-b-2xl bg-white px-[20px] pb-[30px] pt-[20px] text-[12px];
-}
-
-.header_total_quantity {
-  @apply absolute flex h-[19px] min-w-[19px] items-center justify-center rounded-full bg-secondary p-1 text-[10px] font-semibold text-white;
 }
 
 .nav_links {

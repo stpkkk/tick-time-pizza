@@ -53,17 +53,14 @@ const HeaderCart: React.FC = () => {
           )}
         </div>
         {totalQuantity ? (
-          <span className='header_total_quantity right-6 md:-right-1 top-4'>
+          <span className='absolute flex h-[19px] min-w-[19px] items-center justify-center rounded-full bg-secondary p-1 text-[10px] font-semibold text-white right-6 md:-right-1 top-4'>
             {totalQuantity}
           </span>
         ) : null}
       </Link>
       <div className='sm:hidden'>
         {isHoveringCart ? (
-          <CartTooltip
-            products={cartProducts}
-            cartTooltipRef={cartTooltipRef}
-          />
+          <CartTooltip cartTooltipRef={cartTooltipRef} />
         ) : null}
       </div>
     </div>
