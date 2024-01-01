@@ -5,11 +5,12 @@ import { SelectedProductOptions } from '../common';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
+import { calculateTotalPrice } from '@/utils';
 
 const OrderSummary: React.FC = () => {
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
+  const orderTotalPrice = calculateTotalPrice(cartProductInLS).totalPrice;
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
-
   const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
 
   return (
@@ -30,7 +31,7 @@ const OrderSummary: React.FC = () => {
           <div>
             <h2 className='h3 mb-4'>Состав заказа</h2>
             <ul>
-              {userInLS?.orders?.at(-1).products?.map((product: IProduct) => (
+              {cartProductInLS.map((product: IProduct) => (
                 <li
                   key={product.uuid}
                   className='flex sm:gap-4 gap-[30px] w-full'
@@ -69,7 +70,7 @@ const OrderSummary: React.FC = () => {
           </div>
           <div>
             <p className='font-bold sm:marker:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
-              К оплате: {userInLS?.orders?.at(-1).orderPrice} ₽
+              К оплате: {orderTotalPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
               Тикетов будет начислено: 12

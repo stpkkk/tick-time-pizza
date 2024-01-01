@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import OrderDetails from './OrderDetails';
 import { useLocalStorage } from '@/hooks';
 import { IOrder } from '@/types';

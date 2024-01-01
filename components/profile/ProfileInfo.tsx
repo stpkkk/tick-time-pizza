@@ -3,14 +3,16 @@
 import React from 'react';
 import { BiLogOut, BiSolidEdit } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
-import { IoInformationCircleOutline } from 'react-icons/io5';
-import { IoPerson, IoGift } from 'react-icons/io5';
-import { IoTicketOutline } from 'react-icons/io5';
+import {
+  IoGift,
+  IoInformationCircleOutline,
+  IoPerson,
+  IoTicketOutline,
+} from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app_firebase } from '@/firebase';
-import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalEditProfile,
@@ -23,24 +25,21 @@ const ProfileInfo: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.profileReducer);
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // User present
         dispatch(setCurrentUser(currentUser));
-        await setUserInLS(currentUser);
       } else {
         // User not logged in
-        dispatch(setCurrentUser(null));
-        await setUserInLS(null);
+        // dispatch(setCurrentUser(null));
         router.push('/login');
       }
     });
 
     return () => unsubscribe(); // Clean up subscription
-  }, [dispatch, router, auth, setUserInLS]);
+  }, [dispatch, router, auth]);
 
   const profileInfo = [
     {

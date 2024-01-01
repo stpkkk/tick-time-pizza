@@ -10,7 +10,6 @@ import Nav from './Nav';
 import Phone from './Phone';
 import ProgressBar from './ProgressBar';
 import { app_firebase } from '@/firebase';
-import { useLocalStorage } from '@/hooks';
 import { setIsHoveringPhone, toggleNav } from '@/redux/features/headerSlice';
 import { setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -34,21 +33,16 @@ const HeaderDesktop: React.FC = () => {
     dispatch(setIsHoveringPhone(false));
   };
 
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // User present
         dispatch(setCurrentUser(currentUser));
-      } else {
-        // User not logged in
-        dispatch(setCurrentUser(null));
       }
     });
 
     return () => unsubscribe(); // Clean up subscription
-  }, [auth, dispatch, setUserInLS]);
+  }, [auth, dispatch]);
 
   return (
     <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>

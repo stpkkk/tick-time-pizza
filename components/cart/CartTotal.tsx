@@ -1,10 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import Promocode from './Promocode';
-import { useLocalStorage } from '@/hooks';
 import { setOrderPrice } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
+import { calculateTotalPrice } from '@/utils';
 
 const CartTotal: React.FC = () => {
   const router = useRouter();
@@ -15,8 +14,6 @@ const CartTotal: React.FC = () => {
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
-
-  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const discount = cartProducts?.reduce(
     (acc, product) =>
@@ -32,11 +29,11 @@ const CartTotal: React.FC = () => {
 
   const handleCheckoutOrder = React.useCallback(
     async (e: React.FormEvent) => {
+      // TODO
       e.preventDefault();
-      await setCartProductInLS([]);
       router.push('/cart/order');
     },
-    [router, setCartProductInLS],
+    [router],
   );
 
   return (

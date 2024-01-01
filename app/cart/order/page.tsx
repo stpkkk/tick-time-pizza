@@ -16,18 +16,20 @@ import { addToCart } from '@/redux/features/menuSlice';
 import { addToOrders, resetOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
-import { getFormattedDateTime } from '@/utils';
+import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
 
 const Order: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { user, orderFormData, orderPrice } = useAppSelector(
-    (state) => state.profileReducer,
-  );
-  const { cartProducts } = useAppSelector((state) => state.menuReducer);
-
   const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const { user, orders, orderFormData } = useAppSelector(
+    (state) => state.profileReducer,
+  );
+  const { cartProducts } = useAppSelector((state) => state.menuReducer);
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
+  const orderPrice = calculateTotalPrice(cartProductInLS).totalPrice;
+
   const { formattedDate, formattedTime } = getFormattedDateTime();
   const {
     paymentMethod,
@@ -62,8 +64,7 @@ const Order: React.FC = () => {
         deliveryAddress,
       };
 
-      const updatedOrders = [...userInLS?.orders, newOrder];
-
+      const updatedOrders = [...orders, newOrder];
       dispatch(addToOrders(updatedOrders));
 
       const updatedUser = {
@@ -72,6 +73,7 @@ const Order: React.FC = () => {
       };
 
       dispatch(addToCart([]));
+      await setCartProductInLS([]);
       await setUserInLS(updatedUser);
       router.push('/profile');
       dispatch(resetOrderFormData());
@@ -85,20 +87,23 @@ const Order: React.FC = () => {
       formattedDate,
       formattedTime,
       orderPrice,
+      orders,
       paymentMethod,
       pickPoint,
       router,
+      setCartProductInLS,
       setUserInLS,
       supplyMethod,
       tickets,
       user,
-      userInLS?.orders,
     ],
   );
 
   React.useEffect(() => {
     setMounted(true);
   }, []);
+
+  console.log(userInLS);
 
   return (
     <main className='mt-[90px]'>
