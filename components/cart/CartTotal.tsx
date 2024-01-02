@@ -29,7 +29,7 @@ const CartTotal: React.FC = () => {
 
   const handleCheckoutOrder = React.useCallback(
     async (e: React.FormEvent) => {
-      // TODO
+      //TODO set promoCode
       e.preventDefault();
       router.push('/cart/order');
     },

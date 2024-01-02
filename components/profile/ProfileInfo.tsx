@@ -33,7 +33,6 @@ const ProfileInfo: React.FC = () => {
         dispatch(setCurrentUser(currentUser));
       } else {
         // User not logged in
-        // dispatch(setCurrentUser(null));
         router.push('/login');
       }
     });

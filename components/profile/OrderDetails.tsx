@@ -44,15 +44,17 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
               className='flex justify-between gap-24 sm:gap-4 w-full'
               key={product.id}
             >
-              <td>
+              <td className='w-full'>
                 <SelectedProductOptions product={product} />
               </td>
-              <td className='whitespace-nowrap '>
-                {product.productQuantity} шт.
-              </td>
-              <td className='font-semibold whitespace-nowrap'>
-                {product.totalPrice} ₽
-              </td>
+              <div className='flex justify-between gap-6 w-1/3'>
+                <td className='self-start whitespace-nowrap'>
+                  {product.productQuantity} шт.
+                </td>
+                <td className='font-semibold whitespace-nowrap'>
+                  {product.totalPrice} ₽
+                </td>
+              </div>
             </tr>
           ))}
         </tbody>
