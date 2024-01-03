@@ -3,7 +3,7 @@ import { Providers } from './providers';
 import { ButtonBackToTop, Footer, Header } from '@/components';
 
 export const metadata = {
-  title: 'Пицца в Петрозаводске "Тик Тайм". Доставка Пиццы ',
+  title: 'Тик Тайм Пицца. Доставка в Петрозаводске',
   description:
     'Пицца в Петрозаводске от пиццерии «Тик Тайм», бесплатная доставка по всему городу. Закажите свою пиццу из нашего меню.',
 };
