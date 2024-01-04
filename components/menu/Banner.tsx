@@ -15,8 +15,8 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import {
-  setSelectedProduct,
   setModalProductOpen,
+  setSelectedProduct,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promos, Slide } from '@/types';
