@@ -35,6 +35,7 @@ This is the template login details to use the bank functionality. The project do
 - React-Icons
 - Swiper
 - Formik
+- Yup
 
 ## Getting Started
 
