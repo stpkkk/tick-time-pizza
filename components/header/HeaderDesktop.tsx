@@ -2,21 +2,17 @@ import React from 'react';
 import { HiMiniUserCircle } from 'react-icons/hi2';
 import { IoIosArrowDown } from 'react-icons/io';
 import { RiLoginCircleLine } from 'react-icons/ri';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import Link from 'next/link';
 import { Logo } from '../common';
 import HeaderCart from './HeaderCart';
 import Nav from './Nav';
 import Phone from './Phone';
 import ProgressBar from './ProgressBar';
-import { app_firebase } from '@/firebase';
+import { useAuthStateChange } from '@/hooks';
 import { setIsHoveringPhone, toggleNav } from '@/redux/features/headerSlice';
-import { setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const HeaderDesktop: React.FC = () => {
-  const auth = getAuth(app_firebase);
-
   const dispatch = useAppDispatch();
   const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
   const { user } = useAppSelector((state) => state.profileReducer);
@@ -33,16 +29,7 @@ const HeaderDesktop: React.FC = () => {
     dispatch(setIsHoveringPhone(false));
   };
 
-  React.useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      if (currentUser) {
-        // User present
-        dispatch(setCurrentUser(currentUser));
-      }
-    });
-
-    return () => unsubscribe(); // Clean up subscription
-  }, [auth, dispatch]);
+  useAuthStateChange();
 
   return (
     <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>
