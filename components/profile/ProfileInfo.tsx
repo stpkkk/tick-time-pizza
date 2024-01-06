@@ -2,14 +2,7 @@
 
 import React from 'react';
 import { BiLogOut, BiSolidEdit } from 'react-icons/bi';
-import { FaPhoneAlt } from 'react-icons/fa';
-import {
-  IoGift,
-  IoInformationCircleOutline,
-  IoPerson,
-  IoTicketOutline,
-} from 'react-icons/io5';
-import { MdEmail } from 'react-icons/md';
+import { IoInformationCircleOutline } from 'react-icons/io5';
 import { getAuth, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app_firebase } from '@/firebase';
@@ -20,47 +13,17 @@ import {
   setModalTicketsInfo,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import getProfileInfo from '@/utils/getProfileInfo';
 
 const ProfileInfo: React.FC = () => {
   const auth = getAuth(app_firebase);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.profileReducer);
+  const profileInfo = getProfileInfo(user);
+  const tickets = profileInfo.find((i) => i.title === 'Ваши тикеты')?.title;
 
   useAuthStateChange();
-
-  if (!user) router.push('/login');
-
-  const profileInfo = [
-    {
-      id: 0,
-      Icon: IoPerson,
-      title: 'Ваше имя',
-      value: user?.name || 'Не указано',
-    },
-    {
-      id: 1,
-      Icon: IoGift,
-      title: 'Ваш день рождения',
-      value: user?.birthday || 'Не указан',
-    },
-    {
-      id: 2,
-      Icon: FaPhoneAlt,
-      title: 'Ваш телефон',
-      value: user?.phoneNumber || 'Не указан',
-    },
-    {
-      id: 3,
-      Icon: MdEmail,
-      title: 'Ваш e-mail',
-      value: user?.email || 'Не указан',
-    },
-    { id: 4, Icon: IoTicketOutline, title: 'Ваши тикеты', value: '0' },
-  ];
-
-  const tickets = profileInfo.find((info) => info.title === 'Ваши тикеты')
-    ?.title;
 
   const handleLogout = async () => {
     try {
@@ -79,6 +42,8 @@ const ProfileInfo: React.FC = () => {
   const handleClickTicketsNotice = () => {
     dispatch(setModalTicketsInfo(true));
   };
+
+  if (!user) router.push('/login');
 
   return (
     <div className='container md:py-8 md:px-4 py-[50px] px-[60px]'>
