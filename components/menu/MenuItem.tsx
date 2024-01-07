@@ -2,10 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '../common';
 import { menu } from '@/constants';
-import { setSelectedProduct, setHoveredItemId, setModalProductOpen, setSelectedPromo, setIsProductsListModalOpen } from '@/redux/features/menuSlice';
+import {
+  setHoveredItemId,
+  setIsProductsListModalOpen,
+  setModalProductOpen,
+  setSelectedProduct,
+  setSelectedPromo,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
-
 
 interface IMenuItemProps {
   product: IProduct;
@@ -97,19 +102,21 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <ButtonBookmark product={product} />
       </div>
-      {!promo ? (
-        <div className='absolute left-0 top-0 z-[1] flex flex-col	 gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'>
-          {product.categories?.map((cat) => (
-            <Image
-              src={cat.image ? cat.image : ''}
-              alt={cat.title}
-              width={16}
-              height={16}
+      {!promo
+        ? product.categories?.map((cat) => (
+            <div
+              className='absolute left-0 top-0 z-[1] flex flex-col gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'
               key={cat.id}
-            />
-          ))}
-        </div>
-      ) : null}
+            >
+              <Image
+                src={cat.image ? cat.image : ''}
+                alt={cat.title}
+                width={16}
+                height={16}
+              />
+            </div>
+          ))
+        : null}
     </li>
   );
 };

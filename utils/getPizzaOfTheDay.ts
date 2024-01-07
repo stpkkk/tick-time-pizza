@@ -1,4 +1,4 @@
-export const getPizzaOfTheDay = () => {
+export function getPizzaOfTheDay() {
   const days = [
     'Воскресенье',
     'Понедельник',
@@ -35,4 +35,4 @@ export const getPizzaOfTheDay = () => {
     pizzaOfTheDay: pizzas[pizzaIndex],
     dayIndex,
   };
-};
+}

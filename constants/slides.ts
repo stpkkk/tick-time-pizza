@@ -11,7 +11,7 @@ import chickenSausages from '../public/assets/images/slider/slide-chicken-sausag
 import hunter from '../public/assets/images/slider/slide-hunter-pizza.webp';
 import pepperoni from '../public/assets/images/slider/slide-pepperoni-pizza.webp';
 import { Slide } from '@/types';
-import { getPizzaOfTheDay } from '@/utils';
+import { getPizzaOfTheDay } from '@/utils/getPizzaOfTheDay';
 
 const { dayIndex } = getPizzaOfTheDay();
 
