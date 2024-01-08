@@ -1,5 +1,10 @@
 # <a href="https://tick-time-pizza.vercel.app/">Tick Time Pizza</a>
 
+## Test user credentials:
+
+phone: +7 9999999999
+code: 123456
+
 <!-- Bankist is a fictional and minimalistic online banking application. -->
 
 <!-- Everything you need in a modern bank and more.
