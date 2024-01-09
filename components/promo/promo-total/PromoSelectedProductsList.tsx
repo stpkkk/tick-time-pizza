@@ -10,7 +10,7 @@ const PromoSelectedProductsList: React.FC = () => {
   return (
     <ul className='flex flex-col gap-[30px]'>
       {promoProductsList.map((product) => (
-        <li className=' flex flex-col gap-2.5' key={generateUUID()}>
+        <li className='flex flex-col gap-2.5' key={generateUUID()}>
           <PromoTotalItem
             product={product}
             totalPromoProductsQuantity={totalPromoProductsQuantity}
