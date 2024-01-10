@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
 import useLocalStorage from './useLocalStorage';
@@ -7,8 +8,8 @@ import { menu } from '@/constants';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-function filterByCategoryTitle(products: IProduct[], categoryTitle: string) {
-  return products.filter(
+function filterByCategoryTitle(categoryTitle: string) {
+  return menu.filter(
     (product) =>
       product.categories?.some((category) => category.title === categoryTitle),
   );
@@ -21,23 +22,23 @@ const useCategoryProducts = (category: string | number): IProduct[] => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const productsGroup = getGroupProducts(pathname);
 
-  const forChildrenArray = filterByCategoryTitle(menu, 'Подходит для Детей');
-  const withoutMeatArray = filterByCategoryTitle(menu, 'Без Мяса');
-  const hotArray = filterByCategoryTitle(menu, 'Острая');
+  const getBookmarks = React.useCallback(async () => {
+    setUserInLS(userInLS);
+  }, [userInLS, setUserInLS]);
 
-  // React.useEffect(() => {
-  //   dispatch(addToBookmarks(userInLS?.bookmarks));
-  // }, [category, dispatch, userInLS.bookmarks]);
+  React.useEffect(() => {
+    getBookmarks();
+  }, [getBookmarks]);
 
   switch (category) {
     case 'Избранное':
-      return userInLS.bookmarks || bookmarks;
+      return userInLS.bookmarks;
     case 'Без Мяса':
-      return withoutMeatArray;
+      return filterByCategoryTitle('Без Мяса');
     case 'Подходит для Детей':
-      return forChildrenArray;
+      return filterByCategoryTitle('Подходит для Детей');
     case 'Острая':
-      return hotArray;
+      return filterByCategoryTitle('Острая');
     default:
       return productsGroup;
   }
