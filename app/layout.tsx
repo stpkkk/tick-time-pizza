@@ -3,9 +3,8 @@ import { Providers } from './providers';
 import { ButtonBackToTop, Footer, Header } from '@/components';
 
 export const metadata = {
-  title: 'Тик Тайм Пицца. Доставка в Петрозаводске',
-  description:
-    'Пицца в Петрозаводске от пиццерии «Тик Тайм», бесплатная доставка по всему городу. Закажите свою пиццу из нашего меню.',
+  title: 'Додо пицца в Петрозаводске',
+  description: 'Пицца в Петрозаводске',
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
