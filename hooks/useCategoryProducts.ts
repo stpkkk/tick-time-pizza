@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
 import useLocalStorage from './useLocalStorage';
@@ -21,14 +20,6 @@ const useCategoryProducts = (category: string | number): IProduct[] => {
   const { bookmarks } = useAppSelector((state) => state.menuReducer);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const productsGroup = getGroupProducts(pathname);
-
-  const getBookmarks = React.useCallback(async () => {
-    setUserInLS(userInLS);
-  }, [userInLS, setUserInLS]);
-
-  React.useEffect(() => {
-    getBookmarks();
-  }, [getBookmarks]);
 
   switch (category) {
     case 'Избранное':

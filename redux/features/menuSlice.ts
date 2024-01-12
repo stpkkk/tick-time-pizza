@@ -227,11 +227,8 @@ const menuSlice = createSlice({
     },
 
     //Bookmarks Actions
-    addToBookmarks: (state, action: PayloadAction<IProduct>) => {
-      const product = action.payload;
-      if (!state.bookmarks?.some((item) => item.id === product?.id)) {
-        state.bookmarks?.push(product);
-      }
+    addToBookmarks: (state, action: PayloadAction<IProduct[]>) => {
+      state.bookmarks = action.payload;
     },
 
     removeFromBookmarks: (state, action: PayloadAction<number>) => {
