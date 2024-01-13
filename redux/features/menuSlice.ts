@@ -226,17 +226,11 @@ const menuSlice = createSlice({
       state.isProductsListModalOpen = action.payload;
     },
 
-    //Bookmarks Actions
     addToBookmarks: (state, action: PayloadAction<IProduct[]>) => {
       state.bookmarks = action.payload;
     },
 
-    removeFromBookmarks: (state, action: PayloadAction<number>) => {
-      const productId = action.payload;
-      state.bookmarks = state.bookmarks.filter((item) => item.id !== productId);
-    },
-
-    //Initial Modal Values
+    //ModalProduct Initial Values
     initializeDefaultValues: (state) => {
       const { selectedProduct, selectedPromo } = state;
 
@@ -302,7 +296,6 @@ export const {
   toggleTooltip,
   setAllIngredients,
   addToBookmarks,
-  removeFromBookmarks,
   decrementProductQuantity,
   incrementProductQuantity,
   addToCart,

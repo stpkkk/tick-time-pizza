@@ -13,7 +13,6 @@ type ButtonBookmarkProps = {
 const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   const dispatch = useAppDispatch();
   const { bookmarks } = useAppSelector((state) => state.menuReducer);
-  const { user } = useAppSelector((state) => state.profileReducer);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
   const isBookmarked = bookmarks?.some(
@@ -21,15 +20,15 @@ const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   );
 
   const toggleBookmarked = async () => {
-    // if (true) {
-    const updatedBookmarks = [...bookmarks, product];
-    dispatch(addToBookmarks(updatedBookmarks));
+    const updatedBookmarks = isBookmarked
+      ? bookmarks.filter((bookmark) => bookmark.id !== product.id)
+      : [...bookmarks, product];
     const updatedUser = {
       ...userInLS,
       bookmarks: updatedBookmarks,
     };
     await setUserInLS(updatedUser);
-    // }
+    dispatch(addToBookmarks(updatedBookmarks));
   };
 
   return (

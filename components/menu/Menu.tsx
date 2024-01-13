@@ -6,15 +6,24 @@ import Banner from './Banner';
 import Categories from './Categories';
 import MenuItem from './MenuItem';
 import NoBookmarks from './NoBookmarks';
-import { useCategoryProducts } from '@/hooks';
-import { useAppSelector } from '@/redux/hooks';
+import { useCategoryProducts, useLocalStorage } from '@/hooks';
+import { addToBookmarks } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 const Menu: React.FC = () => {
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const dispatch = useAppDispatch();
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
   const productsToShow: IProduct[] = useCategoryProducts(
     selectedCategory?.value || '',
   );
+
+  React.useEffect(() => {
+    if (userInLS.bookmarks) {
+      dispatch(addToBookmarks(userInLS.bookmarks));
+    }
+  }, [dispatch, userInLS.bookmarks]);
 
   return (
     <>

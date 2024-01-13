@@ -2,9 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
-import useLocalStorage from './useLocalStorage';
 import { menu } from '@/constants';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 function filterByCategoryTitle(categoryTitle: string) {
@@ -16,14 +15,12 @@ function filterByCategoryTitle(categoryTitle: string) {
 
 const useCategoryProducts = (category: string | number): IProduct[] => {
   const pathname = usePathname();
-  const dispatch = useAppDispatch();
   const { bookmarks } = useAppSelector((state) => state.menuReducer);
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const productsGroup = getGroupProducts(pathname);
 
   switch (category) {
     case 'Избранное':
-      return userInLS.bookmarks;
+      return bookmarks;
     case 'Без Мяса':
       return filterByCategoryTitle('Без Мяса');
     case 'Подходит для Детей':
