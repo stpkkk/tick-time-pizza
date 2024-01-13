@@ -1,6 +1,13 @@
-import { IProduct, IOption, IAdditionalIngredient, Promos, Promo, Sizes, Dough } from '@/types';
+import {
+  Dough,
+  IAdditionalIngredient,
+  IOption,
+  IProduct,
+  Promo,
+  Promos,
+  Sizes,
+} from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-
 
 export interface MenuState {
   isModalProductOpen: boolean;
@@ -219,20 +226,11 @@ const menuSlice = createSlice({
       state.isProductsListModalOpen = action.payload;
     },
 
-    //Bookmarks Actions
-    addToBookmarks: (state, action: PayloadAction<IProduct>) => {
-      const product = action.payload;
-      if (!state.bookmarks?.some((item) => item.id === product?.id)) {
-        state.bookmarks?.push(product);
-      }
+    addToBookmarks: (state, action: PayloadAction<IProduct[]>) => {
+      state.bookmarks = action.payload;
     },
 
-    removeFromBookmarks: (state, action: PayloadAction<number>) => {
-      const productId = action.payload;
-      state.bookmarks = state.bookmarks.filter((item) => item.id !== productId);
-    },
-
-    //Initial Modal Values
+    //ModalProduct Initial Values
     initializeDefaultValues: (state) => {
       const { selectedProduct, selectedPromo } = state;
 
@@ -298,7 +296,6 @@ export const {
   toggleTooltip,
   setAllIngredients,
   addToBookmarks,
-  removeFromBookmarks,
   decrementProductQuantity,
   incrementProductQuantity,
   addToCart,

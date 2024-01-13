@@ -27,7 +27,7 @@ const Categories: React.FC = () => {
     <div className='flex_center my-[30px] max-w-full sm:my-4'>
       <RadioGroup
         value={selectedCategory}
-        onChange={(category) => dispatch(setSelectedCategory(category))}
+        onChange={(category) => dispatch(setSelectedCategory(category || null))}
         className='no-scrollbar scroll flex scroll-px-4 flex-row gap-4 overflow-x-scroll scroll-smooth whitespace-nowrap md:gap-2'
       >
         {categoriesToShow?.map((category) => (

@@ -11,6 +11,7 @@ import {
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
+import { generateUUID } from '@/utils';
 
 interface IMenuItemProps {
   product: IProduct;
@@ -27,8 +28,8 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
   } = useAppSelector((state) => state.menuReducer);
 
   const isItemHovered = hoveredItemId === product.id;
-  const starterPrice = product.prices.find((product) => product.id === 0)
-    ?.value;
+  const starterPrice =
+    product.prices?.find((product) => product.id === 0)?.value || 0;
 
   const handleMouseEnterItem = () => {
     if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo)
@@ -70,7 +71,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
             <Image
               src={product.image}
               alt={product.title}
-              placeholder='blur'
+              // placeholder='blur'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               fill
               priority
@@ -106,7 +107,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
         ? product.categories?.map((cat) => (
             <div
               className='absolute left-0 top-0 z-[1] flex flex-col gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'
-              key={cat.id}
+              key={generateUUID()}
             >
               <Image
                 src={cat.image ? cat.image : ''}
