@@ -12,6 +12,14 @@ export enum Dough {
   THIN = 'Тонкое',
 }
 
+export enum CATEGORIES {
+  ALL = 'Все',
+  BOOKMARKS = 'Избранное',
+  VEGETARIAN = 'Без Мяса',
+  FOR_CHILDREN = 'Подходит для Детей',
+  SPICY = 'Острая',
+}
+
 export enum Sizes {
   SMALL = 23,
   MEDIUM = 28,

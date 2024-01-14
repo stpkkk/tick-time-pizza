@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
 import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
-import { IProduct } from '@/types';
+import { CATEGORIES, IProduct } from '@/types';
 
 function filterByCategoryTitle(categoryTitle: string) {
   return menu.filter(
@@ -19,14 +19,14 @@ const useCategoryProducts = (category: string | number): IProduct[] => {
   const productsGroup = getGroupProducts(pathname);
 
   switch (category) {
-    case 'Избранное':
+    case CATEGORIES.BOOKMARKS:
       return bookmarks;
-    case 'Без Мяса':
-      return filterByCategoryTitle('Без Мяса');
-    case 'Подходит для Детей':
-      return filterByCategoryTitle('Подходит для Детей');
-    case 'Острая':
-      return filterByCategoryTitle('Острая');
+    case CATEGORIES.VEGETARIAN:
+      return filterByCategoryTitle(CATEGORIES.VEGETARIAN);
+    case CATEGORIES.FOR_CHILDREN:
+      return filterByCategoryTitle(CATEGORIES.FOR_CHILDREN);
+    case CATEGORIES.SPICY:
+      return filterByCategoryTitle(CATEGORIES.SPICY);
     default:
       return productsGroup;
   }
