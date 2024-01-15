@@ -3,6 +3,7 @@ import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
 import { useLocalStorage } from '@/hooks';
 import { addToBookmarks } from '@/redux/features/menuSlice';
+import { setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
@@ -23,11 +24,14 @@ const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
     const updatedBookmarks = isBookmarked
       ? bookmarks.filter((bookmark) => bookmark.id !== product.id)
       : [...bookmarks, product];
+
     const updatedUser = {
       ...userInLS,
       bookmarks: updatedBookmarks,
     };
+
     await setUserInLS(updatedUser);
+    dispatch(setCurrentUser(updatedUser));
     dispatch(addToBookmarks(updatedBookmarks));
   };
 

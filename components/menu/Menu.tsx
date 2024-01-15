@@ -8,6 +8,7 @@ import MenuItem from './MenuItem';
 import NoBookmarks from './NoBookmarks';
 import { useCategoryProducts, useLocalStorage } from '@/hooks';
 import { addToBookmarks } from '@/redux/features/menuSlice';
+import { setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
@@ -20,10 +21,11 @@ const Menu: React.FC = () => {
   );
 
   React.useEffect(() => {
-    if (userInLS.bookmarks) {
+    if (userInLS) {
       dispatch(addToBookmarks(userInLS.bookmarks));
+      dispatch(setCurrentUser(userInLS));
     }
-  }, [dispatch, userInLS.bookmarks]);
+  }, [dispatch, userInLS]);
 
   return (
     <>
