@@ -3,17 +3,20 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
+import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalEditProfile,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { profileSchema } from '@/schemas';
-import { ExtendedUser } from '@/types';
 
 const ModalEditProfile: React.FC = () => {
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
-  const { user, isModalEditProfileOpen } = useAppSelector((state) => state.profileReducer);
+  const { user, isModalEditProfileOpen } = useAppSelector(
+    (state) => state.profileReducer,
+  );
 
   const closeModal = () => {
     dispatch(setModalEditProfile(false));
@@ -30,18 +33,18 @@ const ModalEditProfile: React.FC = () => {
     resetForm,
   } = useFormik({
     initialValues: {
-      email: '',
-      name: '',
-      birthday: '',
+      email: user?.email || '',
+      name: user?.name || '',
+      birthday: user?.birthday || '',
     },
     validationSchema: profileSchema,
-    onSubmit: (values) => {
-      dispatch(
-        setCurrentUser({
-          ...user,
-          ...values,
-        } as ExtendedUser),
-      );
+    onSubmit: async (values) => {
+      const updatedUser = {
+        ...user,
+        ...values,
+      };
+      dispatch(setCurrentUser(updatedUser));
+      await setUserInLS(updatedUser);
       closeModal();
     },
   });
@@ -50,15 +53,11 @@ const ModalEditProfile: React.FC = () => {
     (!values.name.trim() && !values.birthday.trim() && !values.email.trim()) ||
     !!errors.email;
 
-		if (!isModalEditProfileOpen) return;
-
+  if (!isModalEditProfileOpen) return;
 
   return (
     <ModalWrapper closeModal={closeModal} width={730}>
-      <form
-        className='px-16 py-[50px] sm:p-4'
-        onSubmit={handleSubmit}
-      >
+      <form className='px-16 py-[50px] sm:p-4' onSubmit={handleSubmit}>
         <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
         <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
           <Input

@@ -3,22 +3,26 @@
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
 import {
-  ProfileInfo,
   ModalEditProfile,
+  ModalTicketsInfo,
   NoOrders,
   Orders,
-  ModalTicketsInfo,
+  ProfileInfo,
 } from '@/components';
 import { useLocalStorage } from '@/hooks';
+import { setCurrentUser } from '@/redux/features/profileSlice';
+import { useAppDispatch } from '@/redux/hooks';
 
 const Profile: React.FC = () => {
+  const dispatch = useAppDispatch();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [mounted, setMounted] = React.useState(false);
   const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
 
   React.useEffect(() => {
+    dispatch(setCurrentUser(userInLS));
     setMounted(true);
-  }, []);
+  }, [dispatch, userInLS]);
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-4'>

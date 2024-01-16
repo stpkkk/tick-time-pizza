@@ -23,7 +23,7 @@ const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   const toggleBookmarked = async () => {
     const updatedBookmarks = isBookmarked
       ? bookmarks.filter((bookmark) => bookmark.id !== product.id)
-      : [...bookmarks, product];
+      : [...(bookmarks || []), product];
 
     const updatedUser = {
       ...userInLS,
