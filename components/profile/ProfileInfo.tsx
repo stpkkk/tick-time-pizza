@@ -12,16 +12,22 @@ import {
   setModalEditProfile,
   setModalTicketsInfo,
 } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch } from '@/redux/hooks';
+import { ExtendedUser } from '@/types';
 import getProfileInfo from '@/utils/getProfileInfo';
 
-const ProfileInfo: React.FC = () => {
+type ProfileInfoProps = {
+  user: ExtendedUser | null;
+};
+
+const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   const auth = getAuth(app_firebase);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector((state) => state.profileReducer);
   const profileInfo = getProfileInfo(user);
   const tickets = profileInfo.find((i) => i.title === 'Ваши тикеты')?.title;
+
+  console.log(user);
 
   useAuthStateChange();
 

@@ -4,12 +4,13 @@ import { MdEmail } from 'react-icons/md';
 import { ExtendedUser } from '@/types';
 
 const getProfileInfo = (user: ExtendedUser | null) => {
+  console.log(user?.name);
   const profileInfo = [
     {
       id: 0,
       Icon: IoPerson,
       title: 'Ваше имя',
-      value: user?.name || 'Не указано',
+      value: user?.name,
     },
     {
       id: 1,

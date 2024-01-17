@@ -4,17 +4,19 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import { useLocalStorage } from '@/hooks';
-import {
-  setCurrentUser,
-  setModalEditProfile,
-} from '@/redux/features/profileSlice';
+import { setModalEditProfile } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { profileSchema } from '@/schemas';
+import { ExtendedUser } from '@/types';
 
-const ModalEditProfile: React.FC = () => {
+type ProfileInfoProps = {
+  user: ExtendedUser | null;
+};
+
+const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
-  const { user, isModalEditProfileOpen } = useAppSelector(
+  const { isModalEditProfileOpen } = useAppSelector(
     (state) => state.profileReducer,
   );
 
@@ -22,6 +24,8 @@ const ModalEditProfile: React.FC = () => {
     dispatch(setModalEditProfile(false));
     resetForm();
   };
+
+  console.log(user?.name);
 
   const {
     handleChange,
@@ -33,8 +37,8 @@ const ModalEditProfile: React.FC = () => {
     resetForm,
   } = useFormik({
     initialValues: {
-      email: user?.email || '',
       name: user?.name || '',
+      email: user?.email || '',
       birthday: user?.birthday || '',
     },
     validationSchema: profileSchema,
@@ -43,7 +47,7 @@ const ModalEditProfile: React.FC = () => {
         ...user,
         ...values,
       };
-      dispatch(setCurrentUser(updatedUser));
+      // dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
       closeModal();
     },
