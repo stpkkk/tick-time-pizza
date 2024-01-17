@@ -6,7 +6,7 @@ import { IoInformationCircleOutline } from 'react-icons/io5';
 import { getAuth, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { app_firebase } from '@/firebase';
-import { useAuthStateChange } from '@/hooks';
+import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalEditProfile,
@@ -24,18 +24,15 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   const auth = getAuth(app_firebase);
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const profileInfo = getProfileInfo(user);
   const tickets = profileInfo.find((i) => i.title === 'Ваши тикеты')?.title;
 
-  console.log(user);
-
-  useAuthStateChange();
-
   const handleLogout = async () => {
     try {
-      router.push('/');
       await signOut(auth);
       dispatch(setCurrentUser(null));
+      router.push('/');
     } catch (err) {
       console.error(err);
     }
@@ -48,8 +45,6 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   const handleClickTicketsNotice = () => {
     dispatch(setModalTicketsInfo(true));
   };
-
-  if (!user) router.push('/login');
 
   return (
     <div className='container md:py-8 md:px-4 py-[50px] px-[60px]'>

@@ -9,11 +9,11 @@ import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { useLocalStorage } from '@/hooks';
 import {
+  setCurrentUser,
   setLoading,
   setOtp,
   setOtpSent,
   setOtpValid,
-  setCurrentUser,
   setPhoneValid,
 } from '@/redux/features/profileSlice';
 import { useAppSelector } from '@/redux/hooks';

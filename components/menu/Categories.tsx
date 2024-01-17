@@ -17,7 +17,7 @@ const Categories: React.FC = () => {
   );
   const categoriesToShow = !!user ? categories : categoriesWithoutFavorites;
 
-  useAuthStateChange();
+  useAuthStateChange(user);
 
   if (!selectedCategory) {
     dispatch(setSelectedCategory(categories[0]));

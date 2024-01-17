@@ -4,7 +4,10 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import { useLocalStorage } from '@/hooks';
-import { setModalEditProfile } from '@/redux/features/profileSlice';
+import {
+  setCurrentUser,
+  setModalEditProfile,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { profileSchema } from '@/schemas';
 import { ExtendedUser } from '@/types';
@@ -24,8 +27,6 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
     dispatch(setModalEditProfile(false));
     resetForm();
   };
-
-  console.log(user?.name);
 
   const {
     handleChange,
@@ -47,7 +48,7 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
         ...user,
         ...values,
       };
-      // dispatch(setCurrentUser(updatedUser));
+      dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
       closeModal();
     },

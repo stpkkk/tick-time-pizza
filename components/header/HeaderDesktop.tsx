@@ -29,7 +29,9 @@ const HeaderDesktop: React.FC = () => {
     dispatch(setIsHoveringPhone(false));
   };
 
-  useAuthStateChange();
+  useAuthStateChange(user);
+
+  const isUserSignIn = user && Object.keys(user).length !== 0;
 
   return (
     <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>
@@ -61,17 +63,17 @@ const HeaderDesktop: React.FC = () => {
           ) : null}
         </div>
         <Link
-          href={!!user ? '/profile' : '/login'}
+          href={isUserSignIn ? '/profile' : '/login'}
           className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <>
-            {!!user ? (
+            {isUserSignIn ? (
               <HiMiniUserCircle size={30} />
             ) : (
               <RiLoginCircleLine size={30} />
             )}
             <span className='text-sm font-semibold'>
-              {!!user ? 'Профиль' : 'Войти'}
+              {isUserSignIn ? 'Профиль' : 'Войти'}
             </span>
           </>
         </Link>

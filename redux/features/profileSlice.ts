@@ -84,7 +84,7 @@ const profileSlice = createSlice({
       state.loading = action.payload;
     },
 
-    setCurrentUser: (state, action: PayloadAction<null | ExtendedUser>) => {
+    setCurrentUser: (state, action: PayloadAction<ExtendedUser | null>) => {
       state.user = action.payload;
     },
 

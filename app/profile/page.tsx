@@ -25,8 +25,6 @@ const Profile: React.FC = () => {
     setMounted(true);
   }, [dispatch, userInLS]);
 
-  // console.log(user);
-
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-4'>
       {mounted ? (
