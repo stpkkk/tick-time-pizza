@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
+import { useRouter } from 'next/navigation';
 import {
   ModalEditProfile,
   ModalTicketsInfo,
@@ -15,6 +16,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const Profile: React.FC = () => {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [mounted, setMounted] = React.useState(false);
   const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
@@ -24,6 +26,10 @@ const Profile: React.FC = () => {
     dispatch(setCurrentUser(userInLS));
     setMounted(true);
   }, [dispatch, userInLS]);
+
+  console.log(user);
+
+  // if (!user) router.push('/login');
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-4'>
@@ -35,7 +41,7 @@ const Profile: React.FC = () => {
             <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>
               Ваши заказы:
             </h2>
-            {isOrdersExist ? <Orders /> : <NoOrders />}
+            {isOrdersExist ? <Orders orders={user?.orders} /> : <NoOrders />}
           </section>
           <ModalEditProfile user={user} />
           <ModalTicketsInfo />

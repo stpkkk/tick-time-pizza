@@ -3,14 +3,14 @@
 import React from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import OrderDetails from './OrderDetails';
-import { ExtendedUser, IOrder } from '@/types';
+import { IOrder } from '@/types';
 import { generateUUID } from '@/utils';
 
-type ProfileInfoProps = {
-  user: ExtendedUser | null;
+type OrdersProps = {
+  orders?: IOrder[];
 };
 
-const Orders: React.FC<ProfileInfoProps> = ({ user }) => {
+const Orders: React.FC<OrdersProps> = ({ orders }) => {
   const [openOrderIds, setOpenOrderIds] = React.useState<string[]>([]);
 
   const toggleOrder = (selectedOrderId: string) => {
@@ -27,7 +27,7 @@ const Orders: React.FC<ProfileInfoProps> = ({ user }) => {
 
   return (
     <ul className='flex flex-col-reverse gap-[30px] sm:gap-4'>
-      {user?.orders?.map((order: IOrder) => (
+      {orders?.map((order: IOrder) => (
         <li
           className='flex flex-col container cursor-pointer px-[60px] py-[30px] sm:p-4'
           key={generateUUID()}

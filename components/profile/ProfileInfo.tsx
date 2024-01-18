@@ -31,6 +31,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      await setUserInLS(null);
       dispatch(setCurrentUser(null));
       router.push('/');
     } catch (err) {
