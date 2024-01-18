@@ -86,7 +86,7 @@ const Banner: React.FC = () => {
                   <Image
                     src={slide.image}
                     alt={slide.title}
-                    // placeholder='blur'
+                    priority
                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                     fill
                     quality={100}

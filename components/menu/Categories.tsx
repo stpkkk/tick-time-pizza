@@ -19,9 +19,11 @@ const Categories: React.FC = () => {
 
   useAuthStateChange(user);
 
-  if (!selectedCategory) {
-    dispatch(setSelectedCategory(categories[0]));
-  }
+  React.useEffect(() => {
+    if (!selectedCategory) {
+      dispatch(setSelectedCategory(categories[0]));
+    }
+  }, [dispatch, selectedCategory]);
 
   return (
     <div className='flex_center my-[30px] max-w-full sm:my-4'>

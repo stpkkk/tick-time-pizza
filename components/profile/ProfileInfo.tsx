@@ -25,8 +25,8 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const profileInfo = getProfileInfo(user);
-  const tickets = profileInfo.find((i) => i.title === 'Ваши тикеты')?.title;
+  const info = getProfileInfo(user);
+  const tickets = info.find((i) => i.title === 'Ваши тикеты')?.title;
 
   const handleLogout = async () => {
     try {
@@ -50,7 +50,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   return (
     <div className='container md:py-8 md:px-4 py-[50px] px-[60px]'>
       <div className='grid md:gap-4 smMin:grid-cols-2 mdMin:grid-cols-3 gap-6 mb-[44px] sm:mb-6'>
-        {profileInfo.map(({ id, Icon, title, value }) => (
+        {info.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>
             <Icon
               size={50}

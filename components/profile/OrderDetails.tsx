@@ -47,14 +47,14 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
               <td className='w-full'>
                 <SelectedProductOptions product={product} />
               </td>
-              <div className='flex justify-between gap-6 w-1/3'>
-                <td className='self-start whitespace-nowrap'>
+              <td className='flex justify-between gap-6 w-1/3'>
+                <div className='self-start whitespace-nowrap'>
                   {product.productQuantity} шт.
-                </td>
-                <td className='font-semibold whitespace-nowrap'>
+                </div>
+                <div className='font-semibold whitespace-nowrap'>
                   {product.totalPrice} ₽
-                </td>
-              </div>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>

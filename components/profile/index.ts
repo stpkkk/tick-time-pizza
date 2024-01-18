@@ -6,10 +6,10 @@ import Orders from './Orders';
 import ProfileInfo from './ProfileInfo';
 
 export {
-  ProfileInfo,
-  Orders,
-  OrderDetails,
-  NoOrders,
   ModalEditProfile,
   ModalTicketsInfo,
+  NoOrders,
+  OrderDetails,
+  Orders,
+  ProfileInfo,
 };
