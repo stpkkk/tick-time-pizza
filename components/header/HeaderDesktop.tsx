@@ -31,7 +31,7 @@ const HeaderDesktop: React.FC = () => {
 
   useAuthStateChange(user);
 
-  const isUserSignIn = user && Object.keys(user).length !== 0;
+  const isUserSignIn = user && Object.keys(user).length > 0;
 
   return (
     <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>

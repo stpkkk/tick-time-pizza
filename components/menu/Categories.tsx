@@ -6,6 +6,7 @@ import { categories } from '@/constants';
 import { useAuthStateChange } from '@/hooks';
 import { setSelectedCategory } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { CATEGORIES } from '@/types';
 import { RadioGroup } from '@headlessui/react';
 
 const Categories: React.FC = () => {
@@ -13,9 +14,12 @@ const Categories: React.FC = () => {
   const { user } = useAppSelector((state) => state.profileReducer);
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
   const categoriesWithoutFavorites = categories.filter(
-    (cat) => cat.value !== 'Избранное',
+    (cat) => cat.value !== CATEGORIES.BOOKMARKS,
   );
-  const categoriesToShow = !!user ? categories : categoriesWithoutFavorites;
+  const isUserSignIn = user && Object.keys(user).length > 0;
+  const categoriesToShow = isUserSignIn
+    ? categories
+    : categoriesWithoutFavorites;
 
   useAuthStateChange(user);
 
