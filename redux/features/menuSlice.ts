@@ -22,7 +22,7 @@ export interface MenuState {
   isAllIngredients: boolean;
   isDisabled: boolean;
   selectedIngredients: IAdditionalIngredient[];
-  bookmarks: IProduct[];
+  bookmarks: (IProduct | null)[];
   productQuantity: number;
   cartProducts: IProduct[];
   selectedPromo: Promo | null;
@@ -226,7 +226,7 @@ const menuSlice = createSlice({
       state.isProductsListModalOpen = action.payload;
     },
 
-    addToBookmarks: (state, action: PayloadAction<IProduct[]>) => {
+    addToBookmarks: (state, action: PayloadAction<(IProduct | null)[]>) => {
       state.bookmarks = action.payload;
     },
 
