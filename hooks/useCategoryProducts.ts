@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
 import { menu } from '@/constants';
 import { useAppSelector } from '@/redux/hooks';
-import { CATEGORIES, IProduct } from '@/types';
+import { CATEGORIES } from '@/types';
 
 function filterByCategoryTitle(categoryTitle: string) {
   return menu.filter(
@@ -13,7 +13,7 @@ function filterByCategoryTitle(categoryTitle: string) {
   );
 }
 
-const useCategoryProducts = (category: string | number): IProduct[] => {
+const useCategoryProducts = (category: string | number) => {
   const pathname = usePathname();
   const { bookmarks } = useAppSelector((state) => state.menuReducer);
   const productsGroup = getGroupProducts(pathname);
