@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 type ButtonBookmarkProps = {
-  product: IProduct | null;
+  product: IProduct;
 };
 
 const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {

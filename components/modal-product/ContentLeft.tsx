@@ -42,9 +42,11 @@ const ContentLeft: React.FC = () => {
           height={325}
           className='aspect-square h-full max-h-[325px] w-full max-w-[325px] sm:max-h-[250px] sm:max-w-[250px]'
         />
-        <div className='absolute right-0 top-0'>
-          <ButtonBookmark product={selectedProduct} />
-        </div>
+        {selectedProduct && (
+          <div className='absolute right-0 top-0'>
+            <ButtonBookmark product={selectedProduct} />
+          </div>
+        )}
         <div className='absolute left-0 top-0 w-full'>
           <Notice text='Изображение в рекламе и внешний вид продукта могут отличаться' />
         </div>
