@@ -18,13 +18,13 @@ const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const isUserSignIn = user && Object.keys(user).length > 0;
 
-  const isBookmarked = bookmarks.some((item) => item?.id === product?.id);
+  const isBookmarked = bookmarks?.some((item) => item?.id === product?.id);
 
   const toggleBookmarked = async () => {
     if (isUserSignIn) {
       const updatedBookmarks = isBookmarked
         ? bookmarks.filter((bookmark) => bookmark?.id !== product?.id)
-        : [...bookmarks, product];
+        : [...(bookmarks || []), product];
 
       const updatedUser = {
         ...userInLS,
