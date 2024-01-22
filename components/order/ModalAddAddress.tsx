@@ -1,13 +1,20 @@
 'use client';
 
 import React from 'react';
+import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
-import { setModalAddAddress } from '@/redux/features/profileSlice';
+import { useLocalStorage } from '@/hooks';
+import {
+  setCurrentUser,
+  setModalAddAddress,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ModalAddAddress: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isModalAddAddressOpen } = useAppSelector(
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+
+  const { isModalAddAddressOpen, user, addresses } = useAppSelector(
     (state) => state.profileReducer,
   );
 
@@ -16,11 +23,48 @@ const ModalAddAddress: React.FC = () => {
     // resetForm(); //этот метод из Formik
   };
 
+  const {
+    handleChange,
+    values,
+    touched,
+    handleSubmit,
+    handleBlur,
+    errors,
+    resetForm,
+  } = useFormik({
+    initialValues: {
+      street: '',
+      house: '',
+      birthday: '',
+      apartments: '',
+      doorCode: '',
+      floor: '',
+      entrance: '',
+      addressComment: '',
+    },
+    // validationSchema: profileSchema,
+    onSubmit: async (values) => {
+      const updatedAddresses = [...addresses, values];
+      const updatedUser = {
+        ...user,
+        addresses: updatedAddresses,
+      };
+      dispatch(setCurrentUser(updatedUser));
+      await setUserInLS(updatedUser);
+      closeModal();
+    },
+  });
+
+  console.log(addresses);
+
   if (!isModalAddAddressOpen) return;
 
   return (
     <ModalWrapper closeModal={closeModal} width={990}>
-      <form className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'>
+      <form
+        className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'
+        onSubmit={handleSubmit}
+      >
         <h2 className='h1 text-center mb-[30px] sm:hidden'>
           Добавить новый адрес
         </h2>
@@ -28,42 +72,53 @@ const ModalAddAddress: React.FC = () => {
           <div className='flex justify-between gap-[30px] sm:gap-2.5'>
             <Input
               id='street'
-              label='Улица'
-              onChange={() => {}}
               type='text'
+              label='Улица'
+              onChange={handleChange}
               className='max-w-[645px]'
               required
+              value={values.street}
             />
             <Input
               id='house'
-              label='Дом'
-              onChange={() => {}}
               type='text'
+              label='Дом'
+              onChange={handleChange}
               className='max-w-[195px] sm:max-w-[100px]'
               required
+              value={values.house}
             />
           </div>
           <div className='flex gap-[30px] sm:gap-2.5'>
             <div className='flex sm:basis-1/2 sm:flex-col gap-[30px] sm:gap-2.5'>
               <Input
                 id='apartment'
-                label='Квартира\Офис'
-                onChange={() => {}}
                 type='text'
+                label='Квартира\Офис'
+                onChange={handleChange}
+                value={values.apartments}
               />
               <Input
                 id='door-code'
-                label='Код двери'
-                onChange={() => {}}
                 type='text'
+                label='Код двери'
+                onChange={handleChange}
+                value={values.doorCode}
               />
             </div>
             <div className='flex sm:basis-1/2 sm:flex-col gap-[30px] sm:gap-2.5'>
-              <Input id='floor' label='Этаж' onChange={() => {}} type='text' />
+              <Input
+                id='floor'
+                type='text'
+                label='Этаж'
+                onChange={handleChange}
+                value={values.floor}
+              />
               <Input
                 id='entrance'
                 label='Подъезд'
-                onChange={() => {}}
+                onChange={handleChange}
+                value={values.entrance}
                 type='text'
               />
             </div>
@@ -71,13 +126,13 @@ const ModalAddAddress: React.FC = () => {
           <Input
             id='comment'
             label='Комментарий к адресу'
-            onChange={() => {}}
+            onChange={handleChange}
             type='text'
           />
         </div>
         <div className='min-h-[430px]' />
         <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full'>
-          <ButtonsSaveCancel disabled={true} clickCancel={closeModal} />
+          <ButtonsSaveCancel disabled={false} clickCancel={closeModal} />
         </div>
       </form>
     </ModalWrapper>

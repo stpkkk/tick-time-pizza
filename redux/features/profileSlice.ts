@@ -4,6 +4,7 @@ import {
   ChangeMoneyFrom,
   DeliveryTime,
   ExtendedUser,
+  IAddress,
   IOrder,
   PaymentMethods,
   Supply,
@@ -22,6 +23,7 @@ export interface ProfileState {
   isModalEditProfileOpen: boolean;
   isModalTicketsInfo: boolean;
   orders: IOrder[];
+  addresses: IAddress[];
   orderPrice: number;
   isModalAddAddressOpen: boolean;
   orderFormData: IOrder;
@@ -39,6 +41,7 @@ const initialState: ProfileState = {
   isModalEditProfileOpen: false,
   isModalTicketsInfo: false,
   orders: [],
+  addresses: [],
   orderPrice: 0,
   isModalAddAddressOpen: false,
   orderFormData: {
@@ -108,6 +111,10 @@ const profileSlice = createSlice({
       state.orders = action.payload;
     },
 
+    addToAddresses: (state, action: PayloadAction<IAddress[]>) => {
+      state.addresses = action.payload;
+    },
+
     setModalAddAddress: (state, action: PayloadAction<boolean>) => {
       state.isModalAddAddressOpen = action.payload;
     },
@@ -138,6 +145,7 @@ export const {
   setModalAddAddress,
   setOrderFormData,
   resetOrderFormData,
+  addToAddresses,
 } = profileSlice.actions;
 
 export default profileSlice.reducer;
