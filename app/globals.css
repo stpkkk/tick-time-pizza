@@ -88,11 +88,11 @@ html::-webkit-scrollbar {
 }
 
 body {
-  @apply flex min-h-full w-full min-w-[320px] flex-col items-center overflow-auto bg-white font-montserrat text-primary;
+  @apply flex min-h-screen w-full min-w-[320px] flex-col items-center overflow-x-hidden;
 }
 
 main {
-  @apply mx-auto min-h-[calc(100vh-358px)] w-full max-w-[1262px] px-[1rem];
+  @apply mx-auto min-h-[calc(100vh-358px)] w-full max-w-[1262px] flex-grow px-[1rem];
 }
 
 .container {

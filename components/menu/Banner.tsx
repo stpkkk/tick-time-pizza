@@ -82,18 +82,16 @@ const Banner: React.FC = () => {
           >
             {slides?.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className='relative w-full max-h-[389px] max-w-[1230px] aspect-video cursor-pointer'>
-                  <Image
-                    src={slide.image}
-                    alt={slide.title}
-                    priority
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                    fill
-                    quality={100}
-                    className='rounded-2xl'
-                    onClick={() => handleClick(slide)}
-                  />
-                </div>
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  priority
+                  width={1230}
+                  height={389}
+                  quality={100}
+                  className='rounded-2xl'
+                  onClick={() => handleClick(slide)}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
