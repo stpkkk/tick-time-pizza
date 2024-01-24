@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import {
   ButtonBack,
   ModalAddAddress,
+  ModalRemoveAddress,
   OrderSummary,
   TabDelivery,
   TabPickup,
@@ -13,7 +14,11 @@ import {
 } from '@/components';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
-import { addToOrders, resetOrderFormData } from '@/redux/features/profileSlice';
+import {
+  addToOrders,
+  resetOrderFormData,
+  setCurrentUser,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
 import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
@@ -100,10 +105,9 @@ const Order: React.FC = () => {
   );
 
   React.useEffect(() => {
+    dispatch(setCurrentUser(userInLS));
     setMounted(true);
-  }, []);
-
-  console.log(userInLS);
+  }, [dispatch, userInLS]);
 
   return (
     <main className='mt-[90px]'>
@@ -133,6 +137,7 @@ const Order: React.FC = () => {
           )}
         </form>
         <ModalAddAddress />
+        <ModalRemoveAddress />
       </>
     </main>
   );

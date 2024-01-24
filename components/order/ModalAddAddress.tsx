@@ -9,18 +9,19 @@ import {
   setModalAddAddress,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { generateUUID } from '@/utils';
 
 const ModalAddAddress: React.FC = () => {
   const dispatch = useAppDispatch();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
-  const { isModalAddAddressOpen, user, addresses } = useAppSelector(
+  const { isModalAddAddressOpen, user } = useAppSelector(
     (state) => state.profileReducer,
   );
 
   const closeModal = () => {
     dispatch(setModalAddAddress(false));
-    // resetForm(); //этот метод из Formik
+    resetForm();
   };
 
   const {
@@ -40,13 +41,14 @@ const ModalAddAddress: React.FC = () => {
       doorCode: '',
       floor: '',
       entrance: '',
-      addressComment: '',
+      comment: '',
     },
     // validationSchema: profileSchema,
     onSubmit: async (values) => {
-      const updatedAddresses = [...addresses, values];
+      const updatedAddresses = [...(user?.addresses || []), values];
       const updatedUser = {
-        ...user,
+        ...userInLS,
+        uuid: generateUUID(),
         addresses: updatedAddresses,
       };
       dispatch(setCurrentUser(updatedUser));
@@ -54,8 +56,6 @@ const ModalAddAddress: React.FC = () => {
       closeModal();
     },
   });
-
-  console.log(addresses);
 
   if (!isModalAddAddressOpen) return;
 
