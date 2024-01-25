@@ -1,15 +1,15 @@
 'use client';
 
-import React from 'react';
-import { useFormik } from 'formik';
-import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
-import { useLocalStorage } from '@/hooks';
+import { useLocalStorage } from '@/hooks'
 import {
   setCurrentUser,
   setModalAddAddress,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { generateUUID } from '@/utils';
+} from '@/redux/features/profileSlice'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { generateUUID } from '@/utils'
+import { useFormik } from 'formik'
+import React from 'react'
+import { ButtonsSaveCancel, Input, ModalWrapper } from '../common'
 
 const ModalAddAddress: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -45,10 +45,12 @@ const ModalAddAddress: React.FC = () => {
     },
     // validationSchema: profileSchema,
     onSubmit: async (values) => {
-      const updatedAddresses = [...(user?.addresses || []), values];
+      const updatedAddresses = [
+        ...(user?.addresses || []),
+        { ...values, uuid: generateUUID() },
+      ];
       const updatedUser = {
         ...userInLS,
-        uuid: generateUUID(),
         addresses: updatedAddresses,
       };
       dispatch(setCurrentUser(updatedUser));

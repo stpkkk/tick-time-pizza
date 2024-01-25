@@ -30,8 +30,6 @@ const SelectAddress: React.FC = () => {
     dispatch(setModalRemoveAddress(true));
   };
 
-  console.log(addressToRemove);
-
   return (
     <>
       <section>
