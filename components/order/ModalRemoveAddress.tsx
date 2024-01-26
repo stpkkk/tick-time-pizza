@@ -2,7 +2,7 @@ import React from 'react';
 import { ModalWrapper } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
-  addToAddresses,
+  setCurrentUser,
   setModalRemoveAddress,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -10,30 +10,27 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 const ModalRemoveAddress: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
-  const { isModalRemoveAddressOpen, addressToRemove, user, addresses } =
-    useAppSelector((state) => state.profileReducer);
+  const { isModalRemoveAddressOpen, addressToRemove, user } = useAppSelector(
+    (state) => state.profileReducer,
+  );
 
   const closeModal = () => {
     dispatch(setModalRemoveAddress(false));
   };
 
   const handleRemoveAddress = async () => {
-    const updatedAddresses = addresses.filter(
+    const updatedAddresses = user?.addresses?.filter(
       (address) => address.uuid !== addressToRemove?.uuid,
     );
 
-    if (updatedAddresses) {
-      dispatch(addToAddresses(updatedAddresses));
-      await setUserInLS(updatedAddresses);
-      closeModal();
-    }
+    const updatedUser = { ...user, addresses: updatedAddresses };
+
+    dispatch(setCurrentUser(updatedUser));
+    await setUserInLS(updatedUser);
+    closeModal();
   };
 
-  if (!isModalRemoveAddressOpen) return;
-
-  console.log(addressToRemove?.uuid);
-
-  return (
+  return isModalRemoveAddressOpen ? (
     <ModalWrapper closeModal={closeModal} width={500}>
       <div className='flex_center flex-col gap-[30px] sm:gap-4 px-16 py-[50px] sm:p-4'>
         <h3 className='h1'>Удаление адреса</h3>
@@ -61,7 +58,7 @@ const ModalRemoveAddress: React.FC = () => {
         </div>
       </div>
     </ModalWrapper>
-  );
+  ) : null;
 };
 
 export default ModalRemoveAddress;

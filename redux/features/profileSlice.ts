@@ -24,7 +24,6 @@ export interface ProfileState {
   isModalRemoveAddressOpen: boolean;
   isModalTicketsInfo: boolean;
   orders: IOrder[];
-  addresses: IAddress[];
   orderPrice: number;
   isModalAddAddressOpen: boolean;
   orderFormData: IOrder;
@@ -44,7 +43,6 @@ const initialState: ProfileState = {
   isModalRemoveAddressOpen: false,
   isModalTicketsInfo: false,
   orders: [],
-  addresses: [],
   orderPrice: 0,
   isModalAddAddressOpen: false,
   addressToRemove: null,
@@ -115,10 +113,6 @@ const profileSlice = createSlice({
       state.orders = action.payload;
     },
 
-    addToAddresses: (state, action: PayloadAction<IAddress[]>) => {
-      state.addresses = action.payload;
-    },
-
     setModalAddAddress: (state, action: PayloadAction<boolean>) => {
       state.isModalAddAddressOpen = action.payload;
     },
@@ -157,7 +151,6 @@ export const {
   setModalAddAddress,
   setOrderFormData,
   resetOrderFormData,
-  addToAddresses,
   setModalRemoveAddress,
   setAddressToRemove,
 } = profileSlice.actions;

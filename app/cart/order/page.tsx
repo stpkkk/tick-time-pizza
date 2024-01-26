@@ -111,7 +111,7 @@ const Order: React.FC = () => {
 
   return (
     <main className='mt-[90px]'>
-      <>
+      {mounted ? (
         <form onSubmit={handleSubmitOrder}>
           <section>
             <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
@@ -125,20 +125,18 @@ const Order: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          {mounted ? (
-            <OrderSummary />
-          ) : (
-            <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
-              <CgSpinner
-                size={70}
-                className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
-              />
-            </div>
-          )}
+          <OrderSummary />
         </form>
-        <ModalAddAddress />
-        <ModalRemoveAddress />
-      </>
+      ) : (
+        <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
+          <CgSpinner
+            size={70}
+            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
+          />
+        </div>
+      )}
+      <ModalAddAddress />
+      <ModalRemoveAddress />
     </main>
   );
 };
