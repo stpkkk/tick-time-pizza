@@ -25,7 +25,9 @@ const OrderSummary: React.FC = () => {
               {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
             </h3>
             <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-              {isDelivery ? 'Выберите адрес доставки' : orderFormData.pickPoint}
+              {isDelivery
+                ? orderFormData.deliveryAddress?.street
+                : orderFormData.pickPoint}
             </span>
           </div>
           <div>

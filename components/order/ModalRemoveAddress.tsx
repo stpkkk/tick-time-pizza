@@ -4,15 +4,15 @@ import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalRemoveAddress,
+  setOrderFormData,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ModalRemoveAddress: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
-  const { isModalRemoveAddressOpen, addressToRemove, user } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { isModalRemoveAddressOpen, addressToRemove, user, orderFormData } =
+    useAppSelector((state) => state.profileReducer);
 
   const closeModal = () => {
     dispatch(setModalRemoveAddress(false));
@@ -27,6 +27,16 @@ const ModalRemoveAddress: React.FC = () => {
 
     dispatch(setCurrentUser(updatedUser));
     await setUserInLS(updatedUser);
+
+    if (user?.addresses && user?.addresses?.length > 1) {
+      dispatch(
+        setOrderFormData({
+          ...orderFormData,
+          deliveryAddress: user?.addresses?.at(0),
+        }),
+      );
+    }
+
     closeModal();
   };
 

@@ -49,7 +49,7 @@ const initialState: ProfileState = {
   orderFormData: {
     comment: '',
     tickets: 0,
-    deliveryAddress: '',
+    deliveryAddress: null,
     supplyMethod: Supply.DELIVERY,
     paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
     cashChange: ChangeMoneyFrom.WITHOUT_CHANGE,

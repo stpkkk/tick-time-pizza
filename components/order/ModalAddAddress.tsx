@@ -1,21 +1,22 @@
 'use client';
 
-import { useLocalStorage } from '@/hooks'
+import React from 'react';
+import { useFormik } from 'formik';
+import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
+import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
   setModalAddAddress,
-} from '@/redux/features/profileSlice'
-import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { generateUUID } from '@/utils'
-import { useFormik } from 'formik'
-import React from 'react'
-import { ButtonsSaveCancel, Input, ModalWrapper } from '../common'
+  setOrderFormData,
+} from '@/redux/features/profileSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { generateUUID } from '@/utils';
 
 const ModalAddAddress: React.FC = () => {
   const dispatch = useAppDispatch();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
-  const { isModalAddAddressOpen, user } = useAppSelector(
+  const { isModalAddAddressOpen, user, orderFormData } = useAppSelector(
     (state) => state.profileReducer,
   );
 
@@ -49,19 +50,27 @@ const ModalAddAddress: React.FC = () => {
         ...(user?.addresses || []),
         { ...values, uuid: generateUUID() },
       ];
+
+      dispatch(
+        setOrderFormData({
+          ...orderFormData,
+          deliveryAddress: updatedAddresses.at(-1),
+        }),
+      );
+
       const updatedUser = {
         ...userInLS,
         addresses: updatedAddresses,
       };
+
       dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
+
       closeModal();
     },
   });
 
-  if (!isModalAddAddressOpen) return;
-
-  return (
+  return isModalAddAddressOpen ? (
     <ModalWrapper closeModal={closeModal} width={990}>
       <form
         className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'
@@ -138,7 +147,7 @@ const ModalAddAddress: React.FC = () => {
         </div>
       </form>
     </ModalWrapper>
-  );
+  ) : null;
 };
 
 export default ModalAddAddress;
