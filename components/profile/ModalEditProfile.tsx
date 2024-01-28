@@ -58,9 +58,7 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
     (!values.name.trim() && !values.birthday.trim() && !values.email.trim()) ||
     !!errors.email;
 
-  if (!isModalEditProfileOpen) return;
-
-  return (
+  return isModalEditProfileOpen ? (
     <ModalWrapper closeModal={closeModal} width={730}>
       <form className='px-16 py-[50px] sm:p-4' onSubmit={handleSubmit}>
         <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
@@ -95,7 +93,7 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
         <ButtonsSaveCancel disabled={isFormNotValid} clickCancel={closeModal} />
       </form>
     </ModalWrapper>
-  );
+  ) : null;
 };
 
 export default ModalEditProfile;

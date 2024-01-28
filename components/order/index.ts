@@ -8,6 +8,7 @@ import SelectPaymentMethod from './SelectPaymentMethod';
 import SelectPickupPoint from './SelectPickupPoint';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
+import ViewAddress from './ViewAddress';
 
 export {
   ModalAddAddress,
@@ -20,4 +21,5 @@ export {
   SelectPickupPoint,
   TabDelivery,
   TabPickup,
+  ViewAddress,
 };

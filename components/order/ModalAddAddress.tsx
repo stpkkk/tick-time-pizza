@@ -70,6 +70,8 @@ const ModalAddAddress: React.FC = () => {
     },
   });
 
+  const isFormNotValid = !values.street.trim() || !values.house.trim();
+
   return isModalAddAddressOpen ? (
     <ModalWrapper closeModal={closeModal} width={990}>
       <form
@@ -103,14 +105,14 @@ const ModalAddAddress: React.FC = () => {
           <div className='flex gap-[30px] sm:gap-2.5'>
             <div className='flex sm:basis-1/2 sm:flex-col gap-[30px] sm:gap-2.5'>
               <Input
-                id='apartment'
+                id='apartments'
                 type='text'
                 label='Квартира\Офис'
                 onChange={handleChange}
                 value={values.apartments}
               />
               <Input
-                id='door-code'
+                id='doorCode'
                 type='text'
                 label='Код двери'
                 onChange={handleChange}
@@ -143,7 +145,10 @@ const ModalAddAddress: React.FC = () => {
         </div>
         <div className='min-h-[430px]' />
         <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full'>
-          <ButtonsSaveCancel disabled={false} clickCancel={closeModal} />
+          <ButtonsSaveCancel
+            disabled={isFormNotValid}
+            clickCancel={closeModal}
+          />
         </div>
       </form>
     </ModalWrapper>

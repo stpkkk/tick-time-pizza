@@ -1,8 +1,8 @@
-import { setOrderFormData } from '@/redux/features/profileSlice'
-import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { PaymentMethods } from '@/types'
-import React from 'react'
-import { Notice, RadioButton } from '../common'
+import React from 'react';
+import { Notice, RadioButton } from '../common';
+import { setOrderFormData } from '@/redux/features/profileSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { PaymentMethods } from '@/types';
 
 const SelectPaymentMethod: React.FC = () => {
   const dispatch = useAppDispatch();

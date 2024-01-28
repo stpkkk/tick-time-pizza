@@ -28,7 +28,7 @@ const ModalRemoveAddress: React.FC = () => {
     dispatch(setCurrentUser(updatedUser));
     await setUserInLS(updatedUser);
 
-    if (user?.addresses && user?.addresses?.length > 1) {
+    if (user?.addresses) {
       dispatch(
         setOrderFormData({
           ...orderFormData,
@@ -48,7 +48,8 @@ const ModalRemoveAddress: React.FC = () => {
           Вы уверены, что хотите удалить адрес?
         </p>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] font-bold'>
-          {addressToRemove?.street}
+          <span>{addressToRemove?.street}, &nbsp;</span>
+          <span>{addressToRemove?.house}</span>
         </p>
         <div className='flex_center gap-[30px] sm:gap-2.5 w-full'>
           <button
