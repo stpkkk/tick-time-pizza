@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import {
   ButtonBack,
   ModalAddAddress,
+  ModalRemoveAddress,
   OrderSummary,
   TabDelivery,
   TabPickup,
@@ -13,7 +14,11 @@ import {
 } from '@/components';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
-import { addToOrders, resetOrderFormData } from '@/redux/features/profileSlice';
+import {
+  addToOrders,
+  resetOrderFormData,
+  setCurrentUser,
+} from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
 import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
@@ -100,14 +105,13 @@ const Order: React.FC = () => {
   );
 
   React.useEffect(() => {
+    dispatch(setCurrentUser(userInLS));
     setMounted(true);
-  }, []);
-
-  console.log(userInLS);
+  }, [dispatch, userInLS]);
 
   return (
     <main className='mt-[90px]'>
-      <>
+      {mounted ? (
         <form onSubmit={handleSubmitOrder}>
           <section>
             <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
@@ -121,19 +125,18 @@ const Order: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          {mounted ? (
-            <OrderSummary />
-          ) : (
-            <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
-              <CgSpinner
-                size={70}
-                className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
-              />
-            </div>
-          )}
+          <OrderSummary />
         </form>
-        <ModalAddAddress />
-      </>
+      ) : (
+        <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
+          <CgSpinner
+            size={70}
+            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
+          />
+        </div>
+      )}
+      <ModalAddAddress />
+      <ModalRemoveAddress />
     </main>
   );
 };

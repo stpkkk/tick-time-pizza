@@ -1,3 +1,4 @@
+import { IAddress } from './address';
 import { IProduct } from './menu';
 
 export interface IOrder {
@@ -8,7 +9,7 @@ export interface IOrder {
   orderPrice?: number;
   paymentMethod?: string;
   tickets?: number;
-  deliveryAddress?: string;
+  deliveryAddress?: IAddress | null;
   orderAccepted?: string;
   deliveryTime?: string;
   cashChange?: string;

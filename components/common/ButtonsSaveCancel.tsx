@@ -1,7 +1,7 @@
 import React from 'react';
 
 type ButtonsSaveCancelProps = {
-  disabled: boolean;
+  disabled?: boolean;
   clickCancel: () => void;
 };
 
