@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SelectedProductOptions } from '../common';
-import ViewAddress from './ViewAddress';
+import AddressView from './AddressView';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
@@ -26,7 +26,7 @@ const OrderSummary: React.FC = () => {
               {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
             </h3>
             {isDelivery ? (
-              <ViewAddress address={orderFormData.deliveryAddress} />
+              <AddressView address={orderFormData.deliveryAddress} />
             ) : (
               <span className='text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold'>
                 {orderFormData.pickPoint}

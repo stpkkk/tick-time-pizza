@@ -1,25 +1,25 @@
+import AddressView from './AddressView';
 import ModalAddAddress from './ModalAddAddress';
 import ModalRemoveAddress from './ModalRemoveAddress';
 import OrderSummary from './OrderSummary';
 import SelectAddress from './SelectAddress';
 import SelectChangeMoney from './SelectChangeMoney';
-import SelectDeliveryTime from './SelectDeliveryTime';
+import SelectDeliveryDate from './SelectDeliveryDate';
 import SelectPaymentMethod from './SelectPaymentMethod';
 import SelectPickupPoint from './SelectPickupPoint';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
-import ViewAddress from './ViewAddress';
 
 export {
+  AddressView,
   ModalAddAddress,
   ModalRemoveAddress,
   OrderSummary,
   SelectAddress,
   SelectChangeMoney,
-  SelectDeliveryTime,
+  SelectDeliveryDate,
   SelectPaymentMethod,
   SelectPickupPoint,
   TabDelivery,
   TabPickup,
-  ViewAddress,
 };

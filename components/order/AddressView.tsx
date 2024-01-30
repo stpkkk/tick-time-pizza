@@ -1,12 +1,12 @@
 import React from 'react';
 import { IAddress } from '@/types';
 
-type ViewAddressProps = {
+type AddressViewProps = {
   address?: IAddress | null;
 };
 
-const ViewAddress: React.FC<ViewAddressProps> = ({ address }) => {
-  return (
+const AddressView: React.FC<AddressViewProps> = ({ address }) => {
+  return address ? (
     <>
       <div className='mb-2'>
         <p className=' text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold max-md:-mb-1 md:pb-[3px] pr-[25px] flex flex-wrap break-words'>
@@ -36,7 +36,9 @@ const ViewAddress: React.FC<ViewAddressProps> = ({ address }) => {
         )}
       </>
     </>
+  ) : (
+    'Выберите адрес'
   );
 };
 
-export default ViewAddress;
+export default AddressView;

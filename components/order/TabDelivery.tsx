@@ -4,7 +4,7 @@ import React from 'react';
 import {
   SelectAddress,
   SelectChangeMoney,
-  SelectDeliveryTime,
+  SelectDeliveryDate,
   SelectPaymentMethod,
 } from '.';
 
@@ -14,7 +14,7 @@ const TabDelivery: React.FC = () => {
       <SelectAddress />
       <SelectPaymentMethod />
       <SelectChangeMoney />
-      <SelectDeliveryTime />
+      <SelectDeliveryDate />
     </div>
   );
 };

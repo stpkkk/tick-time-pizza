@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   SelectChangeMoney,
-  SelectDeliveryTime,
+  SelectDeliveryDate,
   SelectPaymentMethod,
   SelectPickupPoint,
 } from '.';
@@ -14,7 +14,7 @@ const TabPickup: React.FC = () => {
       <SelectPickupPoint />
       <SelectPaymentMethod />
       <SelectChangeMoney />
-      <SelectDeliveryTime />
+      <SelectDeliveryDate />
     </div>
   );
 };

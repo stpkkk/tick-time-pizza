@@ -2,7 +2,7 @@ import React from 'react';
 import { LuMapPin } from 'react-icons/lu';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { RadioButton } from '../common';
-import ViewAddress from './ViewAddress';
+import AddressView from './AddressView';
 import {
   setAddressToRemove,
   setModalAddAddress,
@@ -74,7 +74,7 @@ const SelectAddress: React.FC = () => {
               className='p-[30px] w-full h-full'
               innerHTML={
                 <>
-                  <ViewAddress address={address} />
+                  <AddressView address={address} />
                   <button
                     className='absolute top-4 right-4 hover:bg-white rounded-full p-1'
                     onClick={() => handleClickDelete(address)}

@@ -11,5 +11,5 @@ export function getFormattedDateTime() {
   const formattedDate = `${day}.${month}.${year}`;
   const formattedTime = `${hours}:${minutes}`;
 
-  return { formattedDate, formattedTime };
+  return { formattedDate, formattedTime, day, month };
 }
