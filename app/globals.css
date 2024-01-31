@@ -88,7 +88,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  @apply flex min-h-screen w-full min-w-[320px] flex-col items-center overflow-x-hidden;
+  @apply flex min-h-screen w-full min-w-[320px] flex-col items-center overflow-x-hidden bg-white font-montserrat text-primary;
 }
 
 main {

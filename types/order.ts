@@ -11,7 +11,11 @@ export interface IOrder {
   tickets?: number;
   deliveryAddress?: IAddress | null;
   orderAccepted?: string;
-  deliveryTime?: string;
+  deliveryTime?: {
+    hours?: string;
+    minutes?: string;
+  };
+  deliveryDate?: string;
   cashChange?: string;
   pickPoint?: string;
   comment?: string;

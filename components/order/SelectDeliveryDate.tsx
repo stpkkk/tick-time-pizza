@@ -2,7 +2,7 @@ import React from 'react';
 import { RadioButton } from '../common';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { DeliveryTime } from '@/types';
+import { DeliveryDate } from '@/types';
 import { getFormattedDateTime } from '@/utils';
 
 const SelectDeliveryDate: React.FC = () => {
@@ -11,7 +11,7 @@ const SelectDeliveryDate: React.FC = () => {
 
   const { day, month } = getFormattedDateTime();
 
-  const soonDelivery = Object.values(DeliveryTime);
+  const soonDelivery = Object.values(DeliveryDate);
 
   const dateDelivery = Array.from({ length: 6 }, (_, index) => {
     const nextDay = +day + index + 2;
@@ -20,21 +20,21 @@ const SelectDeliveryDate: React.FC = () => {
     return `${formattedDay}.${month}`;
   });
 
-  const deliveryDate = [...soonDelivery, ...dateDelivery];
+  const deliveryDates = [...soonDelivery, ...dateDelivery];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
-      setOrderFormData({ ...orderFormData, deliveryTime: e.target.value }),
+      setOrderFormData({ ...orderFormData, deliveryDate: e.target.value }),
     );
   };
 
-  const isChecked = (value: string) => orderFormData.deliveryTime === value;
+  const isChecked = (value: string) => orderFormData.deliveryDate === value;
 
   return (
     <section>
       <h3 className='h3 mb-4'>Когда привезти заказ:</h3>
       <ul className='scroll-container flex sm:flex-col gap-[30px] sm:gap-4 pb-4  overflow-auto scroll thin_scroll'>
-        {deliveryDate.map((date) => (
+        {deliveryDates.map((date) => (
           <li key={date}>
             <RadioButton
               id={date}

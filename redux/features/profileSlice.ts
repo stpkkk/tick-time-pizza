@@ -2,7 +2,7 @@ import { ConfirmationResult } from 'firebase/auth';
 import { pizzerias } from '@/constants';
 import {
   ChangeMoneyFrom,
-  DeliveryTime,
+  DeliveryDate,
   ExtendedUser,
   IAddress,
   IOrder,
@@ -53,7 +53,8 @@ const initialState: ProfileState = {
     supplyMethod: Supply.DELIVERY,
     paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
     cashChange: ChangeMoneyFrom.WITHOUT_CHANGE,
-    deliveryTime: DeliveryTime.SOON,
+    deliveryDate: DeliveryDate.SOON,
+    deliveryTime: { hour: '', minutes: '' },
     pickPoint: pizzerias.at(0)?.address,
   },
 };

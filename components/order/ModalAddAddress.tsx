@@ -25,15 +25,7 @@ const ModalAddAddress: React.FC = () => {
     resetForm();
   };
 
-  const {
-    handleChange,
-    values,
-    touched,
-    handleSubmit,
-    handleBlur,
-    errors,
-    resetForm,
-  } = useFormik({
+  const { handleChange, values, handleSubmit, resetForm } = useFormik({
     initialValues: {
       street: '',
       house: '',
@@ -44,7 +36,6 @@ const ModalAddAddress: React.FC = () => {
       entrance: '',
       comment: '',
     },
-    // validationSchema: profileSchema,
     onSubmit: async (values) => {
       const updatedAddresses = [
         ...(user?.addresses || []),

@@ -5,6 +5,7 @@ import {
   SelectAddress,
   SelectChangeMoney,
   SelectDeliveryDate,
+  SelectDeliveryTime,
   SelectPaymentMethod,
 } from '.';
 
@@ -15,6 +16,7 @@ const TabDelivery: React.FC = () => {
       <SelectPaymentMethod />
       <SelectChangeMoney />
       <SelectDeliveryDate />
+      <SelectDeliveryTime />
     </div>
   );
 };

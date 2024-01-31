@@ -18,9 +18,9 @@ const ModalWrapper: React.FC<ModalProps> = ({
       <div className='fixed inset-0 overflow-y-auto flex_center min-h-full sm:items-stretch sm:p-0'>
         <div
           className='relative flex w-full scale-100 flex-col justify-center overflow-hidden rounded-2xl bg-white opacity-100 drop-shadow-custom transition-all sm:max-w-full sm:rounded-none'
-					style={{
-						maxWidth: `${width}px`,
-					}}
+          style={{
+            maxWidth: `${width}px`,
+          }}
           onClick={(e) => e.stopPropagation()}
         >
           {children}

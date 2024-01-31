@@ -5,6 +5,7 @@ import OrderSummary from './OrderSummary';
 import SelectAddress from './SelectAddress';
 import SelectChangeMoney from './SelectChangeMoney';
 import SelectDeliveryDate from './SelectDeliveryDate';
+import SelectDeliveryTime from './SelectDeliveryTime';
 import SelectPaymentMethod from './SelectPaymentMethod';
 import SelectPickupPoint from './SelectPickupPoint';
 import TabDelivery from './TabDelivery';
@@ -18,6 +19,7 @@ export {
   SelectAddress,
   SelectChangeMoney,
   SelectDeliveryDate,
+  SelectDeliveryTime,
   SelectPaymentMethod,
   SelectPickupPoint,
   TabDelivery,

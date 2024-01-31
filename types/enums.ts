@@ -41,7 +41,7 @@ export enum PaymentMethods {
   CARD_ONLINE = 'ОНЛАЙН (по карте)',
 }
 
-export enum DeliveryTime {
+export enum DeliveryDate {
   SOON = 'Поскорее',
   TODAY = 'Сегодня',
   TOMORROW = 'Завтра',
