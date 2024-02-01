@@ -33,7 +33,7 @@ const Tabs: React.FC<TabsProps> = ({
   };
 
   return (
-    <div className='drop-shadow-custom flex flex-wrap w-full md:max-w-full'>
+    <div className='drop-shadow-custom flex flex-wrap w-full md:max-w-full relative z-10'>
       <ul className='flex flex-wrap gap-x-2 flex-row' role='tablist'>
         <Tab
           label={labelFirst}

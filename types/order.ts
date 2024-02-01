@@ -12,8 +12,8 @@ export interface IOrder {
   deliveryAddress?: IAddress | null;
   orderAccepted?: string;
   deliveryTime?: {
-    hours?: string;
-    minutes?: string;
+    hours?: 'hours' | '';
+    minutes?: 'minutes' | '';
   };
   deliveryDate?: string;
   cashChange?: string;
