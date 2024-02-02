@@ -10,6 +10,7 @@ import SelectPaymentMethod from './SelectPaymentMethod';
 import SelectPickupPoint from './SelectPickupPoint';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
+import TimePicker from './TimePicker';
 
 export {
   AddressView,
@@ -24,4 +25,5 @@ export {
   SelectPickupPoint,
   TabDelivery,
   TabPickup,
+  TimePicker,
 };

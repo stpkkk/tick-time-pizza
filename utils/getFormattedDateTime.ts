@@ -5,11 +5,18 @@ export function getFormattedDateTime() {
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
   const year = currentDate.getFullYear();
 
-  const hours = currentDate.getHours().toString().padStart(2, '0');
-  const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+  const currentHour = currentDate.getHours().toString().padStart(2, '0');
+  const currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
 
   const formattedDate = `${day}.${month}.${year}`;
-  const formattedTime = `${hours}:${minutes}`;
+  const formattedTime = `${currentHour}:${currentMinute}`;
 
-  return { formattedDate, formattedTime, day, month, hours, minutes };
+  return {
+    formattedDate,
+    formattedTime,
+    day,
+    month,
+    currentHour,
+    currentMinute,
+  };
 }
