@@ -74,7 +74,7 @@ const OrderSummary: React.FC = () => {
             <p className='sm:text-xs text-sm italic'>Доступно: 0 из 18</p>
           </div>
           <div>
-            <p className='font-bold sm:marker:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
+            <p className='font-bold md:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
               К оплате: {orderTotalPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>

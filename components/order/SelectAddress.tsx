@@ -50,13 +50,16 @@ const SelectAddress: React.FC = () => {
   return (
     <section>
       <h3 className='h3 mb-4'>Куда доставить заказ?</h3>
-      <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center sm:gap-4 gap-[30px] h-auto min-h-[96px]'>
+      <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center sm:gap-4 gap-[30px]'>
         <li
-          className='btn_grayLight p-[30px] max-w-[255px] sm:max-w-full flex justify-between gap-5 w-full h-auto'
+          className='btn_grayLight p-[30px] max-w-[255px] sm:max-w-full flex justify-between sm:flex-col sm:items-start sm:gap-2 gap-5 w-full min-h-[96px] sm:p-4'
           onClick={handleClickAddAddress}
         >
-          <LuMapPin size={40} className='text-grayDark' />
-          <button className='text-left w-full' type='button'>
+          <LuMapPin size={40} className='text-grayDark sm:w-8' />
+          <button
+            className='w-full text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold text-left'
+            type='button'
+          >
             Добавить новый адрес
           </button>
         </li>
@@ -71,7 +74,7 @@ const SelectAddress: React.FC = () => {
               checked={orderFormData.deliveryAddress?.uuid === address.uuid}
               value={address.uuid}
               name={address.uuid}
-              className='p-[30px] w-full h-full'
+              className='p-[30px] sm:p-4 w-full h-full'
               innerHTML={
                 <>
                   <AddressView address={address} />

@@ -18,9 +18,9 @@ const TimePicker: React.FC<TimePickerProps> = ({
   time,
   isDisabled,
 }) => (
-  <div className='relative bg-white max-w-[96px] w-full min-h-[60px]'>
+  <div className='relative bg-white max-w-[96px] w-full'>
     <button
-      className={`flex_between px-6 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-grayDark border-solid focus:outline-none focus:ring-0 focus:border-yellow ring-none min-h-[60px] ${
+      className={`flex_between px-6 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-grayDark border-solid focus:outline-none focus:ring-0 focus:border-yellow ring-none min-h-[60px] sm:min-h-[50px] ${
         isDisabled && 'pointer-events-none border-opacity-50'
       } ${isOpen && 'border-yellow border-b-none rounded-b-none'}`}
       type='button'
@@ -34,7 +34,7 @@ const TimePicker: React.FC<TimePickerProps> = ({
       )}
     </button>
     {isOpen && (
-      <ul className='absolute w-full max-h-[130px] overflow-y-auto border border-yellow border-solid bg-white rounded-b-2xl border-t-0'>
+      <ul className='absolute w-full max-h-[130px] overflow-y-auto thin_scroll border border-yellow border-solid bg-white rounded-b-2xl border-t-0'>
         {timeArray.map((time) => (
           <li
             className='hover:bg-gray transition w-full text-center py-1 last:rounded-b-2xl'

@@ -33,7 +33,7 @@ const Tabs: React.FC<TabsProps> = ({
   };
 
   return (
-    <div className='drop-shadow-custom flex flex-wrap w-full md:max-w-full relative z-10'>
+    <div className='drop-shadow-custom relative z-10'>
       <ul className='flex flex-wrap gap-x-2 flex-row' role='tablist'>
         <Tab
           label={labelFirst}
@@ -47,7 +47,7 @@ const Tabs: React.FC<TabsProps> = ({
         />
       </ul>
 
-      <div className='relative flex flex-col flex-auto min-w-0 break-words bg-white w-full rounded-2xl rounded-tl-none px-[60px] py-[50px] sm:px-4 sm:py-8'>
+      <div className='break-words bg-white w-full rounded-2xl rounded-tl-none px-[60px] py-[50px] sm:px-4 sm:py-8'>
         {activeTab === labelFirst && contentFirst}
         {activeTab === labelSecond && contentSecond}
       </div>

@@ -34,7 +34,7 @@ const HeaderDesktop: React.FC = () => {
   const isUserSignIn = user && Object.keys(user).length > 0;
 
   return (
-    <header className='mx-auto w-full max-w-[1262px] px-[1rem] fixed top-0 z-10 sm:hidden'>
+    <header className='fixed top-0 z-30 mx-auto w-full max-w-[1262px] px-[1rem] sm:hidden'>
       <div className='flex_center h-[90px] rounded-b-2xl bg-white px-[60px] drop-shadow-custom'>
         <Logo />
         <div className='text-sm md:relative md:ml-[20px] md:flex-grow'>

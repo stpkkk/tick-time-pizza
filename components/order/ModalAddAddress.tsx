@@ -69,9 +69,7 @@ const ModalAddAddress: React.FC = () => {
         className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'
         onSubmit={handleSubmit}
       >
-        <h2 className='h1 text-center mb-[30px] sm:hidden'>
-          Добавить новый адрес
-        </h2>
+        <h2 className='h1 text-center mb-[30px]'>Добавить новый адрес</h2>
         <div className='flex flex-col sm:gap-[18px] gap-[30px]'>
           <div className='flex justify-between gap-[30px] sm:gap-2.5'>
             <Input
@@ -135,7 +133,7 @@ const ModalAddAddress: React.FC = () => {
           />
         </div>
         <div className='min-h-[430px]' />
-        <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full'>
+        <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full sm:px-4'>
           <ButtonsSaveCancel
             disabled={isFormNotValid}
             clickCancel={closeModal}

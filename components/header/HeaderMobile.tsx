@@ -16,7 +16,7 @@ const HeaderMobile: React.FC = () => {
   };
 
   return (
-    <header className='w-full px-[1rem] fixed top-0 z-10 hidden sm:block'>
+    <header className='w-full px-[1rem] fixed top-0 z-20 hidden sm:block'>
       <div className='relative flex h-[70px] items-center rounded-b-2xl bg-white px-4 drop-shadow-custom'>
         <Logo />
         <div className='flex_center h-full'>

@@ -33,7 +33,7 @@ const SelectDeliveryDate: React.FC = () => {
   return (
     <section>
       <h3 className='h3 mb-4'>Когда привезти заказ:</h3>
-      <ul className='scroll-container flex sm:flex-col gap-[30px] sm:gap-4 pb-4  overflow-auto scroll thin_scroll'>
+      <ul className='scroll pb-4 flex gap-[30px] sm:gap-4 overflow-x-auto scroll-smooth mdMin:thin_scroll'>
         {deliveryDates.map((date) => (
           <li key={date}>
             <RadioButton

@@ -72,7 +72,7 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
     <div onClick={handleNoticeClick}>{TooltipContent}</div>
   ) : (
     <div
-      className='absolute left-0 top-0 z-20 cursor-pointer text-grayDark hover:text-primary'
+      className='cursor-pointer text-grayDark hover:text-primary'
       onClick={handleClickExclamation}
     >
       <AiOutlineExclamationCircle size={18} />

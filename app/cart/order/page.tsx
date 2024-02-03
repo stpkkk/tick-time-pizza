@@ -110,7 +110,7 @@ const Order: React.FC = () => {
   }, [dispatch, userInLS]);
 
   return (
-    <main className='mt-[90px]'>
+    <main className='mt-[90px] sm:mt-[70px]'>
       {mounted ? (
         <form onSubmit={handleSubmitOrder}>
           <section>
