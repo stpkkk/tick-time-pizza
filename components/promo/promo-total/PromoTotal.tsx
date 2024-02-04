@@ -51,7 +51,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
                 Выберите необходимое количество товаров из каталога слева.
               </p>
             )}
-            <div className='w-full sm:px-4 bg-white'>
+            <div className='w-full bg-white sm:px-4'>
               <PromoProductsList />
               <div className='sm:hidden'>
                 <PromoTotalPrice

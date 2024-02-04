@@ -74,7 +74,6 @@ import ketchup from '../public/assets/images/sauces/sauce-ketchup.webp';
 import sweetSourSauce from '../public/assets/images/sauces/sauce-sweet-sour.webp';
 import garlicSauce from '../public/assets/images/sauces/sauсe-garlic.webp';
 import cheeseSticks from '../public/assets/images/snacks/cheese-sticks.webp';
-//snacks
 import dumplingsCheese from '../public/assets/images/snacks/dumplings-cheese.webp';
 import hotrollPepperoni from '../public/assets/images/snacks/hotroll-pepperoni.webp';
 import pastaCarbonara from '../public/assets/images/snacks/pasta-carbonara.webp';
@@ -82,8 +81,8 @@ import pastaChickenMushroom from '../public/assets/images/snacks/pasta-chicken-m
 import potatoChickenFry from '../public/assets/images/snacks/potato-chicken-fry.webp';
 import saladVegetablesEgg from '../public/assets/images/snacks/salad-vegetables-egg.webp';
 import soupTomatoCream from '../public/assets/images/snacks/soup-tomato-cream.webp';
+//snacks
 import { IProduct } from '@/types';
-
 
 export const menu: IProduct[] = [
   {

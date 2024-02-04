@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       } w-full max-w-[1262px] px-[1rem] mt-[50px] drop-shadow-custom sm:mb-4`}
     >
       <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4'>
-        <div className='flex_center gap-2 sm:gap-0'>
+        <div className='gap-2 flex_center sm:gap-0'>
           <Link href='https://play.google.com/store/apps/details?id=ru.sysdyn.ticktime'>
             <Image
               src={google}
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             />
           </Link>
         </div>
-        <ul className='flex_center gap-4 font-semibold'>
+        <ul className='gap-4 font-semibold flex_center'>
           {footerLinks.map((link) => (
             <li
               className='whitespace-nowrap py-3 sm:text-[14px]'
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             занимает всего 10 минут!
           </p>
         </div>
-        <div className='flex w-full flex-col gap-3 whitespace-nowrap text-right underline sm:items-center'>
+        <div className='flex flex-col w-full gap-3 text-right underline whitespace-nowrap sm:items-center'>
           <Link href='/legal' target='_blank'>
             Правовая информация
           </Link>

@@ -19,10 +19,10 @@ const HeaderMobile: React.FC = () => {
     <header className='w-full px-[1rem] fixed top-0 z-20 hidden sm:block'>
       <div className='relative flex h-[70px] items-center rounded-b-2xl bg-white px-4 drop-shadow-custom'>
         <Logo />
-        <div className='flex_center h-full'>
+        <div className='h-full flex_center'>
           <HeaderCart />
           <button
-            className='cursor-pointer px-2'
+            className='px-2 cursor-pointer'
             type='button'
             onClick={handleToggleMenu}
           >

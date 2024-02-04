@@ -3,10 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { Counter } from '../common';
-import { decrementIngredientQuantity, incrementIngredientQuantity } from '@/redux/features/menuSlice';
+import {
+  decrementIngredientQuantity,
+  incrementIngredientQuantity,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IAdditionalIngredient } from '@/types';
-
 
 type IngredientsSelectItemProps = {
   ingredient: IAdditionalIngredient;
@@ -76,7 +78,7 @@ const IngredientsSelectItem: React.FC<IngredientsSelectItemProps> = ({
           </span>
         </div>
         {!isDisabled ? (
-          <div className='ml-auto flex flex-nowrap items-center justify-between gap-2 text-xs sm:text-base'>
+          <div className='flex items-center justify-between gap-2 ml-auto text-xs flex-nowrap sm:text-base'>
             <Counter
               minValue={0}
               handleIncrement={handleIncrement}

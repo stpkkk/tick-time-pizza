@@ -29,7 +29,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
             (link.href !== '/' && pathname.startsWith(link.href));
 
           return (
-            <li className='cursor-pointer p-2' key={link.key}>
+            <li className='p-2 cursor-pointer' key={link.key}>
               <Link
                 className={`${isActive ? 'text-secondary' : ''}`}
                 onClick={handleToggleMenu}

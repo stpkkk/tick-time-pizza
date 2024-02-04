@@ -45,9 +45,9 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
 
   return (
     <>
-      <div className='flex items-start flex-none md:gap-4 gap-5'>
+      <div className='flex items-start flex-none gap-5 md:gap-4'>
         <div className='mr-auto'>
-          <span className='md:text-sm leading-4 block break-words font-semibold text-xs'>
+          <span className='block text-xs font-semibold leading-4 break-words md:text-sm'>
             {product.title}
           </span>
           <p className='md:text-xs text-[0.625rem] leading-[0.75rem] mt-2.5'>
@@ -55,7 +55,7 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
           </p>
         </div>
         <button
-          className='flex_start gap-5'
+          className='gap-5 flex_start'
           type='button'
           onClick={() => removeItem(product?.uuid || '')}
         >

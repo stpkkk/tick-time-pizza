@@ -24,7 +24,7 @@ const CartPage: React.FC = () => {
 
   return (
     <main className='mt-[90px]'>
-      <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
+      <div className='flex flex-row gap-2 my-10 ml-6 md:my-4 md:ml-4'>
         <ButtonBack />
         <h1 className='h1'>Корзина</h1>
       </div>

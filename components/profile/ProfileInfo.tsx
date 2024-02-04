@@ -56,7 +56,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
               size={50}
               className='bg-yellow text-white p-2 rounded-lg flex-shrink-0 sm:max-w-[35px] sm:h-[35px]'
             />
-            <div className='flex flex-col font-bold relative'>
+            <div className='relative flex flex-col font-bold'>
               <span className='text-grayDark sm:text-xs'>{title}</span>
               <p className='sm:text-sm sm:leading-[15px] text-base leading-5 break-all '>
                 {value}
@@ -77,7 +77,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
           </div>
         ))}
       </div>
-      <div className='flex gap-6 text-grayDark font-semibold sm:text-sm'>
+      <div className='flex gap-6 font-semibold text-grayDark sm:text-sm'>
         <div
           className='flex gap-2 cursor-pointer hover:text-primary '
           onClick={handleLogout}

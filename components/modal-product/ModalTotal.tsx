@@ -95,7 +95,7 @@ const ModalTotal: React.FC = () => {
 
   return (
     <div className='flex_center flex-col gap-[30px]'>
-      <div className='flex_between w-full sm:flex-row-reverse sm:px-4'>
+      <div className='w-full flex_between sm:flex-row-reverse sm:px-4'>
         <div className='flex_between w-full max-w-[128px] text-base sm:max-w-[96px]'>
           <Counter
             minValue={1}

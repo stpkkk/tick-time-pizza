@@ -4,7 +4,11 @@ import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactInputMask from 'react-input-mask';
 import { useDispatch } from 'react-redux';
-import { ApplicationVerifier, getAuth, signInWithPhoneNumber } from 'firebase/auth';
+import {
+  ApplicationVerifier,
+  getAuth,
+  signInWithPhoneNumber,
+} from 'firebase/auth';
 import Link from 'next/link';
 import { app_firebase } from '@/firebase';
 import {
@@ -66,7 +70,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
 
   return (
     <form className='login_form' onSubmit={handlePhoneSubmit}>
-      <p className='block uppercase text-2xl'>Укажите телефон</p>
+      <p className='block text-2xl uppercase'>Укажите телефон</p>
       <p className='block text-center'>
         Введите номер телефона, чтобы войти или зарегистрироваться
       </p>
@@ -92,7 +96,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
         Продолжить
       </button>
       <button
-        className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'
+        className='absolute flex items-center top-5 right-5 text-grayDark hover:text-primary'
         onClick={handleClose}
         type='button'
       >

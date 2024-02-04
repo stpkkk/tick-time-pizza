@@ -46,12 +46,12 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
 
   const TooltipContent = (
     <div ref={modalRef} onClick={handleModalClick}>
-      <div className='absolute left-0 top-0 z-20 cursor-pointer text-grayDark hover:text-primary'>
+      <div className='absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary'>
         <AiOutlineExclamationCircle size={18} />
       </div>
       <div className='container absolute -left-2 -top-2 z-10 max-w-[296px] px-9 py-6'>
         <div
-          className='absolute right-0 top-0 cursor-pointer p-2 text-grayDark hover:text-primary'
+          className='absolute top-0 right-0 p-2 cursor-pointer text-grayDark hover:text-primary'
           onClick={handleClickExclamation}
         >
           <RiCloseFill size={24} />

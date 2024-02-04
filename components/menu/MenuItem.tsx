@@ -63,7 +63,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
       onMouseLeave={handleMouseLeaveItem}
     >
       <div
-        className='flex h-full flex-col justify-between'
+        className='flex flex-col justify-between h-full'
         onClick={() => handleClickProduct(product)}
       >
         <div className='flex flex-col gap-4'>
@@ -78,7 +78,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
               className={`${isItemHovered && 'opacity-50'}`}
             />
           </div>
-          <span className='mb-4 block font-semibold leading-5'>
+          <span className='block mb-4 font-semibold leading-5'>
             {product.title}
           </span>
         </div>

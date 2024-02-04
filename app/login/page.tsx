@@ -40,7 +40,7 @@ const Login: React.FC = () => {
 
   return (
     <main className='relative z-10 sm:px-4 mb-[90px]'>
-      <div className='fixed inset-0 overflow-y-auto flex_center min-h-full p-4 sm:items-stretch sm:p-0 sm:text-center'>
+      <div className='fixed inset-0 min-h-full p-4 overflow-y-auto flex_center sm:items-stretch sm:p-0 sm:text-center'>
         <div className='overlay' />
         <div
           id='recaptcha-container'

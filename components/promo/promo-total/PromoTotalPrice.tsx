@@ -16,11 +16,11 @@ const PromoTotalPrice: React.FC<PromoTotalProps> = ({
   return (
     <>
       <div className='flex gap-2.5 sm:justify-center items-center text-sm justify-start my-8'>
-        <span className='sm:font-semibold whitespace-nowrap font-bold text-xl'>
+        <span className='text-xl font-bold sm:font-semibold whitespace-nowrap'>
           {priceWithDiscount} ₽
         </span>
         {isQuantityMax ? (
-          <span className='line-through text-grayDark font-semibold whitespace-nowrap text-base'>
+          <span className='text-base font-semibold line-through text-grayDark whitespace-nowrap'>
             {totalPrice} ₽
           </span>
         ) : null}

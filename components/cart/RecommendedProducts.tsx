@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
 import {
-  setSelectedProduct,
   setModalProductOpen,
+  setSelectedProduct,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { IProduct } from '@/types';
@@ -45,7 +45,7 @@ const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
             height={150}
             className='aspect-square h-full max-h-[150px] w-full max-w-[150px] sm:max-h-[102px] sm:max-w-[102px] lg:max-h-[90px] lg:max-w-[90px]'
           />
-          <div className='flex justify-between flex-col gap-4 font-bold'>
+          <div className='flex flex-col justify-between gap-4 font-bold'>
             <span className='block sm:text-xs whitespace-pre-wrap max-w-[150px]'>
               {product.title}
             </span>

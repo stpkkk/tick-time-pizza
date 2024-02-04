@@ -35,7 +35,7 @@ const RadioGroupOption: React.FC<IRadioGroupOptionProps> = ({
       >
         <div className='flex items-center justify-between gap-2'>
           {option.image && (
-            <div className='h-5 w-5'>
+            <div className='w-5 h-5'>
               <Image
                 src={option.image}
                 alt={option.value.toString()}

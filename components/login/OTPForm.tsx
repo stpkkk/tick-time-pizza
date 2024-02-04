@@ -82,7 +82,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
         />
       ) : (
         <>
-          <p className='uppercase text-2xl'>Введите код</p>
+          <p className='text-2xl uppercase'>Введите код</p>
           <p className='text-center'>
             На номер {phone} отправлено СМС-сообщение с кодом
           </p>
@@ -105,14 +105,14 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
             Подтвердить код
           </button>
           <button
-            className='absolute top-5 right-5 flex items-center text-grayDark hover:text-primary'
+            className='absolute flex items-center top-5 right-5 text-grayDark hover:text-primary'
             onClick={handleClose}
             type='button'
           >
             <AiOutlineCloseCircle size={35} />
           </button>
           <button
-            className='absolute top-5 left-5 flex items-center text-grayDark hover:text-primary'
+            className='absolute flex items-center top-5 left-5 text-grayDark hover:text-primary'
             onClick={handleClickBack}
             type='button'
           >

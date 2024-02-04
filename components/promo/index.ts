@@ -1,8 +1,8 @@
 import ModalPromo from './ModalPromo';
-import ModalPromoProdutsList from './ModalPromoProdutsList';
+import ModalPromoProductsList from './ModalPromoProductsList';
 import PromoCard from './PromoCard';
 import PromoProductsList from './PromoProductsList';
 
 export * from './promo-total';
 
-export { PromoCard, ModalPromo, PromoProductsList, ModalPromoProdutsList };
+export { ModalPromo, ModalPromoProductsList, PromoCard, PromoProductsList };

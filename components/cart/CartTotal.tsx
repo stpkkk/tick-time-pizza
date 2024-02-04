@@ -41,7 +41,7 @@ const CartTotal: React.FC = () => {
       <form className='flex flex-col gap-[30px]' onSubmit={handleCheckoutOrder}>
         <Promocode />
         <div>
-          <span className='flex justify-between text-xl font-bold mb-4'>
+          <span className='flex justify-between mb-4 text-xl font-bold'>
             Сумма заказа:
             <span className='whitespace-nowrap'>{cartTotalPrice} ₽</span>
           </span>

@@ -1,12 +1,12 @@
-import React from 'react';
+import { setModalHeight } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import Image from 'next/image';
+import React from 'react';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { ButtonBookmark, Notice } from '../common';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
-import { setModalHeight } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ContentLeft: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -43,11 +43,11 @@ const ContentLeft: React.FC = () => {
           className='aspect-square h-full max-h-[325px] w-full max-w-[325px] sm:max-h-[250px] sm:max-w-[250px]'
         />
         {selectedProduct && (
-          <div className='absolute right-0 top-0'>
+          <div className='absolute top-0 right-0'>
             <ButtonBookmark product={selectedProduct} />
           </div>
         )}
-        <div className='absolute left-0 top-0 w-full'>
+        <div className='absolute top-0 left-0 w-full'>
           <Notice text='Изображение в рекламе и внешний вид продукта могут отличаться' />
         </div>
         {selectedProduct?.additionalIngredients && !selectedPromo ? (

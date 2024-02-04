@@ -5,8 +5,8 @@ import { cards, content } from '@/constants';
 const Sberbank: React.FC = () => {
   return (
     <main className='mt-[90px] px-[60px] sm:px-4'>
-      <h1 className='h1 my-10 sm:my-4'>Оплата по карте через Сбербанк</h1>
-      <p className='sm:text-sm text-base sm:mb-30px mb-50px'>
+      <h1 className='my-10 h1 sm:my-4'>Оплата по карте через Сбербанк</h1>
+      <p className='text-base sm:text-sm sm:mb-30px mb-50px'>
         Оплата происходит через авторизационный сервер Процессингового центра
         Банка с использованием Банковских кредитных карт следующих платежных
         систем:
@@ -33,7 +33,7 @@ const Sberbank: React.FC = () => {
         {content.map((c) => (
           <li className='flex flex-col gap-[20px] sm:gap-4' key={c.id}>
             <h3 className='h3'>{c.title}</h3>
-            <p className='sm:text-sm text-base'>{c.text}</p>
+            <p className='text-base sm:text-sm'>{c.text}</p>
           </li>
         ))}
       </ul>

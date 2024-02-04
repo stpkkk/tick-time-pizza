@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 
 type CounterProps = {
   value: number;

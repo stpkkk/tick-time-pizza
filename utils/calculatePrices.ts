@@ -1,5 +1,10 @@
-import { IAdditionalIngredient, IOption, IProduct, Prices, Promos } from '@/types';
-
+import {
+  IAdditionalIngredient,
+  IOption,
+  IProduct,
+  Prices,
+  Promos,
+} from '@/types';
 
 export function calculateProductPrices(
   selectedProduct: IProduct | null,

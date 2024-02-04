@@ -3,14 +3,34 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import promoImg from '../../../public/assets/icons/promo.svg';
-import { ButtonBack, ModalProduct, ModalPromoProdutsList, PromoProductsList, PromoSelectedProductsList, PromoTotal, PromoTotalHeader, PromoTotalPrice } from '@/components';
+import {
+  ButtonBack,
+  ModalProduct,
+  ModalPromoProductsList,
+  PromoProductsList,
+  PromoSelectedProductsList,
+  PromoTotal,
+  PromoTotalHeader,
+  PromoTotalPrice,
+} from '@/components';
 import { promos } from '@/constants';
 import { useLocalStorage } from '@/hooks';
-import { addToCart, resetPromoProductsList, setIsProductsListModalOpen, setPromoDiscount, setSelectedPromo } from '@/redux/features/menuSlice';
+import {
+  addToCart,
+  resetPromoProductsList,
+  setIsProductsListModalOpen,
+  setPromoDiscount,
+  setSelectedPromo,
+} from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Prices, Promos } from '@/types';
-import { calculateProductPrices, calculateTotalPrice, generateUUID, getPizzaOfTheDay, getPriceWithDiscount } from '@/utils';
-
+import {
+  calculateProductPrices,
+  calculateTotalPrice,
+  generateUUID,
+  getPizzaOfTheDay,
+  getPriceWithDiscount,
+} from '@/utils';
 
 type PromoProps = {
   params: {
@@ -113,7 +133,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <div className='my-10 ml-6 flex flex-row gap-2 md:my-4 md:ml-4'>
+      <div className='flex flex-row gap-2 my-10 ml-6 md:my-4 md:ml-4'>
         <ButtonBack />
         <h1 className='h1'>
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
@@ -134,7 +154,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           )}
           {!isQuantityMax ? (
             <>
-              <span className='block font-semibold text-sm mb-4'>
+              <span className='block mb-4 text-sm font-semibold'>
                 Выберите{' '}
                 {totalPromoProductsQuantity === 0 ? 'первый' : 'следующий'}{' '}
                 товар
@@ -157,7 +177,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      <div className='container p-4 pt-0 hidden sm:block w-full fixed bottom-0 left-0'>
+      <div className='container fixed bottom-0 left-0 hidden w-full p-4 pt-0 sm:block'>
         <PromoTotalPrice
           addProductToCart={addProductToCart}
           isQuantityMax={isQuantityMax}
@@ -165,8 +185,8 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-     <ModalProduct />
-      {isProductsListModalOpen && <ModalPromoProdutsList promo={promo} />}
+      <ModalProduct />
+      {isProductsListModalOpen && <ModalPromoProductsList promo={promo} />}
     </main>
   );
 };

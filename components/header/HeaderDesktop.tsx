@@ -45,18 +45,18 @@ const HeaderDesktop: React.FC = () => {
             <span className='block font-semibold'>Меню</span>
             <IoIosArrowDown />
           </div>
-          <div className='bottom-1 w-full md:absolute'>
+          <div className='w-full bottom-1 md:absolute'>
             <Nav />
           </div>
         </div>
         <div
-          className='relative ml-4 h-full hover:bg-grayLight'
+          className='relative h-full ml-4 hover:bg-grayLight'
           onMouseOver={handleMouseOverPhone}
           onMouseOut={handleMouseOutPhone}
         >
           <Phone />
           {isHoveringPhone ? (
-            <div className='header_tooltip left-0'>
+            <div className='left-0 header_tooltip'>
               *минимальная сумма заказа на доставку равна стоимости средней
               пиццы.
             </div>

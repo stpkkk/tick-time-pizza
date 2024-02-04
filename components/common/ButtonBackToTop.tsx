@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-
 const ButtonBackToTop: React.FC = () => {
   const [buttonBackToTop, setButtonBackToTop] = React.useState(false);
 

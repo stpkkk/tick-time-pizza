@@ -14,7 +14,9 @@ export const getPromoProductSizes = (
     case Promos.PEPPERONI:
       return selectedProduct.sizes?.filter((size) => size.value === Sizes.BIG);
     case Promos.THREE_PIZZAS_999:
-      return selectedProduct.sizes?.filter((size) => size.value === Sizes.SMALL);
+      return selectedProduct.sizes?.filter(
+        (size) => size.value === Sizes.SMALL,
+      );
     case Promos.DINNER_PIZZA:
       return selectedProduct.sizes?.filter(
         (size) => size.value === Sizes.MEDIUM,

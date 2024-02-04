@@ -78,7 +78,7 @@ const SelectDeliveryTime: React.FC = () => {
 
   return isNotSoon ? (
     <section>
-      <h3 className='h3 mb-4'>Во сколько?</h3>
+      <h3 className='mb-4 h3'>Во сколько?</h3>
       <div className='flex items-center gap-3' ref={timePickerRef}>
         {renderTimePicker('hours', hoursToShow, hoursOpen)}
         <span className='font-semibold'>:</span>

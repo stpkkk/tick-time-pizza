@@ -35,7 +35,7 @@ const CartProduct: React.FC<CartProductProps> = ({
   );
 
   return (
-    <li className='flex_start flex-none gap-5 md:gap-4' key={id}>
+    <li className='flex-none gap-5 flex_start md:gap-4' key={id}>
       <Image
         src={image}
         alt={title}
@@ -58,7 +58,7 @@ const CartProduct: React.FC<CartProductProps> = ({
           </span>
         </div>
       </div>
-      <button className='flex_start gap-5 pt-4 sm:pt-0' type='button'>
+      <button className='gap-5 pt-4 flex_start sm:pt-0' type='button'>
         <RiDeleteBin6Line
           size={20}
           onClick={onRemove}

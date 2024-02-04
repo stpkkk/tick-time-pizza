@@ -3,7 +3,7 @@ import { Providers } from './providers';
 import { ButtonBackToTop, Footer, Header } from '@/components';
 
 export const metadata = {
-  title: 'Додо пицца в Петрозаводске',
+  title: 'pizza',
   description: 'Пицца в Петрозаводске',
 };
 

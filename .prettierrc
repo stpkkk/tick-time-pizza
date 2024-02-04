@@ -3,8 +3,5 @@
   "jsxSingleQuote": true,
   "semi": true,
   "importOrder": ["^react", "^(?!(react|@core/))\\w+", "^@(core|ui)/", "^."],
-  "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@trivago/prettier-plugin-sort-imports"
-  ]
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

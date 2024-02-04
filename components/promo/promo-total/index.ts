@@ -5,9 +5,9 @@ import PromoTotalItem from './PromoTotalItem';
 import PromoTotalPrice from './PromoTotalPrice';
 
 export {
-  PromoTotalHeader,
+  PromoSelectedProductsList,
   PromoTotal,
+  PromoTotalHeader,
   PromoTotalItem,
   PromoTotalPrice,
-  PromoSelectedProductsList,
 };

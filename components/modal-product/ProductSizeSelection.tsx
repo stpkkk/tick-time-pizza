@@ -8,7 +8,6 @@ import { Dough, IOption, Promos, Sizes } from '@/types';
 import { getPromoProductSizes } from '@/utils';
 import { RadioGroup } from '@headlessui/react';
 
-
 const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, selectedSize, selectedDough, selectedPromo } =

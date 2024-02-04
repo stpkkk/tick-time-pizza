@@ -6,7 +6,6 @@ import { setAllIngredients } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Dough, IAdditionalIngredient, Sizes } from '@/types';
 
-
 const IngredientsSelect: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, isAllIngredients, selectedDough, selectedSize } =

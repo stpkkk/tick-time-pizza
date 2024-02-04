@@ -2,7 +2,6 @@ import React from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import { Dough } from '@/types';
 
-
 const ProductWeight: React.FC = () => {
   const { selectedProduct, selectedSize, selectedDough } = useAppSelector(
     (state) => state.menuReducer,

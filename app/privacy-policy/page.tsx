@@ -4,7 +4,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <main className='mt-[90px] sm:px-4 !px-[60px]'>
       <h1 className='h1 my-[30px] sm:my-4'>Политика конфиденциальности</h1>
-      <p className='break-words whitespace-pre-wrap text-justify md:text-sm text-base'>
+      <p className='text-base text-justify break-words whitespace-pre-wrap md:text-sm'>
         Настоящая Политика конфиденциальности персональной информации (далее —
         Политика, для избежания разночтения под персональной информацией
         подразумевается и персональные данные) действует в отношении всей

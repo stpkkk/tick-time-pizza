@@ -15,9 +15,9 @@ const ModalWrapper: React.FC<ModalProps> = ({
   return (
     <div className='relative z-30' onClick={closeModal}>
       <div className='overlay' />
-      <div className='fixed inset-0 overflow-y-auto flex_center min-h-full sm:items-stretch sm:p-0'>
+      <div className='fixed inset-0 min-h-full overflow-y-auto flex_center sm:items-stretch sm:p-0'>
         <div
-          className='relative flex w-full scale-100 flex-col justify-center overflow-hidden rounded-2xl bg-white opacity-100 drop-shadow-custom transition-all sm:max-w-full sm:rounded-none'
+          className='relative flex flex-col justify-center w-full overflow-hidden transition-all scale-100 bg-white opacity-100 rounded-2xl drop-shadow-custom sm:max-w-full sm:rounded-none'
           style={{
             maxWidth: `${width}px`,
           }}

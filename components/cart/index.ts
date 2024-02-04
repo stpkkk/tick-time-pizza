@@ -8,8 +8,8 @@ import RecommendedProducts from './RecommendedProducts';
 export {
   Cart,
   CartProduct,
-  EmptyCart,
   CartTotal,
+  EmptyCart,
   Promocode,
   RecommendedProducts,
 };

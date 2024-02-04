@@ -32,7 +32,7 @@ const SelectDeliveryDate: React.FC = () => {
 
   return (
     <section>
-      <h3 className='h3 mb-4'>Когда привезти заказ:</h3>
+      <h3 className='mb-4 h3'>Когда привезти заказ:</h3>
       <ul className='scroll pb-4 flex gap-[30px] sm:gap-4 overflow-x-auto scroll-smooth mdMin:thin_scroll'>
         {deliveryDates.map((date) => (
           <li key={date}>

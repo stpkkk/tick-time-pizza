@@ -42,10 +42,10 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
           className='rounded-2xl'
         />
       </div>
-      <span className='block font-semibold leading-5 mb-4'>
+      <span className='block mb-4 font-semibold leading-5'>
         {isPizzaOfTheDay ? promo.title + ' ' + currentDay : promo.title}
       </span>
-      <footer className='flex-1 flex justify-start items-center gap-7'>
+      <footer className='flex items-center justify-start flex-1 gap-7'>
         {promo.isRedirect && (
           <Link
             href={`/promo/${promo.id}`}
@@ -58,7 +58,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         <button
           type='button'
           onClick={() => handlePromoClick(promo, true)}
-          className='flex justify-between items-center flex-nowrap flex-row gap-3 text-sm font-semibold text-grayDark hover:text-primary'
+          className='flex flex-row items-center justify-between gap-3 text-sm font-semibold flex-nowrap text-grayDark hover:text-primary'
         >
           <BsPlusSquare size={24} className='sm:w-[20px] sm:h-[20px]' />
           <span className='sm:text-xs sm:leading-[15px]'>Подробнее</span>

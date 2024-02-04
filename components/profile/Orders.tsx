@@ -39,10 +39,10 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
               !isOrderOpen(order.id || '') || 'gap-[50px]'
             }`}
           >
-            <div className='flex justify-between items-center flex-nowrap w-full'>
-              <div className='flex_center gap-10 sm:gap-4'>
+            <div className='flex items-center justify-between w-full flex-nowrap'>
+              <div className='gap-10 flex_center sm:gap-4'>
                 <div>
-                  <p className='font-bold text-xl leading-6 md:text-xs'>
+                  <p className='text-xl font-bold leading-6 md:text-xs'>
                     #{order.id}
                   </p>
                 </div>
