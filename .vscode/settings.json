@@ -1,5 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "cSpell.words": ["formik", "headlessui", "Swiper"]
+  "cSpell.words": ["formik", "headlessui", "reduxjs", "Swiper"]
 }
