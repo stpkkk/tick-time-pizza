@@ -4,7 +4,11 @@ import { ButtonBackToTop, Footer, Header } from '@/components';
 
 export const metadata = {
   title: 'pizza',
-  description: 'Пицца в Петрозаводске',
+  description: 'Пицца',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     <footer
       className={`${
         isPathnameStartsPromo ? 'sm:hidden' : 'block '
-      } w-full max-w-[1262px] px-[1rem] mt-[50px] drop-shadow-custom sm:mb-4`}
+      } w-full max-w-[1262px] px-[1rem] mt-[50px] drop-shadow-custom`}
     >
       <div className='flex_between rounded-t-2xl bg-white px-[60px] py-8 text-primary sm:flex-col-reverse md:px-4'>
         <div className='gap-2 flex_center sm:gap-0'>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className='flex justify-between gap-5 bg-secondary px-16 py-7 text-[12px] text-white sm:flex-col sm:rounded-b-2xl sm:text-center md:px-4'>
+      <div className='flex justify-between gap-5 bg-secondary px-16 py-7 text-[12px] text-white sm:flex-col sm:text-center md:px-4'>
         <div className='max-w-[700px]'>
           <p className='leading-4 md:text-[10px]'>
             Добро пожаловать на сайт пиццерии Тик Тайм! Мы готовим и доставляем

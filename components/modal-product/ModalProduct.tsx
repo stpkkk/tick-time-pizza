@@ -33,7 +33,7 @@ const ModalProduct: React.FC = () => {
           <ContentRight />
         </div>
       </ModalWrapper>
-      <div className='container fixed bottom-0 left-0 z-10 hidden w-full p-4 pb-[30px] sm:block'>
+      <div className='container fixed bottom-0 left-0 z-30 hidden w-full p-4 pb-[30px] sm:block'>
         <ModalTotal />
       </div>
     </>

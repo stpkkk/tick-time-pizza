@@ -11,14 +11,23 @@ const ModalNotice = () => {
     dispatch(setModalNotice(false));
   }, [dispatch]);
 
+  React.useEffect(() => {
+    let pop_status = localStorage.getItem('pop_status');
+    if (!pop_status) {
+      dispatch(setModalNotice(true));
+      localStorage.setItem('pop_status', '1');
+    }
+  }, [dispatch]);
+
   return isModalNoticeOpen ? (
     <ModalWrapper closeModal={closeModal} width={990}>
       <div className='p-[60px] sm:p-4'>
         <h2 className='text-center h1 mb-[30px]'>Внимание!</h2>
         <p className='text-xl font-bold text-center'>
-          Данный сайт(приложение) является копией оригинального сайта &nbsp;
+          Данный сайт(приложение) является копией оригинального сайта пиццерии в
+          городе Петрозаводск &nbsp;
           <a
-            className='underline underline-offset-2'
+            className='underline underline-offset-4 hover:text-yellow'
             href='https://tick-time.ru'
             target='_blank'
           >
@@ -26,15 +35,15 @@ const ModalNotice = () => {
           </a>
           &nbsp; и является ТЕСТОВЫМ! Так же никакой коммерческой деятельности
           это приложение не несет и никаких платежных систем здесь не
-          подключено! Прошу связаться со&nbsp;
+          используется! По различным вопросам можете связаться со мной в&nbsp;
           <a
-            className='underline underline-offset-2'
+            className='underline underline-offset-4 hover:text-yellow'
             href='https://t.me/stpkk'
             target='_blank'
           >
-            мной
+            Telegram
           </a>
-          &nbsp; если есть какие то вопросы, в том числе по сотрудничеству!
+          &nbsp;, в том числе по сотрудничеству!
         </p>
       </div>
     </ModalWrapper>
