@@ -8,7 +8,7 @@ export interface IOrder {
   products?: IProduct[];
   orderPrice?: number;
   paymentMethod?: string;
-  tickets?: number;
+  orderTickets?: number;
   deliveryAddress?: IAddress | null;
   orderAccepted?: string;
   deliveryTime?: {

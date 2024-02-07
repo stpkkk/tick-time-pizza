@@ -8,10 +8,17 @@ import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
-const OrderSummary: React.FC = () => {
+type OrderSummaryProps = {
+  orderTickets: number;
+};
+
+const OrderSummary: React.FC<OrderSummaryProps> = ({ orderTickets }) => {
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const orderTotalPrice = calculateTotalPrice(cartProductInLS).totalPrice;
-  const { orderFormData } = useAppSelector((state) => state.profileReducer);
+  const { orderFormData, orders } = useAppSelector(
+    (state) => state.profileReducer,
+  );
+  const { promoDiscount } = useAppSelector((state) => state.menuReducer);
   const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
 
   return (
@@ -78,10 +85,10 @@ const OrderSummary: React.FC = () => {
               К оплате: {orderTotalPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
-              Тикетов будет начислено: 12
+              Тикетов будет начислено: {orderTickets}
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold'>
-              Скидка: 0 ₽
+              Скидка: {promoDiscount} ₽
             </p>
           </div>
           <div className='flex justify-between gap-6 sm:gap-4 sm:flex-col'>

@@ -9,4 +9,5 @@ export interface ExtendedUser extends Partial<User> {
   orders?: IOrder[];
   bookmarks?: IProduct[];
   addresses?: IAddress[];
+  tickets?: number;
 }

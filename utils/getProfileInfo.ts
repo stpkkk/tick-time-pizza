@@ -29,8 +29,15 @@ const getProfileInfo = (user: ExtendedUser | null) => {
       title: 'Ваш e-mail',
       value: user?.email || 'Не указан',
     },
-    { id: 4, Icon: IoTicketOutline, title: 'Ваши тикеты', value: '0' },
+    {
+      id: 4,
+      Icon: IoTicketOutline,
+      title: 'Ваши тикеты',
+      value: user?.tickets || 0,
+    },
   ];
+
+  console.log(user?.tickets);
 
   return profileInfo;
 };

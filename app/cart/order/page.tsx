@@ -12,6 +12,7 @@ import {
   TabPickup,
   Tabs,
 } from '@/components';
+import { TICKETS_PERCENT } from '@/config';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import {
@@ -34,13 +35,16 @@ const Order: React.FC = () => {
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const orderPrice = calculateTotalPrice(cartProductInLS).totalPrice;
+  const orderTickets = Math.round(orderPrice * (TICKETS_PERCENT / 100));
+  const randomId = Math.floor(
+    Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
+  ).toString();
 
   const { formattedDate, formattedTime } = getFormattedDateTime();
   const {
     paymentMethod,
     supplyMethod,
     pickPoint,
-    tickets,
     cashChange,
     comment,
     deliveryAddress,
@@ -49,10 +53,6 @@ const Order: React.FC = () => {
   const handleSubmitOrder = React.useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
-
-      const randomId = Math.floor(
-        Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
-      ).toString();
 
       const newOrder = {
         id: randomId,
@@ -63,10 +63,10 @@ const Order: React.FC = () => {
         paymentMethod,
         supplyMethod,
         pickPoint,
-        tickets,
         cashChange,
         comment,
         deliveryAddress,
+        orderTickets,
       };
 
       const updatedOrders = [...orders, newOrder];
@@ -75,13 +75,15 @@ const Order: React.FC = () => {
       const updatedUser = {
         ...user,
         orders: updatedOrders,
+        tickets: user?.tickets || 0 + orderTickets,
       };
 
-      dispatch(addToCart([]));
-      await setCartProductInLS([]);
+      dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
-      router.push('/profile');
+      await setCartProductInLS([]);
+      dispatch(addToCart([]));
       dispatch(resetOrderFormData());
+      router.push('/profile');
     },
     [
       cartProducts,
@@ -92,14 +94,15 @@ const Order: React.FC = () => {
       formattedDate,
       formattedTime,
       orderPrice,
+      orderTickets,
       orders,
       paymentMethod,
       pickPoint,
+      randomId,
       router,
       setCartProductInLS,
       setUserInLS,
       supplyMethod,
-      tickets,
       user,
     ],
   );
@@ -125,7 +128,7 @@ const Order: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          <OrderSummary />
+          <OrderSummary orderTickets={orderTickets} />
         </form>
       ) : (
         <div className='grid place-items-center min-h-[calc(100vh-358px)]'>

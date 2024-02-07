@@ -48,7 +48,7 @@ const initialState: ProfileState = {
   addressToRemove: null,
   orderFormData: {
     comment: '',
-    tickets: 0,
+    orderTickets: 0,
     deliveryAddress: null,
     supplyMethod: Supply.DELIVERY,
     paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
