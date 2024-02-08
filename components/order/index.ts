@@ -11,6 +11,7 @@ import SelectPickupPoint from './SelectPickupPoint';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
 import TimePicker from './TimePicker';
+import ModalOrderSuccess from './ModalOrderSuccess';
 
 export {
   AddressView,
@@ -26,4 +27,5 @@ export {
   TabDelivery,
   TabPickup,
   TimePicker,
+	ModalOrderSuccess
 };

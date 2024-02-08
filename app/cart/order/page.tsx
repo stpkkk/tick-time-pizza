@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import {
   ButtonBack,
   ModalAddAddress,
+  ModalOrderSuccess,
   ModalRemoveAddress,
   OrderSummary,
   TabDelivery,
@@ -19,6 +20,7 @@ import {
   addToOrders,
   resetOrderFormData,
   setCurrentUser,
+  setModalOrderSuccessOpen,
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
@@ -82,8 +84,9 @@ const Order: React.FC = () => {
       await setUserInLS(updatedUser);
       await setCartProductInLS([]);
       dispatch(addToCart([]));
+      await setUserInLS(updatedUser);
       dispatch(resetOrderFormData());
-      router.push('/profile');
+      dispatch(setModalOrderSuccessOpen(true));
     },
     [
       cartProducts,
@@ -98,9 +101,6 @@ const Order: React.FC = () => {
       orders,
       paymentMethod,
       pickPoint,
-      randomId,
-      router,
-      setCartProductInLS,
       setUserInLS,
       supplyMethod,
       user,
@@ -117,7 +117,7 @@ const Order: React.FC = () => {
       {mounted ? (
         <form onSubmit={handleSubmitOrder}>
           <section>
-            <div className='flex flex-row gap-2 my-10 ml-6 md:my-4 md:ml-4'>
+            <div className='md:my-4 md:ml-4 flex flex-row gap-2 my-10 ml-6'>
               <ButtonBack />
               <h1 className='h1'>Оформление заказа</h1>
             </div>
@@ -140,6 +140,7 @@ const Order: React.FC = () => {
       )}
       <ModalAddAddress />
       <ModalRemoveAddress />
+      <ModalOrderSuccess />
     </main>
   );
 };

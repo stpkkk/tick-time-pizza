@@ -9,19 +9,19 @@ const AddressView: React.FC<AddressViewProps> = ({ address }) => {
   return address ? (
     <>
       <div className='mb-2'>
-        <p className='text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold max-md:-mb-1 md:pb-[3px] pr-[25px] flex flex-wrap break-words'>
+        <p className='text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold md:pb-[3px] flex flex-wrap break-words'>
           {address?.street && (
             <span className='break-words'>{`${address.street},`}&nbsp;</span>
           )}
           <br />
           {address?.house && (
-            <span className='inline-block whitespace-nowrap'>
+            <span className='whitespace-nowrap inline-block'>
               {`дом ${address.house}`}
               &nbsp;
             </span>
           )}
           {address?.apartments && (
-            <span className='inline-block whitespace-nowrap'>
+            <span className='whitespace-nowrap inline-block'>
               {`кв/офис ${address.apartments}`}
               &nbsp;
             </span>

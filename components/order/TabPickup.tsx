@@ -1,12 +1,8 @@
 'use client';
 
 import React from 'react';
-import {
-  SelectChangeMoney,
-  SelectDeliveryDate,
-  SelectPaymentMethod,
-  SelectPickupPoint,
-} from '.';
+import { SelectChangeMoney, SelectDeliveryDate, SelectDeliveryTime, SelectPaymentMethod, SelectPickupPoint } from '.';
+
 
 const TabPickup: React.FC = () => {
   return (
@@ -15,6 +11,7 @@ const TabPickup: React.FC = () => {
       <SelectPaymentMethod />
       <SelectChangeMoney />
       <SelectDeliveryDate />
+      <SelectDeliveryTime />
     </div>
   );
 };
