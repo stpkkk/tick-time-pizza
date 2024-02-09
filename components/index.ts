@@ -1,4 +1,4 @@
-import Footer from './Footer';
+import AppFooter from './AppFooter';
 import ModalNotice from './ModalNotice';
 
 export * from './common';
@@ -12,4 +12,4 @@ export * from './profile';
 export * from './order';
 export * from './modal-product';
 
-export { Footer, ModalNotice };
+export { AppFooter, ModalNotice };

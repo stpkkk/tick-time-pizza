@@ -103,21 +103,23 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <ButtonBookmark product={product} />
       </div>
-      {!promo
-        ? product.categories?.map((cat) => (
-            <div
-              className='absolute left-0 top-0 z-[1] flex flex-col gap-1 rounded-full bg-white p-2 sm:left-2 sm:top-2 sm:p-2'
-              key={generateUUID()}
-            >
-              <Image
-                src={cat.image ? cat.image : ''}
-                alt={cat.title}
-                width={16}
-                height={16}
-              />
-            </div>
-          ))
-        : null}
+      <div className='-left-1 absolute top-0 z-20'>
+        {!promo
+          ? product.categories?.map((cat) => (
+              <div
+                className='sm:left-2 sm:top-2 sm:p-2 flex flex-col gap-y-0.5 p-2 bg-white rounded-full'
+                key={generateUUID()}
+              >
+                <Image
+                  src={cat.image ? cat.image : ''}
+                  alt={cat.title}
+                  width={16}
+                  height={16}
+                />
+              </div>
+            ))
+          : null}
+      </div>
     </li>
   );
 };

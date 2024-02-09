@@ -7,7 +7,7 @@ import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
-const Header: React.FC = () => {
+const AppHeader: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
@@ -26,4 +26,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default AppHeader;

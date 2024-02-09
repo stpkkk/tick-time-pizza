@@ -38,7 +38,7 @@ type PromoProps = {
   };
 };
 
-const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
+const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {
@@ -133,7 +133,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <div className='flex flex-row gap-2 my-10 ml-6 md:my-4 md:ml-4'>
+      <div className='md:my-4 md:ml-4 flex flex-row gap-2 my-10 ml-6'>
         <ButtonBack />
         <h1 className='h1'>
           {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
@@ -177,7 +177,7 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      <div className='container fixed bottom-0 left-0 hidden w-full p-4 pt-0 sm:block'>
+      <div className='sm:block container fixed bottom-0 left-0 hidden w-full p-4 pt-0'>
         <PromoTotalPrice
           addProductToCart={addProductToCart}
           isQuantityMax={isQuantityMax}
@@ -191,4 +191,4 @@ const Promo: React.FC<PromoProps> = ({ params: { id } }) => {
   );
 };
 
-export default Promo;
+export default PromoPage;

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Pizzerias } from '@/components';
 import { pizzerias } from '@/constants';
 
-const Contacts: React.FC = () => {
+const ContactsPage: React.FC = () => {
   return (
     <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
@@ -80,4 +80,4 @@ const Contacts: React.FC = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;

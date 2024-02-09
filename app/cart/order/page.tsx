@@ -26,7 +26,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
 import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
 
-const Order: React.FC = () => {
+const OrderPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
@@ -101,6 +101,8 @@ const Order: React.FC = () => {
       orders,
       paymentMethod,
       pickPoint,
+      randomId,
+      setCartProductInLS,
       setUserInLS,
       supplyMethod,
       user,
@@ -145,4 +147,4 @@ const Order: React.FC = () => {
   );
 };
 
-export default Order;
+export default OrderPage;

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Menu } from '@/components';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <main>
       <Menu />
@@ -11,4 +11,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;

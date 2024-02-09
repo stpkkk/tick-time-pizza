@@ -2,7 +2,7 @@ import React from 'react';
 import { legals } from '@/constants';
 import { generateUUID } from '@/utils';
 
-const Legal: React.FC = () => {
+const LegalPage: React.FC = () => {
   return (
     <main className='mt-[90px] sm:px-4 !px-[60px]'>
       <h1 className='h1 my-[30px] sm:my-4'>Правовая информация</h1>
@@ -32,4 +32,4 @@ const Legal: React.FC = () => {
   );
 };
 
-export default Legal;
+export default LegalPage;

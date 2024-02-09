@@ -1,6 +1,6 @@
 import './globals.css';
 import { Providers } from './providers';
-import { ButtonBackToTop, Footer, Header } from '@/components';
+import { ButtonBackToTop, AppFooter, Header } from '@/components';
 
 export const metadata = {
   title: 'pizza',
@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <body>
           <Header />
           {children}
-          <Footer />
+          <AppFooter />
           <ButtonBackToTop />
         </body>
       </Providers>

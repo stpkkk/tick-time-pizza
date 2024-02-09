@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Delivery: React.FC = () => {
+const DeliveryPage: React.FC = () => {
   return (
     <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
@@ -69,4 +69,4 @@ const Delivery: React.FC = () => {
   );
 };
 
-export default Delivery;
+export default DeliveryPage;

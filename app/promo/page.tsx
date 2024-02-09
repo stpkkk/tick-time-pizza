@@ -4,7 +4,7 @@ import React from 'react';
 import { ModalPromo, PromoCard } from '@/components';
 import { promos } from '@/constants';
 
-const PromoList: React.FC = () => {
+const PromoPage: React.FC = () => {
   return (
     <main className='mt-[90px] sm:mt-[70px]'>
       <h1 className='h1 sm:my-4 my-[30px] ml-[60px] sm:ml-4'>Акции</h1>
@@ -18,4 +18,4 @@ const PromoList: React.FC = () => {
   );
 };
 
-export default PromoList;
+export default PromoPage;

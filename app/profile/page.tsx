@@ -14,7 +14,7 @@ import { useLocalStorage } from '@/hooks';
 import { setCurrentUser } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-const Profile: React.FC = () => {
+const ProfilePage: React.FC = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
@@ -62,4 +62,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

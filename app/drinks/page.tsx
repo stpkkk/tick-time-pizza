@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@/components';
 
-const Drinks: React.FC = () => {
+const DrinksPage: React.FC = () => {
   return (
     <main>
       <Menu />
@@ -9,4 +9,4 @@ const Drinks: React.FC = () => {
   );
 };
 
-export default Drinks;
+export default DrinksPage;

@@ -9,7 +9,7 @@ import { setOtp } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
 
-const Login: React.FC = () => {
+const LoginPage: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const auth = getAuth(app_firebase);
@@ -58,4 +58,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
