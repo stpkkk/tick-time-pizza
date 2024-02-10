@@ -50,7 +50,8 @@ const initialState: ProfileState = {
   addressToRemove: null,
   orderFormData: {
     comment: '',
-    orderTickets: 0,
+    ticketsToAdd: 0,
+    ticketsToUse: 0,
     deliveryAddress: null,
     supplyMethod: Supply.DELIVERY,
     paymentMethod: PaymentMethods.CARD_UPON_RECEIPT,
@@ -58,6 +59,7 @@ const initialState: ProfileState = {
     deliveryDate: DeliveryDate.SOON,
     deliveryTime: { hours: '', minutes: '' },
     pickPoint: pizzerias.at(0)?.address,
+    price: 0,
   },
 };
 

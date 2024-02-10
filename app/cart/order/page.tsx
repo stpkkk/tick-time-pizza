@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { CgSpinner } from 'react-icons/cg';
-import { useRouter } from 'next/navigation';
 import {
   ButtonBack,
   ModalAddAddress,
@@ -24,20 +23,18 @@ import {
 } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Supply } from '@/types';
-import { calculateTotalPrice, getFormattedDateTime } from '@/utils';
+import { getFormattedDateTime } from '@/utils';
 
 const OrderPage: React.FC = () => {
   const dispatch = useAppDispatch();
-  const router = useRouter();
   const [mounted, setMounted] = React.useState(false);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const { user, orders, orderFormData } = useAppSelector(
+  const { user, orders, orderFormData, orderPrice } = useAppSelector(
     (state) => state.profileReducer,
   );
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-  const orderPrice = calculateTotalPrice(cartProductInLS).totalPrice;
-  const orderTickets = Math.round(orderPrice * (TICKETS_PERCENT / 100));
+  const ticketsToAdd = Math.round(orderPrice * (TICKETS_PERCENT / 100));
   const randomId = Math.floor(
     Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
   ).toString();
@@ -50,6 +47,7 @@ const OrderPage: React.FC = () => {
     cashChange,
     comment,
     deliveryAddress,
+    ticketsToUse,
   } = orderFormData;
 
   const handleSubmitOrder = React.useCallback(
@@ -61,51 +59,54 @@ const OrderPage: React.FC = () => {
         products: cartProducts,
         date: formattedDate,
         time: formattedTime,
-        orderPrice,
+        price: orderPrice - (ticketsToUse || 0),
         paymentMethod,
         supplyMethod,
         pickPoint,
         cashChange,
         comment,
         deliveryAddress,
-        orderTickets,
+        ticketsToAdd,
+        ticketsToUse,
       };
+
+      const tickets =
+        user?.tickets && user?.tickets + ticketsToAdd - (ticketsToUse || 0);
 
       const updatedOrders = [...orders, newOrder];
       dispatch(addToOrders(updatedOrders));
 
       const updatedUser = {
         ...user,
+        tickets,
         orders: updatedOrders,
-        tickets: user?.tickets || 0 + orderTickets,
       };
-
       dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
       await setCartProductInLS([]);
       dispatch(addToCart([]));
-      await setUserInLS(updatedUser);
       dispatch(resetOrderFormData());
       dispatch(setModalOrderSuccessOpen(true));
     },
     [
+      randomId,
       cartProducts,
-      cashChange,
-      comment,
-      deliveryAddress,
-      dispatch,
       formattedDate,
       formattedTime,
       orderPrice,
-      orderTickets,
-      orders,
       paymentMethod,
-      pickPoint,
-      randomId,
-      setCartProductInLS,
-      setUserInLS,
       supplyMethod,
+      pickPoint,
+      cashChange,
+      comment,
+      deliveryAddress,
+      ticketsToAdd,
+      ticketsToUse,
+      orders,
+      dispatch,
       user,
+      setUserInLS,
+      setCartProductInLS,
     ],
   );
 
@@ -130,7 +131,7 @@ const OrderPage: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          <OrderSummary orderTickets={orderTickets} />
+          <OrderSummary ticketsToAdd={ticketsToAdd} />
         </form>
       ) : (
         <div className='grid place-items-center min-h-[calc(100vh-358px)]'>

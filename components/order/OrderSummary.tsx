@@ -4,32 +4,60 @@ import React from 'react';
 import { SelectedProductOptions } from '../common';
 import AddressView from './AddressView';
 import { useLocalStorage } from '@/hooks';
-import { useAppSelector } from '@/redux/hooks';
+import {
+  setCurrentUser,
+  setOrderFormData,
+} from '@/redux/features/profileSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
 type OrderSummaryProps = {
-  orderTickets: number;
+  ticketsToAdd: number;
 };
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ orderTickets }) => {
+const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
+  const dispatch = useAppDispatch();
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-  const orderTotalPrice = calculateTotalPrice(cartProductInLS).totalPrice;
-  const { orderFormData, orders } = useAppSelector(
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+
+  const { orderFormData, user } = useAppSelector(
     (state) => state.profileReducer,
   );
+  const orderTotalPrice =
+    calculateTotalPrice(cartProductInLS).totalPrice -
+    (orderFormData.ticketsToUse || 0);
   const { promoDiscount } = useAppSelector((state) => state.menuReducer);
   const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
 
+  const validateInput = (value: string) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(value)) {
+      return 'Please enter a valid number';
+    }
+    return true;
+  };
+
+  const handleTicketsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const ticketsToUse = e.target.value;
+    const isValid = validateInput(ticketsToUse);
+    const updatedOrder = {
+      ...orderFormData,
+      ticketsToUse: +ticketsToUse,
+    };
+    dispatch(setOrderFormData(updatedOrder));
+  };
+
   return (
     <section>
-      <h2 className='flex flex-row gap-2 my-10 ml-6 h1 md:my-4 md:ml-4'>
+      <h2 className='h1 md:my-4 md:ml-4 flex flex-row gap-2 my-10 ml-6'>
         Ваш заказ
       </h2>
       <div className='container grid grid-cols-2 sm:grid-cols-1 gap-[30px] flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
         <div className='flex flex-col gap-[30px] sm:gap-4 sm:w-full'>
           <div>
-            <h3 className='mb-4 h3'>
+            <h3 className='h3 mb-4'>
               {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
             </h3>
             {isDelivery ? (
@@ -41,7 +69,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderTickets }) => {
             )}
           </div>
           <div>
-            <h2 className='mb-4 h3'>Состав заказа</h2>
+            <h2 className='h3 mb-4'>Состав заказа</h2>
             <ul>
               {cartProductInLS.map((product: IProduct) => (
                 <li
@@ -50,10 +78,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderTickets }) => {
                 >
                   <SelectedProductOptions product={product} />
                   <div className='flex justify-between w-1/3 gap-6'>
-                    <div className='self-start whitespace-nowrap'>
+                    <div className='whitespace-nowrap self-start'>
                       {product.productQuantity} шт.
                     </div>
-                    <div className='font-bold whitespace-nowrap'>
+                    <div className='whitespace-nowrap font-bold'>
                       {product.totalPrice} ₽
                     </div>
                   </div>
@@ -64,34 +92,37 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ orderTickets }) => {
         </div>
         <div className='flex flex-col gap-[30px] basis-1/2 sm:w-full'>
           <div>
-            <h3 className='mb-4 h3'>Комментарий к заказу</h3>
+            <h3 className='h3 mb-4'>Комментарий к заказу</h3>
             <textarea
-              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm leading-4 sm:leading-[15px] font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-accent disabled:border-dark-light peer resize-none'
+              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm leading-4 sm:leading-[15px] font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-yellow disabled:border-dark-light peer resize-none'
               name='comment'
               id='comment'
               rows={5}
             />
           </div>
           <div>
-            <h3 className='mb-4 h3'>Использовать тикеты</h3>
+            <h3 className='h3 mb-4'>Использовать тикеты</h3>
             <input
-              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm md:leading-4 font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-accent disabled:border-gray peer mb-4'
+              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm md:leading-4 font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-yellow disabled:border-gray peer mb-4'
               type='text'
+              onChange={handleTicketsChange}
             />
-            <p className='text-sm italic sm:text-xs'>Доступно: 0 из 18</p>
+            <p className='sm:text-xs text-sm italic'>
+              Доступно: 0 из {user?.tickets || 0}
+            </p>
           </div>
           <div>
             <p className='font-bold md:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
               К оплате: {orderTotalPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
-              Тикетов будет начислено: {orderTickets}
+              Тикетов будет начислено: {ticketsToAdd}
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold'>
               Скидка: {promoDiscount} ₽
             </p>
           </div>
-          <div className='flex justify-between gap-6 sm:gap-4 sm:flex-col'>
+          <div className='sm:gap-4 sm:flex-col flex justify-between gap-6'>
             <button className='btn_red max-w-[235px]' type='submit'>
               Заказать
             </button>

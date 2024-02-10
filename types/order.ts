@@ -6,9 +6,8 @@ export interface IOrder {
   time?: string;
   date?: string;
   products?: IProduct[];
-  orderPrice?: number;
+  price?: number;
   paymentMethod?: string;
-  orderTickets?: number;
   deliveryAddress?: IAddress | null;
   orderAccepted?: string;
   deliveryTime?: {
@@ -20,4 +19,6 @@ export interface IOrder {
   pickPoint?: string;
   comment?: string;
   supplyMethod?: string;
+  ticketsToAdd?: number;
+  ticketsToUse?: number;
 }

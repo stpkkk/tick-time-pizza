@@ -37,8 +37,6 @@ const getProfileInfo = (user: ExtendedUser | null) => {
     },
   ];
 
-  console.log(user?.tickets);
-
   return profileInfo;
 };
 
