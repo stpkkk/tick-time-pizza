@@ -12,7 +12,7 @@ import {
   TabPickup,
   Tabs,
 } from '@/components';
-import { TICKETS_PERCENT } from '@/config';
+import { APP_CONFIG } from '@/config';
 import { useLocalStorage } from '@/hooks';
 import { addToCart } from '@/redux/features/menuSlice';
 import {
@@ -34,7 +34,9 @@ const OrderPage: React.FC = () => {
   );
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-  const ticketsToAdd = Math.round(orderPrice * (TICKETS_PERCENT / 100));
+  const ticketsToAdd = Math.round(
+    orderPrice * (APP_CONFIG.TICKETS_PERCENT / 100),
+  );
   const randomId = Math.floor(
     Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
   ).toString();
@@ -70,8 +72,7 @@ const OrderPage: React.FC = () => {
         ticketsToUse,
       };
 
-      const tickets =
-        user?.tickets && user?.tickets + ticketsToAdd - (ticketsToUse || 0);
+      const tickets = (user?.tickets || 0) + ticketsToAdd - (ticketsToUse || 0);
 
       const updatedOrders = [...orders, newOrder];
       dispatch(addToOrders(updatedOrders));

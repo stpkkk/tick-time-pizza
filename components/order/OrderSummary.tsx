@@ -3,12 +3,9 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
 import AddressView from './AddressView';
+import Tickets from './Tickets';
 import { useLocalStorage } from '@/hooks';
-import {
-  setCurrentUser,
-  setOrderFormData,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
@@ -17,37 +14,14 @@ type OrderSummaryProps = {
 };
 
 const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
-  const dispatch = useAppDispatch();
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
-  const { orderFormData, user } = useAppSelector(
-    (state) => state.profileReducer,
-  );
+  const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const orderTotalPrice =
     calculateTotalPrice(cartProductInLS).totalPrice -
     (orderFormData.ticketsToUse || 0);
   const { promoDiscount } = useAppSelector((state) => state.menuReducer);
   const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
-
-  const validateInput = (value: string) => {
-    const regex = /^[0-9]*$/;
-    if (!regex.test(value)) {
-      return 'Please enter a valid number';
-    }
-    return true;
-  };
-
-  const handleTicketsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const ticketsToUse = e.target.value;
-    const isValid = validateInput(ticketsToUse);
-    const updatedOrder = {
-      ...orderFormData,
-      ticketsToUse: +ticketsToUse,
-    };
-    dispatch(setOrderFormData(updatedOrder));
-  };
 
   return (
     <section>
@@ -100,17 +74,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
               rows={5}
             />
           </div>
-          <div>
-            <h3 className='h3 mb-4'>Использовать тикеты</h3>
-            <input
-              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm md:leading-4 font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-yellow disabled:border-gray peer mb-4'
-              type='text'
-              onChange={handleTicketsChange}
-            />
-            <p className='sm:text-xs text-sm italic'>
-              Доступно: 0 из {user?.tickets || 0}
-            </p>
-          </div>
+          <Tickets orderTotalPrice={orderTotalPrice} />
           <div>
             <p className='font-bold md:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
               К оплате: {orderTotalPrice} ₽

@@ -42,7 +42,6 @@ html::-webkit-scrollbar {
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-
 @-moz-document url-prefix() {
   /* Hide scrollbar Firefox */
   html {
@@ -96,7 +95,7 @@ main {
 }
 
 .container {
-  @apply rounded-2xl bg-white drop-shadow-custom;
+  @apply rounded-2xl drop-shadow-custom bg-white;
 }
 
 .h1 {
@@ -124,7 +123,7 @@ main {
 }
 
 .login_input {
-  @apply w-full border px-3 py-4 text-center text-primary focus:outline-black;
+  @apply text-primary focus:outline-black w-full px-3 py-4 text-center border;
 }
 
 /*Buttons*/

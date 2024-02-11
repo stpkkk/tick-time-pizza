@@ -1,1 +1,5 @@
 export const TICKETS_PERCENT = 3;
+export const APP_CONFIG = {
+  TICKETS_PERCENT: 3,
+  TICKETS_MIN_PRICE: 545,
+};
