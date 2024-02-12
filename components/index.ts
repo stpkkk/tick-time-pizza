@@ -1,5 +1,5 @@
 import AppFooter from './AppFooter';
-import ModalNotice from './ModalNotice';
+import ModalAttention from './ModalAttention';
 
 export * from './common';
 export * from './header';
@@ -12,4 +12,4 @@ export * from './profile';
 export * from './order';
 export * from './modal-product';
 
-export { AppFooter, ModalNotice };
+export { AppFooter, ModalAttention };
