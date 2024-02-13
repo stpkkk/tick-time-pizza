@@ -29,18 +29,18 @@ const OrderPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const [mounted, setMounted] = React.useState(false);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const { user, orders, orderFormData, orderPrice } = useAppSelector(
     (state) => state.profileReducer,
   );
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const ticketsToAdd = Math.round(
-    orderPrice * (APP_CONFIG.TICKETS_PERCENT / 100),
+    (orderPrice - (orderFormData.ticketsToUse || 0)) *
+      (APP_CONFIG.TICKETS_PERCENT / 100),
   );
   const randomId = Math.floor(
     Math.random() * (Math.floor(9999) - Math.ceil(1000)) + Math.ceil(1000),
   ).toString();
-
   const { formattedDate, formattedTime } = getFormattedDateTime();
   const {
     paymentMethod,
@@ -132,7 +132,7 @@ const OrderPage: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          <OrderSummary ticketsToAdd={ticketsToAdd} />
+          <OrderSummary ticketsToAdd={ticketsToAdd} orderPrice={orderPrice} />
         </form>
       ) : (
         <div className='grid place-items-center min-h-[calc(100vh-358px)]'>

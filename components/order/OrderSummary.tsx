@@ -7,19 +7,18 @@ import Tickets from './Tickets';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
-import { calculateTotalPrice } from '@/utils';
 
 type OrderSummaryProps = {
   ticketsToAdd: number;
+  orderPrice: number;
 };
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
+const OrderSummary: React.FC<OrderSummaryProps> = ({
+  ticketsToAdd,
+  orderPrice,
+}) => {
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
-  const orderTotalPrice =
-    calculateTotalPrice(cartProductInLS).totalPrice -
-    (orderFormData.ticketsToUse || 0);
   const { promoDiscount } = useAppSelector((state) => state.menuReducer);
   const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
 
@@ -37,7 +36,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
             {isDelivery ? (
               <AddressView address={orderFormData.deliveryAddress} />
             ) : (
-              <span className='text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold'>
+              <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
                 {orderFormData.pickPoint}
               </span>
             )}
@@ -74,10 +73,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
               rows={5}
             />
           </div>
-          <Tickets orderTotalPrice={orderTotalPrice} />
+          <Tickets />
           <div>
             <p className='font-bold md:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
-              К оплате: {orderTotalPrice} ₽
+              К оплате: {orderPrice - (orderFormData.ticketsToUse || 0)} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
               Тикетов будет начислено: {ticketsToAdd}

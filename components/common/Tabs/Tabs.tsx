@@ -33,8 +33,8 @@ const Tabs: React.FC<TabsProps> = ({
   };
 
   return (
-    <div className='relative z-10 drop-shadow-custom'>
-      <ul className='flex flex-row flex-wrap gap-x-2' role='tablist'>
+    <div className='drop-shadow-custom relative z-10'>
+      <ul className='gap-x-2 flex flex-row flex-wrap' role='tablist'>
         <Tab
           label={labelFirst}
           isActive={activeTab === labelFirst}
