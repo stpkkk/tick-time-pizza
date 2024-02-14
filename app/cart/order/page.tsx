@@ -82,6 +82,7 @@ const OrderPage: React.FC = () => {
         tickets,
         orders: updatedOrders,
       };
+
       dispatch(setCurrentUser(updatedUser));
       await setUserInLS(updatedUser);
       await setCartProductInLS([]);
@@ -95,6 +96,7 @@ const OrderPage: React.FC = () => {
       formattedDate,
       formattedTime,
       orderPrice,
+      ticketsToUse,
       paymentMethod,
       supplyMethod,
       pickPoint,
@@ -102,10 +104,9 @@ const OrderPage: React.FC = () => {
       comment,
       deliveryAddress,
       ticketsToAdd,
-      ticketsToUse,
+      user,
       orders,
       dispatch,
-      user,
       setUserInLS,
       setCartProductInLS,
     ],
@@ -132,7 +133,7 @@ const OrderPage: React.FC = () => {
               labelSecond={Supply.PICKUP}
             />
           </section>
-          <OrderSummary ticketsToAdd={ticketsToAdd} orderPrice={orderPrice} />
+          <OrderSummary ticketsToAdd={ticketsToAdd} />
         </form>
       ) : (
         <div className='grid place-items-center min-h-[calc(100vh-358px)]'>

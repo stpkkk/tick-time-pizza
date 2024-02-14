@@ -3,24 +3,28 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
 import AddressView from './AddressView';
+import OrderComment from './OrderComment';
 import Tickets from './Tickets';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
+import { calculateTotalPrice } from '@/utils';
 
 type OrderSummaryProps = {
   ticketsToAdd: number;
-  orderPrice: number;
 };
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({
-  ticketsToAdd,
-  orderPrice,
-}) => {
+const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
-  const { promoDiscount } = useAppSelector((state) => state.menuReducer);
-  const isDelivery = orderFormData.supplyMethod === Supply.DELIVERY;
+  const { promoDiscount, cartProducts } = useAppSelector(
+    (state) => state.menuReducer,
+  );
+  const { supplyMethod, deliveryAddress, pickPoint, ticketsToUse } =
+    orderFormData;
+  const isDelivery = supplyMethod === Supply.DELIVERY;
+  const orderPrice =
+    calculateTotalPrice(cartProductInLS).totalPrice - (ticketsToUse || 0);
 
   return (
     <section>
@@ -34,17 +38,17 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
               {isDelivery ? Supply.DELIVERY : Supply.PICKUP}
             </h3>
             {isDelivery ? (
-              <AddressView address={orderFormData.deliveryAddress} />
+              <AddressView address={deliveryAddress} />
             ) : (
               <span className='md:text-xs md:leading-[15px] text-base leading-5 font-semibold'>
-                {orderFormData.pickPoint}
+                {pickPoint}
               </span>
             )}
           </div>
           <div>
             <h2 className='h3 mb-4'>Состав заказа</h2>
             <ul>
-              {cartProductInLS.map((product: IProduct) => (
+              {cartProducts.map((product: IProduct) => (
                 <li
                   key={product.uuid}
                   className='flex sm:gap-4 gap-[30px] w-full'
@@ -64,19 +68,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
           </div>
         </div>
         <div className='flex flex-col gap-[30px] basis-1/2 sm:w-full'>
-          <div>
-            <h3 className='h3 mb-4'>Комментарий к заказу</h3>
-            <textarea
-              className='block px-6 sm:py-4 py-[21px] w-full sm:text-xs text-sm leading-4 sm:leading-[15px] font-semibold bg-transparent rounded-2xl border border-primary border-solid appearance-none focus:outline-none focus:ring-0 focus:border-yellow disabled:border-dark-light peer resize-none'
-              name='comment'
-              id='comment'
-              rows={5}
-            />
-          </div>
+          <OrderComment />
           <Tickets />
           <div>
             <p className='font-bold md:text-xl leading-5 text-3xl mb-5 sm:mb-2.5'>
-              К оплате: {orderPrice - (orderFormData.ticketsToUse || 0)} ₽
+              К оплате: {orderPrice} ₽
             </p>
             <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold mb-5 sm:mb-2.5'>
               Тикетов будет начислено: {ticketsToAdd}
