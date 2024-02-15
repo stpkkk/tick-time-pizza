@@ -1,35 +1,56 @@
 import React from 'react';
 import { SelectedProductOptions } from '../common';
-import { IOrder } from '@/types';
+import { IOrder, Supply } from '@/types';
 
 type OrderProps = {
   order: IOrder;
 };
 
 const OrderDetails: React.FC<OrderProps> = ({ order }) => {
+  const {
+    price,
+    paymentMethod,
+    ticketsToUse,
+    ticketsToAdd,
+    deliveryAddress,
+    pickPoint,
+    time,
+    products,
+    comment,
+    supplyMethod,
+  } = order;
+
   return (
     <div className='flex justify-between gap-[30px] w-full md:flex-wrap md:text-xs md:leading-[15px] text-base leading-5'>
       <table className='max-w-1/2 w-full'>
         <tbody className='flex flex-col gap-4 w-full [&>tr]:grid [&>tr]:grid-cols-2 [&>tr]:gap-2.5 [&>tr>td:first-child]:font-semibold'>
           <tr className='grid grid-cols-2 gap-2.5 whitespace-nowrap'>
             <td>К оплате:</td>
-            <td>{order.price} ₽</td>
+            <td>{price} ₽</td>
           </tr>
           <tr>
             <td>Способ оплаты:</td>
-            <td>{order.paymentMethod}</td>
+            <td>{paymentMethod}</td>
           </tr>
           <tr>
             <td>Тикеты:</td>
-            <td>{order.ticketsToUse}</td>
+            <td>
+              Потрачено: {ticketsToUse}, Начислено: {ticketsToAdd}
+            </td>
           </tr>
           <tr>
             <td>Доставка по адресу:</td>
-            <td>{order.deliveryAddress?.street}</td>
+            <td>{deliveryAddress?.street}</td>
           </tr>
+          {comment && (
+            <tr>
+              <td>Комментарий</td>
+              <td>{comment}</td>
+            </tr>
+          )}
           <tr>
             <td>Заказ принят:</td>
-            <td>{order.time}</td>
+            <td>{time}</td>
           </tr>
           <tr>
             <td>Время доставки:</td>
@@ -39,7 +60,7 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
       </table>
       <table className='max-w-1/2 w-full'>
         <tbody className='flex_start md:gap-8 flex-col gap-16'>
-          {order.products?.map((product) => (
+          {products?.map((product) => (
             <tr
               className='sm:gap-4 flex justify-between w-full gap-24'
               key={product.id}

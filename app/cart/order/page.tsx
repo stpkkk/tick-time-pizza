@@ -113,6 +113,7 @@ const OrderPage: React.FC = () => {
   );
 
   React.useEffect(() => {
+    dispatch(resetOrderFormData());
     dispatch(setCurrentUser(userInLS));
     setMounted(true);
   }, [dispatch, userInLS]);
