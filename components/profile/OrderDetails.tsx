@@ -20,6 +20,8 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
     supplyMethod,
   } = order;
 
+  const isDelivery = supplyMethod === Supply.DELIVERY;
+
   return (
     <div className='flex justify-between gap-[30px] w-full md:flex-wrap md:text-xs md:leading-[15px] text-base leading-5'>
       <table className='max-w-1/2 w-full'>
@@ -38,10 +40,19 @@ const OrderDetails: React.FC<OrderProps> = ({ order }) => {
               Потрачено: {ticketsToUse}, Начислено: {ticketsToAdd}
             </td>
           </tr>
-          <tr>
-            <td>Доставка по адресу:</td>
-            <td>{deliveryAddress?.street}</td>
-          </tr>
+          {isDelivery ? (
+            <tr>
+              <td>Доставка по адресу:</td>
+              <td>
+                {deliveryAddress?.street}, {deliveryAddress?.house}
+              </td>
+            </tr>
+          ) : (
+            <tr>
+              <td>Самовывоз:</td>
+              <td>{pickPoint}</td>
+            </tr>
+          )}
           {comment && (
             <tr>
               <td>Комментарий</td>

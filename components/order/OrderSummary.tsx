@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { SelectedProductOptions } from '../common';
 import AddressView from './AddressView';
 import OrderComment from './OrderComment';
 import Tickets from './Tickets';
+import { APP_CONFIG } from '@/config';
 import { useLocalStorage } from '@/hooks';
 import { useAppSelector } from '@/redux/hooks';
 import { IProduct, Supply } from '@/types';
@@ -20,11 +22,23 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
   const { promoDiscount, cartProducts } = useAppSelector(
     (state) => state.menuReducer,
   );
+  const router = useRouter();
   const { supplyMethod, deliveryAddress, pickPoint, ticketsToUse } =
     orderFormData;
   const isDelivery = supplyMethod === Supply.DELIVERY;
   const orderPrice =
     calculateTotalPrice(cartProductInLS).totalPrice - (ticketsToUse || 0);
+  const noProducts = cartProducts.length <= 0;
+  const isBtnDisabled =
+    noProducts ||
+    (orderPrice <= APP_CONFIG.TICKETS_AND_DELIVERY_MIN_PRICE &&
+      supplyMethod === Supply.DELIVERY);
+
+  React.useEffect(() => {
+    if (noProducts) {
+      router.push('/cart');
+    }
+  }, [noProducts, router]);
 
   return (
     <section>
@@ -82,7 +96,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
             </p>
           </div>
           <div className='sm:gap-4 sm:flex-col flex justify-between gap-6'>
-            <button className='btn_red max-w-[235px]' type='submit'>
+            <button
+              className='btn_red max-w-[235px] btn_disabled'
+              type='submit'
+              disabled={isBtnDisabled}
+            >
               Заказать
             </button>
             <p className='sm:text-xs text-sm italic md:max-w-[340px]'>

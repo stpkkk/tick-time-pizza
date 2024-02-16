@@ -12,7 +12,7 @@ const useTickets = () => {
 
   const calculateAvailableTickets = () => {
     const remainingTickets = Math.min(
-      orderPrice - APP_CONFIG.TICKETS_MIN_PRICE,
+      orderPrice - APP_CONFIG.TICKETS_AND_DELIVERY_MIN_PRICE,
       userTickets,
     );
     return Math.max(remainingTickets, 0);

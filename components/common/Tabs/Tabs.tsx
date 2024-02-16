@@ -25,7 +25,7 @@ const Tabs: React.FC<TabsProps> = ({
 
   const handleTabClick = (selectedTab: string) => {
     setActiveTab(selectedTab);
-    if (selectedTab === Supply.DELIVERY || Supply.PICKUP) {
+    if (selectedTab === Supply.DELIVERY || selectedTab === Supply.PICKUP) {
       dispatch(
         setOrderFormData({ ...orderFormData, supplyMethod: selectedTab }),
       );
