@@ -5248,7 +5248,7 @@ export const menu: IProduct[] = [
       { id: 7, value: 'Сыр Блю Чиз' },
     ],
     sizes: [
-      { id: 0, value: null },
+      { id: 0, value: '' },
       { id: 1, value: 28 },
       { id: 2, value: 33 },
     ],

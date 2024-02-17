@@ -6,3 +6,4 @@ export * from './getPizzaOfTheDay';
 export * from './getProfileInfo';
 export * from './getPromoProductSizes';
 export * from './getPromoProducts';
+export * from './getCategoryProducts';

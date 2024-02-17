@@ -1,10 +1,6 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
 import { getGroupProducts } from '../utils/getGroupProducts';
 import { menu } from '@/constants';
-import { useAppSelector } from '@/redux/hooks';
-import { CATEGORIES } from '@/types';
+import { CATEGORIES, IProduct } from '@/types';
 
 function filterByCategoryTitle(categoryTitle: string) {
   return menu.filter(
@@ -13,9 +9,17 @@ function filterByCategoryTitle(categoryTitle: string) {
   );
 }
 
-const useCategoryProducts = (category: string | number) => {
-  const pathname = usePathname();
-  const { bookmarks } = useAppSelector((state) => state.menuReducer);
+type GetCategoryProductsFunction = (
+  category: string | number,
+  bookmarks: IProduct[],
+  pathname: string,
+) => IProduct[];
+
+const getCategoryProducts: GetCategoryProductsFunction = (
+  category,
+  bookmarks,
+  pathname,
+) => {
   const productsGroup = getGroupProducts(pathname);
 
   switch (category) {
@@ -32,4 +36,4 @@ const useCategoryProducts = (category: string | number) => {
   }
 };
 
-export default useCategoryProducts;
+export default getCategoryProducts;

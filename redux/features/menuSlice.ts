@@ -1,4 +1,5 @@
 import {
+  CATEGORIES,
   Dough,
   IAdditionalIngredient,
   IOption,
@@ -18,7 +19,7 @@ export interface MenuState {
   selectedSize: IOption | null;
   selectedDough: IOption | null;
   removedIngredients: IOption[];
-  selectedCategory: IOption | null;
+  selectedCategory: IOption;
   isAllIngredients: boolean;
   isDisabled: boolean;
   selectedIngredients: IAdditionalIngredient[];
@@ -40,7 +41,9 @@ const initialState: MenuState = {
   isTooltipOpen: false,
   hoveredItemId: null,
   selectedProduct: null,
-  selectedCategory: null,
+  selectedCategory: {
+    value: CATEGORIES.ALL,
+  },
   selectedSize: null,
   selectedDough: null,
   isAllIngredients: false,
@@ -72,7 +75,7 @@ const menuSlice = createSlice({
       state.selectedProduct = action.payload;
     },
 
-    setSelectedCategory: (state, action: PayloadAction<IOption | null>) => {
+    setSelectedCategory: (state, action: PayloadAction<IOption>) => {
       state.selectedCategory = action.payload;
     },
 
