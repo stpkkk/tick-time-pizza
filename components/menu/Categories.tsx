@@ -1,13 +1,10 @@
-'use client';
-
 import React from 'react';
-import { RadioGroupOption } from '../common';
+import { InputCheckbox } from '../common';
 import { categories } from '@/constants';
 import { useAuthStateChange } from '@/hooks';
 import { setSelectedCategory } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { CATEGORIES, IOption } from '@/types';
-import { RadioGroup } from '@headlessui/react';
 
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -35,20 +32,18 @@ const Categories: React.FC = () => {
 
   return (
     <div className='flex_center my-[30px] max-w-full sm:my-4'>
-      <RadioGroup
-        value={selectedCategory}
-        onChange={handleChangeCategory}
-        className='no-scrollbar scroll scroll-px-4 scroll-smooth whitespace-nowrap md:gap-2 flex flex-row gap-4 overflow-x-scroll'
-      >
-        {categoriesToShow?.map((cat) => (
-          <RadioGroupOption
-            key={cat.id}
-            option={cat}
-            isChecked={selectedCategory.value === cat.value}
-            className='w-auto px-[30px] py-[20px] leading-[20px] sm:px-3 sm:py-[10px]'
-          />
+      <ul className='no-scrollbar scroll scroll-px-4 scroll-smooth whitespace-nowrap md:gap-2 flex flex-row gap-4 overflow-x-scroll'>
+        {categoriesToShow.map((cat) => (
+          <li key={cat.id}>
+            <InputCheckbox
+              className='w-auto px-[30px] py-[20px] leading-[20px] sm:px-3 sm:py-[10px]'
+              option={cat}
+              isChecked={selectedCategory.value === cat.value}
+              handleChange={handleChangeCategory}
+            />
+          </li>
         ))}
-      </RadioGroup>
+      </ul>
     </div>
   );
 };

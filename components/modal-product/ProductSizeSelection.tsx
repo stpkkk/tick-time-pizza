@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import { RadioGroupOption } from '../common';
+import { InputCheckbox } from '../common';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Dough, IOption, Promos, Sizes } from '@/types';
 import { getPromoProductSizes } from '@/utils';
-import { RadioGroup } from '@headlessui/react';
 
 const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +14,9 @@ const ProductSizeSelection: React.FC = () => {
 
   const dough =
     selectedPromo?.title === Promos.THREE_PIZZAS_999
-      ? selectedProduct?.dough?.filter((d) => d.value === Dough.TRADITIONAL)
+      ? selectedProduct?.dough?.filter(
+          (d: { value: Dough }) => d.value === Dough.TRADITIONAL,
+        )
       : selectedProduct?.dough;
 
   const sizes = getPromoProductSizes(
@@ -41,32 +42,33 @@ const ProductSizeSelection: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-2'>
-      <RadioGroup value={selectedSize} onChange={handleSizeChange}>
-        <div className='flex flex-row gap-2.5'>
-          {sizes?.map((size) => (
-            <RadioGroupOption
-              key={size.id}
+      <ul className='flex flex-row gap-2.5'>
+        {sizes?.map((size: IOption) => (
+          <li key={size.id} className='w-full'>
+            <InputCheckbox
               option={size}
               isChecked={selectedSize === size}
               isDisabled={getIsDisabledSize(size)}
               className='flex_center h-[60px] w-full leading-[15px]'
+              handleChange={handleSizeChange}
             />
-          ))}
-        </div>
-      </RadioGroup>
-      <RadioGroup value={selectedDough} onChange={handleDoughChange}>
-        <div className='flex flex-row gap-2.5'>
-          {dough?.map((dough) => (
-            <RadioGroupOption
+          </li>
+        ))}
+      </ul>
+      <ul className='flex flex-row gap-2.5'>
+        {dough?.map((dough: IOption) => (
+          <li key={dough.id} className='w-full'>
+            <InputCheckbox
               key={dough.id}
               option={dough}
               isChecked={dough === selectedDough}
               isDisabled={getIsDisabledDough(dough)}
               className='flex_center h-[60px] w-full leading-[15px]'
+              handleChange={handleDoughChange}
             />
-          ))}
-        </div>
-      </RadioGroup>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

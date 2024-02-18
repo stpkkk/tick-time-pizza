@@ -11,7 +11,6 @@ code: 123456
 - Redux-Toolkit
 - Firebase
 - Tailwind
-- Headless UI
 - Input Mask
 - React-Icons
 - Swiper
