@@ -15,7 +15,7 @@ const ProductSizeSelection: React.FC = () => {
   const dough =
     selectedPromo?.title === Promos.THREE_PIZZAS_999
       ? selectedProduct?.dough?.filter(
-          (d: { value: Dough }) => d.value === Dough.TRADITIONAL,
+          (d: IOption) => d.value === Dough.TRADITIONAL,
         )
       : selectedProduct?.dough;
 
