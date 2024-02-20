@@ -1,5 +1,6 @@
 import React from 'react';
-import { Notice, RadioButton } from '../common';
+import { Notice } from '../common';
+import OptionToSelect from './OptionToSelect';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { PaymentMethods } from '@/types';
@@ -27,7 +28,7 @@ const SelectPaymentMethod: React.FC = () => {
       <ul className='flex sm:flex-col gap-[30px] sm:gap-4'>
         {paymentMethodsArray.map((payMethod) => (
           <li key={payMethod}>
-            <RadioButton
+            <OptionToSelect
               id={payMethod}
               onChange={handleChange}
               checked={isChecked(payMethod)}

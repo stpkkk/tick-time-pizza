@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButton } from '../common';
+import OptionToSelect from './OptionToSelect';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { DeliveryDate } from '@/types';
@@ -32,11 +32,11 @@ const SelectDeliveryDate: React.FC = () => {
 
   return (
     <section>
-      <h3 className='mb-4 h3'>Когда привезти заказ:</h3>
+      <h3 className='h3 mb-4'>Когда привезти заказ:</h3>
       <ul className='scroll pb-4 flex gap-[30px] sm:gap-4 overflow-x-auto scroll-smooth mdMin:thin_scroll'>
         {deliveryDates.map((date) => (
           <li key={date}>
-            <RadioButton
+            <OptionToSelect
               id={date}
               onChange={handleChange}
               checked={isChecked(date)}

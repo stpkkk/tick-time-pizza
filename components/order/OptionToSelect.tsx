@@ -1,6 +1,6 @@
 import React from 'react';
 
-type RadioButtonProps = {
+type OptionToSelectProps = {
   id?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
@@ -12,7 +12,7 @@ type RadioButtonProps = {
   innerHTML: React.ReactNode;
 };
 
-const RadioButton: React.FC<RadioButtonProps> = ({
+const OptionToSelect: React.FC<OptionToSelectProps> = ({
   id,
   name,
   onChange,
@@ -48,4 +48,4 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   );
 };
 
-export default RadioButton;
+export default OptionToSelect;

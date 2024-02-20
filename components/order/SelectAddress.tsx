@@ -1,8 +1,8 @@
 import React from 'react';
 import { LuMapPin } from 'react-icons/lu';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { RadioButton } from '../common';
 import AddressView from './AddressView';
+import OptionToSelect from './OptionToSelect';
 import {
   setAddressToRemove,
   setModalAddAddress,
@@ -49,7 +49,7 @@ const SelectAddress: React.FC = () => {
 
   return (
     <section>
-      <h3 className='mb-4 h3'>Куда доставить заказ?</h3>
+      <h3 className='h3 mb-4'>Куда доставить заказ?</h3>
       <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center sm:gap-4 gap-[30px]'>
         <li
           className='btn_grayLight p-[30px] max-w-[255px] sm:max-w-full flex justify-between sm:flex-col sm:items-start sm:gap-2 gap-5 w-full min-h-[96px] sm:p-4'
@@ -68,7 +68,7 @@ const SelectAddress: React.FC = () => {
             className='btn_grayLight min-h-[96px] max-w-[255px] sm:max-w-full flex justify-between flex-col space-y-[14px] text-sm gap-5 w-full relative'
             key={address.uuid}
           >
-            <RadioButton
+            <OptionToSelect
               id={address.uuid}
               onChange={() => handleChangeAddress(address)}
               checked={orderFormData.deliveryAddress?.uuid === address.uuid}
@@ -79,7 +79,7 @@ const SelectAddress: React.FC = () => {
                 <>
                   <AddressView address={address} />
                   <button
-                    className='absolute p-1 rounded-full top-4 right-4 hover:bg-white'
+                    className='top-4 right-4 hover:bg-white absolute p-1 rounded-full'
                     onClick={() => handleClickDelete(address)}
                     type='button'
                   >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButton } from '../common';
+import OptionToSelect from './OptionToSelect';
 import { pizzerias } from '@/constants';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -35,7 +35,7 @@ const SelectPickupPoint: React.FC = () => {
       <div className='min-h-[300px]' />
       <div className='grid grid-flow-row lgMin:grid-cols-3 smMin:grid-cols-1 mdMin:grid-cols-2 gap-[30px] sm:gap-4'>
         {pizzerias.map((pizzeria) => (
-          <RadioButton
+          <OptionToSelect
             key={pizzeria.id}
             id={pizzeria.address}
             onChange={() => handleChange(pizzeria)}

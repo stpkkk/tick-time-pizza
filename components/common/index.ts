@@ -10,7 +10,6 @@ import InputCheckbox from './InputCheckbox';
 import Logo from './Logo';
 import ModalWrapper from './ModalWrapper';
 import Notice from './Notice';
-import RadioButton from './RadioButton';
 import SelectedProductOptions from './SelectedProductOptions';
 
 export * from './Tabs';
@@ -26,7 +25,6 @@ export {
   Logo,
   ModalWrapper,
   Notice,
-  RadioButton,
   SelectedProductOptions,
   InputCheckbox,
 };

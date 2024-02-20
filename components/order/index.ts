@@ -2,6 +2,7 @@ import AddressView from './AddressView';
 import ModalAddAddress from './ModalAddAddress';
 import ModalOrderSuccess from './ModalOrderSuccess';
 import ModalRemoveAddress from './ModalRemoveAddress';
+import OptionToSelect from './OptionToSelect';
 import OrderComment from './OrderComment';
 import OrderSummary from './OrderSummary';
 import SelectAddress from './SelectAddress';
@@ -32,4 +33,5 @@ export {
   ModalOrderSuccess,
   Tickets,
   OrderComment,
+  OptionToSelect,
 };
