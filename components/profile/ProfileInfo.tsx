@@ -63,7 +63,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
               </p>
               {title === tickets ? (
                 <button
-                  className='absolute top-0 left-full hover:text-primary text-grayDark'
+                  className='left-full hover:text-primary text-grayDark absolute top-0 animate-fade-in'
                   type='button'
                   onClick={handleClickTicketsNotice}
                 >
@@ -77,9 +77,9 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
           </div>
         ))}
       </div>
-      <div className='flex gap-6 font-semibold text-grayDark sm:text-sm'>
+      <div className='text-grayDark sm:text-sm flex gap-6 font-semibold'>
         <div
-          className='flex gap-2 cursor-pointer hover:text-primary '
+          className='hover:text-primary flex gap-2 animate-fade-in cursor-pointer'
           onClick={handleLogout}
         >
           <button type='button'>
@@ -88,7 +88,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
           <span>Выйти</span>
         </div>
         <div
-          className='flex gap-2 cursor-pointer hover:text-primary '
+          className='hover:text-primary flex gap-2 animate-fade-in cursor-pointer'
           onClick={handleClickEdit}
         >
           <button type='button'>

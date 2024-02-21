@@ -49,7 +49,7 @@ const ProductSizeSelection: React.FC = () => {
               option={size}
               isChecked={selectedSize === size}
               isDisabled={getIsDisabledSize(size)}
-              className='flex_center h-[60px] w-full leading-[15px]'
+              className='h-[60px]'
               handleChange={handleSizeChange}
             />
           </li>
@@ -63,7 +63,7 @@ const ProductSizeSelection: React.FC = () => {
               option={dough}
               isChecked={dough === selectedDough}
               isDisabled={getIsDisabledDough(dough)}
-              className='flex_center h-[60px] w-full leading-[15px]'
+              className='h-[60px]'
               handleChange={handleDoughChange}
             />
           </li>

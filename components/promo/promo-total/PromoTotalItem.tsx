@@ -45,9 +45,9 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
 
   return (
     <>
-      <div className='flex items-start flex-none gap-5 md:gap-4'>
+      <div className='md:gap-4 flex items-start flex-none gap-5'>
         <div className='mr-auto'>
-          <span className='block text-xs font-semibold leading-4 break-words md:text-sm'>
+          <span className='md:text-sm block text-xs font-semibold leading-4 break-words'>
             {product.title}
           </span>
           <p className='md:text-xs text-[0.625rem] leading-[0.75rem] mt-2.5'>
@@ -55,13 +55,13 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
           </p>
         </div>
         <button
-          className='gap-5 flex_start'
+          className='flex_start gap-5'
           type='button'
           onClick={() => removeItem(product?.uuid || '')}
         >
           <RiDeleteBin6Line
             size={15}
-            className='cursor-pointer text-grayDark hover:text-primary'
+            className='text-grayDark hover:text-primary animate-fade-in cursor-pointer'
           />
         </button>
       </div>

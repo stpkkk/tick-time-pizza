@@ -9,7 +9,7 @@ const ButtonBack: React.FC = () => {
 
   return (
     <button
-      className='flex items-center text-sm font-semibold text-grayDark hover:text-primary'
+      className='text-grayDark hover:text-primary animate-fade-in flex items-center text-sm font-semibold'
       type='button'
       onClick={() => router.back()}
     >

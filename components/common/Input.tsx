@@ -26,6 +26,8 @@ const Input: React.FC<InputProps> = ({
   className,
   required,
 }) => {
+  const isMailValid = id === 'email' && isValid;
+
   return (
     <div className={`${className} relative h-[60px] w-full`}>
       <label
@@ -43,9 +45,8 @@ const Input: React.FC<InputProps> = ({
         value={value}
         onBlur={onBlur}
         placeholder=''
-        className={`px-6 md:py-4 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-gray border-solid focus:outline-none focus:ring-0 h-full focus:border-yellow disabled:border-grayDark !appearance-none hover:appearance-none ring-none ${
-          id === 'email' &&
-          isValid &&
+        className={`px-6 md:py-4 w-full md:text-xs text-sm leading-4 font-semibold bg-transparent rounded-2xl border border-gray border-solid focus:outline-none focus:ring-0 h-full focus:border-yellow disabled:border-grayDark !appearance-none hover:appearance-none  animate-fade-in ring-none ${
+          isMailValid &&
           'border-secondary focus:ring-secondary focus:border-secondary'
         }`}
       />

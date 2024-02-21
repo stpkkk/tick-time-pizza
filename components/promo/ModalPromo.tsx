@@ -32,7 +32,7 @@ const ModalPromo: React.FC = () => {
       <div className='sm:p-8 sm:flex sm:flex-col sm:gap-[30px] sm:text-left sm:overflow-y-auto h-full self-start'>
         <div className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 rounded-full bg-white p-1 sm:p-0 sm:bg-transparent sm:top-2 sm:right-2'>
           <button
-            className='text-grayDark hover:text-primary sm:right-0 sm:top-0'
+            className='text-grayDark hover:text-primary sm:right-0 sm:top-0 animate-fade-in'
             type='button'
             onClick={closeModal}
             tabIndex={0}
@@ -40,7 +40,7 @@ const ModalPromo: React.FC = () => {
             <RiCloseFill size={28} className='md:w-7' />
           </button>
         </div>
-        <h3 className='hidden h1 sm:block'>
+        <h3 className='h1 sm:block hidden'>
           {isPizzaOfTheDay
             ? selectedPromo!.title + ' ' + currentDay
             : selectedPromo!.title}
@@ -52,7 +52,7 @@ const ModalPromo: React.FC = () => {
             placeholder='blur'
             blurDataURL={pizza.src}
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            className='w-full sm:rounded-2xl'
+            className='sm:rounded-2xl w-full'
           />
         </div>
         <div className='px-[60px] py-[50px] sm:p-0'>
@@ -62,7 +62,7 @@ const ModalPromo: React.FC = () => {
           {selectedPromo?.isRedirect && (
             <Link
               onClick={closeModal}
-              className='btn_yellow max-w-[100px] sm:max-h-[35px]'
+              className='btn_yellow h-[45px] max-w-[100px] sm:max-h-[35px]'
               href={`/promo/${selectedPromo.id}`}
             >
               Выбрать

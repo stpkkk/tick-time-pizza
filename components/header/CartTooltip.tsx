@@ -14,7 +14,7 @@ const CartTooltip: React.FC<CartTooltipProps> = ({ cartTooltipRef }) => {
   const isCartEmpty = cartProducts.length === 0;
 
   return (
-    <div className='right-0 header_tooltip' ref={cartTooltipRef}>
+    <div className='header_tooltip right-0' ref={cartTooltipRef}>
       {isCartEmpty ? (
         <div className='mb-4'>
           <span className='text-start'>Корзина пока пуста</span>
@@ -29,7 +29,9 @@ const CartTooltip: React.FC<CartTooltipProps> = ({ cartTooltipRef }) => {
         </ul>
       )}
       <Link href='/cart'>
-        <button className='btn_red'>Перейти в корзину</button>
+        <button className='btn_red min-h-[60px] sm:min-h-[50px] uppercase'>
+          Перейти в корзину
+        </button>
       </Link>
     </div>
   );

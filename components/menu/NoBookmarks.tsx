@@ -18,7 +18,7 @@ const NoBookmarks: React.FC = () => {
         сердечка на карточке продукта.
       </p>
       <button
-        className='btn_red mt-[30px] max-w-[276px]'
+        className='btn_red min-h-[60px] sm:min-h-[50px] mt-[30px] max-w-[276px] uppercase'
         type='button'
         onClick={() => dispatch(setSelectedCategory(categories[0]))}
       >

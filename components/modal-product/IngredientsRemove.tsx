@@ -9,7 +9,6 @@ import { IOption } from '@/types';
 
 const IngredientsRemove: React.FC = () => {
   const dispatch = useAppDispatch();
-
   const { selectedProduct, removedIngredients } = useAppSelector(
     (state) => state.menuReducer,
   );
@@ -32,7 +31,7 @@ const IngredientsRemove: React.FC = () => {
               <InputCheckbox
                 option={ingredient}
                 isChecked={removedIngredients.includes(ingredient)}
-                className={`flex_center h-[60px] whitespace-nowrap px-4 py-2.5 leading-[15px]`}
+                className={`h-[60px] sm:h-[45px] whitespace-nowrap px-4`}
                 crossed={`${
                   removedIngredients.includes(ingredient) && 'line-through'
                 }`}

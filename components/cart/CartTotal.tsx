@@ -55,7 +55,7 @@ const CartTotal: React.FC = () => {
         </div>
         <button
           type='submit'
-          className='btn_red btn_disabled w-full h-[60px]'
+          className='btn_red h-[60px] sm:h-[50px] btn_disabled w-full uppercase'
           disabled={cartTotalPrice || 0 > 0 ? false : true}
         >
           Оформить заказ

@@ -61,6 +61,10 @@ module.exports = {
           backgroundColor: '#f3f6f9',
           borderRadius: '20px',
         },
+        '.animate-fade-in': {
+          animation: 'fadeIn',
+          transition: 'opacity 0.3s ease-in-out',
+        },
       });
     },
   ],

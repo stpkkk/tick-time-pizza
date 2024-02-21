@@ -46,7 +46,7 @@ const HeaderCartItem: React.FC<HeaderCartItemProps> = ({ product }) => {
         <button type='button' onClick={() => onRemove(product.uuid)}>
           <RiDeleteBin6Line
             size={15}
-            className='cursor-pointer text-grayDark hover:text-primary'
+            className='text-grayDark hover:text-primary animate-fade-in cursor-pointer'
           />
         </button>
       </div>

@@ -49,12 +49,12 @@ const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
             <span className='block sm:text-xs whitespace-pre-wrap max-w-[150px]'>
               {product.title}
             </span>
-            <span className='block sm:text-xs'>
+            <span className='sm:text-xs block'>
               {product.prices[0].value} ₽
             </span>
             <button
               onClick={() => handleClickProduct(product)}
-              className='btn_yellow min-w-[150px] sm:max-w-[100px] sm:h-[35px]'
+              className='btn_yellow h-[45px] min-w-[150px] sm:max-w-[100px] sm:h-[35px] uppercase'
               type='button'
             >
               Добавить

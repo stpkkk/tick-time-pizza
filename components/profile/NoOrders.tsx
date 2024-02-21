@@ -10,7 +10,11 @@ const NoOrders: React.FC = () => {
       <p className='text-sm leading-[17px] sm:text-[12px] sm:leading-[15px]'>
         Перейдите в каталог, чтобы сделать ваш первый заказ.
       </p>
-      <Link href='/' className='btn_red mt-[30px] max-w-[276px]' type='button'>
+      <Link
+        href='/'
+        className='btn_red min-h-[60px] sm:min-h-[50px] mt-[30px] max-w-[276px] uppercase'
+        type='button'
+      >
         Выбрать пиццу
       </Link>
     </div>

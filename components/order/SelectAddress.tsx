@@ -52,7 +52,7 @@ const SelectAddress: React.FC = () => {
       <h3 className='h3 mb-4'>Куда доставить заказ?</h3>
       <ul className='grid smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4 justify-items-center sm:gap-4 gap-[30px]'>
         <li
-          className='btn_grayLight p-[30px] max-w-[255px] sm:max-w-full flex justify-between sm:flex-col sm:items-start sm:gap-2 gap-5 w-full min-h-[96px] sm:p-4'
+          className='btn_grayLight p-[30px] max-w-[255px] sm:max-w-full flex justify-between sm:flex-col sm:items-start sm:gap-2 gap-5 w-full h-[96px] sm:p-4'
           onClick={handleClickAddAddress}
         >
           <LuMapPin size={40} className='text-grayDark sm:w-8' />
@@ -65,7 +65,7 @@ const SelectAddress: React.FC = () => {
         </li>
         {user?.addresses?.map((address) => (
           <li
-            className='btn_grayLight min-h-[96px] max-w-[255px] sm:max-w-full flex justify-between flex-col space-y-[14px] text-sm gap-5 w-full relative'
+            className='btn_grayLight h-[96px] max-w-[255px] sm:max-w-full flex justify-between flex-col space-y-[14px] text-sm gap-5 w-full relative'
             key={address.uuid}
           >
             <OptionToSelect
@@ -74,12 +74,12 @@ const SelectAddress: React.FC = () => {
               checked={orderFormData.deliveryAddress?.uuid === address.uuid}
               value={address.uuid}
               name={address.uuid}
-              className='p-[30px] sm:p-4 w-full h-full'
+              className='p-[30px] sm:p-4 w-full min-h-[96px]'
               innerHTML={
                 <>
                   <AddressView address={address} />
                   <button
-                    className='top-4 right-4 hover:bg-white absolute p-1 rounded-full'
+                    className='top-4 right-4 hover:bg-white animate-fade-in absolute p-1 rounded-full'
                     onClick={() => handleClickDelete(address)}
                     type='button'
                   >

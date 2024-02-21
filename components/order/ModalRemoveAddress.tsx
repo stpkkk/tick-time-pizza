@@ -53,14 +53,14 @@ const ModalRemoveAddress: React.FC = () => {
         </p>
         <div className='flex_center gap-[30px] sm:gap-2.5 w-full'>
           <button
-            className='btn_gray max-w-[236px]'
+            className='btn_gray min-h-[60px] sm:min-h-[45px] max-w-[236px] uppercase'
             onClick={closeModal}
             type='button'
           >
             Отменить
           </button>
           <button
-            className='btn_red btn_disabled max-w-[236px]'
+            className='btn_red min-h-[60px] sm:min-h-[45px] btn_disabled max-w-[236px]'
             onClick={handleRemoveAddress}
             type='button'
           >

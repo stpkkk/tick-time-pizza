@@ -45,18 +45,18 @@ const HeaderDesktop: React.FC = () => {
             <span className='block font-semibold'>Меню</span>
             <IoIosArrowDown />
           </div>
-          <div className='w-full bottom-1 md:absolute'>
+          <div className='bottom-1 md:absolute w-full'>
             <Nav />
           </div>
         </div>
         <div
-          className='relative h-full ml-4 hover:bg-grayLight'
+          className='hover:bg-grayLight relative h-full ml-4 animate-fade-in'
           onMouseOver={handleMouseOverPhone}
           onMouseOut={handleMouseOutPhone}
         >
           <Phone />
           {isHoveringPhone ? (
-            <div className='left-0 header_tooltip'>
+            <div className='header_tooltip left-0'>
               *минимальная сумма заказа на доставку равна стоимости средней
               пиццы.
             </div>
@@ -64,7 +64,7 @@ const HeaderDesktop: React.FC = () => {
         </div>
         <Link
           href={isUserSignIn ? '/profile' : '/login'}
-          className='flex_center ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
+          className='flex_center animate-fade-in ml-[28px] h-full w-[6rem] flex-col gap-2 hover:bg-grayLight'
         >
           <>
             {isUserSignIn ? (

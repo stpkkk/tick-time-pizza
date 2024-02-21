@@ -22,16 +22,12 @@ const OptionToSelect: React.FC<OptionToSelectProps> = ({
   className,
   innerHTML,
 }) => {
-  const bg = checked
-    ? 'bg-yellow no-underline hover:bg-yellowLight'
-    : 'bg-grayLight no-underline hover:bg-gray';
-
   return (
     <label
       htmlFor={id}
-      className={`${bg} ${className} cursor-pointer rounded-2xl ${
+      className={`${checked ? 'btn_yellow' : 'btn_grayLight'} ${className} ${
         isDisabled && 'pointer-events-none text-grayDark'
-      }`}
+      } cursor-pointer rounded-2xl !normal-case select-none`}
     >
       <input
         className='hidden'

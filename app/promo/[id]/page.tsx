@@ -160,7 +160,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
                 товар
               </span>
               <button
-                className='btn_red max-w-[100px] !max-h-[35px]'
+                className='btn_red h-[60px] sm:h-[50px] max-w-[100px] !max-h-[35px]'
                 onClick={handleClickOpenProductsList}
                 type='button'
               >

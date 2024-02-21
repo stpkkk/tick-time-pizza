@@ -19,8 +19,11 @@ const EmptyCart: React.FC = () => {
           </Link>
           .
         </p>
-        <Link className='btn_red mt-[30px] max-w-[236px]' href='/'>
-          выбрать пиццу
+        <Link
+          className='btn_red h-[60px] sm:h-[45px] mt-[30px] max-w-[236px] uppercase'
+          href='/'
+        >
+          Выбрать пиццу
         </Link>
       </div>
     </div>

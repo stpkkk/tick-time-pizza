@@ -71,11 +71,10 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
             <Image
               src={product.image}
               alt={product.title}
-              // placeholder='blur'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               fill
               priority
-              className={`${isItemHovered && 'opacity-50'}`}
+              className={`${isItemHovered && 'opacity-50 animate-fade-in'}`}
             />
           </div>
           <span className='block mb-4 font-semibold leading-5'>
@@ -90,7 +89,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
         <div className='flex_between'>
           <span className='font-semibold'>{`от ${starterPrice} ₽`}</span>
           <button
-            className={`btn_yellow btn_disabled max-w-[112px]`}
+            className='btn_yellow h-[45px] sm:h-[32px] btn_disabled max-w-[112px] uppercase'
             disabled={
               promo && totalPromoProductsQuantity === selectedPromo?.maxValue
             }

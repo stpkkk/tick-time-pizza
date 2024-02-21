@@ -24,7 +24,9 @@ const Counter: React.FC<CounterProps> = ({
     <>
       <button
         className={`${
-          counterValue <= minValue ? 'opacity-30' : 'hover:text-primary'
+          counterValue <= minValue
+            ? 'opacity-30'
+            : 'hover:text-primary animate-fade-in'
         } text-grayDark`}
         type='button'
         onClick={() => handleDecrement()}
@@ -36,7 +38,9 @@ const Counter: React.FC<CounterProps> = ({
       </span>
       <button
         className={`${
-          counterValue >= (maxValue || 99) ? 'opacity-30' : 'hover:text-primary'
+          counterValue >= (maxValue || 99)
+            ? 'opacity-30'
+            : 'hover:text-primary animate-fade-in'
         } text-grayDark`}
         type='button'
         onClick={() => handleIncrement()}

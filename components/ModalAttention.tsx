@@ -29,7 +29,7 @@ const ModalAttention = () => {
           Данный сайт(приложение) является копией оригинального сайта пиццерии в
           городе Петрозаводск &nbsp;
           <a
-            className='underline-offset-4 hover:text-secondary underline'
+            className='underline-offset-4 hover:text-secondary animate-fade-in underline'
             href='https://tick-time.ru'
             target='_blank'
           >
@@ -40,7 +40,7 @@ const ModalAttention = () => {
           никаких платежных систем здесь не используется! По различным вопросам
           можете связаться со мной в&nbsp;
           <a
-            className='underline-offset-4 hover:text-secondary underline'
+            className='underline-offset-4 hover:text-secondary animate-fade-in underline'
             href='https://t.me/stpkk'
             target='_blank'
           >

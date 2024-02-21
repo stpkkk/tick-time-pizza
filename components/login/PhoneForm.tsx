@@ -89,14 +89,14 @@ const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
         </Link>
       </p>
       <button
-        className='btn_red btn_disabled focus:outline-secondaryLight'
+        className='btn_red min-h-[60px] sm:min-h-[50px] btn_disabled focus:outline-secondaryLight uppercase'
         type='submit'
         disabled={!isPhoneValid}
       >
         Продолжить
       </button>
       <button
-        className='absolute flex items-center top-5 right-5 text-grayDark hover:text-primary'
+        className='top-5 right-5 text-grayDark hover:text-primary animate-fade-in absolute flex items-center'
         onClick={handleClose}
         type='button'
       >

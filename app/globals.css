@@ -127,24 +127,28 @@ main {
 }
 
 /*Buttons*/
+.btn {
+  @apply rounded-2xl flex items-center justify-center w-full text-sm font-bold transition duration-300 ease-in-out cursor-pointer sm:text-xs sm:leading-[15px];
+}
+
 .btn_red {
-  @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-secondary px-4 py-2 text-xs font-bold uppercase text-white hover:bg-secondaryLight sm:h-[50px];
+  @apply btn bg-secondary hover:bg-secondaryLight text-white;
 }
 
 .btn_yellow {
-  @apply flex h-[45px] w-full items-center justify-center rounded-2xl bg-yellow px-4 py-2 text-xs font-bold uppercase text-primary hover:bg-yellowLight;
+  @apply btn bg-yellow hover:bg-yellowLight text-primary;
 }
 
 .btn_gray {
-  @apply flex h-[60px] w-full items-center justify-center rounded-2xl bg-grayDark px-4 py-2 text-xs font-bold uppercase text-white hover:opacity-50 sm:h-[50px];
+  @apply btn bg-grayDark hover:opacity-50 text-white;
 }
 
 .btn_grayLight {
-  @apply flex cursor-pointer items-center justify-center  rounded-2xl bg-gray bg-opacity-50 text-sm font-bold leading-[17px] hover:bg-opacity-100 sm:text-xs sm:leading-[15px];
+  @apply btn bg-gray hover:bg-opacity-100 bg-opacity-50;
 }
 
 .btn_disabled {
-  @apply disabled:pointer-events-none disabled:bg-grayLight disabled:text-grayDark;
+  @apply btn disabled:pointer-events-none disabled:bg-grayLight disabled:text-grayDark;
 }
 
 /* FLEX */

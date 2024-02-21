@@ -45,12 +45,12 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
       <span className='block mb-4 font-semibold leading-5'>
         {isPizzaOfTheDay ? promo.title + ' ' + currentDay : promo.title}
       </span>
-      <footer className='flex items-center justify-start flex-1 gap-7'>
+      <footer className='gap-7 flex items-center justify-start flex-1'>
         {promo.isRedirect && (
           <Link
             href={`/promo/${promo.id}`}
             onClick={() => handlePromoClick(promo, false)}
-            className='btn_yellow max-w-[100px] sm:max-h-[35px]'
+            className='btn_yellow h-[45px] px-4 sm:h-[35px] uppercase'
           >
             Выбрать
           </Link>
@@ -58,7 +58,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         <button
           type='button'
           onClick={() => handlePromoClick(promo, true)}
-          className='flex flex-row items-center justify-between gap-3 text-sm font-semibold flex-nowrap text-grayDark hover:text-primary'
+          className='flex-nowrap text-grayDark hover:text-primary animate-fade-in flex flex-row items-center justify-between gap-3 text-sm font-semibold'
         >
           <BsPlusSquare size={24} className='sm:w-[20px] sm:h-[20px]' />
           <span className='sm:text-xs sm:leading-[15px]'>Подробнее</span>

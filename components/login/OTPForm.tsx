@@ -99,20 +99,20 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
             {!isOtpValid ? 'Пароль неверный' : ''}
           </p>
           <button
-            className='btn_red btn_disabled focus:outline-secondaryLight'
+            className='btn_red min-h-[60px] sm:min-h-[50px] btn_disabled focus:outline-secondaryLight uppercase'
             type='submit'
           >
             Подтвердить код
           </button>
           <button
-            className='absolute flex items-center top-5 right-5 text-grayDark hover:text-primary'
+            className='top-5 right-5 text-grayDark hover:text-primary animate-fade-in absolute flex items-center'
             onClick={handleClose}
             type='button'
           >
             <AiOutlineCloseCircle size={35} />
           </button>
           <button
-            className='absolute flex items-center top-5 left-5 text-grayDark hover:text-primary'
+            className='top-5 left-5 text-grayDark hover:text-primary animate-fade-in absolute flex items-center'
             onClick={handleClickBack}
             type='button'
           >

@@ -48,7 +48,7 @@ const IngredientsSelect: React.FC = () => {
         <button
           type='button'
           onClick={() => dispatch(setAllIngredients())}
-          className='flex_between mx-auto mt-2.5 w-auto gap-3 text-sm font-semibold text-grayDark hover:text-primary'
+          className='flex_between mx-auto mt-2.5 w-auto gap-3 text-sm font-semibold text-grayDark animate-fade-in hover:text-primary'
         >
           <BsPlusSquare />
           <span>Показать ещё</span>

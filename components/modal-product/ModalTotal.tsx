@@ -95,7 +95,7 @@ const ModalTotal: React.FC = () => {
 
   return (
     <div className='flex_center flex-col gap-[30px]'>
-      <div className='w-full flex_between sm:flex-row-reverse sm:px-4'>
+      <div className='flex_between sm:flex-row-reverse sm:px-4 w-full'>
         <div className='flex_between w-full max-w-[128px] text-base sm:max-w-[96px]'>
           <Counter
             minValue={1}
@@ -107,12 +107,16 @@ const ModalTotal: React.FC = () => {
           />
         </div>
         <div>
-          <span className='text-xl font-semibold sm:text-base'>
+          <span className='sm:text-base text-xl font-semibold'>
             {totalProductPrice} ₽
           </span>
         </div>
       </div>
-      <button className='btn_red' type='button' onClick={addProductToCart}>
+      <button
+        className='btn_red min-h-[60px] sm:min-h-[45px] uppercase'
+        type='button'
+        onClick={addProductToCart}
+      >
         Добавить в корзину
       </button>
     </div>

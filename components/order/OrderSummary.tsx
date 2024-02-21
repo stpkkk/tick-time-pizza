@@ -97,7 +97,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
           </div>
           <div className='sm:gap-4 sm:flex-col flex justify-between gap-6'>
             <button
-              className='btn_red max-w-[235px] btn_disabled'
+              className='btn_red h-[60px] sm:h-[50px] max-w-[235px] btn_disabled uppercase'
               type='submit'
               disabled={isBtnDisabled}
             >

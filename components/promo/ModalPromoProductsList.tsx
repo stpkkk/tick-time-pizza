@@ -18,9 +18,9 @@ const ModalPromoProductsList: React.FC<ModalPromoProdutsListProps> = ({
   };
 
   return (
-    <div className='fixed inset-0 z-10 hidden overflow-y-auto sm:block'>
+    <div className='sm:block fixed inset-0 z-10 hidden overflow-y-auto'>
       <button
-        className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark hover:text-primary sm:right-0 sm:top-0 sm:p-1'
+        className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark animate-fade-in hover:text-primary sm:right-0 sm:top-0 sm:p-1'
         type='button'
         onClick={handleClose}
       >

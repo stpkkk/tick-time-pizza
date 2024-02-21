@@ -37,7 +37,7 @@ const TimePicker: React.FC<TimePickerProps> = ({
       <ul className='absolute w-full max-h-[130px] overflow-y-auto thin_scroll border border-yellow border-solid bg-white rounded-b-2xl border-t-0'>
         {timeArray.map((time) => (
           <li
-            className='w-full py-1 text-center transition hover:bg-gray last:rounded-b-2xl'
+            className='hover:bg-gray last:rounded-b-2xl w-full py-1 text-center animate-fade-in'
             key={time}
             onClick={() => handleClickTime(time)}
           >

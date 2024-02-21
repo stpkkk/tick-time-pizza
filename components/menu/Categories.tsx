@@ -36,7 +36,7 @@ const Categories: React.FC = () => {
         {categoriesToShow.map((cat) => (
           <li key={cat.id}>
             <InputCheckbox
-              className='w-auto px-[30px] py-[20px] leading-[20px] sm:px-3 sm:py-[10px]'
+              className='sm:px-3 h-[60px] sm:h-[45px] px-10'
               option={cat}
               isChecked={selectedCategory.value === cat.value}
               handleChange={handleChangeCategory}

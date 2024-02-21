@@ -36,7 +36,7 @@ const HeaderCart: React.FC = () => {
 
   return (
     <div
-      className='relative h-full hover:bg-grayLight sm:hover:bg-white'
+      className='hover:bg-grayLight sm:hover:bg-white relative h-full transition-all duration-300 ease-in-out'
       onMouseOver={handleMouseOverCart}
       onMouseOut={handleMouseOutCart}
     >

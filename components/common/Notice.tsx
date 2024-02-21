@@ -46,12 +46,12 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
 
   const TooltipContent = (
     <div ref={modalRef} onClick={handleModalClick}>
-      <div className='absolute top-0 left-0 z-20 cursor-pointer text-grayDark hover:text-primary'>
+      <div className='text-grayDark hover:text-primary absolute top-0 left-0 z-20 animate-fade-in cursor-pointer'>
         <AiOutlineExclamationCircle size={18} />
       </div>
       <div className='container absolute -left-2 -top-2 z-10 max-w-[296px] px-9 py-6'>
         <div
-          className='absolute top-0 right-0 p-2 cursor-pointer text-grayDark hover:text-primary'
+          className='text-grayDark hover:text-primary absolute top-0 right-0 p-2 animate-fade-in cursor-pointer'
           onClick={handleClickExclamation}
         >
           <RiCloseFill size={24} />
@@ -59,7 +59,7 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
         <div className='' onClick={(e) => e.stopPropagation()}>
           <p className='text-[12px] leading-[15px] font-normal font-montserrat lowercase'>
             {text}{' '}
-            <Link className='underline underline-offset-2' href='/sberbank'>
+            <Link className='underline-offset-2 underline' href='/sberbank'>
               здесь
             </Link>
           </p>
@@ -72,7 +72,7 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
     <div onClick={handleNoticeClick}>{TooltipContent}</div>
   ) : (
     <div
-      className='cursor-pointer text-grayDark hover:text-primary'
+      className='text-grayDark hover:text-primary animate-fade-in cursor-pointer'
       onClick={handleClickExclamation}
     >
       <AiOutlineExclamationCircle size={18} />
