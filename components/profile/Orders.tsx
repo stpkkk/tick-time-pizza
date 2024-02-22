@@ -29,7 +29,7 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => {
     <ul className='flex flex-col-reverse gap-[30px] sm:gap-4'>
       {orders?.map((order: IOrder) => (
         <li
-          className='flex flex-col container cursor-pointer px-[60px] py-[30px] sm:p-4'
+          className='flex flex-col wrapper cursor-pointer px-[60px] py-[30px] sm:p-4'
           key={generateUUID()}
           onClick={() => toggleOrder(order.id || '')}
           tabIndex={1}

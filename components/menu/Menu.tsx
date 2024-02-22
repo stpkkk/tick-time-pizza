@@ -38,7 +38,7 @@ const Menu: React.FC = () => {
       <Banner />
       <Categories />
       {products?.length > 0 ? (
-        <div className='container px-[60px] py-[50px] sm:p-0 sm:drop-shadow-none'>
+        <div className='wrapper px-[60px] py-[50px] sm:p-0 sm:drop-shadow-none'>
           <ul className='grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4'>
             {products?.map((product) => (
               <MenuItem key={product.id} product={product} />

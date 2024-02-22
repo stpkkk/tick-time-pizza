@@ -1,12 +1,12 @@
-import { setModalHeight } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { ButtonBookmark, Notice } from '../common';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
+import { setModalHeight } from '@/redux/features/menuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const ContentLeft: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ const ContentLeft: React.FC = () => {
 
   return (
     <div className='flex_between flex-col gap-[30px]' ref={modalLeft}>
-      <div className='hidden sm:block'>
+      <div className='sm:block hidden'>
         <ProductTitle />
       </div>
       <div className='flex_center relative w-full flex-col gap-[30px] sm:gap-0'>
@@ -47,8 +47,13 @@ const ContentLeft: React.FC = () => {
             <ButtonBookmark product={selectedProduct} />
           </div>
         )}
-        <div className='absolute top-0 left-0 w-full'>
-          <Notice text='Изображение в рекламе и внешний вид продукта могут отличаться' />
+        <div className='absolute top-0 left-0 sm:w-[172px] w-[296px]'>
+          <Notice>
+            <p className='text-[12px] leading-[15px]'>
+              Изображение в рекламе и внешний вид продукта могут отличаться.
+              Допустимое отклонение от заявленного размера ≈ 1 см.
+            </p>
+          </Notice>
         </div>
         {selectedProduct?.additionalIngredients && !selectedPromo ? (
           <div className='text-center'>

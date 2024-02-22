@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
-import Link from 'next/link';
 import { toggleTooltip } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 type NoticeProps = {
-  text: string;
+  children: ReactNode;
 };
 
-const Notice: React.FC<NoticeProps> = ({ text }) => {
+const Notice: React.FC<NoticeProps> = ({ children }) => {
   const dispatch = useAppDispatch();
   const { isTooltipOpen } = useAppSelector((state) => state.menuReducer);
   const modalRef = React.useRef<HTMLDivElement>(null);
@@ -45,25 +44,22 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
   }, [isTooltipOpen, dispatch]);
 
   const TooltipContent = (
-    <div ref={modalRef} onClick={handleModalClick}>
-      <div className='text-grayDark hover:text-primary absolute top-0 left-0 z-20 animate-fade-in cursor-pointer'>
+    <div
+      className='relative max-w-[296px] w-full'
+      ref={modalRef}
+      onClick={handleModalClick}
+    >
+      <div className='text-grayDark hover:text-primary animate-fade-in absolute top-0 left-0 z-20 cursor-pointer'>
         <AiOutlineExclamationCircle size={18} />
       </div>
-      <div className='container absolute -left-2 -top-2 z-10 max-w-[296px] px-9 py-6'>
+      <div className='wrapper w-[296px] -left-2 -top-2 px-9 absolute z-10 py-6'>
         <div
-          className='text-grayDark hover:text-primary absolute top-0 right-0 p-2 animate-fade-in cursor-pointer'
+          className='text-grayDark hover:text-primary animate-fade-in absolute top-0 right-0 p-2 cursor-pointer'
           onClick={handleClickExclamation}
         >
           <RiCloseFill size={24} />
         </div>
-        <div className='' onClick={(e) => e.stopPropagation()}>
-          <p className='text-[12px] leading-[15px] font-normal font-montserrat lowercase'>
-            {text}{' '}
-            <Link className='underline-offset-2 underline' href='/sberbank'>
-              здесь
-            </Link>
-          </p>
-        </div>
+        <div onClick={(e) => e.stopPropagation()}>{children}</div>
       </div>
     </div>
   );
@@ -72,7 +68,7 @@ const Notice: React.FC<NoticeProps> = ({ text }) => {
     <div onClick={handleNoticeClick}>{TooltipContent}</div>
   ) : (
     <div
-      className='text-grayDark hover:text-primary animate-fade-in cursor-pointer'
+      className='text-grayDark hover:text-primary animate-fade-in cursor-pointer max-w-[20px]'
       onClick={handleClickExclamation}
     >
       <AiOutlineExclamationCircle size={18} />

@@ -7,7 +7,7 @@ const NoBookmarks: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className='container px-[60px] py-[50px] sm:p-4'>
+    <div className='wrapper px-[60px] py-[50px] sm:p-4'>
       <p className='mb-4 text-base font-semibold leading-5 sm:text-[12px] sm:leading-[15px]'>
         Вы ещё не добавили свои любимые товары в «Избранное»
       </p>

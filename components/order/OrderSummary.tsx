@@ -45,7 +45,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
       <h2 className='h1 md:my-4 md:ml-4 flex flex-row gap-2 my-10 ml-6'>
         Ваш заказ
       </h2>
-      <div className='container grid grid-cols-2 sm:grid-cols-1 gap-[30px] flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
+      <div className='wrapper grid grid-cols-2 sm:grid-cols-1 gap-[30px] flex-wrap w-full px-[60px] py-[50px] sm:px-4 sm:py-8 '>
         <div className='flex flex-col gap-[30px] sm:gap-4 sm:w-full'>
           <div>
             <h3 className='h3 mb-4'>

@@ -37,7 +37,7 @@ const CartTotal: React.FC = () => {
   );
 
   return (
-    <div className='container flex_center flex-none flex-wrap w-[390px] h-[443px] md:w-full sm:py-8 py-[50px] px-[60px] sm:px-4'>
+    <div className='wrapper flex_center flex-none flex-wrap w-[390px] h-[443px] md:w-full sm:py-8 py-[50px] px-[60px] sm:px-4'>
       <form className='flex flex-col gap-[30px]' onSubmit={handleCheckoutOrder}>
         <Promocode />
         <div>

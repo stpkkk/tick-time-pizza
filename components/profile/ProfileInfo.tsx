@@ -48,7 +48,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
   };
 
   return (
-    <div className='container md:py-8 md:px-4 py-[50px] px-[60px]'>
+    <div className='wrapper md:py-8 md:px-4 py-[50px] px-[60px]'>
       <div className='grid md:gap-4 smMin:grid-cols-2 mdMin:grid-cols-3 gap-6 mb-[44px] sm:mb-6'>
         {info.map(({ id, Icon, title, value }) => (
           <div className='flex gap-5' key={id}>

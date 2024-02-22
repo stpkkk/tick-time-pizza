@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const EmptyCart: React.FC = () => {
   return (
-    <div className='container gap-30px flex flex-col px-[60px] py-[50px] sm:px-4 sm:py-8'>
+    <div className='wrapper gap-30px flex flex-col px-[60px] py-[50px] sm:px-4 sm:py-8'>
       <div>
         <p className='text-base font-semibold leading-5 sm:text-xs sm:leading-[15px]'>
           Корзина пока пуста.

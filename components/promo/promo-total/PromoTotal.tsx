@@ -36,7 +36,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
 
   return (
     <div className='w-full max-w-[285px] sm:hidden'>
-      <div className='container h-auto overflow-hidden'>
+      <div className='wrapper h-auto overflow-hidden'>
         <form
           noValidate
           className='flex flex-col gap-30px'

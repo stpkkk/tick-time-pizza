@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Notice } from '../common';
 import OptionToSelect from './OptionToSelect';
 import { setOrderFormData } from '@/redux/features/profileSlice';
@@ -22,9 +23,18 @@ const SelectPaymentMethod: React.FC = () => {
     <section>
       <div className='flex w-full gap-2 mb-4'>
         <h3 className='h3'>Способ оплаты:</h3>
-        <Notice text='Внимание! Оплата по картам (онлайн) осуществляется через платежный шлюз Сбербанка. Переход на него осуществляется при нажатии на кнопку "Заказать". После успешной оплаты мы получим ваш платеж в течение 3-5 минут. Подробнее об оплате вы можете узнать' />
+        <Notice>
+          <p className='text-[12px] leading-[15px]'>
+            Внимание! Оплата по картам (онлайн) осуществляется через платежный
+            шлюз Сбербанка. Переход на него осуществляется при нажатии на кнопку
+            &ldquo;Заказать&ldquo;. После успешной оплаты мы получим ваш платеж
+            в течение 3-5 минут. Подробнее об оплате вы можете узнать{' '}
+            <Link className='underline-offset-2 underline' href='/sberbank'>
+              здесь
+            </Link>
+          </p>
+        </Notice>
       </div>
-
       <ul className='flex sm:flex-col gap-[30px] sm:gap-4'>
         {paymentMethodsArray.map((payMethod) => (
           <li key={payMethod}>

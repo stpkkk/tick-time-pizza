@@ -94,7 +94,7 @@ main {
   @apply mx-auto min-h-[calc(100vh-358px)] w-full max-w-[1262px] flex-grow px-[1rem];
 }
 
-.container {
+.wrapper {
   @apply rounded-2xl drop-shadow-custom bg-white;
 }
 
