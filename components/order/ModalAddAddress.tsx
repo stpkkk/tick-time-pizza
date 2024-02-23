@@ -13,9 +13,8 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { generateUUID } from '@/utils';
 
 const ModalAddAddress: React.FC = () => {
-  const dispatch = useAppDispatch();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-
+  const dispatch = useAppDispatch();
   const { isModalAddAddressOpen, user, orderFormData } = useAppSelector(
     (state) => state.profileReducer,
   );

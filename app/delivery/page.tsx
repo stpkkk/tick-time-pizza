@@ -4,7 +4,7 @@ const DeliveryPage: React.FC = () => {
   return (
     <main className='mt-[90px] sm:pt-0'>
       <div className='px-[30px] sm:px-4'>
-        <h1 className='my-10 h1 sm:my-4'>Доставка</h1>
+        <h1 className='h1 sm:my-4 my-10'>Доставка</h1>
         <p className='sm:text-xs sm:leading-[15px] text-base leading-5 font-semibold sm:mb-[30px] mb-[50px]'>
           Доставка еды и напитков всегда бесплатная!
         </p>
@@ -33,7 +33,7 @@ const DeliveryPage: React.FC = () => {
             карте!
           </li>
         </ul>
-        <div className='overflow-hidden rounded-2xl'>
+        <div className='rounded-2xl overflow-hidden'>
           <a
             href='https://yandex.ru/maps/18/petrozavodsk/?utm_medium=mapframe..'
             style={{
@@ -62,7 +62,7 @@ const DeliveryPage: React.FC = () => {
             height='400'
             // allowfullscreen=''
             style={{ position: 'relative' }}
-          ></iframe>
+          />
         </div>
       </div>
     </main>

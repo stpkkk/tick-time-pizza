@@ -54,7 +54,6 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = promo?.title === Promos.PIZZA_OF_THE_DAY;
   const promoTitle = promo?.title ?? '';
-
   const { totalPrice } = calculateTotalPrice(promoProductsList);
   const { productPrice } = calculateProductPrices(
     selectedProduct,
@@ -63,7 +62,6 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
     productQuantity,
   );
   const isQuantityMax = totalPromoProductsQuantity === promo?.maxValue;
-
   const fourBigPizzasPrice =
     (productPrice && totalPrice - productPrice) ?? '-' + Prices.BIG;
   const pizzaDiscount100 = (productPrice && totalPrice - 100) ?? -100;

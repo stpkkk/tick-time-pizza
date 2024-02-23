@@ -11,6 +11,14 @@ const SelectDeliveryTime: React.FC = () => {
   const dispatch = useAppDispatch();
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const timePickerRef = React.useRef<HTMLDivElement>(null);
+  const isNotSoon = orderFormData.deliveryDate !== DeliveryDate.SOON;
+  const { currentHour } = getFormattedDateTime();
+  const hours = Array.from({ length: 24 }, (_, index) =>
+    String(index < 10 ? `0${index}` : index).padStart(2, '0'),
+  );
+  const hoursToShow = hours.filter((hour) => hour >= currentHour + 2);
+  const minutes = ['00', '15', '30', '45'];
+  const isMinutesDisabled = !orderFormData.deliveryTime?.hours;
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -65,20 +73,9 @@ const SelectDeliveryTime: React.FC = () => {
     />
   );
 
-  const isNotSoon = orderFormData.deliveryDate !== DeliveryDate.SOON;
-
-  const { currentHour } = getFormattedDateTime();
-  const hours = Array.from({ length: 24 }, (_, index) =>
-    String(index < 10 ? `0${index}` : index).padStart(2, '0'),
-  );
-  const hoursToShow = hours.filter((hour) => hour >= currentHour + 2);
-  const minutes = ['00', '15', '30', '45'];
-
-  const isMinutesDisabled = !orderFormData.deliveryTime?.hours;
-
   return isNotSoon ? (
     <section>
-      <h3 className='mb-4 h3'>Во сколько?</h3>
+      <h3 className='h3 mb-4'>Во сколько?</h3>
       <div className='flex items-center gap-3' ref={timePickerRef}>
         {renderTimePicker('hours', hoursToShow, hoursOpen)}
         <span className='font-semibold'>:</span>

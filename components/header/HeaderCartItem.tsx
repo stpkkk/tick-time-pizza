@@ -13,7 +13,6 @@ interface HeaderCartItemProps {
 const HeaderCartItem: React.FC<HeaderCartItemProps> = ({ product }) => {
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-
   const { totalProductPrice } = calculateProductPrices(
     product,
     product.selectedSize || null,

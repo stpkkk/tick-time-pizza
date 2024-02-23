@@ -9,7 +9,6 @@ import { useAppDispatch } from '@/redux/hooks';
 
 const AppHeader: React.FC = () => {
   const dispatch = useAppDispatch();
-
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   React.useEffect(() => {

@@ -8,9 +8,7 @@ import { getFormattedDateTime } from '@/utils';
 const SelectDeliveryDate: React.FC = () => {
   const dispatch = useAppDispatch();
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
-
   const { day, month } = getFormattedDateTime();
-
   const soonDelivery = Object.values(DeliveryDate);
 
   const dateDelivery = Array.from({ length: 6 }, (_, index) => {

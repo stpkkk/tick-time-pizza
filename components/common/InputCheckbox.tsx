@@ -25,7 +25,7 @@ const InputCheckbox: React.FC<IInputCheckboxProps> = ({
         key={option.id}
         className={`${
           isChecked ? 'btn_yellow' : 'btn_grayLight'
-        } ${className} flex items-center justify-between gap-2 cursor-pointer rounded-2xl text-sm font-bold sm:text-[12px] no-underline ${
+        } ${className} flex items-center justify-between gap-2 text-sm font-bold sm:text-[12px] ${
           isDisabled && 'pointer-events-none text-grayDark'
         }`}
       >
@@ -45,11 +45,11 @@ const InputCheckbox: React.FC<IInputCheckboxProps> = ({
               width={20}
               height={20}
               loading='eager'
-              className='sm:h-4 sm:w-4'
+              className='sm:h-4 sm:w-4 select-none'
             />
           </div>
         )}
-        <span className={`${crossed} select-none`}>{option.value}</span>
+        <span className={`${crossed}`}>{option.value}</span>
       </label>
     )
   );

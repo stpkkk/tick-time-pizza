@@ -7,6 +7,7 @@ const PromoSelectedProductsList: React.FC = () => {
   const { totalPromoProductsQuantity, promoProductsList } = useAppSelector(
     (state) => state.menuReducer,
   );
+
   return (
     <ul className='flex flex-col gap-[30px]'>
       {promoProductsList.map((product) => (

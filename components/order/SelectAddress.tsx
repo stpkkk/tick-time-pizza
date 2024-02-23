@@ -57,7 +57,7 @@ const SelectAddress: React.FC = () => {
         >
           <LuMapPin size={40} className='text-grayDark sm:w-8' />
           <button
-            className='w-full text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold text-left'
+            className='w-full text-xs leading-[15px] md:text-sm md:leading-[17px] font-bold text-left sm:pb-2'
             type='button'
           >
             Добавить новый адрес
@@ -74,7 +74,7 @@ const SelectAddress: React.FC = () => {
               checked={orderFormData.deliveryAddress?.uuid === address.uuid}
               value={address.uuid}
               name={address.uuid}
-              className='p-[30px] sm:p-4 w-full min-h-[96px]'
+              className='flex_start p-[30px] sm:p-4 w-full min-h-[96px]'
               innerHTML={
                 <>
                   <AddressView address={address} />

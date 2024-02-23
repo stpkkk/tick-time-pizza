@@ -128,7 +128,7 @@ main {
 
 /*Buttons*/
 .btn {
-  @apply rounded-2xl flex items-center justify-center w-full text-sm font-bold transition duration-300 ease-in-out cursor-pointer sm:text-xs sm:leading-[15px];
+  @apply rounded-2xl flex items-center justify-center w-full text-sm font-bold transition duration-300 ease-in-out cursor-pointer sm:text-xs sm:leading-[15px] select-none;
 }
 
 .btn_red {
@@ -169,7 +169,6 @@ main {
 }
 
 /* Modal */
-
 .overlay {
   @apply fixed inset-0 bg-black bg-opacity-25 opacity-100;
 }

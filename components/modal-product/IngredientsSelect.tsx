@@ -10,7 +10,6 @@ const IngredientsSelect: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, isAllIngredients, selectedDough, selectedSize } =
     useAppSelector((state) => state.menuReducer);
-
   const sliceTo = isAllIngredients
     ? selectedProduct?.additionalIngredients &&
       selectedProduct?.additionalIngredients.length

@@ -14,7 +14,6 @@ const CartTotal: React.FC = () => {
     (acc, product) => acc + (product.productQuantity ?? 0),
     0,
   );
-
   const discount = cartProducts?.reduce(
     (acc, product) =>
       acc +

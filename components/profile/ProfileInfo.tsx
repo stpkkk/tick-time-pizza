@@ -21,10 +21,10 @@ type ProfileInfoProps = {
 };
 
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const auth = getAuth(app_firebase);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const info = getProfileInfo(user);
   const tickets = info.find((i) => i.title === 'Ваши тикеты')?.title;
 
@@ -63,7 +63,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
               </p>
               {title === tickets ? (
                 <button
-                  className='left-full hover:text-primary text-grayDark absolute top-0 animate-fade-in'
+                  className='left-full hover:text-primary text-grayDark animate-fade-in absolute top-0'
                   type='button'
                   onClick={handleClickTicketsNotice}
                 >
@@ -79,7 +79,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
       </div>
       <div className='text-grayDark sm:text-sm flex gap-6 font-semibold'>
         <div
-          className='hover:text-primary flex gap-2 animate-fade-in cursor-pointer'
+          className='hover:text-primary animate-fade-in flex gap-2 cursor-pointer'
           onClick={handleLogout}
         >
           <button type='button'>
@@ -88,7 +88,7 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({ user }) => {
           <span>Выйти</span>
         </div>
         <div
-          className='hover:text-primary flex gap-2 animate-fade-in cursor-pointer'
+          className='hover:text-primary animate-fade-in flex gap-2 cursor-pointer'
           onClick={handleClickEdit}
         >
           <button type='button'>

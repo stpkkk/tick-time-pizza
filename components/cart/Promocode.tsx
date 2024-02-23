@@ -11,6 +11,7 @@ const Promocode: React.FC = () => {
       setIsPromoDisabled(false);
     }
   };
+
   return (
     <div className='md:w-full relative'>
       <Input id='code' onChange={onInputChange} label='Промокод' type='text' />

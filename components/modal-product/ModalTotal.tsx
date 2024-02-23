@@ -12,8 +12,8 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { calculateProductPrices, generateUUID } from '@/utils';
 
 const ModalTotal: React.FC = () => {
+  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const dispatch = useAppDispatch();
-
   const {
     selectedProduct,
     selectedIngredients,
@@ -25,15 +25,12 @@ const ModalTotal: React.FC = () => {
     promoProductsList,
     totalPromoProductsQuantity,
   } = useAppSelector((state) => state.menuReducer);
-
   const { totalProductPrice } = calculateProductPrices(
     selectedProduct,
     selectedSize,
     selectedIngredients,
     productQuantity,
   );
-
-  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const addProductToCart = React.useCallback(async () => {
     const uuid = generateUUID();

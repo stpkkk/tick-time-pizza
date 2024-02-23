@@ -5,11 +5,11 @@ import { setIsProductsListModalOpen } from '@/redux/features/menuSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import { Promo } from '@/types';
 
-type ModalPromoProdutsListProps = {
+type ModalPromoProductsListProps = {
   promo?: Promo;
 };
 
-const ModalPromoProductsList: React.FC<ModalPromoProdutsListProps> = ({
+const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
   promo,
 }) => {
   const dispatch = useAppDispatch();

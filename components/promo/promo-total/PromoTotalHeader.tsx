@@ -10,6 +10,7 @@ const PromoTotalHeader: React.FC<PromoTotalQuantityProps> = ({ promo }) => {
   const { totalPromoProductsQuantity } = useAppSelector(
     (state) => state.menuReducer,
   );
+
   return (
     <>
       <span className='text-lg font-semibold leading-5 uppercase font-zheldor'>

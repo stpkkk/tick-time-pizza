@@ -4,7 +4,6 @@ import { useAppSelector } from '@/redux/hooks';
 
 const NutritionalValue: React.FC = () => {
   const { selectedProduct } = useAppSelector((state) => state.menuReducer);
-
   const nutrients = selectedProduct?.nutritionalValues;
 
   return (

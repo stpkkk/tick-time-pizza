@@ -17,7 +17,6 @@ const ButtonBookmark: React.FC<ButtonBookmarkProps> = ({ product }) => {
   const { user } = useAppSelector((state) => state.profileReducer);
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const isUserSignIn = user && Object.keys(user).length > 0;
-
   const isBookmarked = bookmarks?.some((item) => item?.id === product?.id);
 
   const toggleBookmarked = async () => {

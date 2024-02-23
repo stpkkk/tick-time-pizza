@@ -11,14 +11,12 @@ const ProductSizeSelection: React.FC = () => {
   const dispatch = useAppDispatch();
   const { selectedProduct, selectedSize, selectedDough, selectedPromo } =
     useAppSelector((state) => state.menuReducer);
-
   const dough =
     selectedPromo?.title === Promos.THREE_PIZZAS_999
       ? selectedProduct?.dough?.filter(
           (d: IOption) => d.value === Dough.TRADITIONAL,
         )
       : selectedProduct?.dough;
-
   const sizes = getPromoProductSizes(
     selectedPromo?.title || '',
     selectedProduct,

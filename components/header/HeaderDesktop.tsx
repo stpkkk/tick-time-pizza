@@ -16,6 +16,7 @@ const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
   const { user } = useAppSelector((state) => state.profileReducer);
+  const isUserSignIn = user && Object.keys(user).length > 0;
 
   const handleClick = () => {
     dispatch(toggleNav());
@@ -30,8 +31,6 @@ const HeaderDesktop: React.FC = () => {
   };
 
   useAuthStateChange(user);
-
-  const isUserSignIn = user && Object.keys(user).length > 0;
 
   return (
     <header className='fixed top-0 z-30 mx-auto w-full max-w-[1262px] px-[1rem] sm:hidden'>
@@ -50,7 +49,7 @@ const HeaderDesktop: React.FC = () => {
           </div>
         </div>
         <div
-          className='hover:bg-grayLight relative h-full ml-4 animate-fade-in'
+          className='hover:bg-grayLight animate-fade-in relative h-full ml-4'
           onMouseOver={handleMouseOverPhone}
           onMouseOut={handleMouseOutPhone}
         >

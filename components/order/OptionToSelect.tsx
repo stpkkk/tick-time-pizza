@@ -27,7 +27,7 @@ const OptionToSelect: React.FC<OptionToSelectProps> = ({
       htmlFor={id}
       className={`${checked ? 'btn_yellow' : 'btn_grayLight'} ${className} ${
         isDisabled && 'pointer-events-none text-grayDark'
-      } cursor-pointer rounded-2xl !normal-case select-none`}
+      }`}
     >
       <input
         className='hidden'

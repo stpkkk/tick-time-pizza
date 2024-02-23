@@ -14,7 +14,6 @@ import { IProduct } from '@/types';
 
 const CartPage: React.FC = () => {
   const [popularProducts, setPopularProducts] = React.useState<IProduct[]>([]);
-
   const sauces = menu.filter((product) => product.group === 'sauces');
 
   React.useEffect(() => {

@@ -23,17 +23,16 @@ type OTPFormProps = {
 };
 
 const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
-  const router = useRouter();
+  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useDispatch();
   const { phone, otp, confirmationResult, loading, isOtpValid } =
     useAppSelector((state) => state.profileReducer);
+  const router = useRouter();
 
   const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setOtp(e.target.value));
     dispatch(setOtpValid(true));
   };
-
-  const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
 
   const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
