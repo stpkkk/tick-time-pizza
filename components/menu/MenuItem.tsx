@@ -102,11 +102,11 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <ButtonBookmark product={product} />
       </div>
-      <div className='-left-1 sm:p-2 absolute top-0 z-20'>
+      <div className='-left-1 sm:p-2 absolute top-0 z-20 flex flex-col gap-2'>
         {!promo
           ? product.categories?.map((cat) => (
               <div
-                className='sm:left-2 sm:top-2 sm:p-2 flex flex-col gap-y-0.5 bg-white rounded-full'
+                className='sm:left-2 sm:top-2 sm:p-2 bg-white rounded-full'
                 key={generateUUID()}
               >
                 <Image
