@@ -12,7 +12,7 @@ const ButtonsSaveCancel: React.FC<ButtonsSaveCancelProps> = ({
   return (
     <div className='flex_center gap-[30px] sm:gap-2.5 w-full'>
       <button
-        className='btn_gray h-[60px] sm:h-[50px] max-w-[236px] uppercase'
+        className='btn_gray h-[60px] sm:h-[45px] max-w-[236px] uppercase'
         onClick={clickCancel}
         type='button'
       >

@@ -1,4 +1,5 @@
 import React from 'react';
+import MapPickPoints from './MapPickPoints';
 import OptionToSelect from './OptionToSelect';
 import { pizzerias } from '@/constants';
 import { setOrderFormData } from '@/redux/features/profileSlice';
@@ -32,7 +33,7 @@ const SelectPickupPoint: React.FC = () => {
   return (
     <section className='flex flex-col gap-4'>
       <h3 className='h3'>Где вам удобно получить заказ?</h3>
-      <div className='min-h-[300px]' />
+      <MapPickPoints />
       <div className='grid grid-flow-row lgMin:grid-cols-3 smMin:grid-cols-1 mdMin:grid-cols-2 gap-[30px] sm:gap-4'>
         {pizzerias.map((pizzeria) => (
           <OptionToSelect

@@ -3,6 +3,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
+import MapAddAddress from './MapAddAddress';
 import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
@@ -65,11 +66,13 @@ const ModalAddAddress: React.FC = () => {
   return isModalAddAddressOpen ? (
     <ModalWrapper closeModal={closeModal} width={990}>
       <form
-        className='py-[50px] px-[60px] sm:p-4 max-w-[990px]'
+        className='sm:flex-col-reverse flex flex-col w-full'
         onSubmit={handleSubmit}
       >
-        <h2 className='h1 text-center mb-[30px]'>Добавить новый адрес</h2>
-        <div className='flex flex-col sm:gap-[18px] gap-[30px]'>
+        <div className='flex flex-col gap-[30px] py-[50px] px-[60px] sm:p-4 sm:gap-2'>
+          <h2 className='h1 text-center mb-[30px] sm:hidden'>
+            Добавить новый адрес
+          </h2>
           <div className='flex justify-between gap-[30px] sm:gap-2.5'>
             <Input
               id='street'
@@ -131,8 +134,8 @@ const ModalAddAddress: React.FC = () => {
             type='text'
           />
         </div>
-        <div className='min-h-[430px]' />
-        <div className='absolute bottom-[50px] z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full sm:px-4'>
+        <MapAddAddress />
+        <div className='absolute bottom-[50px] sm:bottom-4 z-10 left-1/2 -translate-x-2/4 flex sm:gap-2.5 gap-30px w-full sm:px-4'>
           <ButtonsSaveCancel
             disabled={isFormNotValid}
             clickCancel={closeModal}

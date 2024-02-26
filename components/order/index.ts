@@ -1,4 +1,6 @@
 import AddressView from './AddressView';
+import MapAddAddress from './MapAddAddress';
+import MapPickPoints from './MapPickPoints';
 import ModalAddAddress from './ModalAddAddress';
 import ModalOrderSuccess from './ModalOrderSuccess';
 import ModalRemoveAddress from './ModalRemoveAddress';
@@ -34,4 +36,6 @@ export {
   Tickets,
   OrderComment,
   OptionToSelect,
+  MapAddAddress,
+  MapPickPoints,
 };

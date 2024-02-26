@@ -140,7 +140,7 @@ main {
 }
 
 .btn_gray {
-  @apply btn bg-grayDark hover:opacity-50 text-white;
+  @apply btn bg-grayDark hover:brightness-110 text-white;
 }
 
 .btn_grayLight {
