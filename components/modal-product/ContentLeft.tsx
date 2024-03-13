@@ -33,15 +33,18 @@ const ContentLeft: React.FC = () => {
         <ProductTitle />
       </div>
       <div className='flex_center relative w-full flex-col gap-[30px] sm:gap-0'>
-        <Image
-          src={selectedProduct?.image || ''}
-          alt={selectedProduct?.title || ''}
-          placeholder='blur'
-          blurDataURL={pizza.src}
-          width={325}
-          height={325}
-          className='aspect-square h-full max-h-[325px] w-full max-w-[325px] sm:max-h-[250px] sm:max-w-[250px]'
-        />
+        <div className='relative w-full max-w-[325px] sm:max-w-[250px] aspect-square cursor-pointer'>
+          <Image
+            src={selectedProduct?.image || ''}
+            alt={selectedProduct?.title || ''}
+            placeholder='blur'
+            blurDataURL={pizza.src}
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            fill
+            priority
+            className='rounded-2xl'
+          />
+        </div>
         {selectedProduct && (
           <div className='absolute top-0 right-0'>
             <ButtonBookmark product={selectedProduct} />
