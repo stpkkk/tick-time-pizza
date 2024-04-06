@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { CgSpinner } from 'react-icons/cg';
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
@@ -13,6 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Loader } from '../common';
 import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import {
   setModalProductOpen,
@@ -123,12 +123,7 @@ const Banner: React.FC = () => {
           </div>
         </>
       ) : (
-        <div className='grid place-items-center min-h-[389px]'>
-          <CgSpinner
-            size={70}
-            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
-          />
-        </div>
+        <Loader />
       )}
     </div>
   );

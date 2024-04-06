@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { CgSpinner } from 'react-icons/cg';
 import { useRouter } from 'next/navigation';
 import {
+  Loader,
   ModalEditProfile,
   ModalTicketsInfo,
   NoOrders,
@@ -51,12 +51,7 @@ const ProfilePage: React.FC = () => {
           <ModalTicketsInfo />
         </>
       ) : (
-        <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
-          <CgSpinner
-            size={70}
-            className='text-yellow animate-spin sm:max-w-[40px] sm:h-[40px]'
-          />
-        </div>
+        <Loader />
       )}
     </main>
   );

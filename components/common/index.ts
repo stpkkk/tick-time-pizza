@@ -3,10 +3,12 @@ import ButtonBackToTop from './ButtonBackToTop';
 import ButtonBookmark from './ButtonBookmark';
 import ButtonsSaveCancel from './ButtonsSaveCancel';
 import Counter from './Counter';
+import HeaderWithButtonBack from './HeaderWithButtonBack';
 import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
 import Input from './Input';
 import InputCheckbox from './InputCheckbox';
+import Loader from './Loader';
 import Logo from './Logo';
 import ModalWrapper from './ModalWrapper';
 import Notice from './Notice';
@@ -27,4 +29,6 @@ export {
   Notice,
   SelectedProductOptions,
   InputCheckbox,
+  Loader,
+  HeaderWithButtonBack,
 };

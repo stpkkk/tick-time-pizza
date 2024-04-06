@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { CgSpinner } from 'react-icons/cg';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import { Loader } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
@@ -75,10 +75,9 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
   return (
     <form className='login_form' onSubmit={handleOtpSubmit}>
       {loading ? (
-        <CgSpinner
-          size={70}
-          className='text-yellow absolute flex_center animate-spin sm:max-w-[40px] sm:h-[40px]'
-        />
+        <div className='absolute'>
+          <Loader />
+        </div>
       ) : (
         <>
           <p className='text-2xl uppercase'>Введите код</p>

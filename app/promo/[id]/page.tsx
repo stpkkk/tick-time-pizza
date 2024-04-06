@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import promoImg from '../../../public/assets/icons/promo.svg';
 import {
-  ButtonBack,
+  HeaderWithButtonBack,
   ModalProduct,
   ModalPromoProductsList,
   PromoProductsList,
@@ -131,12 +131,9 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <div className='md:my-4 md:ml-4 flex flex-row gap-2 my-10 ml-6'>
-        <ButtonBack />
-        <h1 className='h1'>
-          {isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
-        </h1>
-      </div>
+      <HeaderWithButtonBack
+        text={isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
+      />
       <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
         <PromoTotalHeader promo={promo} />
       </div>

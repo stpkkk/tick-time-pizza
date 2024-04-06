@@ -6,6 +6,7 @@ import ModalOrderSuccess from './ModalOrderSuccess';
 import ModalRemoveAddress from './ModalRemoveAddress';
 import OptionToSelect from './OptionToSelect';
 import OrderComment from './OrderComment';
+import OrderForm from './OrderForm';
 import OrderSummary from './OrderSummary';
 import SelectAddress from './SelectAddress';
 import SelectChangeMoney from './SelectChangeMoney';
@@ -38,4 +39,5 @@ export {
   OptionToSelect,
   MapAddAddress,
   MapPickPoints,
+  OrderForm,
 };
