@@ -4,7 +4,6 @@ export * from './global';
 export * from './legals';
 export * from './menu';
 export * from './order';
-export * from './pizzeria';
 export * from './promo';
 export * from './radio-option';
 export * from './sberbank';

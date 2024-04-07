@@ -1,5 +1,7 @@
+'use client';
+
 import React, { FC } from 'react';
-import { HeaderWithButtonBack, Tabs } from '../common';
+import { HeaderWithButtonBack, Loader, Tabs } from '../common';
 import OrderSummary from './OrderSummary';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
@@ -17,6 +19,7 @@ import { Supply } from '@/types';
 import { getFormattedDateTime } from '@/utils';
 
 const OrderForm: FC = () => {
+  const [mounted, setMounted] = React.useState(false);
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const { user, orders, orderFormData, orderPrice } = useAppSelector(
@@ -102,7 +105,13 @@ const OrderForm: FC = () => {
     ],
   );
 
-  return (
+  React.useEffect(() => {
+    dispatch(resetOrderFormData());
+    dispatch(setCurrentUser(userInLS));
+    setMounted(true);
+  }, [dispatch, userInLS]);
+
+  return mounted ? (
     <form onSubmit={handleSubmitOrder}>
       <section>
         <HeaderWithButtonBack text='Оформление заказа' />
@@ -115,6 +124,8 @@ const OrderForm: FC = () => {
       </section>
       <OrderSummary ticketsToAdd={ticketsToAdd} />
     </form>
+  ) : (
+    <Loader />
   );
 };
 
