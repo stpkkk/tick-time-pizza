@@ -56,75 +56,73 @@ const Banner: React.FC = () => {
     setMounted(true);
   }, []);
 
-  return (
+  return mounted ? (
     <div className='relative md:overflow-hidden mt-[120px] rounded-2xl sm:mt-[90px]'>
-      {mounted ? (
-        <>
-          <Swiper
-            slidesPerView='auto'
-            spaceBetween={40}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            centeredSlides={true}
-            navigation={{
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
-            }}
-            onBeforeInit={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            className='!overflow-visible'
-          >
-            {slides?.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  priority
-                  width={1230}
-                  height={389}
-                  quality={100}
-                  className='rounded-2xl'
-                  onClick={() => handleClick(slide)}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className='absolute left-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
-            <button
-              type='button'
-              className='swiper-button-prev'
-              onClick={() => swiperRef.current?.slidePrev()}
-              aria-label='previous-slide'
-            >
-              <IoIosArrowDropleftCircle
-                size={30}
-                className='text-grayLight opacity-90'
-              />
-            </button>
-          </div>
-          <div className='absolute right-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
-            <button
-              type='button'
-              className='swiper-button-next'
-              onClick={() => swiperRef.current?.slideNext()}
-              aria-label='next-slide'
-            >
-              <IoIosArrowDroprightCircle
-                size={30}
-                className='text-grayLight opacity-90'
-              />
-            </button>
-          </div>
-        </>
-      ) : (
-        <Loader />
-      )}
+      <Swiper
+        slidesPerView='auto'
+        spaceBetween={40}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        centeredSlides={true}
+        navigation={{
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+        }}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        modules={[Pagination, Autoplay]}
+        pagination={{ clickable: true }}
+        className='!overflow-visible'
+      >
+        {slides?.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              priority
+              width={1230}
+              height={389}
+              quality={100}
+              className='rounded-2xl'
+              onClick={() => handleClick(slide)}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className='absolute left-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
+        <button
+          type='button'
+          className='swiper-button-prev'
+          onClick={() => swiperRef.current?.slidePrev()}
+          aria-label='previous-slide'
+        >
+          <IoIosArrowDropleftCircle
+            size={30}
+            className='text-grayLight opacity-90'
+          />
+        </button>
+      </div>
+      <div className='absolute right-[15px] top-1/2 z-[5] -translate-y-1/2 sm:hidden'>
+        <button
+          type='button'
+          className='swiper-button-next'
+          onClick={() => swiperRef.current?.slideNext()}
+          aria-label='next-slide'
+        >
+          <IoIosArrowDroprightCircle
+            size={30}
+            className='text-grayLight opacity-90'
+          />
+        </button>
+      </div>
+    </div>
+  ) : (
+    <div className='max-h-[400px] w-full flex_center mt-[120px] sm:mt-[90px]'>
+      <Loader />
     </div>
   );
 };
