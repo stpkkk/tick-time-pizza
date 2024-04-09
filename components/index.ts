@@ -12,5 +12,6 @@ export * from './profile';
 export * from './order';
 export * from './modal-product';
 export * from './delivery';
+export * from './legal';
 
 export { AppFooter, ModalAttention };
