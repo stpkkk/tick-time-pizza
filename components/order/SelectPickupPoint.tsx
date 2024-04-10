@@ -4,7 +4,12 @@ import OptionToSelect from './OptionToSelect';
 import { pizzerias } from '@/constants';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { Pizzeria } from '@/types';
+
+interface Pizzeria {
+  id: number;
+  address: string;
+  openingHours: string[];
+}
 
 const SelectPickupPoint: React.FC = () => {
   const dispatch = useAppDispatch();

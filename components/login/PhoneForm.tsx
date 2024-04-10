@@ -21,10 +21,10 @@ import { useAppSelector } from '@/redux/hooks';
 import { ExtendedWindow } from '@/types';
 
 type PhoneFormProps = {
-  handleClose: () => void;
+  onClose: () => void;
 };
 
-const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
+const PhoneForm: React.FC<PhoneFormProps> = ({ onClose }) => {
   const auth = getAuth(app_firebase);
   const dispatch = useDispatch();
   const { phone, isPhoneValid } = useAppSelector(
@@ -97,7 +97,7 @@ const PhoneForm: React.FC<PhoneFormProps> = ({ handleClose }) => {
       </button>
       <button
         className='top-5 right-5 text-grayDark hover:text-primary animate-fade-in absolute flex items-center'
-        onClick={handleClose}
+        onClick={onClose}
         type='button'
       >
         <AiOutlineCloseCircle size={35} />

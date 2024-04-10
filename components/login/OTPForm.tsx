@@ -19,10 +19,10 @@ import {
 import { useAppSelector } from '@/redux/hooks';
 
 type OTPFormProps = {
-  handleClose: () => void;
+  onClose: () => void;
 };
 
-const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
+const OTPForm: React.FC<OTPFormProps> = ({ onClose }) => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useDispatch();
   const { phone, otp, confirmationResult, loading, isOtpValid } =
@@ -104,7 +104,7 @@ const OTPForm: React.FC<OTPFormProps> = ({ handleClose }) => {
           </button>
           <button
             className='top-5 right-5 text-grayDark hover:text-primary animate-fade-in absolute flex items-center'
-            onClick={handleClose}
+            onClick={onClose}
             type='button'
           >
             <AiOutlineCloseCircle size={35} />

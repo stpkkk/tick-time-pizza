@@ -1,7 +1,5 @@
 import React from 'react';
 import { HeaderWithButtonBack, LegalInfo } from '@/components';
-import { legals } from '@/constants';
-import { generateUUID } from '@/utils';
 
 const LegalPage: React.FC = () => {
   return (

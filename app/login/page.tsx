@@ -1,37 +1,15 @@
 'use client';
 
 import React from 'react';
-import { RecaptchaVerifier, getAuth } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { OTPForm, PhoneForm } from '@/components';
-import { app_firebase } from '@/firebase/config';
+import { OTPForm, PhoneForm, Recaptcha } from '@/components';
 import { setOtp } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { ExtendedWindow } from '@/types';
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const auth = getAuth(app_firebase);
   const { isOTPSent } = useAppSelector((state) => state.profileReducer);
-
-  React.useEffect(() => {
-    const recaptchaVerifier = new RecaptchaVerifier(
-      auth,
-      'recaptcha-container',
-      {
-        size: 'invisible',
-        callback: (res: null) => {
-          // Handle reCAPTCHA response
-        },
-        'expired-callback': () => {
-          // Handle reCAPTCHA expiration
-        },
-      },
-    );
-
-    (window as ExtendedWindow).recaptchaVerifier = recaptchaVerifier;
-  }, [auth]);
 
   const handleClose = () => {
     router.push('/');
@@ -40,20 +18,13 @@ const LoginPage: React.FC = () => {
 
   return (
     <main className='relative z-10 sm:px-4 mb-[90px]'>
-      <div className='flex_center sm:items-stretch sm:p-0 sm:text-center fixed inset-0 min-h-full p-4 overflow-y-auto'>
-        <div className='overlay' />
-        <div
-          id='recaptcha-container'
-          data-sitekey='6lcsaxsdaaaaaebn0spdcencnu9564misyrudzd_'
-          data-callback='sendform'
-          data-size='invisible'
-        />
+      <Recaptcha>
         {isOTPSent ? (
-          <OTPForm handleClose={handleClose} />
+          <OTPForm onClose={handleClose} />
         ) : (
-          <PhoneForm handleClose={handleClose} />
+          <PhoneForm onClose={handleClose} />
         )}
-      </div>
+      </Recaptcha>
     </main>
   );
 };
