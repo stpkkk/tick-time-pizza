@@ -1,6 +1,6 @@
-import { Pizzeria } from '@/types';
+import { IPizzeria } from '@/types';
 
-export const pizzerias: Pizzeria[] = [
+export const pizzerias: IPizzeria[] = [
   {
     id: 0,
     address: 'Проспект Ленина д.35',

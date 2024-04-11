@@ -9,3 +9,4 @@ export * from './radio-option';
 export * from './sberbank';
 export * from './slide';
 export * from './user';
+export * from './pizzeria';

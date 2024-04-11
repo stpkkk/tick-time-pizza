@@ -11,7 +11,7 @@ const Pizzerias: React.FC = () => {
             {pizzeria.address}
           </span>
           <ul>
-            {pizzeria.openingHours.map((openingHour: string) => (
+            {pizzeria.openingHours.map((openingHour) => (
               <li key={generateUUID()}>{openingHour}</li>
             ))}
           </ul>

@@ -4,18 +4,13 @@ import OptionToSelect from './OptionToSelect';
 import { pizzerias } from '@/constants';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-
-interface Pizzeria {
-  id: number;
-  address: string;
-  openingHours: string[];
-}
+import { IPizzeria } from '@/types';
 
 const SelectPickupPoint: React.FC = () => {
   const dispatch = useAppDispatch();
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
 
-  const handleChange = (selectedPizzeria: Pizzeria) => {
+  const handleChange = (selectedPizzeria: IPizzeria) => {
     dispatch(
       setOrderFormData({
         ...orderFormData,
@@ -26,7 +21,7 @@ const SelectPickupPoint: React.FC = () => {
 
   const isChecked = (value: string) => orderFormData.pickPoint === value;
 
-  const renderPizzeriaDetails = (pizzeria: Pizzeria) => (
+  const renderPizzeriaDetails = (pizzeria: IPizzeria) => (
     <dl>
       <dt className='text-sm mb-3 sm:mb-1.5 font-bold'>{pizzeria.address}</dt>
       <dd className='text-xs leading-[15px] font-normal'>
