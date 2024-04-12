@@ -6,7 +6,6 @@ import {
   Loader,
   ModalEditProfile,
   ModalTicketsInfo,
-  NoOrders,
   Orders,
   ProfileInfo,
 } from '@/components';
@@ -19,7 +18,6 @@ const ProfilePage: React.FC = () => {
   const router = useRouter();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const [mounted, setMounted] = React.useState(false);
-  const isOrdersExist = userInLS?.orders && userInLS.orders.length > 0;
   const { user } = useAppSelector((state) => state.profileReducer);
 
   React.useEffect(() => {
@@ -38,15 +36,8 @@ const ProfilePage: React.FC = () => {
       {mounted ? (
         <>
           <h1 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>Профиль</h1>
-          <div>
-            <ProfileInfo user={user} />
-          </div>
-          <section>
-            <h2 className='h1 px-[60px] my-[30px] sm:my-4 sm:px-4'>
-              Ваши заказы:
-            </h2>
-            {isOrdersExist ? <Orders orders={user?.orders} /> : <NoOrders />}
-          </section>
+          <ProfileInfo user={user} />
+          <Orders orders={user?.orders} />
           <ModalEditProfile user={user} />
           <ModalTicketsInfo />
         </>
