@@ -3,7 +3,7 @@ import { HeaderWithButtonBack, LegalInfo } from '@/components';
 
 const LegalPage: React.FC = () => {
   return (
-    <main className='mt-[90px] sm:pt-0'>
+    <main className='mt-[90px] sm:mt-[70px]'>
       <HeaderWithButtonBack text='Правовая информация' />
       <LegalInfo />
     </main>

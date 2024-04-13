@@ -9,7 +9,7 @@ import {
 
 const ContactsPage: React.FC = () => {
   return (
-    <main className='mt-[90px] sm:pt-0'>
+    <main className='mt-[90px] sm:mt-[70px]'>
       <HeaderWithButtonBack text='Контакты' />
       <div className='px-[30px] sm:px-4'>
         <DescriptionForOrderingPizza />

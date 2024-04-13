@@ -13,7 +13,7 @@ const PromoTotalHeader: React.FC<PromoTotalQuantityProps> = ({ promo }) => {
 
   return (
     <>
-      <span className='text-lg font-semibold leading-5 uppercase font-zheldor'>
+      <span className='font-zheldor text-lg font-semibold leading-5 uppercase'>
         Пицца
       </span>
       <p className='text-xs font-semibold text-right'>

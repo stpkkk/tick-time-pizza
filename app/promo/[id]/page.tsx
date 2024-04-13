@@ -172,14 +172,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
           totalPrice={totalPrice}
         />
       </div>
-      <div className='sm:block wrapper fixed bottom-0 left-0 hidden w-full p-4 pt-0'>
-        <PromoTotalPrice
-          addProductToCart={addProductToCart}
-          isQuantityMax={isQuantityMax}
-          priceWithDiscount={priceWithDiscount}
-          totalPrice={totalPrice}
-        />
-      </div>
+
       <ModalProduct />
       {isProductsListModalOpen && <ModalPromoProductsList promo={promo} />}
     </main>

@@ -26,10 +26,8 @@ const ProfilePage: React.FC = () => {
   }, [dispatch, userInLS]);
 
   React.useEffect(() => {
-    if (!user && mounted) {
-      router.push('/login');
-    }
-  }, [router, mounted, user]);
+    if (!user) router.push('/login');
+  }, [router, user]);
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-4'>
