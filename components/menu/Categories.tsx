@@ -2,8 +2,7 @@ import React from 'react';
 import { InputCheckbox } from '../common';
 import { categories } from '@/constants';
 import { useAuthStateChange } from '@/hooks';
-import { setSelectedCategory } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setSelectedCategory } from '@/redux';
 import { CATEGORIES, IOption } from '@/types';
 
 const Categories: React.FC = () => {

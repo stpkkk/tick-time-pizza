@@ -11,7 +11,6 @@ import {
   PromoSelectedProductsList,
   PromoTotal,
   PromoTotalHeader,
-  PromoTotalPrice,
 } from '@/components';
 import { promos } from '@/constants';
 import { useLocalStorage } from '@/hooks';
@@ -21,8 +20,9 @@ import {
   setIsProductsListModalOpen,
   setPromoDiscount,
   setSelectedPromo,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+  useAppDispatch,
+  useAppSelector,
+} from '@/redux';
 import { Prices, Promos } from '@/types';
 import {
   calculateProductPrices,

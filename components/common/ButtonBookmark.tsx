@@ -2,9 +2,12 @@ import React from 'react';
 import HeartIconGray from './HeartIconGray';
 import HeartIconRed from './HeartIconRed';
 import { useLocalStorage } from '@/hooks';
-import { addToBookmarks } from '@/redux/features/menuSlice';
-import { setCurrentUser } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import {
+  addToBookmarks,
+  setCurrentUser,
+  useAppDispatch,
+  useAppSelector,
+} from '@/redux';
 import { IProduct } from '@/types';
 
 type ButtonBookmarkProps = {

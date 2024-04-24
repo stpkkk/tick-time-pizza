@@ -4,11 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { promos } from '@/constants';
 import {
-  resetPromoProductsList,
-  setIsPromoModalOpen,
+  useAppDispatch,
   setSelectedPromo,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
+  setIsPromoModalOpen,
+  resetPromoProductsList,
+} from '@/redux';
 import { Promo, Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 

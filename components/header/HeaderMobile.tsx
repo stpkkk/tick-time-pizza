@@ -4,8 +4,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { Logo } from '../common';
 import HeaderCart from './HeaderCart';
 import Nav from './Nav';
-import { toggleNav } from '@/redux/features/headerSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, toggleNav } from '@/redux';
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +18,7 @@ const HeaderMobile: React.FC = () => {
     <header className='w-full px-[1rem] fixed top-0 z-20 hidden sm:block'>
       <div className='relative flex h-[70px] items-center rounded-b-2xl bg-white px-4 drop-shadow-custom'>
         <Logo />
-        <div className='h-full flex_center'>
+        <div className='flex_center h-full'>
           <HeaderCart />
           <button
             className='px-2 cursor-pointer'

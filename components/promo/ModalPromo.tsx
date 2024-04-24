@@ -5,10 +5,11 @@ import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
 import { ModalWrapper } from '../common';
 import {
-  resetPromoProductsList,
+  useAppDispatch,
+  useAppSelector,
   setIsPromoModalOpen,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+  resetPromoProductsList,
+} from '@/redux';
 import { Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 

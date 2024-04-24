@@ -4,8 +4,7 @@ import React from 'react';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
 import { useLocalStorage } from '@/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
+import { useAppDispatch, addToCart } from '@/redux';
 
 const AppHeader: React.FC = () => {
   const dispatch = useAppDispatch();

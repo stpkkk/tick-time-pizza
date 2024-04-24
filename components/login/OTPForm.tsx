@@ -3,20 +3,20 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { IoMdArrowBack } from 'react-icons/io';
-import { useDispatch } from 'react-redux';
 import { ConfirmationResult } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { Loader } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
-  setCurrentUser,
-  setLoading,
   setOtp,
-  setOtpSent,
   setOtpValid,
+  setLoading,
+  setCurrentUser,
+  setOtpSent,
   setPhoneValid,
-} from '@/redux/features/profileSlice';
-import { useAppSelector } from '@/redux/hooks';
+  useAppSelector,
+  useAppDispatch,
+} from '@/redux';
 
 type OTPFormProps = {
   onClose: () => void;
@@ -24,7 +24,7 @@ type OTPFormProps = {
 
 const OTPForm: React.FC<OTPFormProps> = ({ onClose }) => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { phone, otp, confirmationResult, loading, isOtpValid } =
     useAppSelector((state) => state.profileReducer);
   const router = useRouter();

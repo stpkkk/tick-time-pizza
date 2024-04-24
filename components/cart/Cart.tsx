@@ -4,8 +4,7 @@ import React from 'react';
 import CartProduct from './CartProduct';
 import EmptyCart from './EmptyCart';
 import { useLocalStorage } from '@/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, addToCart } from '@/redux';
 import { IProduct } from '@/types';
 
 const Cart: React.FC = () => {
@@ -62,7 +61,7 @@ const Cart: React.FC = () => {
 
   return (
     <div className='flex w-full flex-row gap-[30px] sm:flex-col'>
-      <div className='w-full md:max-w-full'>
+      <div className='md:max-w-full w-full'>
         {cartProducts.length > 0 ? (
           <ul className='wrapper flex flex-col gap-[30px] px-[60px] py-[50px] sm:px-4 sm:py-8'>
             {cartProducts.map((product: IProduct) => (

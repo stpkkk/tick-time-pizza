@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { ModalWrapper } from './common';
-import { setModalAttention } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setModalAttention, useAppDispatch, useAppSelector } from '@/redux';
 
 const ModalAttention = () => {
   const dispatch = useAppDispatch();

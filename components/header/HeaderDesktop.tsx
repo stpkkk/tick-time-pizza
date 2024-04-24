@@ -9,8 +9,12 @@ import Nav from './Nav';
 import Phone from './Phone';
 import ProgressBar from './ProgressBar';
 import { useAuthStateChange } from '@/hooks';
-import { setIsHoveringPhone, toggleNav } from '@/redux/features/headerSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import {
+  useAppDispatch,
+  useAppSelector,
+  toggleNav,
+  setIsHoveringPhone,
+} from '@/redux';
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();

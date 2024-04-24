@@ -1,6 +1,6 @@
 import React from 'react';
 import PromoTotalItem from './PromoTotalItem';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux';
 import { generateUUID } from '@/utils';
 
 const PromoSelectedProductsList: React.FC = () => {

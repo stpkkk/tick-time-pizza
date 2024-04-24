@@ -12,12 +12,12 @@ import {
 import Link from 'next/link';
 import { app_firebase } from '@/firebase';
 import {
-  setConfirmationResult,
-  setOtpSent,
+  useAppSelector,
   setPhone,
   setPhoneValid,
-} from '@/redux/features/profileSlice';
-import { useAppSelector } from '@/redux/hooks';
+  setConfirmationResult,
+  setOtpSent,
+} from '@/redux';
 import { ExtendedWindow } from '@/types';
 
 type PhoneFormProps = {

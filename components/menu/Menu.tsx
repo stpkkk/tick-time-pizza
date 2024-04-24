@@ -8,9 +8,12 @@ import Categories from './Categories';
 import MenuItem from './MenuItem';
 import NoBookmarks from './NoBookmarks';
 import { useLocalStorage } from '@/hooks';
-import { addToBookmarks } from '@/redux/features/menuSlice';
-import { setCurrentUser } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import {
+  useAppDispatch,
+  useAppSelector,
+  addToBookmarks,
+  setCurrentUser,
+} from '@/redux';
 import getCategoryProducts from '@/utils/getCategoryProducts';
 
 const Menu: React.FC = () => {

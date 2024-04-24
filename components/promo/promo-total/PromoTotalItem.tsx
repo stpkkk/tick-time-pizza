@@ -2,11 +2,12 @@ import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { Counter } from '../../common';
 import {
-  decrementPromoProductQuantity,
+  useAppDispatch,
+  useAppSelector,
   incrementPromoProductQuantity,
+  decrementPromoProductQuantity,
   removePromoProductsList,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+} from '@/redux';
 import { IProduct } from '@/types';
 
 type PromoTotalItemProps = {

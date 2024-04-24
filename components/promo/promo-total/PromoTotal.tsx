@@ -4,8 +4,11 @@ import React from 'react';
 import PromoProductsList from './PromoSelectedProductsList';
 import PromoTotalHeader from './PromoTotalHeader';
 import PromoTotalPrice from './PromoTotalPrice';
-import { setTotalPromoProductsQuantity } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import {
+  useAppDispatch,
+  useAppSelector,
+  setTotalPromoProductsQuantity,
+} from '@/redux';
 import { Promo } from '@/types';
 
 type PromoTotalProps = {
@@ -39,7 +42,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
       <div className='wrapper h-auto overflow-hidden'>
         <form
           noValidate
-          className='flex flex-col gap-30px'
+          className='gap-30px flex flex-col'
           onSubmit={addProductToCart}
         >
           <div className='flex_between bg-yellow px-[30px] py-5'>
@@ -51,7 +54,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
                 Выберите необходимое количество товаров из каталога слева.
               </p>
             )}
-            <div className='w-full bg-white sm:px-4'>
+            <div className='sm:px-4 w-full bg-white'>
               <PromoProductsList />
               <div className='sm:hidden'>
                 <PromoTotalPrice

@@ -3,8 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import Promocode from './Promocode';
-import { setOrderPrice } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderPrice } from '@/redux';
 import { calculateTotalPrice } from '@/utils';
 
 const CartTotal: React.FC = () => {

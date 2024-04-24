@@ -4,8 +4,7 @@ import React from 'react';
 import { BsBasket2 } from 'react-icons/bs';
 import Link from 'next/link';
 import CartTooltip from './CartTooltip';
-import { setIsHoveringCart } from '@/redux/features/headerSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setIsHoveringCart } from '@/redux';
 import { IProduct } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 

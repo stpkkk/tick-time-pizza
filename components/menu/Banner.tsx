@@ -15,10 +15,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Loader } from '../common';
 import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import {
-  setModalProductOpen,
+  useAppDispatch,
   setSelectedProduct,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
+  setModalProductOpen,
+} from '@/redux';
 import { Promos, Slide } from '@/types';
 
 SwiperCore.use([Navigation]);

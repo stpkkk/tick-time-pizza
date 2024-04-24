@@ -3,8 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { OTPForm, PhoneForm, Recaptcha } from '@/components';
-import { setOtp } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setOtp, useAppDispatch, useAppSelector } from '@/redux';
 
 const LoginPage: React.FC = () => {
   const router = useRouter();

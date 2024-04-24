@@ -2,8 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Notice } from '../common';
 import OptionToSelect from './OptionToSelect';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { PaymentMethods } from '@/types';
 
 const SelectPaymentMethod: React.FC = () => {

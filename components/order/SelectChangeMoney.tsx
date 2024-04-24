@@ -1,7 +1,6 @@
 import React from 'react';
 import OptionToSelect from './OptionToSelect';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { ChangeMoneyFrom, PaymentMethods } from '@/types';
 
 const SelectChangeMoney: React.FC = () => {

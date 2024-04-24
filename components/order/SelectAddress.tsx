@@ -4,12 +4,13 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import AddressView from './AddressView';
 import OptionToSelect from './OptionToSelect';
 import {
-  setAddressToRemove,
-  setModalAddAddress,
-  setModalRemoveAddress,
+  useAppDispatch,
+  useAppSelector,
   setOrderFormData,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+  setAddressToRemove,
+  setModalRemoveAddress,
+  setModalAddAddress,
+} from '@/redux';
 import { IAddress } from '@/types';
 
 const SelectAddress: React.FC = () => {

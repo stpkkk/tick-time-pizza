@@ -1,7 +1,6 @@
 import React from 'react';
 import { ModalWrapper } from '../common';
-import { setModalTicketsInfo } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setModalTicketsInfo } from '@/redux';
 
 const ModalTicketsInfo: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +17,7 @@ const ModalTicketsInfo: React.FC = () => {
   return (
     <ModalWrapper closeModal={closeModal} width={500}>
       <div className='px-16 py-[50px] sm:p-4'>
-        <h3 className='mb-4 text-center h1'>Тикеты</h3>
+        <h3 className='h1 mb-4 text-center'>Тикеты</h3>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] whitespace-pre-wrap'>
           Делай заказы на нашем сайте или в приложении, копи тикеты и оплачивай
           ими заказы! 1 тикет = 1 рублю.

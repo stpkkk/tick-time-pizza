@@ -2,8 +2,7 @@ import React from 'react';
 import MapPickPoints from './MapPickPoints';
 import OptionToSelect from './OptionToSelect';
 import { pizzerias } from '@/constants';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { IPizzeria } from '@/types';
 
 const SelectPickupPoint: React.FC = () => {

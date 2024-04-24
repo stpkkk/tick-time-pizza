@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ModalWrapper } from '../common';
 import { useLocalStorage } from '@/hooks';

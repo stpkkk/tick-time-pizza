@@ -2,10 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import pizza from '../../public/assets/icons/pizza.svg';
 import {
-  setModalProductOpen,
+  useAppDispatch,
   setSelectedProduct,
-} from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
+  setModalProductOpen,
+} from '@/redux';
 import { IProduct } from '@/types';
 
 type RecommendedProductsProps = {

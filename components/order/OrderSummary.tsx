@@ -8,7 +8,7 @@ import OrderComment from './OrderComment';
 import Tickets from './Tickets';
 import { APP_CONFIG } from '@/config';
 import { useLocalStorage } from '@/hooks';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux';
 import { IProduct, Supply } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 

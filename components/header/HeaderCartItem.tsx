@@ -1,8 +1,7 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { SelectedProductOptions } from '../common';
-import { addToCart } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, addToCart } from '@/redux';
 import { IProduct } from '@/types';
 import { calculateProductPrices } from '@/utils';
 

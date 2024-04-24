@@ -5,10 +5,11 @@ import { useFormik } from 'formik';
 import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
-  setCurrentUser,
+  useAppDispatch,
+  useAppSelector,
   setModalEditProfile,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+  setCurrentUser,
+} from '@/redux';
 import { profileSchema } from '@/schemas';
 import { ExtendedUser } from '@/types';
 

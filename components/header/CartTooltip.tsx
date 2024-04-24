@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import HeaderCartItem from './HeaderCartItem';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux';
 
 interface CartTooltipProps {
   cartTooltipRef: React.MutableRefObject<HTMLDivElement | null>;

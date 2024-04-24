@@ -1,7 +1,6 @@
 import React from 'react';
 import TimePicker from './TimePicker';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { DeliveryDate } from '@/types';
 import { getFormattedDateTime } from '@/utils';
 

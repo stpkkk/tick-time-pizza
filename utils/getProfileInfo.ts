@@ -3,7 +3,7 @@ import { IoGift, IoPerson, IoTicketOutline } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import { ExtendedUser } from '@/types';
 
-const getProfileInfo = (user: ExtendedUser | null) => {
+export const getProfileInfo = (user: ExtendedUser | null) => {
   const profileInfo = [
     {
       id: 0,
@@ -39,5 +39,3 @@ const getProfileInfo = (user: ExtendedUser | null) => {
 
   return profileInfo;
 };
-
-export default getProfileInfo;

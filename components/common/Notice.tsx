@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
 import { RiCloseFill } from 'react-icons/ri';
-import { toggleTooltip } from '@/redux/features/menuSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, toggleTooltip } from '@/redux';
 
 type NoticeProps = {
   children: ReactNode;

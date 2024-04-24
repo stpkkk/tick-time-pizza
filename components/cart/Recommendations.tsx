@@ -1,12 +1,12 @@
 'use client';
 
-import React, { FC } from 'react';
+import React from 'react';
 import { Tabs } from '../common';
 import RecommendedProducts from './RecommendedProducts';
 import { menu } from '@/constants';
 import { IProduct } from '@/types';
 
-const Recommendations = () => {
+const Recommendations: React.FC = () => {
   const [popularProducts, setPopularProducts] = React.useState<IProduct[]>([]);
   const sauces = menu.filter((product) => product.group === 'sauces');
 

@@ -10,8 +10,7 @@ import {
   ProfileInfo,
 } from '@/components';
 import { useLocalStorage } from '@/hooks';
-import { setCurrentUser } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setCurrentUser, useAppDispatch, useAppSelector } from '@/redux';
 
 const ProfilePage: React.FC = () => {
   const dispatch = useAppDispatch();

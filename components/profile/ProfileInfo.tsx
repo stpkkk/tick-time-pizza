@@ -8,13 +8,13 @@ import { useRouter } from 'next/navigation';
 import { app_firebase } from '@/firebase';
 import { useLocalStorage } from '@/hooks';
 import {
+  useAppDispatch,
   setCurrentUser,
   setModalEditProfile,
   setModalTicketsInfo,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch } from '@/redux/hooks';
+} from '@/redux';
 import { ExtendedUser } from '@/types';
-import getProfileInfo from '@/utils/getProfileInfo';
+import { getProfileInfo } from '@/utils';
 
 type ProfileInfoProps = {
   user: ExtendedUser | null;

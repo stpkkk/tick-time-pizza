@@ -1,8 +1,7 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import PromoProductsList from './PromoProductsList';
-import { setIsProductsListModalOpen } from '@/redux/features/menuSlice';
-import { useAppDispatch } from '@/redux/hooks';
+import { useAppDispatch, setIsProductsListModalOpen } from '@/redux';
 import { Promo } from '@/types';
 
 type ModalPromoProductsListProps = {

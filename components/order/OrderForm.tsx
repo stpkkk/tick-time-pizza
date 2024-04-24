@@ -7,14 +7,15 @@ import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
 import { APP_CONFIG } from '@/config';
 import { useLocalStorage } from '@/hooks';
-import { addToCart } from '@/redux/features/menuSlice';
 import {
+  useAppSelector,
+  useAppDispatch,
   addToOrders,
-  resetOrderFormData,
   setCurrentUser,
+  addToCart,
+  resetOrderFormData,
   setModalOrderSuccessOpen,
-} from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+} from '@/redux';
 import { Supply } from '@/types';
 import { getFormattedDateTime } from '@/utils';
 

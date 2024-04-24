@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Phone from './Phone';
 import { navLinks } from '@/constants';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppSelector } from '@/redux';
 
 type NavProps = {
   handleToggleMenu?: React.MouseEventHandler<HTMLAnchorElement>;
@@ -17,7 +17,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
   const { user } = useAppSelector((state) => state.profileReducer);
 
   return (
-    <nav className='font-semibold sm:flex sm:flex-col'>
+    <nav className='sm:flex sm:flex-col font-semibold'>
       <ul
         className={`${
           isNavOpen ? 'absolute p-6 sm:left-0 sm:top-[58px]' : 'md:hidden'
@@ -44,7 +44,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
         <li>
           <Link
             href={!!user ? '/profile' : '/login'}
-            className='hidden sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2'
+            className='sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2 hidden'
             onClick={handleToggleMenu}
           >
             <>
@@ -59,7 +59,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
             </>
           </Link>
         </li>
-        <li className='hidden sm:flex'>
+        <li className='sm:flex hidden'>
           <Phone />
         </li>
         <p className='hidden !text-[10px] text-xs font-normal normal-case sm:block'>

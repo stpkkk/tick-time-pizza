@@ -1,6 +1,5 @@
 import React from 'react';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setOrderFormData, useAppDispatch, useAppSelector } from '@/redux';
 
 const OrderComment: React.FC = () => {
   const dispatch = useAppDispatch();

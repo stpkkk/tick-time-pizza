@@ -2,8 +2,7 @@
 
 import React from 'react';
 import Tab from './Tab';
-import { setOrderFormData } from '@/redux/features/profileSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { Supply } from '@/types';
 
 type TabsProps = {
