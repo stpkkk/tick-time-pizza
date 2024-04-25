@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalWrapper } from '../common';
+import { Modal } from '../common';
 import { useAppDispatch, useAppSelector, setModalTicketsInfo } from '@/redux';
 
 const ModalTicketsInfo: React.FC = () => {
@@ -15,7 +15,7 @@ const ModalTicketsInfo: React.FC = () => {
   if (!isModalTicketsInfo) return;
 
   return (
-    <ModalWrapper closeModal={closeModal} width={500}>
+    <Modal closeModal={closeModal} width={500}>
       <div className='px-16 py-[50px] sm:p-4'>
         <h3 className='h1 mb-4 text-center'>Тикеты</h3>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] whitespace-pre-wrap'>
@@ -34,7 +34,7 @@ const ModalTicketsInfo: React.FC = () => {
           полностью тикетами.
         </p>
       </div>
-    </ModalWrapper>
+    </Modal>
   );
 };
 

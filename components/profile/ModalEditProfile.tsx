@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useFormik } from 'formik';
-import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
+import { ButtonsSaveCancel, Input, Modal } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
   useAppDispatch,
@@ -60,7 +60,7 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
     !!errors.email;
 
   return isModalEditProfileOpen ? (
-    <ModalWrapper closeModal={closeModal} width={730}>
+    <Modal closeModal={closeModal} width={730}>
       <form className='px-16 py-[50px] sm:p-4' onSubmit={handleSubmit}>
         <h3 className='h1 flex_center mb-[50px]'>Редактирование профиля</h3>
         <div className='flex flex-col gap-[30px] sm:gap-[18px] mb-[50px] sm:mb-[30px]'>
@@ -93,7 +93,7 @@ const ModalEditProfile: React.FC<ProfileInfoProps> = ({ user }) => {
         </div>
         <ButtonsSaveCancel disabled={isFormNotValid} clickCancel={closeModal} />
       </form>
-    </ModalWrapper>
+    </Modal>
   ) : null;
 };
 

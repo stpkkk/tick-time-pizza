@@ -7,11 +7,7 @@ type ModalProps = {
   width?: number;
 };
 
-const ModalWrapper: React.FC<ModalProps> = ({
-  children,
-  closeModal,
-  width,
-}) => {
+const Modal: React.FC<ModalProps> = ({ children, closeModal, width }) => {
   return (
     <div className='relative z-30' onClick={closeModal}>
       <div className='overlay' />
@@ -37,4 +33,4 @@ const ModalWrapper: React.FC<ModalProps> = ({
   );
 };
 
-export default ModalWrapper;
+export default Modal;

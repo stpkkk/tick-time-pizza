@@ -10,7 +10,7 @@ import Input from './Input';
 import InputCheckbox from './InputCheckbox';
 import Loader from './Loader';
 import Logo from './Logo';
-import ModalWrapper from './ModalWrapper';
+import Modal from './Modal';
 import Notice from './Notice';
 import SelectedProductOptions from './SelectedProductOptions';
 
@@ -25,7 +25,7 @@ export {
   HeartIconRed,
   Input,
   Logo,
-  ModalWrapper,
+  Modal,
   Notice,
   SelectedProductOptions,
   InputCheckbox,

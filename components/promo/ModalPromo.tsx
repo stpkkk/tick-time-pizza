@@ -3,7 +3,7 @@ import { RiCloseFill } from 'react-icons/ri';
 import Image from 'next/image';
 import Link from 'next/link';
 import pizza from '../../public/assets/icons/pizza.svg';
-import { ModalWrapper } from '../common';
+import { Modal } from '../common';
 import {
   useAppDispatch,
   useAppSelector,
@@ -29,7 +29,7 @@ const ModalPromo: React.FC = () => {
   if (!isPromoModalOpen) return;
 
   return (
-    <ModalWrapper closeModal={closeModal} width={500}>
+    <Modal closeModal={closeModal} width={500}>
       <div className='sm:p-8 sm:flex sm:flex-col sm:gap-[30px] sm:text-left sm:overflow-y-auto h-full self-start'>
         <div className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 rounded-full bg-white p-1 sm:p-0 sm:bg-transparent sm:top-2 sm:right-2'>
           <button
@@ -71,7 +71,7 @@ const ModalPromo: React.FC = () => {
           )}
         </div>
       </div>
-    </ModalWrapper>
+    </Modal>
   );
 };
 

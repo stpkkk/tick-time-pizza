@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useFormik } from 'formik';
-import { ButtonsSaveCancel, Input, ModalWrapper } from '../common';
+import { ButtonsSaveCancel, Input, Modal } from '../common';
 import MapAddAddress from './MapAddAddress';
 import { useLocalStorage } from '@/hooks';
 import {
@@ -64,7 +64,7 @@ const ModalAddAddress: React.FC = () => {
   const isFormNotValid = !values.street.trim() || !values.house.trim();
 
   return isModalAddAddressOpen ? (
-    <ModalWrapper closeModal={closeModal} width={990}>
+    <Modal closeModal={closeModal} width={990}>
       <form
         className='sm:flex-col-reverse flex flex-col w-full'
         onSubmit={handleSubmit}
@@ -142,7 +142,7 @@ const ModalAddAddress: React.FC = () => {
           />
         </div>
       </form>
-    </ModalWrapper>
+    </Modal>
   ) : null;
 };
 

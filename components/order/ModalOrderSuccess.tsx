@@ -3,7 +3,7 @@
 import React from 'react';
 import { FaCircleCheck } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
-import { ModalWrapper } from '../common';
+import { Modal } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
   resetOrderFormData,
@@ -27,7 +27,7 @@ const ModalOrderSuccess: React.FC = () => {
   };
 
   return isModalOrderSuccessOpen ? (
-    <ModalWrapper closeModal={closeModal} width={990}>
+    <Modal closeModal={closeModal} width={990}>
       <div className='p-[60px] sm:p-4'>
         <div className='flex_center gap-4'>
           <h2 className='h1'>
@@ -36,7 +36,7 @@ const ModalOrderSuccess: React.FC = () => {
           <FaCircleCheck className='text-green-500' size={35} />
         </div>
       </div>
-    </ModalWrapper>
+    </Modal>
   ) : null;
 };
 

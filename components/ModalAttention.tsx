@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ModalWrapper } from './common';
+import { Modal } from './common';
 import { setModalAttention, useAppDispatch, useAppSelector } from '@/redux';
 
 const ModalAttention = () => {
@@ -21,7 +21,7 @@ const ModalAttention = () => {
   }, [dispatch]);
 
   return isModalAttentionOpen ? (
-    <ModalWrapper closeModal={closeModal} width={990}>
+    <Modal closeModal={closeModal} width={990}>
       <div className='p-[60px] sm:p-4 text-primary font-montserrat'>
         <h2 className='text-center h1 mb-[30px]'>Внимание!</h2>
         <p className='mb-4 text-xl font-bold text-center'>
@@ -53,7 +53,7 @@ const ModalAttention = () => {
           <span>Otp-code: 123456</span>
         </p>
       </div>
-    </ModalWrapper>
+    </Modal>
   ) : null;
 };
 

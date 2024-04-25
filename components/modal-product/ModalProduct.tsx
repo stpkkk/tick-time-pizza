@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ModalWrapper } from '../common';
+import { Modal } from '../common';
 import ContentLeft from './ContentLeft';
 import ContentRight from './ContentRight';
 import ModalTotal from './ModalTotal';
@@ -27,12 +27,12 @@ const ModalProduct: React.FC = () => {
 
   return (
     <>
-      <ModalWrapper closeModal={closeModal} width={950}>
+      <Modal closeModal={closeModal} width={950}>
         <div className='grid grid-cols-2 gap-[60px] w-full h-full overflow-auto overflow-x-hidden py-[60px] pl-[60px] sm:block sm:px-8 sm:pb-44 sm:pt-8'>
           <ContentLeft />
           <ContentRight />
         </div>
-      </ModalWrapper>
+      </Modal>
       <div className='wrapper fixed bottom-0 left-0 z-30 hidden w-full p-4 pb-[30px] sm:block'>
         <ModalTotal />
       </div>

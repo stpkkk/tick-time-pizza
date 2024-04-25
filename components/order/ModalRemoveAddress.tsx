@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ModalWrapper } from '../common';
+import { Modal } from '../common';
 import { useLocalStorage } from '@/hooks';
 import {
   setCurrentUser,
@@ -43,7 +43,7 @@ const ModalRemoveAddress: React.FC = () => {
   };
 
   return isModalRemoveAddressOpen ? (
-    <ModalWrapper closeModal={closeModal} width={500}>
+    <Modal closeModal={closeModal} width={500}>
       <div className='flex_center flex-col gap-[30px] sm:gap-4 px-16 py-[50px] sm:p-4'>
         <h3 className='h1'>Удаление адреса</h3>
         <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] font-bold'>
@@ -70,7 +70,7 @@ const ModalRemoveAddress: React.FC = () => {
           </button>
         </div>
       </div>
-    </ModalWrapper>
+    </Modal>
   ) : null;
 };
 
