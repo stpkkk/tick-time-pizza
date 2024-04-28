@@ -52,7 +52,7 @@ const Cart: React.FC = () => {
     }));
   };
 
-  const removeItem = (productUUID: string) => {
+  const handleRemove = (productUUID: string) => {
     const updatedItems = cartProducts.filter(
       (product: IProduct) => product.uuid !== productUUID,
     );
@@ -70,7 +70,7 @@ const Cart: React.FC = () => {
                 product={product}
                 onIncrement={() => handleIncrement(product?.uuid || '')}
                 onDecrement={() => handleDecrement(product?.uuid || '')}
-                onRemove={() => removeItem(product?.uuid || '')}
+                onRemove={() => handleRemove(product?.uuid || '')}
               />
             ))}
           </ul>
