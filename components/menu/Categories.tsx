@@ -38,7 +38,7 @@ const Categories: React.FC = () => {
               className='sm:px-3 h-[60px] sm:h-[45px] px-10'
               option={cat}
               isChecked={selectedCategory.value === cat.value}
-              handleChange={handleChangeCategory}
+              onChange={handleChangeCategory}
             />
           </li>
         ))}

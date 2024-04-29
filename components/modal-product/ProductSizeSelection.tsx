@@ -48,7 +48,7 @@ const ProductSizeSelection: React.FC = () => {
               isChecked={selectedSize === size}
               isDisabled={getIsDisabledSize(size)}
               className='h-[60px]'
-              handleChange={handleSizeChange}
+              onChange={handleSizeChange}
             />
           </li>
         ))}
@@ -62,7 +62,7 @@ const ProductSizeSelection: React.FC = () => {
               isChecked={dough === selectedDough}
               isDisabled={getIsDisabledDough(dough)}
               className='h-[60px]'
-              handleChange={handleDoughChange}
+              onChange={handleDoughChange}
             />
           </li>
         ))}

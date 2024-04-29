@@ -8,7 +8,7 @@ export interface IInputCheckboxProps {
   isChecked: boolean;
   crossed?: string;
   isDisabled?: boolean;
-  handleChange: (option: IOption) => void;
+  onChange: (option: IOption) => void;
 }
 
 const InputCheckbox: React.FC<IInputCheckboxProps> = ({
@@ -17,7 +17,7 @@ const InputCheckbox: React.FC<IInputCheckboxProps> = ({
   isChecked,
   crossed,
   isDisabled,
-  handleChange,
+  onChange,
 }) => {
   return (
     option.value && (
@@ -34,7 +34,7 @@ const InputCheckbox: React.FC<IInputCheckboxProps> = ({
           name={option.value.toString()}
           value={option.value}
           className='hidden'
-          onChange={() => handleChange(option)}
+          onChange={() => onChange(option)}
           disabled={isDisabled}
         />
         {option.image && (

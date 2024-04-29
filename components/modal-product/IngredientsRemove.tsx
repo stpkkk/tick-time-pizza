@@ -35,7 +35,7 @@ const IngredientsRemove: React.FC = () => {
                 crossed={`${
                   removedIngredients.includes(ingredient) && 'line-through'
                 }`}
-                handleChange={handleIngredientChange}
+                onChange={handleIngredientChange}
               />
             </li>
           ))}
