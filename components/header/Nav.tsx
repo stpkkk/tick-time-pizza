@@ -8,10 +8,10 @@ import { navLinks } from '@/constants';
 import { useAppSelector } from '@/redux';
 
 type NavProps = {
-  handleToggleMenu?: React.MouseEventHandler<HTMLAnchorElement>;
+  onMenuToggle?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
-const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
+const Nav: React.FC<NavProps> = ({ onMenuToggle }) => {
   const pathname = usePathname();
   const { isNavOpen } = useAppSelector((state) => state.headerReducer);
   const { user } = useAppSelector((state) => state.profileReducer);
@@ -32,7 +32,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
             <li className='p-2 cursor-pointer' key={link.key}>
               <Link
                 className={`${isActive ? 'text-secondary' : ''}`}
-                onClick={handleToggleMenu}
+                onClick={onMenuToggle}
                 draggable='false'
                 href={link.href}
               >
@@ -45,7 +45,7 @@ const Nav: React.FC<NavProps> = ({ handleToggleMenu }) => {
           <Link
             href={!!user ? '/profile' : '/login'}
             className='sm:flex sm:cursor-pointer sm:items-center sm:gap-2 sm:p-2 hidden'
-            onClick={handleToggleMenu}
+            onClick={onMenuToggle}
           >
             <>
               {!!user ? (

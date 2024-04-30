@@ -10,7 +10,7 @@ const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isNavOpen } = useAppSelector((state) => state.headerReducer);
 
-  const handleToggleMenu = () => {
+  const handleMenuToggle = () => {
     dispatch(toggleNav());
   };
 
@@ -23,7 +23,7 @@ const HeaderMobile: React.FC = () => {
           <button
             className='px-2 cursor-pointer'
             type='button'
-            onClick={handleToggleMenu}
+            onClick={handleMenuToggle}
           >
             {isNavOpen ? (
               <RiCloseFill size={40} />
@@ -32,7 +32,7 @@ const HeaderMobile: React.FC = () => {
             )}
           </button>
         </div>
-        {isNavOpen ? <Nav handleToggleMenu={handleToggleMenu} /> : null}
+        {isNavOpen ? <Nav onMenuToggle={handleMenuToggle} /> : null}
       </div>
     </header>
   );
