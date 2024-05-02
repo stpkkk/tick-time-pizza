@@ -74,7 +74,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const discount =
     typeof priceWithDiscount === 'number' ? totalPrice - priceWithDiscount : 0;
 
-  const addProductToCart = React.useCallback(
+  const addPromoProductToCart = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
@@ -166,7 +166,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
         </div>
         <PromoTotal
           promo={promo}
-          addProductToCart={addProductToCart}
+          addPromoProductToCart={addPromoProductToCart}
           isQuantityMax={isQuantityMax}
           priceWithDiscount={priceWithDiscount}
           totalPrice={totalPrice}

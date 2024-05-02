@@ -13,7 +13,7 @@ import { Promo } from '@/types';
 
 type PromoTotalProps = {
   promo?: Promo;
-  addProductToCart: (e: React.FormEvent<HTMLFormElement>) => void;
+  addPromoProductToCart: (e: React.FormEvent<HTMLFormElement>) => void;
   totalPrice: number;
   priceWithDiscount?: number | string;
   isQuantityMax: boolean;
@@ -21,7 +21,7 @@ type PromoTotalProps = {
 
 const PromoTotal: React.FC<PromoTotalProps> = ({
   promo,
-  addProductToCart,
+  addPromoProductToCart,
   totalPrice,
   isQuantityMax,
   priceWithDiscount,
@@ -43,7 +43,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
         <form
           noValidate
           className='gap-30px flex flex-col'
-          onSubmit={addProductToCart}
+          onSubmit={addPromoProductToCart}
         >
           <div className='flex_between bg-yellow px-[30px] py-5'>
             <PromoTotalHeader promo={promo} />
@@ -58,7 +58,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
               <PromoProductsList />
               <div className='sm:hidden'>
                 <PromoTotalPrice
-                  addProductToCart={addProductToCart}
+                  addPromoProductToCart={addPromoProductToCart}
                   isQuantityMax={isQuantityMax}
                   priceWithDiscount={priceWithDiscount}
                   totalPrice={totalPrice}
