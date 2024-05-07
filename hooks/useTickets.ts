@@ -3,7 +3,7 @@ import { APP_CONFIG } from '@/config';
 import { setOrderFormData } from '@/redux/features/profileSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-const useTickets = () => {
+export const useTickets = () => {
   const dispatch = useAppDispatch();
   const { orderFormData, user, orderPrice } = useAppSelector(
     (state) => state.profileReducer,
@@ -50,5 +50,3 @@ const useTickets = () => {
     userTickets,
   };
 };
-
-export default useTickets;

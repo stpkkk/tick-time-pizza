@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const useReadingProgress = () => {
+export const useReadingProgress = () => {
   const [completion, setCompletion] = React.useState(0);
 
   React.useEffect(() => {
@@ -25,5 +25,3 @@ const useReadingProgress = () => {
 
   return completion;
 };
-
-export default useReadingProgress;

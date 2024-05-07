@@ -3,7 +3,7 @@
 import React from 'react';
 import { ExtendedUser } from '@/types';
 
-function useLocalStorage(initialValue: ExtendedUser | [], key: string) {
+export function useLocalStorage(initialValue: ExtendedUser | [], key: string) {
   const isClient = typeof window !== 'undefined';
 
   const getValue = () => {
@@ -26,5 +26,3 @@ function useLocalStorage(initialValue: ExtendedUser | [], key: string) {
 
   return [value, setValue];
 }
-
-export default useLocalStorage;

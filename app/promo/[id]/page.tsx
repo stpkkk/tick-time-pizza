@@ -42,7 +42,6 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {
-    isProductsListModalOpen,
     promoProductsList,
     selectedProduct,
     selectedSize,
@@ -174,7 +173,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
       </div>
 
       <ModalProduct />
-      {isProductsListModalOpen && <ModalPromoProductsList promo={promo} />}
+      <ModalPromoProductsList promo={promo} />
     </main>
   );
 };

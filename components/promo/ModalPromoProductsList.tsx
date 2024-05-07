@@ -1,7 +1,11 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import PromoProductsList from './PromoProductsList';
-import { useAppDispatch, setIsProductsListModalOpen } from '@/redux';
+import {
+  useAppDispatch,
+  setIsProductsListModalOpen,
+  useAppSelector,
+} from '@/redux';
 import { Promo } from '@/types';
 
 type ModalPromoProductsListProps = {
@@ -12,9 +16,14 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
   promo,
 }) => {
   const dispatch = useAppDispatch();
+  const { isProductsListModalOpen } = useAppSelector(
+    (state) => state.menuReducer,
+  );
   const handleClose = () => {
     dispatch(setIsProductsListModalOpen(false));
   };
+
+  if (!isProductsListModalOpen) return;
 
   return (
     <div className='sm:block fixed inset-0 z-10 hidden overflow-y-auto'>
