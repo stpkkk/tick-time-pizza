@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '../common';
-import { menu } from '@/constants';
 import {
   setHoveredItemId,
   setIsProductsListModalOpen,
@@ -14,11 +13,12 @@ import { IProduct, Promo } from '@/types';
 import { generateUUID } from '@/utils';
 
 interface IMenuItemProps {
+  products?: IProduct[];
   product: IProduct;
   promo?: Promo;
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
@@ -42,7 +42,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo }) => {
 
   const handleClickProduct = (clickedProduct: IProduct) => {
     if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo) {
-      const selectedProduct = menu.find(
+      const selectedProduct = products?.find(
         (product) => product.id === clickedProduct.id,
       );
 

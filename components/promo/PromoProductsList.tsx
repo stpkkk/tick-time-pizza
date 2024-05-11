@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuItem } from '../menu';
+import { usePromoProducts } from '@/hooks';
 import { Promo } from '@/types';
-import { getPromoProducts } from '@/utils';
 
 type PromoProductsListProps = {
   promo?: Promo;
@@ -9,7 +9,7 @@ type PromoProductsListProps = {
 
 const PromoProductsList: React.FC<PromoProductsListProps> = ({ promo }) => {
   const promoTitle = promo?.title ?? '';
-  const promoProducts = getPromoProducts(promoTitle);
+  const promoProducts = usePromoProducts(promoTitle);
 
   return (
     <div className='wrapper flex flex-col sm:gap-[30px] px-[60px] py-[50px] w-full md:px-4 sm:drop-shadow-none sm:mx-auto'>

@@ -3,17 +3,18 @@
 import React from 'react';
 import { Tabs } from '../common';
 import RecommendedProducts from './RecommendedProducts';
-import { menu } from '@/constants';
+import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
 
 const Recommendations: React.FC = () => {
-  const [popularProducts, setPopularProducts] = React.useState<IProduct[]>([]);
-  const sauces = menu.filter((product) => product.group === 'sauces');
+  const [products] = useProducts();
+  const [popular, setPopular] = React.useState<IProduct[]>([]);
+  const sauces = products.filter((product) => product.group === 'sauces');
 
   React.useEffect(() => {
-    const shuffledMenu = menu.sort(() => 0.5 - Math.random());
-    setPopularProducts(shuffledMenu.slice(0, 8));
-  }, []);
+    const shuffledMenu = products.sort(() => 0.5 - Math.random());
+    setPopular(shuffledMenu.slice(0, 8));
+  }, [products]);
 
   return (
     <>
@@ -22,7 +23,7 @@ const Recommendations: React.FC = () => {
         labelFirst='Соусы'
         labelSecond='Популярное'
         contentFirst={<RecommendedProducts products={sauces} />}
-        contentSecond={<RecommendedProducts products={popularProducts} />}
+        contentSecond={<RecommendedProducts products={popular} />}
       />
     </>
   );
