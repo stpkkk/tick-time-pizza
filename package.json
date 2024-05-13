@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm start\"",
-    "build": "next build",
     "start": "next dev -p 3000",
     "lint": "next lint",
     "server": "json-server -w data/products.json -p 8000"
