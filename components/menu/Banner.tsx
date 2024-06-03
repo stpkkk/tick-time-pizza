@@ -76,7 +76,7 @@ const Banner: React.FC = () => {
         }}
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
-        className='!overflow-visible'
+        className='!overflow-visible cursor-pointer'
       >
         {slides?.map((slide, index) => (
           <SwiperSlide key={index}>

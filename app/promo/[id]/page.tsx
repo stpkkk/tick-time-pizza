@@ -13,7 +13,7 @@ import {
   PromoTotalHeader,
 } from '@/components';
 import { promos } from '@/constants';
-import { useLocalStorage } from '@/hooks';
+import { useLocalStorage, useProducts } from '@/hooks';
 import {
   addToCart,
   resetPromoProductsList,
@@ -39,6 +39,9 @@ type PromoProps = {
 };
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
+  // const products = useProducts();
+  // console.log('products:', products);
+
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {

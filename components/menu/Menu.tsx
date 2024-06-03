@@ -10,7 +10,7 @@ import { useFilterProducts, useLocalStorage, useProducts } from '@/hooks';
 import { useAppDispatch, addToBookmarks, setCurrentUser } from '@/redux';
 
 const Menu: React.FC = () => {
-  const [products] = useProducts();
+  const products = useProducts();
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
   const filteredProducts = useFilterProducts(products);

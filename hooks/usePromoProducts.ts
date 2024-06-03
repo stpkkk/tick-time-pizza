@@ -10,9 +10,10 @@ const {
   PEPPERONI,
 } = Promos;
 
-export const usePromoProducts = (title: string): IProduct[] => {
-  const [products] = useProducts();
-
+export const usePromoProducts = (
+  title: string,
+  products: IProduct[],
+): IProduct[] => {
   const pizzas = products.filter((product) => product.group === 'pizzas');
 
   const pizzaOfTheDay = pizzas.filter(

@@ -25,7 +25,8 @@ const ModalAttention = () => {
       <div className='p-[60px] sm:p-4 text-primary font-montserrat'>
         <h2 className='text-center h1 mb-[30px]'>Внимание!</h2>
         <p className='mb-4 text-xl font-bold text-center'>
-          Данный сайт(приложение) является копией оригинального сайта пиццерии
+          Данный сайт(приложение) является копией оригинального сайта
+          пиццерии&nbsp;
           <a
             className='underline-offset-4 hover:text-secondary animate-fade-in underline'
             href='https://tick-time.ru'
@@ -33,7 +34,7 @@ const ModalAttention = () => {
           >
             &#34;Тик-Тайм&#34;
           </a>
-          в городе Петрозаводск &nbsp;
+          &nbsp;в городе Петрозаводск &nbsp;
           <br /> Никакой коммерческой деятельности это приложение не несет и
           никаких платежных систем здесь не используется! По различным вопросам
           можете связаться со мной в&nbsp;

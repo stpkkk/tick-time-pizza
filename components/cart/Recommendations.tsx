@@ -7,7 +7,7 @@ import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
 
 const Recommendations: React.FC = () => {
-  const [products] = useProducts();
+  const products = useProducts();
   const [popular, setPopular] = React.useState<IProduct[]>([]);
   const sauces = products.filter((product) => product.group === 'sauces');
 
