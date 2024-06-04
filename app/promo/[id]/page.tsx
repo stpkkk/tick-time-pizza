@@ -39,9 +39,6 @@ type PromoProps = {
 };
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
-  // const products = useProducts();
-  // console.log('products:', products);
-
   const dispatch = useAppDispatch();
   const router = useRouter();
   const {

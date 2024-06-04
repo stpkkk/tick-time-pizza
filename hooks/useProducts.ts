@@ -32,9 +32,9 @@ export const useProducts = () => {
     fetchData();
   }, []);
 
-  console.log('products1', products);
   if (error) {
     console.error('Error fetching products:', error);
   }
+
   return products;
 };
