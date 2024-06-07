@@ -8,13 +8,11 @@ import {
 } from '@/redux';
 import { IProduct } from '@/types';
 
-type RecommendedProductsProps = {
+type RecommendedListProps = {
   products: IProduct[];
 };
 
-const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
-  products,
-}) => {
+const RecommendedList: React.FC<RecommendedListProps> = ({ products }) => {
   const dispatch = useAppDispatch();
 
   const handleClickProduct = (clickedProduct: IProduct) => {
@@ -66,4 +64,4 @@ const RecommendedProducts: React.FC<RecommendedProductsProps> = ({
   );
 };
 
-export default RecommendedProducts;
+export default RecommendedList;

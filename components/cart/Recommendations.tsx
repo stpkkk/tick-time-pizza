@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Tabs } from '../common';
-import RecommendedProducts from './RecommendedProducts';
+import RecommendedList from './RecommendedList';
 import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
 
@@ -22,8 +22,8 @@ const Recommendations: React.FC = () => {
       <Tabs
         labelFirst='Соусы'
         labelSecond='Популярное'
-        contentFirst={<RecommendedProducts products={sauces} />}
-        contentSecond={<RecommendedProducts products={popular} />}
+        contentFirst={<RecommendedList products={sauces} />}
+        contentSecond={<RecommendedList products={popular} />}
       />
     </>
   );

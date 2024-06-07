@@ -4,7 +4,7 @@ import CartTotal from './CartTotal';
 import EmptyCart from './EmptyCart';
 import Promocode from './Promocode';
 import Recommendations from './Recommendations';
-import RecommendedProducts from './RecommendedProducts';
+import RecommendedList from './RecommendedList';
 
 export {
   Cart,
@@ -12,6 +12,6 @@ export {
   CartTotal,
   EmptyCart,
   Promocode,
-  RecommendedProducts,
+  RecommendedList,
   Recommendations,
 };
