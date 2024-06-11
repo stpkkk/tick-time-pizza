@@ -3,7 +3,7 @@ import { filterByCategoryTitle, filterByGroup } from '../utils';
 import { useAppSelector } from '@/redux';
 import { CATEGORIES, IProduct } from '@/types';
 
-export const useFilterProducts = (products: IProduct[]) => {
+export const useFilterProducts = (products: IProduct[]): IProduct[] => {
   const pathname = usePathname();
   const { selectedCategory, bookmarks } = useAppSelector(
     (state) => state.menuReducer,
