@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import './globals.css';
+import Loading from './loading';
 import { Providers } from './providers';
 import {
   ButtonBackToTop,
   AppFooter,
-  Header,
+  AppHeader,
   ModalAttention,
 } from '@/components';
 
@@ -21,8 +23,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='ru'>
       <Providers>
         <body>
-          <Header />
-          {children}
+          <AppHeader />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <AppFooter />
           <ButtonBackToTop />
           <ModalAttention />

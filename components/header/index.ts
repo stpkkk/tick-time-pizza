@@ -1,5 +1,5 @@
+import AppHeader from './AppHeader';
 import CartTooltip from './CartTooltip';
-import Header from './Header';
 import HeaderCart from './HeaderCart';
 import HeaderCartItem from './HeaderCartItem';
 import HeaderDesktop from './HeaderDesktop';
@@ -10,7 +10,7 @@ import Phone from './Phone';
 export {
   Nav,
   HeaderMobile,
-  Header,
+  AppHeader,
   Phone,
   HeaderDesktop,
   HeaderCart,
