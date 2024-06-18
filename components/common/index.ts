@@ -17,6 +17,7 @@ import SelectedProductOptions from './SelectedProductOptions';
 export * from './tabs';
 export * from './menu';
 export * from './modal-product';
+
 export {
   ButtonBack,
   ButtonBackToTop,
