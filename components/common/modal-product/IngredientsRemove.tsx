@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { InputCheckbox } from '../common';
+import { InputCheckbox } from '..';
 import ModalSubTitle from './ModalSubTitle';
 import { setRemovedIngredients } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';

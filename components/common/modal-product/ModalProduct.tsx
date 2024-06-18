@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Modal } from '../common';
+import { Modal } from '..';
 import ContentLeft from './ContentLeft';
 import ContentRight from './ContentRight';
 import ModalTotal from './ModalTotal';

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { InputCheckbox } from '../common';
+import { InputCheckbox } from '..';
 import { setSelectedDough, setSelectedSize } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { Dough, IOption, Promos, Sizes } from '@/types';

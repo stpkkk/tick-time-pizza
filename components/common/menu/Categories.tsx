@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputCheckbox } from '../common';
+import { InputCheckbox } from '..';
 import { categories } from '@/constants';
 import { useAuthStateChange } from '@/hooks';
 import { useAppDispatch, useAppSelector, setSelectedCategory } from '@/redux';

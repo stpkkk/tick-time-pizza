@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from '../menu';
+import { MenuItem } from '../common/menu';
 import { useProducts, usePromoProducts } from '@/hooks';
 import { Promo } from '@/types';
 

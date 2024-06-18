@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import promoImg from '../../../public/assets/icons/promo.svg';
 import {
   HeaderWithButtonBack,
   ModalProduct,
@@ -13,7 +12,8 @@ import {
   PromoTotalHeader,
 } from '@/components';
 import { promos } from '@/constants';
-import { useLocalStorage, useProducts } from '@/hooks';
+import { useLocalStorage } from '@/hooks';
+import promoImg from '@/public/assets/icons/promo.svg';
 import {
   addToCart,
   resetPromoProductsList,

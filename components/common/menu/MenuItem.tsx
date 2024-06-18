@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ButtonBookmark } from '../common';
+import { ButtonBookmark } from '..';
 import {
   setHoveredItemId,
   setIsProductsListModalOpen,

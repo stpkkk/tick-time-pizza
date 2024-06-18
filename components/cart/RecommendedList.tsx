@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import pizza from '../../public/assets/icons/pizza.svg';
+import pizza from '@/public/assets/icons/pizza.svg';
 import {
   useAppDispatch,
   setSelectedProduct,

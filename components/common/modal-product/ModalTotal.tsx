@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from '../common';
+import { Counter } from '..';
 import { useLocalStorage } from '@/hooks';
 import {
   addToCart,

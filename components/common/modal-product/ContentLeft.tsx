@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import pizza from '../../public/assets/icons/pizza.svg';
-import { ButtonBookmark, Notice } from '../common';
+import { ButtonBookmark, Notice } from '..';
 import ModalTotal from './ModalTotal';
 import ProductIngredients from './ProductIngredients';
 import ProductTitle from './ProductTitle';
+import pizza from '@/public/assets/icons/pizza.svg';
 import { setModalHeight } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 

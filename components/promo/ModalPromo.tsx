@@ -2,8 +2,8 @@ import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import Image from 'next/image';
 import Link from 'next/link';
-import pizza from '../../public/assets/icons/pizza.svg';
 import { Modal } from '../common';
+import pizza from '@/public/assets/icons/pizza.svg';
 import {
   useAppDispatch,
   useAppSelector,

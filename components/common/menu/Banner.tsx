@@ -12,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Loader } from '../common';
+import { Loader } from '..';
 import { menu, pizzaOfTheDaySlides, promos, slides } from '@/constants';
 import {
   useAppDispatch,
