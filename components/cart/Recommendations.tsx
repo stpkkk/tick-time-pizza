@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Tabs } from '../common/tabs';
+import Tabs from '../common/tabs/Tabs';
 import RecommendedList from './RecommendedList';
 import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
