@@ -16,6 +16,16 @@ const Recommendations: React.FC = () => {
     setPopular(shuffledMenu.slice(0, 8));
   }, [products]);
 
+  console.log(
+    'Tabs:',
+    <Tabs
+      labelFirst='Соусы'
+      labelSecond='Популярное'
+      contentFirst={<RecommendedList products={sauces} />}
+      contentSecond={<RecommendedList products={popular} />}
+    />,
+  );
+
   return (
     <>
       <h2 className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</h2>

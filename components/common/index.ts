@@ -13,10 +13,10 @@ import Logo from './Logo';
 import Modal from './Modal';
 import Notice from './Notice';
 import SelectedProductOptions from './SelectedProductOptions';
+import Tabs from './tabs/Tabs';
 
-export * from './menu/';
-export * from './modal-product/';
-export * from './tabs/';
+export * from './menu';
+export * from './modal-product';
 
 export {
   ButtonBack,
@@ -34,4 +34,5 @@ export {
   InputCheckbox,
   Loader,
   HeaderWithButtonBack,
+  Tabs,
 };
