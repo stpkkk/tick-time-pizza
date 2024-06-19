@@ -1,8 +1,7 @@
 'use client';
 
 import React, { FC } from 'react';
-import { HeaderWithButtonBack, Loader } from '../common';
-import Tabs from '../common/tabs/Tabs';
+import { HeaderWithButtonBack, Loader, Tabs } from '../common';
 import OrderSummary from './OrderSummary';
 import TabDelivery from './TabDelivery';
 import TabPickup from './TabPickup';
