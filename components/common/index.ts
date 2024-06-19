@@ -14,9 +14,9 @@ import Modal from './Modal';
 import Notice from './Notice';
 import SelectedProductOptions from './SelectedProductOptions';
 
-export * from './tabs';
-export * from './menu';
-export * from './modal-product';
+export * from './menu/';
+export * from './modal-product/';
+export * from './tabs/';
 
 export {
   ButtonBack,
