@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Tabs } from '../common';
+import { Tabs } from '../common/tabs';
 import RecommendedList from './RecommendedList';
 import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
@@ -15,16 +15,6 @@ const Recommendations: React.FC = () => {
     const shuffledMenu = products.sort(() => 0.5 - Math.random());
     setPopular(shuffledMenu.slice(0, 8));
   }, [products]);
-
-  console.log(
-    'Tabs:',
-    <Tabs
-      labelFirst='Соусы'
-      labelSecond='Популярное'
-      contentFirst={<RecommendedList products={sauces} />}
-      contentSecond={<RecommendedList products={popular} />}
-    />,
-  );
 
   return (
     <>
