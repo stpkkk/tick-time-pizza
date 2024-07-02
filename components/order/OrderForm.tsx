@@ -126,7 +126,9 @@ const OrderForm: FC = () => {
       <OrderSummary ticketsToAdd={ticketsToAdd} />
     </form>
   ) : (
-    <Loader />
+    <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
+      <Loader />
+    </div>
   );
 };
 

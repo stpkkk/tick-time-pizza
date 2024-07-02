@@ -7,7 +7,7 @@ import { useProducts } from '@/hooks';
 import { IProduct } from '@/types';
 
 const Recommendations: React.FC = () => {
-  const products = useProducts();
+  const { products, isLoading } = useProducts();
   const [popular, setPopular] = React.useState<IProduct[]>([]);
   const sauces = products.filter((product) => product.group === 'sauces');
 
@@ -19,6 +19,7 @@ const Recommendations: React.FC = () => {
   return (
     <>
       <h2 className='h1 my-10 ml-[60px] sm:my-4 sm:ml-4'>Рекомендуем:</h2>
+
       <Tabs
         labelFirst='Соусы'
         labelSecond='Популярное'

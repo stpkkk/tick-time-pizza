@@ -6,9 +6,11 @@ import { IProduct } from '@/types';
 export const useProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
+      setIsLoading(true);
       try {
         const response = await fetch('/api/products');
 
@@ -23,9 +25,11 @@ export const useProducts = () => {
 
         const data = await response.json();
         setProducts(data);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error) {
+        setError((error as Error).message);
         console.error('Fetch error:', error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -36,5 +40,5 @@ export const useProducts = () => {
     console.error('Error fetching products:', error);
   }
 
-  return products;
+  return { products, isLoading };
 };

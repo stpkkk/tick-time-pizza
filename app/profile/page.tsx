@@ -39,7 +39,9 @@ const ProfilePage: React.FC = () => {
           <ModalTicketsInfo />
         </>
       ) : (
-        <Loader />
+        <div className='grid place-items-center min-h-[calc(100vh-358px)]'>
+          <Loader />
+        </div>
       )}
     </main>
   );

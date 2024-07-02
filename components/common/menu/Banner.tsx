@@ -124,7 +124,7 @@ const Banner: React.FC = () => {
       </div>
     </div>
   ) : (
-    <div className='max-h-[400px] w-full flex_center mt-[120px] sm:mt-[90px]'>
+    <div className='min-h-[400px] w-full flex_center mt-[120px] sm:mt-[90px]'>
       <Loader />
     </div>
   );

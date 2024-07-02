@@ -1,5 +1,4 @@
 import { getPizzaOfTheDay } from '../utils/getPizzaOfTheDay';
-import { useProducts } from '@/hooks';
 import { IProduct, Promos } from '@/types';
 
 const {
