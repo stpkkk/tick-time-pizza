@@ -13,7 +13,7 @@ const PromoProductsList: React.FC<PromoProductsListProps> = ({ promo }) => {
   const promoTitle = promo?.title ?? '';
   const promoProducts = usePromoProducts(promoTitle, products);
 
-  if (!isLoading)
+  if (isLoading)
     return (
       <div className='grid place-items-center min-h-[400px] w-[800px]'>
         <Loader />
