@@ -16,7 +16,7 @@ const ProductsList = () => {
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
   const isBookmarksCategory = selectedCategory.value === CATEGORIES.BOOKMARKS;
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <div className='flex items-center justify-center h-[400px]'>
         <Loader />
