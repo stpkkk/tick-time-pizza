@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { ButtonBack } from '../components';
 import sadPizza from '../public/assets/images/sad-pizza.jpg';
@@ -19,8 +17,11 @@ export default function NotFound() {
           />
         </div>
         <div className='flex gap-4'>
-          <ButtonBack />
-          <span className='text underline-offset-3 underline'>Go back!</span>
+          <ButtonBack>
+            <span className='text underline-offset-3 underline uppercase'>
+              Go back!
+            </span>
+          </ButtonBack>
         </div>
       </div>
     </main>
