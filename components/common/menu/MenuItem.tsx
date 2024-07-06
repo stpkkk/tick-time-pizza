@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '..';
+import ProductCategoryImage from './ProductCategoryImage';
 import {
   setHoveredItemId,
   setIsProductsListModalOpen,
@@ -10,7 +11,6 @@ import {
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
-import { generateUUID } from '@/utils';
 
 interface IMenuItemProps {
   products?: IProduct[];
@@ -46,6 +46,9 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
         (product) => product.id === clickedProduct.id,
       );
 
+      console.log('selectedProduct:', selectedProduct);
+      console.log('selectedPromo:', selectedPromo);
+
       dispatch(setSelectedProduct(selectedProduct || null));
       dispatch(setSelectedPromo(promo || null));
       dispatch(setModalProductOpen(true));
@@ -62,6 +65,12 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
       onMouseEnter={handleMouseEnterItem}
       onMouseLeave={handleMouseLeaveItem}
     >
+      <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
+        <ButtonBookmark product={product} />
+      </div>
+      <div className='-left-1 sm:p-2 absolute top-0 z-20 flex flex-col gap-2'>
+        <ProductCategoryImage product={product} />
+      </div>
       <div
         className='flex flex-col justify-between h-full'
         onClick={() => handleClickProduct(product)}
@@ -69,8 +78,8 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
         <div className='flex flex-col gap-4'>
           <div className='relative w-full h-auto max-w-[255px] aspect-square cursor-pointer rounded-2xl self-center'>
             <Image
-              src={product.image}
-              alt={product.title}
+              src={product.image || ''}
+              alt={product.title || ''}
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               fill
               priority
@@ -98,26 +107,6 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
             Выбрать
           </button>
         </div>
-      </div>
-      <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
-        <ButtonBookmark product={product} />
-      </div>
-      <div className='-left-1 sm:p-2 absolute top-0 z-20 flex flex-col gap-2'>
-        {!promo
-          ? product.categories?.map((cat) => (
-              <div
-                className='sm:left-2 sm:top-2 sm:p-2 bg-white rounded-full'
-                key={generateUUID()}
-              >
-                <Image
-                  src={cat.image ? cat.image : ''}
-                  alt={cat.title}
-                  width={16}
-                  height={16}
-                />
-              </div>
-            ))
-          : null}
       </div>
     </li>
   );

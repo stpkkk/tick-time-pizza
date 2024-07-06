@@ -73,6 +73,10 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const discount =
     typeof priceWithDiscount === 'number' ? totalPrice - priceWithDiscount : 0;
 
+  const headerText = isPizzaOfTheDay
+    ? promoTitle + ' ' + currentDay
+    : promoTitle;
+
   const addPromoProductToCart = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -130,9 +134,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <HeaderWithButtonBack
-        text={isPizzaOfTheDay ? promoTitle + ' ' + currentDay : promoTitle}
-      />
+      <HeaderWithButtonBack text={headerText} />
       <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
         <PromoTotalHeader promo={promo} />
       </div>
@@ -172,8 +174,8 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
         />
       </div>
 
-      <ModalProduct />
       <ModalPromoProductsList promo={promo} />
+      <ModalProduct />
     </main>
   );
 };

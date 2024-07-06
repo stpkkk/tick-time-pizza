@@ -18,7 +18,7 @@ export default function NotFound() {
         </div>
         <div className='flex gap-4'>
           <ButtonBack>
-            <span className='text underline-offset-3 underline uppercase'>
+            <span className='underline-offset-3 text-2xl underline uppercase'>
               Go back!
             </span>
           </ButtonBack>

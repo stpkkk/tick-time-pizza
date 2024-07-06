@@ -38,7 +38,7 @@ const ContentLeft: React.FC = () => {
             src={selectedProduct?.image || ''}
             alt={selectedProduct?.title || ''}
             placeholder='blur'
-            blurDataURL={pizza.src}
+            blurDataURL={pizza.src || ''}
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             fill
             priority

@@ -21,8 +21,9 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = promo.title === Promos.PIZZA_OF_THE_DAY;
 
-  const handlePromoClick = (clickedPromo: Promo, openModal: boolean) => {
+  const handlePromoCardClick = (clickedPromo: Promo, openModal: boolean) => {
     const selectedPromo = promos.find((p) => p.id === clickedPromo.id);
+
     dispatch(setSelectedPromo(selectedPromo || null));
     dispatch(setIsPromoModalOpen(openModal));
     dispatch(resetPromoProductsList());
@@ -38,7 +39,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           fill
           priority
-          onClick={() => handlePromoClick(promo, true)}
+          onClick={() => handlePromoCardClick(promo, true)}
           className='rounded-2xl'
         />
       </div>
@@ -49,7 +50,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         {promo.isRedirect && (
           <Link
             href={`/promo/${promo.id}`}
-            onClick={() => handlePromoClick(promo, false)}
+            onClick={() => handlePromoCardClick(promo, false)}
             className='btn_yellow h-[45px] px-4 sm:h-[35px] uppercase'
           >
             Выбрать
@@ -57,7 +58,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         )}
         <button
           type='button'
-          onClick={() => handlePromoClick(promo, true)}
+          onClick={() => handlePromoCardClick(promo, true)}
           className='flex-nowrap text-grayDark hover:text-primary animate-fade-in flex flex-row items-center justify-between gap-3 text-sm font-semibold'
         >
           <BsPlusSquare size={24} className='sm:w-[20px] sm:h-[20px]' />
