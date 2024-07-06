@@ -13,7 +13,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct, Promo } from '@/types';
 
 interface IMenuItemProps {
-  products?: IProduct[];
+  products: IProduct[];
   product: IProduct;
   promo?: Promo;
 }
@@ -45,9 +45,6 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, promo, products }) => {
       const selectedProduct = products?.find(
         (product) => product.id === clickedProduct.id,
       );
-
-      console.log('selectedProduct:', selectedProduct);
-      console.log('selectedPromo:', selectedPromo);
 
       dispatch(setSelectedProduct(selectedProduct || null));
       dispatch(setSelectedPromo(promo || null));
