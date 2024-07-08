@@ -10,6 +10,7 @@ const CartTotal: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
+  const { user } = useAppSelector((state) => state.profileReducer);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
   const totalProducts = cartProducts?.reduce(
     (acc, product) => acc + (product.productQuantity ?? 0),
@@ -31,9 +32,9 @@ const CartTotal: React.FC = () => {
     async (e: React.FormEvent) => {
       //TODO set promoCode
       e.preventDefault();
-      router.push('/cart/order');
+      router.push(`${user ? '/cart/order' : '/login'}`);
     },
-    [router],
+    [router, user],
   );
 
   return (
