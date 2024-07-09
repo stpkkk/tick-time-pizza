@@ -22,7 +22,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
-    totalPromoProductsQuantity,
+    totalPromoProducts,
     selectedPromo,
     isProductsListModalOpen,
   } = useAppSelector((state) => state.menuReducer);
@@ -33,7 +33,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
     product.prices?.find((product) => product.id === 0)?.value || 0;
 
   const handleMouseEnterItem = () => {
-    if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo)
+    if (totalPromoProducts !== selectedPromo?.maxValue || !promo)
       dispatch(setHoveredItemId(product.id));
   };
 
@@ -42,7 +42,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
   };
 
   const handleClickProduct = (clickedProduct: IProduct) => {
-    if (totalPromoProductsQuantity !== selectedPromo?.maxValue || !promo) {
+    if (totalPromoProducts !== selectedPromo?.maxValue || !promo) {
       const selectedProduct = products?.find(
         (product) => product.id === clickedProduct.id,
       );
@@ -97,9 +97,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
           <span className='font-semibold'>{`от ${starterPrice} ₽`}</span>
           <button
             className='btn_yellow h-[45px] sm:h-[32px] btn_disabled max-w-[112px] uppercase'
-            disabled={
-              promo && totalPromoProductsQuantity === selectedPromo?.maxValue
-            }
+            disabled={promo && totalPromoProducts === selectedPromo?.maxValue}
             type='button'
           >
             Выбрать

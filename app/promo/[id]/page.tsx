@@ -23,9 +23,7 @@ type PromoProps = {
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const { products, isLoading } = useProducts();
 
-  const { totalPromoProductsQuantity } = useAppSelector(
-    (state) => state.menuReducer,
-  );
+  const { totalPromoProducts } = useAppSelector((state) => state.menuReducer);
 
   const {
     addPromoProductToCart,
@@ -63,7 +61,6 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
           <MobilePromoTotal
             promoProducts={promoProducts}
             isQuantityMax={isQuantityMax}
-            totalProducts={totalPromoProductsQuantity}
           />
         </div>
         <PromoTotal
@@ -75,7 +72,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
         />
       </div>
 
-      <ModalPromoProductsList promo={promo} />
+      <ModalPromoProductsList promoProducts={promoProducts} />
       <ModalProduct />
     </main>
   );

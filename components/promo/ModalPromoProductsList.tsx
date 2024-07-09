@@ -6,14 +6,14 @@ import {
   setIsProductsListModalOpen,
   useAppSelector,
 } from '@/redux';
-import { Promo } from '@/types';
+import { IProduct } from '@/types';
 
 type ModalPromoProductsListProps = {
-  promo?: Promo;
+  promoProducts: IProduct[];
 };
 
 const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
-  promo,
+  promoProducts,
 }) => {
   const dispatch = useAppDispatch();
   const { isProductsListModalOpen } = useAppSelector(
@@ -34,7 +34,7 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
       >
         <RiCloseFill size={36} className='md:w-7' />
       </button>
-      <PromoProductsList promo={promo} />
+      <PromoProductsList promoProducts={promoProducts} />
     </div>
   );
 };

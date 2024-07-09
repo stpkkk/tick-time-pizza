@@ -9,16 +9,16 @@ import { IProduct } from '@/types';
 
 interface MobilePromoTotalProps {
   isQuantityMax: boolean;
-  totalProducts: number;
   promoProducts: IProduct[];
 }
 
 const MobilePromoTotal: React.FC<MobilePromoTotalProps> = ({
   isQuantityMax,
-  totalProducts,
 }) => {
   const dispatch = useAppDispatch();
-  const { promoProductsList } = useAppSelector((state) => state.menuReducer);
+  const { promoProductsList, totalPromoProducts } = useAppSelector(
+    (state) => state.menuReducer,
+  );
 
   const handleClickOpenProductsList = () => {
     dispatch(setIsProductsListModalOpen(true));
@@ -34,7 +34,7 @@ const MobilePromoTotal: React.FC<MobilePromoTotalProps> = ({
       {!isQuantityMax ? (
         <>
           <span className='block mb-4 text-sm font-semibold'>
-            Выберите {totalProducts === 0 ? 'первый' : 'следующий'} товар
+            Выберите {totalPromoProducts === 0 ? 'первый' : 'следующий'}{' '}
           </span>
           <button
             className='btn_red h-[60px] sm:h-[50px] max-w-[100px] !max-h-[35px]'

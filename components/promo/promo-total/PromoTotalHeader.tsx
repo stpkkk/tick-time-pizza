@@ -7,9 +7,7 @@ type PromoTotalQuantityProps = {
 };
 
 const PromoTotalHeader: React.FC<PromoTotalQuantityProps> = ({ promo }) => {
-  const { totalPromoProductsQuantity } = useAppSelector(
-    (state) => state.menuReducer,
-  );
+  const { totalPromoProducts } = useAppSelector((state) => state.menuReducer);
 
   return (
     <>
@@ -19,7 +17,7 @@ const PromoTotalHeader: React.FC<PromoTotalQuantityProps> = ({ promo }) => {
       <p className='text-xs font-semibold text-right'>
         Выбрано:{' '}
         <span className='whitespace-nowrap'>
-          {totalPromoProductsQuantity} из {promo?.maxValue}
+          {totalPromoProducts} из {promo?.maxValue}
         </span>
       </p>
     </>

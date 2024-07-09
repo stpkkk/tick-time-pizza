@@ -4,7 +4,7 @@ import { useAppSelector } from '@/redux';
 import { generateUUID } from '@/utils';
 
 const PromoSelectedProductsList: React.FC = () => {
-  const { totalPromoProductsQuantity, promoProductsList } = useAppSelector(
+  const { totalPromoProducts, promoProductsList } = useAppSelector(
     (state) => state.menuReducer,
   );
 
@@ -14,7 +14,7 @@ const PromoSelectedProductsList: React.FC = () => {
         <li className='flex flex-col gap-2.5' key={generateUUID()}>
           <PromoTotalItem
             product={product}
-            totalPromoProductsQuantity={totalPromoProductsQuantity}
+            totalPromoProducts={totalPromoProducts}
           />
         </li>
       ))}

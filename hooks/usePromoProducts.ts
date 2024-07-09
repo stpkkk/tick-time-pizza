@@ -38,13 +38,13 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
     selectedProduct,
     selectedSize,
     productQuantity,
-    totalPromoProductsQuantity,
+    totalPromoProducts,
   } = useAppSelector((state) => state.menuReducer);
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
 
   const promo = promos.find((p) => p.id === +id);
   const currentDay = getPizzaOfTheDay().dayOfWeek;
-  const isQuantityMax = totalPromoProductsQuantity === promo?.maxValue;
+  const isQuantityMax = totalPromoProducts === promo?.maxValue;
   const pizzas = products.filter((product) => product.group === 'pizzas');
 
   const pizzaOfTheDay = pizzas.filter(

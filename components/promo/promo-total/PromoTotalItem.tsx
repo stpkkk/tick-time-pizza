@@ -12,12 +12,12 @@ import { IProduct } from '@/types';
 
 type PromoTotalItemProps = {
   product: IProduct;
-  totalPromoProductsQuantity: number;
+  totalPromoProducts: number;
 };
 
 const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
   product,
-  totalPromoProductsQuantity,
+  totalPromoProducts,
 }) => {
   const dispatch = useAppDispatch();
   const { selectedPromo, productQuantity } = useAppSelector(
@@ -28,7 +28,7 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
     if (
       product.productQuantity &&
       product?.productQuantity < (selectedPromo?.maxValue || 99) &&
-      totalPromoProductsQuantity < (selectedPromo?.maxValue || 99)
+      totalPromoProducts < (selectedPromo?.maxValue || 99)
     ) {
       dispatch(incrementPromoProductQuantity({ product }));
     }

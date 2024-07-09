@@ -23,7 +23,7 @@ const ModalTotal: React.FC = () => {
     productQuantity,
     selectedPromo,
     promoProductsList,
-    totalPromoProductsQuantity,
+    totalPromoProducts,
   } = useAppSelector((state) => state.menuReducer);
   const { totalProductPrice } = calculateProductPrices(
     selectedProduct,
@@ -77,8 +77,7 @@ const ModalTotal: React.FC = () => {
   const handleIncrement = () => {
     if (
       productQuantity < (selectedPromo?.maxValue || 99) &&
-      (selectedPromo?.maxValue || 99) - productQuantity >
-        totalPromoProductsQuantity
+      (selectedPromo?.maxValue || 99) - productQuantity > totalPromoProducts
     ) {
       dispatch(incrementProductQuantity());
     }

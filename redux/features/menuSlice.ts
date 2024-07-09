@@ -29,7 +29,7 @@ export interface MenuState {
   selectedPromo: Promo | null;
   promoProductsList: IProduct[];
   isPromoModalOpen: boolean;
-  totalPromoProductsQuantity: number;
+  totalPromoProducts: number;
   promoDiscount: string | number;
   isProductsListModalOpen: boolean;
   isModalAttentionOpen: boolean;
@@ -56,7 +56,7 @@ const initialState: MenuState = {
   selectedPromo: null,
   promoProductsList: [],
   isPromoModalOpen: false,
-  totalPromoProductsQuantity: 0,
+  totalPromoProducts: 0,
   promoDiscount: 0,
   isProductsListModalOpen: false,
   isModalAttentionOpen: false,
@@ -185,7 +185,7 @@ const menuSlice = createSlice({
     },
 
     setTotalPromoProductsQuantity: (state, action: PayloadAction<number>) => {
-      state.totalPromoProductsQuantity = action.payload;
+      state.totalPromoProducts = action.payload;
     },
 
     incrementPromoProductQuantity: (
