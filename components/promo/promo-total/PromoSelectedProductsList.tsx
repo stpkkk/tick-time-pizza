@@ -4,13 +4,13 @@ import { useAppSelector } from '@/redux';
 import { generateUUID } from '@/utils';
 
 const PromoSelectedProductsList: React.FC = () => {
-  const { totalPromoProducts, promoProductsList } = useAppSelector(
+  const { totalPromoProducts, selectedPromoProducts } = useAppSelector(
     (state) => state.menuReducer,
   );
 
   return (
     <ul className='flex flex-col gap-[30px]'>
-      {promoProductsList.map((product) => (
+      {selectedPromoProducts.map((product) => (
         <li className='flex flex-col gap-2.5' key={generateUUID()}>
           <PromoTotalItem
             product={product}

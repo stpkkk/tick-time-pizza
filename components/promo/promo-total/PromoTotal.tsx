@@ -27,15 +27,17 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
   priceWithDiscount,
 }) => {
   const dispatch = useAppDispatch();
-  const { promoProductsList } = useAppSelector((state) => state.menuReducer);
+  const { selectedPromoProducts } = useAppSelector(
+    (state) => state.menuReducer,
+  );
 
   React.useEffect(() => {
-    const newTotalQuantity = promoProductsList.reduce(
+    const newTotalQuantity = selectedPromoProducts.reduce(
       (acc, product) => acc + (product.productQuantity || 0),
       0,
     );
     dispatch(setTotalPromoProductsQuantity(newTotalQuantity));
-  }, [promoProductsList, dispatch]);
+  }, [selectedPromoProducts, dispatch]);
 
   return (
     <div className='w-full max-w-[285px] sm:hidden'>

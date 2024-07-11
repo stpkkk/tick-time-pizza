@@ -7,7 +7,7 @@ import {
   useAppDispatch,
   setSelectedPromo,
   setIsPromoModalOpen,
-  resetPromoProductsList,
+  resetPromoProducts,
 } from '@/redux';
 import { Promo, Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
@@ -26,7 +26,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
 
     dispatch(setSelectedPromo(selectedPromo || null));
     dispatch(setIsPromoModalOpen(openModal));
-    dispatch(resetPromoProductsList());
+    dispatch(resetPromoProducts());
   };
 
   return (

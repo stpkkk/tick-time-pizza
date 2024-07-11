@@ -27,7 +27,7 @@ export interface MenuState {
   productQuantity: number;
   cartProducts: IProduct[];
   selectedPromo: Promo | null;
-  promoProductsList: IProduct[];
+  selectedPromoProducts: IProduct[];
   isPromoModalOpen: boolean;
   totalPromoProducts: number;
   promoDiscount: string | number;
@@ -54,7 +54,7 @@ const initialState: MenuState = {
   productQuantity: 1,
   cartProducts: [],
   selectedPromo: null,
-  promoProductsList: [],
+  selectedPromoProducts: [],
   isPromoModalOpen: false,
   totalPromoProducts: 0,
   promoDiscount: 0,
@@ -169,17 +169,17 @@ const menuSlice = createSlice({
       state.isPromoModalOpen = false;
     },
 
-    addToPromoProductsList: (state, action: PayloadAction<any>) => {
-      state.promoProductsList = action.payload;
+    addToPromoProducts: (state, action: PayloadAction<any>) => {
+      state.selectedPromoProducts = action.payload;
     },
 
-    resetPromoProductsList: (state) => {
-      state.promoProductsList = [];
+    resetPromoProducts: (state) => {
+      state.selectedPromoProducts = [];
     },
 
-    removePromoProductsList: (state, action: PayloadAction<string>) => {
+    removeFromPromoProducts: (state, action: PayloadAction<string>) => {
       const productUUID = action.payload;
-      state.promoProductsList = state.promoProductsList.filter(
+      state.selectedPromoProducts = state.selectedPromoProducts.filter(
         (item) => item.uuid !== productUUID,
       );
     },
@@ -193,7 +193,7 @@ const menuSlice = createSlice({
       action: PayloadAction<{ product: IProduct }>,
     ) => {
       const { product } = action.payload;
-      const existingProduct = state.promoProductsList.find(
+      const existingProduct = state.selectedPromoProducts.find(
         (item) => item.id === product.id,
       );
 
@@ -201,7 +201,7 @@ const menuSlice = createSlice({
         existingProduct.productQuantity =
           (existingProduct.productQuantity || 0) + 1;
       } else {
-        state.promoProductsList.push({ ...product, productQuantity: 1 });
+        state.selectedPromoProducts.push({ ...product, productQuantity: 1 });
       }
     },
 
@@ -210,7 +210,7 @@ const menuSlice = createSlice({
       action: PayloadAction<{ product: IProduct }>,
     ) => {
       const { product } = action.payload;
-      const existingIngredient = state.promoProductsList.find(
+      const existingIngredient = state.selectedPromoProducts.find(
         (item) => item.id === product.id,
       );
 
@@ -309,13 +309,13 @@ export const {
   incrementProductQuantity,
   addToCart,
   setSelectedPromo,
-  addToPromoProductsList,
-  removePromoProductsList,
+  addToPromoProducts,
+  removeFromPromoProducts,
   incrementPromoProductQuantity,
   decrementPromoProductQuantity,
   setIsPromoModalOpen,
   setTotalPromoProductsQuantity,
-  resetPromoProductsList,
+  resetPromoProducts,
   setPromoDiscount,
   setIsProductsListModalOpen,
   setModalAttention,

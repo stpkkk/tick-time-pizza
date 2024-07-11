@@ -6,7 +6,7 @@ import {
   useAppSelector,
   incrementPromoProductQuantity,
   decrementPromoProductQuantity,
-  removePromoProductsList,
+  removeFromPromoProducts,
 } from '@/redux';
 import { IProduct } from '@/types';
 
@@ -41,7 +41,7 @@ const PromoTotalItem: React.FC<PromoTotalItemProps> = ({
   };
 
   const removeItem = (productUUID: string) => {
-    dispatch(removePromoProductsList(productUUID));
+    dispatch(removeFromPromoProducts(productUUID));
   };
 
   return (

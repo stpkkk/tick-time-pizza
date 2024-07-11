@@ -23,8 +23,6 @@ type PromoProps = {
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const { products, isLoading } = useProducts();
 
-  const { totalPromoProducts } = useAppSelector((state) => state.menuReducer);
-
   const {
     addPromoProductToCart,
     promo,

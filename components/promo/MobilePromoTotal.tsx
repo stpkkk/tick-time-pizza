@@ -16,7 +16,7 @@ const MobilePromoTotal: React.FC<MobilePromoTotalProps> = ({
   isQuantityMax,
 }) => {
   const dispatch = useAppDispatch();
-  const { promoProductsList, totalPromoProducts } = useAppSelector(
+  const { selectedPromoProducts, totalPromoProducts } = useAppSelector(
     (state) => state.menuReducer,
   );
 
@@ -26,7 +26,7 @@ const MobilePromoTotal: React.FC<MobilePromoTotalProps> = ({
 
   return (
     <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
-      {promoProductsList.length > 0 && (
+      {selectedPromoProducts.length > 0 && (
         <div className='mb-[30px]'>
           <PromoSelectedProductsList />
         </div>

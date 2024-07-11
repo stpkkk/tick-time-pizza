@@ -8,7 +8,7 @@ import {
   useAppDispatch,
   useAppSelector,
   setIsPromoModalOpen,
-  resetPromoProductsList,
+  resetPromoProducts,
 } from '@/redux';
 import { Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
@@ -23,7 +23,7 @@ const ModalPromo: React.FC = () => {
 
   const closeModal = () => {
     dispatch(setIsPromoModalOpen(false));
-    dispatch(resetPromoProductsList());
+    dispatch(resetPromoProducts());
   };
 
   if (!isPromoModalOpen) return;

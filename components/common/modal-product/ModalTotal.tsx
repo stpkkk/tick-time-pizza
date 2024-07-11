@@ -3,7 +3,7 @@ import { Counter } from '..';
 import { useLocalStorage } from '@/hooks';
 import {
   addToCart,
-  addToPromoProductsList,
+  addToPromoProducts,
   decrementProductQuantity,
   incrementProductQuantity,
   setModalProductOpen,
@@ -22,7 +22,7 @@ const ModalTotal: React.FC = () => {
     selectedDough,
     productQuantity,
     selectedPromo,
-    promoProductsList,
+    selectedPromoProducts,
     totalPromoProducts,
   } = useAppSelector((state) => state.menuReducer);
   const { totalProductPrice } = calculateProductPrices(
@@ -49,10 +49,13 @@ const ModalTotal: React.FC = () => {
 
     // Update the cart products and promo products
     const updatedCartProduct = [...cartProductInLS, updatedSelectedProduct];
-    const updatedPromoProducts = [...promoProductsList, updatedSelectedProduct];
+    const updatedPromoProducts = [
+      ...selectedPromoProducts,
+      updatedSelectedProduct,
+    ];
 
     if (selectedPromo) {
-      dispatch(addToPromoProductsList(updatedPromoProducts));
+      dispatch(addToPromoProducts(updatedPromoProducts));
     } else {
       await setCartProductInLS(updatedCartProduct);
       dispatch(addToCart(updatedCartProduct));
@@ -61,17 +64,17 @@ const ModalTotal: React.FC = () => {
     dispatch(setModalProductOpen(false));
   }, [
     selectedProduct,
+    productQuantity,
     selectedSize,
     selectedDough,
     selectedIngredients,
     removedIngredients,
-    productQuantity,
     totalProductPrice,
-    selectedPromo,
-    promoProductsList,
     cartProductInLS,
-    setCartProductInLS,
+    selectedPromoProducts,
+    selectedPromo,
     dispatch,
+    setCartProductInLS,
   ]);
 
   const handleIncrement = () => {

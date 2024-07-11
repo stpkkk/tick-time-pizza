@@ -8,7 +8,7 @@ import { promos } from '@/constants';
 import promoImg from '@/public/assets/icons/promo.svg';
 import {
   addToCart,
-  resetPromoProductsList,
+  resetPromoProducts,
   setPromoDiscount,
   setSelectedPromo,
   useAppDispatch,
@@ -34,7 +34,7 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const {
-    promoProductsList,
+    selectedPromoProducts,
     selectedProduct,
     selectedSize,
     productQuantity,
@@ -62,7 +62,7 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
     pizzas.filter((product) => !names.includes(product.title));
   const fourPizzasPriceThree = excludePizzaByName(['Пицца 4 сыра']);
   const threePizza999 = excludePizzaByName(['Пицца 4 сыра', 'Пицца 4 сезона']);
-  const { totalPrice } = calculateTotalPrice(promoProductsList);
+  const { totalPrice } = calculateTotalPrice(selectedPromoProducts);
   const { productPrice } = calculateProductPrices(
     selectedProduct,
     selectedSize,
@@ -94,7 +94,7 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
         title: promo?.title || '',
         image: promoImg,
         totalPrice: priceWithDiscount,
-        promoProducts: promoProductsList,
+        selectedPromoProducts,
         selectedIngredients: [],
         discount,
       };
@@ -108,7 +108,7 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
         dispatch(setPromoDiscount(priceWithDiscount));
       }
 
-      dispatch(resetPromoProductsList());
+      dispatch(resetPromoProducts());
       dispatch(setSelectedPromo(null));
       router.push('/promo');
     },
@@ -116,7 +116,7 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
       selectedProduct,
       promo?.title,
       priceWithDiscount,
-      promoProductsList,
+      selectedPromoProducts,
       discount,
       cartProductInLS,
       dispatch,
