@@ -11,8 +11,7 @@ import {
   PromoTotalHeader,
 } from '@/components';
 import MobilePromoTotal from '@/components/promo/MobilePromoTotal';
-import { useProducts, usePromoProducts } from '@/hooks';
-import { useAppSelector } from '@/redux';
+import { usePromoProducts } from '@/hooks';
 
 type PromoProps = {
   params: {
@@ -21,8 +20,6 @@ type PromoProps = {
 };
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
-  const { products, isLoading } = useProducts();
-
   const {
     addPromoProductToCart,
     promo,
@@ -32,7 +29,8 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
     isPizzaOfTheDay,
     currentDay,
     promoProducts,
-  } = usePromoProducts(products, id);
+    isLoading,
+  } = usePromoProducts(id);
 
   const headerText = isPizzaOfTheDay
     ? promo?.title + ' ' + currentDay

@@ -29,7 +29,7 @@ const ProductsList = () => {
       <div className={WRAPPER_CLASS}>
         <ul className={GRID_CLASS}>
           {filteredProducts.map((product) => (
-            <MenuItem key={product.id} product={product} products={products} />
+            <MenuItem key={product.id} product={product} />
           ))}
         </ul>
       </div>

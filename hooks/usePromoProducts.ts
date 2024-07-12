@@ -4,6 +4,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { getPizzaOfTheDay } from '../utils/getPizzaOfTheDay';
 import { useLocalStorage } from './useLocalStorage';
+import { useProducts } from './useProducts';
 import { promos } from '@/constants';
 import promoImg from '@/public/assets/icons/promo.svg';
 import {
@@ -30,9 +31,11 @@ const {
   PEPPERONI,
 } = Promos;
 
-export const usePromoProducts = (products: IProduct[], id = '') => {
+export const usePromoProducts = (id = '') => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const { products, isLoading } = useProducts();
+
   const {
     selectedPromoProducts,
     selectedProduct,
@@ -155,5 +158,6 @@ export const usePromoProducts = (products: IProduct[], id = '') => {
     isPizzaOfTheDay,
     promoProducts,
     currentDay,
+    isLoading,
   };
 };

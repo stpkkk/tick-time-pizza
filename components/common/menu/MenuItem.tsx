@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '..';
 import ProductCategoryImage from './ProductCategoryImage';
-import { usePromoProducts } from '@/hooks';
+import { useProducts, usePromoProducts } from '@/hooks';
 import {
   setHoveredItemId,
   setIsProductsListModalOpen,
@@ -14,11 +14,10 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
 interface IMenuItemProps {
-  products: IProduct[];
   product: IProduct;
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ product }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
@@ -26,7 +25,8 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
     selectedPromo,
     isProductsListModalOpen,
   } = useAppSelector((state) => state.menuReducer);
-  const { promo } = usePromoProducts(products);
+  const { promo } = usePromoProducts();
+  const { products } = useProducts();
 
   const isItemHovered = hoveredItemId === product.id;
   const starterPrice =
