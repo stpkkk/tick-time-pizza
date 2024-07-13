@@ -16,36 +16,37 @@ const MobilePromoTotal: React.FC<MobilePromoTotalProps> = ({
   isQuantityMax,
 }) => {
   const dispatch = useAppDispatch();
-  const { selectedPromoProducts, totalPromoProducts } = useAppSelector(
-    (state) => state.menuReducer,
-  );
+  const { selectedPromoProducts, totalPromoProducts, isProductsListModalOpen } =
+    useAppSelector((state) => state.menuReducer);
 
   const handleClickOpenProductsList = () => {
     dispatch(setIsProductsListModalOpen(true));
   };
 
   return (
-    <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
-      {selectedPromoProducts.length > 0 && (
-        <div className='mb-[30px]'>
-          <PromoSelectedProductsList />
-        </div>
-      )}
-      {!isQuantityMax ? (
-        <>
-          <span className='block mb-4 text-sm font-semibold'>
-            Выберите {totalPromoProducts === 0 ? 'первый' : 'следующий'}{' '}
-          </span>
-          <button
-            className='btn_red h-[60px] sm:h-[50px] max-w-[100px] !max-h-[35px]'
-            onClick={handleClickOpenProductsList}
-            type='button'
-          >
-            Выбрать
-          </button>
-        </>
-      ) : null}
-    </div>
+    !isProductsListModalOpen && (
+      <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
+        {selectedPromoProducts.length > 0 && (
+          <div className='mb-[30px]'>
+            <PromoSelectedProductsList />d
+          </div>
+        )}
+        {!isQuantityMax ? (
+          <>
+            <span className='block mb-4 text-sm font-semibold'>
+              Выберите {totalPromoProducts === 0 ? 'первый' : 'следующий'}{' '}
+            </span>
+            <button
+              className='btn_red h-[60px] sm:h-[50px] max-w-[100px] !max-h-[35px]'
+              onClick={handleClickOpenProductsList}
+              type='button'
+            >
+              Выбрать
+            </button>
+          </>
+        ) : null}
+      </div>
+    )
   );
 };
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import PromoProductsList from './PromoSelectedProductsList';
+import PromoSelectedProductsList from './PromoSelectedProductsList';
 import PromoTotalHeader from './PromoTotalHeader';
 import PromoTotalPrice from './PromoTotalPrice';
 import {
@@ -57,7 +57,7 @@ const PromoTotal: React.FC<PromoTotalProps> = ({
               </p>
             )}
             <div className='sm:px-4 w-full bg-white'>
-              <PromoProductsList />
+              <PromoSelectedProductsList />
               <div className='sm:hidden'>
                 <PromoTotalPrice
                   addPromoProductToCart={addPromoProductToCart}

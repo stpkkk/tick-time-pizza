@@ -6,12 +6,13 @@ import {
   Loader,
   ModalProduct,
   ModalPromoProductsList,
-  PromoProductsList,
+  ProductsList,
   PromoTotal,
   PromoTotalHeader,
 } from '@/components';
 import MobilePromoTotal from '@/components/promo/MobilePromoTotal';
 import { usePromoProducts } from '@/hooks';
+import { useAppSelector } from '@/redux';
 
 type PromoProps = {
   params: {
@@ -20,6 +21,9 @@ type PromoProps = {
 };
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
+  const { isProductsListModalOpen } = useAppSelector(
+    (state) => state.menuReducer,
+  );
   const {
     addPromoProductToCart,
     promo,
@@ -45,13 +49,17 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <HeaderWithButtonBack text={headerText} />
-      <div className='hidden sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
+      <div
+        className={`${isProductsListModalOpen ? 'sm:hidden' : ''} sm:hidden`}
+      >
+        <HeaderWithButtonBack text={headerText} />
+      </div>
+      <div className='hidden relative z-40 sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
         <PromoTotalHeader promo={promo} />
       </div>
       <div className='flex justify-between gap-[30px]'>
         <div className='sm:hidden'>
-          <PromoProductsList promoProducts={promoProducts} />
+          <ProductsList products={promoProducts} />
         </div>
         <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
           <MobilePromoTotal

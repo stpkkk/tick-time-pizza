@@ -5,7 +5,7 @@ import { ModalProduct } from '../modal-product';
 import Banner from './Banner';
 import Categories from './Categories';
 import ProductsList from './ProductsList';
-import { useLocalStorage } from '@/hooks';
+import { useLocalStorage, useProducts } from '@/hooks';
 import { useAppDispatch, addToBookmarks, setCurrentUser } from '@/redux';
 
 const Menu: React.FC = () => {
@@ -19,11 +19,13 @@ const Menu: React.FC = () => {
     }
   }, [dispatch, userInLS]);
 
+  const { products } = useProducts();
+
   return (
     <>
       <Banner />
       <Categories />
-      <ProductsList />
+      <ProductsList products={products} />
       <ModalProduct />
     </>
   );

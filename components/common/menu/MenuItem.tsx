@@ -15,9 +15,10 @@ import { IProduct } from '@/types';
 
 interface IMenuItemProps {
   product: IProduct;
+  products: IProduct[];
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({ product }) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
@@ -26,7 +27,6 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product }) => {
     isProductsListModalOpen,
   } = useAppSelector((state) => state.menuReducer);
   const { promo } = usePromoProducts();
-  const { products } = useProducts();
 
   const isItemHovered = hoveredItemId === product.id;
   const starterPrice =

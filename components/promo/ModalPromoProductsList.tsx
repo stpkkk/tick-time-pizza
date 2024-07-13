@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
-import PromoProductsList from './PromoProductsList';
+import { ProductsList } from '../common';
 import {
   useAppDispatch,
   setIsProductsListModalOpen,
@@ -26,15 +26,17 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
   if (!isProductsListModalOpen) return;
 
   return (
-    <div className='sm:block fixed inset-0 z-10 hidden overflow-y-auto'>
+    <div className='sm:block fixed inset-0 z-10 hidden overflow-y-auto pt-[150px]'>
       <button
-        className='absolute right-[18px] top-[18px] z-10 flex items-center gap-3 text-grayDark animate-fade-in hover:text-primary sm:right-0 sm:top-0 sm:p-1'
+        className='fixed right-[35px] top-[140px] z-40 flex items-center gap-3 text-grayDark animate-fade-in hover:text-primary pointer'
         type='button'
         onClick={handleClose}
       >
-        <RiCloseFill size={36} className='md:w-7' />
+        <RiCloseFill size={45} />
       </button>
-      <PromoProductsList promoProducts={promoProducts} />
+      <div className='pt-[50px]'>
+        <ProductsList products={promoProducts} />
+      </div>
     </div>
   );
 };
