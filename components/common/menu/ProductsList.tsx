@@ -7,14 +7,16 @@ import { useAppSelector } from '@/redux';
 import { CATEGORIES, IProduct } from '@/types';
 
 const WRAPPER_CLASS = 'wrapper px-[60px] py-[50px] sm:p-0 sm:drop-shadow-none';
-const GRID_CLASS =
-  'grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4';
 
 interface ProductsListProps {
   products: IProduct[];
+  GRID_CLASS: string;
 }
 
-const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
+const ProductsList: React.FC<ProductsListProps> = ({
+  products,
+  GRID_CLASS,
+}) => {
   const { isLoading } = useProducts();
   const filteredProducts = useFilterProducts(products);
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
@@ -22,7 +24,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
 
   if (isLoading) {
     return (
-      <div className='flex items-center justify-center h-[400px]'>
+      <div className='grid place-items-center min-h-[400px] w-[800px]'>
         <Loader />
       </div>
     );

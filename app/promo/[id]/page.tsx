@@ -20,6 +20,9 @@ type PromoProps = {
   };
 };
 
+const GRID_CLASS =
+  'grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 lgMin:grid-cols-3';
+
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const { isProductsListModalOpen } = useAppSelector(
     (state) => state.menuReducer,
@@ -59,7 +62,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
       </div>
       <div className='flex justify-between gap-[30px]'>
         <div className='sm:hidden'>
-          <ProductsList products={promoProducts} />
+          <ProductsList products={promoProducts} GRID_CLASS={GRID_CLASS} />
         </div>
         <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
           <MobilePromoTotal

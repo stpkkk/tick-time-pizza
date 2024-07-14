@@ -8,6 +8,9 @@ import ProductsList from './ProductsList';
 import { useLocalStorage, useProducts } from '@/hooks';
 import { useAppDispatch, addToBookmarks, setCurrentUser } from '@/redux';
 
+const GRID_CLASS =
+  'grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4';
+
 const Menu: React.FC = () => {
   const [userInLS, setUserInLS] = useLocalStorage({}, 'user');
   const dispatch = useAppDispatch();
@@ -25,7 +28,7 @@ const Menu: React.FC = () => {
     <>
       <Banner />
       <Categories />
-      <ProductsList products={products} />
+      <ProductsList products={products} GRID_CLASS={GRID_CLASS} />
       <ModalProduct />
     </>
   );

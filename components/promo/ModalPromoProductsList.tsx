@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
-import { ProductsList } from '../common';
+import { Loader, ProductsList } from '../common';
 import {
   useAppDispatch,
   setIsProductsListModalOpen,
@@ -11,6 +11,9 @@ import { IProduct } from '@/types';
 type ModalPromoProductsListProps = {
   promoProducts: IProduct[];
 };
+
+const GRID_CLASS =
+  'grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 mdMin:grid-cols-3 lgMin:grid-cols-4';
 
 const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
   promoProducts,
@@ -35,7 +38,7 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
         <RiCloseFill size={45} />
       </button>
       <div className='pt-[50px]'>
-        <ProductsList products={promoProducts} />
+        <ProductsList products={promoProducts} GRID_CLASS={GRID_CLASS} />
       </div>
     </div>
   );
