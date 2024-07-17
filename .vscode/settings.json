@@ -25,5 +25,25 @@
     "yuzu",
     "zheldor",
     "Чикен"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#260944",
+    "activityBar.background": "#260944",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#713f0f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#260944",
+    "statusBar.background": "#0d0317",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#260944",
+    "statusBarItem.remoteBackground": "#0d0317",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#0d0317",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#0d031799",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#0d0317"
 }

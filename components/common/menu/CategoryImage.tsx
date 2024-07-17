@@ -3,13 +3,11 @@ import Image from 'next/image';
 import { IProduct } from '@/types';
 import { generateUUID } from '@/utils';
 
-interface ProductCategoryImageProps {
+interface ICategoryImageProps {
   product: IProduct;
 }
 
-const ProductCategoryImage: React.FC<ProductCategoryImageProps> = ({
-  product,
-}) => {
+const CategoryImage: React.FC<ICategoryImageProps> = ({ product }) => {
   return (
     <>
       {product.categories?.map((cat) => (
@@ -29,4 +27,4 @@ const ProductCategoryImage: React.FC<ProductCategoryImageProps> = ({
   );
 };
 
-export default ProductCategoryImage;
+export default CategoryImage;

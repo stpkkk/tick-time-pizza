@@ -1,83 +1,26 @@
 'use client';
 
 import React from 'react';
-import CartProduct from './CartProduct';
+import CartTotal from './CartTotal';
 import EmptyCart from './EmptyCart';
-import { useLocalStorage } from '@/hooks';
-import { useAppDispatch, useAppSelector, addToCart } from '@/redux';
-import { IProduct } from '@/types';
+import ProductsList from './ProductsList';
+import Recommendations from './Recommendations';
+import { useCart } from '@/hooks';
 
 const Cart: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const cartProducts = useAppSelector(
-    (state) => state.menuReducer.cartProducts,
-  );
-  const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
-
-  React.useEffect(() => {
-    if (cartProductInLS) {
-      dispatch(addToCart(cartProductInLS));
-    }
-  }, [dispatch, cartProductInLS]);
-
-  const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
-    dispatch(addToCart(updatedItems));
-    localStorage.setItem('cart', JSON.stringify(updatedItems));
-  };
-
-  const modifyCartItem = (
-    productUUID: string,
-    modifier: (product: IProduct) => IProduct,
-  ) => {
-    const updatedItems = cartProducts.map((product) =>
-      product.uuid === productUUID ? modifier(product) : product,
-    );
-    updateItemsInLocalStorage(updatedItems);
-  };
-
-  const handleIncrement = (productUUID: string) => {
-    modifyCartItem(productUUID, (product) => ({
-      ...product,
-      productQuantity: (product.productQuantity || 1) + 1,
-    }));
-  };
-
-  const handleDecrement = (productUUID: string) => {
-    modifyCartItem(productUUID, (product) => ({
-      ...product,
-      productQuantity:
-        product.productQuantity && product.productQuantity > 1
-          ? product.productQuantity - 1
-          : 1,
-    }));
-  };
-
-  const handleRemove = (productUUID: string) => {
-    const updatedItems = cartProducts.filter(
-      (product: IProduct) => product.uuid !== productUUID,
-    );
-    updateItemsInLocalStorage(updatedItems);
-  };
+  const { cartProducts } = useCart();
 
   return (
-    <div className='flex w-full flex-row gap-[30px] sm:flex-col'>
-      <div className='md:max-w-full w-full'>
-        {cartProducts.length > 0 ? (
-          <ul className='wrapper flex flex-col gap-[30px] px-[60px] py-[50px] sm:px-4 sm:py-8'>
-            {cartProducts.map((product) => (
-              <CartProduct
-                key={product.uuid}
-                product={product}
-                onIncrement={() => handleIncrement(product?.uuid || '')}
-                onDecrement={() => handleDecrement(product?.uuid || '')}
-                onRemove={() => handleRemove(product?.uuid || '')}
-              />
-            ))}
-          </ul>
-        ) : (
-          <EmptyCart />
-        )}
+    <div className='flex justify-between flex-row md:flex-col gap-[30px]'>
+      <div className='flex flex-col max-w-[calc(100%-420px)] md:max-w-full'>
+        <div className='flex w-full flex-row gap-[30px] sm:flex-col'>
+          <div className='md:max-w-full w-full'>
+            {cartProducts.length > 0 ? <ProductsList /> : <EmptyCart />}
+          </div>
+        </div>
+        <Recommendations />
       </div>
+      <CartTotal />
     </div>
   );
 };

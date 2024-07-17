@@ -6,7 +6,7 @@ import {
   Loader,
   ModalProduct,
   ModalPromoProductsList,
-  ProductsList,
+  CardList,
   PromoTotal,
   PromoTotalHeader,
 } from '@/components';
@@ -27,6 +27,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const { isProductsListModalOpen } = useAppSelector(
     (state) => state.menuReducer,
   );
+
   const {
     addPromoProductToCart,
     promo,
@@ -52,9 +53,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
-      <div
-        className={`${isProductsListModalOpen ? 'sm:hidden' : ''} sm:hidden`}
-      >
+      <div className={`${isProductsListModalOpen ? 'sm:hidden' : ''} `}>
         <HeaderWithButtonBack text={headerText} />
       </div>
       <div className='hidden relative z-40 sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
@@ -62,7 +61,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
       </div>
       <div className='flex justify-between gap-[30px]'>
         <div className='sm:hidden'>
-          <ProductsList products={promoProducts} GRID_CLASS={GRID_CLASS} />
+          <CardList products={promoProducts} GRID_CLASS={GRID_CLASS} />
         </div>
         <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
           <MobilePromoTotal

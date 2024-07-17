@@ -1,4 +1,5 @@
 import { useAuthStateChange } from './useAuthStateChange';
+import { useCart } from './useCart';
 import { useFilterProducts } from './useFilterProducts';
 import { useLocalStorage } from './useLocalStorage';
 import { useProducts } from './useProducts';
@@ -14,4 +15,5 @@ export {
   useProducts,
   useFilterProducts,
   usePromoProducts,
+  useCart,
 };

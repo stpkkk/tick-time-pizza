@@ -3,8 +3,8 @@
 import React, { useEffect } from 'react';
 import { ModalProduct } from '../modal-product';
 import Banner from './Banner';
+import CardList from './CardList';
 import Categories from './Categories';
-import ProductsList from './ProductsList';
 import { useLocalStorage, useProducts } from '@/hooks';
 import { useAppDispatch, addToBookmarks, setCurrentUser } from '@/redux';
 
@@ -28,7 +28,7 @@ const Menu: React.FC = () => {
     <>
       <Banner />
       <Categories />
-      <ProductsList products={products} GRID_CLASS={GRID_CLASS} />
+      <CardList products={products} GRID_CLASS={GRID_CLASS} />
       <ModalProduct />
     </>
   );

@@ -1,17 +1,9 @@
 import Banner from './Banner';
+import Card from './Card';
+import CardList from './CardList';
 import Categories from './Categories';
+import CategoryImage from './CategoryImage';
 import Menu from './Menu';
-import MenuItem from './MenuItem';
 import NoBookmarks from './NoBookmarks';
-import ProductCategoryImage from './ProductCategoryImage';
-import ProductsList from './ProductsList';
 
-export {
-  Banner,
-  Categories,
-  Menu,
-  MenuItem,
-  NoBookmarks,
-  ProductsList,
-  ProductCategoryImage,
-};
+export { Banner, Categories, Menu, Card, NoBookmarks, CardList, CategoryImage };

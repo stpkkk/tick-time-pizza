@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { ButtonBookmark } from '..';
-import ProductCategoryImage from './ProductCategoryImage';
-import { useProducts, usePromoProducts } from '@/hooks';
+import CategoryImage from './CategoryImage';
+import { usePromoProducts } from '@/hooks';
 import {
   setHoveredItemId,
   setIsProductsListModalOpen,
@@ -13,12 +13,12 @@ import {
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
 
-interface IMenuItemProps {
+interface ICardProps {
   product: IProduct;
   products: IProduct[];
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
+const Card: React.FC<ICardProps> = ({ product, products }) => {
   const dispatch = useAppDispatch();
   const {
     hoveredItemId,
@@ -67,7 +67,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
         <ButtonBookmark product={product} />
       </div>
       <div className='-left-1 sm:p-2 absolute top-0 z-20 flex flex-col gap-2'>
-        <ProductCategoryImage product={product} />
+        <CategoryImage product={product} />
       </div>
       <div
         className='flex flex-col justify-between h-full'
@@ -108,4 +108,4 @@ const MenuItem: React.FC<IMenuItemProps> = ({ product, products }) => {
   );
 };
 
-export default MenuItem;
+export default Card;

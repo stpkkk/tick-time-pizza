@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
-import { Loader, ProductsList } from '../common';
+import { Loader, CardList } from '../common';
 import {
   useAppDispatch,
   setIsProductsListModalOpen,
@@ -38,7 +38,7 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
         <RiCloseFill size={45} />
       </button>
       <div className='pt-[50px]'>
-        <ProductsList products={promoProducts} GRID_CLASS={GRID_CLASS} />
+        <CardList products={promoProducts} GRID_CLASS={GRID_CLASS} />
       </div>
     </div>
   );

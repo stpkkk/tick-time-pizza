@@ -2,22 +2,19 @@ import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import Image from 'next/image';
 import { Counter, SelectedProductOptions } from '../common';
+import { useCart } from '@/hooks';
 import { IProduct } from '@/types';
 import { calculateProductPrices } from '@/utils';
 
 interface CartProductProps {
   product: IProduct;
-  onIncrement: () => void;
-  onDecrement: () => void;
-  onRemove: () => void;
 }
 
-const CartProduct: React.FC<CartProductProps> = ({
-  product,
-  onIncrement,
-  onDecrement,
-  onRemove,
-}) => {
+const Product: React.FC<CartProductProps> = ({ product }) => {
+  const { handleIncrement, handleDecrement, handleRemove } = useCart(
+    product?.uuid || '',
+  );
+
   const {
     image,
     title,
@@ -50,18 +47,21 @@ const CartProduct: React.FC<CartProductProps> = ({
             minValue={1}
             value={productQuantity || 1}
             initialValue={productQuantity || 1}
-            handleDecrement={onDecrement}
-            handleIncrement={onIncrement}
+            handleDecrement={handleDecrement}
+            handleIncrement={handleIncrement}
           />
           <span className='whitespace-nowrap text-base font-semibold leading-5 sm:text-xs sm:leading-[20px]'>
             {totalProductPrice} ₽
           </span>
         </div>
       </div>
-      <button className='flex_start sm:pt-0 gap-5 pt-4' type='button'>
+      <button
+        className='flex_start sm:pt-0 gap-5 pt-4'
+        onClick={handleRemove}
+        type='button'
+      >
         <RiDeleteBin6Line
           size={20}
-          onClick={onRemove}
           className='text-grayDark hover:text-primary animate-fade-in cursor-pointer'
         />
       </button>
@@ -69,4 +69,4 @@ const CartProduct: React.FC<CartProductProps> = ({
   );
 };
 
-export default CartProduct;
+export default Product;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from '../Loader';
-import MenuItem from './MenuItem';
+import Card from './Card';
 import NoBookmarks from './NoBookmarks';
 import { useFilterProducts, useProducts } from '@/hooks';
 import { useAppSelector } from '@/redux';
@@ -8,15 +8,12 @@ import { CATEGORIES, IProduct } from '@/types';
 
 const WRAPPER_CLASS = 'wrapper px-[60px] py-[50px] sm:p-0 sm:drop-shadow-none';
 
-interface ProductsListProps {
+interface ICardListProps {
   products: IProduct[];
   GRID_CLASS: string;
 }
 
-const ProductsList: React.FC<ProductsListProps> = ({
-  products,
-  GRID_CLASS,
-}) => {
+const CardList: React.FC<ICardListProps> = ({ products, GRID_CLASS }) => {
   const { isLoading } = useProducts();
   const filteredProducts = useFilterProducts(products);
   const { selectedCategory } = useAppSelector((state) => state.menuReducer);
@@ -35,7 +32,7 @@ const ProductsList: React.FC<ProductsListProps> = ({
       <div className={WRAPPER_CLASS}>
         <ul className={GRID_CLASS}>
           {filteredProducts.map((product) => (
-            <MenuItem key={product.id} product={product} products={products} />
+            <Card key={product.id} product={product} products={products} />
           ))}
         </ul>
       </div>
@@ -49,4 +46,4 @@ const ProductsList: React.FC<ProductsListProps> = ({
   return null;
 };
 
-export default ProductsList;
+export default CardList;
