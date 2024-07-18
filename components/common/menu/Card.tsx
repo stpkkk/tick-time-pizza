@@ -8,7 +8,6 @@ import {
   setIsProductsListModalOpen,
   setModalProductOpen,
   setSelectedProduct,
-  setSelectedPromo,
 } from '@/redux/features/menuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { IProduct } from '@/types';
@@ -48,7 +47,7 @@ const Card: React.FC<ICardProps> = ({ product, products }) => {
       );
 
       dispatch(setSelectedProduct(selectedProduct || null));
-      dispatch(setSelectedPromo(promo || null));
+      // dispatch(setSelectedPromo(promo || null));
       dispatch(setModalProductOpen(true));
 
       if (isProductsListModalOpen) {

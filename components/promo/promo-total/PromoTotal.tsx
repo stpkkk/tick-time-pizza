@@ -12,7 +12,7 @@ import {
 import { Promo } from '@/types';
 
 type PromoTotalProps = {
-  promo?: Promo;
+  promo?: Promo | null;
   addPromoProductToCart: (e: React.FormEvent<HTMLFormElement>) => void;
   totalPrice: number;
   priceWithDiscount?: number | string;

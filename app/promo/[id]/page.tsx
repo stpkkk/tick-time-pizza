@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   HeaderWithButtonBack,
   Loader,
@@ -11,8 +11,14 @@ import {
   PromoTotalHeader,
 } from '@/components';
 import MobilePromoTotal from '@/components/promo/MobilePromoTotal';
+import { promos } from '@/constants';
 import { usePromoProducts } from '@/hooks';
-import { useAppSelector } from '@/redux';
+import {
+  resetPromoProducts,
+  setSelectedPromo,
+  useAppDispatch,
+  useAppSelector,
+} from '@/redux';
 
 type PromoProps = {
   params: {
@@ -24,7 +30,8 @@ const GRID_CLASS =
   'grid items-start justify-items-center gap-x-[30px] gap-y-[50px] sm:gap-y-5 smMin:grid-cols-2 lgMin:grid-cols-3';
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
-  const { isProductsListModalOpen } = useAppSelector(
+  const dispatch = useAppDispatch();
+  const { isProductsListModalOpen, selectedPromo } = useAppSelector(
     (state) => state.menuReducer,
   );
 
@@ -43,6 +50,13 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const headerText = isPizzaOfTheDay
     ? promo?.title + ' ' + currentDay
     : promo?.title || 'No promo title!';
+
+  useEffect(() => {
+    const promo = promos.find((promo) => promo.id === +id);
+
+    dispatch(setSelectedPromo(promo || null));
+    dispatch(resetPromoProducts());
+  }, [id, dispatch]);
 
   if (isLoading)
     return (

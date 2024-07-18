@@ -3,7 +3,7 @@ import { useAppSelector } from '@/redux';
 import { Promo } from '@/types';
 
 type PromoTotalQuantityProps = {
-  promo?: Promo;
+  promo?: Promo | null;
 };
 
 const PromoTotalHeader: React.FC<PromoTotalQuantityProps> = ({ promo }) => {

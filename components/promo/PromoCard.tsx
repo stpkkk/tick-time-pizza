@@ -2,13 +2,7 @@ import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { promos } from '@/constants';
-import {
-  useAppDispatch,
-  setSelectedPromo,
-  setIsPromoModalOpen,
-  resetPromoProducts,
-} from '@/redux';
+import { useAppDispatch, setIsPromoModalOpen } from '@/redux';
 import { Promo, Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 
@@ -21,12 +15,8 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
   const currentDay = getPizzaOfTheDay().dayOfWeek;
   const isPizzaOfTheDay = promo.title === Promos.PIZZA_OF_THE_DAY;
 
-  const handlePromoCardClick = (clickedPromo: Promo, openModal: boolean) => {
-    const selectedPromo = promos.find((p) => p.id === clickedPromo.id);
-
-    dispatch(setSelectedPromo(selectedPromo || null));
+  const handleCardClick = (openModal: boolean) => {
     dispatch(setIsPromoModalOpen(openModal));
-    dispatch(resetPromoProducts());
   };
 
   return (
@@ -39,7 +29,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           fill
           priority
-          onClick={() => handlePromoCardClick(promo, true)}
+          onClick={() => handleCardClick(true)}
           className='rounded-2xl'
         />
       </div>
@@ -50,7 +40,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         {promo.isRedirect && (
           <Link
             href={`/promo/${promo.id}`}
-            onClick={() => handlePromoCardClick(promo, false)}
+            onClick={() => handleCardClick(false)}
             className='btn_yellow h-[45px] px-4 sm:h-[35px] uppercase'
           >
             Выбрать
@@ -58,7 +48,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
         )}
         <button
           type='button'
-          onClick={() => handlePromoCardClick(promo, true)}
+          onClick={() => handleCardClick(true)}
           className='flex-nowrap text-grayDark hover:text-primary animate-fade-in flex flex-row items-center justify-between gap-3 text-sm font-semibold'
         >
           <BsPlusSquare size={24} className='sm:w-[20px] sm:h-[20px]' />
