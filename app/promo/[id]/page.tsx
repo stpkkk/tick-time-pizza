@@ -31,7 +31,7 @@ const GRID_CLASS =
 
 const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   const dispatch = useAppDispatch();
-  const { isProductsListModalOpen, selectedPromo } = useAppSelector(
+  const { isProductsListModalOpen } = useAppSelector(
     (state) => state.menuReducer,
   );
 
@@ -49,7 +49,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
   const headerText = isPizzaOfTheDay
     ? promo?.title + ' ' + currentDay
-    : promo?.title || 'No promo title!';
+    : promo?.title || 'promo title is undefined!';
 
   useEffect(() => {
     const promo = promos.find((promo) => promo.id === +id);

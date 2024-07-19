@@ -2,6 +2,7 @@ import { useAuthStateChange } from './useAuthStateChange';
 import { useCart } from './useCart';
 import { useFilterProducts } from './useFilterProducts';
 import { useLocalStorage } from './useLocalStorage';
+import { useOrder } from './useOrder';
 import { useProducts } from './useProducts';
 import { usePromoProducts } from './usePromoProducts';
 import { useReadingProgress } from './useReadingProgress';
@@ -16,4 +17,5 @@ export {
   useFilterProducts,
   usePromoProducts,
   useCart,
+  useOrder,
 };

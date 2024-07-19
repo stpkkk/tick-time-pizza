@@ -1,28 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { FC, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { SelectedProductOptions } from '../common';
 import AddressView from './AddressView';
 import OrderComment from './OrderComment';
 import Tickets from './Tickets';
 import { APP_CONFIG } from '@/config';
-import { useLocalStorage } from '@/hooks';
+import { useLocalStorage, useOrder } from '@/hooks';
 import { useAppSelector } from '@/redux';
 import { IProduct, Supply } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
-type OrderSummaryProps = {
-  ticketsToAdd: number;
-};
-
-const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
+const OrderSummary: FC = () => {
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const { promoDiscount, cartProducts } = useAppSelector(
     (state) => state.menuReducer,
   );
   const router = useRouter();
+  const { ticketsToAdd } = useOrder();
+
   const { supplyMethod, deliveryAddress, pickPoint, ticketsToUse } =
     orderFormData;
   const isDelivery = supplyMethod === Supply.DELIVERY;
@@ -34,7 +32,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ ticketsToAdd }) => {
     (orderPrice <= APP_CONFIG.TICKETS_AND_DELIVERY_MIN_PRICE &&
       supplyMethod === Supply.DELIVERY);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (noProducts) {
       router.push('/cart');
     }

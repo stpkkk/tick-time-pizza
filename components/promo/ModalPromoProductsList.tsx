@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiCloseFill } from 'react-icons/ri';
-import { Loader, CardList } from '../common';
+import { CardList } from '../common';
 import {
   useAppDispatch,
   setIsProductsListModalOpen,
