@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import {
   HeaderWithButtonBack,
-  Loader,
   ModalProduct,
   ModalPromoProductsList,
   CardList,
@@ -58,13 +57,6 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
     dispatch(resetPromoProducts());
   }, [id, dispatch]);
 
-  if (isLoading)
-    return (
-      <main className='grid place-items-center min-h-[400px] w-[800px]'>
-        <Loader />
-      </main>
-    );
-
   return (
     <main className='mt-[90px] sm:mt-[70px] sm:px-0'>
       <div className={`${isProductsListModalOpen ? 'sm:hidden' : ''} `}>
@@ -74,8 +66,12 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
         <PromoTotalHeader promo={promo} />
       </div>
       <div className='flex justify-between gap-[30px]'>
-        <div className='sm:hidden'>
-          <CardList products={promoProducts} GRID_CLASS={GRID_CLASS} />
+        <div className='sm:hidden w-full'>
+          <CardList
+            products={promoProducts}
+            isLoading={isLoading}
+            GRID_CLASS={GRID_CLASS}
+          />
         </div>
         <div className='hidden sm:block px-[30px] mb-[30px] w-full'>
           <MobilePromoTotal
@@ -92,7 +88,10 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
         />
       </div>
 
-      <ModalPromoProductsList promoProducts={promoProducts} />
+      <ModalPromoProductsList
+        promoProducts={promoProducts}
+        isLoading={isLoading}
+      />
       <ModalProduct />
     </main>
   );

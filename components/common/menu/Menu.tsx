@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Loader from '../Loader';
 import { ModalProduct } from '../modal-product';
 import Banner from './Banner';
 import CardList from './CardList';
@@ -22,13 +23,17 @@ const Menu: React.FC = () => {
     }
   }, [dispatch, userInLS]);
 
-  const { products } = useProducts();
+  const { products, isLoading } = useProducts();
 
   return (
     <>
       <Banner />
       <Categories />
-      <CardList products={products} GRID_CLASS={GRID_CLASS} />
+      <CardList
+        products={products}
+        isLoading={isLoading}
+        GRID_CLASS={GRID_CLASS}
+      />
       <ModalProduct />
     </>
   );

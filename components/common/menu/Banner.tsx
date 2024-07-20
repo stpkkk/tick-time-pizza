@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
@@ -55,11 +55,18 @@ const Banner: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 
-  return mounted ? (
+  if (!mounted)
+    return (
+      <div className='min-h-[390px] w-full flex_center mt-[120px] sm:mt-[90px]'>
+        <Loader />
+      </div>
+    );
+
+  return (
     <div className='relative md:overflow-hidden mt-[120px] rounded-2xl sm:mt-[90px]'>
       <Swiper
         slidesPerView='auto'
@@ -122,10 +129,6 @@ const Banner: React.FC = () => {
           />
         </button>
       </div>
-    </div>
-  ) : (
-    <div className='min-h-[400px] w-full flex_center mt-[120px] sm:mt-[90px]'>
-      <Loader />
     </div>
   );
 };

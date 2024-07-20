@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { addToCart, useAppDispatch, useAppSelector } from '@/redux';
 import { IProduct } from '@/types';
@@ -11,11 +11,13 @@ export const useCart = (id?: string) => {
     (state) => state.menuReducer.cartProducts,
   );
   const [cartProductInLS, setCartProductInLS] = useLocalStorage([], 'cart');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (cartProductInLS) {
       dispatch(addToCart(cartProductInLS));
     }
+    setIsLoading(false);
   }, [dispatch, cartProductInLS]);
 
   const updateItemsInLocalStorage = (updatedItems: IProduct[]) => {
@@ -54,5 +56,11 @@ export const useCart = (id?: string) => {
     updateItemsInLocalStorage(updatedItems);
   };
 
-  return { cartProducts, handleDecrement, handleIncrement, handleRemove };
+  return {
+    cartProducts,
+    handleDecrement,
+    handleIncrement,
+    handleRemove,
+    isLoading,
+  };
 };

@@ -10,6 +10,7 @@ import { IProduct } from '@/types';
 
 type ModalPromoProductsListProps = {
   promoProducts: IProduct[];
+  isLoading: boolean;
 };
 
 const GRID_CLASS =
@@ -17,6 +18,7 @@ const GRID_CLASS =
 
 const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
   promoProducts,
+  isLoading,
 }) => {
   const dispatch = useAppDispatch();
   const { isProductsListModalOpen } = useAppSelector(
@@ -38,7 +40,11 @@ const ModalPromoProductsList: React.FC<ModalPromoProductsListProps> = ({
         <RiCloseFill size={45} />
       </button>
       <div className='pt-[50px]'>
-        <CardList products={promoProducts} GRID_CLASS={GRID_CLASS} />
+        <CardList
+          products={promoProducts}
+          isLoading={isLoading}
+          GRID_CLASS={GRID_CLASS}
+        />
       </div>
     </div>
   );

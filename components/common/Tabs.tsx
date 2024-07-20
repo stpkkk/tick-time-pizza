@@ -3,7 +3,6 @@
 import React from 'react';
 import Loader from './Loader';
 import Tab from './Tab';
-import { useProducts } from '@/hooks';
 import { useAppDispatch, useAppSelector, setOrderFormData } from '@/redux';
 import { Supply } from '@/types';
 
@@ -23,7 +22,6 @@ const Tabs: React.FC<TabsProps> = ({
   const dispatch = useAppDispatch();
   const { orderFormData } = useAppSelector((state) => state.profileReducer);
   const [activeTab, setActiveTab] = React.useState(labelFirst);
-  const { isLoading } = useProducts();
 
   const handleTabClick = (selectedTab: string) => {
     setActiveTab(selectedTab);
@@ -33,13 +31,6 @@ const Tabs: React.FC<TabsProps> = ({
       );
     }
   };
-
-  if (isLoading)
-    return (
-      <div className='flex_center w-full h-[400px]'>
-        <Loader />
-      </div>
-    );
 
   return (
     <div className='drop-shadow-custom relative z-10'>
