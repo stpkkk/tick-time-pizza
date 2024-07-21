@@ -55,6 +55,10 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
 
     dispatch(setSelectedPromo(promo || null));
     dispatch(resetPromoProducts());
+    // Cleanup function to reset selected promo when component unmounts
+    return () => {
+      dispatch(setSelectedPromo(null));
+    };
   }, [id, dispatch]);
 
   return (
