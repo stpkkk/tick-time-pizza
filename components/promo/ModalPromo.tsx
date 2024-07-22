@@ -43,13 +43,17 @@ const ModalPromo: React.FC = () => {
         </div>
         <h3 className='h1 sm:block hidden'>
           {isPizzaOfTheDay
-            ? selectedPromo!.title + ' ' + currentDay
-            : selectedPromo!.title}
+            ? selectedPromo?.title + ' ' + currentDay
+            : selectedPromo?.title || 'promo title is undefined!'}
         </h3>
         <div className='relative w-full max-w-[500px] aspect-video cursor-pointer rounded-2xl self-center'>
           <Image
-            src={selectedPromo!.image}
-            alt={selectedPromo!.title}
+            src={selectedPromo?.image || ''}
+            alt={
+              isPizzaOfTheDay
+                ? selectedPromo?.title + ' ' + currentDay
+                : selectedPromo?.title || 'promo title is undefined!'
+            }
             placeholder='blur'
             blurDataURL={pizza.src}
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'

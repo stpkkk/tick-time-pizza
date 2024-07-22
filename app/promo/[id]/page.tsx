@@ -66,7 +66,11 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
       <div className={`${isProductsListModalOpen ? 'sm:hidden' : ''} `}>
         <HeaderWithButtonBack text={headerText} />
       </div>
-      <div className='hidden relative z-40 sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]'>
+      <div
+        className={`${
+          isProductsListModalOpen ? 'hidden' : ''
+        } hidden relative z-30 sm:flex sm:justify-between bg-yellow px-[30px] py-5 mb-[30px]`}
+      >
         <PromoTotalHeader promo={promo} />
       </div>
       <div className='flex justify-between gap-[30px]'>
