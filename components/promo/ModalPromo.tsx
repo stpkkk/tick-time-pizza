@@ -15,11 +15,11 @@ import { getPizzaOfTheDay } from '@/utils';
 
 const ModalPromo: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { selectedPromo, isPromoModalOpen } = useAppSelector(
+  const { selectedPromoCard, isPromoModalOpen } = useAppSelector(
     (state) => state.menuReducer,
   );
   const currentDay = getPizzaOfTheDay().dayOfWeek;
-  const isPizzaOfTheDay = selectedPromo?.title === Promos.PIZZA_OF_THE_DAY;
+  const isPizzaOfTheDay = selectedPromoCard?.title === Promos.PIZZA_OF_THE_DAY;
 
   const closeModal = () => {
     dispatch(setIsPromoModalOpen(false));
@@ -43,16 +43,16 @@ const ModalPromo: React.FC = () => {
         </div>
         <h3 className='h1 sm:block hidden'>
           {isPizzaOfTheDay
-            ? selectedPromo?.title + ' ' + currentDay
-            : selectedPromo?.title || 'promo title is undefined!'}
+            ? selectedPromoCard?.title + ' ' + currentDay
+            : selectedPromoCard?.title || 'promo title is undefined!'}
         </h3>
         <div className='relative w-full max-w-[500px] aspect-video cursor-pointer rounded-2xl self-center'>
           <Image
-            src={selectedPromo?.image || ''}
+            src={selectedPromoCard?.image || ''}
             alt={
               isPizzaOfTheDay
-                ? selectedPromo?.title + ' ' + currentDay
-                : selectedPromo?.title || 'promo title is undefined!'
+                ? selectedPromoCard?.title + ' ' + currentDay
+                : selectedPromoCard?.title || 'promo title is undefined!'
             }
             placeholder='blur'
             blurDataURL={pizza.src}
@@ -62,13 +62,13 @@ const ModalPromo: React.FC = () => {
         </div>
         <div className='px-[60px] py-[50px] sm:p-0'>
           <p className='sm:text-xs sm:leading-[15px] text-sm leading-[17px] mb-[30px]'>
-            {selectedPromo?.description}
+            {selectedPromoCard?.description}
           </p>
-          {selectedPromo?.isRedirect && (
+          {selectedPromoCard?.isRedirect && (
             <Link
               onClick={closeModal}
               className='btn_yellow h-[45px] max-w-[100px] sm:max-h-[35px]'
-              href={`/promo/${selectedPromo.id}`}
+              href={`/promo/${selectedPromoCard.id}`}
             >
               Выбрать
             </Link>

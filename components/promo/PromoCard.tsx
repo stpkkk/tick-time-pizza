@@ -2,7 +2,11 @@ import React from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useAppDispatch, setIsPromoModalOpen } from '@/redux';
+import {
+  useAppDispatch,
+  setIsPromoModalOpen,
+  setSelectedPromoCard,
+} from '@/redux';
 import { Promo, Promos } from '@/types';
 import { getPizzaOfTheDay } from '@/utils';
 
@@ -17,6 +21,7 @@ const PromoCard: React.FC<PromoCardProps> = ({ promo }) => {
 
   const handleCardClick = (openModal: boolean) => {
     dispatch(setIsPromoModalOpen(openModal));
+    dispatch(setSelectedPromoCard(promo));
   };
 
   return (
