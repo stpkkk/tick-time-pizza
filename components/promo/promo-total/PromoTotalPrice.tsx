@@ -1,14 +1,12 @@
 import React from 'react';
 
 type PromoTotalProps = {
-  addPromoProductToCart: any;
   totalPrice: number;
   priceWithDiscount?: number | string;
   isQuantityMax: boolean;
 };
 
 const PromoTotalPrice: React.FC<PromoTotalProps> = ({
-  addPromoProductToCart,
   totalPrice,
   isQuantityMax,
   priceWithDiscount,
@@ -27,8 +25,7 @@ const PromoTotalPrice: React.FC<PromoTotalProps> = ({
       </div>
       <button
         className='btn_red min-h-[60px] sm:min-h-[50px] btn_disabled w-full uppercase'
-        onClick={addPromoProductToCart}
-        type='button'
+        type='submit'
         disabled={!isQuantityMax}
       >
         Добавить в корзину

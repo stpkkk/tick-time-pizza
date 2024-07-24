@@ -35,7 +35,7 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
   );
 
   const {
-    addPromoProductToCart,
+    addPromoToCart,
     promo,
     isQuantityMax,
     priceWithDiscount,
@@ -85,11 +85,12 @@ const PromoPage: React.FC<PromoProps> = ({ params: { id } }) => {
           <MobilePromoTotal
             promoProducts={promoProducts}
             isQuantityMax={isQuantityMax}
+            addPromoToCart={addPromoToCart}
           />
         </div>
         <PromoTotal
           promo={promo}
-          addPromoProductToCart={addPromoProductToCart}
+          addPromoToCart={addPromoToCart}
           isQuantityMax={isQuantityMax}
           priceWithDiscount={priceWithDiscount}
           totalPrice={totalPrice}

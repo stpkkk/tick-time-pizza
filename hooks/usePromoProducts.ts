@@ -84,7 +84,7 @@ export const usePromoProducts = (id = '') => {
   const discount =
     typeof priceWithDiscount === 'number' ? totalPrice - priceWithDiscount : 0;
 
-  const addPromoProductToCart = React.useCallback(
+  const addPromoToCart = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
@@ -150,7 +150,7 @@ export const usePromoProducts = (id = '') => {
   }
 
   return {
-    addPromoProductToCart,
+    addPromoToCart,
     promo,
     isQuantityMax,
     priceWithDiscount,
