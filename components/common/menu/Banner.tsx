@@ -35,8 +35,6 @@ const Banner: React.FC = () => {
       (product) => product.title === selectedSlide.title,
     );
 
-    console.log('pizzaOfTheDaySlides:', pizzaOfTheDaySlides);
-
     const isPizzaOfTheDaySlide = pizzaOfTheDaySlides.some(
       (slide) => slide.title === selectedSlide.title,
     );
