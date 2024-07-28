@@ -1,17 +1,13 @@
-'use client';
-
 import React from 'react';
 import { BsBasket2 } from 'react-icons/bs';
 import Link from 'next/link';
 import CartTooltip from './CartTooltip';
-import { useAppDispatch, useAppSelector, setIsHoveringCart } from '@/redux';
+import { useAppSelector } from '@/redux';
 import { IProduct } from '@/types';
 import { calculateTotalPrice } from '@/utils';
 
 const HeaderCart: React.FC = () => {
-  const dispatch = useAppDispatch();
   const { cartProducts } = useAppSelector((state) => state.menuReducer);
-  const { isHoveringCart } = useAppSelector((state) => state.headerReducer);
 
   const cartTooltipRef = React.useRef<HTMLDivElement | null>(null);
   const cartTotalPrice = calculateTotalPrice(cartProducts).totalPrice;
@@ -19,26 +15,8 @@ const HeaderCart: React.FC = () => {
     .map((product: IProduct) => product.productQuantity || 0)
     .reduce((quantity: number, acc: number) => quantity + acc, 0);
 
-  const handleMouseOverCart = () => {
-    dispatch(setIsHoveringCart(true));
-  };
-
-  const handleMouseOutCart = (e: React.MouseEvent<HTMLDivElement>) => {
-    const isHoveringTooltip =
-      cartTooltipRef.current &&
-      cartTooltipRef.current.contains(e.relatedTarget as Node);
-
-    if (!isHoveringTooltip) {
-      dispatch(setIsHoveringCart(false));
-    }
-  };
-
   return (
-    <div
-      className='hover:bg-grayLight sm:hover:bg-white relative h-full transition-all duration-300 ease-in-out'
-      onMouseOver={handleMouseOverCart}
-      onMouseOut={handleMouseOutCart}
-    >
+    <div className='hover:bg-grayLight sm:hover:bg-white group relative h-full transition-all duration-300 ease-in-out'>
       <Link
         href='/cart'
         className='flex_center h-full w-[6rem] flex-col gap-2 sm:flex-row-reverse'
@@ -57,10 +35,8 @@ const HeaderCart: React.FC = () => {
           </span>
         ) : null}
       </Link>
-      <div className='sm:hidden'>
-        {isHoveringCart ? (
-          <CartTooltip cartTooltipRef={cartTooltipRef} />
-        ) : null}
+      <div className='sm:hidden group-hover:block hidden'>
+        <CartTooltip cartTooltipRef={cartTooltipRef} />
       </div>
     </div>
   );

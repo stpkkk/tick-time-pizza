@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector, toggleNav } from '@/redux';
 
 const HeaderMobile: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isNavOpen } = useAppSelector((state) => state.headerReducer);
+  const { isNavOpen } = useAppSelector((state) => state.menuReducer);
 
   const handleMenuToggle = () => {
     dispatch(toggleNav());

@@ -9,29 +9,15 @@ import Nav from './Nav';
 import Phone from './Phone';
 import ProgressBar from './ProgressBar';
 import { useAuthStateChange } from '@/hooks';
-import {
-  useAppDispatch,
-  useAppSelector,
-  toggleNav,
-  setIsHoveringPhone,
-} from '@/redux';
+import { useAppDispatch, useAppSelector, toggleNav } from '@/redux';
 
 const HeaderDesktop: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isHoveringPhone } = useAppSelector((state) => state.headerReducer);
   const { user } = useAppSelector((state) => state.profileReducer);
   const isUserSignIn = user && Object.keys(user).length > 0;
 
   const handleClick = () => {
     dispatch(toggleNav());
-  };
-
-  const handleMouseOverPhone = () => {
-    dispatch(setIsHoveringPhone(true));
-  };
-
-  const handleMouseOutPhone = () => {
-    dispatch(setIsHoveringPhone(false));
   };
 
   useAuthStateChange(user);
@@ -52,18 +38,12 @@ const HeaderDesktop: React.FC = () => {
             <Nav />
           </div>
         </div>
-        <div
-          className='hover:bg-grayLight animate-fade-in relative h-full ml-4'
-          onMouseOver={handleMouseOverPhone}
-          onMouseOut={handleMouseOutPhone}
-        >
+        <div className='group hover:bg-grayLight animate-fade-in relative h-full ml-4'>
           <Phone />
-          {isHoveringPhone ? (
-            <div className='header_tooltip left-0'>
-              *минимальная сумма заказа на доставку равна стоимости средней
-              пиццы.
-            </div>
-          ) : null}
+
+          <div className='group-hover:block header_tooltip left-0 hidden'>
+            *минимальная сумма заказа на доставку равна стоимости средней пиццы.
+          </div>
         </div>
         <Link
           href={isUserSignIn ? '/profile' : '/login'}

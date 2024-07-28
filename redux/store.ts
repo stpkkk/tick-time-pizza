@@ -1,10 +1,9 @@
-import headerReducer from './features/headerSlice';
 import menuReducer from './features/menuSlice';
 import profileReducer from './features/profileSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
-  reducer: { headerReducer, menuReducer, profileReducer },
+  reducer: { menuReducer, profileReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,

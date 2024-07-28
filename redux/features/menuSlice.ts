@@ -11,10 +11,10 @@ import {
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface MenuState {
+  isNavOpen: boolean;
   isModalProductOpen: boolean;
   modalHeight: number;
   isTooltipOpen: boolean;
-  hoveredItemId: number | null;
   selectedProduct: IProduct | null;
   selectedSize: IOption | null;
   selectedDough: IOption | null;
@@ -37,10 +37,10 @@ export interface MenuState {
 }
 
 const initialState: MenuState = {
+  isNavOpen: false,
   isModalProductOpen: false,
   modalHeight: 0,
   isTooltipOpen: false,
-  hoveredItemId: null,
   selectedProduct: null,
   selectedCategory: {
     value: CATEGORIES.ALL,
@@ -68,11 +68,12 @@ const menuSlice = createSlice({
   name: 'menu',
   initialState,
   reducers: {
-    //Menu
-    setHoveredItemId: (state, action: PayloadAction<number | null>) => {
-      state.hoveredItemId = action.payload;
+    // Header
+    toggleNav: (state) => {
+      state.isNavOpen = !state.isNavOpen;
     },
 
+    //Menu
     setSelectedProduct: (state, action: PayloadAction<IProduct | null>) => {
       state.selectedProduct = action.payload;
     },
@@ -297,9 +298,9 @@ const menuSlice = createSlice({
 });
 
 export const {
+  toggleNav,
   setModalProductOpen,
   setModalHeight,
-  setHoveredItemId,
   setSelectedProduct,
   setSelectedSize,
   setSelectedDough,

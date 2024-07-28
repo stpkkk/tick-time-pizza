@@ -13,7 +13,7 @@ type NavProps = {
 
 const Nav: React.FC<NavProps> = ({ onMenuToggle }) => {
   const pathname = usePathname();
-  const { isNavOpen } = useAppSelector((state) => state.headerReducer);
+  const { isNavOpen } = useAppSelector((state) => state.menuReducer);
   const { user } = useAppSelector((state) => state.profileReducer);
 
   return (

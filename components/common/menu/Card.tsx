@@ -4,7 +4,6 @@ import { ButtonBookmark } from '..';
 import CategoryImage from './CategoryImage';
 import { usePromoProducts } from '@/hooks';
 import {
-  setHoveredItemId,
   setIsProductsListModalOpen,
   setModalProductOpen,
   setSelectedProduct,
@@ -19,26 +18,12 @@ interface ICardProps {
 
 const Card: React.FC<ICardProps> = ({ product, products }) => {
   const dispatch = useAppDispatch();
-  const {
-    hoveredItemId,
-    totalPromoProducts,
-    selectedPromo,
-    isProductsListModalOpen,
-  } = useAppSelector((state) => state.menuReducer);
+  const { totalPromoProducts, selectedPromo, isProductsListModalOpen } =
+    useAppSelector((state) => state.menuReducer);
   const { promo } = usePromoProducts();
 
-  const isItemHovered = hoveredItemId === product.id;
   const starterPrice =
     product.prices?.find((product) => product.id === 0)?.value || 0;
-
-  const handleMouseEnterItem = () => {
-    if (totalPromoProducts !== selectedPromo?.maxValue || !promo)
-      dispatch(setHoveredItemId(product.id));
-  };
-
-  const handleMouseLeaveItem = () => {
-    dispatch(setHoveredItemId(null));
-  };
 
   const handleClickProduct = (clickedProduct: IProduct) => {
     if (totalPromoProducts !== selectedPromo?.maxValue || !promo) {
@@ -56,11 +41,7 @@ const Card: React.FC<ICardProps> = ({ product, products }) => {
   };
 
   return (
-    <li
-      className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-2xl bg-white sm:max-w-[420px] md:p-4 sm:drop-shadow-custom'
-      onMouseEnter={handleMouseEnterItem}
-      onMouseLeave={handleMouseLeaveItem}
-    >
+    <li className='relative flex h-full w-full max-w-[255px] cursor-pointer flex-col rounded-2xl bg-white sm:max-w-[420px] md:p-4 sm:drop-shadow-custom group'>
       <div className='absolute right-0 top-0 z-[1] sm:right-2 sm:top-2 sm:p-2'>
         <ButtonBookmark product={product} />
       </div>
@@ -79,7 +60,7 @@ const Card: React.FC<ICardProps> = ({ product, products }) => {
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               fill
               priority
-              className={`${isItemHovered && 'opacity-50 animate-fade-in'}`}
+              className='group-hover:opacity-50 group-hover:animate-fade-in'
             />
           </div>
           <span className='block mb-4 font-semibold leading-5'>
@@ -94,7 +75,7 @@ const Card: React.FC<ICardProps> = ({ product, products }) => {
         <div className='flex_between'>
           <span className='font-semibold'>{`от ${starterPrice} ₽`}</span>
           <button
-            className='btn_yellow h-[45px] sm:h-[32px] btn_disabled max-w-[112px] uppercase'
+            className='btn_yellow h-[45px] sm:h-[32px] btn_disabled max-w-[112px] uppercase group-hover:opacity-50'
             disabled={promo && totalPromoProducts === selectedPromo?.maxValue}
             type='button'
           >
